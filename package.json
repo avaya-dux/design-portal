@@ -6,10 +6,10 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "lint": "eslint ./src",
-    "format": "yarn prettier --write ./src",
     "clean": "rm -rf coverage dist",
-    "all": "yarn && yarn clean && yarn lint && yarn format && yarn build"
+    "format": "yarn prettier --write ./src",
+    "lint": "eslint ./src",
+    "all": "yarn && yarn clean && yarn format && yarn lint && yarn build"
   },
   "devDependencies": {
     "@astrojs/react": "^1.0.0",
