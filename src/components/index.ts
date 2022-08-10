@@ -1,3 +1,2 @@
-import Card from "./Card.astro";
-export { Card };
-export * from "./Button";
+export * from "./astro";
+export * from "./react";
