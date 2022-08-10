@@ -5,7 +5,6 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:astro/recommended",
     "plugin:jsx-a11y/strict"
@@ -19,15 +18,9 @@
     "sourceType": "module"
   },
   "plugins": [
-    "react",
     "jsx-a11y",
     "@typescript-eslint"
   ],
-  "settings": {
-    "react": {
-      "version": "18"
-    }
-  },
   "overrides": [
     {
       "files": [
@@ -74,9 +67,25 @@
         // you don't need to format inside <script> as it will be formatted as a `.astro` file.
         "prettier/prettier": "off"
       }
+    },
+    {
+      "files": [
+        "*.tsx",
+        "*.jsx"
+      ],
+      "plugins": [
+        "react",
+        "jsx-a11y",
+        "@typescript-eslint"
+      ],
+      "settings": {
+        "react": {
+          "version": "18"
+        }
+      }
     }
   ],
   "rules": {
-    "react/react-in-jsx-scope": 0
+    "no-var": "error"
   }
 }
