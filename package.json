@@ -29,5 +29,8 @@
     "react-dom": "^18.0.0",
     "svelte": "^3.46.4",
     "vue": "^3.2.30"
+  },
+  "dependencies": {
+    "@astrojs/netlify": "^1.0.0"
   }
 }
