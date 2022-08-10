@@ -3,17 +3,25 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx,.astro",
+    "format": "yarn prettier --write ./src",
+    "clean": "rm -rf coverage dist",
+    "all": "yarn && yarn clean && yarn format && yarn lint && yarn build"
   },
   "devDependencies": {
     "@astrojs/react": "^1.0.0",
     "@astrojs/svelte": "^1.0.0",
     "@astrojs/vue": "^1.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
     "astro": "^1.0.1",
+    "eslint": "^8.21.0",
+    "eslint-plugin-astro": "^0.17.1",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.30.1",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.5.0",
     "react": "^18.0.0",
