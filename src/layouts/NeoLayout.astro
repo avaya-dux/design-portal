@@ -21,7 +21,13 @@ const { title } = Astro.props as Props;
 
   <body>
     <NeoThemeProvider>
-      <Button>button</Button>
+      <Button
+        client:load
+        onClick={() => {
+          alert("ping");
+        }}
+        >button
+      </Button>
       <slot />
     </NeoThemeProvider>
   </body>

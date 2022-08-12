@@ -241,7 +241,7 @@ const _renderer1 = {
 	renderToStaticMarkup: renderToStaticMarkup$1,
 };
 
-const ASTRO_VERSION = "1.0.1";
+const ASTRO_VERSION = "1.0.3";
 function createDeprecatedFetchContentFn() {
   return () => {
     throw new Error("Deprecated: Astro.fetchContent() has been replaced with Astro.glob().");
@@ -498,7 +498,7 @@ function extractDirectives(inputProps) {
   return extracted;
 }
 async function generateHydrateScript(scriptOptions, metadata) {
-  const { renderer, result, astroId, props } = scriptOptions;
+  const { renderer, result, astroId, props, attrs } = scriptOptions;
   const { hydrate, componentUrl, componentExport } = metadata;
   if (!componentExport) {
     throw new Error(
@@ -511,6 +511,11 @@ async function generateHydrateScript(scriptOptions, metadata) {
       uid: astroId
     }
   };
+  if (attrs) {
+    for (const [key, value] of Object.entries(attrs)) {
+      island.props[key] = value;
+    }
+  }
   island.props["component-url"] = await result.resolve(componentUrl);
   if (renderer.clientEntrypoint) {
     island.props["component-export"] = componentExport.value;
@@ -953,6 +958,7 @@ Did you forget to import the component or is it possible there is a typo?`
   const metadata = { displayName };
   const { hydration, isPage, props } = extractDirectives(_props);
   let html = "";
+  let attrs = void 0;
   if (hydration) {
     metadata.hydrate = hydration.directive;
     metadata.hydrateArgs = hydration.value;
@@ -1040,7 +1046,7 @@ but ${plural ? "none were" : "it was not"} able to server-side render ${metadata
 Did you mean to enable ${formatList(probableRendererNames.map((r) => "`" + r + "`"))}?`);
       } else if (matchingRenderers.length === 1) {
         renderer = matchingRenderers[0];
-        ({ html } = await renderer.ssr.renderToStaticMarkup.call(
+        ({ html, attrs } = await renderer.ssr.renderToStaticMarkup.call(
           { result },
           Component,
           props,
@@ -1065,7 +1071,7 @@ If you're still stuck, please open an issue on GitHub or join us at https://astr
     if (metadata.hydrate === "only") {
       html = await renderSlot(result, slots == null ? void 0 : slots.fallback);
     } else {
-      ({ html } = await renderer.ssr.renderToStaticMarkup.call(
+      ({ html, attrs } = await renderer.ssr.renderToStaticMarkup.call(
         { result },
         Component,
         props,
@@ -1105,7 +1111,7 @@ ${serializeProps(
     )}`
   );
   const island = await generateHydrateScript(
-    { renderer, result, astroId, props },
+    { renderer, result, astroId, props, attrs },
     metadata
   );
   let unrenderedSlots = [];
@@ -1518,7 +1524,7 @@ const $$Layout = createComponent(async ($$result, $$props, $$slots) => {
 </html>`;
 });
 
-createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/layouts/NeoLayout.astro", { modules: [{ module: $$module1$1, specifier: "@avaya/neo-react", assert: {} }], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
+const $$metadata$2 = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/layouts/NeoLayout.astro", { modules: [{ module: $$module1$1, specifier: "@avaya/neo-react", assert: {} }], hydratedComponents: [Button$1], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set(["load"]), hoisted: [] });
 const $$Astro$2 = createAstro("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/layouts/NeoLayout.astro", "", "file:///Users/jsebast/dev/avaya-dux/design-portal/");
 const $$NeoLayout = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
@@ -1534,7 +1540,10 @@ const $$NeoLayout = createComponent(async ($$result, $$props, $$slots) => {
   ${renderHead($$result)}</head>
 
   <body>
-    ${renderComponent($$result, "NeoThemeProvider", NeoThemeProvider, {}, { "default": () => renderTemplate`${renderComponent($$result, "Button", Button$1, {}, { "default": () => renderTemplate`button` })}${renderSlot($$result, $$slots["default"])}` })}
+    ${renderComponent($$result, "NeoThemeProvider", NeoThemeProvider, {}, { "default": () => renderTemplate`${renderComponent($$result, "Button", Button$1, { "client:load": true, "onClick": () => {
+    alert("ping");
+  }, "client:component-hydration": "load", "client:component-path": $$metadata$2.getPath(Button$1), "client:component-export": $$metadata$2.getExport(Button$1) }, { "default": () => renderTemplate`button
+      ` })}${renderSlot($$result, $$slots["default"])}` })}
   </body></html>`;
 });
 
@@ -1552,24 +1561,27 @@ const $$Index = createComponent(async ($$result, $$props, $$slots) => {
   const STYLES = [];
   for (const STYLE of STYLES)
     $$result.styles.add(STYLE);
-  return renderTemplate`${renderComponent($$result, "NeoLayout", $$NeoLayout, { "title": "Welcome to Astro.", "class": "astro-Q5SCOE66" }, { "default": () => renderTemplate`${maybeRenderHead($$result)}<main class="astro-Q5SCOE66">
-    <h1 class="astro-Q5SCOE66">Welcome to <span class="text-gradient astro-Q5SCOE66">Astro</span></h1>
+  return renderTemplate`${renderComponent($$result, "NeoLayout", $$NeoLayout, { "title": "Welcome to Astro.", "class": "astro-RP7BBKRM" }, { "default": () => renderTemplate`${maybeRenderHead($$result)}<main class="astro-RP7BBKRM">
+    <h1 class="astro-RP7BBKRM">Welcome to <span class="text-gradient astro-RP7BBKRM">Astro</span></h1>
 
-    <p class="instructions astro-Q5SCOE66">
-      Check out the <code class="astro-Q5SCOE66">src/pages</code> directory to get started.<br class="astro-Q5SCOE66">
-      <strong class="astro-Q5SCOE66">Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+    <p class="instructions astro-RP7BBKRM">
+      Check out the <code class="astro-RP7BBKRM">src/pages</code> directory to get started.<br class="astro-RP7BBKRM">
+      <strong class="astro-RP7BBKRM">Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
     </p>
 
-    ${renderComponent($$result, "Button", Button, { "class": "astro-Q5SCOE66" }, { "default": () => renderTemplate`example button` })}
+    ${renderComponent($$result, "Button", Button, { "onClick": () => {
+    alert("ping");
+  }, "class": "astro-RP7BBKRM" }, { "default": () => renderTemplate`example button
+    ` })}
 
-    <ul class="link-card-grid astro-Q5SCOE66">
-      ${renderComponent($$result, "Card", $$Card, { "href": "https://docs.astro.build/", "title": "Documentation", "body": "Learn how Astro works and explore the official API docs.", "class": "astro-Q5SCOE66" })}
+    <ul class="link-card-grid astro-RP7BBKRM">
+      ${renderComponent($$result, "Card", $$Card, { "href": "https://docs.astro.build/", "title": "Documentation", "body": "Learn how Astro works and explore the official API docs.", "class": "astro-RP7BBKRM" })}
 
-      ${renderComponent($$result, "Card", $$Card, { "href": "https://astro.build/integrations/", "title": "Integrations", "body": "Supercharge your project with new frameworks and libraries.", "class": "astro-Q5SCOE66" })}
+      ${renderComponent($$result, "Card", $$Card, { "href": "https://astro.build/integrations/", "title": "Integrations", "body": "Supercharge your project with new frameworks and libraries.", "class": "astro-RP7BBKRM" })}
 
-      ${renderComponent($$result, "Card", $$Card, { "href": "https://astro.build/themes/", "title": "Themes", "body": "Explore a galaxy of community-built starter themes.", "class": "astro-Q5SCOE66" })}
+      ${renderComponent($$result, "Card", $$Card, { "href": "https://astro.build/themes/", "title": "Themes", "body": "Explore a galaxy of community-built starter themes.", "class": "astro-RP7BBKRM" })}
 
-      ${renderComponent($$result, "Card", $$Card, { "href": "https://astro.build/chat/", "title": "Chat", "body": "Come say hi to our amazing Discord community. \u2764\uFE0F", "class": "astro-Q5SCOE66" })}
+      ${renderComponent($$result, "Card", $$Card, { "href": "https://astro.build/chat/", "title": "Chat", "body": "Come say hi to our amazing Discord community. \u2764\uFE0F", "class": "astro-RP7BBKRM" })}
     </ul>
   </main>` })}
 
@@ -1699,7 +1711,7 @@ function deserializeManifest(serializedManifest) {
   };
 }
 
-const _manifest = Object.assign(deserializeManifest({"adapterName":"@astrojs/netlify/functions","routes":[{"file":"","links":["assets/index-old-index.3435a7c0.css","assets/index.6f85c99d.css"],"scripts":[],"routeData":{"route":"/","type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/index-old-index.3435a7c0.css","assets/index-old.4e0c3892.css"],"scripts":[],"routeData":{"route":"/index-old","type":"page","pattern":"^\\/index-old\\/?$","segments":[[{"content":"index-old","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/index-old.astro","pathname":"/index-old","_meta":{"trailingSlash":"ignore"}}}],"base":"/","markdown":{"drafts":false,"syntaxHighlight":"shiki","shikiConfig":{"langs":[],"theme":"github-dark","wrap":false},"remarkPlugins":[],"rehypePlugins":[],"isAstroFlavoredMd":false},"pageMap":null,"renderers":[],"entryModules":{"\u0000@astrojs-ssr-virtual-entry":"entry.mjs","@astrojs/react/client.js":"client.4573567e.js","@astrojs/svelte/client.js":"client.b27523fa.js","@astrojs/vue/client.js":"client.9be4f58e.js","astro:scripts/before-hydration.js":"data:text/javascript;charset=utf-8,//[no before-hydration script]"},"assets":["/assets/index.6f85c99d.css","/assets/index-old.4e0c3892.css","/assets/index-old-index.3435a7c0.css","/client.4573567e.js","/client.9be4f58e.js","/client.b27523fa.js","/favicon.ico"]}), {
+const _manifest = Object.assign(deserializeManifest({"adapterName":"@astrojs/netlify/functions","routes":[{"file":"","links":["assets/index-old-index.9a1dc712.css","assets/index.eb3866af.css"],"scripts":[],"routeData":{"route":"/","type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/index-old-index.9a1dc712.css","assets/index-old.4e0c3892.css"],"scripts":[],"routeData":{"route":"/index-old","type":"page","pattern":"^\\/index-old\\/?$","segments":[[{"content":"index-old","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/index-old.astro","pathname":"/index-old","_meta":{"trailingSlash":"ignore"}}}],"base":"/","markdown":{"drafts":false,"syntaxHighlight":"shiki","shikiConfig":{"langs":[],"theme":"github-dark","wrap":false},"remarkPlugins":[],"rehypePlugins":[],"isAstroFlavoredMd":false},"pageMap":null,"renderers":[],"entryModules":{"\u0000@astrojs-ssr-virtual-entry":"entry.mjs","@avaya/neo-react":"avaya-neo-react.esm.ce0b7321.js","@astrojs/react/client.js":"client.af004557.js","@astrojs/svelte/client.js":"client.b27523fa.js","@astrojs/vue/client.js":"client.9be4f58e.js","astro:scripts/before-hydration.js":"data:text/javascript;charset=utf-8,//[no before-hydration script]"},"assets":["/assets/index.eb3866af.css","/assets/index-old.4e0c3892.css","/assets/index-old-index.9a1dc712.css","/avaya-neo-react.esm.ce0b7321.js","/client.9be4f58e.js","/client.af004557.js","/client.b27523fa.js","/favicon.ico","/assets/neo.f3888ba4.css","/chunks/index.ed5a085a.js"]}), {
 	pageMap: pageMap,
 	renderers: renderers
 });
