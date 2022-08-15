@@ -1,9 +1,9 @@
 ---
-import Layout from "layouts/Layout.astro";
+import { NeoLayout } from "layouts";
 import { Button, Card } from "components";
 ---
 
-<Layout title="Welcome to Astro.">
+<NeoLayout title="Welcome to Astro.">
   <main>
     <h1>Welcome to <span class="text-gradient">Astro</span></h1>
 
@@ -12,7 +12,7 @@ import { Button, Card } from "components";
       <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
     </p>
 
-    <Button>example button</Button>
+    <Button client:load>example button</Button>
 
     <ul class="link-card-grid">
       <Card
@@ -40,7 +40,7 @@ import { Button, Card } from "components";
       />
     </ul>
   </main>
-</Layout>
+</NeoLayout>
 
 <style>
   :root {

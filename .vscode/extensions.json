@@ -1,4 +1,19 @@
 {
-  "recommendations": ["astro-build.astro-vscode"],
+  "recommendations": [
+    "EditorConfig.EditorConfig",
+    "alfnielsen.vsc-organize-imports",
+    "astro-build.astro-vscode",
+    "deque-systems.vscode-axe-linter",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-rename-tag",
+    "henriiik.vscode-sort",
+    "ms-vscode.vscode-typescript-next",
+    "shardulm94.trailing-spaces",
+    "silvenon.mdx",
+    "visualstudioexptteam.vscodeintellicode",
+    "vscode-icons-team.vscode-icons",
+    "wayou.vscode-todo-highlight"
+  ],
   "unwantedRecommendations": []
 }

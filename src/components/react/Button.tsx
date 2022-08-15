@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 
+import { Button as NeoButton, NeoThemeProvider } from "@avaya/neo-react";
+
 interface ButtonProps {
   children: ReactNode;
   className?: string;
@@ -10,8 +12,14 @@ export const Button = (props: ButtonProps) => {
   const { children, onClick, className, ...rest } = props;
 
   return (
-    <button {...rest} className={className} onClick={onClick}>
-      {children}
-    </button>
+    <NeoThemeProvider>
+      <NeoButton
+        {...rest}
+        className={className}
+        onClick={() => onClick?.() || alert("ping")}
+      >
+        {children}
+      </NeoButton>
+    </NeoThemeProvider>
   );
 };
