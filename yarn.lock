@@ -146,6 +146,16 @@
   dependencies:
     node-fetch "^3.2.5"
 
+"@avaya/neo-react@^0.5.6-alpha.7":
+  version "0.5.6-alpha.7"
+  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-0.5.6-alpha.7.tgz#73f8b1dccf3394ee96e56b8b3bd140cc5cfa2693"
+  integrity sha512-PCeOPFXuxLvadRyZy1Z7CquRl49b12scFaefbHnM4SEauyGpHyjdBvxxhBI0ij9DkBQAvgrF985r04LyObB1yQ==
+
+"@avaya/neo@^3.59.0":
+  version "3.59.0"
+  resolved "https://registry.yarnpkg.com/@avaya/neo/-/neo-3.59.0.tgz#d19133efcc218922da3540a14e85f4530a508a6d"
+  integrity sha512-joVJb+KXT+ZZ+3D8jHZ5kbbQyZ83Gppw0QFEIN7HyGuaOGMkE2KpPJSnP4vhZolYCNndo+k9CjSaOcksIHpnSw==
+
 "@babel/code-frame@^7.18.6":
   version "7.18.6"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.18.6.tgz#3b25d38c89600baa2dcc219edfa88a74eb2c427a"

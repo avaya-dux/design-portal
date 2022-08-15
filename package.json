@@ -31,6 +31,8 @@
     "vue": "3.2.37"
   },
   "dependencies": {
-    "@astrojs/netlify": "1.0.1"
+    "@astrojs/netlify": "1.0.1",
+    "@avaya/neo": "^3.59.0",
+    "@avaya/neo-react": "^0.5.6-alpha.7"
   }
 }
