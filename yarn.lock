@@ -146,10 +146,10 @@
   dependencies:
     node-fetch "^3.2.5"
 
-"@avaya/neo-react@^0.5.6-alpha.12":
-  version "0.5.6-alpha.12"
-  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-0.5.6-alpha.12.tgz#76829eff53ed8765a96361dfac5cc12d0f2a4656"
-  integrity sha512-DLQnZLAZ7dowBTQTHE+6FFT5Cg0WMgvmmXbGQ7SknXJKekMQu4hrGrm3w+0awogHEEoMfFUepilkZeSuA5qOPg==
+"@avaya/neo-react@^0.5.6-react18-1":
+  version "0.5.6-react18-1"
+  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-0.5.6-react18-1.tgz#aeefcfbb5894210dc5cc53055331d12ef3aee535"
+  integrity sha512-S5K8eKO4GI8T4AajTyL2pm9Aj2z4ljg2U4tps60iz2VLJiGBDuPRI9ExM87n8NkKZLR14U6T2oc8ZIQDwGEDHA==
   dependencies:
     react-focus-lock "^2.9.1"
 
