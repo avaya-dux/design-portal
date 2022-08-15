@@ -14,5 +14,8 @@ export default defineConfig({
     server: {
       open: true,
     },
+    ssr: {
+      noExternal: ["avaya-neo-react"],
+    },
   },
 });

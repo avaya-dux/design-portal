@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 import { Button as NeoButton, NeoThemeProvider } from "@avaya/neo-react";
-import "@avaya/neo/neo/dist/css/neo/neo.min.css";
+import "@avaya/neo-react/avaya-neo-react.css";
 
 interface ButtonProps {
   children: ReactNode;
