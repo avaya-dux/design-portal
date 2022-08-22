@@ -146,10 +146,10 @@
   dependencies:
     node-fetch "^3.2.5"
 
-"@avaya/neo-react@^0.5.6-react18-1":
-  version "0.5.6-react18-1"
-  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-0.5.6-react18-1.tgz#aeefcfbb5894210dc5cc53055331d12ef3aee535"
-  integrity sha512-S5K8eKO4GI8T4AajTyL2pm9Aj2z4ljg2U4tps60iz2VLJiGBDuPRI9ExM87n8NkKZLR14U6T2oc8ZIQDwGEDHA==
+"@avaya/neo-react@0.5.7":
+  version "0.5.7"
+  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-0.5.7.tgz#066dbe4daba112a4914da3f29a9fab1c8365550e"
+  integrity sha512-NGi+n8D6cM86/ZOJqRRjWmQxwwxWwJo5N2ai2lvcxxnARk9vRgm57AjoiOy4NQV5V70sBgjQZIHdpsbOOyJNVg==
   dependencies:
     react-focus-lock "^2.9.1"
 
@@ -1001,10 +1001,10 @@ astro-eslint-parser@^0.5.0:
     espree "^9.0.0"
     synckit "^0.8.0"
 
-astro@1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-1.0.5.tgz#1748a14fb473b23fa3995576c279935386d71194"
-  integrity sha512-+L45/SJfJ4yxQuRaaxXeIxf3BXGj80m7BIc9/7Cq5zFMxdvFLJ+4u6srntWY+4KlcrUcVBC/1mnhGbD80vYJQQ==
+astro@1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-1.0.6.tgz#9978c31d7d8359f951a7800e737dddfdfdba2641"
+  integrity sha512-QAkdkzP3PbauiO4YnOgVTWY6z26heKruoXW9TnN8Bbmwtf7DUFIchi6CFSAVYSONX8XtRnj+p6fCkk06OWfJ4w==
   dependencies:
     "@astrojs/compiler" "^0.23.3"
     "@astrojs/language-server" "^0.20.0"
