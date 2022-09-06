@@ -12,26 +12,26 @@
     "all": "yarn && yarn clean && yarn format && yarn lint && yarn build"
   },
   "devDependencies": {
-    "@astrojs/react": "1.1.0",
+    "@astrojs/react": "1.1.1",
     "@astrojs/svelte": "1.0.0",
     "@astrojs/vue": "1.0.0",
-    "@types/react": "18.0.17",
-    "@typescript-eslint/eslint-plugin": "5.35.1",
-    "@typescript-eslint/parser": "5.35.1",
-    "astro": "1.1.1",
+    "@types/react": "18.0.18",
+    "@typescript-eslint/eslint-plugin": "5.36.2",
+    "@typescript-eslint/parser": "5.36.2",
+    "astro": "1.1.5",
     "eslint": "8.23.0",
-    "eslint-plugin-astro": "0.17.1",
+    "eslint-plugin-astro": "0.18.0",
     "eslint-plugin-jsx-a11y": "6.6.1",
-    "eslint-plugin-react": "7.31.1",
+    "eslint-plugin-react": "7.31.7",
     "prettier": "2.7.1",
-    "prettier-plugin-astro": "0.5.3",
+    "prettier-plugin-astro": "0.5.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "svelte": "3.49.0",
-    "vue": "3.2.37"
+    "svelte": "3.50.0",
+    "vue": "3.2.38"
   },
   "dependencies": {
-    "@astrojs/netlify": "1.0.1",
-    "@avaya/neo-react": "0.5.7"
+    "@astrojs/netlify": "1.0.2",
+    "@avaya/neo-react": "0.5.9"
   }
 }
