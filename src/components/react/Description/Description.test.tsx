@@ -4,8 +4,6 @@ import { axe } from "jest-axe";
 import { Description } from "./";
 
 describe("Description", () => {
-  window.alert = () => null;
-
   it("fully renders without exploding", () => {
     render(<Description>Test</Description>);
 
