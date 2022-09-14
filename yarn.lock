@@ -790,7 +790,7 @@
     lz-string "^1.4.4"
     pretty-format "^27.0.2"
 
-"@testing-library/react@^13.4.0":
+"@testing-library/react@13.4.0":
   version "13.4.0"
   resolved "https://registry.yarnpkg.com/@testing-library/react/-/react-13.4.0.tgz#6a31e3bf5951615593ad984e96b9e5e2d9380966"
   integrity sha512-sXOGON+WNTh3MLE9rve97ftaZukN3oNf2KjDy7YTx6hcTO2uuLHuCGynMDhFwGw/jYf4OJ2Qk0i4i79qMNNkyw==
@@ -799,7 +799,7 @@
     "@testing-library/dom" "^8.5.0"
     "@types/react-dom" "^18.0.0"
 
-"@testing-library/user-event@^14.4.3":
+"@testing-library/user-event@14.4.3":
   version "14.4.3"
   resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-14.4.3.tgz#af975e367743fa91989cd666666aec31a8f50591"
   integrity sha512-kCUc5MEwaEMakkO5x7aoD+DLi02ehmEM2QCGWvNqAS1dV/fAvORWEjnjsEIvml59M7Y5kCkWN6fCCyPOe8OL6Q==
@@ -923,7 +923,7 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest-axe@^3.5.4":
+"@types/jest-axe@3.5.4":
   version "3.5.4"
   resolved "https://registry.yarnpkg.com/@types/jest-axe/-/jest-axe-3.5.4.tgz#3217668ab114fdfb67da3b3f60caf18dcbc18b2e"
   integrity sha512-S0M+Etke9v3o0PjjfA4ijoU8G0+eI+lblpGYFYw2t+PPPnPPzJBX7UKLoQjz1SfIp+Hf/bNMFvoBX8zlFVzdrQ==
@@ -993,7 +993,7 @@
   resolved "https://registry.yarnpkg.com/@types/pug/-/pug-2.0.6.tgz#f830323c88172e66826d0bde413498b61054b5a6"
   integrity sha512-SnHmG9wN1UVmagJOnyo/qkk0Z7gejYxOYYmaAwr5u2yFYfsupN3sg10kyzN8Hep/2zbHxCnsumxOoRIRMBwKCg==
 
-"@types/react-dom@^18.0.0", "@types/react-dom@^18.0.6":
+"@types/react-dom@18.0.6", "@types/react-dom@^18.0.0":
   version "18.0.6"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.0.6.tgz#36652900024842b74607a17786b6662dd1e103a1"
   integrity sha512-/5OFZgfIPSwy+YuIBP/FgJnQnsxhZhjjrnxudMddeblOouIodEQ75X14Rr4wGSG/bknL+Omy9iWlLo1u/9GzAA==
@@ -1134,7 +1134,7 @@
     "@typescript-eslint/types" "5.37.0"
     eslint-visitor-keys "^3.3.0"
 
-"@vitejs/plugin-react@^2.1.0":
+"@vitejs/plugin-react@2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-react/-/plugin-react-2.1.0.tgz#4c99df15e71d2630601bd3018093bdc787d40e55"
   integrity sha512-am6rPyyU3LzUYne3Gd9oj9c4Rzbq5hQnuGXSMT6Gujq45Il/+bunwq3lrB7wghLkiF45ygMwft37vgJ/NE8IAA==
@@ -1152,7 +1152,7 @@
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-3.0.1.tgz#b6af8f782485374bbb5fe09edf067a845bf4caae"
   integrity sha512-Ll9JgxG7ONIz/XZv3dssfoMUDu9qAnlJ+km+pBA0teYSXzwPCIzS/e1bmwNYl5dcQGs677D21amgfYAnzMl17A==
 
-"@vitest/coverage-c8@^0.23.2":
+"@vitest/coverage-c8@0.23.2":
   version "0.23.2"
   resolved "https://registry.yarnpkg.com/@vitest/coverage-c8/-/coverage-c8-0.23.2.tgz#48bf6ea81a7ce57abf539361d5a6762e87c36448"
   integrity sha512-VWT6zGj9iXEZCimnRLAUhf3siYVGIG9VryyMoo7B8zMOd+bnAbH8/7PhqvmjedVwa9wh61nkxqgG7/3Y/mzofQ==
@@ -1160,7 +1160,7 @@
     c8 "^7.12.0"
     vitest "0.23.2"
 
-"@vitest/ui@^0.23.2":
+"@vitest/ui@0.23.2":
   version "0.23.2"
   resolved "https://registry.yarnpkg.com/@vitest/ui/-/ui-0.23.2.tgz#0d4a3918edaca6d38f20c49467a03a51d4b26eff"
   integrity sha512-dO1UxSwEm11OgumUVbEnF7wKwDPoBGjkrvATvvhkFaDw2iiQm8WewF0hmnUVHj6BSNoHUIJ3uXEzfF9T9W+2yg==
@@ -3397,7 +3397,7 @@ istanbul-reports@^3.1.4:
     html-escaper "^2.0.0"
     istanbul-lib-report "^3.0.0"
 
-jest-axe@^6.0.0:
+jest-axe@6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/jest-axe/-/jest-axe-6.0.0.tgz#e5ca8e9a0363c8c5f4e00760317bd7d7d29b90b4"
   integrity sha512-gAh/2zoWii4Rbhe6IUIo5TTiseGJDCitFnDFwBNpIuaOciyQgVZue6jtd4W7oMoKHewKoRSuIol7t/MuGx+mqg==
@@ -3509,7 +3509,7 @@ js-yaml@^4.1.0:
   dependencies:
     argparse "^2.0.1"
 
-jsdom@^20.0.0:
+jsdom@20.0.0:
   version "20.0.0"
   resolved "https://registry.yarnpkg.com/jsdom/-/jsdom-20.0.0.tgz#882825ac9cc5e5bbee704ba16143e1fa78361ebf"
   integrity sha512-x4a6CKCgx00uCmP+QakBDFXwjAJ69IkkIWHmtmjd3wvXPcdOS44hfX2vqkOQrVrq8l9DhNNADZRXaCEWvgXtVA==
@@ -5866,7 +5866,7 @@ vite@^3.0.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
-vitest@0.23.2, vitest@^0.23.2:
+vitest@0.23.2:
   version "0.23.2"
   resolved "https://registry.yarnpkg.com/vitest/-/vitest-0.23.2.tgz#f978de0f2ada1b7c5ff8dc479ce75b976957ff19"
   integrity sha512-kTBKp3ROPDkYC+x2zWt4znkDtnT08W1FQ6ngRFuqxpBGNuNVS+eWZKfffr8y2JGvEzZ9EzMAOcNaiqMj/FZqMw==
