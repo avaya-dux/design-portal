@@ -9,7 +9,11 @@
     "format": "yarn prettier --write ./src --loglevel warn",
     "lint": "eslint src",
     "build": "astro build",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "test:badges": "yarn test:coverage && jest-coverage-badges --output ./badges",
     "start": "astro dev",
     "preview": "astro preview"
   },
@@ -30,6 +34,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "svelte": "3.50.1",
+    "vitest": "^0.23.2",
     "vue": "3.2.39"
   },
   "dependencies": {
