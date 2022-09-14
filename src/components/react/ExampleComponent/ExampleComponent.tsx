@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { Button as NeoButton, NeoThemeProvider } from "@avaya/neo-react";
+import { Button, NeoThemeProvider } from "@avaya/neo-react";
 
 interface ButtonProps {
   children: ReactNode;
@@ -8,18 +8,18 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-export const Button = (props: ButtonProps) => {
+export const ExampleComponent = (props: ButtonProps) => {
   const { children, onClick, className, ...rest } = props;
 
   return (
     <NeoThemeProvider>
-      <NeoButton
+      <Button
         {...rest}
         className={className}
         onClick={() => onClick?.() || alert("ping")}
       >
         {children}
-      </NeoButton>
+      </Button>
     </NeoThemeProvider>
   );
 };
