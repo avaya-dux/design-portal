@@ -1,3 +1,14 @@
+> CI/CD status
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/92612954-34e1-49f3-8d76-fa663b5a54a5/deploy-status)](https://app.netlify.com/sites/design-portal-vnext/deploys)
+
+> react unit test code coverage
+
+![Coverage lines](./badges/badge-lines.svg)
+![Coverage functions](./badges/badge-functions.svg)
+![Coverage branches](./badges/badge-branches.svg)
+![Coverage statements](./badges/badge-statements.svg)
+
 # Welcome to the Design Portal V3
 
 > this is a "v-next" of the Design Portal and is a work in progress
