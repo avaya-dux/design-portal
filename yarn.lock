@@ -105,10 +105,10 @@
   dependencies:
     prismjs "^1.28.0"
 
-"@astrojs/react@1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@astrojs/react/-/react-1.1.2.tgz#52d18339255457023ab5a1a33b911480eb6b0aa5"
-  integrity sha512-qGXI7SeKauJoeChb5vcwFELVMyth5kmakgcb6vm9+PBXNauSo983b9qOYd1ptB+kTK+eYGmezGh/YT3Rjhggag==
+"@astrojs/react@1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@astrojs/react/-/react-1.1.3.tgz#e6e761b57756a2b96e5062e229cfeb85de96c392"
+  integrity sha512-awhAEPvJslewJ3Txeapw6LiZtU8RqZrDiequeNDmwQt6iz4Ltn3nJPROKxv4cKesAHEpAZhXWM1q2HhpxWFW0Q==
   dependencies:
     "@babel/core" ">=7.0.0-0 <8.0.0"
     "@babel/plugin-transform-react-jsx" "^7.17.12"
@@ -1445,10 +1445,10 @@ astro-eslint-parser@^0.6.0:
     eslint-visitor-keys "^3.0.0"
     espree "^9.0.0"
 
-astro@1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-1.2.3.tgz#cb2d6df983b2ffa46e5aac34f6593b2df447920f"
-  integrity sha512-iNZcvnaS+Hw4g/rkk4bzlnonjsws066wPkfmnQ+WUqGoH81a4GbFj93YT6zoum5kHg4Kw713abHAf3e/2mpjmg==
+astro@1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-1.2.4.tgz#cdce526f41d4bdd6780d13bbb53bacc8cf7609c0"
+  integrity sha512-RJAdTDb4mECyAzNjl4RFzEHueHpGqvxPMQAYYd59nK7tCqBYzAde1mThzuEtQglSdGnIP3DXia2XtPzoo9mniQ==
   dependencies:
     "@astrojs/compiler" "^0.24.0"
     "@astrojs/language-server" "^0.23.0"
@@ -1493,7 +1493,7 @@ astro@1.2.3:
     recast "^0.20.5"
     rehype "^12.0.1"
     resolve "^1.22.0"
-    rollup "~2.77.0"
+    rollup "~2.78.0"
     semver "^7.3.7"
     shiki "^0.11.1"
     sirv "^2.0.2"
@@ -1504,7 +1504,7 @@ astro@1.2.3:
     tsconfig-resolver "^3.0.1"
     unist-util-visit "^4.1.0"
     vfile "^5.3.2"
-    vite "3.0.9"
+    vite "3.1.0"
     yargs-parser "^21.0.1"
     zod "^3.17.3"
 
@@ -5050,13 +5050,6 @@ rimraf@^3.0.2:
   dependencies:
     glob "^7.1.3"
 
-"rollup@>=2.75.6 <2.77.0 || ~2.77.0", rollup@~2.77.0:
-  version "2.77.3"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.77.3.tgz#8f00418d3a2740036e15deb653bed1a90ee0cc12"
-  integrity sha512-/qxNTG7FbmefJWoeeYJFbHehJ2HNWnjkAFRKzWN/45eNBBF/r8lo992CwcJXEzyVxs5FmfId+vTSTQDb+bxA+g==
-  optionalDependencies:
-    fsevents "~2.3.2"
-
 rollup@^2.75.6:
   version "2.77.2"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.77.2.tgz#6b6075c55f9cc2040a5912e6e062151e42e2c4e3"
@@ -5830,19 +5823,7 @@ vfile@^5.0.0, vfile@^5.3.2:
     unist-util-stringify-position "^3.0.0"
     vfile-message "^3.0.0"
 
-vite@3.0.9:
-  version "3.0.9"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-3.0.9.tgz#45fac22c2a5290a970f23d66c1aef56a04be8a30"
-  integrity sha512-waYABTM+G6DBTCpYAxvevpG50UOlZuynR0ckTK5PawNVt7ebX6X7wNXHaGIO6wYYFXSM7/WcuFuO2QzhBB6aMw==
-  dependencies:
-    esbuild "^0.14.47"
-    postcss "^8.4.16"
-    resolve "^1.22.1"
-    rollup ">=2.75.6 <2.77.0 || ~2.77.0"
-  optionalDependencies:
-    fsevents "~2.3.2"
-
-"vite@^2.9.12 || ^3.0.0-0":
+vite@3.1.0, "vite@^2.9.12 || ^3.0.0-0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/vite/-/vite-3.1.0.tgz#3138b279072941d57e76bcf7f66f272fc6a17fe2"
   integrity sha512-YBg3dUicDpDWFCGttmvMbVyS9ydjntwEjwXRj2KBFwSB8SxmGcudo1yb8FW5+M/G86aS8x828ujnzUVdsLjs9g==
