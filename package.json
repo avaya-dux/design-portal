@@ -7,7 +7,7 @@
     "github": "yarn && yarn clean && yarn lint && yarn build && yarn test",
     "clean": "rm -rf coverage dist",
     "format": "yarn prettier --write ./src",
-    "lint": "eslint ./src",
+    "lint": "eslint src",
     "build": "astro build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "astro dev",
