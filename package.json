@@ -1,15 +1,17 @@
 {
   "name": "@avaya/design-portal",
-  "version": "3.0.0-alpha.1",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
+    "all": "yarn && yarn clean && yarn format && yarn lint && yarn build && yarn test",
+    "github": "yarn && yarn clean && yarn lint && yarn build && yarn test",
     "clean": "rm -rf coverage dist",
     "format": "yarn prettier --write ./src",
     "lint": "eslint ./src",
-    "all": "yarn && yarn clean && yarn format && yarn lint && yarn build"
+    "build": "astro build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "astro dev",
+    "preview": "astro preview"
   },
   "devDependencies": {
     "@astrojs/react": "1.1.2",

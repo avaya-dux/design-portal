@@ -1,6 +1,6 @@
 {
   "recommendations": [
-    "EditorConfig.EditorConfig",
+    "editorconfig.editorconfig",
     "alfnielsen.vsc-organize-imports",
     "astro-build.astro-vscode",
     "deque-systems.vscode-axe-linter",
@@ -10,10 +10,10 @@
     "henriiik.vscode-sort",
     "ms-vscode.vscode-typescript-next",
     "shardulm94.trailing-spaces",
-    "silvenon.mdx",
     "visualstudioexptteam.vscodeintellicode",
     "vscode-icons-team.vscode-icons",
-    "wayou.vscode-todo-highlight"
+    "wayou.vscode-todo-highlight",
+    "unifiedjs.vscode-mdx"
   ],
   "unwantedRecommendations": []
 }
