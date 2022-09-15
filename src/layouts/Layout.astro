@@ -7,7 +7,7 @@ const { title } = Astro.props as Props;
 
 import { NeoThemeProvider } from "@avaya/neo-react";
 
-import { SiteHeader } from "components";
+import { SiteHeader, SiteFooter } from "components";
 
 import "@avaya/neo-react/avaya-neo-react.css";
 ---
@@ -29,7 +29,20 @@ import "@avaya/neo-react/avaya-neo-react.css";
       <SiteHeader />
 
       <slot />
+
+      <SiteFooter />
     </NeoThemeProvider>
+
+    <style is:global>
+      a {
+        text-decoration: none;
+      }
+
+      /* TODO: fix this in css-lib */
+      nav.neo-navbar .neo-nav--left {
+        align-items: unset;
+      }
+    </style>
 
     <style>
       body {

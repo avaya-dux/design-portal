@@ -13,7 +13,9 @@ export const SiteHeader = () => {
       navButtons={[
         <Button variant="tertiary">What's New</Button>,
         <Button variant="tertiary">Guidelines</Button>,
-        <Button variant="tertiary">Components</Button>,
+        <Button variant="tertiary">
+          <a href="/components-placeholder">Components</a>
+        </Button>,
         <Button variant="tertiary">Icons</Button>,
         <Button variant="tertiary">FAQs</Button>,
         <NavbarButton icon="search" aria-label="Search Icon" />,

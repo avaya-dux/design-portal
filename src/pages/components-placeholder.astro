@@ -1,0 +1,29 @@
+---
+import { Layout } from "layouts";
+import { PageTitle, Description, Card } from "components";
+import { Button } from "@avaya/neo-react";
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <PageTitle>Placeholder</PageTitle>
+
+    <Description>
+      Neo is a library of flexible design components and guidelines, built upon
+      our core principles and ready to be integrated into your digital products.
+    </Description>
+
+    <Button>Getting Started</Button>
+
+    <ul class="link-card-grid">
+      <Card
+        href="/"
+        title="Home"
+        body="Go Home"
+      />
+    </ul>
+  </main>
+</Layout>
+
+<style>
+</style>
