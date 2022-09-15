@@ -2,6 +2,9 @@
 import { Layout } from "layouts";
 import { PageTitle, Description, Card } from "components";
 import { Button } from "@avaya/neo-react";
+
+const headerHeight = "65px";
+const footerHeight = "58px";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -45,8 +48,8 @@ import { Button } from "@avaya/neo-react";
   </main>
 </Layout>
 
-<style>
+<style define:vars={{ headerHeight, footerHeight }}>
   main {
-    min-height: calc(100vh - 65px - 58px);
+    min-height: calc(100vh - var(--headerHeight) - var(--footerHeight));
   }
 </style>

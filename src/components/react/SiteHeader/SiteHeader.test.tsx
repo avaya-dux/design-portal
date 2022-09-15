@@ -14,7 +14,10 @@ describe("SiteHeader", () => {
     expect(logoElement).toBeDefined();
 
     const navButtons = screen.getAllByRole("button");
-    expect(navButtons).toHaveLength(6);
+    expect(navButtons).toHaveLength(5);
+
+    const navLinks = screen.getAllByRole("link");
+    expect(navLinks).toHaveLength(3);
   });
 
   it("passes basic axe compliance", async () => {
