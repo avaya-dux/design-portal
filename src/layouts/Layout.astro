@@ -23,9 +23,8 @@ import "@avaya/neo-react/avaya-neo-react.css";
   </head>
 
   <body>
-    <!-- TODO: BUG: NeoThemeProvider is throwing a error: "Warning: Invalid hook call" -->
-    <!-- NOTE: NeoThemeProvider should be using a `dynamic` mode -->
-    <NeoThemeProvider initialMode="light">
+    <!-- TODO: BUG: NeoThemeProvider is throwing a error: "Warning: Invalid hook call". But only in the terminal. -->
+    <NeoThemeProvider initialMode="dynamic">
       <SiteHeader />
 
       <slot />
