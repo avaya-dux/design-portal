@@ -1,0 +1,26 @@
+---
+import { Button, Navbar, NavbarButton } from "@avaya/neo-react";
+---
+
+<Navbar
+  logo={(
+    <a href="/">
+      <picture>
+        <source media="(max-width: 1024px)" srcset="./imgs/logo-mobile.svg" />
+        <source
+          media="(max-width: 1440px)"
+          srcset="./imgs/logo-condensed.svg"
+        />
+        <img src="./imgs/logo-full.svg" alt="Avaya Logo" />
+      </picture>
+    </a>
+  )}
+  navButtons={[
+    <Button variant="tertiary">What's New</Button>,
+    <Button variant="tertiary">Guidelines</Button>,
+    <a href="/components-placeholder">Components</a>,
+    <Button variant="tertiary">Icons</Button>,
+    <Button variant="tertiary">FAQs</Button>,
+    <NavbarButton icon="search" aria-label="Search Icon" />,
+  ]}
+/>

@@ -1,5 +1,5 @@
 import Card from "./Card.astro";
-export { Card };
 
-import SiteFooter from "./SiteFooter.astro";
-export { SiteFooter };
+export * from "./SiteFooter";
+export * from "./SiteHeader";
+export { Card };
