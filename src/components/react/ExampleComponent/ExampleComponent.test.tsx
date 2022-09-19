@@ -3,14 +3,14 @@ import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import { vi } from "vitest";
 
-import { Button } from "./Button";
+import { ExampleComponent } from "./";
 
-describe("Button", () => {
+describe("ExampleComponent", () => {
   window.alert = () => null;
   const user = userEvent.setup();
 
   it("fully renders without exploding", () => {
-    render(<Button>Test</Button>);
+    render(<ExampleComponent>Test</ExampleComponent>);
 
     const rootElement = screen.getByRole("button");
     expect(rootElement).toBeDefined();
@@ -18,7 +18,7 @@ describe("Button", () => {
 
   it("accepts an `onclick` event which fires appropriately", async () => {
     const clickSpy = vi.fn();
-    render(<Button onClick={clickSpy}>Test</Button>);
+    render(<ExampleComponent onClick={clickSpy}>Test</ExampleComponent>);
     expect(clickSpy).not.toHaveBeenCalled();
 
     await user.click(screen.getByRole("button"));
@@ -26,7 +26,7 @@ describe("Button", () => {
   });
 
   it("passes basic axe compliance", async () => {
-    const { container } = render(<Button>Test</Button>);
+    const { container } = render(<ExampleComponent>Test</ExampleComponent>);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
