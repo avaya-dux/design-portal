@@ -29,9 +29,9 @@
     "@typescript-eslint/eslint-plugin": "5.37.0",
     "@typescript-eslint/parser": "5.37.0",
     "@vitejs/plugin-react": "2.1.0",
-    "@vitest/coverage-c8": "0.23.2",
-    "@vitest/ui": "0.23.2",
-    "astro": "1.2.4",
+    "@vitest/coverage-c8": "0.23.4",
+    "@vitest/ui": "0.23.4",
+    "astro": "1.2.6",
     "eslint": "8.23.1",
     "eslint-plugin-astro": "0.19.0",
     "eslint-plugin-jsx-a11y": "6.6.1",
@@ -44,7 +44,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "svelte": "3.50.1",
-    "vitest": "0.23.2",
+    "vitest": "0.23.4",
     "vue": "3.2.39"
   },
   "dependencies": {
