@@ -1,9 +1,5 @@
----
-import { Button, Navbar, NavbarButton } from "@avaya/neo-react";
----
-
-<Navbar
-  logo={(
+<nav class="neo-navbar">
+  <div class="neo-nav--left">
     <a href="/">
       <picture>
         <source media="(max-width: 1024px)" srcset="./imgs/logo-mobile.svg" />
@@ -14,13 +10,30 @@ import { Button, Navbar, NavbarButton } from "@avaya/neo-react";
         <img src="./imgs/logo-full.svg" alt="Avaya Logo" />
       </picture>
     </a>
-  )}
-  navButtons={[
-    <Button variant="tertiary">What's New</Button>,
-    <Button variant="tertiary">Guidelines</Button>,
-    <a href="/components-placeholder">Components</a>,
-    <Button variant="tertiary">Icons</Button>,
-    <Button variant="tertiary">FAQs</Button>,
-    <NavbarButton icon="search" aria-label="Search Icon" />,
-  ]}
-/>
+  </div>
+
+  <div class="neo-nav">
+    <a class="neo-nav-link-btn" href="/components-placeholder">Components</a>
+  </div>
+</nav>
+
+<style>
+  .neo-nav--left {
+    display: flex;
+    align-items: center;
+  }
+
+  .neo-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .neo-nav-link-btn {
+    margin-right: 1rem;
+  }
+  .neo-navbar .neo-nav .neo-nav-link-btn:active {
+    color: #000;
+  }
+</style>
