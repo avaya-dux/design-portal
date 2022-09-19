@@ -1,55 +1,18 @@
 ---
 import { Layout } from "layouts";
-import { PageTitle, Description, Card } from "components";
+import { PageTitle, Description } from "components";
 import { Button } from "@avaya/neo-react";
-
-const headerHeight = "65px";
-const footerHeight = "58px";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main>
-    <PageTitle>Introducing Neo</PageTitle>
+  <PageTitle>Introducing Neo</PageTitle>
 
-    <h2>Avaya's Design System</h2>
+  <h2>Avaya's Design System</h2>
 
-    <Description>
-      Neo is a library of flexible design components and guidelines, built upon
-      our core principles and ready to be integrated into your digital products.
-    </Description>
+  <Description>
+    Neo is a library of flexible design components and guidelines, built upon
+    our core principles and ready to be integrated into your digital products.
+  </Description>
 
-    <Button>Getting Started</Button>
-
-    <ul class="link-card-grid">
-      <Card
-        href="https://docs.astro.build/"
-        title="Documentation"
-        body="Learn how Astro works and explore the official API docs."
-      />
-
-      <Card
-        href="https://astro.build/integrations/"
-        title="Integrations"
-        body="Supercharge your project with new frameworks and libraries."
-      />
-
-      <Card
-        href="https://astro.build/themes/"
-        title="Themes"
-        body="Explore a galaxy of community-built starter themes."
-      />
-
-      <Card
-        href="https://astro.build/chat/"
-        title="Chat"
-        body="Come say hi to our amazing Discord community. ❤️"
-      />
-    </ul>
-  </main>
+  <Button>Getting Started</Button>
 </Layout>
-
-<style define:vars={{ headerHeight, footerHeight }}>
-  main {
-    min-height: calc(100vh - var(--headerHeight) - var(--footerHeight));
-  }
-</style>

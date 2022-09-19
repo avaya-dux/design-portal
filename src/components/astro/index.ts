@@ -1,5 +1,4 @@
-import Card from "./Card.astro";
+import SiteFooter from "./SiteFooter.astro";
+import SiteHeader from "./SiteHeader.astro";
 
-export * from "./SiteFooter";
-export * from "./SiteHeader";
-export { Card };
+export { SiteFooter, SiteHeader };

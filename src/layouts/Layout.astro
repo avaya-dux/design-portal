@@ -10,6 +10,9 @@ import { NeoThemeProvider } from "@avaya/neo-react";
 import { SiteHeader, SiteFooter } from "components";
 
 import "@avaya/neo-react/avaya-neo-react.css";
+
+const headerHeight = "65px";
+const footerHeight = "58px";
 ---
 
 <!DOCTYPE html>
@@ -27,14 +30,20 @@ import "@avaya/neo-react/avaya-neo-react.css";
     <NeoThemeProvider initialMode="dynamic">
       <SiteHeader />
 
-      <slot />
+      <main>
+        <slot />
+      </main>
 
       <SiteFooter />
     </NeoThemeProvider>
 
-    <style is:global>
+    <style is:global define:vars={{ headerHeight, footerHeight }}>
       a {
         text-decoration: none;
+      }
+
+      main {
+        min-height: calc(100vh - var(--headerHeight) - var(--footerHeight));
       }
 
       /* TODO: fix this in css-lib */
