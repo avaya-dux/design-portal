@@ -27,7 +27,7 @@ const footerHeight = "58px";
 
   <body>
     <NeoThemeProvider initialMode="dynamic">
-      <SiteHeader />
+      <SiteHeader pathname={Astro.url.pathname} client:load />
 
       <main id="main-content">
         <slot />
@@ -41,20 +41,28 @@ const footerHeight = "58px";
         text-decoration: none;
       }
 
-      main {
-        min-height: calc(100vh - var(--headerHeight) - var(--footerHeight));
-      }
-
       /* TODO: fix this in css-lib */
       nav.neo-navbar .neo-nav--left {
         height: auto;
         align-items: unset;
+      }
+      nav.neo-navbar .neo-nav .neo-form-control.neo-input-icon {
+        display: flex;
+        align-items: center;
+        padding-left: 32px;
+        padding-right: 32px;
       }
     </style>
 
     <style>
       body {
         margin: 0;
+      }
+
+      body main {
+        min-height: calc(100vh - var(--headerHeight) - var(--footerHeight));
+        max-width: 60rem;
+        margin: auto;
       }
     </style>
   </body>
