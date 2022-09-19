@@ -1,8 +1,13 @@
 import { TopNav } from "@avaya/neo-react";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
-export const SiteHeader = () => {
+export const SiteHeader = ({ pathname }: { pathname: string }) => {
   const [, setSearch] = useState("");
+
+  const isActiveLink = useCallback(
+    (link: string) => pathname.startsWith(link),
+    [pathname]
+  );
 
   return (
     <TopNav
@@ -27,23 +32,31 @@ export const SiteHeader = () => {
         </TopNav.SkipNav>
       }
     >
-      <TopNav.LinkButton href="/whats-new">
+      <TopNav.LinkButton href="/whats-new" active={isActiveLink("/whats-new")}>
         What's New
       </TopNav.LinkButton>
 
-      <TopNav.LinkButton href="/guidelines">
+      <TopNav.LinkButton
+        href="/guidelines"
+        active={isActiveLink("/guidelines")}
+      >
         Guidelines
       </TopNav.LinkButton>
 
-      <TopNav.LinkButton href="/components-placeholder">
+      <TopNav.LinkButton
+        href="/components"
+        active={isActiveLink("/components")}
+      >
         Components
       </TopNav.LinkButton>
 
-      <TopNav.LinkButton href="/icons">
+      <TopNav.LinkButton href="/icons" active={isActiveLink("/icons")}>
         Icons
       </TopNav.LinkButton>
 
-      <TopNav.LinkButton href="/faqs">FAQs</TopNav.LinkButton>
+      <TopNav.LinkButton href="/faqs" active={isActiveLink("/faqs")}>
+        FAQs
+      </TopNav.LinkButton>
 
       <TopNav.Search onChange={(e) => setSearch(e.currentTarget.value)} />
     </TopNav>
