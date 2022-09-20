@@ -13,9 +13,9 @@ describe("SiteHeader", () => {
   const searchResultQuery = "[role='dialog'] a";
   const pagesMockData: PageAstroInstance[] = [
     {
-      url: "/",
+      url: "",
       title: "Home",
-      description: "Home page",
+      description: "Neo landing page",
       default: {} as AstroComponentFactory,
       file: "",
     },
@@ -47,6 +47,17 @@ describe("SiteHeader", () => {
       const { container } = render(
         <SiteHeader pathname="/" pages={pagesMockData} />
       );
+
+      expect(container.querySelector(searchResultQuery)).toBeNull();
+    });
+
+    it("should not show search results when search returns no results", async () => {
+      const { container } = render(
+        <SiteHeader pathname="/" pages={pagesMockData} />
+      );
+
+      const searchInput = screen.getByRole(searchRole);
+      await user.type(searchInput, "asdfasdfasdf");
 
       expect(container.querySelector(searchResultQuery)).toBeNull();
     });
