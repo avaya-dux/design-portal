@@ -10,6 +10,7 @@ describe("SiteHeader", () => {
   const user = userEvent.setup();
 
   const searchRole = "textbox"; // TODO: should be "search"
+  const searchResultQuery = "[role='dialog'] a";
   const pagesMockData: PageAstroInstance[] = [
     {
       url: "/",
@@ -47,7 +48,7 @@ describe("SiteHeader", () => {
         <SiteHeader pathname="/" pages={pagesMockData} />
       );
 
-      expect(container.querySelector("[role='dialog'] a")).toBeNull();
+      expect(container.querySelector(searchResultQuery)).toBeNull();
     });
 
     it("should show search results when search input is not empty", async () => {
@@ -58,7 +59,7 @@ describe("SiteHeader", () => {
       const searchInput = screen.getByRole(searchRole);
       await user.type(searchInput, "home");
 
-      expect(container.querySelector("[role='dialog'] a")).not.toBeNull();
+      expect(container.querySelector(searchResultQuery)).not.toBeNull();
     });
 
     it("allows tabbing to search results", async () => {
@@ -81,10 +82,24 @@ describe("SiteHeader", () => {
       const searchInput = screen.getByRole(searchRole);
 
       await user.type(searchInput, "home");
-      expect(container.querySelector("[role='dialog'] a")).not.toBeNull();
+      expect(container.querySelector(searchResultQuery)).not.toBeNull();
 
       await user.clear(searchInput);
-      expect(container.querySelector("[role='dialog'] a")).toBeNull();
+      expect(container.querySelector(searchResultQuery)).toBeNull();
+    });
+
+    it("closes `Sheet` when 'Close' button is clicked", async () => {
+      const { container } = render(
+        <SiteHeader pathname="/" pages={pagesMockData} />
+      );
+
+      const searchInput = screen.getByRole(searchRole);
+      await user.type(searchInput, "home");
+      expect(container.querySelector(searchResultQuery)).not.toBeNull();
+
+      const closeButton = screen.getByRole("button", { name: "Close" });
+      await user.click(closeButton);
+      expect(container.querySelector(searchResultQuery)).toBeNull();
     });
   });
 
