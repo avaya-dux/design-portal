@@ -4,7 +4,8 @@ import { renderToString as renderToString$1 } from 'vue/server-renderer';
 import React, { createElement, useState, useEffect, useCallback } from 'react';
 import ReactDOM from 'react-dom/server';
 import { escape } from 'html-escaper';
-/* empty css                           */import * as $$module3 from '@avaya/neo-react';
+import { s as styles } from './chunks/a34db816.6c098c2b.mjs';
+import * as $$module3 from '@avaya/neo-react';
 import { Image, TopNav, Sheet, Button, NeoThemeProvider } from '@avaya/neo-react';
 import { jsx, jsxs } from 'react/jsx-runtime';
 import 'mime';
@@ -212,8 +213,11 @@ async function renderToPipeableStreamAsync(vnode) {
 async function renderToStaticNodeStreamAsync(vnode) {
 	const Writable = await getNodeWritable();
 	let html = '';
-	return new Promise((resolve) => {
+	return new Promise((resolve, reject) => {
 		let stream = ReactDOM.renderToStaticNodeStream(vnode);
+		stream.on('error', (err) => {
+			reject(err);
+		});
 		stream.pipe(
 			new Writable({
 				write(chunk, _encoding, callback) {
@@ -261,7 +265,7 @@ const _renderer1 = {
 	renderToStaticMarkup: renderToStaticMarkup$1,
 };
 
-const ASTRO_VERSION = "1.2.7";
+const ASTRO_VERSION = "1.2.8";
 function createDeprecatedFetchContentFn() {
   return () => {
     throw new Error("Deprecated: Astro.fetchContent() has been replaced with Astro.glob().");
@@ -1602,10 +1606,8 @@ const SiteHeader = ({
   useEffect(() => {
     if (search) {
       const lowerCaseSearch = search.toLowerCase();
-      console.log("Search: ", lowerCaseSearch);
-      const filteredPages = pages.filter((page) => page.title.includes(lowerCaseSearch) || page.description.includes(lowerCaseSearch));
-      console.log("Matching pages: ", filteredPages);
-      setOptions(filteredPages.length ? filteredPages.map((page) => page.url || "BUG: goofed") : []);
+      const filteredPages = pages.filter((page) => page.title.toLowerCase().includes(lowerCaseSearch) || page.description.toLowerCase().includes(lowerCaseSearch));
+      setOptions(filteredPages.length ? filteredPages : []);
     } else {
       setOptions([]);
     }
@@ -1661,25 +1663,19 @@ const SiteHeader = ({
       onChange: (e) => setSearch(e.currentTarget.value),
       value: search
     }), /* @__PURE__ */ jsxs(Sheet, {
-      className: "neo-table__filters--sheet",
+      className: styles["search-sheet-results"],
       open: options.length > 0,
       title: "Search Results",
-      children: [/* @__PURE__ */ jsx("section", {
-        children: /* @__PURE__ */ jsx("ul", {
-          children: options.map((option) => /* @__PURE__ */ jsx("li", {
-            children: option
-          }))
-        })
-      }), /* @__PURE__ */ jsx("div", {
-        className: "neo-table__filters--sheet__footer",
-        style: {
-          flexWrap: "wrap"
-        },
-        children: /* @__PURE__ */ jsx(Button, {
-          onClick: () => setSearch(""),
-          size: "wide",
-          children: "Close"
-        })
+      children: [/* @__PURE__ */ jsx("div", {
+        className: styles["link-container"],
+        children: options.map((option, i) => /* @__PURE__ */ jsx("a", {
+          href: option.url || "/",
+          children: option.title
+        }, i))
+      }), /* @__PURE__ */ jsx(Button, {
+        onClick: () => setSearch(""),
+        size: "wide",
+        children: "Close"
       })]
     })]
   });
@@ -1703,16 +1699,16 @@ const $$Layout = createComponent(async ($$result, $$props, $$slots) => {
   const footerHeight = "58px";
   const pages = (await Astro2.glob(/* #__PURE__ */ Object.assign({"../components/astro/SiteFooter.astro": () => Promise.resolve().then(() => SiteFooter),"../pages/components/buttons.astro": () => Promise.resolve().then(() => _page2),"../pages/components/index.astro": () => Promise.resolve().then(() => _page1),"../pages/faqs.astro": () => Promise.resolve().then(() => _page6),"../pages/guidelines.astro": () => Promise.resolve().then(() => _page3),"../pages/icons.astro": () => Promise.resolve().then(() => _page5),"../pages/index.astro": () => Promise.resolve().then(() => _page0),"../pages/whats-new.astro": () => Promise.resolve().then(() => _page4)}), () => "../**/*.astro")).filter((page) => page.title).map((page) => ({
     ...page,
-    title: page.title.toLowerCase(),
-    description: page.description.toLowerCase()
+    title: page.title,
+    description: page.description
   }));
   const $$definedVars = defineStyleVars([{ headerHeight, footerHeight }]);
   const STYLES = [
-    { props: { "define:vars": { headerHeight, footerHeight }, "data-astro-id": "V7DMEILF" }, children: `body{margin:0}body main:where(.astro-V7DMEILF){min-height:calc(100vh - var(--headerHeight) - var(--footerHeight));max-width:60rem;margin:auto}` }
+    { props: { "define:vars": { headerHeight, footerHeight }, "data-astro-id": "6LNQFR6E" }, children: `body{margin:0}body main:where(.astro-6LNQFR6E){min-height:calc(100vh - var(--headerHeight) - var(--footerHeight));max-width:60rem;margin:auto}` }
   ];
   for (const STYLE of STYLES)
     $$result.styles.add(STYLE);
-  return renderTemplate`<html lang="en" class="astro-V7DMEILF"${addAttribute($$definedVars, "style")}>
+  return renderTemplate`<html lang="en" class="astro-6LNQFR6E"${addAttribute($$definedVars, "style")}>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
@@ -1721,10 +1717,10 @@ const $$Layout = createComponent(async ($$result, $$props, $$slots) => {
     <title>${title}</title>
   ${renderHead($$result)}</head>
 
-  <body class="astro-V7DMEILF">
-    ${renderComponent($$result, "NeoThemeProvider", NeoThemeProvider, { "initialMode": "dynamic", "class": "astro-V7DMEILF" }, { "default": () => renderTemplate`${renderComponent($$result, "SiteHeader", SiteHeader, { "pathname": Astro2.url.pathname, "pages": pages, "client:load": true, "client:component-hydration": "load", "client:component-path": "components", "client:component-export": "SiteHeader", "class": "astro-V7DMEILF" })}<main id="main-content" class="astro-V7DMEILF">
+  <body class="astro-6LNQFR6E">
+    ${renderComponent($$result, "NeoThemeProvider", NeoThemeProvider, { "initialMode": "dynamic", "class": "astro-6LNQFR6E" }, { "default": () => renderTemplate`${renderComponent($$result, "SiteHeader", SiteHeader, { "pathname": Astro2.url.pathname, "pages": pages, "client:load": true, "client:component-hydration": "load", "client:component-path": "components", "client:component-export": "SiteHeader", "class": "astro-6LNQFR6E" })}<main id="main-content" class="astro-6LNQFR6E">
         ${renderSlot($$result, $$slots["default"])}
-      </main>${renderComponent($$result, "SiteFooter", $$SiteFooter, { "class": "astro-V7DMEILF" })}` })}
+      </main>${renderComponent($$result, "SiteFooter", $$SiteFooter, { "class": "astro-6LNQFR6E" })}` })}
 
     
 
@@ -1741,7 +1737,7 @@ const $$module1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty(
 const $$metadata$6 = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/index.astro", { modules: [{ module: $$module1, specifier: "layouts", assert: {} }, { module: $$module2, specifier: "components", assert: {} }, { module: $$module3, specifier: "@avaya/neo-react", assert: {} }], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
 const $$Astro$6 = createAstro("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/index.astro", "https://design.avayacloud.com/", "file:///Users/jsebast/dev/avaya-dux/design-portal/");
 const title$6 = "Homepage";
-const description$6 = "This is the homepage";
+const description$6 = "This is the landing page for Neo";
 const $$Index$1 = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$6, $$props, $$slots);
   Astro2.self = $$Index$1;
@@ -1976,7 +1972,7 @@ function deserializeManifest(serializedManifest) {
   };
 }
 
-const _manifest = Object.assign(deserializeManifest({"adapterName":"@astrojs/netlify/functions","routes":[{"file":"","links":["assets/a34db816.beb0472d.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/","type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.beb0472d.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/components","type":"page","pattern":"^\\/components\\/?$","segments":[[{"content":"components","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/components/index.astro","pathname":"/components","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.beb0472d.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/components/buttons","type":"page","pattern":"^\\/components\\/buttons\\/?$","segments":[[{"content":"components","dynamic":false,"spread":false}],[{"content":"buttons","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/components/buttons.astro","pathname":"/components/buttons","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.beb0472d.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/guidelines","type":"page","pattern":"^\\/guidelines\\/?$","segments":[[{"content":"guidelines","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/guidelines.astro","pathname":"/guidelines","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.beb0472d.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/whats-new","type":"page","pattern":"^\\/whats-new\\/?$","segments":[[{"content":"whats-new","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/whats-new.astro","pathname":"/whats-new","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.beb0472d.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/icons","type":"page","pattern":"^\\/icons\\/?$","segments":[[{"content":"icons","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/icons.astro","pathname":"/icons","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.beb0472d.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/faqs","type":"page","pattern":"^\\/faqs\\/?$","segments":[[{"content":"faqs","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/faqs.astro","pathname":"/faqs","_meta":{"trailingSlash":"ignore"}}}],"site":"https://design.avayacloud.com/","base":"/","markdown":{"drafts":false,"syntaxHighlight":"shiki","shikiConfig":{"langs":[],"theme":"github-dark","wrap":false},"remarkPlugins":[],"rehypePlugins":[],"remarkRehype":{},"extendDefaultPlugins":false,"isAstroFlavoredMd":false},"pageMap":null,"renderers":[],"entryModules":{"\u0000@astrojs-ssr-virtual-entry":"entry.mjs","components":"index.756f0165.js","@astrojs/react/client.js":"client.7fee35b3.js","@astrojs/svelte/client.js":"client.b27523fa.js","@astrojs/vue/client.js":"client.f35f42c9.js","astro:scripts/page.js":"page.3aa82516.js","astro:scripts/before-hydration.js":""},"assets":["/assets/a34db816.beb0472d.css","/client.7fee35b3.js","/client.b27523fa.js","/client.f35f42c9.js","/favicon.ico","/index.756f0165.js","/page.3aa82516.js","/chunks/index.4167e04a.js","/imgs/avaya-logo-footer.svg","/imgs/logo-condensed.svg","/imgs/logo-full.svg","/imgs/logo-mobile.svg","/page.3aa82516.js"]}), {
+const _manifest = Object.assign(deserializeManifest({"adapterName":"@astrojs/netlify/functions","routes":[{"file":"","links":["assets/a34db816.5b49a56b.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/","type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.5b49a56b.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/components","type":"page","pattern":"^\\/components\\/?$","segments":[[{"content":"components","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/components/index.astro","pathname":"/components","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.5b49a56b.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/components/buttons","type":"page","pattern":"^\\/components\\/buttons\\/?$","segments":[[{"content":"components","dynamic":false,"spread":false}],[{"content":"buttons","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/components/buttons.astro","pathname":"/components/buttons","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.5b49a56b.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/guidelines","type":"page","pattern":"^\\/guidelines\\/?$","segments":[[{"content":"guidelines","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/guidelines.astro","pathname":"/guidelines","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.5b49a56b.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/whats-new","type":"page","pattern":"^\\/whats-new\\/?$","segments":[[{"content":"whats-new","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/whats-new.astro","pathname":"/whats-new","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.5b49a56b.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/icons","type":"page","pattern":"^\\/icons\\/?$","segments":[[{"content":"icons","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/icons.astro","pathname":"/icons","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.5b49a56b.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/faqs","type":"page","pattern":"^\\/faqs\\/?$","segments":[[{"content":"faqs","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/faqs.astro","pathname":"/faqs","_meta":{"trailingSlash":"ignore"}}}],"site":"https://design.avayacloud.com/","base":"/","markdown":{"drafts":false,"syntaxHighlight":"shiki","shikiConfig":{"langs":[],"theme":"github-dark","wrap":false},"remarkPlugins":[],"rehypePlugins":[],"remarkRehype":{},"extendDefaultPlugins":false,"isAstroFlavoredMd":false},"pageMap":null,"renderers":[],"entryModules":{"\u0000@astrojs-ssr-virtual-entry":"entry.mjs","components":"index.7704eaf9.js","@astrojs/react/client.js":"client.7fee35b3.js","@astrojs/svelte/client.js":"client.b27523fa.js","@astrojs/vue/client.js":"client.f35f42c9.js","astro:scripts/page.js":"page.3aa82516.js","astro:scripts/before-hydration.js":""},"assets":["/assets/a34db816.5b49a56b.css","/client.7fee35b3.js","/client.b27523fa.js","/client.f35f42c9.js","/favicon.ico","/index.7704eaf9.js","/page.3aa82516.js","/chunks/SiteHeader.module.b824f717.js","/chunks/index.4167e04a.js","/imgs/avaya-logo-footer.svg","/imgs/logo-condensed.svg","/imgs/logo-full.svg","/imgs/logo-mobile.svg","/page.3aa82516.js"]}), {
 	pageMap: pageMap,
 	renderers: renderers
 });
