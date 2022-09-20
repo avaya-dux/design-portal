@@ -7,12 +7,20 @@ const { title } = Astro.props as Props;
 
 import { NeoThemeProvider } from "@avaya/neo-react";
 
-import { SiteHeader, SiteFooter } from "components";
+import { SiteHeader, SiteFooter, PageAstroInstance } from "components";
 
 import "@avaya/neo-react/avaya-neo-react.css";
 
 const headerHeight = "65px";
 const footerHeight = "58px";
+
+const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
+  .filter((page) => page.title)
+  .map((page) => ({
+    ...page,
+    title: page.title.toLowerCase(),
+    description: page.description.toLowerCase(),
+  }));
 ---
 
 <!DOCTYPE html>
@@ -27,7 +35,7 @@ const footerHeight = "58px";
 
   <body>
     <NeoThemeProvider initialMode="dynamic">
-      <SiteHeader pathname={Astro.url.pathname} client:load />
+      <SiteHeader pathname={Astro.url.pathname} pages={pages} client:load />
 
       <main id="main-content">
         <slot />
@@ -36,7 +44,7 @@ const footerHeight = "58px";
       <SiteFooter />
     </NeoThemeProvider>
 
-    <style is:global define:vars={{ headerHeight, footerHeight }}>
+    <style is:global>
       a {
         text-decoration: none;
       }
@@ -54,7 +62,7 @@ const footerHeight = "58px";
       }
     </style>
 
-    <style>
+    <style define:vars={{ headerHeight, footerHeight }}>
       body {
         margin: 0;
       }
