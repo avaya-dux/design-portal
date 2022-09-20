@@ -1,20 +1,55 @@
 ---
+import { Code } from "astro/components";
+
+import { PageTitle, Description, SectionHeader } from "components";
 import { Layout } from "layouts";
-import { PageTitle, Description } from "components";
-import { Button } from "@avaya/neo-react";
 
 export const title = "Components";
 export const description = "A collection of components for the Astro framework";
 ---
 
 <Layout title="Welcome to Astro.">
-  <PageTitle>Components Placeholder</PageTitle>
+  <PageTitle>Setup Web Components</PageTitle>
 
   <Description>
-    Placeholder page. Will most likely become the "Setup" page.
+    Neo is a CSS framework built with reusable user interface components, guided
+    by clear user experience standards, that are assembled to create a true
+    cohesive experience for all Avaya products. Neo is set to support the latest
+    2 versions of modern browsers.
+  </Description>
+  <Description>
+    Can't find what you're looking for? Make a request for an icon, component or
+    guideline here.
   </Description>
 
-  <Button>Example</Button>
-  <Button>Example</Button>
-  <Button>Example</Button>
+  <SectionHeader id="compiled-css">Compiled CSS</SectionHeader>
+  <Description>
+    Download ready-to-use compiled .css files for Neo to easily drop into your
+    project. This includes a separate stylesheet for icons.
+  </Description>
+  <Description>
+    A word on fonts: Neo comes bundled with font family support for Latin, Greek
+    and Cyrillic-based languages. However, support for text in Arabic, Hebrew,
+    Chinese, Japanese and Korean at various font weights is available via
+    separate stylesheets for each.
+  </Description>
+
+  <SectionHeader id="install-instructions">
+    Install CSS via Node Package Manager
+  </SectionHeader>
+  <Description>
+    To add the latest version of Neo to your project via Node Package Manager
+    (npm), simply run the following command:
+  </Description>
+  <Code code="npm install @avaya/neo" lang="bash" />
+  <Description>
+    The package contains both compiled and minified versions of the Neo .css
+    file, as well as separate stylesheets for both icons and multilingual font
+    support.
+  </Description>
+  <Description>
+    The package contains both compiled and minified versions of the Neo .css
+    file, as well as separate stylesheets for both icons and multilingual font
+    support.
+  </Description>
 </Layout>
