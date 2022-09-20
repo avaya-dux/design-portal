@@ -114,22 +114,17 @@ export const SiteHeader = ({
         open={options.length > 0}
         title="Search Results"
       >
-        <section>
-          <div className={styles["link-container"]}>
-            {options.map((option) => (
-              <a href={option.url}>{option.title}</a>
-            ))}
-          </div>
-        </section>
-
-        <div
-          className="neo-table__filters--sheet__footer"
-          style={{ flexWrap: "wrap" }}
-        >
-          <Button onClick={() => setSearch("")} size="wide">
-            Close
-          </Button>
+        <div className={styles["link-container"]}>
+          {options.map((option, i) => (
+            <a href={option.url || "/"} key={i}>
+              {option.title}
+            </a>
+          ))}
         </div>
+
+        <Button onClick={() => setSearch("")} size="wide">
+          Close
+        </Button>
       </Sheet>
     </TopNav>
   );
