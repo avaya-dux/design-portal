@@ -10,7 +10,7 @@
 ![Coverage branches](./badges/badge-branches.svg)
 ![Coverage statements](./badges/badge-statements.svg)
 
-# Welcome to the Design Portal V3
+# Welcome to the [Design Portal V3](https://design-portal-vnext.netlify.app/)
 
 > this is a "v-next" of the Design Portal and is a work in progress
 
@@ -38,6 +38,12 @@ Any static assets, like images, should be placed in the `public/` directory.
 
 **When adding a new page**, you _must_ add an exported `title` and `description`. This is what the "Search" component uses to populate itself.
 
-## Other Notes
+## guidelines
+
+Please see [these readmes](https://github.com/avaya-dux/neo-react-library/tree/main/readmes) for general guidelines (PR Best Practices, Dev and A11y Guidelines, ect.)
+
+See [this readme](./readmes/periphery-tech.md) for notes on tech specific to this code base.
+
+## other notes
 
 [CodeSee Diagram](https://app.codesee.io/maps/public/1cb8aa50-346c-11ed-8880-add58adad48c)
