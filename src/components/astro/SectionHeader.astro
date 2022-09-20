@@ -1,0 +1,23 @@
+---
+import { Icon } from "@avaya/neo-react";
+
+export interface Props {
+  id: string;
+}
+
+const { id } = Astro.props as Props;
+---
+
+<a href={`#${id}`}>
+  <h2 class="section-heading neo-bold" id={id}>
+    <slot />
+
+    <Icon icon="link" aria-label="hyperlink icon" />
+  </h2>
+</a>
+
+<style>
+  h2.section-heading {
+    padding-bottom: 1rem;
+  }
+</style>
