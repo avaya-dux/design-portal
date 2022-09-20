@@ -1,14 +1,17 @@
 import netlify from "@astrojs/netlify/functions";
+import prefetch from "@astrojs/prefetch";
 import react from "@astrojs/react";
 import svelte from "@astrojs/svelte";
 import vue from "@astrojs/vue";
 import { defineConfig } from "astro/config";
 
+// why prefetch: https://docs.astro.build/en/guides/integrations-guide/prefetch/#why-prefetch
+
 export default defineConfig({
   site: "https://design.avayacloud.com/",
   adapter: netlify(),
   output: "server",
-  integrations: [react(), svelte(), vue()],
+  integrations: [react(), svelte(), vue(), prefetch()],
   vite: {
     server: {
       open: true,

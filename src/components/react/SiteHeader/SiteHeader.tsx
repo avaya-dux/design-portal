@@ -32,13 +32,18 @@ export const SiteHeader = ({ pathname }: { pathname: string }) => {
         </TopNav.SkipNav>
       }
     >
-      <TopNav.LinkButton href="/whats-new" active={isActiveLink("/whats-new")}>
+      <TopNav.LinkButton
+        href="/whats-new"
+        active={isActiveLink("/whats-new")}
+        rel="prefetch"
+      >
         What's New
       </TopNav.LinkButton>
 
       <TopNav.LinkButton
         href="/guidelines"
         active={isActiveLink("/guidelines")}
+        rel="prefetch"
       >
         Guidelines
       </TopNav.LinkButton>
@@ -46,15 +51,24 @@ export const SiteHeader = ({ pathname }: { pathname: string }) => {
       <TopNav.LinkButton
         href="/components"
         active={isActiveLink("/components")}
+        rel="prefetch"
       >
         Components
       </TopNav.LinkButton>
 
-      <TopNav.LinkButton href="/icons" active={isActiveLink("/icons")}>
+      <TopNav.LinkButton
+        href="/icons"
+        active={isActiveLink("/icons")}
+        rel="prefetch"
+      >
         Icons
       </TopNav.LinkButton>
 
-      <TopNav.LinkButton href="/faqs" active={isActiveLink("/faqs")}>
+      <TopNav.LinkButton
+        href="/faqs"
+        active={isActiveLink("/faqs")}
+        rel="prefetch"
+      >
         FAQs
       </TopNav.LinkButton>
 

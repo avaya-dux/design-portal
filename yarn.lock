@@ -98,6 +98,13 @@
     "@astrojs/webapi" "^1.0.0"
     esbuild "^0.14.43"
 
+"@astrojs/prefetch@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@astrojs/prefetch/-/prefetch-0.0.7.tgz#84984a79a7d0bfcefc99ebdef56acf6425d23bf4"
+  integrity sha512-cdIIKcppywnnTseiSIk1s3g3VlcHY/qM4WoqMRaveEzOXWr6NzJ1/bKpRXpx9y6S7BDET+ziV2A7d4t+9vny+A==
+  dependencies:
+    throttles "^1.0.1"
+
 "@astrojs/prism@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@astrojs/prism/-/prism-1.0.0.tgz#9d9f2d3178252eb8fe7c92d6de439b3962d2e124"
@@ -5490,6 +5497,11 @@ text-table@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==
+
+throttles@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/throttles/-/throttles-1.0.1.tgz#3abdcde28df88d5eddf7e57cad8da35bd403ddd0"
+  integrity sha512-fab7Xg+zELr9KOv4fkaBoe/b3L0GMGLd0IBSCn16GoE/Qx6/OfCr1eGNyEcDU2pUA79qQfZ8kPQWlRuok4YwTw==
 
 tiny-glob@^0.2.9:
   version "0.2.9"
