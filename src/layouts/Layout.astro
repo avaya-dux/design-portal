@@ -18,8 +18,8 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
   .filter((page) => page.title)
   .map((page) => ({
     ...page,
-    title: page.title.toLowerCase(),
-    description: page.description.toLowerCase(),
+    title: page.title,
+    description: page.description,
   }));
 ---
 

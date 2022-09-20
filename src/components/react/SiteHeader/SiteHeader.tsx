@@ -1,6 +1,9 @@
 import { Button, Sheet, TopNav } from "@avaya/neo-react";
+
 import type { AstroInstance } from "astro";
 import { useCallback, useEffect, useState } from "react";
+
+import styles from "./SiteHeader.module.css";
 
 export interface PageAstroInstance extends AstroInstance {
   title: string;
@@ -15,7 +18,7 @@ export const SiteHeader = ({
   pages: PageAstroInstance[];
 }) => {
   const [search, setSearch] = useState("");
-  const [options, setOptions] = useState<string[]>([]);
+  const [options, setOptions] = useState<PageAstroInstance[]>([]);
 
   useEffect(() => {
     if (search) {
@@ -23,15 +26,11 @@ export const SiteHeader = ({
 
       const filteredPages = pages.filter(
         (page) =>
-          page.title.includes(lowerCaseSearch) ||
-          page.description.includes(lowerCaseSearch)
+          page.title.toLowerCase().includes(lowerCaseSearch) ||
+          page.description.toLowerCase().includes(lowerCaseSearch)
       );
 
-      setOptions(
-        filteredPages.length
-          ? filteredPages.map((page) => page.url || "BUG: goofed")
-          : []
-      );
+      setOptions(filteredPages.length ? filteredPages : []);
     } else {
       setOptions([]);
     }
@@ -111,16 +110,16 @@ export const SiteHeader = ({
       />
 
       <Sheet
-        className="neo-table__filters--sheet"
+        className={styles["search-sheet-results"]}
         open={options.length > 0}
         title="Search Results"
       >
         <section>
-          <ul>
+          <div className={styles["link-container"]}>
             {options.map((option) => (
-              <li>{option}</li>
+              <a href={option.url}>{option.title}</a>
             ))}
-          </ul>
+          </div>
         </section>
 
         <div
