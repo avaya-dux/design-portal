@@ -7,12 +7,20 @@ const { title } = Astro.props as Props;
 
 import { NeoThemeProvider } from "@avaya/neo-react";
 
-import { SiteHeader, SiteFooter } from "components";
+import { SiteHeader, SiteFooter, PageAstroInstance } from "components";
 
 import "@avaya/neo-react/avaya-neo-react.css";
 
 const headerHeight = "65px";
 const footerHeight = "58px";
+
+const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
+  .filter((page) => page.title)
+  .map((page) => ({
+    ...page,
+    title: page.title,
+    description: page.description,
+  }));
 ---
 
 <!DOCTYPE html>
@@ -26,9 +34,8 @@ const footerHeight = "58px";
   </head>
 
   <body>
-    <!-- TODO: BUG: NeoThemeProvider is throwing a error: "Warning: Invalid hook call". But only in the terminal. -->
     <NeoThemeProvider initialMode="dynamic">
-      <SiteHeader />
+      <SiteHeader pathname={Astro.url.pathname} pages={pages} client:load />
 
       <main id="main-content">
         <slot />
@@ -37,13 +44,9 @@ const footerHeight = "58px";
       <SiteFooter />
     </NeoThemeProvider>
 
-    <style is:global define:vars={{ headerHeight, footerHeight }}>
+    <style is:global>
       a {
         text-decoration: none;
-      }
-
-      main {
-        min-height: calc(100vh - var(--headerHeight) - var(--footerHeight));
       }
 
       /* TODO: fix this in css-lib */
@@ -51,17 +54,24 @@ const footerHeight = "58px";
         height: auto;
         align-items: unset;
       }
+      nav.neo-navbar .neo-nav .neo-form-control.neo-input-icon {
+        display: flex;
+        align-items: center;
+        padding-left: 32px;
+        padding-right: 32px;
+      }
     </style>
 
-    <style>
+    <style define:vars={{ headerHeight, footerHeight }}>
       body {
         margin: 0;
       }
 
-      /* :global(code) {
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-      } */
+      body main {
+        min-height: calc(100vh - var(--headerHeight) - var(--footerHeight));
+        max-width: 60rem;
+        margin: auto;
+      }
     </style>
   </body>
 </html>
