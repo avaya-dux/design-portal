@@ -1,7 +1,7 @@
 import { Button, Sheet, TopNav } from "@avaya/neo-react";
 
 import type { AstroInstance } from "astro";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import styles from "./SiteHeader.module.css";
 
@@ -10,6 +10,16 @@ export interface PageAstroInstance extends AstroInstance {
   description: string;
 }
 
+/**
+ * IMPORTANT: DPv3 is SSRd, and this component requires browser APIs.
+ * Thus, in Astro, this component _must_ be rendered client-side via:
+ * `client:only="react"`
+ *
+ * @example
+ * <SiteHeader pathname={Astro.url.pathname} pages={pages} client:only="react" />
+ *
+ * @see `layout/Layout.astro` for implementation details
+ */
 export const SiteHeader = ({
   pathname,
   pages,
@@ -43,21 +53,7 @@ export const SiteHeader = ({
 
   return (
     <TopNav
-      logo={
-        <a href="/" aria-label="Homepage">
-          <picture>
-            <source
-              media="(max-width: 1024px)"
-              srcSet="/imgs/logo-mobile.svg"
-            />
-            <source
-              media="(max-width: 1440px)"
-              srcSet="/imgs/logo-condensed.svg"
-            />
-            <img src="/imgs/logo-full.svg" alt="Avaya Logo" />
-          </picture>
-        </a>
-      }
+      logo={<Logo />}
       skipNav={
         <TopNav.SkipNav href="#main-content">
           Skip To Main Content
@@ -127,5 +123,37 @@ export const SiteHeader = ({
         </Button>
       </Sheet>
     </TopNav>
+  );
+};
+
+const Logo = () => {
+  const { mobile, condensed, full } = useMemo(() => {
+    const isDarkMode =
+      (typeof window !== "undefined" &&
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches) ||
+      false;
+
+    return {
+      mobile: isDarkMode
+        ? "/imgs/logo-mobile-dark.svg"
+        : "/imgs/logo-mobile-light.svg",
+      condensed: isDarkMode
+        ? "/imgs/logo-condensed-dark.svg"
+        : "/imgs/logo-condensed-light.svg",
+      full: isDarkMode
+        ? "/imgs/logo-full-dark.svg"
+        : "/imgs/logo-full-light.svg",
+    };
+  }, []);
+
+  return (
+    <a href="/" aria-label="Homepage">
+      <picture>
+        <source media="(max-width: 1024px)" srcSet={mobile} />
+        <source media="(max-width: 1440px)" srcSet={condensed} />
+        <img src={full} alt="Avaya Logo" />
+      </picture>
+    </a>
   );
 };

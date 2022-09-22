@@ -1,13 +1,14 @@
 import * as adapter from '@astrojs/netlify/netlify-functions.js';
 import { defineComponent, h, createSSRApp } from 'vue';
 import { renderToString as renderToString$1 } from 'vue/server-renderer';
-import React, { createElement, useState, useEffect, useCallback } from 'react';
+import React, { createElement, useState, useEffect, useCallback, useMemo } from 'react';
 import ReactDOM from 'react-dom/server';
 import { escape } from 'html-escaper';
-import { s as styles } from './chunks/a34db816.6c098c2b.mjs';
+import { s as styles } from './chunks/a34db816.d8c7987b.mjs';
 import * as $$module3 from '@avaya/neo-react';
-import { Image, TopNav, Sheet, Button, NeoThemeProvider } from '@avaya/neo-react';
-import { jsx, jsxs } from 'react/jsx-runtime';
+import { Icon, Image, TopNav, Sheet, Button, NeoThemeProvider } from '@avaya/neo-react';
+import { jsxs, jsx } from 'react/jsx-runtime';
+import { getHighlighter as getHighlighter$1 } from 'shiki';
 import 'mime';
 import 'kleur/colors';
 import 'string-width';
@@ -312,6 +313,14 @@ const markHTMLString = (value) => {
   }
   return value;
 };
+function unescapeHTML(str) {
+  if (!!str && typeof str === "object" && typeof str.then === "function") {
+    return Promise.resolve(str).then((value) => {
+      return markHTMLString(value);
+    });
+  }
+  return markHTMLString(str);
+}
 
 class Metadata {
   constructor(filePathname, opts) {
@@ -1525,77 +1534,142 @@ var server_default = {
   renderToStaticMarkup
 };
 
-const $$metadata$7 = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/components/astro/SiteFooter.astro", { modules: [{ module: $$module3, specifier: "@avaya/neo-react", assert: {} }], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
-const $$Astro$8 = createAstro("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/components/astro/SiteFooter.astro", "https://design.avayacloud.com/", "file:///Users/jsebast/dev/avaya-dux/design-portal/");
-const $$SiteFooter = createComponent(async ($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$8, $$props, $$slots);
-  Astro2.self = $$SiteFooter;
+const $$metadata$c = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/components/astro/Description.astro", { modules: [], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
+const $$Astro$d = createAstro("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/components/astro/Description.astro", "https://design.avayacloud.com/", "file:///Users/jsebast/dev/avaya-dux/design-portal/");
+const $$Description = createComponent(async ($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro$d, $$props, $$slots);
+  Astro2.self = $$Description;
   const STYLES = [];
   for (const STYLE of STYLES)
     $$result.styles.add(STYLE);
-  return renderTemplate`${maybeRenderHead($$result)}<div class="footer--wrapper astro-W3XQ4HA3">
-  <div class="footer__text--align astro-W3XQ4HA3">
-    ${renderComponent($$result, "Image", Image, { "src": "/imgs/avaya-logo-footer.svg", "alt": "Avaya logo", "class": "astro-W3XQ4HA3" })}
-  </div>
-
-  <div class="footer__links--wrapper astro-W3XQ4HA3">
-    <a target="_blank" href="https://www.avaya.com/en/termsofuse/" class="astro-W3XQ4HA3">
-      Terms of Use
-    </a>
-
-    <a href="https://design.avayacloud.com/license" target="_blank" class="astro-W3XQ4HA3">License</a>
-
-    <a target="_blank" href="https://www.avaya.com/en/privacy/commitment/" class="astro-W3XQ4HA3">
-      Privacy
-    </a>
-
-    <a target="_blank" href="https://www.avaya.com/en/trademarks/" class="astro-W3XQ4HA3">
-      Trademarks
-    </a>
-
-    <a target="_blank" href="https://www.avaya.com/en/accessibility/" class="astro-W3XQ4HA3">
-      Accessibility
-    </a>
-
-    <a target="_blank" href="https://careers.avaya.com" class="astro-W3XQ4HA3">Careers</a><a target="_blank" href="https://forms.office.com/pages/responsepage.aspx?id=bGOiBG0y_0iT-HCYdb06qT1-i9aD1eBFrVsGJdw_BopUMDkyT1o5R1lXR0dZM1o4OVlFMktWU0ZPUy4u" class="astro-W3XQ4HA3">
-      Newsletter
-    </a>
-  </div>
-
-  <div class="footer__text--align astro-W3XQ4HA3">
-    <p class="footer__copyright neo-body-tiny neo-italic astro-W3XQ4HA3">
-      &copy; ${new Date().getFullYear()} Avaya, Inc.
-    </p>
-  </div>
-</div>
+  return renderTemplate`${maybeRenderHead($$result)}<p class="description astro-ZYJTVGMZ">${renderSlot($$result, $$slots["default"])}</p>
 
 `;
 });
 
-const $$file$7 = "/Users/jsebast/dev/avaya-dux/design-portal/src/components/astro/SiteFooter.astro";
-const $$url$7 = undefined;
+const $$file$b = "/Users/jsebast/dev/avaya-dux/design-portal/src/components/astro/Description.astro";
+const $$url$b = undefined;
+
+const Description = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+	__proto__: null,
+	$$metadata: $$metadata$c,
+	default: $$Description,
+	file: $$file$b,
+	url: $$url$b
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const $$metadata$b = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/components/astro/PageTitle.astro", { modules: [], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
+const $$Astro$c = createAstro("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/components/astro/PageTitle.astro", "https://design.avayacloud.com/", "file:///Users/jsebast/dev/avaya-dux/design-portal/");
+const $$PageTitle = createComponent(async ($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro$c, $$props, $$slots);
+  Astro2.self = $$PageTitle;
+  const STYLES = [];
+  for (const STYLE of STYLES)
+    $$result.styles.add(STYLE);
+  return renderTemplate`${maybeRenderHead($$result)}<h1 class="page-title neo-bold astro-5SF3LL75">${renderSlot($$result, $$slots["default"])}</h1>
+
+`;
+});
+
+const $$file$a = "/Users/jsebast/dev/avaya-dux/design-portal/src/components/astro/PageTitle.astro";
+const $$url$a = undefined;
+
+const PageTitle = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+	__proto__: null,
+	$$metadata: $$metadata$b,
+	default: $$PageTitle,
+	file: $$file$a,
+	url: $$url$a
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const $$metadata$a = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/components/astro/SectionHeader.astro", { modules: [{ module: $$module3, specifier: "@avaya/neo-react", assert: {} }], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
+const $$Astro$b = createAstro("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/components/astro/SectionHeader.astro", "https://design.avayacloud.com/", "file:///Users/jsebast/dev/avaya-dux/design-portal/");
+const $$SectionHeader = createComponent(async ($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro$b, $$props, $$slots);
+  Astro2.self = $$SectionHeader;
+  const { id } = Astro2.props;
+  const STYLES = [];
+  for (const STYLE of STYLES)
+    $$result.styles.add(STYLE);
+  return renderTemplate`${maybeRenderHead($$result)}<a${addAttribute(`#${id}`, "href")} class="astro-6T22E3CN">
+  <h2 class="section-heading neo-bold astro-6T22E3CN"${addAttribute(id, "id")}>
+    ${renderSlot($$result, $$slots["default"])}
+
+    ${renderComponent($$result, "Icon", Icon, { "icon": "link", "aria-label": "hyperlink icon", "class": "astro-6T22E3CN" })}
+  </h2>
+</a>
+
+`;
+});
+
+const $$file$9 = "/Users/jsebast/dev/avaya-dux/design-portal/src/components/astro/SectionHeader.astro";
+const $$url$9 = undefined;
+
+const SectionHeader = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+	__proto__: null,
+	$$metadata: $$metadata$a,
+	default: $$SectionHeader,
+	file: $$file$9,
+	url: $$url$9
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const $$metadata$9 = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/components/astro/SiteFooter.astro", { modules: [{ module: $$module3, specifier: "@avaya/neo-react", assert: {} }], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
+const $$Astro$a = createAstro("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/components/astro/SiteFooter.astro", "https://design.avayacloud.com/", "file:///Users/jsebast/dev/avaya-dux/design-portal/");
+const $$SiteFooter = createComponent(async ($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro$a, $$props, $$slots);
+  Astro2.self = $$SiteFooter;
+  const STYLES = [];
+  for (const STYLE of STYLES)
+    $$result.styles.add(STYLE);
+  return renderTemplate`${maybeRenderHead($$result)}<footer class="footer--wrapper astro-RTS7NY5S">
+  <div class="footer__text--align astro-RTS7NY5S">
+    ${renderComponent($$result, "Image", Image, { "src": "/imgs/footer-logo.svg", "alt": "Avaya logo", "class": "astro-RTS7NY5S" })}
+  </div>
+
+  <div class="footer__links--wrapper astro-RTS7NY5S">
+    <a target="_blank" href="https://www.avaya.com/en/termsofuse/" class="astro-RTS7NY5S">
+      Terms of Use
+    </a>
+
+    <a href="https://design.avayacloud.com/license" target="_blank" class="astro-RTS7NY5S">License</a>
+
+    <a target="_blank" href="https://www.avaya.com/en/privacy/commitment/" class="astro-RTS7NY5S">
+      Privacy
+    </a>
+
+    <a target="_blank" href="https://www.avaya.com/en/trademarks/" class="astro-RTS7NY5S">
+      Trademarks
+    </a>
+
+    <a target="_blank" href="https://www.avaya.com/en/accessibility/" class="astro-RTS7NY5S">
+      Accessibility
+    </a>
+
+    <a target="_blank" href="https://careers.avaya.com" class="astro-RTS7NY5S">Careers</a><a target="_blank" href="https://forms.office.com/pages/responsepage.aspx?id=bGOiBG0y_0iT-HCYdb06qT1-i9aD1eBFrVsGJdw_BopUMDkyT1o5R1lXR0dZM1o4OVlFMktWU0ZPUy4u" class="astro-RTS7NY5S">
+      Newsletter
+    </a>
+  </div>
+
+  <div class="footer__text--align astro-RTS7NY5S">
+    <p class="footer__copyright neo-body-tiny neo-italic astro-RTS7NY5S">
+      &copy; ${new Date().getFullYear()} Avaya, Inc.
+    </p>
+  </div>
+</footer>
+
+`;
+});
+
+const $$file$8 = "/Users/jsebast/dev/avaya-dux/design-portal/src/components/astro/SiteFooter.astro";
+const $$url$8 = undefined;
 
 const SiteFooter = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	__proto__: null,
-	$$metadata: $$metadata$7,
+	$$metadata: $$metadata$9,
 	default: $$SiteFooter,
-	file: $$file$7,
-	url: $$url$7
+	file: $$file$8,
+	url: $$url$8
 }, Symbol.toStringTag, { value: 'Module' }));
-
-const Description = ({
-  children
-}) => /* @__PURE__ */ jsx("p", {
-  className: "global-spacing--text",
-  children
-});
-
-const PageTitle = ({
-  children
-}) => /* @__PURE__ */ jsx("h1", {
-  className: "neo-bold",
-  children
-});
 
 const SiteHeader = ({
   pathname,
@@ -1614,22 +1688,7 @@ const SiteHeader = ({
   }, [search]);
   const isActiveLink = useCallback((link) => pathname.startsWith(link), [pathname]);
   return /* @__PURE__ */ jsxs(TopNav, {
-    logo: /* @__PURE__ */ jsx("a", {
-      href: "/",
-      "aria-label": "Homepage",
-      children: /* @__PURE__ */ jsxs("picture", {
-        children: [/* @__PURE__ */ jsx("source", {
-          media: "(max-width: 1024px)",
-          srcSet: "/imgs/logo-mobile.svg"
-        }), /* @__PURE__ */ jsx("source", {
-          media: "(max-width: 1440px)",
-          srcSet: "/imgs/logo-condensed.svg"
-        }), /* @__PURE__ */ jsx("img", {
-          src: "/imgs/logo-full.svg",
-          alt: "Avaya Logo"
-        })]
-      })
-    }),
+    logo: /* @__PURE__ */ jsx(Logo, {}),
     skipNav: /* @__PURE__ */ jsx(TopNav.SkipNav, {
       href: "#main-content",
       children: "Skip To Main Content"
@@ -1680,35 +1739,66 @@ const SiteHeader = ({
     })]
   });
 };
+const Logo = () => {
+  const {
+    mobile,
+    condensed,
+    full
+  } = useMemo(() => {
+    const isDarkMode = typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches || false;
+    return {
+      mobile: isDarkMode ? "/imgs/logo-mobile-dark.svg" : "/imgs/logo-mobile-light.svg",
+      condensed: isDarkMode ? "/imgs/logo-condensed-dark.svg" : "/imgs/logo-condensed-light.svg",
+      full: isDarkMode ? "/imgs/logo-full-dark.svg" : "/imgs/logo-full-light.svg"
+    };
+  }, []);
+  return /* @__PURE__ */ jsx("a", {
+    href: "/",
+    "aria-label": "Homepage",
+    children: /* @__PURE__ */ jsxs("picture", {
+      children: [/* @__PURE__ */ jsx("source", {
+        media: "(max-width: 1024px)",
+        srcSet: mobile
+      }), /* @__PURE__ */ jsx("source", {
+        media: "(max-width: 1440px)",
+        srcSet: condensed
+      }), /* @__PURE__ */ jsx("img", {
+        src: full,
+        alt: "Avaya Logo"
+      })]
+    })
+  });
+};
 
 const $$module2 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	__proto__: null,
+	Description: $$Description,
+	PageTitle: $$PageTitle,
+	SectionHeader: $$SectionHeader,
 	SiteFooter: $$SiteFooter,
-	Description,
-	PageTitle,
 	SiteHeader
 }, Symbol.toStringTag, { value: 'Module' }));
 
-createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/layouts/Layout.astro", { modules: [{ module: $$module3, specifier: "@avaya/neo-react", assert: {} }, { module: $$module2, specifier: "components", assert: {} }], hydratedComponents: [SiteHeader], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set(["load"]), hoisted: [] });
-const $$Astro$7 = createAstro("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/layouts/Layout.astro", "https://design.avayacloud.com/", "file:///Users/jsebast/dev/avaya-dux/design-portal/");
+const $$metadata$8 = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/layouts/Layout.astro", { modules: [{ module: $$module3, specifier: "@avaya/neo-react", assert: {} }], hydratedComponents: [], clientOnlyComponents: ["components"], hydrationDirectives: /* @__PURE__ */ new Set(["only"]), hoisted: [] });
+const $$Astro$9 = createAstro("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/layouts/Layout.astro", "https://design.avayacloud.com/", "file:///Users/jsebast/dev/avaya-dux/design-portal/");
 const $$Layout = createComponent(async ($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$7, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$9, $$props, $$slots);
   Astro2.self = $$Layout;
   const { title } = Astro2.props;
   const headerHeight = "65px";
   const footerHeight = "58px";
-  const pages = (await Astro2.glob(/* #__PURE__ */ Object.assign({"../components/astro/SiteFooter.astro": () => Promise.resolve().then(() => SiteFooter),"../pages/components/buttons.astro": () => Promise.resolve().then(() => _page2),"../pages/components/index.astro": () => Promise.resolve().then(() => _page1),"../pages/faqs.astro": () => Promise.resolve().then(() => _page6),"../pages/guidelines.astro": () => Promise.resolve().then(() => _page3),"../pages/icons.astro": () => Promise.resolve().then(() => _page5),"../pages/index.astro": () => Promise.resolve().then(() => _page0),"../pages/whats-new.astro": () => Promise.resolve().then(() => _page4)}), () => "../**/*.astro")).filter((page) => page.title).map((page) => ({
+  const pages = (await Astro2.glob(/* #__PURE__ */ Object.assign({"../components/astro/Description.astro": () => Promise.resolve().then(() => Description),"../components/astro/PageTitle.astro": () => Promise.resolve().then(() => PageTitle),"../components/astro/SectionHeader.astro": () => Promise.resolve().then(() => SectionHeader),"../components/astro/SiteFooter.astro": () => Promise.resolve().then(() => SiteFooter),"../pages/components/buttons.astro": () => Promise.resolve().then(() => _page2),"../pages/components/index.astro": () => Promise.resolve().then(() => _page1),"../pages/faqs.astro": () => Promise.resolve().then(() => _page6),"../pages/guidelines.astro": () => Promise.resolve().then(() => _page3),"../pages/icons.astro": () => Promise.resolve().then(() => _page5),"../pages/index.astro": () => Promise.resolve().then(() => _page0),"../pages/whats-new.astro": () => Promise.resolve().then(() => _page4)}), () => "../**/*.astro")).filter((page) => page.title).map((page) => ({
     ...page,
     title: page.title,
     description: page.description
   }));
   const $$definedVars = defineStyleVars([{ headerHeight, footerHeight }]);
   const STYLES = [
-    { props: { "define:vars": { headerHeight, footerHeight }, "data-astro-id": "6LNQFR6E" }, children: `body{margin:0}body main:where(.astro-6LNQFR6E){min-height:calc(100vh - var(--headerHeight) - var(--footerHeight));max-width:60rem;margin:auto}` }
+    { props: { "define:vars": { headerHeight, footerHeight }, "data-astro-id": "4Y6U4472" }, children: `body{margin:0}body main:where(.astro-4Y6U4472){min-height:calc(100vh - var(--headerHeight) - var(--footerHeight));max-width:60rem;padding-bottom:2rem;margin:auto}` }
   ];
   for (const STYLE of STYLES)
     $$result.styles.add(STYLE);
-  return renderTemplate`<html lang="en" class="astro-6LNQFR6E"${addAttribute($$definedVars, "style")}>
+  return renderTemplate`<html lang="en" class="astro-4Y6U4472"${addAttribute($$definedVars, "style")}>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
@@ -1717,10 +1807,10 @@ const $$Layout = createComponent(async ($$result, $$props, $$slots) => {
     <title>${title}</title>
   ${renderHead($$result)}</head>
 
-  <body class="astro-6LNQFR6E">
-    ${renderComponent($$result, "NeoThemeProvider", NeoThemeProvider, { "initialMode": "dynamic", "class": "astro-6LNQFR6E" }, { "default": () => renderTemplate`${renderComponent($$result, "SiteHeader", SiteHeader, { "pathname": Astro2.url.pathname, "pages": pages, "client:load": true, "client:component-hydration": "load", "client:component-path": "components", "client:component-export": "SiteHeader", "class": "astro-6LNQFR6E" })}<main id="main-content" class="astro-6LNQFR6E">
+  <body class="astro-4Y6U4472">
+    ${renderComponent($$result, "NeoThemeProvider", NeoThemeProvider, { "initialMode": "dynamic", "class": "astro-4Y6U4472" }, { "default": () => renderTemplate`${renderComponent($$result, "SiteHeader", null, { "pathname": Astro2.url.pathname, "pages": pages, "client:only": "react", "client:component-hydration": "only", "class": "astro-4Y6U4472", "client:component-path": $$metadata$8.resolvePath("components"), "client:component-export": "SiteHeader" })}<main id="main-content" class="astro-4Y6U4472">
         ${renderSlot($$result, $$slots["default"])}
-      </main>${renderComponent($$result, "SiteFooter", $$SiteFooter, { "class": "astro-6LNQFR6E" })}` })}
+      </main>${renderComponent($$result, "SiteFooter", $$SiteFooter, { "class": "astro-4Y6U4472" })}` })}
 
     
 
@@ -1729,47 +1819,229 @@ const $$Layout = createComponent(async ($$result, $$props, $$slots) => {
 </html>`;
 });
 
-const $$module1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+const $$module1$3 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	__proto__: null,
 	Layout: $$Layout
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const $$metadata$6 = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/index.astro", { modules: [{ module: $$module1, specifier: "layouts", assert: {} }, { module: $$module2, specifier: "components", assert: {} }, { module: $$module3, specifier: "@avaya/neo-react", assert: {} }], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
-const $$Astro$6 = createAstro("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/index.astro", "https://design.avayacloud.com/", "file:///Users/jsebast/dev/avaya-dux/design-portal/");
+const $$metadata$7 = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/index.astro", { modules: [{ module: $$module1$3, specifier: "layouts", assert: {} }, { module: $$module2, specifier: "components", assert: {} }, { module: $$module3, specifier: "@avaya/neo-react", assert: {} }], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
+const $$Astro$8 = createAstro("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/index.astro", "https://design.avayacloud.com/", "file:///Users/jsebast/dev/avaya-dux/design-portal/");
 const title$6 = "Homepage";
 const description$6 = "This is the landing page for Neo";
 const $$Index$1 = createComponent(async ($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$6, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$8, $$props, $$slots);
   Astro2.self = $$Index$1;
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Welcome to Astro." }, { "default": () => renderTemplate`${renderComponent($$result, "PageTitle", PageTitle, {}, { "default": () => renderTemplate`Introducing Neo` })}${maybeRenderHead($$result)}<h2>Avaya's Design System</h2>${renderComponent($$result, "Description", Description, {}, { "default": () => renderTemplate`
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Neo Homepage" }, { "default": () => renderTemplate`${renderComponent($$result, "PageTitle", $$PageTitle, {}, { "default": () => renderTemplate`Introducing Neo` })}${maybeRenderHead($$result)}<h2>Avaya's Design System</h2>${renderComponent($$result, "Description", $$Description, {}, { "default": () => renderTemplate`
     Neo is a library of flexible design components and guidelines, built upon
     our core principles and ready to be integrated into your digital products.
   ` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Getting Started` })}` })}`;
 });
 
-const $$file$6 = "/Users/jsebast/dev/avaya-dux/design-portal/src/pages/index.astro";
-const $$url$6 = "";
+const $$file$7 = "/Users/jsebast/dev/avaya-dux/design-portal/src/pages/index.astro";
+const $$url$7 = "";
 
 const _page0 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	__proto__: null,
-	$$metadata: $$metadata$6,
+	$$metadata: $$metadata$7,
 	title: title$6,
 	description: description$6,
 	default: $$Index$1,
+	file: $$file$7,
+	url: $$url$7
+}, Symbol.toStringTag, { value: 'Module' }));
+
+// Caches Promise<Highligher> for reuse when the same theme and langs are provided
+const _resolvedHighlighters = new Map();
+
+function stringify(opts) {
+	// Always sort keys before stringifying to make sure objects match regardless of parameter ordering
+	return JSON.stringify(opts, Object.keys(opts).sort());
+}
+
+/**
+ * @param {import('shiki').HighlighterOptions} opts
+ * @returns {Promise<import('shiki').Highlighter>}
+ */
+function getHighlighter(opts) {
+	const key = stringify(opts);
+
+	// Highlighter has already been requested, reuse the same instance
+	if (_resolvedHighlighters.has(key)) {
+		return _resolvedHighlighters.get(key);
+	}
+
+	// Start the async getHighlighter call and cache the Promise
+	const highlighter = getHighlighter$1(opts).then((hl) => {
+		hl.setColorReplacements({
+			'#000001': 'var(--astro-code-color-text)',
+			'#000002': 'var(--astro-code-color-background)',
+			'#000004': 'var(--astro-code-token-constant)',
+			'#000005': 'var(--astro-code-token-string)',
+			'#000006': 'var(--astro-code-token-comment)',
+			'#000007': 'var(--astro-code-token-keyword)',
+			'#000008': 'var(--astro-code-token-parameter)',
+			'#000009': 'var(--astro-code-token-function)',
+			'#000010': 'var(--astro-code-token-string-expression)',
+			'#000011': 'var(--astro-code-token-punctuation)',
+			'#000012': 'var(--astro-code-token-link)',
+		});
+		return hl;
+	});
+	_resolvedHighlighters.set(key, highlighter);
+
+	return highlighter;
+}
+
+const $$module1$2 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+	__proto__: null,
+	getHighlighter
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const $$metadata$6 = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/node_modules/astro/components/Code.astro", { modules: [{ module: $$module1$2, specifier: "./Shiki.js", assert: {} }], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
+const $$Astro$7 = createAstro("/@fs/Users/jsebast/dev/avaya-dux/design-portal/node_modules/astro/components/Code.astro", "https://design.avayacloud.com/", "file:///Users/jsebast/dev/avaya-dux/design-portal/");
+const $$Code = createComponent(async ($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro$7, $$props, $$slots);
+  Astro2.self = $$Code;
+  const { code, lang = "plaintext", theme = "github-dark", wrap = false } = Astro2.props;
+  function repairShikiTheme(html2) {
+    html2 = html2.replace('<pre class="shiki"', '<pre class="astro-code"');
+    if (wrap === false) {
+      html2 = html2.replace(/style="(.*?)"/, 'style="$1; overflow-x: auto;"');
+    } else if (wrap === true) {
+      html2 = html2.replace(
+        /style="(.*?)"/,
+        'style="$1; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"'
+      );
+    }
+    return html2;
+  }
+  const highlighter = await getHighlighter({
+    theme,
+    langs: typeof lang !== "string" ? [lang] : void 0
+  });
+  const _html = highlighter.codeToHtml(code, { lang: typeof lang === "string" ? lang : lang.id });
+  const html = repairShikiTheme(_html);
+  return renderTemplate`${renderComponent($$result, "Fragment", Fragment, {}, { "default": () => renderTemplate`${unescapeHTML(html)}` })}
+`;
+});
+
+const $$file$6 = "/Users/jsebast/dev/avaya-dux/design-portal/node_modules/astro/components/Code.astro";
+const $$url$6 = undefined;
+
+const $$module1$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+	__proto__: null,
+	$$metadata: $$metadata$6,
+	default: $$Code,
 	file: $$file$6,
 	url: $$url$6
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const $$metadata$5 = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/components/index.astro", { modules: [{ module: $$module1, specifier: "layouts", assert: {} }, { module: $$module2, specifier: "components", assert: {} }, { module: $$module3, specifier: "@avaya/neo-react", assert: {} }], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
+createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/node_modules/astro/components/Debug.astro", { modules: [{ module: $$module1$1, specifier: "./Code.astro", assert: {} }], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
+const $$Astro$6 = createAstro("/@fs/Users/jsebast/dev/avaya-dux/design-portal/node_modules/astro/components/Debug.astro", "https://design.avayacloud.com/", "file:///Users/jsebast/dev/avaya-dux/design-portal/");
+const $$Debug = createComponent(async ($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro$6, $$props, $$slots);
+  Astro2.self = $$Debug;
+  const key = Object.keys(Astro2.props)[0];
+  const value = Astro2.props[key];
+  return renderTemplate`${maybeRenderHead($$result)}<div class="astro-debug">
+	<div class="astro-debug-header">
+		<h2 class="astro-debug-title">
+			<span class="astro-debug-label">Debug</span>
+			<span class="astro-debug-name">"${key}"</span>
+		</h2>
+	</div>
+
+	${renderComponent($$result, "Code", $$Code, { "code": JSON.stringify(value, null, 2) })}
+</div>
+
+<style>
+	.astro-debug {
+		font-size: 14px;
+		padding: 1rem 1.5rem;
+		background: white;
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+			'Open Sans', 'Helvetica Neue', sans-serif;
+	}
+
+	.astro-debug-header,
+	pre.astro-code {
+		margin: -1rem -1.5rem 1rem;
+		padding: 0.25rem 0.75rem;
+	}
+
+	.astro-debug-header {
+		background: #ff1639;
+		border-radius: 4px;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	.astro-debug-title {
+		font-size: 1em;
+		color: white;
+		margin: 0.5em 0;
+	}
+
+	.astro-debug-label {
+		font-weight: bold;
+		text-transform: uppercase;
+		margin-right: 0.75em;
+	}
+
+	pre.astro-code {
+		border: 1px solid #eee;
+		padding: 1rem 0.75rem;
+		border-radius: 4px;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		font-size: 14px;
+	}
+</style>`;
+});
+
+const $$module1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+	__proto__: null,
+	Code: $$Code,
+	Debug: $$Debug
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const $$metadata$5 = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/components/index.astro", { modules: [{ module: $$module1, specifier: "astro/components", assert: {} }, { module: $$module2, specifier: "components", assert: {} }, { module: $$module1$3, specifier: "layouts", assert: {} }], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
 const $$Astro$5 = createAstro("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/components/index.astro", "https://design.avayacloud.com/", "file:///Users/jsebast/dev/avaya-dux/design-portal/");
 const title$5 = "Components";
 const description$5 = "A collection of components for the Astro framework";
 const $$Index = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$5, $$props, $$slots);
   Astro2.self = $$Index;
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Welcome to Astro." }, { "default": () => renderTemplate`${renderComponent($$result, "PageTitle", PageTitle, {}, { "default": () => renderTemplate`Components Placeholder` })}${renderComponent($$result, "Description", Description, {}, { "default": () => renderTemplate`
-    Placeholder page. Will most likely become the "Setup" page.
-  ` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}` })}`;
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Components Setup" }, { "default": () => renderTemplate`${renderComponent($$result, "PageTitle", $$PageTitle, {}, { "default": () => renderTemplate`Setup Web Components` })}${renderComponent($$result, "Description", $$Description, {}, { "default": () => renderTemplate`
+    Neo is a CSS framework built with reusable user interface components, guided
+    by clear user experience standards, that are assembled to create a true
+    cohesive experience for all Avaya products. Neo is set to support the latest
+    2 versions of modern browsers.
+  ` })}${renderComponent($$result, "Description", $$Description, {}, { "default": () => renderTemplate`
+    Can't find what you're looking for? Make a request for an icon, component or
+    guideline here.
+  ` })}${renderComponent($$result, "SectionHeader", $$SectionHeader, { "id": "compiled-css" }, { "default": () => renderTemplate`Compiled CSS` })}${renderComponent($$result, "Description", $$Description, {}, { "default": () => renderTemplate`
+    Download ready-to-use compiled .css files for Neo to easily drop into your
+    project. This includes a separate stylesheet for icons.
+  ` })}${renderComponent($$result, "Description", $$Description, {}, { "default": () => renderTemplate`
+    A word on fonts: Neo comes bundled with font family support for Latin, Greek
+    and Cyrillic-based languages. However, support for text in Arabic, Hebrew,
+    Chinese, Japanese and Korean at various font weights is available via
+    separate stylesheets for each.
+  ` })}${renderComponent($$result, "SectionHeader", $$SectionHeader, { "id": "install-instructions" }, { "default": () => renderTemplate`
+    Install CSS via Node Package Manager
+  ` })}${renderComponent($$result, "Description", $$Description, {}, { "default": () => renderTemplate`
+    To add the latest version of Neo to your project via Node Package Manager
+    (npm), simply run the following command:
+  ` })}${renderComponent($$result, "Code", $$Code, { "code": "npm install @avaya/neo", "lang": "bash" })}${renderComponent($$result, "Description", $$Description, {}, { "default": () => renderTemplate`
+    The package contains both compiled and minified versions of the Neo .css
+    file, as well as separate stylesheets for both icons and multilingual font
+    support.
+  ` })}${renderComponent($$result, "Description", $$Description, {}, { "default": () => renderTemplate`
+    The package contains both compiled and minified versions of the Neo .css
+    file, as well as separate stylesheets for both icons and multilingual font
+    support.
+  ` })}` })}`;
 });
 
 const $$file$5 = "/Users/jsebast/dev/avaya-dux/design-portal/src/pages/components/index.astro";
@@ -1785,14 +2057,14 @@ const _page1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	url: $$url$5
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const $$metadata$4 = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/components/buttons.astro", { modules: [{ module: $$module1, specifier: "layouts", assert: {} }, { module: $$module2, specifier: "components", assert: {} }, { module: $$module3, specifier: "@avaya/neo-react", assert: {} }], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
+const $$metadata$4 = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/components/buttons.astro", { modules: [{ module: $$module1$3, specifier: "layouts", assert: {} }, { module: $$module2, specifier: "components", assert: {} }, { module: $$module3, specifier: "@avaya/neo-react", assert: {} }], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
 const $$Astro$4 = createAstro("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/components/buttons.astro", "https://design.avayacloud.com/", "file:///Users/jsebast/dev/avaya-dux/design-portal/");
 const title$4 = "Button Component";
 const description$4 = "The Neo Button component";
 const $$Buttons = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$4, $$props, $$slots);
   Astro2.self = $$Buttons;
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Welcome to Astro." }, { "default": () => renderTemplate`${renderComponent($$result, "PageTitle", PageTitle, {}, { "default": () => renderTemplate`Buttons` })}${renderComponent($$result, "Description", Description, {}, { "default": () => renderTemplate`Buttons Page` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}` })}`;
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Buttons" }, { "default": () => renderTemplate`${renderComponent($$result, "PageTitle", $$PageTitle, {}, { "default": () => renderTemplate`Buttons` })}${renderComponent($$result, "Description", $$Description, {}, { "default": () => renderTemplate`Buttons Page` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}` })}`;
 });
 
 const $$file$4 = "/Users/jsebast/dev/avaya-dux/design-portal/src/pages/components/buttons.astro";
@@ -1808,14 +2080,14 @@ const _page2 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	url: $$url$4
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const $$metadata$3 = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/guidelines.astro", { modules: [{ module: $$module1, specifier: "layouts", assert: {} }, { module: $$module2, specifier: "components", assert: {} }, { module: $$module3, specifier: "@avaya/neo-react", assert: {} }], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
+const $$metadata$3 = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/guidelines.astro", { modules: [{ module: $$module1$3, specifier: "layouts", assert: {} }, { module: $$module2, specifier: "components", assert: {} }, { module: $$module3, specifier: "@avaya/neo-react", assert: {} }], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
 const $$Astro$3 = createAstro("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/guidelines.astro", "https://design.avayacloud.com/", "file:///Users/jsebast/dev/avaya-dux/design-portal/");
 const title$3 = "Guidlines";
 const description$3 = "Guidlines for building applications";
 const $$Guidelines = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$3, $$props, $$slots);
   Astro2.self = $$Guidelines;
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Welcome to Astro." }, { "default": () => renderTemplate`${renderComponent($$result, "PageTitle", PageTitle, {}, { "default": () => renderTemplate`Guidelines Placeholder` })}${renderComponent($$result, "Description", Description, {}, { "default": () => renderTemplate`Lorem Ipsum` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}` })}`;
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Guidelines" }, { "default": () => renderTemplate`${renderComponent($$result, "PageTitle", $$PageTitle, {}, { "default": () => renderTemplate`Guidelines Placeholder` })}${renderComponent($$result, "Description", $$Description, {}, { "default": () => renderTemplate`Lorem Ipsum` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}` })}`;
 });
 
 const $$file$3 = "/Users/jsebast/dev/avaya-dux/design-portal/src/pages/guidelines.astro";
@@ -1831,14 +2103,14 @@ const _page3 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	url: $$url$3
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const $$metadata$2 = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/whats-new.astro", { modules: [{ module: $$module1, specifier: "layouts", assert: {} }, { module: $$module2, specifier: "components", assert: {} }, { module: $$module3, specifier: "@avaya/neo-react", assert: {} }], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
+const $$metadata$2 = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/whats-new.astro", { modules: [{ module: $$module1$3, specifier: "layouts", assert: {} }, { module: $$module2, specifier: "components", assert: {} }, { module: $$module3, specifier: "@avaya/neo-react", assert: {} }], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
 const $$Astro$2 = createAstro("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/whats-new.astro", "https://design.avayacloud.com/", "file:///Users/jsebast/dev/avaya-dux/design-portal/");
 const title$2 = "What's New";
 const description$2 = "Changelog and updates";
 const $$WhatsNew = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
   Astro2.self = $$WhatsNew;
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Welcome to Astro." }, { "default": () => renderTemplate`${renderComponent($$result, "PageTitle", PageTitle, {}, { "default": () => renderTemplate`What's New Placeholder` })}${renderComponent($$result, "Description", Description, {}, { "default": () => renderTemplate`Lorem Ipsum` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}` })}`;
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "What's New" }, { "default": () => renderTemplate`${renderComponent($$result, "PageTitle", $$PageTitle, {}, { "default": () => renderTemplate`What's New Placeholder` })}${renderComponent($$result, "Description", $$Description, {}, { "default": () => renderTemplate`Lorem Ipsum` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}` })}`;
 });
 
 const $$file$2 = "/Users/jsebast/dev/avaya-dux/design-portal/src/pages/whats-new.astro";
@@ -1854,14 +2126,14 @@ const _page4 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	url: $$url$2
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const $$metadata$1 = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/icons.astro", { modules: [{ module: $$module1, specifier: "layouts", assert: {} }, { module: $$module2, specifier: "components", assert: {} }, { module: $$module3, specifier: "@avaya/neo-react", assert: {} }], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
+const $$metadata$1 = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/icons.astro", { modules: [{ module: $$module1$3, specifier: "layouts", assert: {} }, { module: $$module2, specifier: "components", assert: {} }, { module: $$module3, specifier: "@avaya/neo-react", assert: {} }], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
 const $$Astro$1 = createAstro("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/icons.astro", "https://design.avayacloud.com/", "file:///Users/jsebast/dev/avaya-dux/design-portal/");
 const title$1 = "Icons";
 const description$1 = "A collection of icons";
 const $$Icons = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$Icons;
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Welcome to Astro." }, { "default": () => renderTemplate`${renderComponent($$result, "PageTitle", PageTitle, {}, { "default": () => renderTemplate`Icons Placeholder` })}${renderComponent($$result, "Description", Description, {}, { "default": () => renderTemplate`Lorem Ipsum` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}` })}`;
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Icons" }, { "default": () => renderTemplate`${renderComponent($$result, "PageTitle", $$PageTitle, {}, { "default": () => renderTemplate`Icons Placeholder` })}${renderComponent($$result, "Description", $$Description, {}, { "default": () => renderTemplate`Lorem Ipsum` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}` })}`;
 });
 
 const $$file$1 = "/Users/jsebast/dev/avaya-dux/design-portal/src/pages/icons.astro";
@@ -1877,14 +2149,14 @@ const _page5 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	url: $$url$1
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const $$metadata = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/faqs.astro", { modules: [{ module: $$module1, specifier: "layouts", assert: {} }, { module: $$module2, specifier: "components", assert: {} }, { module: $$module3, specifier: "@avaya/neo-react", assert: {} }], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
+const $$metadata = createMetadata("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/faqs.astro", { modules: [{ module: $$module1$3, specifier: "layouts", assert: {} }, { module: $$module2, specifier: "components", assert: {} }, { module: $$module3, specifier: "@avaya/neo-react", assert: {} }], hydratedComponents: [], clientOnlyComponents: [], hydrationDirectives: /* @__PURE__ */ new Set([]), hoisted: [] });
 const $$Astro = createAstro("/@fs/Users/jsebast/dev/avaya-dux/design-portal/src/pages/faqs.astro", "https://design.avayacloud.com/", "file:///Users/jsebast/dev/avaya-dux/design-portal/");
 const title = "FAQs";
 const description = "Frequently asked questions";
 const $$Faqs = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Faqs;
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Welcome to Astro." }, { "default": () => renderTemplate`${renderComponent($$result, "PageTitle", PageTitle, {}, { "default": () => renderTemplate`FAQs Placeholder` })}${renderComponent($$result, "Description", Description, {}, { "default": () => renderTemplate`Lorem Ipsum` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}` })}`;
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "FAQs" }, { "default": () => renderTemplate`${renderComponent($$result, "PageTitle", $$PageTitle, {}, { "default": () => renderTemplate`FAQs Placeholder` })}${renderComponent($$result, "Description", $$Description, {}, { "default": () => renderTemplate`Lorem Ipsum` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}${renderComponent($$result, "Button", Button, {}, { "default": () => renderTemplate`Example` })}` })}`;
 });
 
 const $$file = "/Users/jsebast/dev/avaya-dux/design-portal/src/pages/faqs.astro";
@@ -1972,7 +2244,7 @@ function deserializeManifest(serializedManifest) {
   };
 }
 
-const _manifest = Object.assign(deserializeManifest({"adapterName":"@astrojs/netlify/functions","routes":[{"file":"","links":["assets/a34db816.5b49a56b.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/","type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.5b49a56b.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/components","type":"page","pattern":"^\\/components\\/?$","segments":[[{"content":"components","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/components/index.astro","pathname":"/components","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.5b49a56b.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/components/buttons","type":"page","pattern":"^\\/components\\/buttons\\/?$","segments":[[{"content":"components","dynamic":false,"spread":false}],[{"content":"buttons","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/components/buttons.astro","pathname":"/components/buttons","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.5b49a56b.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/guidelines","type":"page","pattern":"^\\/guidelines\\/?$","segments":[[{"content":"guidelines","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/guidelines.astro","pathname":"/guidelines","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.5b49a56b.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/whats-new","type":"page","pattern":"^\\/whats-new\\/?$","segments":[[{"content":"whats-new","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/whats-new.astro","pathname":"/whats-new","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.5b49a56b.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/icons","type":"page","pattern":"^\\/icons\\/?$","segments":[[{"content":"icons","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/icons.astro","pathname":"/icons","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.5b49a56b.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/faqs","type":"page","pattern":"^\\/faqs\\/?$","segments":[[{"content":"faqs","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/faqs.astro","pathname":"/faqs","_meta":{"trailingSlash":"ignore"}}}],"site":"https://design.avayacloud.com/","base":"/","markdown":{"drafts":false,"syntaxHighlight":"shiki","shikiConfig":{"langs":[],"theme":"github-dark","wrap":false},"remarkPlugins":[],"rehypePlugins":[],"remarkRehype":{},"extendDefaultPlugins":false,"isAstroFlavoredMd":false},"pageMap":null,"renderers":[],"entryModules":{"\u0000@astrojs-ssr-virtual-entry":"entry.mjs","components":"index.7704eaf9.js","@astrojs/react/client.js":"client.7fee35b3.js","@astrojs/svelte/client.js":"client.b27523fa.js","@astrojs/vue/client.js":"client.f35f42c9.js","astro:scripts/page.js":"page.3aa82516.js","astro:scripts/before-hydration.js":""},"assets":["/assets/a34db816.5b49a56b.css","/client.7fee35b3.js","/client.b27523fa.js","/client.f35f42c9.js","/favicon.ico","/index.7704eaf9.js","/page.3aa82516.js","/chunks/SiteHeader.module.b824f717.js","/chunks/index.4167e04a.js","/imgs/avaya-logo-footer.svg","/imgs/logo-condensed.svg","/imgs/logo-full.svg","/imgs/logo-mobile.svg","/page.3aa82516.js"]}), {
+const _manifest = Object.assign(deserializeManifest({"adapterName":"@astrojs/netlify/functions","routes":[{"file":"","links":["assets/a34db816.de01d170.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/","type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.de01d170.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/components","type":"page","pattern":"^\\/components\\/?$","segments":[[{"content":"components","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/components/index.astro","pathname":"/components","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.de01d170.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/components/buttons","type":"page","pattern":"^\\/components\\/buttons\\/?$","segments":[[{"content":"components","dynamic":false,"spread":false}],[{"content":"buttons","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/components/buttons.astro","pathname":"/components/buttons","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.de01d170.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/guidelines","type":"page","pattern":"^\\/guidelines\\/?$","segments":[[{"content":"guidelines","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/guidelines.astro","pathname":"/guidelines","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.de01d170.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/whats-new","type":"page","pattern":"^\\/whats-new\\/?$","segments":[[{"content":"whats-new","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/whats-new.astro","pathname":"/whats-new","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.de01d170.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/icons","type":"page","pattern":"^\\/icons\\/?$","segments":[[{"content":"icons","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/icons.astro","pathname":"/icons","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.de01d170.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/faqs","type":"page","pattern":"^\\/faqs\\/?$","segments":[[{"content":"faqs","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/faqs.astro","pathname":"/faqs","_meta":{"trailingSlash":"ignore"}}}],"site":"https://design.avayacloud.com/","base":"/","markdown":{"drafts":false,"syntaxHighlight":"shiki","shikiConfig":{"langs":[],"theme":"github-dark","wrap":false},"remarkPlugins":[],"rehypePlugins":[],"remarkRehype":{},"extendDefaultPlugins":false,"isAstroFlavoredMd":false},"pageMap":null,"renderers":[],"entryModules":{"\u0000@astrojs-ssr-virtual-entry":"entry.mjs","components":"index.b98918a1.js","@astrojs/react/client.js":"client.7fee35b3.js","@astrojs/svelte/client.js":"client.b27523fa.js","@astrojs/vue/client.js":"client.f35f42c9.js","astro:scripts/page.js":"page.3aa82516.js","astro:scripts/before-hydration.js":""},"assets":["/assets/a34db816.de01d170.css","/client.7fee35b3.js","/client.b27523fa.js","/client.f35f42c9.js","/favicon.ico","/index.b98918a1.js","/page.3aa82516.js","/chunks/SiteHeader.module.2d4e0f81.js","/chunks/index.4167e04a.js","/imgs/footer-logo.svg","/imgs/logo-condensed-dark.svg","/imgs/logo-condensed-light.svg","/imgs/logo-full-dark.svg","/imgs/logo-full-light.svg","/imgs/logo-mobile-dark.svg","/imgs/logo-mobile-light.svg","/page.3aa82516.js"]}), {
 	pageMap: pageMap,
 	renderers: renderers
 });
