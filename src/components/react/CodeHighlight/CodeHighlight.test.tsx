@@ -1,4 +1,8 @@
-import { render, screen } from "@testing-library/react";
+import {
+  render,
+  screen,
+  waitForElementToBeRemoved,
+} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 
@@ -21,10 +25,16 @@ describe("CodeHighlight", () => {
   it("copies code to clipboard", async () => {
     render(<CodeHighlight code={code} />);
 
+    expect(screen.queryByRole("img", { name: "icon copy" })).toBeNull();
+
     await user.click(screen.getByRole("button"));
 
     const notification = screen.getByRole("img", { name: "icon copy" });
     expect(notification).toBeDefined();
+
+    waitForElementToBeRemoved(notification).then(() => {
+      expect(screen.queryByRole("img", { name: "icon copy" })).toBeNull();
+    });
   });
 
   it("passes basic axe compliance", async () => {
