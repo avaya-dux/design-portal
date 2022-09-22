@@ -1,7 +1,7 @@
 import * as adapter from '@astrojs/netlify/netlify-functions.js';
 import { defineComponent, h, createSSRApp } from 'vue';
 import { renderToString as renderToString$1 } from 'vue/server-renderer';
-import React, { createElement, useState, useEffect, useCallback } from 'react';
+import React, { createElement, useState, useEffect, useCallback, useMemo } from 'react';
 import ReactDOM from 'react-dom/server';
 import { escape } from 'html-escaper';
 import { s as styles } from './chunks/a34db816.d8c7987b.mjs';
@@ -1688,22 +1688,7 @@ const SiteHeader = ({
   }, [search]);
   const isActiveLink = useCallback((link) => pathname.startsWith(link), [pathname]);
   return /* @__PURE__ */ jsxs(TopNav, {
-    logo: /* @__PURE__ */ jsx("a", {
-      href: "/",
-      "aria-label": "Homepage",
-      children: /* @__PURE__ */ jsxs("picture", {
-        children: [/* @__PURE__ */ jsx("source", {
-          media: "(max-width: 1024px)",
-          srcSet: "/imgs/logo-mobile.svg"
-        }), /* @__PURE__ */ jsx("source", {
-          media: "(max-width: 1440px)",
-          srcSet: "/imgs/logo-condensed.svg"
-        }), /* @__PURE__ */ jsx("img", {
-          src: "/imgs/logo-full.svg",
-          alt: "Avaya Logo"
-        })]
-      })
-    }),
+    logo: /* @__PURE__ */ jsx(Logo, {}),
     skipNav: /* @__PURE__ */ jsx(TopNav.SkipNav, {
       href: "#main-content",
       children: "Skip To Main Content"
@@ -1752,6 +1737,36 @@ const SiteHeader = ({
         children: "Close"
       })]
     })]
+  });
+};
+const Logo = () => {
+  const {
+    mobile,
+    condensed,
+    full
+  } = useMemo(() => {
+    const isDarkMode = typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches || false;
+    return {
+      mobile: isDarkMode ? "/imgs/logo-mobile-dark.svg" : "/imgs/logo-mobile-light.svg",
+      condensed: isDarkMode ? "/imgs/logo-condensed-dark.svg" : "/imgs/logo-condensed-light.svg",
+      full: isDarkMode ? "/imgs/logo-full-dark.svg" : "/imgs/logo-full-light.svg"
+    };
+  }, []);
+  return /* @__PURE__ */ jsx("a", {
+    href: "/",
+    "aria-label": "Homepage",
+    children: /* @__PURE__ */ jsxs("picture", {
+      children: [/* @__PURE__ */ jsx("source", {
+        media: "(max-width: 1024px)",
+        srcSet: mobile
+      }), /* @__PURE__ */ jsx("source", {
+        media: "(max-width: 1440px)",
+        srcSet: condensed
+      }), /* @__PURE__ */ jsx("img", {
+        src: full,
+        alt: "Avaya Logo"
+      })]
+    })
   });
 };
 
@@ -2229,7 +2244,7 @@ function deserializeManifest(serializedManifest) {
   };
 }
 
-const _manifest = Object.assign(deserializeManifest({"adapterName":"@astrojs/netlify/functions","routes":[{"file":"","links":["assets/a34db816.74fdb346.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/","type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.74fdb346.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/components","type":"page","pattern":"^\\/components\\/?$","segments":[[{"content":"components","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/components/index.astro","pathname":"/components","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.74fdb346.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/components/buttons","type":"page","pattern":"^\\/components\\/buttons\\/?$","segments":[[{"content":"components","dynamic":false,"spread":false}],[{"content":"buttons","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/components/buttons.astro","pathname":"/components/buttons","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.74fdb346.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/guidelines","type":"page","pattern":"^\\/guidelines\\/?$","segments":[[{"content":"guidelines","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/guidelines.astro","pathname":"/guidelines","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.74fdb346.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/whats-new","type":"page","pattern":"^\\/whats-new\\/?$","segments":[[{"content":"whats-new","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/whats-new.astro","pathname":"/whats-new","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.74fdb346.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/icons","type":"page","pattern":"^\\/icons\\/?$","segments":[[{"content":"icons","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/icons.astro","pathname":"/icons","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.74fdb346.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/faqs","type":"page","pattern":"^\\/faqs\\/?$","segments":[[{"content":"faqs","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/faqs.astro","pathname":"/faqs","_meta":{"trailingSlash":"ignore"}}}],"site":"https://design.avayacloud.com/","base":"/","markdown":{"drafts":false,"syntaxHighlight":"shiki","shikiConfig":{"langs":[],"theme":"github-dark","wrap":false},"remarkPlugins":[],"rehypePlugins":[],"remarkRehype":{},"extendDefaultPlugins":false,"isAstroFlavoredMd":false},"pageMap":null,"renderers":[],"entryModules":{"\u0000@astrojs-ssr-virtual-entry":"entry.mjs","components":"index.8dbf8e62.js","@astrojs/react/client.js":"client.7fee35b3.js","@astrojs/svelte/client.js":"client.b27523fa.js","@astrojs/vue/client.js":"client.f35f42c9.js","astro:scripts/page.js":"page.3aa82516.js","astro:scripts/before-hydration.js":""},"assets":["/assets/a34db816.74fdb346.css","/client.7fee35b3.js","/client.b27523fa.js","/client.f35f42c9.js","/favicon.ico","/index.8dbf8e62.js","/page.3aa82516.js","/chunks/SiteHeader.module.2d4e0f81.js","/chunks/index.4167e04a.js","/imgs/footer-logo.svg","/imgs/logo-condensed.svg","/imgs/logo-dark-condensed.svg","/imgs/logo-dark-mobile.svg","/imgs/logo-dark-wide.svg","/imgs/logo-full.svg","/imgs/logo-mobile.svg","/page.3aa82516.js"]}), {
+const _manifest = Object.assign(deserializeManifest({"adapterName":"@astrojs/netlify/functions","routes":[{"file":"","links":["assets/a34db816.74fdb346.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/","type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.74fdb346.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/components","type":"page","pattern":"^\\/components\\/?$","segments":[[{"content":"components","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/components/index.astro","pathname":"/components","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.74fdb346.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/components/buttons","type":"page","pattern":"^\\/components\\/buttons\\/?$","segments":[[{"content":"components","dynamic":false,"spread":false}],[{"content":"buttons","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/components/buttons.astro","pathname":"/components/buttons","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.74fdb346.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/guidelines","type":"page","pattern":"^\\/guidelines\\/?$","segments":[[{"content":"guidelines","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/guidelines.astro","pathname":"/guidelines","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.74fdb346.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/whats-new","type":"page","pattern":"^\\/whats-new\\/?$","segments":[[{"content":"whats-new","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/whats-new.astro","pathname":"/whats-new","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.74fdb346.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/icons","type":"page","pattern":"^\\/icons\\/?$","segments":[[{"content":"icons","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/icons.astro","pathname":"/icons","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":["assets/a34db816.74fdb346.css"],"scripts":[{"type":"external","value":"page.3aa82516.js"}],"routeData":{"route":"/faqs","type":"page","pattern":"^\\/faqs\\/?$","segments":[[{"content":"faqs","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/faqs.astro","pathname":"/faqs","_meta":{"trailingSlash":"ignore"}}}],"site":"https://design.avayacloud.com/","base":"/","markdown":{"drafts":false,"syntaxHighlight":"shiki","shikiConfig":{"langs":[],"theme":"github-dark","wrap":false},"remarkPlugins":[],"rehypePlugins":[],"remarkRehype":{},"extendDefaultPlugins":false,"isAstroFlavoredMd":false},"pageMap":null,"renderers":[],"entryModules":{"\u0000@astrojs-ssr-virtual-entry":"entry.mjs","components":"index.85d9d60b.js","@astrojs/react/client.js":"client.7fee35b3.js","@astrojs/svelte/client.js":"client.b27523fa.js","@astrojs/vue/client.js":"client.f35f42c9.js","astro:scripts/page.js":"page.3aa82516.js","astro:scripts/before-hydration.js":""},"assets":["/assets/a34db816.74fdb346.css","/client.7fee35b3.js","/client.b27523fa.js","/client.f35f42c9.js","/favicon.ico","/index.85d9d60b.js","/page.3aa82516.js","/chunks/SiteHeader.module.2d4e0f81.js","/chunks/index.4167e04a.js","/imgs/footer-logo.svg","/imgs/logo-condensed-dark.svg","/imgs/logo-condensed-light.svg","/imgs/logo-full-dark.svg","/imgs/logo-full-light.svg","/imgs/logo-mobile-dark.svg","/imgs/logo-mobile-light.svg","/page.3aa82516.js"]}), {
 	pageMap: pageMap,
 	renderers: renderers
 });
