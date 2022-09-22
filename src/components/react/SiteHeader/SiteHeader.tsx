@@ -103,6 +103,7 @@ export const SiteHeader = ({
       <TopNav.Search
         onChange={(e) => setSearch(e.currentTarget.value)}
         value={search}
+        clearable={false}
       />
 
       <Sheet
