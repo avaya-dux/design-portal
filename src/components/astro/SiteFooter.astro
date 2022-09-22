@@ -2,9 +2,9 @@
 import { Image } from "@avaya/neo-react";
 ---
 
-<div class="footer--wrapper">
+<footer class="footer--wrapper">
   <div class="footer__text--align">
-    <Image src="/imgs/avaya-logo-footer.svg" alt="Avaya logo" />
+    <Image src="/imgs/footer-logo.svg" alt="Avaya logo" />
   </div>
 
   <div class="footer__links--wrapper">
@@ -39,7 +39,7 @@ import { Image } from "@avaya/neo-react";
       &copy; {new Date().getFullYear()} Avaya, Inc.
     </p>
   </div>
-</div>
+</footer>
 
 <style>
   .footer--wrapper {
@@ -73,13 +73,6 @@ import { Image } from "@avaya/neo-react";
     color: var(--neo-color-base-900);
     font-size: var(--neo-body-small-font-size);
     line-height: var(--neo-body-small-line-height);
-  }
-
-  .footer__text--align {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-right: 2%;
   }
 
   .footer__copyright {

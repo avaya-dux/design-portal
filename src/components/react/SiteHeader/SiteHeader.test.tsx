@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 
 import type { AstroComponentFactory } from "astro/dist/runtime/server";
 import { axe } from "jest-axe";
+import { vi } from "vitest";
 
 import { PageAstroInstance, SiteHeader } from ".";
 
@@ -35,11 +36,50 @@ describe("SiteHeader", () => {
     },
   ];
 
+  beforeEach(() => {
+    // for the `Logo` component, need to mock `window.matchMedia`
+    vi.stubGlobal(
+      "matchMedia",
+      vi.fn(() => ({
+        matches: false,
+      }))
+    );
+
+    return () => {
+      vi.resetAllMocks();
+    };
+  });
+
   it("fully renders without exploding", () => {
     render(<SiteHeader pathname="/" pages={pagesMockData} />);
 
     const rootElement = screen.getByRole("navigation");
     expect(rootElement).toBeDefined();
+  });
+
+  describe("light and dark mode", () => {
+    it("defaults to light mode", () => {
+      render(<SiteHeader pathname="/" pages={pagesMockData} />);
+
+      const topnavImg = screen.getByRole("img", { name: "Avaya Logo" });
+      expect(topnavImg).toHaveProperty("src", expect.stringContaining("light"));
+    });
+
+    it("shows light mode when `(prefers-color-scheme: dark)`", () => {
+      vi.stubGlobal(
+        "matchMedia",
+        vi.fn(() => ({
+          matches: true,
+        }))
+      );
+
+      render(<SiteHeader pathname="/" pages={pagesMockData} />);
+
+      const topnavImg = screen.getByRole("img", { name: "Avaya Logo" });
+      expect(topnavImg).toHaveProperty("src", expect.stringContaining("dark"));
+
+      vi.resetAllMocks();
+    });
   });
 
   describe("Search functionality", () => {
