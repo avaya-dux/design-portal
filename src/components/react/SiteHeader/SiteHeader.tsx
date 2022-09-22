@@ -10,6 +10,16 @@ export interface PageAstroInstance extends AstroInstance {
   description: string;
 }
 
+/**
+ * IMPORTANT: DPv3 is SSRd, and this component requires browser APIs.
+ * Thus, in Astro, this component _must_ be rendered client-side via:
+ * `client:only="react"`
+ *
+ * @example
+ * <SiteHeader pathname={Astro.url.pathname} pages={pages} client:only="react" />
+ *
+ * @see `layout/Layout.astro` for implementation details
+ */
 export const SiteHeader = ({
   pathname,
   pages,
@@ -117,8 +127,6 @@ export const SiteHeader = ({
 };
 
 const Logo = () => {
-  // TODO: BUG: always returns light-mode due to the site being SSR
-  // Also, dark image are not accurate
   const { mobile, condensed, full } = useMemo(() => {
     const isDarkMode =
       (typeof window !== "undefined" &&
