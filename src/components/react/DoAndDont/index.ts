@@ -1,1 +1,1 @@
-export * from "./DoAndDont"
+export * from "./DoAndDont";

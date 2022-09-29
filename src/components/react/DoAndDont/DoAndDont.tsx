@@ -1,17 +1,17 @@
-import { Icon } from "@avaya/neo-react"
-import clsx from "clsx"
-import React from "react"
+import { Icon } from "@avaya/neo-react";
+import clsx from "clsx";
+import React from "react";
 
-import "./DoAndDont.css"
+import "./DoAndDont.css";
 
 export interface InstructionProps {
-  children: React.ReactNode
-  instructions: string
+  children: React.ReactNode;
+  instructions: string;
 }
 
 export interface DoAndDontProps {
-  children: React.ReactElement<InstructionProps>[]
-  size?: "normal" | "wide"
+  children: React.ReactElement<InstructionProps>[];
+  size?: "normal" | "wide";
 }
 
 /**
@@ -53,7 +53,7 @@ export const DoAndDont = ({ children, size = "normal" }: DoAndDontProps) => (
   >
     {children}
   </div>
-)
+);
 
 export const DoContainer = ({ children, instructions }: InstructionProps) => (
   <div className="do-and-dont-example-item">
@@ -72,7 +72,7 @@ export const DoContainer = ({ children, instructions }: InstructionProps) => (
       <b>DO:</b> {instructions}
     </p>
   </div>
-)
+);
 
 export const DontContainer = ({ children, instructions }: InstructionProps) => (
   <div className="do-and-dont-example-item">
@@ -91,10 +91,10 @@ export const DontContainer = ({ children, instructions }: InstructionProps) => (
       <b>DON'T:</b> {instructions}
     </p>
   </div>
-)
+);
 
 export const ImageExampleContainer = ({
   children,
 }: {
-  children: React.ReactNode
-}) => <div className="do-and-dont-example-content-image">{children}</div>
+  children: React.ReactNode;
+}) => <div className="do-and-dont-example-content-image">{children}</div>;

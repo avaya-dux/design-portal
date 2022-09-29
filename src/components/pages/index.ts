@@ -1,3 +1,1 @@
-export {
-	PlaygroundImplementation
-} from "./buttons/PlaygroundImplementation";
+export { PlaygroundImplementation } from "./buttons/PlaygroundImplementation";
