@@ -1,0 +1,100 @@
+import { Icon } from "@avaya/neo-react"
+import clsx from "clsx"
+import React from "react"
+
+import "./DoAndDont.css"
+
+export interface InstructionProps {
+  children: React.ReactNode
+  instructions: string
+}
+
+export interface DoAndDontProps {
+  children: React.ReactElement<InstructionProps>[]
+  size?: "normal" | "wide"
+}
+
+/**
+ * The `DoAndDont` component is used to display a component's dos and don'ts.
+ *
+ * @example
+ * <DoAndDont>
+    <DoContainer instructions={colorDoInstructions}>
+      <Image src={TextLabel2Do} alt={colorDoImgAltText} />
+    </DoContainer>
+
+    <DontContainer instructions={colorDontInstructions}>
+      <Image src={TextLabel2Dont} alt={colorDontImgAltText} />
+    </DontContainer>
+  </DoAndDont>
+ *
+ * <DoAndDont size="wide">
+    <DoContainer instructions={doInstructions}>
+      <ImageExampleContainer>
+        <Image src={ArrangementDo} alt={doImgAltText} />
+      </ImageExampleContainer>
+    </DoContainer>
+
+    <DontContainer instructions={dontInstructions}>
+      <ImageExampleContainer>
+        <Image src={ArrangementDont} alt={dontImgAltText} />
+      </ImageExampleContainer>
+    </DontContainer>
+  </DoAndDont>
+ *
+ * @see `DoAndDont/DoAndDont.stories.tsx` for more details and examples.
+ */
+export const DoAndDont = ({ children, size = "normal" }: DoAndDontProps) => (
+  <div
+    className={clsx(
+      "do-and-dont-container",
+      size === "wide" && "do-and-dont-container-wide"
+    )}
+  >
+    {children}
+  </div>
+)
+
+export const DoContainer = ({ children, instructions }: InstructionProps) => (
+  <div className="do-and-dont-example-item">
+    <div className="do-and-dont-example-content">
+      <Icon
+        aria-label="check mark icon"
+        className="do-and-dont-check-mark"
+        icon="available-filled"
+        size="lg"
+      />
+
+      {children}
+    </div>
+
+    <p className="do-and-dont-paragraph">
+      <b>DO:</b> {instructions}
+    </p>
+  </div>
+)
+
+export const DontContainer = ({ children, instructions }: InstructionProps) => (
+  <div className="do-and-dont-example-item">
+    <div className="do-and-dont-example-content">
+      <Icon
+        className="do-and-dont-missed-filled"
+        icon="missed-filled"
+        aria-label="error icon"
+        size="lg"
+      />
+
+      {children}
+    </div>
+
+    <p className="do-and-dont-paragraph">
+      <b>DON'T:</b> {instructions}
+    </p>
+  </div>
+)
+
+export const ImageExampleContainer = ({
+  children,
+}: {
+  children: React.ReactNode
+}) => <div className="do-and-dont-example-content-image">{children}</div>

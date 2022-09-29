@@ -1,0 +1,56 @@
+.do-and-dont-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.do-and-dont-container.do-and-dont-container-wide {
+  grid-template-columns: 1fr;
+}
+.do-and-dont-container-wide
+  .do-and-dont-example-item
+  .do-and-dont-example-content {
+  aspect-ratio: unset;
+}
+
+.do-and-dont-example-content {
+  background-color: #f1f1f1; /* Base/100 */
+  border: 1px solid #c9c9c9; /* Base/200 */
+  box-shadow: inset 0px -8px 0px #088a08;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  aspect-ratio: 1 / 0.7;
+  padding: 1rem 1.5rem 2rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.do-and-dont-example-content .do-and-dont-check-mark {
+  color: green;
+  margin-bottom: 1rem;
+}
+
+.do-and-dont-example-content .do-and-dont-missed-filled {
+  color: red;
+  margin-bottom: 1rem;
+}
+
+.do-and-dont-example-item .do-and-dont-paragraph {
+  /* Web/Large Body - Regular */
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.do-and-dont-example-content-image img.neo-img {
+  background: #fff; /* Base/0 */
+  min-height: 10rem;
+  padding: 2rem;
+}
+
+.do-and-dont-example-content-image {
+  display: flex;
+  justify-content: center;
+  background: #fff; /* Base/0 */
+  height: 100%;
+}
