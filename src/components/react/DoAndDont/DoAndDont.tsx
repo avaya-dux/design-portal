@@ -1,7 +1,7 @@
 import { Icon } from "@avaya/neo-react";
 import clsx from "clsx";
 
-import "./DoAndDont.css";
+import styles from "./DoAndDont.module.css";
 
 export interface InstructionProps {
   children: React.ReactNode;
@@ -46,8 +46,8 @@ export interface DoAndDontProps {
 export const DoAndDont = ({ children, size = "normal" }: DoAndDontProps) => (
   <div
     className={clsx(
-      "do-and-dont-container",
-      size === "wide" && "do-and-dont-container-wide"
+      styles["do-and-dont-container"],
+      size === "wide" && styles["do-and-dont-container-wide"]
     )}
   >
     {children}
