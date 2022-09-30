@@ -11,7 +11,7 @@ import type { ReactNode } from "react";
 import { CodeHighlight } from "../CodeHighlight";
 import { OptionsSection, OptionsContainer } from "./helpers";
 
-import styles from "./Playground.module.css";
+import "./Playground.css";
 
 interface Examples {
   className?: string;
@@ -88,18 +88,16 @@ export const Playground = ({
   title,
 }: PlaygroundProps) => {
   return (
-    <div className={styles["playground-container"]}>
-      {title && <label className={styles["playground-title"]}>{title}</label>}
-      {description && (
-        <p className={styles["playground-description"]}>{description}</p>
-      )}
+    <div className="playground-container">
+      {title && <label className="playground-title">{title}</label>}
+      {description && <p className="playground-description">{description}</p>}
 
-      <div className={styles["playground-examples"]}>
-        <div className={styles["playground-element"]}>{children}</div>
+      <div className="playground-examples">
+        <div className="playground-element">{children}</div>
 
         {options}
 
-        <div className={styles["playground-code"]}>
+        <div className="playground-code">
           <Tabs>
             <TabList>
               <Tab id="html">HTML</Tab>

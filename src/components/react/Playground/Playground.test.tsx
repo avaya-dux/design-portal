@@ -64,6 +64,8 @@ describe("Playground", () => {
     });
     render(DefaultExample);
 
+    expect(screen.getAllByRole("button")).toHaveLength(4); // section toggle, reset, copy, html tab, react tab
+
     const toggleButton = screen.getByRole("button", {
       name: "Toggle Playground Options",
     });
