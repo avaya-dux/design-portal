@@ -27,6 +27,7 @@ export interface DoAndDontProps {
     </DoAndDont.DontContainer>
   </DoAndDont>
  *
+ * @example
  * <DoAndDont size="wide">
     <DoAndDont.DoContainer instructions={doInstructions}>
       <ImageExampleContainer>
