@@ -1,0 +1,61 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Description,
+  SectionHeader,
+  DoAndDont,
+  DoContainer,
+  DontContainer,
+  ImageExampleContainer,
+} from "components";
+
+import ArrangementDo from "./button-imgs/do-arrangement-1.svg";
+import ArrangementDont from "./button-imgs/dont-arrangement-1.svg";
+
+const arrangementDoInstructions =
+  "Prioritize the calls to actions by using one primary button per page. Multiple secondary and tertiary actions can be used.";
+const arrangementDoImgAltText =
+  "image showing a confimation dialog with three buttons, two secondary and then one primary";
+
+const arrangementDontInstructions = "Do not use multiple primary buttons.";
+const arrangementDontImgAltText =
+  "image showing a confirmation with three buttons, one secondary and then two primary";
+---
+
+<SectionHeader id="arrangement">Arrangement</SectionHeader>
+
+<Description>
+  The purpose of highlighted object (like a Primary button) is to draw the
+  user's attention to the key item on the screen. Too many highlights can be
+  confusing for the user, making the important bit disappear into background
+  noise.
+</Description>
+
+<Description>
+  For Primary buttons, only add one to each screen or region to keep the user's
+  attention properly focused.
+</Description>
+
+<Description>
+  Icons may be added beside the button text if it will help the user.
+</Description>
+
+<Description>
+  Where space limitations do not permit text on the button, an icon can be used
+  alone if the icon is sufficiently clear to communicate the action. All icon
+  buttons must include a Tooltip to replace the button text.
+</Description>
+
+<DoAndDont size="wide">
+  <DoContainer instructions={arrangementDoInstructions}>
+    <ImageExampleContainer>
+      <Image src={ArrangementDo} alt={arrangementDoImgAltText} />
+    </ImageExampleContainer>
+  </DoContainer>
+
+  <DontContainer instructions={arrangementDontInstructions}>
+    <ImageExampleContainer>
+      <Image src={ArrangementDont} alt={arrangementDontImgAltText} />
+    </ImageExampleContainer>
+  </DontContainer>
+</DoAndDont>

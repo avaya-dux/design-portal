@@ -2,154 +2,22 @@
 export const title = "Button Component";
 export const description = "The Neo Button component";
 
-import { Image } from "@avaya/neo-react";
-
 import { Layout } from "layouts";
+
 import {
-  PageTitle,
-  Description,
-  SectionHeader,
-  DoAndDont,
-  DoContainer,
-  DontContainer,
-  ImageExampleContainer,
-} from "components";
-
-import { PlaygroundImplementation } from "components/pages";
-
-import ArrangementDo from "./button-imgs/do-arrangement-1.svg";
-import ArrangementDont from "./button-imgs/dont-arrangement-1.svg";
-import TextLabel1Do from "./button-imgs/do-text-label-1.svg";
-import TextLabel2Do from "./button-imgs/do-text-label-2.svg";
-import TextLabel1Dont from "./button-imgs/dont-text-label-1.svg";
-import TextLabel2Dont from "./button-imgs/dont-text-label-2.svg";
-
-const arrangementDoInstructions =
-  "Prioritize the calls to actions by using one primary button per page. Multiple secondary and tertiary actions can be used.";
-const arrangementDoImgAltText =
-  "image showing a confimation dialog with three buttons, two secondary and then one primary";
-
-const arrangementDontInstructions = "Do not use multiple primary buttons.";
-const arrangementDontImgAltText =
-  "image showing a confirmation with three buttons, one secondary and then two primary";
-
-const textDoInstructions =
-  "Use title case within the button text. Capitalize only the first letter of the button text unless it is a proper name. For example, Sign In.";
-const textDoImgAltText = "image showing a button with title case text";
-
-const textDontInstructions =
-  "Do not use any other casing, except for Android applications where caplocks are used by default.";
-const textDontImgAltText = "image showing a button with capital case text";
-
-const colorDoInstructions =
-  "Use actionable verbs to concisely describe the function that the button performs.";
-const colorDoImgAltText =
-  "image showing a form confirmation dialog with a 'cancel' button and 'delete' button";
-
-const colorDontInstructions = "Do not use generic terms to describe actions.";
-const colorDontImgAltText =
-  "image showing a form confirmation dialog with a 'no' button and 'yes' button";
+  PlaygroundImplementation,
+  Header,
+  TextLabel,
+  Arrangement,
+} from "components/pages/components/buttons";
 ---
 
 <Layout title="Buttons">
-  <PageTitle>Buttons</PageTitle>
-
-  <Description>
-    Buttons give people a way to trigger an action. They're typically found in
-    forms, dialog panels, and dialogs. Some buttons are specialized for
-    particular tasks, such as navigation, repeated actions, or presenting menus.
-  </Description>
-
-  <Description>
-    For more information about adding Dark Mode to the Button Component, please
-    visit the Themes page.
-  </Description>
+  <Header />
 
   <PlaygroundImplementation client:load />
 
-  <SectionHeader id="text-label">Text Label</SectionHeader>
+  <TextLabel />
 
-  <Description>
-    The text on a button tells the user what action will be performed when
-    activated. There is very little room, so whatever text you add must be
-    clear, direct, short, and descriptive.
-  </Description>
-
-  <Description>
-    The text should not be a simple binary choice (e.g. Yes / No, True / False)
-    but should refer to the action being performed (e.g. Save, Delete, Cancel,
-    Restore, Continue).
-  </Description>
-
-  <Description>
-    Icons may be added beside the button text if it will help the user.
-  </Description>
-
-  <Description>
-    Where space limitations do not permit text on the button, an icon can be
-    used alone if the icon is sufficiently clear to communicate the action. All
-    icon buttons must include a Tooltip to replace the button text.
-  </Description>
-
-  <DoAndDont>
-    <DoContainer instructions={textDoInstructions}>
-      <ImageExampleContainer>
-        <Image src={TextLabel1Do} alt={textDoImgAltText} width={200} />
-      </ImageExampleContainer>
-    </DoContainer>
-
-    <DontContainer instructions={textDontInstructions}>
-      <ImageExampleContainer>
-        <Image src={TextLabel1Dont} alt={textDontImgAltText} width={200} />
-      </ImageExampleContainer>
-    </DontContainer>
-  </DoAndDont>
-
-  <DoAndDont>
-    <DoContainer instructions={colorDoInstructions}>
-      <Image src={TextLabel2Do} alt={colorDoImgAltText} />
-    </DoContainer>
-
-    <DontContainer instructions={colorDontInstructions}>
-      <Image src={TextLabel2Dont} alt={colorDontImgAltText} />
-    </DontContainer>
-  </DoAndDont>
-
-  <SectionHeader id="arrangement">Arrangement</SectionHeader>
-
-  <Description>
-    The purpose of highlighted object (like a Primary button) is to draw the
-    user's attention to the key item on the screen. Too many highlights can be
-    confusing for the user, making the important bit disappear into background
-    noise.
-  </Description>
-
-  <Description>
-    For Primary buttons, only add one to each screen or region to keep the
-    user's attention properly focused.
-  </Description>
-
-  <Description>
-    Icons may be added beside the button text if it will help the user.
-  </Description>
-
-  <Description>
-    Where space limitations do not permit text on the button, an icon can be
-    used alone if the icon is sufficiently clear to communicate the action. All
-    icon buttons must include a Tooltip to replace the button text.
-  </Description>
-
-  <DoAndDont size="wide">
-    <DoContainer instructions={arrangementDoInstructions}>
-      <ImageExampleContainer>
-        <Image src={ArrangementDo} alt={arrangementDoImgAltText} />
-      </ImageExampleContainer>
-    </DoContainer>
-
-    <DontContainer instructions={arrangementDontInstructions}>
-      <ImageExampleContainer>
-        <Image src={ArrangementDont} alt={arrangementDontImgAltText} />
-      </ImageExampleContainer>
-    </DontContainer>
-  </DoAndDont>
+  <Arrangement />
 </Layout>
