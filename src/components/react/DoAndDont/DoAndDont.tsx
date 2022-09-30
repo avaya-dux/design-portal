@@ -1,6 +1,5 @@
 import { Icon } from "@avaya/neo-react";
 import clsx from "clsx";
-import React from "react";
 
 import "./DoAndDont.css";
 
@@ -19,27 +18,27 @@ export interface DoAndDontProps {
  *
  * @example
  * <DoAndDont>
-    <DoContainer instructions={colorDoInstructions}>
+    <DoAndDont.DoContainer instructions={colorDoInstructions}>
       <Image src={TextLabel2Do} alt={colorDoImgAltText} />
-    </DoContainer>
+    </DoAndDont.DoContainer>
 
-    <DontContainer instructions={colorDontInstructions}>
+    <DoAndDont.DontContainer instructions={colorDontInstructions}>
       <Image src={TextLabel2Dont} alt={colorDontImgAltText} />
-    </DontContainer>
+    </DoAndDont.DontContainer>
   </DoAndDont>
  *
  * <DoAndDont size="wide">
-    <DoContainer instructions={doInstructions}>
+    <DoAndDont.DoContainer instructions={doInstructions}>
       <ImageExampleContainer>
         <Image src={ArrangementDo} alt={doImgAltText} />
       </ImageExampleContainer>
-    </DoContainer>
+    </DoAndDont.DoContainer>
 
-    <DontContainer instructions={dontInstructions}>
+    <DoAndDont.DontContainer instructions={dontInstructions}>
       <ImageExampleContainer>
         <Image src={ArrangementDont} alt={dontImgAltText} />
       </ImageExampleContainer>
-    </DontContainer>
+    </DoAndDont.DontContainer>
   </DoAndDont>
  *
  * @see `DoAndDont/DoAndDont.stories.tsx` for more details and examples.
@@ -55,7 +54,7 @@ export const DoAndDont = ({ children, size = "normal" }: DoAndDontProps) => (
   </div>
 );
 
-export const DoContainer = ({ children, instructions }: InstructionProps) => (
+const DoContainer = ({ children, instructions }: InstructionProps) => (
   <div className="do-and-dont-example-item">
     <div className="do-and-dont-example-content">
       <Icon
@@ -74,7 +73,7 @@ export const DoContainer = ({ children, instructions }: InstructionProps) => (
   </div>
 );
 
-export const DontContainer = ({ children, instructions }: InstructionProps) => (
+const DontContainer = ({ children, instructions }: InstructionProps) => (
   <div className="do-and-dont-example-item">
     <div className="do-and-dont-example-content">
       <Icon
@@ -93,8 +92,10 @@ export const DontContainer = ({ children, instructions }: InstructionProps) => (
   </div>
 );
 
-export const ImageExampleContainer = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => <div className="do-and-dont-example-content-image">{children}</div>;
+const ImageExampleContainer = ({ children }: { children: React.ReactNode }) => (
+  <div className="do-and-dont-example-content-image">{children}</div>
+);
+
+DoAndDont.DoContainer = DoContainer;
+DoAndDont.DontContainer = DontContainer;
+DoAndDont.ImageExampleContainer = ImageExampleContainer;

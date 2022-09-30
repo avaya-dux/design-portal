@@ -1,12 +1,7 @@
 ---
 import { Image } from "@avaya/neo-react";
 import { Description, SectionHeader } from "components/astro";
-import {
-  DoAndDont,
-  DoContainer,
-  DontContainer,
-  ImageExampleContainer,
-} from "components/react";
+import { DoAndDont } from "components/react";
 
 import TextLabel1Do from "./button-imgs/do-text-label-1.svg";
 import TextLabel2Do from "./button-imgs/do-text-label-2.svg";
@@ -56,25 +51,25 @@ const colorDontImgAltText =
 </Description>
 
 <DoAndDont>
-  <DoContainer instructions={textDoInstructions}>
-    <ImageExampleContainer>
+  <DoAndDont.DoContainer instructions={textDoInstructions}>
+    <DoAndDont.ImageExampleContainer>
       <Image src={TextLabel1Do} alt={textDoImgAltText} width={200} />
-    </ImageExampleContainer>
-  </DoContainer>
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
 
-  <DontContainer instructions={textDontInstructions}>
-    <ImageExampleContainer>
+  <DoAndDont.DontContainer instructions={textDontInstructions}>
+    <DoAndDont.ImageExampleContainer>
       <Image src={TextLabel1Dont} alt={textDontImgAltText} width={200} />
-    </ImageExampleContainer>
-  </DontContainer>
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
 </DoAndDont>
 
 <DoAndDont>
-  <DoContainer instructions={colorDoInstructions}>
+  <DoAndDont.DoContainer instructions={colorDoInstructions}>
     <Image src={TextLabel2Do} alt={colorDoImgAltText} />
-  </DoContainer>
+  </DoAndDont.DoContainer>
 
-  <DontContainer instructions={colorDontInstructions}>
+  <DoAndDont.DontContainer instructions={colorDontInstructions}>
     <Image src={TextLabel2Dont} alt={colorDontImgAltText} />
-  </DontContainer>
+  </DoAndDont.DontContainer>
 </DoAndDont>

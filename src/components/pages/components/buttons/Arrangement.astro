@@ -1,13 +1,6 @@
 ---
 import { Image } from "@avaya/neo-react";
-import {
-  Description,
-  SectionHeader,
-  DoAndDont,
-  DoContainer,
-  DontContainer,
-  ImageExampleContainer,
-} from "components";
+import { Description, SectionHeader, DoAndDont } from "components";
 
 import ArrangementDo from "./button-imgs/do-arrangement-1.svg";
 import ArrangementDont from "./button-imgs/dont-arrangement-1.svg";
@@ -47,15 +40,15 @@ const arrangementDontImgAltText =
 </Description>
 
 <DoAndDont size="wide">
-  <DoContainer instructions={arrangementDoInstructions}>
-    <ImageExampleContainer>
+  <DoAndDont.DoContainer instructions={arrangementDoInstructions}>
+    <DoAndDont.ImageExampleContainer>
       <Image src={ArrangementDo} alt={arrangementDoImgAltText} />
-    </ImageExampleContainer>
-  </DoContainer>
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
 
-  <DontContainer instructions={arrangementDontInstructions}>
-    <ImageExampleContainer>
+  <DoAndDont.DontContainer instructions={arrangementDontInstructions}>
+    <DoAndDont.ImageExampleContainer>
       <Image src={ArrangementDont} alt={arrangementDontImgAltText} />
-    </ImageExampleContainer>
-  </DontContainer>
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
 </DoAndDont>
