@@ -1,18 +1,23 @@
 ---
-import { Layout } from "layouts";
-import { PageTitle, Description } from "components";
-import { Button } from "@avaya/neo-react";
-
 export const title = "Button Component";
 export const description = "The Neo Button component";
+
+import { Layout } from "layouts";
+
+import {
+  PlaygroundImplementation,
+  Header,
+  TextLabel,
+  Arrangement,
+} from "components/pages/components/buttons";
 ---
 
 <Layout title="Buttons">
-  <PageTitle>Buttons</PageTitle>
+  <Header />
 
-  <Description>Buttons Page</Description>
+  <PlaygroundImplementation client:load />
 
-  <Button>Example</Button>
-  <Button>Example</Button>
-  <Button>Example</Button>
+  <TextLabel />
+
+  <Arrangement />
 </Layout>

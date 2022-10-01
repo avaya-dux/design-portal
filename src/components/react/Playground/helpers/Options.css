@@ -1,0 +1,78 @@
+.playground-container .playground-examples {
+  position: relative;
+}
+
+.playground-container
+  .playground-examples
+  .options-container
+  .playground-options {
+  overflow: auto;
+  width: 16rem;
+  height: var(--playground-options-height);
+  border-left: 1px solid var(--neo-color-base-200);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.playground-container
+  .playground-examples
+  .options-container
+  .toggle-all-options {
+  position: absolute;
+  right: 0;
+  color: black;
+  display: none;
+}
+
+@media screen and (max-width: 780px) {
+  .playground-container .playground-examples .options-container {
+    background-color: var(--global-background);
+    position: absolute;
+    right: 0;
+  }
+
+  .playground-container
+    .playground-examples
+    .options-container
+    .playground-options {
+    display: none;
+  }
+
+  .playground-container
+    .playground-examples
+    .options-container
+    .toggle-all-options {
+    display: flex;
+  }
+}
+
+.playground-container
+  .playground-examples
+  .playground-options
+  .playground-options-section {
+  margin: 1rem 1rem 0rem 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--neo-color-base-200);
+
+  display: grid;
+  grid-gap: 1rem;
+}
+.playground-container
+  .playground-examples
+  .playground-options
+  .playground-options-section:last-child {
+  border-bottom: none;
+}
+
+.playground-container
+  .playground-examples
+  .playground-options
+  .playground-options-reset-btn {
+  margin: 1rem;
+}
+
+label.playground-options-section-label {
+  font-size: 12px; /* TODO: use `var(--neo-web-body-small-font-size)` */
+}
