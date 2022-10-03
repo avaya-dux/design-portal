@@ -35,11 +35,7 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
 
   <body>
     <NeoThemeProvider initialMode="dynamic">
-      <SiteHeader
-        pathname={Astro.url.pathname}
-        pages={pages}
-        client:only="react"
-      />
+      <SiteHeader pathname={Astro.url.pathname} pages={pages} client:load />
 
       <main id="main-content">
         <slot />
