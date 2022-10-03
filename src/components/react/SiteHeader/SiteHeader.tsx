@@ -1,7 +1,7 @@
 import { Button, Sheet, TopNav } from "@avaya/neo-react";
 
 import type { AstroInstance } from "astro";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import styles from "./SiteHeader.module.css";
 
@@ -127,34 +127,30 @@ export const SiteHeader = ({
   );
 };
 
-const Logo = () => {
-  const { mobile, condensed, full } = useMemo(() => {
-    const isDarkMode =
-      (typeof window !== "undefined" &&
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches) ||
-      false;
-
-    return {
-      mobile: isDarkMode
-        ? "/imgs/logo-mobile-dark.svg"
-        : "/imgs/logo-mobile-light.svg",
-      condensed: isDarkMode
-        ? "/imgs/logo-condensed-dark.svg"
-        : "/imgs/logo-condensed-light.svg",
-      full: isDarkMode
-        ? "/imgs/logo-full-dark.svg"
-        : "/imgs/logo-full-light.svg",
-    };
-  }, []);
-
-  return (
-    <a href="/" aria-label="Homepage">
-      <picture>
-        <source media="(max-width: 1024px)" srcSet={mobile} />
-        <source media="(max-width: 1440px)" srcSet={condensed} />
-        <img src={full} alt="Avaya Logo" />
-      </picture>
-    </a>
-  );
-};
+const mobileDark = "/imgs/logo-mobile-dark.svg";
+const mobileLight = "/imgs/logo-mobile-light.svg";
+const condensedDark = "/imgs/logo-condensed-dark.svg";
+const condensedLight = "/imgs/logo-condensed-light.svg";
+const fullDark = "/imgs/logo-full-dark.svg";
+const fullLight = "/imgs/logo-full-light.svg";
+const Logo = () => (
+  <a href="/" aria-label="Homepage">
+    <picture>
+      <source
+        media="(max-width: 1024px) and (prefers-color-scheme: dark)"
+        srcSet={mobileDark}
+      />
+      <source media="(max-width: 1024px)" srcSet={mobileLight} />
+      <source
+        media="(max-width: 1440px) and (prefers-color-scheme: dark)"
+        srcSet={condensedDark}
+      />
+      <source media="(max-width: 1440px)" srcSet={condensedLight} />
+      <source
+        media="(min-width: 1441px) and (prefers-color-scheme: dark)"
+        srcSet={fullDark}
+      />
+      <img src={fullLight} alt="Avaya Logo" />
+    </picture>
+  </a>
+);
