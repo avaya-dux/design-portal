@@ -13,10 +13,10 @@ export interface PageAstroInstance extends AstroInstance {
 /**
  * IMPORTANT: DPv3 is SSRd, and this component requires browser APIs.
  * Thus, in Astro, this component _must_ be rendered client-side via:
- * `client:only="react"`
+ * `client:*`
  *
  * @example
- * <SiteHeader pathname={Astro.url.pathname} pages={pages} client:only="react" />
+ * <SiteHeader pathname={Astro.url.pathname} pages={pages} client:load />
  *
  * @see `layout/Layout.astro` for implementation details
  */
@@ -127,30 +127,30 @@ export const SiteHeader = ({
   );
 };
 
-const mobileDark = "/imgs/logo-mobile-dark.svg";
-const mobileLight = "/imgs/logo-mobile-light.svg";
-const condensedDark = "/imgs/logo-condensed-dark.svg";
-const condensedLight = "/imgs/logo-condensed-light.svg";
-const fullDark = "/imgs/logo-full-dark.svg";
-const fullLight = "/imgs/logo-full-light.svg";
 const Logo = () => (
   <a href="/" aria-label="Homepage">
     <picture>
       <source
         media="(max-width: 1024px) and (prefers-color-scheme: dark)"
-        srcSet={mobileDark}
+        srcSet="/imgs/logo-mobile-dark.svg"
       />
-      <source media="(max-width: 1024px)" srcSet={mobileLight} />
+      <source
+        media="(max-width: 1024px)"
+        srcSet="/imgs/logo-mobile-light.svg"
+      />
       <source
         media="(max-width: 1440px) and (prefers-color-scheme: dark)"
-        srcSet={condensedDark}
+        srcSet="/imgs/logo-condensed-dark.svg"
       />
-      <source media="(max-width: 1440px)" srcSet={condensedLight} />
+      <source
+        media="(max-width: 1440px)"
+        srcSet="/imgs/logo-condensed-light.svg"
+      />
       <source
         media="(min-width: 1441px) and (prefers-color-scheme: dark)"
-        srcSet={fullDark}
+        srcSet="/imgs/logo-full-dark.svg"
       />
-      <img src={fullLight} alt="Avaya Logo" />
+      <img src="/imgs/logo-full-light.svg" alt="Avaya Logo" />
     </picture>
   </a>
 );
