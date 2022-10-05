@@ -1,9 +1,7 @@
-import { Button, Sheet, TopNav } from "@avaya/neo-react";
-
 import type { AstroInstance } from "astro";
-import { useCallback, useEffect, useState } from "react";
-
-import styles from "./SiteHeader.module.css";
+import { TopNav } from "@avaya/neo-react";
+import { useCallback } from "react";
+import { TopNavSearch } from "./helpers";
 
 export interface PageAstroInstance extends AstroInstance {
   title: string;
@@ -27,25 +25,6 @@ export const SiteHeader = ({
   pathname: string;
   pages: PageAstroInstance[];
 }) => {
-  const [search, setSearch] = useState("");
-  const [options, setOptions] = useState<PageAstroInstance[]>([]);
-
-  useEffect(() => {
-    if (search) {
-      const lowerCaseSearch = search.toLowerCase();
-
-      const filteredPages = pages.filter(
-        (page) =>
-          page.title.toLowerCase().includes(lowerCaseSearch) ||
-          page.description.toLowerCase().includes(lowerCaseSearch)
-      );
-
-      setOptions(filteredPages.length ? filteredPages : []);
-    } else {
-      setOptions([]);
-    }
-  }, [search]);
-
   const isActiveLink = useCallback(
     (link: string) => pathname.startsWith(link),
     [pathname]
@@ -100,29 +79,7 @@ export const SiteHeader = ({
         FAQs
       </TopNav.LinkButton>
 
-      <TopNav.Search
-        onChange={(e) => setSearch(e.currentTarget.value)}
-        value={search}
-        clearable={false}
-      />
-
-      <Sheet
-        className={styles["search-sheet-results"]}
-        open={options.length > 0}
-        title="Search Results"
-      >
-        <div className={styles["link-container"]}>
-          {options.map((option, i) => (
-            <a href={option.url || "/"} key={i}>
-              {option.title}
-            </a>
-          ))}
-        </div>
-
-        <Button onClick={() => setSearch("")} size="wide">
-          Close
-        </Button>
-      </Sheet>
+      <TopNavSearch pages={pages} />
     </TopNav>
   );
 };
