@@ -1,7 +1,10 @@
 import type { AstroInstance } from "astro";
 import { TopNav } from "@avaya/neo-react";
 import { useCallback } from "react";
+
 import { TopNavSearch } from "./helpers";
+
+import "./SiteHeaderStyleOverrides.css";
 
 export interface PageAstroInstance extends AstroInstance {
   title: string;

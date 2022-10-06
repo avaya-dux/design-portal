@@ -11,9 +11,6 @@ import { SiteHeader, SiteFooter, PageAstroInstance } from "components";
 
 import "@avaya/neo-react/avaya-neo-react.css";
 
-const headerHeight = "65px";
-const footerHeight = "58px";
-
 const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
   .filter((page) => page.title)
   .map((page) => ({
@@ -45,32 +42,35 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
     </NeoThemeProvider>
 
     <style is:global>
+      :root {
+        --header-height: 58px;
+        --footer-height: 58px;
+      }
+      @media screen and (max-width: 799px) {
+        :root {
+          --header-height: 48px;
+          --footer-height: 48px;
+        }
+      }
+
       a {
         text-decoration: none;
       }
 
-      /* TODO: fix this in css-lib */
-      nav.neo-navbar .neo-nav--left {
-        height: auto;
-        align-items: unset;
-      }
-      nav.neo-navbar .neo-nav .neo-form-control.neo-input-icon {
-        display: flex;
-        align-items: center;
-        padding-left: 32px;
-        padding-right: 32px;
+      p {
+        max-width: 80ch;
       }
     </style>
 
-    <style define:vars={{ headerHeight, footerHeight }}>
+    <style>
       body {
         margin: 0;
       }
 
       body main {
-        min-height: calc(100vh - var(--headerHeight) - var(--footerHeight));
-        max-width: 60rem;
-        padding-bottom: 2rem;
+        min-height: calc(100vh - (var(--header-height) + var(--footer-height)));
+        max-width: 952px;
+        padding: 0 1rem 2rem 1rem;
         margin: auto;
       }
     </style>

@@ -35,7 +35,7 @@ import { Image } from "@avaya/neo-react";
   </div>
 
   <div class="footer__text--align">
-    <p class="footer__copyright neo-body-tiny neo-italic">
+    <p class="neo-body-tiny neo-italic">
       &copy; {new Date().getFullYear()} Avaya, Inc.
     </p>
   </div>
@@ -46,19 +46,20 @@ import { Image } from "@avaya/neo-react";
     border-top: 1px solid var(--neo-color-base-600);
     display: flex;
     justify-content: space-between;
-    padding: 22px 48px;
+    height: var(--footer-height);
   }
 
   .footer__text--align {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-right: 2%;
+    padding-left: 48px;
+    padding-right: 48px;
   }
 
   .footer__links--wrapper {
-    align-content: flex-end;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 600px;
   }
@@ -66,10 +67,5 @@ import { Image } from "@avaya/neo-react";
   .footer__links--wrapper a {
     font-size: var(--neo-body-small-font-size);
     line-height: var(--neo-body-small-line-height);
-  }
-
-  .footer__copyright {
-    font-weight: var(--neo-regular);
-    margin-bottom: 0 !important;
   }
 </style>
