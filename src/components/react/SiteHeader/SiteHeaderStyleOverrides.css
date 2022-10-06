@@ -9,10 +9,3 @@ body nav.neo-navbar .neo-nav--left {
   height: 100%;
   align-items: unset;
 }
-
-nav.neo-navbar .neo-nav .neo-form-control.neo-input-icon {
-  display: flex;
-  align-items: center;
-  padding-left: 32px;
-  padding-right: 32px;
-}
