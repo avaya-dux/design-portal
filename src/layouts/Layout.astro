@@ -74,7 +74,10 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
       }
 
       body main {
-        min-height: calc(100vh - (var(--header-height) + var(--footer-height)));
+        /* plus `1px` for border */
+        min-height: calc(
+          100vh - (var(--header-height) + var(--footer-height) + 1px)
+        );
         max-width: 60rem;
         padding: 0 1rem 2rem 1rem;
         margin: auto;
