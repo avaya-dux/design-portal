@@ -50,7 +50,9 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
         --mobile-max-breakpoint: 799px;
         --tablet-max-breakpoint: 1279px;
       }
-      @media screen and (max-width: var(--mobile-max-breakpoint)) {
+
+      /* mobile-small */
+      @media screen and (max-width: 671px) {
         :root {
           --header-height: 48px;
           --footer-height: 48px;
