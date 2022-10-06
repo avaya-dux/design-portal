@@ -91,23 +91,20 @@ const Logo = () => (
   <a href="/" aria-label="Homepage">
     <picture>
       <source
-        media="(max-width: 1024px) and (prefers-color-scheme: dark)"
+        media="(max-width: 799px) and (prefers-color-scheme: dark)"
         srcSet="/imgs/logo-mobile-dark.svg"
       />
+      <source media="(max-width: 799px)" srcSet="/imgs/logo-mobile-light.svg" />
       <source
-        media="(max-width: 1024px)"
-        srcSet="/imgs/logo-mobile-light.svg"
-      />
-      <source
-        media="(max-width: 1440px) and (prefers-color-scheme: dark)"
+        media="(max-width: 1279px) and (prefers-color-scheme: dark)"
         srcSet="/imgs/logo-condensed-dark.svg"
       />
       <source
-        media="(max-width: 1440px)"
+        media="(max-width: 1279px)"
         srcSet="/imgs/logo-condensed-light.svg"
       />
       <source
-        media="(min-width: 1441px) and (prefers-color-scheme: dark)"
+        media="(min-width: 1280px) and (prefers-color-scheme: dark)"
         srcSet="/imgs/logo-full-dark.svg"
       />
       <img src="/imgs/logo-full-light.svg" alt="Avaya Logo" />

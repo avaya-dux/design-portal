@@ -46,13 +46,15 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
         --header-height: 58px;
         --footer-height: 58px;
 
+        /*
         --mobile-small-max-breakpoint: 671px;
         --mobile-max-breakpoint: 799px;
         --tablet-max-breakpoint: 1279px;
+        */
       }
 
       /* mobile-small */
-      @media screen and (max-width: 671px) {
+      @media screen and (max-width: 799px) {
         :root {
           --header-height: 48px;
           --footer-height: 48px;
@@ -75,9 +77,11 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
 
       body main {
         /* plus `1px` for border */
-        min-height: calc(
-          100vh - (var(--header-height) + var(--footer-height) + 1px)
+        --body-main-height: calc(
+          100vh - var(--header-height) - var(--footer-height) - 1px
         );
+
+        min-height: var(--body-main-height);
         max-width: 60rem;
         padding: 0 1rem 2rem 1rem;
         margin: auto;
