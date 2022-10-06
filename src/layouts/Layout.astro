@@ -86,6 +86,14 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
         padding: 0 1rem 2rem 1rem;
         margin: auto;
       }
+
+      @media screen and (max-width: 799px) {
+        body main {
+          --body-main-height: calc(
+            100vh - var(--header-height) - (var(--footer-height) * 3) - 1px
+          );
+        }
+      }
     </style>
   </body>
 </html>

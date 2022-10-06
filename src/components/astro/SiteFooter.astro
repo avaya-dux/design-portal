@@ -86,4 +86,32 @@ import { Image } from "@avaya/neo-react";
     font-size: var(--neo-body-small-font-size);
     line-height: var(--neo-body-small-line-height);
   }
+
+  @media (max-width: 799px) {
+    .footer--wrapper {
+      grid-template-areas:
+        "a b"
+        "c b";
+      padding: 1rem;
+    }
+
+    .footer-logo {
+      display: unset;
+      flex-direction: unset;
+      justify-content: unset;
+      align-items: unset;
+    }
+
+    .footer__links--wrapper {
+      justify-content: flex-start;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-copyright {
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-end;
+    }
+  }
 </style>
