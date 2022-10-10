@@ -30,13 +30,13 @@
     "@typescript-eslint/eslint-plugin": "5.39.0",
     "@typescript-eslint/parser": "5.39.0",
     "@vitejs/plugin-react": "2.1.0",
-    "@vitest/coverage-c8": "0.23.4",
-    "@vitest/ui": "0.23.4",
-    "astro": "1.3.1",
-    "eslint": "8.24.0",
-    "eslint-plugin-astro": "0.19.0",
+    "@vitest/coverage-c8": "0.24.0",
+    "@vitest/ui": "0.24.0",
+    "astro": "1.4.6",
+    "eslint": "8.25.0",
+    "eslint-plugin-astro": "0.20.0",
     "eslint-plugin-jsx-a11y": "6.6.1",
-    "eslint-plugin-react": "7.31.8",
+    "eslint-plugin-react": "7.31.9",
     "jest-axe": "6.0.0",
     "jest-coverage-badges": "1.1.2",
     "jsdom": "20.0.1",
@@ -45,13 +45,13 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "svelte": "3.50.1",
-    "vitest": "0.23.4",
+    "vitest": "0.24.0",
     "vue": "3.2.40"
   },
   "dependencies": {
     "@astrojs/netlify": "1.1.0",
-    "@astrojs/prefetch": "0.0.7",
-    "@avaya/neo-react": "0.7.2",
+    "@astrojs/prefetch": "0.0.8",
+    "@avaya/neo-react": "0.7.3",
     "clsx": "1.2.1"
   }
 }
