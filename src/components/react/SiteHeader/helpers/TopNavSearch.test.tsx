@@ -9,7 +9,7 @@ import { PageAstroInstance, TopNavSearch } from ".";
 describe("TopNavSearch", () => {
   const user = userEvent.setup();
 
-  const searchRole = "searchbox";
+  const searchRole = "textbox";
   const searchResultQuery = "[role='dialog'] a";
   const pagesMockData: PageAstroInstance[] = [
     {
@@ -38,7 +38,7 @@ describe("TopNavSearch", () => {
   it("fully renders without exploding", () => {
     render(<TopNavSearch pages={pagesMockData} />);
 
-    const searchElement = screen.getByRole("searchbox");
+    const searchElement = screen.getByRole(searchRole);
     expect(searchElement).toBeDefined();
   });
 
