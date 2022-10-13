@@ -9,7 +9,7 @@ import { PageAstroInstance, TopNavSearch } from ".";
 describe("TopNavSearch", () => {
   const user = userEvent.setup();
 
-  const searchRole = "textbox";
+  const searchRole = "searchbox";
   const searchResultQuery = "[role='dialog'] a";
   const pagesMockData: PageAstroInstance[] = [
     {
