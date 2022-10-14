@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import type { AstroInstance } from "astro";
 
 import styles from "./TopNavSearch.module.css";
+import "./TopNavSearch.css";
 
 export interface PageAstroInstance extends AstroInstance {
   title: string;
