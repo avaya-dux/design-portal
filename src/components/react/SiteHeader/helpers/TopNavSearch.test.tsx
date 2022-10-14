@@ -79,6 +79,7 @@ describe("TopNavSearch", () => {
       const searchInput = screen.getByRole(searchRole);
       await user.type(searchInput, "home");
 
+      await user.tab(); // tab to "clear" button
       await user.tab(); // tab to first search result
 
       expect(screen.getByRole("link", { name: "Home" })).toHaveFocus();

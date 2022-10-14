@@ -51,7 +51,7 @@
   "dependencies": {
     "@astrojs/netlify": "1.2.0",
     "@astrojs/prefetch": "0.0.8",
-    "@avaya/neo-react": "0.7.3",
+    "@avaya/neo-react": "0.7.4",
     "clsx": "1.2.1"
   }
 }
