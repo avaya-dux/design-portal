@@ -15,8 +15,6 @@ import { Playground } from "components";
 
 import { defaultHtml, defaultReact, sandbox, storybook } from "./static";
 
-// import "./PlaygroundImplementation.css";
-
 export const PlaygroundImplementation = () => {
   const [animation, setAnimation] = useState<ButtonProps["animation"]>("none");
   const [badge, setBadge] = useState<"1234" | undefined>(undefined);
