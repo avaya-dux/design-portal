@@ -1,0 +1,4 @@
+/* TODO: HACK: remove this file once `neo-react` v0.7.5 is used. This issue is resolved by PR#50: https://github.com/avaya-dux/neo-react-library/pull/50 */
+.neo-navbar .neo-nav--right {
+  padding-right: 1px;
+}
