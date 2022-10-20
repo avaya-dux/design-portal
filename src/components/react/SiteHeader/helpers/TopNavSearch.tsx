@@ -1,15 +1,11 @@
 import { Button, Sheet, TopNav } from "@avaya/neo-react";
 import { useEffect, useState } from "react";
 
-import type { AstroInstance } from "astro";
-
 import styles from "./TopNavSearch.module.css";
+
 import "./TopNavSearch.css";
 
-export interface PageAstroInstance extends AstroInstance {
-  title: string;
-  description: string;
-}
+import type { PageAstroInstance } from "../";
 
 export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
   const [search, setSearch] = useState("");
@@ -22,7 +18,7 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
       const filteredPages = pages.filter(
         (page) =>
           page.title.toLowerCase().includes(lowerCaseSearch) ||
-          page.description.toLowerCase().includes(lowerCaseSearch)
+          page.keywords.toLowerCase().includes(lowerCaseSearch)
       );
 
       setOptions(filteredPages.length ? filteredPages : []);
