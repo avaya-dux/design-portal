@@ -36,7 +36,7 @@ There's nothing special about `src/components/`, but that's where we like to put
 
 Any static assets, like images, should be placed in the `public/` directory.
 
-**When adding a new page**, you _must_ add an exported `title` and `description`. This is what the "Search" component uses to populate itself.
+**When adding a new page**, you _must_ add an exported `title` and `keywords`. This is what the "Search" component uses to populate itself.
 
 ## guidelines
 

@@ -1,0 +1,17 @@
+---
+import { Description, SectionHeader } from "components/astro";
+
+import { PlaygroundImplementation } from "./PlaygroundImplementation";
+---
+
+<SectionHeader id="button-interactive-playground">
+  Interactive Playground
+</SectionHeader>
+
+<Description>
+  The Interactive Playground allows you to experiment with various button styles
+  and features. Once you get the results you want, copy the HTML or React code
+  provided and paste it into your application.
+</Description>
+
+<PlaygroundImplementation client:load />

@@ -4,7 +4,8 @@ import userEvent from "@testing-library/user-event";
 import type { AstroComponentFactory } from "astro/dist/runtime/server";
 import { axe } from "jest-axe";
 
-import { PageAstroInstance, TopNavSearch } from ".";
+import { TopNavSearch } from ".";
+import type { PageAstroInstance } from "../";
 
 describe("TopNavSearch", () => {
   const user = userEvent.setup();
@@ -15,21 +16,21 @@ describe("TopNavSearch", () => {
     {
       url: "",
       title: "Home",
-      description: "Neo landing page",
+      keywords: "Neo landing page",
       default: {} as AstroComponentFactory,
       file: "",
     },
     {
       url: "/about",
       title: "About",
-      description: "About page",
+      keywords: "About page",
       default: {} as AstroComponentFactory,
       file: "",
     },
     {
       url: "/contact",
       title: "Contact",
-      description: "Contact page",
+      keywords: "Contact page",
       default: {} as AstroComponentFactory,
       file: "",
     },
