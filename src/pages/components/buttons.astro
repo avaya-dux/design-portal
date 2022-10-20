@@ -1,23 +1,36 @@
 ---
-export const title = "Button Component";
-export const description = "The Neo Button component";
-
-import {  PageSection } from "components/astro";
 import { Layout } from "layouts";
+import { Description, PageSection } from "components/astro";
 
 import {
-  PlaygroundImplementation,
-  Header,
-  TextLabel,
+  Anatomy,
   Arrangement,
+  Header,
+  PlaygroundImplementation,
+  TextLabel,
 } from "components/pages/components/buttons";
+
+export const title = "Button Component";
+export const description = "The Neo Button component";
 ---
 
 <Layout title="Buttons">
   <Header />
 
-  <PageSection title="Interactive Playground" description="The Interactive Playground allows you to experiment with various button styles and features. Once you get the results you want, copy the HTML or React code provided and paste it into your application.">
+  <PageSection id="playground" title="Interactive Playground">
+    <Description>
+      The Interactive Playground allows you to experiment with various button styles and features.
+      Once you get the results you want, copy the HTML or React code provided and paste it into your application.
+    </Description>
     <PlaygroundImplementation client:load />
+  </PageSection>
+
+  <PageSection id="anatomy" title="Anatomy">
+    <Description>
+      Each of the 4 button types are built using standardized parts as shown below.
+      For each button, some parts are required, while others can be omitted as desired.
+    </Description>
+    <Anatomy/>
   </PageSection>
 
   <TextLabel />

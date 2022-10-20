@@ -1,18 +1,14 @@
 ---
-import { Description, SectionHeader } from "components/astro";
+import { SectionHeader } from "components/astro";
 
 export interface Props {
+  id: string;
   title: string;
-  description: string;
 }
 
-const { title, description } = Astro.props as Props;
+const { id, title } = Astro.props as Props;
 ---
 <section>
-  <SectionHeader id="playground-section">{title}</SectionHeader>
-
-  <Description>
-    {description}
-  </Description>
+  <SectionHeader id={id}>{title}</SectionHeader>
   <slot/>
 </section>

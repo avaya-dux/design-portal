@@ -1,10 +1,7 @@
-import Header from "./Header.astro";
-export { Header };
-
-export { PlaygroundImplementation } from "./PlaygroundImplementation";
-
-import TextLabel from "./TextLabel.astro";
-export { TextLabel };
-
+import Anatomy from "./Anatomy.astro";
 import Arrangement from "./Arrangement.astro";
-export { Arrangement };
+import Header from "./Header.astro";
+import { PlaygroundImplementation } from "./PlaygroundImplementation";
+import TextLabel from "./TextLabel.astro";
+
+export { Anatomy, Arrangement, Header, PlaygroundImplementation, TextLabel };
