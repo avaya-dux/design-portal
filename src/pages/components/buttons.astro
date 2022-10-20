@@ -2,26 +2,20 @@
 export const title = "Button Component";
 export const keywords = "The Neo Button component";
 
-import { PageSection } from "components/astro";
 import { Layout } from "layouts";
 
 import {
-  PlaygroundImplementation,
+  Arrangement,
+  ButtonPlayground,
   Header,
   TextLabel,
-  Arrangement,
 } from "components/pages/components/buttons";
 ---
 
 <Layout title="Buttons">
   <Header />
 
-  <PageSection
-    title="Interactive Playground"
-    description="The Interactive Playground allows you to experiment with various button styles and features. Once you get the results you want, copy the HTML or React code provided and paste it into your application."
-  >
-    <PlaygroundImplementation client:load />
-  </PageSection>
+  <ButtonPlayground />
 
   <TextLabel />
 
