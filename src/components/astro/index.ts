@@ -6,4 +6,12 @@ import SiteFooter from "./SiteFooter.astro";
 import TopicLink from "./TopicLink.astro";
 import Topics from "./Topics.astro";
 
-export { Description, PageTitle, PageSection, SectionHeader, SiteFooter, TopicLink, Topics };
+export {
+  Description,
+  PageTitle,
+  PageSection,
+  SectionHeader,
+  SiteFooter,
+  TopicLink,
+  Topics,
+};

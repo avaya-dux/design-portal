@@ -8,11 +8,13 @@ export interface Props {
 
 const { title, description } = Astro.props as Props;
 ---
+
 <section>
   <SectionHeader id="playground-section">{title}</SectionHeader>
 
   <Description>
     {description}
   </Description>
-  <slot/>
+
+  <slot />
 </section>
