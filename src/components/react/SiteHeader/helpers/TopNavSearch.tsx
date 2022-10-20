@@ -35,8 +35,6 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
       <TopNav.Search
         onChange={(e) => setSearch(e.currentTarget.value)}
         value={search}
-        clearable={false}
-        type="search"
       />
 
       <Sheet

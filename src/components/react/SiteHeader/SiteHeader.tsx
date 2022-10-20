@@ -36,6 +36,7 @@ export const SiteHeader = ({
   return (
     <TopNav
       logo={<Logo />}
+      search={<TopNavSearch pages={pages} />}
       skipNav={
         <TopNav.SkipNav href="#main-content">
           Skip To Main Content
@@ -81,8 +82,6 @@ export const SiteHeader = ({
       >
         FAQs
       </TopNav.LinkButton>
-
-      <TopNavSearch pages={pages} />
     </TopNav>
   );
 };
