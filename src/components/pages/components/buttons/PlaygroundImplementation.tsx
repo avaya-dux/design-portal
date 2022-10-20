@@ -135,8 +135,8 @@ export const PlaygroundImplementation = () => {
                   value="disabled"
                   checked={disabled}
                 />
-                <Checkbox label="Icon" value="icon" checked={icon} />
-                <Checkbox label="Badge" value="badge" checked={badge} />
+                <Checkbox label="Icon" value="icon" checked={!!icon} />
+                <Checkbox label="Badge" value="badge" checked={!!badge} />
               </CheckboxGroup>
             </Playground.OptionsSection>
 
