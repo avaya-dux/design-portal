@@ -6,8 +6,6 @@ import { Playground } from "components";
 
 import { defaultHtml, defaultReact, sandbox, storybook } from "./static";
 
-// import "./PlaygroundImplementation.css";
-
 export const PlaygroundImplementation = () => {
   const [size, setSize] = useState<SpinnerProps["size"]>("md");
 
