@@ -1,4 +1,5 @@
 import Header from "./Header.astro";
 export { Header };
 
-export { PlaygroundImplementation } from "./PlaygroundImplementation";
+import SpinnerPlayground from "./SpinnerPlayground.astro";
+export { SpinnerPlayground };

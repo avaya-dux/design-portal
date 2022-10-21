@@ -2,21 +2,12 @@
 export const title = "Spinner Component";
 export const description = "The Neo Spinner component";
 
-import { PageSection } from "components/astro";
 import { Layout } from "layouts";
 
-import {
-  Header,
-  PlaygroundImplementation,
-} from "components/pages/components/spinner";
+import { Header, SpinnerPlayground } from "components/pages/components/spinner";
 ---
 
 <Layout title="Spinner">
   <Header />
-  <PageSection
-    title="Interactive Playground"
-    description="The Interactive Playground allows you to experiment with various Spinner styles. Once you get the results you want, copy the HTML or React code provided and paste it into your application."
-  >
-    <PlaygroundImplementation client:load />
-  </PageSection>
+  <SpinnerPlayground />
 </Layout>

@@ -7,3 +7,9 @@ const { href } = Astro.props as Props;
 ---
 
 <li><a href={href}><slot /></a></li>
+
+<style>
+  a {
+    font-size: 1rem;
+  }
+</style>

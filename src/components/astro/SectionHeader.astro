@@ -8,16 +8,30 @@ export interface Props {
 const { id } = Astro.props as Props;
 ---
 
-<a href={`#${id}`}>
+<div class="section-heading__wrapper">
   <h2 class="section-heading neo-bold" id={id}>
     <slot />
-
-    <Icon icon="link" aria-label="hyperlink icon" />
   </h2>
-</a>
+
+  <a href={`#${id}`}>
+    <Icon icon="link" aria-label="hyperlink icon" />
+  </a>
+</div>
 
 <style>
-  h2.section-heading {
+  .section-heading__wrapper {
+    display: flex;
+    align-items: center;
     padding-bottom: 1rem;
+  }
+
+  h2 + a {
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  [dir="rtl"] h2 + a {
+    margin-left: 0px;
+    margin-right: 0.5rem;
   }
 </style>
