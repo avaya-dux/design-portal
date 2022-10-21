@@ -8,7 +8,7 @@ import "./SiteHeaderStyleOverrides.css";
 
 export interface PageAstroInstance extends AstroInstance {
   title: string;
-  description: string;
+  keywords: string;
 }
 
 /**
