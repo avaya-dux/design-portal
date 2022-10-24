@@ -1,5 +1,5 @@
 import { IconButton, Notification } from "@avaya/neo-react";
-import { copyTextToClipboard } from "";
+import { copyTextToClipboard } from "../utils";
 import { useState } from "react";
 
 import styles from "./SectionLink.module.css";
