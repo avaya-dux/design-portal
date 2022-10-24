@@ -3,12 +3,11 @@ import { SectionHeader } from "components/astro";
 
 export interface Props {
   id: string;
-  title: string;
 }
 
-const { id, title } = Astro.props as Props;
+const { id } = Astro.props as Props;
 ---
 <section>
-  <SectionHeader id={id}>{title}</SectionHeader>
-  <slot/>
+  <SectionHeader id={id}><slot name="section-title" /></SectionHeader>
+  <slot name="section-content"/>
 </section>

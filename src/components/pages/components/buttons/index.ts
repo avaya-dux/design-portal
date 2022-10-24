@@ -1,7 +1,7 @@
 import Anatomy from "./Anatomy.astro";
 import Arrangement from "./Arrangement.astro";
-import Header from "./Header.astro";
-import { PlaygroundImplementation } from "./PlaygroundImplementation";
+import ButtonPlayground from "./ButtonPlayground.astro";
+import Intro from "./Intro.astro";
 import TextLabel from "./TextLabel.astro";
 
-export { Anatomy, Arrangement, Header, PlaygroundImplementation, TextLabel };
+export { Anatomy, Arrangement, ButtonPlayground, Intro, TextLabel };
