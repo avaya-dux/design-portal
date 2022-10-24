@@ -5,17 +5,14 @@ import { useState } from "react";
 import styles from "./SectionLink.module.css";
 
 export interface SectionLinkProps {
-  id: string;
   url: string;
 }
 
-export const SectionLink = ({ id, url }: SectionLinkProps) => {
+export const SectionLink = ({ url }: SectionLinkProps) => {
   const [showNotification, setShowNotification] = useState<boolean>(false);
 
-  const sectionURL = `${url}#${id}`;
-
   const handleClick = () => {
-    copyTextToClipboard(sectionURL);
+    copyTextToClipboard(url);
     setShowNotification(true);
     setTimeout(() => {
       setShowNotification(false);
@@ -24,15 +21,13 @@ export const SectionLink = ({ id, url }: SectionLinkProps) => {
 
   return (
     <>
-      <a href={sectionURL} className={styles["section-link"]}>
-        <IconButton
-          variant="tertiary"
-          shape="circle"
-          icon="link"
-          aria-label="hyperlink icon"
-          onClick={() => handleClick()}
-        />
-      </a>
+      <IconButton
+        variant="tertiary"
+        shape="circle"
+        icon="link"
+        aria-label="hyperlink icon"
+        onClick={() => handleClick()}
+      />
 
       {showNotification && (
         <div className={styles["section-link__notification-wrapper"]}>
