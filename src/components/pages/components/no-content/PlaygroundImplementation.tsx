@@ -23,7 +23,7 @@ export const PlaygroundImplementation = () => {
   );
 
   const react = useMemo(
-    () => `<NoContent icon={"${icon}"} text={"${text}"} />`,
+    () => `<NoContent icon="${icon}" text="${text}" />`,
     [icon, text]
   );
 
@@ -57,7 +57,7 @@ export const PlaygroundImplementation = () => {
             <Playground.OptionsSection title="Text">
               <TextInput
                 aria-label="Text"
-                onChange={(e) => setText(e.target.value)}
+                onChange={(e) => setText(e.target.value || "No Content")}
               />
             </Playground.OptionsSection>
           </Playground.OptionsContainer>
