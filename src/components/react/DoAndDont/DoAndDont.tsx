@@ -57,7 +57,7 @@ export const DoAndDont = ({ children, size = "normal" }: DoAndDontProps) => (
 
 const DoContainer = ({ children, instructions }: InstructionProps) => (
   <div className="do-and-dont-example-item">
-    <div className="do-and-dont-example-content">
+    <div className="do-and-dont-example-content do-and-dont-example-content-do">
       <Icon
         aria-label="check mark icon"
         className="do-and-dont-check-mark"
@@ -76,7 +76,7 @@ const DoContainer = ({ children, instructions }: InstructionProps) => (
 
 const DontContainer = ({ children, instructions }: InstructionProps) => (
   <div className="do-and-dont-example-item">
-    <div className="do-and-dont-example-content">
+    <div className="do-and-dont-example-content do-and-dont-example-content-dont">
       <Icon
         className="do-and-dont-missed-filled"
         icon="missed-filled"
