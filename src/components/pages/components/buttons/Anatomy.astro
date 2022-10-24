@@ -15,6 +15,34 @@ const anatomyImgAltText = "Image showing the different parts that make up a butt
     For each button, some parts are required, while others can be omitted as desired.
   </Description>
 
-  <ColumnLayout numOfColumns={1} slot="section-content">
+  <ColumnLayout numOfColumns={1}>
     <Image src={AnatomyImage} alt={anatomyImgAltText} />
+  </ColumnLayout>
+
+  <ColumnLayout numOfColumns={4}>
+    <div>
+      <p><strong>1. Primary button</strong></p>
+      <p>A. Text Label</p>
+      <p>B. Container</p>
+      <p>C. Icon (optional)</p>
+    </div>
+
+    <div>
+      <p><strong>2. Secondary button</strong></p>
+      <p>A. Text Label</p>
+      <p>B. Container</p>
+      <p>C. Icon (optional)</p>
+    </div>
+
+    <div>
+      <p><strong>3. Tertiary button</strong></p>
+      <p>A. Text Label</p>
+      <p>B. Icon (optional)</p>
+    </div>
+
+    <div>
+      <p><strong>4. Icon button</strong></p>
+      <p>A. Container</p>
+      <p>B. Icon</p>
+    </div>
   </ColumnLayout>
