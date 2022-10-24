@@ -1,5 +1,5 @@
 import { IconButton, Notification, Tooltip } from "@avaya/neo-react";
-import { copyTextToClipboard } from "components/utils";
+import { copyTextToClipboard } from "components/react/utils";
 import { useState, useRef } from "react";
 
 import styles from "./CodeHighlight.module.css";
