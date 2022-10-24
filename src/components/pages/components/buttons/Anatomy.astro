@@ -1,6 +1,6 @@
 ---
 import { Image } from "@avaya/neo-react";
-import { Description, ImageContainer, SectionHeader } from "components/astro";
+import { Description, ColumnLayout, SectionHeader } from "components/astro";
 
 import AnatomyImage from "./button-imgs/illustration-anatomy.svg";
 const anatomyImgAltText = "Image showing the different parts that make up a button";
@@ -15,6 +15,6 @@ const anatomyImgAltText = "Image showing the different parts that make up a butt
     For each button, some parts are required, while others can be omitted as desired.
   </Description>
 
-  <ImageContainer slot="section-content">
+  <ColumnLayout numOfColumns={1} slot="section-content">
     <Image src={AnatomyImage} alt={anatomyImgAltText} />
-  </ImageContainer>
+  </ColumnLayout>
