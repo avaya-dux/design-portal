@@ -159,7 +159,6 @@ export const PlaygroundImplementation = () => {
           </Playground.OptionsContainer>
         }
         examples={{
-          className: "height-220",
           html: isDefault ? defaultHtml : html,
           react: isDefault ? defaultReact : react,
           sandbox,

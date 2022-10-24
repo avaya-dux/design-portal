@@ -1,5 +1,6 @@
 import { IconButton, Notification, Tooltip } from "@avaya/neo-react";
-import { useState } from "react";
+import { copyTextToClipboard } from "components/utils/helpers";
+import { useState, useRef } from "react";
 
 import styles from "./CodeHighlight.module.css";
 /**
@@ -16,6 +17,8 @@ import styles from "./CodeHighlight.module.css";
 export const CodeHighlight = ({ code }: { code: string }) => {
   const [isCopied, setIsCopied] = useState(false);
 
+  const buttonRef = useRef(null);
+
   return (
     <div className={styles["code-container"]}>
       <code>{code}</code>
@@ -29,8 +32,11 @@ export const CodeHighlight = ({ code }: { code: string }) => {
           aria-label="copy content to clipboard"
           icon="copy"
           shape="circle"
-          onClick={() => {
+          ref={buttonRef}
+          onClick={(e) => {
             copyTextToClipboard(code);
+
+            e.currentTarget.blur();
 
             setIsCopied(true);
 
@@ -42,16 +48,15 @@ export const CodeHighlight = ({ code }: { code: string }) => {
       </Tooltip>
 
       {isCopied && (
-        <Notification
-          action={{ onClick: () => setIsCopied(false) }}
-          header="Code copied to clipboard"
-          icon="copy"
-          type="success"
-        />
+        <div className={styles["code-container__notification-wrapper"]}>
+          <Notification
+            action={{ onClick: () => setIsCopied(false) }}
+            header="Code copied to clipboard"
+            icon="copy"
+            type="event"
+          />
+        </div>
       )}
     </div>
   );
 };
-
-const copyTextToClipboard = async (text: string) =>
-  await navigator.clipboard.writeText(text);
