@@ -1,6 +1,7 @@
 import {
   Button,
   ButtonProps,
+  Checkbox,
   CheckboxGroup,
   Radio,
   RadioGroup,
@@ -13,8 +14,6 @@ import { useMemo, useState } from "react";
 import { Playground } from "components";
 
 import { defaultHtml, defaultReact, sandbox, storybook } from "./static";
-
-// import "./PlaygroundImplementation.css";
 
 export const PlaygroundImplementation = () => {
   const [animation, setAnimation] = useState<ButtonProps["animation"]>("none");
@@ -129,29 +128,16 @@ export const PlaygroundImplementation = () => {
                       break;
                   }
                 }}
-                checkboxes={[
-                  {
-                    label: "Disabled",
-                    value: "disabled",
-                    checked: disabled,
-                  },
-                  {
-                    label: "Icon",
-                    value: "icon",
-                    checked: icon,
-                  },
-                  {
-                    label: "Badge",
-                    value: "badge",
-                    checked: badge,
-                  },
-                  {
-                    label: "RTL",
-                    value: "dir",
-                    checked: dir === "rtl",
-                  },
-                ]}
-              />
+              >
+                <Checkbox label="RTL" value="dir" checked={dir === "rtl"} />
+                <Checkbox
+                  label="Disabled"
+                  value="disabled"
+                  checked={disabled}
+                />
+                <Checkbox label="Icon" value="icon" checked={!!icon} />
+                <Checkbox label="Badge" value="badge" checked={!!badge} />
+              </CheckboxGroup>
             </Playground.OptionsSection>
 
             <Playground.OptionsSection
