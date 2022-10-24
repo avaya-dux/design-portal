@@ -1,15 +1,9 @@
 ---
-import { Description, SectionHeader } from "components/astro";
+import { SectionHeader } from "components/astro";
 import { PlaygroundImplementation } from "./PlaygroundImplementation";
 import { anchors } from "./static";
 ---
 
 <SectionHeader id={anchors.playground}>Interactive Playground</SectionHeader>
-
-<Description>
-  The Interactive Playground allows you to experiment with various Spinner
-  styles. Once you get the results you want, copy the HTML or React code
-  provided and paste it into your application.
-</Description>
 
 <PlaygroundImplementation client:load />
