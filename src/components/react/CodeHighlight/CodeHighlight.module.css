@@ -1,7 +1,7 @@
 .code-container {
   position: relative;
   display: flex;
-  background-color: #092547;
+  background-color: var(--neo-color-blue-900);
   min-height: 5rem;
   padding: 1rem;
   margin-bottom: 1rem;

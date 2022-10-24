@@ -15,9 +15,8 @@
 }
 
 .do-and-dont-example-content {
-  background-color: #f1f1f1; /* Base/100 */
-  border: 1px solid #c9c9c9; /* Base/200 */
-  box-shadow: inset 0px -8px 0px #088a08;
+  background-color: var(--neo-color-base-100);
+  border: 1px solid var(--neo-color-base-200);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -26,13 +25,21 @@
   margin-bottom: 1rem;
 }
 
+.do-and-dont-example-content-do {
+  box-shadow: inset 0px -8px 0px var(--neo-color-green-500);
+}
+
+.do-and-dont-example-content-dont {
+  box-shadow: inset 0px -8px 0px var(--neo-color-red-500);
+}
+
 .do-and-dont-example-content .do-and-dont-check-mark {
-  color: green;
+  color: var(--neo-color-green-500);
   margin-bottom: 1rem;
 }
 
 .do-and-dont-example-content .do-and-dont-missed-filled {
-  color: red;
+  color: var(--neo-color-red-500);
   margin-bottom: 1rem;
 }
 
@@ -43,7 +50,7 @@
 }
 
 .do-and-dont-example-content-image img.neo-img {
-  background: #fff; /* Base/0 */
+  background: var(--neo-color-base-0);
   min-height: 10rem;
   padding: 2rem;
 }
@@ -51,6 +58,6 @@
 .do-and-dont-example-content-image {
   display: flex;
   justify-content: center;
-  background: #fff; /* Base/0 */
+  background: var(--neo-color-base-0);
   height: 100%;
 }
