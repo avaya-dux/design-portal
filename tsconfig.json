@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "baseUrl": "./src",
-    "exactOptionalPropertyTypes": true,
     "importsNotUsedAsValues": "error",
     "isolatedModules": true,
     "module": "ESNext",
