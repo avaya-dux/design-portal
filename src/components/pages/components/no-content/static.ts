@@ -8,5 +8,5 @@ export const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-no-content";
 
 export const anchors = {
-  playground: "#no-content-playground",
+  playground: "no-content-playground",
 };
