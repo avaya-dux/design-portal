@@ -1,5 +1,5 @@
 import { IconButton, Notification } from "@avaya/neo-react";
-import { copyTextToClipboard } from "../utils";
+import { copyTextToClipboard } from "";
 import { useState } from "react";
 
 import styles from "./SectionLink.module.css";
@@ -40,7 +40,7 @@ export const SectionLink = ({ id, url }: SectionLinkProps) => {
             icon="copy"
             type="event"
             header="Link copied to clipboard"
-          ></Notification>
+          />
         </div>
       )}
     </>
