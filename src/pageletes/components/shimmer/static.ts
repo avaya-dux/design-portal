@@ -1,4 +1,13 @@
-export const defaultHtml = `<div class="neo-shimmer"></div>`;
+import toDiffableHtml from "diffable-html";
+
+export const defaultHtml = toDiffableHtml(`
+  <div
+    aria-busy="true"
+    aria-live="polite"
+    role="alert"
+    class="neo-shimmer neo-shimmer__rectangle neo-shimmer--3-count">
+  </div>`
+);
 export const defaultReact = "<Shimmer />";
 export const sandbox =
   "https://codesandbox.io/s/neo-react-shimmer-bgxipm?file=/src/App.js";
