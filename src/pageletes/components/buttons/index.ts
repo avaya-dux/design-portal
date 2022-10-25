@@ -3,5 +3,6 @@ import Arrangement from "./Arrangement.astro";
 import ButtonPlayground from "./ButtonPlayground.astro";
 import Intro from "./Intro.astro";
 import TextLabel from "./TextLabel.astro";
+import Type from "./Type.astro";
 
-export { Anatomy, Arrangement, ButtonPlayground, Intro, TextLabel };
+export { Anatomy, Arrangement, ButtonPlayground, Intro, TextLabel, Type };
