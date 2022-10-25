@@ -16,12 +16,12 @@ export const PlaygroundImplementation = () => {
   const html = useMemo(
     () =>
       `<div
-    class="${clsx(
-      "neo-spinner",
-      size === "lg" && "neo-spinner--large",
-      size === "xl" && "neo-spinner--x-large"
-    )}"
-  ></div>`,
+  class="${clsx(
+    "neo-spinner",
+    size === "lg" && "neo-spinner--large",
+    size === "xl" && "neo-spinner--x-large"
+  )}"
+></div>`,
     [size]
   );
 
