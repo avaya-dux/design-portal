@@ -36,43 +36,41 @@ export const PlaygroundImplementation = () => {
   );
 
   return (
-    <div className="global-margin global-margin--bottom">
-      <Playground
-        options={
-          <Playground.OptionsContainer>
-            <Playground.OptionsSection title="Icon">
-              <Select
-                aria-label="Icon"
-                value={icon}
-                onChange={(value) => setIcon(value as NoContentProps["icon"])}
-              >
-                {["info", "warning", "error"].map((value) => (
-                  <SelectOption key={value} value={value}>
-                    {value}
-                  </SelectOption>
-                ))}
-              </Select>
-            </Playground.OptionsSection>
+    <Playground
+      options={
+        <Playground.OptionsContainer>
+          <Playground.OptionsSection title="Icon">
+            <Select
+              aria-label="Icon"
+              value={icon}
+              onChange={(value) => setIcon(value as NoContentProps["icon"])}
+            >
+              {["info", "warning", "error"].map((value) => (
+                <SelectOption key={value} value={value}>
+                  {value}
+                </SelectOption>
+              ))}
+            </Select>
+          </Playground.OptionsSection>
 
-            <Playground.OptionsSection title="Text">
-              <TextInput
-                aria-label="Text"
-                onChange={(e) => setText(e.target.value || "No Content")}
-              />
-            </Playground.OptionsSection>
-          </Playground.OptionsContainer>
-        }
-        examples={{
-          html: isDefault ? defaultHtml : html,
-          react: isDefault ? defaultReact : react,
-          sandbox,
-          storybook,
-        }}
-      >
-        <div className="no-content-playground-wrapper">
-          <NoContent icon={icon} text={text} />
-        </div>
-      </Playground>
-    </div>
+          <Playground.OptionsSection title="Text">
+            <TextInput
+              aria-label="Text"
+              onChange={(e) => setText(e.target.value || "No Content")}
+            />
+          </Playground.OptionsSection>
+        </Playground.OptionsContainer>
+      }
+      examples={{
+        html: isDefault ? defaultHtml : html,
+        react: isDefault ? defaultReact : react,
+        sandbox,
+        storybook,
+      }}
+    >
+      <div className="no-content-playground-wrapper">
+        <NoContent icon={icon} text={text} />
+      </div>
+    </Playground>
   );
 };
