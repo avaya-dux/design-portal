@@ -1,0 +1,9 @@
+---
+import { SectionHeader } from "components/astro";
+import { PlaygroundImplementation } from "./PlaygroundImplementation";
+import { anchors } from "./static";
+---
+
+<SectionHeader id={anchors.playground}>Interactive Playground</SectionHeader>
+
+<PlaygroundImplementation client:load />
