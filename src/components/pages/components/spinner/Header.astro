@@ -1,5 +1,7 @@
 ---
 import { Description, PageTitle, TopicLink, Topics } from "components";
+
+import { spinnerPageAnchors } from "./static";
 ---
 
 <PageTitle>Spinner</PageTitle>
@@ -15,5 +17,7 @@ import { Description, PageTitle, TopicLink, Topics } from "components";
 </Description>
 
 <Topics>
-  <TopicLink id="playground">Interactive Playground</TopicLink>
+  <TopicLink id={spinnerPageAnchors.playground}
+    >Interactive Playground</TopicLink
+  >
 </Topics>

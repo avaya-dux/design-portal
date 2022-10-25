@@ -2,11 +2,13 @@
 import { Description, SectionHeader } from "components/astro";
 
 import { PlaygroundImplementation } from "./PlaygroundImplementation";
+
+import { buttonPageAnchors } from "./static";
 ---
 
-<SectionHeader id="button-interactive-playground">
-  Interactive Playground
-</SectionHeader>
+<SectionHeader id={buttonPageAnchors.playground}
+  >Interactive Playground</SectionHeader
+>
 
 <Description>
   The Interactive Playground allows you to experiment with various button styles

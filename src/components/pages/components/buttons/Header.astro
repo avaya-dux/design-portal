@@ -1,5 +1,7 @@
 ---
 import { Description, PageTitle, TopicLink, Topics } from "components";
+
+import { buttonPageAnchors } from "./static";
 ---
 
 <PageTitle>Buttons</PageTitle>
@@ -16,13 +18,19 @@ import { Description, PageTitle, TopicLink, Topics } from "components";
 </Description>
 
 <Topics>
-  <TopicLink id="playground">Interactive Playground</TopicLink>
-  <TopicLink id="anatomy">Anatomy</TopicLink>
-  <TopicLink id="type">Type</TopicLink>
-  <TopicLink id="text-label">Text Label</TopicLink>
-  <TopicLink id="states">States</TopicLink>
-  <TopicLink id="behavior">Behavior</TopicLink>
-  <TopicLink id="buttons-using-icons">Buttons Using Icons</TopicLink>
-  <TopicLink id="specs">Specs</TopicLink>
-  <TopicLink id="keyboard-interactions">Keyboard Interactions</TopicLink>
+  <TopicLink id={buttonPageAnchors.playground}>Interactive Playground</TopicLink
+  >
+  <TopicLink id={buttonPageAnchors.anatomy}>Anatomy</TopicLink>
+  <TopicLink id={buttonPageAnchors.arrangement}>Arrangement</TopicLink>
+  <TopicLink id={buttonPageAnchors.type}>Type</TopicLink>
+  <TopicLink id={buttonPageAnchors["text-label"]}>Text Label</TopicLink>
+  <TopicLink id={buttonPageAnchors.states}>States</TopicLink>
+  <TopicLink id={buttonPageAnchors.behavior}>Behavior</TopicLink>
+  <TopicLink id={buttonPageAnchors["using-icons"]}
+    >Buttons Using Icons</TopicLink
+  >
+  <TopicLink id={buttonPageAnchors.specs}>Specs</TopicLink>
+  <TopicLink id={buttonPageAnchors["keyboard-interactions"]}
+    >Keyboard Interactions</TopicLink
+  >
 </Topics>

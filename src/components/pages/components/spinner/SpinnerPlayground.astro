@@ -2,11 +2,13 @@
 import { Description, SectionHeader } from "components/astro";
 
 import { PlaygroundImplementation } from "./PlaygroundImplementation";
+
+import { spinnerPageAnchors } from "./static";
 ---
 
-<SectionHeader id="spinner-interactive-playground">
-  Interactive Playground
-</SectionHeader>
+<SectionHeader id={spinnerPageAnchors.playground}
+  >Interactive Playground</SectionHeader
+>
 
 <Description>
   The Interactive Playground allows you to experiment with various Spinner
