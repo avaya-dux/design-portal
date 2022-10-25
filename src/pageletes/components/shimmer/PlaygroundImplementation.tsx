@@ -26,11 +26,11 @@ export const PlaygroundImplementation = () => {
   );
 
   const react = useMemo(() => {
+    const loopAttr = loop ? "loopInfinitely" : "";
     const sizeAttr = size === "md" ? "" : `size="${size}"`;
     const shapeAttr = shape === "rectangle" ? "" : `shape="${shape}"`;
-    return toDiffableHtml(
-      `<Shimmer ${loop ? "loopInfinitely" : ""} ${sizeAttr} ${shapeAttr} />`
-    );
+
+    return `<Shimmer ${clsx(loopAttr, sizeAttr, shapeAttr)} />`;
   }, [loop, shape, size]);
 
   const html = useMemo(
