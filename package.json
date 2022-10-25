@@ -52,6 +52,7 @@
     "@astrojs/netlify": "1.2.0",
     "@astrojs/prefetch": "0.1.0",
     "@avaya/neo-react": "0.7.4",
-    "clsx": "1.2.1"
+    "clsx": "1.2.1",
+    "diffable-html": "^5.0.0"
   }
 }
