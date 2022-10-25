@@ -72,112 +72,100 @@ export const PlaygroundImplementation = () => {
   );
 
   return (
-    <div className="global-margin global-margin--bottom">
-      <Playground
-        options={
-          <Playground.OptionsContainer>
-            <Playground.OptionsSection title="Type">
-              <Select
-                aria-label="Button Type Variant"
-                value={variant || "primary"}
-                onChange={(value) =>
-                  setVariant(value as ButtonProps["variant"])
+    <Playground
+      options={
+        <Playground.OptionsContainer>
+          <Playground.OptionsSection title="Type">
+            <Select
+              aria-label="Button Type Variant"
+              value={variant || "primary"}
+              onChange={(value) => setVariant(value as ButtonProps["variant"])}
+            >
+              <SelectOption value="primary">Primary</SelectOption>
+              <SelectOption value="secondary">Secondary</SelectOption>
+              <SelectOption value="tertiary">Tertiary</SelectOption>
+            </Select>
+          </Playground.OptionsSection>
+
+          <Playground.OptionsSection title="Size" style={{ gridGap: "0.3rem" }}>
+            <RadioGroup
+              groupName="Size"
+              selected={size as string}
+              onChange={(e) => setSize(e.target.value as ButtonProps["size"])}
+            >
+              <Radio value="compact">Compact</Radio>
+              <Radio value="default">Default</Radio>
+              <Radio value="wide">Wide</Radio>
+            </RadioGroup>
+          </Playground.OptionsSection>
+
+          <Playground.OptionsSection
+            title="Variables"
+            style={{ gridGap: "0.7rem" }}
+          >
+            <CheckboxGroup
+              groupName="Variables"
+              onChange={(e) => {
+                const { value } = e.target as HTMLInputElement;
+                switch (value) {
+                  case "disabled":
+                    setDisabled(!disabled);
+                    break;
+                  case "icon":
+                    setIcon(icon ? undefined : "audio");
+                    break;
+                  case "badge":
+                    setBadge(badge ? undefined : "1234");
+                    break;
+                  case "dir":
+                    setDir(dir === "ltr" ? "rtl" : "ltr");
+                    break;
                 }
-              >
-                <SelectOption value="primary">Primary</SelectOption>
-                <SelectOption value="secondary">Secondary</SelectOption>
-                <SelectOption value="tertiary">Tertiary</SelectOption>
-              </Select>
-            </Playground.OptionsSection>
-
-            <Playground.OptionsSection
-              title="Size"
-              style={{ gridGap: "0.3rem" }}
+              }}
             >
-              <RadioGroup
-                groupName="Size"
-                selected={size as string}
-                onChange={(e) => setSize(e.target.value as ButtonProps["size"])}
-              >
-                <Radio value="compact">Compact</Radio>
-                <Radio value="default">Default</Radio>
-                <Radio value="wide">Wide</Radio>
-              </RadioGroup>
-            </Playground.OptionsSection>
+              <Checkbox label="RTL" value="dir" checked={dir === "rtl"} />
+              <Checkbox label="Disabled" value="disabled" checked={disabled} />
+              <Checkbox label="Icon" value="icon" checked={!!icon} />
+              <Checkbox label="Badge" value="badge" checked={!!badge} />
+            </CheckboxGroup>
+          </Playground.OptionsSection>
 
-            <Playground.OptionsSection
-              title="Variables"
-              style={{ gridGap: "0.7rem" }}
+          <Playground.OptionsSection
+            title="Animation"
+            style={{ gridGap: "0.3rem" }}
+          >
+            <RadioGroup
+              groupName="Animation"
+              selected={animation || "none"}
+              onChange={(e) =>
+                setAnimation(e.target.value as ButtonProps["animation"])
+              }
             >
-              <CheckboxGroup
-                groupName="Variables"
-                onChange={(e) => {
-                  const { value } = e.target as HTMLInputElement;
-                  switch (value) {
-                    case "disabled":
-                      setDisabled(!disabled);
-                      break;
-                    case "icon":
-                      setIcon(icon ? undefined : "audio");
-                      break;
-                    case "badge":
-                      setBadge(badge ? undefined : "1234");
-                      break;
-                    case "dir":
-                      setDir(dir === "ltr" ? "rtl" : "ltr");
-                      break;
-                  }
-                }}
-              >
-                <Checkbox label="RTL" value="dir" checked={dir === "rtl"} />
-                <Checkbox
-                  label="Disabled"
-                  value="disabled"
-                  checked={disabled}
-                />
-                <Checkbox label="Icon" value="icon" checked={!!icon} />
-                <Checkbox label="Badge" value="badge" checked={!!badge} />
-              </CheckboxGroup>
-            </Playground.OptionsSection>
-
-            <Playground.OptionsSection
-              title="Animation"
-              style={{ gridGap: "0.3rem" }}
-            >
-              <RadioGroup
-                groupName="Animation"
-                selected={animation || "none"}
-                onChange={(e) =>
-                  setAnimation(e.target.value as ButtonProps["animation"])
-                }
-              >
-                <Radio value="none">None</Radio>
-                <Radio value="pulse">Pulse</Radio>
-                <Radio value="spinner">Spinner</Radio>
-              </RadioGroup>
-            </Playground.OptionsSection>
-          </Playground.OptionsContainer>
-        }
-        examples={{
-          className: "height-220",
-          html: isDefault ? defaultHtml : html,
-          react: isDefault ? defaultReact : react,
-          sandbox,
-          storybook,
-        }}
+              <Radio value="none">None</Radio>
+              <Radio value="pulse">Pulse</Radio>
+              <Radio value="spinner">Spinner</Radio>
+            </RadioGroup>
+          </Playground.OptionsSection>
+        </Playground.OptionsContainer>
+      }
+      examples={{
+        html: isDefault ? defaultHtml : html,
+        react: isDefault ? defaultReact : react,
+        sandbox,
+        storybook,
+      }}
+    >
+      <Button
+        animation={animation || "none"}
+        badge={badge || ""}
+        dir={dir}
+        disabled={disabled}
+        icon={icon}
+        size={size || "default"}
+        variant={variant || "primary"}
       >
-        <Button
-          animation={animation || "none"}
-          badge={badge || ""}
-          dir={dir}
-          disabled={disabled}
-          icon={icon}
-          size={size || "default"}
-          variant={variant || "primary"}
-        >
-          {isDefault ? "default" : "custom"}
-        </Button>
-      </Playground>
-    </div>
+        {isDefault ? "default" : "custom"}
+      </Button>
+    </Playground>
   );
 };
