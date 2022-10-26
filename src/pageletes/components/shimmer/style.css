@@ -4,11 +4,11 @@
 }
 
 .neo-shimmer.neo-shimmer__rectangle.sm {
-  height: 16px;
+  height: 1rem;
 }
 
 .neo-shimmer.neo-shimmer__rectangle.lg {
-  height: 48px;
+  height: 3rem;
 }
 
 .neo-shimmer.neo-shimmer--3-count {
