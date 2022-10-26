@@ -20,31 +20,38 @@ const anatomyImgAltText =
 <ColumnLayout numOfColumns={1}>
   <Image src={AnatomyImage} alt={anatomyImgAltText} />
 </ColumnLayout>
-
 <ColumnLayout numOfColumns={4}>
-  <div>
-    <p><strong>1. Primary button</strong></p>
-    <p>A. Text Label</p>
-    <p>B. Container</p>
-    <p>C. Icon (optional)</p>
-  </div>
+  <ul>
+    <li><strong>1. Primary button</strong></li>
+    <li>A. Text Label</li>
+    <li>B. Container</li>
+    <li>C. Icon (optional)</li>
+  </ul>
 
-  <div>
-    <p><strong>2. Secondary button</strong></p>
-    <p>A. Text Label</p>
-    <p>B. Container</p>
-    <p>C. Icon (optional)</p>
-  </div>
+  <ul>
+    <li><strong>2. Secondary button</strong></li>
+    <li>A. Text Label</li>
+    <li>B. Container</li>
+    <li>C. Icon (optional)</li>
+  </ul>
 
-  <div>
-    <p><strong>3. Tertiary button</strong></p>
-    <p>A. Text Label</p>
-    <p>B. Icon (optional)</p>
-  </div>
+  <ul>
+    <li><strong>3. Tertiary button</strong></li>
+    <li>A. Text Label</li>
+    <li>B. Icon (optional)</li>
+  </ul>
 
-  <div>
-    <p><strong>4. Icon button</strong></p>
-    <p>A. Container</p>
-    <p>B. Icon</p>
-  </div>
+  <ul>
+    <li><strong>4. Icon button</strong></li>
+    <li>A. Container</li>
+    <li>B. Icon</li>
+  </ul>
 </ColumnLayout>
+
+<style>
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+</style>
