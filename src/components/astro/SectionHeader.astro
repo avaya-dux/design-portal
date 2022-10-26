@@ -1,23 +1,36 @@
 ---
-import { Icon } from "@avaya/neo-react";
+import { SectionLink } from "components/react";
 
 export interface Props {
   id: string;
 }
 
 const { id } = Astro.props as Props;
+const { url } = Astro.request;
+
+const fullSectionURL = `${url}#${id}`;
 ---
 
-<a href={`#${id}`}>
-  <h2 class="section-heading neo-bold" id={id}>
-    <slot />
-
-    <Icon icon="link" aria-label="hyperlink icon" />
-  </h2>
-</a>
+<div class="section-header__wrapper">
+  <h2 class="neo-bold" id={id}><slot /></h2>
+  <a href={`#${id}`} class="section-header__link">
+    <SectionLink url={fullSectionURL} client:load />
+  </a>
+</div>
 
 <style>
-  h2.section-heading {
+  .section-header__wrapper {
+    display: flex;
+    align-items: center;
     padding-bottom: 1rem;
+  }
+  .section-header__link {
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  [dir="rtl"] .section-header__link {
+    margin-left: 0px;
+    margin-right: 0.5rem;
   }
 </style>

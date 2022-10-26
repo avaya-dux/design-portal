@@ -53,6 +53,10 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
         */
       }
 
+      body {
+        font-size: 1rem;
+      }
+
       /* mobile */
       @media screen and (max-width: 799px) {
         :root {
