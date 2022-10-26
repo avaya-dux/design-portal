@@ -1,5 +1,7 @@
 ---
 import { Description, PageTitle, TopicLink, Topics } from "components";
+
+import { anchors } from "./static";
 ---
 
 <PageTitle>Buttons</PageTitle>
@@ -16,13 +18,8 @@ import { Description, PageTitle, TopicLink, Topics } from "components";
 </Description>
 
 <Topics>
-  <TopicLink href="#button-interactive-playground">Interactive Playground</TopicLink>
-  <TopicLink href="#button-anatomy">Anatomy</TopicLink>
-  <TopicLink href="#type">Type</TopicLink>
-  <TopicLink href="#text-label">Text Label</TopicLink>
-  <TopicLink href="#states">States</TopicLink>
-  <TopicLink href="#behavior">Behavior</TopicLink>
-  <TopicLink href="#buttons-using-icons">Buttons Using Icons</TopicLink>
-  <TopicLink href="#specs">Specs</TopicLink>
-  <TopicLink href="#keyboard-interactions">Keyboard Interactions</TopicLink>
+  <TopicLink topicId={anchors.playground}>Interactive Playground</TopicLink>
+  <TopicLink topicId={anchors.anatomy}>Anatomy</TopicLink>
+  <TopicLink topicId={anchors.textLabel}>Text Label</TopicLink>
+  <TopicLink topicId={anchors.arrangement}>Arrangement</TopicLink>
 </Topics>
