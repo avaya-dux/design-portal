@@ -1,4 +1,5 @@
 ---
+import { Button } from "@avaya/neo-react";
 import { Description, ColumnLayout, SectionHeader } from "components/astro";
 ---
 
@@ -11,16 +12,20 @@ import { Description, ColumnLayout, SectionHeader } from "components/astro";
   </Description>
 
   <ColumnLayout numOfColumns={3}>
-    <div class="portal-btn">
-      <button class="neo-btn neo-btn-primary neo-btn-primary--default">
+    <div class="btn-display-wrapper">
+      <Button>
         Primary Button
-      </button>
+      </Button>
     </div>
-    <div class="portal-btn">
-      <button class="neo-btn neo-btn-secondary"> Secondary Button</button>
+    <div class="btn-display-wrapper">
+      <Button variant="secondary">
+        Secondary Button
+      </Button>
     </div>
-    <div class="portal-btn">
-      <button class="neo-btn neo-btn-tertiary"> Tertiary</button>
+    <div class="btn-display-wrapper">
+      <Button variant="tertiary">
+        Tertiary Button
+      </Button>
     </div>
   </ColumnLayout>
 
@@ -58,7 +63,7 @@ import { Description, ColumnLayout, SectionHeader } from "components/astro";
 </section>
 
 <style>
-  div.portal-btn {
+  div.btn-display-wrapper {
     outline-color: gray;
     outline-width: 2px;
     padding-top: 2rem;
