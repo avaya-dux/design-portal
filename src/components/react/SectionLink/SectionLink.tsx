@@ -26,7 +26,7 @@ export const SectionLink = ({ url }: SectionLinkProps) => {
         shape="circle"
         icon="link"
         aria-label="hyperlink icon"
-        onClick={() => handleClick()}
+        onClick={handleClick}
       />
 
       {showNotification && (
