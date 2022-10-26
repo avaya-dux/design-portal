@@ -9,5 +9,6 @@ export const storybook =
 export const anchors = {
   playground: "button-playground",
   arrangement: "button-arrangement",
+  anatomy: "button-anatomy",
   textLabel: "button-text-label",
 };

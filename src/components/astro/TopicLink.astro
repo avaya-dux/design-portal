@@ -1,9 +1,9 @@
 ---
 export interface Props {
-  href: string;
+  topicId: string;
 }
 
-const { href } = Astro.props as Props;
+const { topicId } = Astro.props as Props;
 ---
 
-<li><a href={`#${href}`}><slot /></a></li>
+<li><a href={`#${topicId}`}><slot /></a></li>

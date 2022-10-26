@@ -1,5 +1,5 @@
-import Header from "./Header.astro";
-export { Header };
+import Intro from "./Intro.astro";
+export { Intro };
 
 import SpinnerPlayground from "./SpinnerPlayground.astro";
 export { SpinnerPlayground };
