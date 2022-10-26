@@ -4,24 +4,16 @@ export interface Props {
 }
 
 const { numOfColumns } = Astro.props as Props;
-
-let columnTemplate = "1fr"; // default is 1 column if invalid number of columns is provided.
-let i = 1;
-
-while (numOfColumns > 0 && i < numOfColumns) {
-  columnTemplate += " 1fr";
-  i++;
-}
 ---
 
 <div class="variable-grid-columns">
   <slot />
 </div>
 
-<style define:vars={{ columnTemplate }}>
+<style define:vars={{ numOfColumns }}>
   .variable-grid-columns {
     display: grid;
     gap: 1rem;
-    grid-template-columns: var(--columnTemplate);
+    grid-template-columns: repeat(var(--numOfColumns), 1fr);
   }
 </style>
