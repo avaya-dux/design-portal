@@ -1,6 +1,12 @@
 ---
 import { Description, PageTitle, TopicLink, Topics } from "components";
 import { anchors } from "../static";
+
+const links = Array(Object.keys(anchors).length);
+Object.keys(anchors).forEach((key: string) => {
+  const item = anchors[key] as { order: number; id: string; title: string };
+  links[item.order] = { ...item };
+});
 ---
 
 <PageTitle>Chip</PageTitle>
@@ -11,19 +17,5 @@ import { anchors } from "../static";
 </Description>
 
 <Topics>
-  <TopicLink topicId={anchors.playground.id}>
-    {anchors.playground.title}
-  </TopicLink>
-  <TopicLink topicId={anchors.basic.id}>{anchors.basic.title}</TopicLink>
-  <TopicLink topicId={anchors.disabled.id}>{anchors.disabled.title}</TopicLink>
-  <TopicLink topicId={anchors.icon.id}>{anchors.icon.title}</TopicLink>
-  <TopicLink topicId={anchors.closable.id}>{anchors.closable.title}</TopicLink>
-  <TopicLink topicId={anchors.expandable.id}>
-    {anchors.expandable.title}
-  </TopicLink>
-  <TopicLink topicId={anchors.avatar.id}>{anchors.avatar.title}</TopicLink>
-  <TopicLink topicId={anchors.container.id}>
-    {anchors.container.title}
-  </TopicLink>
-  <TopicLink topicId={anchors.keyboard.id}>{anchors.keyboard.title}</TopicLink>
+  {links.map((link) => <TopicLink topicId={link.id}>{link.title}</TopicLink>)}
 </Topics>
