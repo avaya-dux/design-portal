@@ -4,20 +4,38 @@ export const keywords = "chips components";
 
 import { Layout } from "layouts";
 
-import { Intro, ChipPlayground, BasicChips } from "pageletes/components/chip";
+import {
+  Intro,
+  ChipPlayground,
+  BasicChips,
+  DisabledChips,
+  IconChips,
+  ClosableChips,
+  ExpandableChips,
+  AvatarChips,
+  ChipsContainer,
+  KeyboardInteractions,
+} from "pageletes/components/chip";
 ---
 
-<Layout title="No Content">
+<Layout title="Chips">
   <Intro />
 
   <ChipPlayground client:load />
 
   <BasicChips />
-  <!-- <DisabledChips /> -->
-  <!-- <IconChips /> -->
-  <!-- <ClosableChips /> -->
-  <!-- <ExpandableChips /> -->
-  <!-- <AvatarChips /> -->
-  <!-- <ChipsContainer /> -->
-  <!-- <KeyboardInteractions /> -->
+
+  <DisabledChips />
+
+  <IconChips />
+
+  <ClosableChips />
+
+  <ExpandableChips />
+
+  <AvatarChips />
+
+  <ChipsContainer />
+
+  <KeyboardInteractions />
 </Layout>

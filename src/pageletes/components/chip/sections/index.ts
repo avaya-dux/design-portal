@@ -6,3 +6,24 @@ export { ChipPlayground };
 
 import BasicChips from "./BasicChips.astro";
 export { BasicChips };
+
+import DisabledChips from "./DisabledChips.astro";
+export { DisabledChips };
+
+import IconChips from "./IconChips.astro";
+export { IconChips };
+
+import ClosableChips from "./ClosableChips.astro";
+export { ClosableChips };
+
+import ExpandableChips from "./ExpandableChips.astro";
+export { ExpandableChips };
+
+import AvatarChips from "./AvatarChips.astro";
+export { AvatarChips };
+
+import ChipsContainer from "./ChipsContainer.astro";
+export { ChipsContainer };
+
+import KeyboardInteractions from "./KeyboardInteractions.astro";
+export { KeyboardInteractions };

@@ -1,7 +1,5 @@
-export const defaultHtml = `<div class="neo-empty-state">
-  <p class="neo-icon-info">No Content</p>
-</div>`;
-export const defaultReact = "<NoContent />";
+export const defaultHtml = ``;
+export const defaultReact = `<BasicChip chiptype="basic" text="Basic Default" />`;
 export const sandbox = "https://codesandbox.io/s/neo-react-chips-conoc3";
 export const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-chips-basic-chip";
