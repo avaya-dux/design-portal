@@ -11,15 +11,21 @@ import { Description, ColumnLayout, SectionHeader } from "components/astro";
   </Description>
 
   <ColumnLayout numOfColumns={3}>
-    <button class="neo-btn neo-btn-primary neo-btn-primary--default">
-    Primary Button
-    </button>
-    <button class="neo-btn neo-btn-secondary">
-    Secondary Button
-    </button>
-    <button class="neo-btn neo-btn-tertiary">
-    Tertiary Button
-    </button>
+    <div class="portal-btn">
+      <button class="neo-btn neo-btn-primary neo-btn-primary--default">
+      Primary Button
+      </button>
+    </div>
+    <div class="portal-btn">
+      <button class="neo-btn neo-btn-secondary">
+      Secondary Button
+      </button>
+    </div>
+    <div class="portal-btn">
+      <button class="neo-btn neo-btn-tertiary">
+      Tertiary
+      </button>
+    </div>
   </ColumnLayout>
 
   <table class="neo-table global-guidelines__table table__padding--top global-margin--bottom-text">
@@ -49,3 +55,12 @@ import { Description, ColumnLayout, SectionHeader } from "components/astro";
     </tbody>
   </table>
 </section>
+
+<style>
+  div.portal-btn {
+    outline-color:gray;
+    outline-width: 2px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+</style>
