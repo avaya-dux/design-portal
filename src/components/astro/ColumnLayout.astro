@@ -5,44 +5,23 @@ export interface Props {
 
 const { numOfColumns } = Astro.props as Props;
 
-let selectedClass = "grid-one-column"; // defaults to 1 column
+let columnTemplate ="1fr"; // default is 1 column if invalid number of columns is provided.
+let i = 1;
 
-switch (numOfColumns) {
-  case 2:
-    selectedClass = "grid-two-columns";
-    break;
-  case 3:
-    selectedClass = "grid-three-columns";
-    break;
-  case 4:
-    selectedClass = "grid-four-columns";
-    break;
+while (numOfColumns > 0 && i < numOfColumns) {
+  columnTemplate += " 1fr";
+  i++;
 }
 ---
 
-<div class={selectedClass}>
+<div class="variable-grid-columns">
   <slot />
 </div>
 
-<style>
-  .grid-one-columns {
+<style define:vars={{columnTemplate}}>
+  .variable-grid-columns {
     display: grid;
     gap: 1rem;
-    grid-template-columns: 1fr;
-  }
-  .grid-two-columns {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr 1fr;
-  }
-  .grid-three-columns {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .grid-four-columns {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: var(--columnTemplate) ;
   }
 </style>
