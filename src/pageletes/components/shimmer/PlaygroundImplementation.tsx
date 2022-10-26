@@ -53,7 +53,7 @@ export const PlaygroundImplementation = () => {
               <Switch
                 checked={loop}
                 onChange={(_e, updatedChecked) => setLoop(updatedChecked)}
-              ></Switch>
+              />
             </Playground.OptionsSection>
             <Playground.OptionsSection
               title="Size"
@@ -62,8 +62,8 @@ export const PlaygroundImplementation = () => {
               <RadioGroup
                 groupName="Size"
                 selected={size as string}
-                onChange={(_e) =>
-                  setSize(_e.target.value as ShimmerProps["size"])
+                onChange={(e) =>
+                  setSize(e.target.value as ShimmerProps["size"])
                 }
               >
                 <Radio value="sm">Small</Radio>
@@ -78,8 +78,8 @@ export const PlaygroundImplementation = () => {
               <RadioGroup
                 groupName="Shape"
                 selected={shape as string}
-                onChange={(_e) =>
-                  setShape(_e.target.value as ShimmerProps["shape"])
+                onChange={(e) =>
+                  setShape(e.target.value as ShimmerProps["shape"])
                 }
               >
                 <Radio value="rectangle">Rectangle (default)</Radio>
