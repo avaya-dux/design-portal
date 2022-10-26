@@ -6,8 +6,7 @@ export const defaultHtml = toDiffableHtml(`
     aria-live="polite"
     role="alert"
     class="neo-shimmer neo-shimmer__rectangle neo-shimmer--3-count">
-  </div>`
-);
+  </div>`);
 export const defaultReact = "<Shimmer />";
 export const sandbox =
   "https://codesandbox.io/s/neo-react-shimmer-bgxipm?file=/src/App.js";

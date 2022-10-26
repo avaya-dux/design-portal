@@ -39,7 +39,7 @@ export const PlaygroundImplementation = () => {
         aria-busy="true"
         aria-live="polite"
         role="alert"
-        className="${getClassName(loop, shape, size)}"
+        class="${getClassName(loop, shape, size)}"
     ></div>`,
     [loop, shape, size]
   );
