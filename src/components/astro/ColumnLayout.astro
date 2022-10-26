@@ -1,0 +1,48 @@
+---
+export interface Props {
+  numOfColumns: number;
+}
+
+const { numOfColumns } = Astro.props as Props;
+
+let selectedClass = "grid-one-column"; // defaults to 1 column
+
+switch (numOfColumns) {
+  case 2:
+    selectedClass = "grid-two-columns";
+    break;
+  case 3:
+    selectedClass = "grid-three-columns";
+    break;
+  case 4:
+    selectedClass = "grid-four-columns";
+    break;
+}
+---
+
+<div class={selectedClass}>
+  <slot />
+</div>
+
+<style>
+  .grid-one-columns {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  .grid-two-columns {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+  }
+  .grid-three-columns {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .grid-four-columns {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+</style>

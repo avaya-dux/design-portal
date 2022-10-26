@@ -1,0 +1,48 @@
+---
+import { Image } from "@avaya/neo-react";
+import { Description, ColumnLayout, SectionHeader } from "components/astro";
+
+import AnatomyImage from "./button-imgs/illustration-anatomy.svg";
+const anatomyImgAltText = "Image showing the different parts that make up a button";
+
+---
+<SectionHeader id="button-interactive-playground">
+  Anatomy
+  </SectionHeader>
+
+  <Description>
+    Each of the 4 button types are built using standardized parts as shown below.
+    For each button, some parts are required, while others can be omitted as desired.
+  </Description>
+
+  <ColumnLayout numOfColumns={1}>
+    <Image src={AnatomyImage} alt={anatomyImgAltText} />
+  </ColumnLayout>
+
+  <ColumnLayout numOfColumns={4}>
+    <div>
+      <p><strong>1. Primary button</strong></p>
+      <p>A. Text Label</p>
+      <p>B. Container</p>
+      <p>C. Icon (optional)</p>
+    </div>
+
+    <div>
+      <p><strong>2. Secondary button</strong></p>
+      <p>A. Text Label</p>
+      <p>B. Container</p>
+      <p>C. Icon (optional)</p>
+    </div>
+
+    <div>
+      <p><strong>3. Tertiary button</strong></p>
+      <p>A. Text Label</p>
+      <p>B. Icon (optional)</p>
+    </div>
+
+    <div>
+      <p><strong>4. Icon button</strong></p>
+      <p>A. Container</p>
+      <p>B. Icon</p>
+    </div>
+  </ColumnLayout>
