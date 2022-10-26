@@ -1,0 +1,29 @@
+---
+import { Description, PageTitle, TopicLink, Topics } from "components";
+import { anchors } from "../static";
+---
+
+<PageTitle>Chip</PageTitle>
+
+<Description>
+  Chips represent a set of keywords that help label, organize, and categorize
+  objects.
+</Description>
+
+<Topics>
+  <TopicLink topicId={anchors.playground.id}>
+    {anchors.playground.title}
+  </TopicLink>
+  <TopicLink topicId={anchors.basic.id}>{anchors.basic.title}</TopicLink>
+  <TopicLink topicId={anchors.disabled.id}>{anchors.disabled.title}</TopicLink>
+  <TopicLink topicId={anchors.icon.id}>{anchors.icon.title}</TopicLink>
+  <TopicLink topicId={anchors.closable.id}>{anchors.closable.title}</TopicLink>
+  <TopicLink topicId={anchors.expandable.id}>
+    {anchors.expandable.title}
+  </TopicLink>
+  <TopicLink topicId={anchors.avatar.id}>{anchors.avatar.title}</TopicLink>
+  <TopicLink topicId={anchors.container.id}>
+    {anchors.container.title}
+  </TopicLink>
+  <TopicLink topicId={anchors.keyboard.id}>{anchors.keyboard.title}</TopicLink>
+</Topics>

@@ -1,0 +1,11 @@
+---
+import { SectionHeader } from "components/astro";
+import { PlaygroundImplementation } from "../playground";
+import { anchors } from "../static";
+---
+
+<SectionHeader id={anchors.playground.id}>
+  {anchors.playground.title}
+</SectionHeader>
+
+<PlaygroundImplementation client:load />

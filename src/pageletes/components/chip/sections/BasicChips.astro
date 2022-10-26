@@ -1,0 +1,17 @@
+---
+import { Description, SectionHeader } from "components/astro";
+import { anchors } from "../static";
+---
+
+<SectionHeader id={anchors.basic.id}>{anchors.basic.title}</SectionHeader>
+
+<Description>
+  Chips can be styled by adding the <code>neo-chip</code> class and the appropriate
+  modifier
+  <code>{"neo-chip neo-chip--<modifier>"}</code>.
+</Description>
+
+<Description>
+  If you want to select a chip, add the
+  <code>{"neo-chip--<modifier>--selected"}</code> class.
+</Description>
