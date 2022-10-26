@@ -16,12 +16,12 @@ import "./style.css";
 
 import toDiffableHtml from "diffable-html";
 export const PlaygroundImplementation = () => {
-  const [loop, setLoop] = useState<ShimmerProps["loopInfinitely"]>(false);
+  const [loop, setLoop] = useState<ShimmerProps["loopInfinitely"]>(true);
   const [shape, setShape] = useState<ShimmerProps["shape"]>("rectangle");
   const [size, setSize] = useState<ShimmerProps["size"]>("md");
 
   const isDefault = useMemo(
-    () => loop === false && shape === "rectangle" && size === "md",
+    () => loop === true && shape === "rectangle" && size === "md",
     [loop, shape, size]
   );
 
@@ -45,7 +45,7 @@ export const PlaygroundImplementation = () => {
   );
 
   return (
-    <div className="global-margin global-margin--bottom">
+    <div>
       <Playground
         options={
           <Playground.OptionsContainer>
@@ -55,10 +55,7 @@ export const PlaygroundImplementation = () => {
                 onChange={(_e, updatedChecked) => setLoop(updatedChecked)}
               />
             </Playground.OptionsSection>
-            <Playground.OptionsSection
-              title="Size"
-              style={{ gridGap: "0.3rem" }}
-            >
+            <Playground.OptionsSection title="Size">
               <RadioGroup
                 groupName="Size"
                 selected={size as string}
@@ -67,14 +64,11 @@ export const PlaygroundImplementation = () => {
                 }
               >
                 <Radio value="sm">Small</Radio>
-                <Radio value="md">Medium (default)</Radio>
+                <Radio value="md">Medium</Radio>
                 <Radio value="lg">Large</Radio>
               </RadioGroup>
             </Playground.OptionsSection>
-            <Playground.OptionsSection
-              title="Shape"
-              style={{ gridGap: "0.3rem" }}
-            >
+            <Playground.OptionsSection title="Shape">
               <RadioGroup
                 groupName="Shape"
                 selected={shape as string}
@@ -82,7 +76,7 @@ export const PlaygroundImplementation = () => {
                   setShape(e.target.value as ShimmerProps["shape"])
                 }
               >
-                <Radio value="rectangle">Rectangle (default)</Radio>
+                <Radio value="rectangle">Rectangle</Radio>
                 <Radio value="circle">Circle</Radio>
               </RadioGroup>
             </Playground.OptionsSection>
