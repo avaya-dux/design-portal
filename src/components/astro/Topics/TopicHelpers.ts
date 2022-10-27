@@ -4,7 +4,6 @@ export interface Topic {
   order: number;
 }
 
-// TODO: `extends string` shouldn't be necessary, but I'm unable to find a better solution.
 export type TopicsDict<T extends string> = {
   [key in T]: Topic;
 };

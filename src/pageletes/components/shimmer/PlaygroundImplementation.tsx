@@ -5,16 +5,16 @@ import {
   ShimmerProps,
   Switch,
 } from "@avaya/neo-react";
+import clsx from "clsx";
+import toDiffableHtml from "diffable-html";
 import { useMemo, useState } from "react";
 
-import clsx from "clsx";
 import { Playground } from "components";
 
 import { defaultHtml, defaultReact, sandbox, storybook } from "./static";
 
 import "./style.css";
 
-import toDiffableHtml from "diffable-html";
 export const PlaygroundImplementation = () => {
   const [loop, setLoop] = useState<ShimmerProps["loopInfinitely"]>(true);
   const [shape, setShape] = useState<ShimmerProps["shape"]>("rectangle");
