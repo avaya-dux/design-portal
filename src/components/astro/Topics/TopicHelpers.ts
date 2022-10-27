@@ -4,12 +4,13 @@ export interface Topic {
   order: number;
 }
 
+// TODO: `extends string` shouldn't be necessary, but I'm unable to find a better solution.
 export type TopicsDict<T extends string> = {
   [key in T]: Topic;
 };
 
 export const topicsSortedByOrder = (
-  topics: TopicsDict<string> // TODO: use generic type
+  topics: TopicsDict<string> // TODO: should be able to use generic type: `TopicsDict<T>`
 ): Topic[] => {
   const links: Topic[] = Array(Object.keys(topics).length);
   Object.keys(topics).forEach((key) => {

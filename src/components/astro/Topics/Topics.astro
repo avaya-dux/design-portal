@@ -1,23 +1,19 @@
 ---
 import TopicLink from "./TopicLink.astro";
-import type { Topic, TopicsDict } from "./TopicHelpers";
+import { Topic, TopicsDict, topicsSortedByOrder } from "./TopicHelpers";
 
 export interface Props {
-  topics: TopicsDict<string>; // TODO: use generic type
+  topics: TopicsDict<string>; // TODO: should be able to use generic type: `TopicsDict<T>`
 }
 
 const { topics } = Astro.props as Props;
-
-
-const links: Topic[] = Array(Object.keys(topics).length);
-Object.keys(topics).forEach((key) => {
-  const item = topics[key] as Topic;
-  links[item.order] = { ...item };
-});
+const links: Topic[] = topicsSortedByOrder(topics);
 ---
 
 <ul>
   {links.map((link) => <TopicLink topicId={link.id}>{link.title}</TopicLink>)}
+
+  <!-- TODO: remove `<slot />` after updating all users of `Topics.astro` -->
   <slot />
 </ul>
 
