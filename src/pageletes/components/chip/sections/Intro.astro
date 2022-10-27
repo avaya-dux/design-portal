@@ -1,12 +1,6 @@
 ---
-import { Description, PageTitle, TopicLink, Topics } from "components";
-import { anchors } from "../static";
-
-const links = Array(Object.keys(anchors).length);
-Object.keys(anchors).forEach((key: string) => {
-  const item = anchors[key] as { order: number; id: string; title: string };
-  links[item.order] = { ...item };
-});
+import { Description, PageTitle, Topics } from "components";
+import { topics } from "../static";
 ---
 
 <PageTitle>Chip</PageTitle>
@@ -16,6 +10,4 @@ Object.keys(anchors).forEach((key: string) => {
   objects.
 </Description>
 
-<Topics>
-  {links.map((link) => <TopicLink topicId={link.id}>{link.title}</TopicLink>)}
-</Topics>
+<Topics topics={topics} />

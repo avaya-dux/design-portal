@@ -1,0 +1,28 @@
+---
+import TopicLink from "./TopicLink.astro";
+import type { Topic, TopicsDict } from "./TopicHelpers";
+
+export interface Props {
+  topics: TopicsDict<string>; // TODO: use generic type
+}
+
+const { topics } = Astro.props as Props;
+
+
+const links: Topic[] = Array(Object.keys(topics).length);
+Object.keys(topics).forEach((key) => {
+  const item = topics[key] as Topic;
+  links[item.order] = { ...item };
+});
+---
+
+<ul>
+  {links.map((link) => <TopicLink topicId={link.id}>{link.title}</TopicLink>)}
+  <slot />
+</ul>
+
+<style>
+  ul {
+    list-style-type: "- ";
+  }
+</style>
