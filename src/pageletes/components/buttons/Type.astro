@@ -1,6 +1,13 @@
 ---
 import { Button } from "@avaya/neo-react";
-import { Description, ColumnLayout, InfoTable, InfoTableHeader, InfoTableRow, SectionHeader } from "components/astro";
+import {
+  Description,
+  ColumnLayout,
+  InfoTable,
+  InfoTableHeader,
+  InfoTableRow,
+  SectionHeader,
+} from "components/astro";
 ---
 
 <section>
@@ -15,9 +22,11 @@ import { Description, ColumnLayout, InfoTable, InfoTableHeader, InfoTableRow, Se
     <div class="btn-display-wrapper">
       <Button>Primary Button</Button>
     </div>
+
     <div class="btn-display-wrapper">
       <Button variant="secondary">Secondary Button</Button>
     </div>
+
     <div class="btn-display-wrapper">
       <Button variant="tertiary">Tertiary Button</Button>
     </div>
@@ -26,11 +35,13 @@ import { Description, ColumnLayout, InfoTable, InfoTableHeader, InfoTableRow, Se
   <InfoTable>
     <InfoTableHeader>
       <span slot="head1">Heading 1</span>
+
       <span slot="head2">Heading 2</span>
     </InfoTableHeader>
 
     <InfoTableRow>
       <span slot="col1">Primary button</span>
+
       <span slot="col2">
         Use these buttons to perform the most important action item on the
         current page. For example, Save or Continue. Too many Primary buttons
@@ -40,14 +51,16 @@ import { Description, ColumnLayout, InfoTable, InfoTableHeader, InfoTableRow, Se
     </InfoTableRow>
     <InfoTableRow>
       <span slot="col1">Secondary button</span>
+
       <span slot="col2">
         Secondaries offer alternate or opposite actions to the Primary. For
-        example, Cancel, Back, or Reset. Multiple Secondary buttons can be
-        used with each Primary.
+        example, Cancel, Back, or Reset. Multiple Secondary buttons can be used
+        with each Primary.
       </span>
     </InfoTableRow>
     <InfoTableRow>
       <span slot="col1">Tertiary button</span>
+
       <span slot="col2">
         Use them on their own or pair them up with other buttons. Tertiary
         buttons contain the least important action items on the page.
@@ -55,7 +68,7 @@ import { Description, ColumnLayout, InfoTable, InfoTableHeader, InfoTableRow, Se
     </InfoTableRow>
   </InfoTable>
 
-    <!-- TODO: Remove commented out code below once the <InfoTable> code above works  -->
+  <!-- TODO: Remove commented out code below once the <InfoTable> code above works  -->
   <!-- <table
     class="neo-table global-guidelines__table table__padding--top global-margin--bottom-text"
   >
