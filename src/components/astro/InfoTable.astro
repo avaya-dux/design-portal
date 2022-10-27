@@ -1,0 +1,15 @@
+<table class="neo-table neo-table--info">
+  <slot />
+</table>
+
+<style is:global>
+  table.neo-table.neo-table--info tbody tr td {
+    min-width: 12rem;
+    padding-left: 0;
+    max-width: 80ch;
+  }
+
+  table.neo-table.neo-table--info tbody tr {
+    pointer-events: none;
+  }
+</style>
