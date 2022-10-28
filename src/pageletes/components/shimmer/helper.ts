@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import toDiffableHtml from "diffable-html";
 
 export const getClassName = (loop: boolean, shape: string, size: string) =>
   clsx(
@@ -17,9 +18,9 @@ export const createReactString = (
   shape: string,
   size: string
 ) => {
-  const loopAttr = loop ? "loopInfinitely" : "";
-  const sizeAttr = size === "md" ? "" : `size="${size}"`;
-  const shapeAttr = shape === "rectangle" ? "" : `shape="${shape}"`;
+  const loopAttr = loop ? "loopInfinitely" : undefined;
+  const sizeAttr = size === "md" ? undefined : `size="${size}"`;
+  const shapeAttr = shape === "rectangle" ? undefined : `shape="${shape}"`;
   return clsx("<Shimmer", loopAttr, sizeAttr, shapeAttr, "/>");
 };
 
@@ -28,10 +29,14 @@ export const createHtmlString = (
   shape: string,
   size: string
 ) => {
-  return `<div
+  return prettyPrintHtml(`<div
   aria-busy="true"
   aria-live="polite"
   role="alert"
   class="${getClassName(loop, shape, size)}"
-></div>`;
+></div>`);
 };
+
+export const prettyPrintHtml = (html: string) =>{
+    return toDiffableHtml(html).trim();
+}

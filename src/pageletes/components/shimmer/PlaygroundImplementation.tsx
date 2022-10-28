@@ -16,8 +16,6 @@ import "./style.css";
 
 import { createHtmlString, createReactString } from "./helper";
 
-import toDiffableHtml from "diffable-html";
-
 type RequiredProps = Required<ShimmerProps>;
 
 export const PlaygroundImplementation = () => {
@@ -79,7 +77,7 @@ export const PlaygroundImplementation = () => {
           </Playground.OptionsContainer>
         }
         examples={{
-          html: isDefault ? defaultHtml : toDiffableHtml(html),
+          html: isDefault ? defaultHtml : html,
           react: isDefault ? defaultReact : react,
           sandbox,
           storybook,

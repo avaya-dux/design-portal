@@ -26,8 +26,7 @@ describe("PlaygroundImplementation", () => {
         role=\\"alert\\"
         class=\\"neo-shimmer neo-shimmer__rectangle\\"
       >
-      </div>
-      "
+      </div>"
     `);
     // react code is correct
     const reactPanel = screen.getAllByRole("tabpanel")[1];
@@ -50,8 +49,7 @@ describe("PlaygroundImplementation", () => {
         role=\\"alert\\"
         class=\\"neo-shimmer neo-shimmer__rectangle neo-shimmer--3-count\\"
       >
-      </div>
-      "
+      </div>"
     `);
     // react code is correct
     const reactPanel = screen.getAllByRole("tabpanel")[1];

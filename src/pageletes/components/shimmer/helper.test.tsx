@@ -4,13 +4,14 @@ describe("helper functions", () => {
   describe("createHtmlString", () => {
     it("should have correct output", () => {
       expect(createHtmlString(true, "rectangle", "md")).toMatchInlineSnapshot(`
-              "<div
-                aria-busy=\\"true\\"
-                aria-live=\\"polite\\"
-                role=\\"alert\\"
-                class=\\"neo-shimmer neo-shimmer__rectangle\\"
-              ></div>"
-            `);
+        "<div
+          aria-busy=\\"true\\"
+          aria-live=\\"polite\\"
+          role=\\"alert\\"
+          class=\\"neo-shimmer neo-shimmer__rectangle\\"
+        >
+        </div>"
+      `);
     });
   });
   describe("createReactString", () => {
