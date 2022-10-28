@@ -37,6 +37,6 @@ export const createHtmlString = (
 ></div>`);
 };
 
-export const prettyPrintHtml = (html: string) =>{
-    return toDiffableHtml(html).trim();
-}
+export const prettyPrintHtml = (html: string) => {
+  return toDiffableHtml(html).trim();
+};
