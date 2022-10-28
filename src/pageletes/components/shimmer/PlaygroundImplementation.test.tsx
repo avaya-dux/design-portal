@@ -4,7 +4,7 @@ import { axe } from "jest-axe";
 import { PlaygroundImplementation } from "./PlaygroundImplementation";
 
 const codeContent = (element?: Node) => {
-  return element?.textContent?.replace("copy code to clipboard", "");
+  return element?.textContent?.trim().replace("copy code to clipboard", "");
 };
 describe("PlaygroundImplementation", () => {
   const user = userEvent.setup();
@@ -20,16 +20,15 @@ describe("PlaygroundImplementation", () => {
     // html code is correct
     const htmlPanel = screen.getAllByRole("tabpanel")[0];
     expect(codeContent(htmlPanel)).toMatchInlineSnapshot(`
-          "
-          <div
-            aria-busy=\\"true\\"
-            aria-live=\\"polite\\"
-            role=\\"alert\\"
-            class=\\"neo-shimmer neo-shimmer__rectangle\\"
-          >
-          </div>
-          "
-        `);
+      "<div
+        aria-busy=\\"true\\"
+        aria-live=\\"polite\\"
+        role=\\"alert\\"
+        class=\\"neo-shimmer neo-shimmer__rectangle\\"
+      >
+      </div>
+      "
+    `);
     // react code is correct
     const reactPanel = screen.getAllByRole("tabpanel")[1];
     expect(codeContent(reactPanel)).toMatchInlineSnapshot(
@@ -45,16 +44,15 @@ describe("PlaygroundImplementation", () => {
     // html code is correct
     const htmlPanel = screen.getAllByRole("tabpanel")[0];
     expect(codeContent(htmlPanel)).toMatchInlineSnapshot(`
-          "
-          <div
-            aria-busy=\\"true\\"
-            aria-live=\\"polite\\"
-            role=\\"alert\\"
-            class=\\"neo-shimmer neo-shimmer__rectangle neo-shimmer--3-count\\"
-          >
-          </div>
-          "
-        `);
+      "<div
+        aria-busy=\\"true\\"
+        aria-live=\\"polite\\"
+        role=\\"alert\\"
+        class=\\"neo-shimmer neo-shimmer__rectangle neo-shimmer--3-count\\"
+      >
+      </div>
+      "
+    `);
     // react code is correct
     const reactPanel = screen.getAllByRole("tabpanel")[1];
     expect(codeContent(reactPanel)).toMatchInlineSnapshot('"<Shimmer />"');
