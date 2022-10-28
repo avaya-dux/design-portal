@@ -3,18 +3,21 @@ import {
   RadioGroup,
   Shimmer,
   ShimmerProps,
-  Switch,
+  Switch
 } from "@avaya/neo-react";
+
 import { useMemo, useState } from "react";
 
 import clsx from "clsx";
-import { Playground } from "components";
+
+import { Playground } from "components/react";
 
 import { defaultHtml, defaultReact, sandbox, storybook } from "./static";
 
 import "./style.css";
 
 import toDiffableHtml from "diffable-html";
+
 export const PlaygroundImplementation = () => {
   const [loop, setLoop] = useState<ShimmerProps["loopInfinitely"]>(true);
   const [shape, setShape] = useState<ShimmerProps["shape"]>("rectangle");
@@ -52,6 +55,7 @@ export const PlaygroundImplementation = () => {
             <Playground.OptionsSection title="Loop Infinitely">
               <Switch
                 checked={loop}
+                aria-label="loop infinitely"
                 onChange={(_e, updatedChecked) => setLoop(updatedChecked)}
               />
             </Playground.OptionsSection>
