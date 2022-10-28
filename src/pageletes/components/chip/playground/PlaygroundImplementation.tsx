@@ -16,7 +16,7 @@ export const PlaygroundImplementation = () => {
       }
       examples={{
         html: toDiffableHtml(defaultHtml),
-        react: toDiffableHtml(defaultReact),
+        react: defaultReact,
         sandbox,
         storybook,
       }}

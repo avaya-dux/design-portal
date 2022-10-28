@@ -25,23 +25,23 @@ type ChipTopicNames =
 
 export const topics: TopicsDict<ChipTopicNames> = {
   playground: {
-    order: 1,
+    order: 0,
     id: "chips-playground",
     title: "Interactive Playground",
   },
-  basic: { order: 2, id: "basic-chips", title: "Basic Chips" },
-  disabled: { order: 3, id: "disabled-chips", title: "Disabled Chips" },
-  icon: { order: 4, id: "icon-chips", title: "Chips With Icons" },
+  basic: { order: 1, id: "basic-chips", title: "Basic Chips" },
+  disabled: { order: 2, id: "disabled-chips", title: "Disabled Chips" },
+  icon: { order: 3, id: "icon-chips", title: "Chips With Icons" },
   closable: {
-    order: 5,
+    order: 4,
     id: "closable-icon-chips",
     title: "Chips With Close Icon",
   },
-  expandable: { order: 6, id: "expandable-chips", title: "Expandable Chips" },
-  avatar: { order: 7, id: "avatar-chips", title: "Chips With Avatar" },
-  container: { order: 8, id: "chips-container", title: "Chips Container" },
+  expandable: { order: 5, id: "expandable-chips", title: "Expandable Chips" },
+  avatar: { order: 6, id: "avatar-chips", title: "Chips With Avatar" },
+  container: { order: 7, id: "chips-container", title: "Chips Container" },
   keyboard: {
-    order: 9,
+    order: 8,
     id: "chips-keyboard-interactions",
     title: "Keyboard Interactions",
   },
