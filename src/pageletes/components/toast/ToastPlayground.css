@@ -1,0 +1,39 @@
+.toast-playground__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.toast-playground__wrapper .neo-toast {
+  position: absolute;
+}
+
+.toast-playground__position--top {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.toast-playground__position--top-left {
+  top: 0;
+}
+
+.toast-playground__position--top-right {
+  top: 0;
+  right: 0;
+}
+
+.toast-playground__position--bottom {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.toast-playground__position--bottom-left {
+  bottom: 0;
+}
+
+.toast-playground__position--bottom-right {
+  bottom: 0;
+  right: 0;
+}
