@@ -5,16 +5,14 @@ import {
   ShimmerProps,
   Switch,
 } from "@avaya/neo-react";
-
 import { useMemo, useState } from "react";
 
 import { Playground } from "components/react";
 
+import { createHtmlString, createReactString } from "./helper";
 import { defaultHtml, defaultReact, sandbox, storybook } from "./static";
 
 import "./style.css";
-
-import { createHtmlString, createReactString } from "./helper";
 
 type RequiredProps = Required<ShimmerProps>;
 
