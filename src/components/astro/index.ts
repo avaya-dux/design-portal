@@ -4,8 +4,6 @@ import InfoTable from "./InfoTable.astro";
 import PageTitle from "./PageTitle.astro";
 import SectionHeader from "./SectionHeader.astro";
 import SiteFooter from "./SiteFooter.astro";
-import TopicLink from "./TopicLink.astro";
-import Topics from "./Topics.astro";
 
 export {
   ColumnLayout,
@@ -14,6 +12,6 @@ export {
   PageTitle,
   SectionHeader,
   SiteFooter,
-  TopicLink,
-  Topics,
 };
+
+export * from "./Topics";
