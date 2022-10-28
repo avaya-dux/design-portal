@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import { vi } from "vitest";
 
-import { Playground } from "./Playground";
+import { Playground } from "./";
 
 describe("Playground", () => {
   const user = userEvent.setup();
