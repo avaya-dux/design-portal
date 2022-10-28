@@ -1,6 +1,6 @@
-import toDiffableHtml from "diffable-html";
+import { prettyPrintHtml } from "./helper";
 
-export const defaultHtml = toDiffableHtml(`
+export const defaultHtml = prettyPrintHtml(`
   <div
     aria-busy="true"
     aria-live="polite"
