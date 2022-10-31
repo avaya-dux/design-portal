@@ -7,10 +7,11 @@ import {
   InfoTable,
   SectionHeader,
 } from "components/astro";
+import { topics } from "./static";
 ---
 
 <section>
-  <SectionHeader id="button-type">Type</SectionHeader>
+  <SectionHeader id={topics.type.id}>{topics.type.title}</SectionHeader>
 
   <Description>
     There are multiple variants for each button. The format and use of each is

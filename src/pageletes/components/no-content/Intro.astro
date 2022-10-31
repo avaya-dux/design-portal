@@ -1,6 +1,6 @@
 ---
-import { Description, PageTitle, TopicLink, Topics } from "components";
-import { anchors } from "./static";
+import { Description, PageTitle, Topics } from "components";
+import { topics } from "./static";
 ---
 
 <PageTitle>No Content</PageTitle>
@@ -10,6 +10,4 @@ import { anchors } from "./static";
   <code>No Content</code> component.
 </Description>
 
-<Topics>
-  <TopicLink topicId={anchors.playground}>Interactive Playground</TopicLink>
-</Topics>
+<Topics topics={topics} />

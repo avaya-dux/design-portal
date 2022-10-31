@@ -3,7 +3,7 @@ import { Image } from "@avaya/neo-react";
 import { Description, SectionHeader } from "components/astro";
 import { DoAndDont } from "components/react";
 
-import { anchors } from "./static";
+import { topics } from "./static";
 
 import TextLabel1Do from "./button-imgs/do-text-label-1.svg";
 import TextLabel2Do from "./button-imgs/do-text-label-2.svg";
@@ -28,7 +28,9 @@ const colorDontImgAltText =
   "image showing a form confirmation dialog with a 'no' button and 'yes' button";
 ---
 
-<SectionHeader id={anchors.textLabel}>Text Label</SectionHeader>
+<SectionHeader id={topics.textLabel.id}>
+  {topics.textLabel.title}
+</SectionHeader>
 
 <Description>
   The text on a button tells the user what action will be performed when

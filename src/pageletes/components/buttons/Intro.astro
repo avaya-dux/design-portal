@@ -1,7 +1,7 @@
 ---
-import { Description, PageTitle, TopicLink, Topics } from "components";
+import { Description, PageTitle, Topics } from "components";
 
-import { anchors } from "./static";
+import { topics } from "./static";
 ---
 
 <PageTitle>Buttons</PageTitle>
@@ -17,9 +17,4 @@ import { anchors } from "./static";
   visit the Themes page.
 </Description>
 
-<Topics>
-  <TopicLink topicId={anchors.playground}>Interactive Playground</TopicLink>
-  <TopicLink topicId={anchors.anatomy}>Anatomy</TopicLink>
-  <TopicLink topicId={anchors.textLabel}>Text Label</TopicLink>
-  <TopicLink topicId={anchors.arrangement}>Arrangement</TopicLink>
-</Topics>
+<Topics topics={topics} />
