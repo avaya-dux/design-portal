@@ -18,11 +18,11 @@ export const PlaygroundImplementation = () => {
   const [position, setPosition] = useState<ToastProps["position"]>("top");
   const [icon, setIcon] = useState<boolean>(false);
   const [showToast, setShowToast] = useState<boolean>(false);
-  const [duration, setDuration] = useState<ToastProps["duration"]>(5000);
+  const [duration, setDuration] = useState<ToastProps["duration"]>(2000);
   const [reloadToast, setReloadToast] = useState<boolean>(false)
 
   const isDefault = useMemo(
-    () => position === "top" && !icon && duration === 10000,
+    () => position === "top" && !icon && duration === 2000,
     [position, icon, duration]
   );
 
@@ -100,9 +100,9 @@ export const PlaygroundImplementation = () => {
                   setDuration(Number(event.target.value) * 1000);
                 }}
               >
-                <Radio value="3">3</Radio>
+                <Radio value="1">1</Radio>
+                <Radio value="2">2</Radio>
                 <Radio value="5">5</Radio>
-                <Radio value="8">8</Radio>
               </RadioGroup>
             </Playground.OptionsSection>
           </Playground.OptionsContainer>
