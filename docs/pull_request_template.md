@@ -8,6 +8,7 @@
 - [ ] tagged Matt if any visual changes have occurred
 - [ ] tagged Matt+Jen if any accessibility checks need to happen
 - [ ] done an accessibility check on my work
+- [ ] done a Screen Reader test to ensure updates are a11y compliant
 
 Put the most important information here. The content that any reviewer should see and read first (after the PR title).
 
