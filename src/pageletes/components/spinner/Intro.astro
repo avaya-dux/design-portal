@@ -1,7 +1,7 @@
 ---
-import { Description, PageTitle, TopicLink, Topics } from "components";
+import { Description, PageTitle, Topics } from "components";
 
-import { anchors } from "./static";
+import { topics } from "./static";
 ---
 
 <PageTitle>Spinner</PageTitle>
@@ -16,6 +16,4 @@ import { anchors } from "./static";
   visit the Themes page.
 </Description>
 
-<Topics>
-  <TopicLink topicId={anchors.playground}>Interactive Playground</TopicLink>
-</Topics>
+<Topics topics={topics} />

@@ -1,3 +1,5 @@
+import type { TopicsDict } from "components";
+
 export const defaultHtml = `<div class="neo-empty-state">
   <p class="neo-icon-info">No Content</p>
 </div>`;
@@ -7,6 +9,12 @@ export const sandbox =
 export const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-no-content";
 
-export const anchors = {
-  playground: "no-content-playground",
+type NoContentTopicNames = "playground";
+
+export const topics: TopicsDict<NoContentTopicNames> = {
+  playground: {
+    order: 0,
+    id: "no-content-playground",
+    title: "Interactive Playground",
+  },
 };
