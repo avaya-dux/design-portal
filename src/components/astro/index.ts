@@ -1,17 +1,17 @@
 import ColumnLayout from "./ColumnLayout.astro";
+export { ColumnLayout };
+
 import Description from "./Description.astro";
-import InfoTable from "./InfoTable.astro";
+export { Description };
+
 import PageTitle from "./PageTitle.astro";
+export { PageTitle };
+
 import SectionHeader from "./SectionHeader.astro";
+export { SectionHeader };
+
 import SiteFooter from "./SiteFooter.astro";
+export { SiteFooter };
 
-export {
-  ColumnLayout,
-  Description,
-  InfoTable,
-  PageTitle,
-  SectionHeader,
-  SiteFooter,
-};
-
+export * from "./InfoTable";
 export * from "./Topics";

@@ -6,6 +6,9 @@ import {
   ColumnLayout,
   InfoTable,
   SectionHeader,
+  InfoTableBody,
+  InfoTableRow,
+  InfoTableCell,
 } from "components/astro";
 import { topics } from "./static";
 ---
@@ -33,37 +36,37 @@ import { topics } from "./static";
   </ColumnLayout>
 
   <InfoTable>
-    <tbody>
-      <tr>
-        <td>Primary button</td>
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>Primary button</InfoTableCell>
 
-        <td>
+        <InfoTableCell>
           Use these buttons to perform the most important action item on the
           current page. For example, Save or Continue. Too many Primary buttons
           can be confusing for the user, so only include one Primary button on
           each screen or region.
-        </td>
-      </tr>
+        </InfoTableCell>
+      </InfoTableRow>
 
-      <tr>
-        <td>Secondary button</td>
+      <InfoTableRow>
+        <InfoTableCell>Secondary button</InfoTableCell>
 
-        <td>
+        <InfoTableCell>
           Secondaries offer alternate or opposite actions to the Primary. For
           example, Cancel, Back, or Reset. Multiple Secondary buttons can be
           used with each Primary.
-        </td>
-      </tr>
+        </InfoTableCell>
+      </InfoTableRow>
 
-      <tr>
-        <td>Tertiary button</td>
+      <InfoTableRow>
+        <InfoTableCell>Tertiary button</InfoTableCell>
 
-        <td>
+        <InfoTableCell>
           Use them on their own or pair them up with other buttons. Tertiary
           buttons contain the least important action items on the page.
-        </td>
-      </tr>
-    </tbody>
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
   </InfoTable>
 </section>
 
