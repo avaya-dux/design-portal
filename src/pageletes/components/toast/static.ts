@@ -1,8 +1,18 @@
+import type { TopicsDict } from "components";
+
 export const defaultReact = `<Toast position={"top"} duration={10000}>This is a toast</Toast>`;
 // TO-DO: Create sandbox link
-export const sandbox = "https://codesandbox.io/s/neo-react-spinner-yj5o5i";
+export const sandbox = "https://codesandbox.io/s/neo-react-toast-hdlfn9";
 export const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-toast--default";
-export const anchors = {
-  playground: "toast-playground",
-};
+
+type ToastTopicNames = "playground"
+
+
+export const topics: TopicsDict<ToastTopicNames> = {
+  playground: {
+    order: 0,
+    id: "toast-playground",
+    title: "Interactive Playground",
+  },
+}
