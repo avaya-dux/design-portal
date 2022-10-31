@@ -27,19 +27,19 @@ export const topics: TopicsDict<ButtonsTopicNames> = {
     id: "anatomy-playground",
     title: "Anatomy",
   },
-  textLabel: {
+  type: {
     order: 2,
+    id: "button-type",
+    title: "Type",
+  },
+  textLabel: {
+    order: 3,
     id: "text-label-playground",
     title: "Text Label",
   },
   arrangement: {
-    order: 3,
+    order: 4,
     id: "arrangement-playground",
     title: "Arrangement",
-  },
-  type: {
-    order: 4,
-    id: "button-type",
-    title: "Type",
   },
 };
