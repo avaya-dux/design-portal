@@ -7,14 +7,11 @@ export interface Props {
 }
 
 const { topics } = Astro.props as Props;
-const links: Topic[] = topicsSortedByOrder(topics);
+const links: Topic[] = topicsSortedByOrder(topics) || [];
 ---
 
 <ul>
   {links.map((link) => <TopicLink topicId={link.id}>{link.title}</TopicLink>)}
-
-  <!-- TODO: remove `<slot />` after updating all users of `Topics.astro` -->
-  <slot />
 </ul>
 
 <style>

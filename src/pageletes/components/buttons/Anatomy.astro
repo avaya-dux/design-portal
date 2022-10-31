@@ -2,14 +2,14 @@
 import { Image } from "@avaya/neo-react";
 import { Description, ColumnLayout, SectionHeader } from "components/astro";
 
-import { anchors } from "./static";
+import { topics } from "./static";
 
 import AnatomyImage from "./button-imgs/illustration-anatomy.svg";
 const anatomyImgAltText =
   "Image showing the different parts that make up a button";
 ---
 
-<SectionHeader id={anchors.anatomy}>Anatomy</SectionHeader>
+<SectionHeader id={topics.anatomy.id}>{topics.anatomy.title}</SectionHeader>
 
 <Description>
   Each of the 4 button types are built using standardized parts as shown below.
