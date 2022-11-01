@@ -1,6 +1,7 @@
 ---
 import { CodeHighlight } from "components";
 import { Description, SectionHeader } from "components/astro";
+import { prettyPrintHtml } from "helpers";
 import { topics } from "../static";
 ---
 
@@ -11,7 +12,8 @@ import { topics } from "../static";
 </Description>
 
 <CodeHighlight
-  code={`<div class="neo-chip neo-chip--default">
+  code={prettyPrintHtml(`
+<div class="neo-chip neo-chip--default">
   <figure class="neo-avatar neo-avatar--small" data-initials="H"></figure>
   Handwriting
 </div>
@@ -30,5 +32,6 @@ import { topics } from "../static";
 <div class="neo-chip neo-chip--warning">
   <figure class="neo-avatar neo-avatar--small" data-initials="H"></figure>
   History
-</div>`}
+</div>
+`)}
 />
