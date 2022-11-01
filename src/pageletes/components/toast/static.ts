@@ -5,8 +5,7 @@ export const sandbox = "https://codesandbox.io/s/neo-react-toast-hdlfn9";
 export const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-toast--default";
 
-type ToastTopicNames = "playground"
-
+type ToastTopicNames = "playground";
 
 export const topics: TopicsDict<ToastTopicNames> = {
   playground: {
@@ -14,4 +13,4 @@ export const topics: TopicsDict<ToastTopicNames> = {
     id: "toast-playground",
     title: "Interactive Playground",
   },
-}
+};
