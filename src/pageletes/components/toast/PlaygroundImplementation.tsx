@@ -19,7 +19,7 @@ export const PlaygroundImplementation = () => {
   const [icon, setIcon] = useState<boolean>(false);
   const [showToast, setShowToast] = useState<boolean>(false);
   const [duration, setDuration] = useState<ToastProps["duration"]>(2000);
-  const [reloadToast, setReloadToast] = useState<boolean>(false)
+  const [reloadToast, setReloadToast] = useState<boolean>(false);
 
   const isDefault = useMemo(
     () => position === "top" && !icon && duration === 2000,
@@ -49,19 +49,15 @@ export const PlaygroundImplementation = () => {
     [icon]
   );
 
-
   useEffect(() => {
-
     setShowToast(true);
 
     const toastTimer = setTimeout(() => {
       setShowToast(false);
     }, duration);
 
-    return () => clearTimeout(toastTimer)
-
+    return () => clearTimeout(toastTimer);
   }, [duration, position, icon, reloadToast]);
-
 
   return (
     <div>
@@ -114,8 +110,10 @@ export const PlaygroundImplementation = () => {
           storybook,
         }}
       >
-          <div className="toast-playground__wrapper">
-          <Button onClick={() => setReloadToast(!reloadToast)}>Click to Show Toast</Button>
+        <div className="toast-playground__wrapper">
+          <Button onClick={() => setReloadToast(!reloadToast)}>
+            Click to Show Toast
+          </Button>
           {showToast && (
             <div
               className={clsx(
@@ -131,7 +129,7 @@ export const PlaygroundImplementation = () => {
               </div>
             </div>
           )}
-          </div>
+        </div>
       </Playground>
     </div>
   );
