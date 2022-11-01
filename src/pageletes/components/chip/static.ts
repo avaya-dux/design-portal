@@ -1,13 +1,21 @@
-import toDiffableHtml from "diffable-html";
-
 import type { TopicsDict } from "components";
+import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
-export const defaultHtml = toDiffableHtml(
-  `<div class="neo-chip neo-chip--default">placeholder</div>`
-);
-export const defaultReact = toDiffableHtml(
-  `<BasicChip chiptype="basic" text="placeholder" />`
-);
+export const defaultHtml = prettyPrintHtml(`
+<div class="neo-chip neo-chip--default">This</div>
+<div class="neo-chip neo-chip--success">is</div>
+<div class="neo-chip neo-chip--info">a</div>
+<div class="neo-chip neo-chip--alert">placeholder</div>
+<div class="neo-chip neo-chip--warning">example</div>
+`);
+export const defaultReact = prettyPrintReact(`
+<BasicChip chiptype="basic" variant="default" text="This" />
+<BasicChip chiptype="basic" variant="success" text="is" />
+<BasicChip chiptype="basic" variant="info" text="a" />
+<BasicChip chiptype="basic" variant="alert" text="placeholder" />
+<BasicChip chiptype="basic" variant="warning" text="example" />
+`);
+
 export const sandbox = "https://codesandbox.io/s/neo-react-chips-conoc3";
 export const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-chips-basic-chip";
