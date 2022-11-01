@@ -1,5 +1,5 @@
 import type { TopicsDict } from "components";
-import { prettyPrintHtml } from "./helper";
+import { prettyPrintHtml } from "helpers";
 
 export const defaultHtml = prettyPrintHtml(`
   <div

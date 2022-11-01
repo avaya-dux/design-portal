@@ -1,5 +1,6 @@
 import clsx from "clsx";
-import toDiffableHtml from "diffable-html";
+
+import { prettyPrintHtml } from "helpers";
 
 export const getClassName = (loop: boolean, shape: string, size: string) =>
   clsx(
@@ -35,8 +36,4 @@ export const createHtmlString = (
   role="alert"
   class="${getClassName(loop, shape, size)}"
 ></div>`);
-};
-
-export const prettyPrintHtml = (html: string) => {
-  return toDiffableHtml(html).trim();
 };
