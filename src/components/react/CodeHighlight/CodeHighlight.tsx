@@ -15,15 +15,20 @@ import styles from "./CodeHighlight.module.css";
  * // Astro implementation requires `client:load` for the button functionality to work.
  * <CodeHighlight code="npm install @avaya/neo" client:load />
  */
-export const CodeHighlight = ({ code, language = "markdown" }: { code: string, language?: Language }) => {
+export const CodeHighlight = ({
+  code,
+  language = "markdown",
+}: {
+  code: string;
+  language?: Language;
+}) => {
   const [isCopied, setIsCopied] = useState(false);
 
   const buttonRef = useRef(null);
 
   return (
     <div className={styles["code-container"]}>
-      {/* <Highlighter code={code} language={language} /> */}
-      <code>{code}</code>
+      <Highlighter code={code} language={language} />
       <Tooltip
         className={styles["copy-button"]}
         label="copy code to clipboard"
@@ -71,10 +76,10 @@ export const Highlighter = ({
 }) => {
   return (
     <Highlight {...defaultProps} code={code} language={language} theme={vsDark}>
-      {({ tokens, getTokenProps }) => (
+      {({ tokens, getLineProps, getTokenProps }) => (
         <pre>
           {tokens.map((line, i) => (
-            <div key={i}>
+            <div {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
                 <span {...getTokenProps({ token, key })} />
               ))}

@@ -50,11 +50,11 @@ describe("CodeHighlight", () => {
   it("Highlighter adds color style to div tag", () => {
     const code = "<div>hi</div>";
     render(<Highlighter code={code} language="markdown" />);
-    const divs = screen.getAllByText("div")
-    expect(divs.length).toEqual(2)
-    divs.forEach(div => {
-      expect(div).toHaveClass("token")
-      expect(div).toHaveStyle("color: rgb(78, 201, 176);")
-    })
+    const divs = screen.getAllByText("div");
+    expect(divs.length).toEqual(2);
+    divs.forEach((div) => {
+      expect(div).toHaveClass("token");
+      expect(div).toHaveStyle("color: rgb(78, 201, 176);");
+    });
   });
 });
