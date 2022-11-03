@@ -76,7 +76,7 @@ export const Highlighter = ({
 }) => {
   return (
     <Highlight {...defaultProps} code={code} language={language} theme={vsDark}>
-      {({ tokens, getLineProps, getTokenProps }) => (
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre>
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
