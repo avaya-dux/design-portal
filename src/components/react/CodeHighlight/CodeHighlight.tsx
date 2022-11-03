@@ -22,7 +22,8 @@ export const CodeHighlight = ({ code, language = "markdown" }: { code: string, l
 
   return (
     <div className={styles["code-container"]}>
-      <Highlighter code={code} language={language} />
+      {/* <Highlighter code={code} language={language} /> */}
+      <code>{code}</code>
       <Tooltip
         className={styles["copy-button"]}
         label="copy code to clipboard"

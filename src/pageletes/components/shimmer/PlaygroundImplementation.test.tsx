@@ -19,7 +19,15 @@ describe("PlaygroundImplementation", () => {
     expect(screen.getAllByRole("tabpanel")).toHaveLength(2);
     // html code is correct
     const htmlPanel = screen.getAllByRole("tabpanel")[0];
-    expect(codeContent(htmlPanel)).toMatchInlineSnapshot('"<div  aria-busy=\\"true\\"  aria-live=\\"polite\\"  role=\\"alert\\"  class=\\"neo-shimmer neo-shimmer__rectangle\\"></div>"');
+    expect(codeContent(htmlPanel)).toMatchInlineSnapshot(`
+      "<div
+        aria-busy=\\"true\\"
+        aria-live=\\"polite\\"
+        role=\\"alert\\"
+        class=\\"neo-shimmer neo-shimmer__rectangle\\"
+      >
+      </div>"
+    `);
     // react code is correct
     const reactPanel = screen.getAllByRole("tabpanel")[1];
     expect(codeContent(reactPanel)).toMatchInlineSnapshot(
@@ -34,7 +42,15 @@ describe("PlaygroundImplementation", () => {
 
     // html code is correct
     const htmlPanel = screen.getAllByRole("tabpanel")[0];
-    expect(codeContent(htmlPanel)).toMatchInlineSnapshot('"<div  aria-busy=\\"true\\"  aria-live=\\"polite\\"  role=\\"alert\\"  class=\\"neo-shimmer neo-shimmer__rectangle neo-shimmer--3-count\\"></div>"');
+    expect(codeContent(htmlPanel)).toMatchInlineSnapshot(`
+      "<div
+        aria-busy=\\"true\\"
+        aria-live=\\"polite\\"
+        role=\\"alert\\"
+        class=\\"neo-shimmer neo-shimmer__rectangle neo-shimmer--3-count\\"
+      >
+      </div>"
+    `);
     // react code is correct
     const reactPanel = screen.getAllByRole("tabpanel")[1];
     expect(codeContent(reactPanel)).toMatchInlineSnapshot('"<Shimmer />"');
