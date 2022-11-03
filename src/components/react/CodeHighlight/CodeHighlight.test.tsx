@@ -6,7 +6,7 @@ import {
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 
-import { CodeHighlight, Highlighter } from ".";
+import { CodeHighlight, Highlighter } from "./CodeHighlight";
 
 describe("CodeHighlight", () => {
   const user = userEvent.setup();

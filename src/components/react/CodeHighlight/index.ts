@@ -1,1 +1,1 @@
-export * from "./CodeHighlight";
+export {CodeHighlight} from "./CodeHighlight";
