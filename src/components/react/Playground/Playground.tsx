@@ -115,7 +115,7 @@ export const Playground = ({
 
             <TabPanels>
               <TabPanel>
-                <CodeHighlight code={html} language="markdown" />
+                <CodeHighlight code={html} />
               </TabPanel>
 
               <TabPanel>
