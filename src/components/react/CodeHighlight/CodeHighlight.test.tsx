@@ -47,57 +47,14 @@ describe("CodeHighlight", () => {
     expect(resultsAfterClick).toHaveNoViolations();
   });
 
-  it("Highlighter adds color style", () => {
+  it("Highlighter adds color style to div tag", () => {
     const code = "<div>hi</div>";
-    const { container } = render(<Highlighter code={code} language="markdown" />);
-    expect(container).toMatchInlineSnapshot(`
-      <div>
-        <pre>
-          <div>
-            <span
-              class="token tag punctuation"
-              style="color: rgb(212, 212, 212);"
-            >
-              &lt;
-            </span>
-            <span
-              class="token tag"
-              style="color: rgb(78, 201, 176);"
-            >
-              div
-            </span>
-            <span
-              class="token tag punctuation"
-              style="color: rgb(212, 212, 212);"
-            >
-              &gt;
-            </span>
-            <span
-              class="token plain"
-            >
-              hi
-            </span>
-            <span
-              class="token tag punctuation"
-              style="color: rgb(212, 212, 212);"
-            >
-              &lt;/
-            </span>
-            <span
-              class="token tag"
-              style="color: rgb(78, 201, 176);"
-            >
-              div
-            </span>
-            <span
-              class="token tag punctuation"
-              style="color: rgb(212, 212, 212);"
-            >
-              &gt;
-            </span>
-          </div>
-        </pre>
-      </div>
-    `);
+    render(<Highlighter code={code} language="markdown" />);
+    const divs = screen.getAllByText("div")
+    expect(divs.length).toEqual(2)
+    divs.forEach(div => {
+      expect(div).toHaveClass("token")
+      expect(div).toHaveStyle("color: rgb(78, 201, 176);")
+    })
   });
 });
