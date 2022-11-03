@@ -2,7 +2,7 @@ import { IconButton, Notification, Tooltip } from "@avaya/neo-react";
 import { copyTextToClipboard } from "../utils";
 import { useState, useRef } from "react";
 import Highlight, { defaultProps, Language } from "prism-react-renderer";
-import vsDark from "prism-react-renderer/themes/vsDark";
+import theme from "prism-react-renderer/themes/vsDark";
 import styles from "./CodeHighlight.module.css";
 /**
  * The CodeHighlight component shows a code example and provides a "copy" (to clipboard) button.
@@ -75,7 +75,7 @@ export const Highlighter = ({
   language: Language;
 }) => {
   return (
-    <Highlight {...defaultProps} code={code} language={language} theme={vsDark}>
+    <Highlight {...defaultProps} code={code} language={language} theme={theme}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre>
           {tokens.map((line, i) => (
