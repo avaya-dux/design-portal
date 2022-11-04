@@ -13,7 +13,7 @@ import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
 import { defaultHtml, defaultReact, sandbox, storybook } from "../static";
 
-type ChipPlaygroundOption = "default" | "icon" | "avatar" | "disabled";
+type ChipPlaygroundOption = "default" | "icon" | "avatar";
 
 export const PlaygroundImplementation = () => {
   const [avatar, setAvatar] = useState(false);
@@ -26,10 +26,10 @@ export const PlaygroundImplementation = () => {
 
   const react = useMemo(() => {
     return prettyPrintReact(``);
-  }, [avatar, disabled, icon]);
+  }, [avatar, closable, dir, disabled, icon]);
   const html = useMemo(() => {
     return prettyPrintHtml(``);
-  }, [avatar, disabled, icon]);
+  }, [avatar, closable, dir, disabled, icon]);
 
   return (
     <Playground
@@ -61,15 +61,11 @@ export const PlaygroundImplementation = () => {
             >
               <Radio value="default">Default</Radio>
               <Radio value="avatar">Avatar</Radio>
-              <Radio value="disabled">Disabled</Radio>
               <Radio value="icon">Icon</Radio>
             </RadioGroup>
           </Playground.OptionsSection>
 
-          <Playground.OptionsSection
-            title="Variables"
-            style={{ gridGap: "0.7rem" }}
-          >
+          <Playground.OptionsSection title="Variables">
             <CheckboxGroup
               groupName="Variables"
               onChange={(e) => {
@@ -87,11 +83,7 @@ export const PlaygroundImplementation = () => {
                 }
               }}
             >
-              <Checkbox
-                label="Closable"
-                value="closable"
-                checked={!!closable}
-              />
+              <Checkbox label="Closable" value="closable" checked={closable} />
               <Checkbox label="RTL" value="dir" checked={dir === "rtl"} />
               <Checkbox label="Disabled" value="disabled" checked={disabled} />
             </CheckboxGroup>
@@ -109,6 +101,7 @@ export const PlaygroundImplementation = () => {
         <Chip
           variant="default"
           closable={closable}
+          dir={dir}
           disabled={disabled}
           avatarInitials={avatar ? "EX" : ""}
           icon={icon ? "info" : undefined}
@@ -118,6 +111,7 @@ export const PlaygroundImplementation = () => {
         <Chip
           variant="success"
           closable={closable}
+          dir={dir}
           disabled={disabled}
           avatarInitials={avatar ? "EX" : ""}
           icon={icon ? "info" : undefined}
@@ -127,6 +121,7 @@ export const PlaygroundImplementation = () => {
         <Chip
           variant="info"
           closable={closable}
+          dir={dir}
           disabled={disabled}
           avatarInitials={avatar ? "EX" : ""}
           icon={icon ? "info" : undefined}
@@ -136,6 +131,7 @@ export const PlaygroundImplementation = () => {
         <Chip
           variant="alert"
           closable={closable}
+          dir={dir}
           disabled={disabled}
           avatarInitials={avatar ? "EX" : ""}
           icon={icon ? "info" : undefined}
@@ -145,6 +141,7 @@ export const PlaygroundImplementation = () => {
         <Chip
           variant="warning"
           closable={closable}
+          dir={dir}
           disabled={disabled}
           avatarInitials={avatar ? "EX" : ""}
           icon={icon ? "info" : undefined}

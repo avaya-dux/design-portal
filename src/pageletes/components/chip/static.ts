@@ -22,7 +22,7 @@ export const defaultReact = prettyPrintReact(`
 
 export const sandbox = "https://codesandbox.io/s/neo-react-chips-conoc3";
 export const storybook =
-  "https://neo-react-library-storybook.netlify.app/?path=/story/components-chips-basic-chip";
+  "https://neo-react-library-storybook.netlify.app/?path=/story/components-chips";
 
 type ChipTopicNames =
   | "avatar"
