@@ -21,7 +21,7 @@ export const TopNavSearchModalResults = ({
 
   useEffect(() => {
     if (anchorRefs[0]) {
-      anchorRefs[0]!.current?.focus();
+      anchorRefs[0].current?.focus();
     }
   }, [options]);
 
