@@ -2,18 +2,22 @@ import type { TopicsDict } from "components";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
 export const defaultHtml = prettyPrintHtml(`
-<div class="neo-chip neo-chip--default">This</div>
-<div class="neo-chip neo-chip--success">is</div>
-<div class="neo-chip neo-chip--info">a</div>
-<div class="neo-chip neo-chip--alert">placeholder</div>
-<div class="neo-chip neo-chip--warning">example</div>
+<div class="neo-chips">
+  <div class="neo-chip neo-chip--default neo-chips__item">This</div>
+  <div class="neo-chip neo-chip--success neo-chips__item">is</div>
+  <div class="neo-chip neo-chip--info neo-chips__item">a</div>
+  <div class="neo-chip neo-chip--alert neo-chips__item">placeholder</div>
+  <div class="neo-chip neo-chip--warning neo-chips__item">example</div>
+</div>
 `);
 export const defaultReact = prettyPrintReact(`
-<BasicChip chiptype="basic" variant="default" text="This" />
-<BasicChip chiptype="basic" variant="success" text="is" />
-<BasicChip chiptype="basic" variant="info" text="a" />
-<BasicChip chiptype="basic" variant="alert" text="placeholder" />
-<BasicChip chiptype="basic" variant="warning" text="example" />
+<ChipsContainer>
+  <Chip variant="default">This</Chip>
+  <Chip variant="success">is</Chip>
+  <Chip variant="info">a</Chip>
+  <Chip variant="alert">placeholder</Chip>
+  <Chip variant="warning">example</Chip>
+</ChipsContainer>
 `);
 
 export const sandbox = "https://codesandbox.io/s/neo-react-chips-conoc3";
