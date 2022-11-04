@@ -69,10 +69,10 @@ export const CodeHighlight = ({
 
 export const Highlighter = ({
   code,
-  language,
+  language = "markdown",
 }: {
   code: string;
-  language: Language;
+  language?: Language;
 }) => {
   return (
     <Highlight {...defaultProps} code={code} language={language} theme={theme}>
