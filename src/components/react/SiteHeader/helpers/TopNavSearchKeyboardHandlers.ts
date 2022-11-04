@@ -1,5 +1,3 @@
-import type { PageAstroInstance } from "../";
-
 export type ModalShortcutKeysType = {
   Meta?: boolean;
   Control?: boolean;
@@ -49,13 +47,20 @@ export const openSearchModal = (
   if (OS === "macOS") {
     if (shortcutKeys.Meta === true && shortcutKeys.k === true) {
       openModal(true);
-      setShortcutKeys(shortcutKeys => ({...shortcutKeys, Meta: false, k: false}))
-
+      setShortcutKeys((shortcutKeys) => ({
+        ...shortcutKeys,
+        Meta: false,
+        k: false,
+      }));
     }
   } else if (OS === "windows") {
     if (shortcutKeys.Control && shortcutKeys.k) {
       openModal(true);
-      setShortcutKeys(shortcutKeys => ({...shortcutKeys, Meta: false, control: false}))
+      setShortcutKeys((shortcutKeys) => ({
+        ...shortcutKeys,
+        Meta: false,
+        control: false,
+      }));
     }
   }
 };
@@ -70,11 +75,12 @@ export const closeSearchModal = (
   }
 };
 
-export const searchModalResultsArrowNavigation = (event: KeyboardEvent, searchResultsLength: number, indexToFocus: number, setIndexToFocus: React.Dispatch<React.SetStateAction<number>>) => {
-
-console.log(searchResultsLength)
-console.log(indexToFocus)
-
+export const searchModalResultsArrowNavigation = (
+  event: KeyboardEvent,
+  searchResultsLength: number,
+  indexToFocus: number,
+  setIndexToFocus: React.Dispatch<React.SetStateAction<number>>
+) => {
   if (event.key === "ArrowDown") {
     event.preventDefault();
 

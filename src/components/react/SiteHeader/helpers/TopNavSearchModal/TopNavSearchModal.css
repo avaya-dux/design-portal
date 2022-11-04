@@ -52,10 +52,18 @@
   border-radius: 2px;
 }
 
+.neo-input-group__addon .search-modal__button {
+  cursor: pointer;
+}
+
 .search-modal .neo-modal__content {
   margin: 60px auto auto;
   width: 400px;
   padding: 16px 16px 0 16px;
+}
+
+.search-modal .neo-modal__content .neo-modal__info-close {
+  display: none;
 }
 
 .search-modal__keyboard-nav {

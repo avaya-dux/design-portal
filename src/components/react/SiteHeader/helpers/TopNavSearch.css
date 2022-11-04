@@ -7,3 +7,10 @@
 .search-icon:before {
   font-size: 21px;
 }
+
+.search__button {
+  margin-right: 8px;
+  padding: 4px 8px;
+  border: 1px solid var(--neo-color-base-200);
+  border-radius: 2px;
+}

@@ -1,88 +1,36 @@
 import { InfoModal } from "@avaya/neo-react";
-import { ReactElement, useEffect, useRef, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import type { PageAstroInstance } from "../..";
-import { closeSearchModal, ModalShortcutKeysType, openSearchModal, topNavSearchOnKeyDown, topNavSearchOnKeyUp } from "../TopNavSearchKeyboardHandlers";
 
 import { TopNavSearchModalResults } from "./TopNavSearchModalResults";
-
-import { closeSearchModalOnClick } from "../TopNavSearchMouseHandlers";
 
 import './TopNavSearchModal.css'
 
 type TopNavSearchModalProps = {
   open: boolean;
   options: PageAstroInstance[];
-  OS?: string,
   children?: ReactElement;
+  searchModalRef?: React.RefObject<HTMLDivElement>,
 };
 
 export const TopNavSearchModal = ({
   open,
   options,
-  OS,
   children,
+  searchModalRef
 }: TopNavSearchModalProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [shortcutKeysPressed, setShortcutKeysPressed] = useState<ModalShortcutKeysType>({
-    Meta: false,
-    Control: false,
-    k: false,
-  });
-
-  const searchModalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsOpen(open);
   }, [open]);
 
-  useEffect(() => {
-    window.addEventListener("keydown", (event) =>
-      topNavSearchOnKeyDown(event, setShortcutKeysPressed)
-    );
-    window.addEventListener("keyup", (event) =>
-      topNavSearchOnKeyUp(event, setShortcutKeysPressed)
-    );
-
-    return () => {
-      window.removeEventListener("keydown", (event) =>
-        topNavSearchOnKeyDown(event, setShortcutKeysPressed)
-      );
-      window.removeEventListener("keyup", (event) =>
-        topNavSearchOnKeyUp(event, setShortcutKeysPressed)
-      );
-    };
-  }, []);
-
-  useEffect(() => {
-    openSearchModal(OS, shortcutKeysPressed, setIsOpen, setShortcutKeysPressed);
-  }, [OS, shortcutKeysPressed]);
-
-  useEffect(() => {
-    window.addEventListener("keydown", (event) =>
-      closeSearchModal(event, isOpen, setIsOpen)
-    );
-    return () => {
-      window.removeEventListener("keydown", (event) =>
-        closeSearchModal(event, isOpen, setIsOpen)
-      );
-    };
-  }, [isOpen]);
-
-  useEffect(() => {
-    window.addEventListener("mousedown", (event) =>
-      closeSearchModalOnClick(event, isOpen, setIsOpen, searchModalRef)
-    );
-    return () => {
-      window.removeEventListener("mousedown", (event) =>
-        closeSearchModalOnClick(event, isOpen, setIsOpen, searchModalRef)
-      );
-    };
-  }, [isOpen, searchModalRef]);
-
   return (
     <InfoModal
       open={isOpen}
-      onClose={() => setIsOpen(false)}
+      // HACK: Design of Search Modal does not have a close button, but this prop is required in our Modal Component.
+      // Removing close button using CSS instead & will address in React library
+      onClose={() => {}}
       title=""
       className="search-modal"
     >
