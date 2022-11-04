@@ -25,6 +25,7 @@ export const TopNavSearchOnKeyUp = (
   event: KeyboardEvent,
   setShortcutKeys: React.Dispatch<React.SetStateAction<ModalShortcutKeysType>>
 ) => {
+  console.log(`This ran with ${event.key}`)
   if (event.key === "Meta") {
     setShortcutKeys((shortcutKeys) => ({ ...shortcutKeys, Meta: false }));
   }
@@ -41,15 +42,19 @@ export const TopNavSearchOnKeyUp = (
 export const openModal = (
   OS: string | undefined,
   shortcutKeys: ModalShortcutKeysType,
-  openModal: React.Dispatch<React.SetStateAction<boolean>>
+  openModal: React.Dispatch<React.SetStateAction<boolean>>,
+  setShortcutKeys: React.Dispatch<React.SetStateAction<ModalShortcutKeysType>>
 ) => {
   if (OS === "macOS") {
     if (shortcutKeys.Meta === true && shortcutKeys.k === true) {
       openModal(true);
+      setShortcutKeys(shortcutKeys => ({...shortcutKeys, Meta: false, k: false}))
+
     }
   } else if (OS === "windows") {
     if (shortcutKeys.Control && shortcutKeys.k) {
       openModal(true);
+      setShortcutKeys(shortcutKeys => ({...shortcutKeys, Meta: false, control: false}))
     }
   }
 };

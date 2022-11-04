@@ -1,26 +1,10 @@
-import {
-  Button,
-  Icon,
-  InfoModal,
-  Sheet,
-  TextInput,
-  TopNav,
-} from "@avaya/neo-react";
-import { useEffect, useState, useRef } from "react";
+import { Icon, InfoModal, TextInput } from "@avaya/neo-react";
+import { useEffect, useRef, useState } from "react";
 
 import { useDetectOS } from "components/react/utils";
 
+import { closeModal, ModalShortcutKeysType, openModal, TopNavSearchOnKeyDown, TopNavSearchOnKeyUp } from "./TopNavSearchKeyboardHandlers";
 import { SearchModalResults } from "./TopNavSearchModalResults";
-
-import {
-  TopNavSearchOnKeyDown,
-  TopNavSearchOnKeyUp,
-  openModal,
-  closeModal,
-  ModalShortcutKeysType,
-} from "./TopNavSearchKeyboardHandlers";
-
-import styles from "./TopNavSearch.module.css";
 
 import "./TopNavSearch.css";
 
@@ -35,6 +19,7 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
     Control: false,
     k: false,
   });
+  const [indexToFocus, setIndexToFocus] = useState<number>(0);
 
   const OS = useDetectOS();
 
@@ -75,7 +60,7 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
   }, []);
 
   useEffect(() => {
-    openModal(OS, shortcutKeys, setIsOpen);
+    openModal(OS, shortcutKeys, setIsOpen, setShortcutKeys);
   }, [OS, shortcutKeys]);
 
   useEffect(() => {
@@ -114,6 +99,36 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
     };
   }, [isOpen, searchModalRef]);
 
+  useEffect(() => {
+    const arrowNavigation = (event: KeyboardEvent) => {
+      if (event.key === "ArrowDown") {
+        event.preventDefault();
+
+        if (indexToFocus + 2 > options.length) {
+          setIndexToFocus(0);
+        } else {
+          setIndexToFocus((indexToFocus) => indexToFocus + 1);
+        }
+      }
+
+      if (event.key === "ArrowUp") {
+        event.preventDefault();
+
+        if (indexToFocus - 1 < 0) {
+          setIndexToFocus(options.length - 1);
+        } else {
+          setIndexToFocus((indexToFocus) => indexToFocus - 1);
+        }
+      }
+    };
+
+    window.addEventListener("keydown", arrowNavigation);
+
+    return () => {
+      window.removeEventListener("keydown", arrowNavigation);
+    };
+  }, [options, indexToFocus]);
+
   return (
     <>
       <Icon
@@ -150,9 +165,10 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
                 esc
               </button>
             }
+            autoFocus
           />
           <div className="search-modal__results">
-            <SearchModalResults options={options} />
+            <SearchModalResults options={options} indexToFocus={indexToFocus} />
           </div>
           <div className="search-modal__keyboard-nav">
             <div>

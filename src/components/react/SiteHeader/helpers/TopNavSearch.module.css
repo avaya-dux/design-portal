@@ -1,6 +1,0 @@
-.search-sheet-results {
-  z-index: 2; /* TODO: fix in neo-css, should _not_ be 9999 */
-  position: absolute;
-  top: 50px;
-  right: 32px;
-}
