@@ -73,11 +73,16 @@ import { topics } from "./static";
 <style is:global>
   div.btn-display-wrapper {
     display: flex;
-    outline-style: solid;
-    outline-color: #c9c9c9;
-    outline-width: 1px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #c9c9c9;
+    border-right: none;
     justify-content: center;
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+
+  div.btn-display-wrapper:last-child {
+    border-right: 1px solid #c9c9c9;
   }
 </style>
