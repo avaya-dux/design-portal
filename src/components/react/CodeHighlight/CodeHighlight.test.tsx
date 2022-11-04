@@ -46,8 +46,10 @@ describe("CodeHighlight", () => {
     const resultsAfterClick = await axe(container);
     expect(resultsAfterClick).toHaveNoViolations();
   });
+});
 
-  it("Highlighter adds color style to div tag", () => {
+describe("Highlighter", () => {
+  it("should add color style to div tag", () => {
     const code = "<div>hi</div>";
     render(<Highlighter code={code} language="markdown" />);
     const divs = screen.getAllByText("div");
