@@ -16,9 +16,6 @@ export { IconChips };
 import ClosableChips from "./ClosableChips.astro";
 export { ClosableChips };
 
-import ExpandableChips from "./ExpandableChips.astro";
-export { ExpandableChips };
-
 import AvatarChips from "./AvatarChips.astro";
 export { AvatarChips };
 

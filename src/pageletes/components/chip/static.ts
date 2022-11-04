@@ -26,7 +26,6 @@ type ChipTopicNames =
   | "closable"
   | "container"
   | "disabled"
-  | "expandable"
   | "icon"
   | "keyboard"
   | "playground";
@@ -45,11 +44,10 @@ export const topics: TopicsDict<ChipTopicNames> = {
     id: "closable-icon-chips",
     title: "Chips With Close Icon",
   },
-  expandable: { order: 5, id: "expandable-chips", title: "Expandable Chips" },
-  avatar: { order: 6, id: "avatar-chips", title: "Chips With Avatar" },
-  container: { order: 7, id: "chips-container", title: "Chips Container" },
+  avatar: { order: 5, id: "avatar-chips", title: "Chips With Avatar" },
+  container: { order: 6, id: "chips-container", title: "Chips Container" },
   keyboard: {
-    order: 8,
+    order: 7,
     id: "chips-keyboard-interactions",
     title: "Keyboard Interactions",
   },
