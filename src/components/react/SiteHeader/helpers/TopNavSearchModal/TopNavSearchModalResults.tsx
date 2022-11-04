@@ -41,7 +41,6 @@ export const TopNavSearchModalResults = ({
   };
 
   useEffect(() => {
-
     window.addEventListener("keydown", handleArrowNavigation);
 
     return () => {

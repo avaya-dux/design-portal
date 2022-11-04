@@ -7,14 +7,12 @@ export const useDetectOS = () => {
   const windowsPlatforms = /(win32|win64|windows|wince)/i;
 
   useEffect(() => {
-    let userAgent = window.navigator.userAgent.toLowerCase();
+    const userAgent = window.navigator.userAgent.toLowerCase();
 
     if (macPlatforms.test(userAgent)) setOS("macOS");
 
-    if (windowsPlatforms.test(userAgent)) setOS("windows")
+    if (windowsPlatforms.test(userAgent)) setOS("windows");
+  }, []);
 
-  }, [])
-
-  return OS
-
-}
+  return OS;
+};

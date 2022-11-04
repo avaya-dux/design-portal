@@ -8,18 +8,25 @@ import { TopNavSearchModal } from "./TopNavSearchModal/TopNavSearchModal";
 import "./TopNavSearch.css";
 
 import type { PageAstroInstance } from "../";
-import { closeSearchModal, ModalShortcutKeysType, openSearchModal, topNavSearchOnKeyDown, topNavSearchOnKeyUp } from "./TopNavSearchKeyboardHandlers";
+import {
+  closeSearchModal,
+  ModalShortcutKeysType,
+  openSearchModal,
+  topNavSearchOnKeyDown,
+  topNavSearchOnKeyUp,
+} from "./TopNavSearchKeyboardHandlers";
 import { closeSearchModalOnClick } from "./TopNavSearchMouseHandlers";
 
 export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
   const [search, setSearch] = useState("");
   const [options, setOptions] = useState<PageAstroInstance[]>([]);
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [shortcutKeysPressed, setShortcutKeysPressed] = useState<ModalShortcutKeysType>({
-    Meta: false,
-    Control: false,
-    k: false,
-  });
+  const [shortcutKeysPressed, setShortcutKeysPressed] =
+    useState<ModalShortcutKeysType>({
+      Meta: false,
+      Control: false,
+      k: false,
+    });
 
   const OS = useDetectOS();
 
@@ -87,9 +94,9 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
 
   useEffect(() => {
     if (!isOpen) {
-      setSearch("")
+      setSearch("");
     }
-  }, [isOpen])
+  }, [isOpen]);
 
   return (
     <>
@@ -100,11 +107,15 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
         className="search-icon"
       />
       {OS === "macOS" ? (
-          <button className="search__button">⌘ K</button>
+        <button className="search__button">⌘ K</button>
       ) : (
-          <button className="search__button">Ctrl K</button>
+        <button className="search__button">Ctrl K</button>
       )}
-      <TopNavSearchModal open={isOpen} options={options} searchModalRef={searchModalRef}>
+      <TopNavSearchModal
+        open={isOpen}
+        options={options}
+        searchModalRef={searchModalRef}
+      >
         <TextInput
           aria-label="Search site"
           onChange={(e) => setSearch(e.currentTarget.value)}
@@ -118,7 +129,7 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
               esc
             </button>
           }
-          autoFocus
+          type="search"
         />
       </TopNavSearchModal>
     </>
