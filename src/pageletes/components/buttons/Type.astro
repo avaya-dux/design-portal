@@ -21,7 +21,7 @@ import { topics } from "./static";
     outlined below.
   </Description>
 
-  <ColumnLayout numOfColumns={3}>
+  <ColumnLayout gap={"0"} numOfColumns={3}>
     <div class="btn-display-wrapper">
       <Button>Primary Button</Button>
     </div>
@@ -70,10 +70,13 @@ import { topics } from "./static";
   </InfoTable>
 </section>
 
-<style>
+<style is:global>
   div.btn-display-wrapper {
-    outline-color: gray;
-    outline-width: 2px;
+    display: flex;
+    outline-style: solid;
+    outline-color: #c9c9c9;
+    outline-width: 1px;
+    justify-content: center;
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
