@@ -13,20 +13,14 @@ type TopNavSearchModalResultsProps = {
 export const TopNavSearchModalResults = ({
   options,
 }: TopNavSearchModalResultsProps) => {
-  const [indexToFocus, setIndexToFocus] = useState<number>(0);
+  const [indexToFocus, setIndexToFocus] = useState<number | undefined>();
 
   const anchorRefs: RefObject<HTMLAnchorElement>[] = options.map(() =>
     createRef<HTMLAnchorElement>()
   );
 
   useEffect(() => {
-    if (anchorRefs[0]) {
-      anchorRefs[0].current?.focus();
-    }
-  }, [options]);
-
-  useEffect(() => {
-    if (anchorRefs[indexToFocus]) {
+    if (indexToFocus !== undefined && anchorRefs[indexToFocus]) {
       anchorRefs[indexToFocus]!.current?.focus();
     }
   }, [indexToFocus]);
@@ -48,6 +42,12 @@ export const TopNavSearchModalResults = ({
     };
   }, [options, indexToFocus]);
 
+  useEffect(() => {
+    if (!options.length) {
+      setIndexToFocus(undefined);
+    }
+  }, [options]);
+
   return (
     <>
       {options.map((option, i) => (
@@ -57,6 +57,16 @@ export const TopNavSearchModalResults = ({
           ref={anchorRefs[i]}
           tabIndex={0}
           className="search-result"
+          // HACK: The below code reconciles navigation with Tab & Arrow Keys
+          // May not be needed pending feedback from Matt
+          onFocus={(event) => {
+            if (
+              indexToFocus != undefined &&
+              anchorRefs[indexToFocus] &&
+              event.target != anchorRefs[indexToFocus]!.current
+            )
+              setIndexToFocus(i);
+          }}
         >
           {option.title}
         </a>

@@ -78,23 +78,27 @@ export const closeSearchModal = (
 export const searchModalResultsArrowNavigation = (
   event: KeyboardEvent,
   searchResultsLength: number,
-  indexToFocus: number,
-  setIndexToFocus: React.Dispatch<React.SetStateAction<number>>
+  indexToFocus: number | undefined,
+  setIndexToFocus: React.Dispatch<React.SetStateAction<number | undefined>>
 ) => {
   if (event.key === "ArrowDown") {
     event.preventDefault();
 
-    if (indexToFocus + 2 > searchResultsLength) {
+    if (indexToFocus === undefined) {
       setIndexToFocus(0);
     } else {
-      setIndexToFocus((indexToFocus) => indexToFocus + 1);
+      if (indexToFocus + 2 > searchResultsLength) {
+        setIndexToFocus(0);
+      } else {
+        setIndexToFocus((indexToFocus) => indexToFocus + 1);
+      }
     }
   }
 
   if (event.key === "ArrowUp") {
     event.preventDefault();
 
-    if (indexToFocus - 1 < 0) {
+    if (indexToFocus != undefined && indexToFocus - 1 < 0) {
       setIndexToFocus(searchResultsLength - 1);
     } else {
       setIndexToFocus((indexToFocus) => indexToFocus - 1);

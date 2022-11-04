@@ -9,7 +9,7 @@ import "./TopNavSearchModal.css";
 type TopNavSearchModalProps = {
   open: boolean;
   options: PageAstroInstance[];
-  children?: ReactElement;
+  children: ReactElement;
   searchModalRef?: React.RefObject<HTMLDivElement>;
 };
 
@@ -30,8 +30,7 @@ export const TopNavSearchModal = ({
       open={isOpen}
       // HACK: Design of Search Modal does not have a close button, but this prop is required in our Modal Component.
       // Removing close button using CSS instead & will address in React library
-      // eslint-disable-next-line
-      onClose={() => {}}
+      onClose={() => null}
       title=""
       className="search-modal"
     >
@@ -42,11 +41,11 @@ export const TopNavSearchModal = ({
         </div>
         <div className="search-modal__keyboard-nav">
           <div>
-            <button className="search-modal__button">Enter</button> to select
+            <button tabIndex={-1} className="search-modal__button">Enter</button> to select
           </div>
           <div>
-            <button className="search-modal__button">↑</button>
-            <button className="search-modal__button">↓</button> to navigate
+            <button tabIndex={-1} className="search-modal__button">↑</button>
+            <button tabIndex={-1} className="search-modal__button">↓</button> to navigate
           </div>
         </div>
       </div>

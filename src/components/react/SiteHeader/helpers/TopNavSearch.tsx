@@ -129,7 +129,6 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
               esc
             </button>
           }
-          type="search"
         />
       </TopNavSearchModal>
     </>
