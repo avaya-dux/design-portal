@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "private": true,
   "scripts": {
-    "all": "yarn && yarn clean && yarn format && yarn lint && yarn build && yarn test:coverage",
+    "all": "yarn && yarn clean && yarn format && yarn lint && yarn build && yarn test:badges",
     "github": "yarn && yarn clean && yarn lint && yarn build && yarn test",
     "clean": "rm -rf coverage dist",
     "format": "yarn prettier --write ./src --loglevel warn",
