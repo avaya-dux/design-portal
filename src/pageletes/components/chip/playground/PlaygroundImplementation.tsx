@@ -106,11 +106,51 @@ export const PlaygroundImplementation = () => {
       }}
     >
       <ChipsContainer>
-        <Chip variant="default">This</Chip>
-        <Chip variant="success">is</Chip>
-        <Chip variant="info">a</Chip>
-        <Chip variant="alert">placeholder</Chip>
-        <Chip variant="warning">example</Chip>
+        <Chip
+          variant="default"
+          closable={closable}
+          disabled={disabled}
+          avatarInitials={avatar ? "EX" : ""}
+          icon={icon ? "info" : undefined}
+        >
+          This
+        </Chip>
+        <Chip
+          variant="success"
+          closable={closable}
+          disabled={disabled}
+          avatarInitials={avatar ? "EX" : ""}
+          icon={icon ? "info" : undefined}
+        >
+          is
+        </Chip>
+        <Chip
+          variant="info"
+          closable={closable}
+          disabled={disabled}
+          avatarInitials={avatar ? "EX" : ""}
+          icon={icon ? "info" : undefined}
+        >
+          a
+        </Chip>
+        <Chip
+          variant="alert"
+          closable={closable}
+          disabled={disabled}
+          avatarInitials={avatar ? "EX" : ""}
+          icon={icon ? "info" : undefined}
+        >
+          placeholder
+        </Chip>
+        <Chip
+          variant="warning"
+          closable={closable}
+          disabled={disabled}
+          avatarInitials={avatar ? "EX" : ""}
+          icon={icon ? "info" : undefined}
+        >
+          example
+        </Chip>
       </ChipsContainer>
     </Playground>
   );
