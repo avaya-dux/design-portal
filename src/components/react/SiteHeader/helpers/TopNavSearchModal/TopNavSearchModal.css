@@ -69,8 +69,8 @@
   margin-right: 24px;
 }
 
-.search-modal__keyboard-nav div:last-child button:first-child {
-  margin-right: 8px;
+.search-modal__keyboard-nav div:last-child span:first-child {
+  margin-right: 4px;
 }
 
 .search-modal__results {
