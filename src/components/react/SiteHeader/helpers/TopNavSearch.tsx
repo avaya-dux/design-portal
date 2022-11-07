@@ -1,7 +1,7 @@
 import { TextInput, Button } from "@avaya/neo-react";
 import { useEffect, useRef, useState } from "react";
 
-import { OsName } from "components/react/utils";
+import { getOSName } from "components/react/utils";
 
 import { TopNavSearchModal } from "./TopNavSearchModal/TopNavSearchModal";
 
@@ -32,7 +32,7 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
   const searchModalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setOs(OsName(window.navigator.userAgent.toLowerCase()));
+    setOs(getOSName(window.navigator.userAgent.toLowerCase()));
   }, []);
 
   useEffect(() => {
