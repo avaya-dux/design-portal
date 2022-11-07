@@ -1,7 +1,6 @@
 .link-container {
   display: flex;
   flex-direction: column;
-  padding: 0 1rem;
 }
 
 .link-container .neo-form-control .neo-input-group .neo-input-group__addon {
@@ -16,33 +15,25 @@
   margin: 0px;
 }
 
-.link-container .neo-form-control .neo-input-group .neo-input {
-  padding: 0px;
-}
-
-.link-container .neo-form-control .neo-input-group .neo-input:focus {
-  padding: 0px;
-}
-
-.link-container
-  .neo-form-control
-  .neo-input-group
-  .neo-input-editable__wrapper {
-  padding: 6px 8px;
-}
-
 .link-container
   .neo-form-control
   .neo-input-group
   .neo-input-editable__wrapper:focus-within {
-  padding: 5px 8px 5px 7px;
+  margin-bottom: -1px;
+}
+
+.link-container
+  .neo-form-control
+  .neo-input-group
+  .neo-input-editable__wrapper:focus-within .neo-input {
+  padding: 7px 10px;
 }
 
 .link-container
   .neo-input-group
   .neo-input-group--addons:focus-within
   .neo-input-group__addon:last-child {
-  padding: 5px 7px 5px 0px;
+  padding: 4px 7px 5px 0px;
 }
 
 .search-modal__button {
@@ -54,12 +45,13 @@
 
 .neo-input-group__addon .search-modal__button {
   cursor: pointer;
+  outline-offset: 0;
 }
 
 .search-modal .neo-modal__content {
   margin: 60px auto auto;
-  width: 400px;
-  padding: 16px 16px 0 16px;
+  min-width: 560px;
+  padding: 24px 24px 0 24px;
 }
 
 .search-modal .neo-modal__content .neo-modal__info-close {
@@ -86,3 +78,9 @@
   display: flex;
   flex-direction: column;
 }
+
+.neo-form-control:focus-within + .search-modal__results {
+  margin-top: -.5px;
+}
+
+

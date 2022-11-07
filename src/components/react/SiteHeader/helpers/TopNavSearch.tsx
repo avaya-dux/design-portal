@@ -1,4 +1,4 @@
-import { Icon, TextInput } from "@avaya/neo-react";
+import { TextInput, Button } from "@avaya/neo-react";
 import { useEffect, useRef, useState } from "react";
 
 import { useDetectOS } from "components/react/utils";
@@ -92,17 +92,15 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
 
   return (
     <>
-      <Icon
+      <Button
         icon="search"
         aria-label="Search Site"
         onClick={() => setIsOpen(true)}
-        className="search-icon"
-      />
-      {os === "macOS" ? (
-        <span className="search__button">⌘ + K</span>
-      ) : (
-        <span className="search__button">Ctrl + K</span>
-      )}
+        className="search__button search-icon"
+      >
+        {os === "macOS" ? "⌘ K" : "Ctrl K"}
+      </Button>
+
       <TopNavSearchModal
         open={isOpen}
         options={options}
