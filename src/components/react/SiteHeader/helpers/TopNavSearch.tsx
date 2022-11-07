@@ -28,7 +28,7 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
       k: false,
     });
 
-  const OS = useDetectOS();
+  const os = useDetectOS();
 
   const searchModalRef = useRef<HTMLDivElement>(null);
 
@@ -67,35 +67,27 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
   }, []);
 
   useEffect(() => {
-    openSearchModal(OS, shortcutKeysPressed, setIsOpen, setShortcutKeysPressed);
-  }, [OS, shortcutKeysPressed]);
-
-  useEffect(() => {
-    window.addEventListener("keydown", (event) =>
-      closeSearchModal(event, isOpen, setIsOpen)
-    );
-    return () => {
-      window.removeEventListener("keydown", (event) =>
-        closeSearchModal(event, isOpen, setIsOpen)
-      );
-    };
-  }, [isOpen]);
-
-  useEffect(() => {
-    window.addEventListener("mousedown", (event) =>
-      closeSearchModalOnClick(event, isOpen, setIsOpen, searchModalRef)
-    );
-    return () => {
-      window.removeEventListener("mousedown", (event) =>
-        closeSearchModalOnClick(event, isOpen, setIsOpen, searchModalRef)
-      );
-    };
-  }, [isOpen, searchModalRef]);
+    openSearchModal(os, shortcutKeysPressed, setIsOpen, setShortcutKeysPressed);
+  }, [os, shortcutKeysPressed]);
 
   useEffect(() => {
     if (!isOpen) {
       setSearch("");
     }
+    window.addEventListener("keydown", (event) =>
+      closeSearchModal(event, isOpen, setIsOpen)
+    );
+    window.addEventListener("mousedown", (event) =>
+      closeSearchModalOnClick(event, isOpen, setIsOpen, searchModalRef)
+    );
+    return () => {
+      window.removeEventListener("keydown", (event) =>
+        closeSearchModal(event, isOpen, setIsOpen)
+      );
+      window.removeEventListener("mousedown", (event) =>
+        closeSearchModalOnClick(event, isOpen, setIsOpen, searchModalRef)
+      );
+    };
   }, [isOpen]);
 
   return (
@@ -106,7 +98,7 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
         onClick={() => setIsOpen(true)}
         className="search-icon"
       />
-      {OS === "macOS" ? (
+      {os === "macOS" ? (
         <span className="search__button">⌘ + K</span>
       ) : (
         <span className="search__button">Ctrl + K</span>

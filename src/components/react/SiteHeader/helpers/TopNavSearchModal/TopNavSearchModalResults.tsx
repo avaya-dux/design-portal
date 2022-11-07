@@ -1,6 +1,6 @@
 import { createRef, RefObject, useEffect, useState } from "react";
 
-import type { PageAstroInstance } from "../..";
+import type { PageAstroInstance } from "components/index";
 
 import "./TopNavSearchModalResults.css";
 

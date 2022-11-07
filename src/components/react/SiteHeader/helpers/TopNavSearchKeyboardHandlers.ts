@@ -44,24 +44,20 @@ export const openSearchModal = (
   openModal: React.Dispatch<React.SetStateAction<boolean>>,
   setShortcutKeys: React.Dispatch<React.SetStateAction<ModalShortcutKeysType>>
 ) => {
-  if (OS === "macOS") {
-    if (shortcutKeys.Meta === true && shortcutKeys.k === true) {
-      openModal(true);
-      setShortcutKeys((shortcutKeys) => ({
-        ...shortcutKeys,
-        Meta: false,
-        k: false,
-      }));
-    }
-  } else if (OS === "windows") {
-    if (shortcutKeys.Control && shortcutKeys.k) {
-      openModal(true);
-      setShortcutKeys((shortcutKeys) => ({
-        ...shortcutKeys,
-        Meta: false,
-        control: false,
-      }));
-    }
+  if (OS === "macOS" && shortcutKeys.Meta && shortcutKeys.k) {
+    openModal(true);
+    setShortcutKeys((shortcutKeys) => ({
+      ...shortcutKeys,
+      Meta: false,
+      k: false,
+    }));
+  } else if (OS === "windows" && shortcutKeys.Control && shortcutKeys.k) {
+    openModal(true);
+    setShortcutKeys((shortcutKeys) => ({
+      ...shortcutKeys,
+      control: false,
+      k: false,
+    }));
   }
 };
 
