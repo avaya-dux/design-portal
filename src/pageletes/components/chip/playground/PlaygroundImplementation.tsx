@@ -74,11 +74,13 @@ export const PlaygroundImplementation = () => {
                 switch (value) {
                   case "closable":
                     setClosable(!closable);
+                    setDisabled(false);
                     break;
                   case "dir":
                     setDir(dir === "ltr" ? "rtl" : "ltr");
                     break;
                   case "disabled":
+                    setClosable(false);
                     setDisabled(!disabled);
                     break;
                 }
