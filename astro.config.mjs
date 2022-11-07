@@ -17,7 +17,7 @@ export default defineConfig({
       open: true,
     },
     ssr: {
-      noExternal: ["avaya-neo-react"],
+      noExternal: ["avaya-neo-react", "prism-react-renderer"],
     },
   },
 });
