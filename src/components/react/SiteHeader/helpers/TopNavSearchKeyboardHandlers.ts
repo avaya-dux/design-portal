@@ -72,24 +72,18 @@ export const searchModalResultsArrowNavigation = (
   if (event.key === "ArrowDown") {
     event.preventDefault();
 
-    if (indexToFocus === undefined) {
+    if (indexToFocus === undefined || indexToFocus + 1 < searchResultsLength) {
       setIndexToFocus(0);
-    } else {
-      if (indexToFocus + 2 > searchResultsLength) {
-        setIndexToFocus(0);
-      } else {
-        setIndexToFocus((indexToFocus) => indexToFocus + 1);
-      }
+     } else {
+      setIndexToFocus(() => indexToFocus + 1);
     }
-  }
-
-  if (event.key === "ArrowUp") {
+  } else if (event.key === "ArrowUp") {
     event.preventDefault();
 
     if (indexToFocus !== undefined && indexToFocus - 1 < 0) {
       setIndexToFocus(searchResultsLength - 1);
     } else {
-      setIndexToFocus((indexToFocus) => indexToFocus - 1);
+      setIndexToFocus(() => indexToFocus - 1);
     }
   }
 };
