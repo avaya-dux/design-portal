@@ -39,25 +39,17 @@ export const topNavSearchOnKeyUp = (
 };
 
 export const openSearchModal = (
-  OS: string | undefined,
   shortcutKeys: ModalShortcutKeysType,
   openModal: React.Dispatch<React.SetStateAction<boolean>>,
   setKeysPressed: React.Dispatch<React.SetStateAction<ModalShortcutKeysType>>
 ) => {
-  if (OS === "macOS" && shortcutKeys.Meta && shortcutKeys.k) {
+  if (shortcutKeys.k && (shortcutKeys.Control || shortcutKeys.Meta)) {
     openModal(true);
-    setKeysPressed((shortcutKeys) => ({
-      ...shortcutKeys,
+    setKeysPressed({
       Meta: false,
+      Control: false,
       k: false,
-    }));
-  } else if (OS === "windows" && shortcutKeys.Control && shortcutKeys.k) {
-    openModal(true);
-    setKeysPressed((shortcutKeys) => ({
-      ...shortcutKeys,
-      control: false,
-      k: false,
-    }));
+    });
   }
 };
 

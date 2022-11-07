@@ -70,7 +70,7 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
   }, []);
 
   useEffect(() => {
-    openSearchModal(os, shortcutKeysPressed, setIsOpen, setShortcutKeysPressed);
+    openSearchModal(shortcutKeysPressed, setIsOpen, setShortcutKeysPressed);
   }, [os, shortcutKeysPressed]);
 
   useEffect(() => {
