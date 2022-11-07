@@ -15,13 +15,15 @@ export const TopNavSearchModalResults = ({
 }: TopNavSearchModalResultsProps) => {
   const [indexToFocus, setIndexToFocus] = useState<number | undefined>();
 
-  const anchorRefs: RefObject<HTMLAnchorElement>[] = options.map(() =>
-    createRef<HTMLAnchorElement>()
-  );
+  const [anchorRefs, setAnchorRefs] = useState<RefObject<HTMLAnchorElement>[]>([])
+
+  useEffect(() => {
+    setAnchorRefs(anchorRefs => Array.from({ length: options.length}, (_, i) => anchorRefs[i] || createRef()))
+  }, [options])
 
   useEffect(() => {
     if (indexToFocus !== undefined && anchorRefs[indexToFocus]) {
-      anchorRefs[indexToFocus]!.current?.focus();
+      anchorRefs[indexToFocus]?.current?.focus();
     }
   }, [indexToFocus]);
 
@@ -63,7 +65,7 @@ export const TopNavSearchModalResults = ({
             if (
               indexToFocus != undefined &&
               anchorRefs[indexToFocus] &&
-              event.target != anchorRefs[indexToFocus]!.current
+              event.target != anchorRefs[indexToFocus]?.current
             )
               setIndexToFocus(i);
           }}
