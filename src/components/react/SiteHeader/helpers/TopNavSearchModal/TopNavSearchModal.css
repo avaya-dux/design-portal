@@ -52,7 +52,7 @@
 .search-modal .neo-modal__content {
   margin: 60px auto auto;
   min-width: 560px;
-  padding: 24px 24px 0 24px;
+  padding: 16px 16px 8px 16px;
 }
 
 .search-modal .neo-modal__content .neo-modal__info-close {
@@ -61,7 +61,6 @@
 
 .search-modal__keyboard-nav {
   padding: 8px 12px 0px 12px;
-  border-top: 1px solid var(--neo-color-base-200);
   display: flex;
   justify-content: flex-start;
 }
@@ -78,6 +77,8 @@
   padding: 8px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--neo-color-base-200);
 }
 
 .neo-form-control:focus-within + .search-modal__results {
