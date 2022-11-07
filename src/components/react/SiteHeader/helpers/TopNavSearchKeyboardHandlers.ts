@@ -86,7 +86,7 @@ export const searchModalResultsArrowNavigation = (
     if (indexToFocus !== undefined && indexToFocus - 1 < 0) {
       setIndexToFocus(searchResultsLength - 1);
     } else {
-      setIndexToFocus((indexToFocus) => indexToFocus - 1);
+      setIndexToFocus(() => indexToFocus - 1);
     }
   }
 };
