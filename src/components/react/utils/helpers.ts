@@ -1,7 +1,7 @@
 export const copyTextToClipboard = async (text: string) =>
   await navigator.clipboard.writeText(text);
 
-export const useOsName = (userAgent: string) => {
+export const OsName = (userAgent: string) => {
   const macPlatforms = /(macintosh|macintel|macppc|mac68k|macos)/i;
 
   if (macPlatforms.test(userAgent)) {
