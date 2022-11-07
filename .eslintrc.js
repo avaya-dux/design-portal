@@ -69,5 +69,6 @@ module.exports = {
   ],
   rules: {
     "no-var": "error",
+    "jsx-a11y/no-autofocus": "off",
   },
 };
