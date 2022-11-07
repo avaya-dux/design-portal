@@ -64,7 +64,6 @@ export const TopNavSearchModalResults = ({
           href={option.url || "/"}
           key={i}
           ref={anchorRefs[i]}
-          tabIndex={0}
           className="search-result"
           // HACK: The below code reconciles navigation with Tab & Arrow Keys
           // May not be needed pending feedback from Matt

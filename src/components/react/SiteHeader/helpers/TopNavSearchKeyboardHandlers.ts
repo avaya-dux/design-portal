@@ -6,19 +6,14 @@ export type ModalShortcutKeysType = {
 
 export const topNavSearchOnKeyDown = (
   event: KeyboardEvent,
-  setShortcutKeys: React.Dispatch<React.SetStateAction<ModalShortcutKeysType>>
+  setKeysPressed: React.Dispatch<React.SetStateAction<ModalShortcutKeysType>>
 ) => {
-  if (event.key === "Meta") {
-    setShortcutKeys((shortcutKeys) => ({ ...shortcutKeys, Meta: true }));
-  }
-
-  if (event.key === "k") {
-    setShortcutKeys((shortcutKeys) => ({ ...shortcutKeys, k: true }));
-  }
-
-  if (event.key === "Control") {
-    setShortcutKeys((shortcutKeys) => ({ ...shortcutKeys, Control: true }));
-  }
+  setKeysPressed((keysPressed) => ({
+    ...keysPressed,
+    Meta: event.key === "Meta",
+    Control: event.key === "Control",
+    k: event.key === "k",
+  }));
 };
 
 export const topNavSearchOnKeyUp = (
@@ -39,7 +34,7 @@ export const topNavSearchOnKeyUp = (
 };
 
 export const openSearchModal = (
-  OS: string | undefined,
+  os?: string,
   shortcutKeys: ModalShortcutKeysType,
   openModal: React.Dispatch<React.SetStateAction<boolean>>,
   setShortcutKeys: React.Dispatch<React.SetStateAction<ModalShortcutKeysType>>
@@ -61,7 +56,7 @@ export const openSearchModal = (
   }
 };
 
-export const closeSearchModal = (
+export const closeSearchModalOnEscapeKeyPress = (
   event: KeyboardEvent,
   isOpen: boolean,
   openModal: React.Dispatch<React.SetStateAction<boolean>>
@@ -80,24 +75,18 @@ export const searchModalResultsArrowNavigation = (
   if (event.key === "ArrowDown") {
     event.preventDefault();
 
-    if (indexToFocus === undefined) {
+    if (indexToFocus === undefined || indexToFocus + 1 < searchResultsLength) {
       setIndexToFocus(0);
-    } else {
-      if (indexToFocus + 2 > searchResultsLength) {
-        setIndexToFocus(0);
-      } else {
-        setIndexToFocus((indexToFocus) => indexToFocus + 1);
-      }
+     } else {
+      setIndexToFocus(() => indexToFocus + 1);
     }
-  }
-
-  if (event.key === "ArrowUp") {
+  } else if (event.key === "ArrowUp") {
     event.preventDefault();
 
     if (indexToFocus !== undefined && indexToFocus - 1 < 0) {
       setIndexToFocus(searchResultsLength - 1);
     } else {
-      setIndexToFocus((indexToFocus) => indexToFocus - 1);
+      setIndexToFocus(() => indexToFocus - 1);
     }
   }
 };
