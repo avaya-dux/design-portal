@@ -16,20 +16,21 @@ import { defaultHtml, defaultReact, sandbox, storybook } from "../static";
 type ChipPlaygroundOption = "default" | "icon" | "avatar";
 
 export const PlaygroundImplementation = () => {
-  const [avatar, setAvatar] = useState(false);
+  const [chipType, setChipType] = useState<"default" | "avatar" | "icon">(
+    "default"
+  );
   const [closable, setClosable] = useState(false);
   const [dir, setDir] = useState<"ltr" | "rtl">("ltr");
   const [disabled, setDisabled] = useState(false);
-  const [icon, setIcon] = useState(false);
 
   const [option, setOption] = useState<ChipPlaygroundOption>("default");
 
   const react = useMemo(() => {
     return prettyPrintReact(``);
-  }, [avatar, closable, dir, disabled, icon]);
+  }, [chipType, closable, dir, disabled]);
   const html = useMemo(() => {
     return prettyPrintHtml(``);
-  }, [avatar, closable, dir, disabled, icon]);
+  }, [chipType, closable, dir, disabled]);
 
   return (
     <Playground
@@ -43,18 +44,15 @@ export const PlaygroundImplementation = () => {
                 setOption(e.target.value as ChipPlaygroundOption);
                 switch (e.target.value) {
                   case "avatar":
-                    setAvatar(true);
-                    setIcon(false);
+                    setChipType("avatar");
                     break;
 
                   case "icon":
-                    setAvatar(false);
-                    setIcon(true);
+                    setChipType("icon");
                     break;
 
                   default:
-                    setAvatar(false);
-                    setIcon(false);
+                    setChipType("default");
                     break;
                 }
               }}
@@ -65,7 +63,10 @@ export const PlaygroundImplementation = () => {
             </RadioGroup>
           </Playground.OptionsSection>
 
-          <Playground.OptionsSection title="Variables">
+          <Playground.OptionsSection
+            title="HACK: Do Not Show Dupe Title"
+            className="hack-hide-me"
+          >
             <CheckboxGroup
               groupName="Variables"
               onChange={(e) => {
@@ -103,8 +104,8 @@ export const PlaygroundImplementation = () => {
           closable={closable}
           dir={dir}
           disabled={disabled}
-          avatarInitials={avatar ? "EX" : ""}
-          icon={icon ? "info" : undefined}
+          avatarInitials={chipType === "avatar" ? "EX" : ""}
+          icon={chipType === "icon" ? "info" : undefined}
         >
           This
         </Chip>
@@ -113,8 +114,8 @@ export const PlaygroundImplementation = () => {
           closable={closable}
           dir={dir}
           disabled={disabled}
-          avatarInitials={avatar ? "EX" : ""}
-          icon={icon ? "info" : undefined}
+          avatarInitials={chipType === "avatar" ? "EX" : ""}
+          icon={chipType === "icon" ? "info" : undefined}
         >
           is
         </Chip>
@@ -123,8 +124,8 @@ export const PlaygroundImplementation = () => {
           closable={closable}
           dir={dir}
           disabled={disabled}
-          avatarInitials={avatar ? "EX" : ""}
-          icon={icon ? "info" : undefined}
+          avatarInitials={chipType === "avatar" ? "EX" : ""}
+          icon={chipType === "icon" ? "info" : undefined}
         >
           a
         </Chip>
@@ -133,8 +134,8 @@ export const PlaygroundImplementation = () => {
           closable={closable}
           dir={dir}
           disabled={disabled}
-          avatarInitials={avatar ? "EX" : ""}
-          icon={icon ? "info" : undefined}
+          avatarInitials={chipType === "avatar" ? "EX" : ""}
+          icon={chipType === "icon" ? "info" : undefined}
         >
           placeholder
         </Chip>
@@ -143,8 +144,8 @@ export const PlaygroundImplementation = () => {
           closable={closable}
           dir={dir}
           disabled={disabled}
-          avatarInitials={avatar ? "EX" : ""}
-          icon={icon ? "info" : undefined}
+          avatarInitials={chipType === "avatar" ? "EX" : ""}
+          icon={chipType === "icon" ? "info" : undefined}
         >
           example
         </Chip>
