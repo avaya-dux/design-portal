@@ -13,6 +13,8 @@ import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
 import { defaultHtml, defaultReact, sandbox, storybook } from "../static";
 
+import "./PlaygroundImplementation.css";
+
 type ChipPlaygroundOption = "default" | "icon" | "avatar";
 
 export const PlaygroundImplementation = () => {
@@ -64,7 +66,8 @@ export const PlaygroundImplementation = () => {
           </Playground.OptionsSection>
 
           <Playground.OptionsSection
-            title="HACK: Do Not Show Dupe Title"
+            title="Variables"
+            htmlFor="Variables"
             className="hack-hide-me"
           >
             <CheckboxGroup

@@ -50,18 +50,22 @@ export const OptionsSection = ({
   title,
   children,
   className,
+  htmlFor,
   style,
 }: {
   title: string;
   children: React.ReactNode;
   className?: string;
+  htmlFor?: string;
   style?: React.CSSProperties;
 }) => (
   <section
     className={clsx("playground-options-section", className)}
     style={style}
   >
-    <label className="playground-options-section-label">{title}</label>
+    <label className="playground-options-section-label" htmlFor={htmlFor}>
+      {title}
+    </label>
 
     {children}
   </section>
