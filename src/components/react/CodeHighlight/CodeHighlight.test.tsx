@@ -6,7 +6,7 @@ import {
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 
-import { CodeHighlight } from ".";
+import { CodeHighlight, Highlighter } from "./CodeHighlight";
 
 describe("CodeHighlight", () => {
   const user = userEvent.setup();
@@ -45,5 +45,18 @@ describe("CodeHighlight", () => {
     await user.click(screen.getByRole("button"));
     const resultsAfterClick = await axe(container);
     expect(resultsAfterClick).toHaveNoViolations();
+  });
+});
+
+describe("Highlighter", () => {
+  it("should add color style to div tag", () => {
+    const code = "<div>hi</div>";
+    render(<Highlighter code={code} language="markdown" />);
+    const divs = screen.getAllByText("div");
+    expect(divs.length).toEqual(2);
+    divs.forEach((div) => {
+      expect(div).toHaveClass("token");
+      expect(div).toHaveStyle("color: rgb(78, 201, 176);");
+    });
   });
 });

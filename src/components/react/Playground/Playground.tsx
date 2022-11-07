@@ -8,7 +8,7 @@ import {
 } from "@avaya/neo-react";
 
 import type { ReactNode } from "react";
-import { CodeHighlight } from "../CodeHighlight";
+import { CodeHighlight } from "components/react";
 import { OptionsSection, OptionsContainer } from "./helpers";
 
 import "./Playground.css";
@@ -119,7 +119,7 @@ export const Playground = ({
               </TabPanel>
 
               <TabPanel>
-                <CodeHighlight code={react} />
+                <CodeHighlight code={react} language="jsx" />
               </TabPanel>
             </TabPanels>
           </Tabs>
