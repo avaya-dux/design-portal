@@ -19,15 +19,9 @@ export const TopNavSearchModal = ({
   children,
   searchModalRef,
 }: TopNavSearchModalProps) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
-  useEffect(() => {
-    setIsOpen(open);
-  }, [open]);
-
   return (
     <InfoModal
-      open={isOpen}
+      open={open}
       // HACK: Design of Search Modal does not have a close button, but this prop is required in our Modal Component.
       // Removing close button using CSS instead & will address in React library
       onClose={() => null}
@@ -41,11 +35,11 @@ export const TopNavSearchModal = ({
         </div>
         <div className="search-modal__keyboard-nav">
           <div>
-            <button tabIndex={-1} className="search-modal__button">Enter</button> to select
+            <span className="search-modal__button">Enter</span> to select
           </div>
           <div>
-            <button tabIndex={-1} className="search-modal__button">↑</button>
-            <button tabIndex={-1} className="search-modal__button">↓</button> to navigate
+            <span className="search-modal__button">↑</span>
+            <span className="search-modal__button">↓</span> to navigate
           </div>
         </div>
       </div>

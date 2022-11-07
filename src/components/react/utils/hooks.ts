@@ -10,8 +10,7 @@ export const useDetectOS = () => {
     const userAgent = window.navigator.userAgent.toLowerCase();
 
     if (macPlatforms.test(userAgent)) setOS("macOS");
-
-    if (windowsPlatforms.test(userAgent)) setOS("windows");
+    else if (windowsPlatforms.test(userAgent)) setOS("windows");
   }, []);
 
   return OS;

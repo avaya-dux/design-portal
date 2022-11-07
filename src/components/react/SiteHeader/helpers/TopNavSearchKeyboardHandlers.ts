@@ -70,7 +70,7 @@ export const closeSearchModal = (
   isOpen: boolean,
   openModal: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
-  if (isOpen && event.key == "Escape") {
+  if (isOpen && event.key === "Escape") {
     openModal(false);
   }
 };
@@ -98,7 +98,7 @@ export const searchModalResultsArrowNavigation = (
   if (event.key === "ArrowUp") {
     event.preventDefault();
 
-    if (indexToFocus != undefined && indexToFocus - 1 < 0) {
+    if (indexToFocus !== undefined && indexToFocus - 1 < 0) {
       setIndexToFocus(searchResultsLength - 1);
     } else {
       setIndexToFocus((indexToFocus) => indexToFocus - 1);

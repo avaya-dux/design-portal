@@ -107,9 +107,9 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
         className="search-icon"
       />
       {OS === "macOS" ? (
-        <button tabIndex={-1} className="search__button">⌘ K</button>
+        <span className="search__button">⌘ + K</span>
       ) : (
-        <button tabIndex={-1} className="search__button">Ctrl K</button>
+        <span className="search__button">Ctrl + K</span>
       )}
       <TopNavSearchModal
         open={isOpen}
