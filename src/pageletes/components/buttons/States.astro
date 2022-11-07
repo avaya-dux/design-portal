@@ -14,23 +14,39 @@ import { topics } from "./static";
 ---
 
 <section>
-  <SectionHeader id={topics.type.id}>{topics.type.title}</SectionHeader>
+  <SectionHeader id={topics.states.id}>{topics.states.title}</SectionHeader>
 
   <Description>
-    There are multiple variants for each button. The format and use of each is
-    outlined below.
+    Each button can exist in one of 4 states.
+    The button’s state will change as the user moves around the screen.
   </Description>
 
-  <ColumnLayout gap={"0"} numOfColumns={3}>
+  <ColumnLayout gap={"0"} numOfColumns={4}>
     <div class="btn-display-wrapper">
+      <span>Default</span>
       <Button>Primary Button</Button>
-    </div>
-
-    <div class="btn-display-wrapper">
       <Button variant="secondary">Secondary Button</Button>
+      <Button variant="tertiary">Tertiary Button</Button>
     </div>
 
     <div class="btn-display-wrapper">
+      <span>Hover</span>
+      <Button>Primary Button</Button>
+      <Button variant="secondary">Secondary Button</Button>
+      <Button variant="tertiary">Tertiary Button</Button>
+    </div>
+
+    <div class="btn-display-wrapper">
+      <span>Pressed</span>
+      <Button>Primary Button</Button>
+      <Button variant="secondary">Secondary Button</Button>
+      <Button variant="tertiary">Tertiary Button</Button>
+    </div>
+
+    <div class="btn-display-wrapper">
+      <span>disabled</span>
+      <Button>Primary Button</Button>
+      <Button variant="secondary">Secondary Button</Button>
       <Button variant="tertiary">Tertiary Button</Button>
     </div>
   </ColumnLayout>
@@ -70,20 +86,6 @@ import { topics } from "./static";
   </InfoTable>
 </section>
 
-<style is:global>
-  div.btn-display-wrapper {
-    display: flex;
-    flex-direction: column;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #c9c9c9;
-    border-right: none;
-    justify-content: center;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
+<style>
 
-  div.btn-display-wrapper:last-child {
-    border-right: 1px solid #c9c9c9;
-  }
 </style>
