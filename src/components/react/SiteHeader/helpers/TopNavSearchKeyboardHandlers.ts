@@ -8,47 +8,52 @@ export const topNavSearchOnKeyDown = (
   event: KeyboardEvent,
   setKeysPressed: React.Dispatch<React.SetStateAction<ModalShortcutKeysType>>
 ) => {
-  setKeysPressed((keysPressed) => ({
-    ...keysPressed,
-    Meta: event.key === "Meta",
-    Control: event.key === "Control",
-    k: event.key === "k",
-  }));
+  if (event.key === "Meta") {
+    setKeysPressed((shortcutKeys) => ({ ...shortcutKeys, Meta: true }));
+  }
+
+  if (event.key === "k") {
+    setKeysPressed((shortcutKeys) => ({ ...shortcutKeys, k: true }));
+  }
+
+  if (event.key === "Control") {
+    setKeysPressed((shortcutKeys) => ({ ...shortcutKeys, Control: true }));
+  }
 };
 
 export const topNavSearchOnKeyUp = (
   event: KeyboardEvent,
-  setShortcutKeys: React.Dispatch<React.SetStateAction<ModalShortcutKeysType>>
+  setKeysPressed: React.Dispatch<React.SetStateAction<ModalShortcutKeysType>>
 ) => {
   if (event.key === "Meta") {
-    setShortcutKeys((shortcutKeys) => ({ ...shortcutKeys, Meta: false }));
+    setKeysPressed((shortcutKeys) => ({ ...shortcutKeys, Meta: false }));
   }
 
   if (event.key === "k") {
-    setShortcutKeys((shortcutKeys) => ({ ...shortcutKeys, k: false }));
+    setKeysPressed((shortcutKeys) => ({ ...shortcutKeys, k: false }));
   }
 
   if (event.key === "Control") {
-    setShortcutKeys((shortcutKeys) => ({ ...shortcutKeys, Control: false }));
+    setKeysPressed((shortcutKeys) => ({ ...shortcutKeys, Control: false }));
   }
 };
 
 export const openSearchModal = (
-  os?: string,
+  OS: string | undefined,
   shortcutKeys: ModalShortcutKeysType,
   openModal: React.Dispatch<React.SetStateAction<boolean>>,
-  setShortcutKeys: React.Dispatch<React.SetStateAction<ModalShortcutKeysType>>
+  setKeysPressed: React.Dispatch<React.SetStateAction<ModalShortcutKeysType>>
 ) => {
   if (OS === "macOS" && shortcutKeys.Meta && shortcutKeys.k) {
     openModal(true);
-    setShortcutKeys((shortcutKeys) => ({
+    setKeysPressed((shortcutKeys) => ({
       ...shortcutKeys,
       Meta: false,
       k: false,
     }));
   } else if (OS === "windows" && shortcutKeys.Control && shortcutKeys.k) {
     openModal(true);
-    setShortcutKeys((shortcutKeys) => ({
+    setKeysPressed((shortcutKeys) => ({
       ...shortcutKeys,
       control: false,
       k: false,
@@ -56,7 +61,7 @@ export const openSearchModal = (
   }
 };
 
-export const closeSearchModalOnEscapeKeyPress = (
+export const closeSearchModal = (
   event: KeyboardEvent,
   isOpen: boolean,
   openModal: React.Dispatch<React.SetStateAction<boolean>>
@@ -75,18 +80,24 @@ export const searchModalResultsArrowNavigation = (
   if (event.key === "ArrowDown") {
     event.preventDefault();
 
-    if (indexToFocus === undefined || indexToFocus + 1 < searchResultsLength) {
+    if (indexToFocus === undefined) {
       setIndexToFocus(0);
-     } else {
-      setIndexToFocus(() => indexToFocus + 1);
+    } else {
+      if (indexToFocus + 2 > searchResultsLength) {
+        setIndexToFocus(0);
+      } else {
+        setIndexToFocus((indexToFocus) => indexToFocus + 1);
+      }
     }
-  } else if (event.key === "ArrowUp") {
+  }
+
+  if (event.key === "ArrowUp") {
     event.preventDefault();
 
     if (indexToFocus !== undefined && indexToFocus - 1 < 0) {
       setIndexToFocus(searchResultsLength - 1);
     } else {
-      setIndexToFocus(() => indexToFocus - 1);
+      setIndexToFocus((indexToFocus) => indexToFocus - 1);
     }
   }
 };
