@@ -1,0 +1,86 @@
+.link-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.link-container .neo-form-control .neo-input-group .neo-input-group__addon {
+  border: none;
+  padding: 6px 8px 6px 0px;
+}
+
+.link-container
+  .neo-form-control
+  .neo-input-group
+  .neo-input-group--addons:focus-within {
+  margin: 0px;
+}
+
+.link-container
+  .neo-form-control
+  .neo-input-group
+  .neo-input-editable__wrapper:focus-within {
+  margin-bottom: -1px;
+}
+
+.link-container
+  .neo-form-control
+  .neo-input-group
+  .neo-input-editable__wrapper:focus-within
+  .neo-input {
+  padding: 7px 10px;
+}
+
+.link-container
+  .neo-input-group
+  .neo-input-group--addons:focus-within
+  .neo-input-group__addon:last-child {
+  padding: 4px 7px 5px 0px;
+}
+
+.search-modal__button {
+  background: none;
+  padding: 4px 8px;
+  border: 1px solid var(--neo-color-base-200);
+  border-radius: 2px;
+}
+
+.neo-input-group__addon .search-modal__button {
+  cursor: pointer;
+  outline-offset: 0;
+}
+
+.search-modal .neo-modal__content {
+  margin: 60px auto auto;
+  min-width: 560px;
+  padding: 16px 16px 8px 16px;
+}
+
+.search-modal .neo-modal__content .neo-modal__info-close {
+  display: none;
+}
+
+.search-modal__keyboard-nav {
+  padding: 8px 12px 0px 12px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.search-modal__keyboard-nav div:first-child {
+  margin-right: 24px;
+}
+
+.search-modal__keyboard-nav div:last-child span:first-child {
+  margin-right: 4px;
+}
+
+.search-modal__results {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--neo-color-base-200);
+}
+
+.neo-form-control:focus-within + .search-modal__results {
+  margin-top: -0.5px;
+}

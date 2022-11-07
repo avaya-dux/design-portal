@@ -1,4 +1,23 @@
-/* TODO: HACK: remove this file once `neo-react` v0.7.5 is used. This issue is resolved by PR#50: https://github.com/avaya-dux/neo-react-library/pull/50 */
-.neo-navbar .neo-nav--right {
-  padding-right: 1px;
+.search-icon {
+  padding: 13px 16px;
+  cursor: pointer;
+}
+
+.search-icon:before {
+  font-size: 21px;
+}
+
+.neo-navbar .neo-nav--right .search__button {
+  margin-right: 8px;
+  padding: 6px 8px;
+  border: 1px solid var(--navbar-border-bottom-color);
+  border-radius: 100px;
+  background-color: transparent;
+  background-image: none;
+  color: var(--global-font-color);
+}
+
+[dir="rtl"] .neo-navbar .neo-nav--right .search__button {
+  margin-right: 0px;
+  margin-left: 8px;
 }
