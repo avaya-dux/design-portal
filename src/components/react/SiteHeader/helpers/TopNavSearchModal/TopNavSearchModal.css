@@ -25,7 +25,8 @@
 .link-container
   .neo-form-control
   .neo-input-group
-  .neo-input-editable__wrapper:focus-within .neo-input {
+  .neo-input-editable__wrapper:focus-within
+  .neo-input {
   padding: 7px 10px;
 }
 
@@ -80,7 +81,5 @@
 }
 
 .neo-form-control:focus-within + .search-modal__results {
-  margin-top: -.5px;
+  margin-top: -0.5px;
 }
-
-
