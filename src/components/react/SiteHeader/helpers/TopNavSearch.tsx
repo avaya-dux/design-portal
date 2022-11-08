@@ -1,15 +1,39 @@
-import { Button, Sheet, TopNav } from "@avaya/neo-react";
-import { useEffect, useState } from "react";
+import { TextInput, Button } from "@avaya/neo-react";
+import { useEffect, useRef, useState } from "react";
 
-import styles from "./TopNavSearch.module.css";
+import { getOsName } from "components/react/utils";
+
+import { TopNavSearchModal } from "./TopNavSearchModal/TopNavSearchModal";
 
 import "./TopNavSearch.css";
 
 import type { PageAstroInstance } from "../";
+import {
+  closeSearchModal,
+  ModalShortcutKeysType,
+  openSearchModal,
+  topNavSearchOnKeyDown,
+  topNavSearchOnKeyUp,
+} from "./TopNavSearchKeyboardHandlers";
+import { closeSearchModalOnClick } from "./TopNavSearchMouseHandlers";
 
 export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
   const [search, setSearch] = useState("");
   const [options, setOptions] = useState<PageAstroInstance[]>([]);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [shortcutKeysPressed, setShortcutKeysPressed] =
+    useState<ModalShortcutKeysType>({
+      Meta: false,
+      Control: false,
+      k: false,
+    });
+  const [os, setOs] = useState<string>("");
+
+  const searchModalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setOs(getOsName(window.navigator.userAgent.toLowerCase()));
+  }, []);
 
   useEffect(() => {
     if (search) {
@@ -27,30 +51,80 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
     }
   }, [search]);
 
+  useEffect(() => {
+    window.addEventListener("keydown", (event) =>
+      topNavSearchOnKeyDown(event, setShortcutKeysPressed)
+    );
+    window.addEventListener("keyup", (event) =>
+      topNavSearchOnKeyUp(event, setShortcutKeysPressed)
+    );
+
+    return () => {
+      window.removeEventListener("keydown", (event) =>
+        topNavSearchOnKeyDown(event, setShortcutKeysPressed)
+      );
+      window.removeEventListener("keyup", (event) =>
+        topNavSearchOnKeyUp(event, setShortcutKeysPressed)
+      );
+    };
+  }, []);
+
+  useEffect(() => {
+    openSearchModal(shortcutKeysPressed, setIsOpen, setShortcutKeysPressed);
+  }, [os, shortcutKeysPressed]);
+
+  useEffect(() => {
+    if (!isOpen) {
+      setSearch("");
+    }
+    window.addEventListener("keydown", (event) =>
+      closeSearchModal(event, isOpen, setIsOpen)
+    );
+    window.addEventListener("mousedown", (event) =>
+      closeSearchModalOnClick(event, isOpen, setIsOpen, searchModalRef)
+    );
+    return () => {
+      window.removeEventListener("keydown", (event) =>
+        closeSearchModal(event, isOpen, setIsOpen)
+      );
+      window.removeEventListener("mousedown", (event) =>
+        closeSearchModalOnClick(event, isOpen, setIsOpen, searchModalRef)
+      );
+    };
+  }, [isOpen]);
+
   return (
     <>
-      <TopNav.Search
-        onChange={(e) => setSearch(e.currentTarget.value)}
-        value={search}
-      />
-
-      <Sheet
-        className={styles["search-sheet-results"]}
-        open={options.length > 0}
-        title="Search Results"
+      <Button
+        icon="search"
+        aria-label="Search Site"
+        onClick={() => setIsOpen(true)}
+        className="search__button search-icon"
       >
-        <div className={styles["link-container"]}>
-          {options.map((option, i) => (
-            <a href={option.url || "/"} key={i}>
-              {option.title}
-            </a>
-          ))}
-        </div>
+        {os === "macOS" ? "⌘ K" : "Ctrl K"}
+      </Button>
 
-        <Button onClick={() => setSearch("")} size="wide">
-          Close
-        </Button>
-      </Sheet>
+      <TopNavSearchModal
+        open={isOpen}
+        options={options}
+        searchModalRef={searchModalRef}
+      >
+        <TextInput
+          aria-label="Search site"
+          onChange={(e) => setSearch(e.currentTarget.value)}
+          value={search}
+          clearable={false}
+          endAddon={
+            <button
+              onClick={() => setIsOpen(false)}
+              className="search-modal__button"
+            >
+              esc
+            </button>
+          }
+          autoFocus
+        />
+      </TopNavSearchModal>
     </>
   );
 };
