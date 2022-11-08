@@ -15,17 +15,13 @@ import { defaultHtml, defaultReact, sandbox, storybook } from "../static";
 
 import "./PlaygroundImplementation.css";
 
-type ChipPlaygroundOption = "default" | "icon" | "avatar";
+type ChipTypeOption = "default" | "icon" | "avatar";
 
 export const PlaygroundImplementation = () => {
-  const [chipType, setChipType] = useState<"default" | "avatar" | "icon">(
-    "default"
-  );
+  const [chipType, setChipType] = useState<ChipTypeOption>("default");
   const [closable, setClosable] = useState(false);
   const [dir, setDir] = useState<"ltr" | "rtl">("ltr");
   const [disabled, setDisabled] = useState(false);
-
-  const [option, setOption] = useState<ChipPlaygroundOption>("default");
 
   const react = useMemo(() => {
     return prettyPrintReact(``);
@@ -41,22 +37,9 @@ export const PlaygroundImplementation = () => {
           <Playground.OptionsSection title="Chip Types">
             <RadioGroup
               groupName="options"
-              selected={option}
+              selected={chipType}
               onChange={(e) => {
-                setOption(e.target.value as ChipPlaygroundOption);
-                switch (e.target.value) {
-                  case "avatar":
-                    setChipType("avatar");
-                    break;
-
-                  case "icon":
-                    setChipType("icon");
-                    break;
-
-                  default:
-                    setChipType("default");
-                    break;
-                }
+                setChipType(e.target.value as ChipTypeOption);
               }}
             >
               <Radio value="default">Default</Radio>
@@ -97,8 +80,8 @@ export const PlaygroundImplementation = () => {
         </Playground.OptionsContainer>
       }
       examples={{
-        html: option === "default" ? defaultHtml : html,
-        react: option === "default" ? defaultReact : react,
+        html: chipType === "default" ? defaultHtml : html,
+        react: chipType === "default" ? defaultReact : react,
         sandbox,
         storybook,
       }}
