@@ -1,31 +1,143 @@
-import toDiffableHtml from "diffable-html";
+import {
+  Checkbox,
+  CheckboxGroup,
+  Chip,
+  ChipsContainer,
+  Radio,
+  RadioGroup,
+} from "@avaya/neo-react";
+import { useMemo, useState } from "react";
 
 import { Playground } from "components";
+import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
 import { defaultHtml, defaultReact, sandbox, storybook } from "../static";
 
+import "./PlaygroundImplementation.css";
+
+type ChipTypeOption = "default" | "icon" | "avatar";
+
 export const PlaygroundImplementation = () => {
+  const [chipType, setChipType] = useState<ChipTypeOption>("default");
+  const [closable, setClosable] = useState(false);
+  const [dir, setDir] = useState<"ltr" | "rtl">("ltr");
+  const [disabled, setDisabled] = useState(false);
+
+  const react = useMemo(() => {
+    return prettyPrintReact(``);
+  }, [chipType, closable, dir, disabled]);
+  const html = useMemo(() => {
+    return prettyPrintHtml(``);
+  }, [chipType, closable, dir, disabled]);
+
   return (
     <Playground
       options={
         <Playground.OptionsContainer>
-          <Playground.OptionsSection title="Chip Options">
-            None
+          <Playground.OptionsSection title="Chip Types">
+            <RadioGroup
+              groupName="options"
+              selected={chipType}
+              onChange={(e) => {
+                setChipType(e.target.value as ChipTypeOption);
+              }}
+            >
+              <Radio value="default">Default</Radio>
+              <Radio value="avatar">Avatar</Radio>
+              <Radio value="icon">Icon</Radio>
+            </RadioGroup>
+          </Playground.OptionsSection>
+
+          <Playground.OptionsSection
+            title="Variables"
+            htmlFor="Variables"
+            className="hack-hide-me"
+          >
+            <CheckboxGroup
+              groupName="Variables"
+              onChange={(e) => {
+                const { value } = e.target as HTMLInputElement;
+                switch (value) {
+                  case "closable":
+                    setClosable(!closable);
+                    setDisabled(false);
+                    break;
+                  case "dir":
+                    setDir(dir === "ltr" ? "rtl" : "ltr");
+                    break;
+                  case "disabled":
+                    setClosable(false);
+                    setDisabled(!disabled);
+                    break;
+                }
+              }}
+            >
+              <Checkbox label="Closable" value="closable" checked={closable} />
+              <Checkbox label="RTL" value="dir" checked={dir === "rtl"} />
+              <Checkbox label="Disabled" value="disabled" checked={disabled} />
+            </CheckboxGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
       }
       examples={{
-        html: toDiffableHtml(defaultHtml),
-        react: defaultReact,
+        html: chipType === "default" ? defaultHtml : html,
+        react: chipType === "default" ? defaultReact : react,
         sandbox,
         storybook,
       }}
     >
-      <div className="neo-chip neo-chip--default">This</div>
-      <div className="neo-chip neo-chip--success">is</div>
-      <div className="neo-chip neo-chip--info">a</div>
-      <div className="neo-chip neo-chip--alert">placeholder</div>
-      <div className="neo-chip neo-chip--warning">example</div>
+      <ChipsContainer>
+        <Chip
+          variant="default"
+          closable={closable}
+          dir={dir}
+          disabled={disabled}
+          avatarInitials={chipType === "avatar" ? "EX" : ""}
+          icon={chipType === "icon" ? "info" : undefined}
+        >
+          This
+        </Chip>
+        <Chip
+          variant="success"
+          closable={closable}
+          dir={dir}
+          disabled={disabled}
+          avatarInitials={chipType === "avatar" ? "EX" : ""}
+          icon={chipType === "icon" ? "info" : undefined}
+        >
+          is
+        </Chip>
+        <Chip
+          variant="info"
+          closable={closable}
+          dir={dir}
+          disabled={disabled}
+          avatarInitials={chipType === "avatar" ? "EX" : ""}
+          icon={chipType === "icon" ? "info" : undefined}
+        >
+          a
+        </Chip>
+        <Chip
+          variant="alert"
+          closable={closable}
+          dir={dir}
+          disabled={disabled}
+          avatarInitials={chipType === "avatar" ? "EX" : ""}
+          icon={chipType === "icon" ? "info" : undefined}
+        >
+          placeholder
+        </Chip>
+        <Chip
+          variant="warning"
+          closable={closable}
+          dir={dir}
+          disabled={disabled}
+          avatarInitials={chipType === "avatar" ? "EX" : ""}
+          icon={chipType === "icon" ? "info" : undefined}
+        >
+          example
+        </Chip>
+      </ChipsContainer>
     </Playground>
   );
 };
