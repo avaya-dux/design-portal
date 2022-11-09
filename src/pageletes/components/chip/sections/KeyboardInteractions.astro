@@ -1,37 +1,42 @@
 ---
-import { Table } from "@avaya/neo-react";
-import { SectionHeader } from "components/astro";
+import {
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableRow,
+  SectionHeader,
+} from "components/astro";
 import { topics } from "../static";
 ---
 
 <SectionHeader id={topics.keyboard.id}>{topics.keyboard.title}</SectionHeader>
 
-<Table
-  readonly
-  columns={[
-    { Header: "Keystrokes", accessor: "keystrokes" },
-    { Header: "Interaction", accessor: "interactions" },
-  ]}
-  data={[
-    {
-      id: 1,
-      keystrokes: "Tab",
-      interactions: "Moves forward to the next interactive element",
-    },
-    {
-      id: 2,
-      keystrokes: "Shift + Tab",
-      interactions: "Moves backward to the previous interactive element",
-    },
-    {
-      id: 3,
-      keystrokes: "Enter or Spacebar",
-      interactions: "Activates the chip (if applicable)",
-    },
-    {
-      id: 4,
-      keystrokes: "Delete",
-      interactions: "Removes the chip (for chips with a close buttton)",
-    },
-  ]}
-/>
+<InfoTable>
+  <InfoTableBody>
+    <InfoTableRow>
+      <InfoTableCell>Tab</InfoTableCell>
+      <InfoTableCell>
+        Moves forward to the next interactive element
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>Shift + Tab</InfoTableCell>
+      <InfoTableCell>
+        Moves backward to the previous interactive element
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>Enter or Spacebar</InfoTableCell>
+      <InfoTableCell>Activates the chip (if applicable)</InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>Delete</InfoTableCell>
+      <InfoTableCell>
+        Removes the chip (for chips with a close buttton)
+      </InfoTableCell>
+    </InfoTableRow>
+  </InfoTableBody>
+</InfoTable>

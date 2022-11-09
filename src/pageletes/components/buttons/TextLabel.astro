@@ -5,9 +5,9 @@ import { DoAndDont } from "components/react";
 
 import { topics } from "./static";
 
-import TextLabel1Do from "./button-imgs/do-text-label-1.svg";
+import TextLabel1Do from "./button-imgs/do-text-label1.svg";
 import TextLabel2Do from "./button-imgs/do-text-label-2.svg";
-import TextLabel1Dont from "./button-imgs/dont-text-label-1.svg";
+import TextLabel1Dont from "./button-imgs/dont-text-label1.svg";
 import TextLabel2Dont from "./button-imgs/dont-text-label-2.svg";
 
 const textDoInstructions =
@@ -57,13 +57,13 @@ const colorDontImgAltText =
 <DoAndDont>
   <DoAndDont.DoContainer instructions={textDoInstructions}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={TextLabel1Do} alt={textDoImgAltText} width={200} />
+      <Image src={TextLabel1Do} alt={textDoImgAltText} width={400} />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DoContainer>
 
   <DoAndDont.DontContainer instructions={textDontInstructions}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={TextLabel1Dont} alt={textDontImgAltText} width={200} />
+      <Image src={TextLabel1Dont} alt={textDontImgAltText} width={400} />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DontContainer>
 </DoAndDont>
