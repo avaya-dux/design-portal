@@ -4,7 +4,6 @@ import { useOsName } from "./hooks";
 describe("custom hooks", () => {
   describe("useOsName", () => {
     it("returns the correct value when user agent string is macos", () => {
-
       (<any>navigator)["__defineGetter__"]("userAgent", function () {
         return "macos";
       });
@@ -15,7 +14,6 @@ describe("custom hooks", () => {
     });
 
     it("returns the correct value when user agent string is not macos", () => {
-
       (<any>navigator)["__defineGetter__"]("userAgent", function () {
         return "linux";
       });

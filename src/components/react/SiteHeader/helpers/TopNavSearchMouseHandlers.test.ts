@@ -19,12 +19,11 @@ describe("TopNav Search Mouse Handlers", () => {
 
       expect(openModal).toHaveBeenCalled();
 
-      mouseEvent.target.classList.add("neo-modal__content")
+      mouseEvent.target.classList.add("neo-modal__content");
 
       closeSearchModalOnClick(mouseEvent, isOpen, openModal, ref);
 
-      expect(openModal).toHaveBeenCalledTimes(1)
-
+      expect(openModal).toHaveBeenCalledTimes(1);
     });
   });
 });

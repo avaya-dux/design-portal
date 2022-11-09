@@ -76,12 +76,14 @@ export const TopNavSearchModalResults = ({
               setIndexToFocus(i);
 
             if (indexToFocus === undefined) {
-              setIndexToFocus(0)
+              setIndexToFocus(0);
             }
           }}
           onBlur={(event) => {
-            if (event.relatedTarget?.classList.contains("search-modal__button")) {
-              setIndexToFocus(undefined)
+            if (
+              event.relatedTarget?.classList.contains("search-modal__button")
+            ) {
+              setIndexToFocus(undefined);
             }
           }}
         >

@@ -122,7 +122,6 @@ describe("Search Modal Results Keyboard Navigation", () => {
   });
 
   describe("behaviour on arrow key down", () => {
-
     it("returns correctly when indexToFocus is undefined", () => {
       searchModalResultsArrowNavigation(
         downArrowKeypress,
@@ -136,8 +135,7 @@ describe("Search Modal Results Keyboard Navigation", () => {
     });
 
     it("returns correctly when indexToFocus is greater than searchResultsLength", () => {
-
-      indexToFocus = searchResultsLength + 1
+      indexToFocus = searchResultsLength + 1;
 
       searchModalResultsArrowNavigation(
         downArrowKeypress,
@@ -151,8 +149,9 @@ describe("Search Modal Results Keyboard Navigation", () => {
     });
 
     it("increments indexToFocus correctly when value is neither undefined nor greater than searchResultsLength", () => {
-
-      indexToFocus = Math.floor(Math.random() * ((searchResultsLength - 2) - 1) + 1);
+      indexToFocus = Math.floor(
+        Math.random() * (searchResultsLength - 2 - 1) + 1
+      );
 
       searchModalResultsArrowNavigation(
         downArrowKeypress,
@@ -195,10 +194,7 @@ describe("Search Modal Results Keyboard Navigation", () => {
       );
 
       expect(downArrowKeypress.preventDefault).toHaveBeenCalled();
-      expect(setIndexToFocus).toHaveBeenNthCalledWith(
-        5,
-        indexToFocus - 1
-      );
+      expect(setIndexToFocus).toHaveBeenNthCalledWith(5, indexToFocus - 1);
     });
   });
 });
