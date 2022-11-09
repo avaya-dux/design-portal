@@ -185,5 +185,22 @@ describe("Search Modal Results Keyboard Navigation", () => {
         searchResultsLength - 1
       );
     });
+
+    it("sets indexToFocus correctly when value passed in is greater than 0", () => {
+      indexToFocus = 1;
+
+      searchModalResultsArrowNavigation(
+        upArrowKeypress,
+        searchResultsLength,
+        indexToFocus,
+        setIndexToFocus
+      );
+
+      expect(downArrowKeypress.preventDefault).toHaveBeenCalled();
+      expect(setIndexToFocus).toHaveBeenNthCalledWith(
+        5,
+        indexToFocus - 1
+      );
+    });
   });
 });
