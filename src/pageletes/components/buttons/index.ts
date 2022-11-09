@@ -1,6 +1,9 @@
 import Intro from "./Intro.astro";
 export { Intro };
 
+import Behavior from "./Behavior.astro";
+export { Behavior };
+
 import ButtonPlayground from "./ButtonPlayground.astro";
 export { ButtonPlayground };
 

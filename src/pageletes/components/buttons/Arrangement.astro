@@ -1,8 +1,6 @@
 ---
 import { Image } from "@avaya/neo-react";
-import { Description, SectionHeader, DoAndDont } from "components";
-
-import { topics } from "./static";
+import { Description, SubHeader, DoAndDont } from "components";
 
 import ArrangementDo from "./button-imgs/do-arrangement-1.svg";
 import ArrangementDont from "./button-imgs/dont-arrangement-1.svg";
@@ -17,9 +15,9 @@ const arrangementDontImgAltText =
   "image showing a confirmation with three buttons, one secondary and then two primary";
 ---
 
-<SectionHeader id={topics.arrangement.id}>
-  {topics.arrangement.title}
-</SectionHeader>
+<SubHeader id="button-arrangement">
+  Arrangement
+</SubHeader>
 
 <Description>
   The purpose of highlighted object (like a Primary button) is to draw the

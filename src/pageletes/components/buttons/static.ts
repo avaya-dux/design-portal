@@ -15,6 +15,7 @@ type ButtonsTopicNames =
   | "textLabel"
   | "arrangement"
   | "states"
+  | "behavior"
   | "type";
 
 export const topics: TopicsDict<ButtonsTopicNames> = {
@@ -43,9 +44,9 @@ export const topics: TopicsDict<ButtonsTopicNames> = {
     id: "button-states",
     title: "States",
   },
-  arrangement: {
+  behavior: {
     order: 5,
-    id: "arrangement-playground",
-    title: "Arrangement",
+    id: "button-behavior",
+    title: "Behavior",
   },
 };
