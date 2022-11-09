@@ -1,6 +1,12 @@
 import { vi } from "vitest";
 
-import { closeSearchModal, openSearchModal, searchModalResultsArrowNavigation, topNavSearchOnKeyDown, topNavSearchOnKeyUp } from "./TopNavSearchKeyboardHandlers";
+import {
+  closeSearchModal,
+  openSearchModal,
+  searchModalResultsArrowNavigation,
+  topNavSearchOnKeyDown,
+  topNavSearchOnKeyUp,
+} from "./TopNavSearchKeyboardHandlers";
 
 import type { ModalShortcutKeysType } from "./TopNavSearchKeyboardHandlers";
 import type { KeyboardEvent } from "react";
@@ -101,6 +107,8 @@ describe("TopNav Search Keyboard Handlers", () => {
 describe("Search Modal Results Keyboard Navigation", () => {
   const downArrowKeypress: any = { key: "ArrowDown", preventDefault: vi.fn() };
 
+  const upArrowKeypress: any = { key: "ArrowUp", preventDefault: vi.fn() };
+
   let searchResultsLength: number;
 
   let indexToFocus: number | undefined;
@@ -110,10 +118,11 @@ describe("Search Modal Results Keyboard Navigation", () => {
   > = vi.fn();
 
   beforeEach(() => {
-    searchResultsLength = Math.random();
+    searchResultsLength = Math.floor(Math.random() * (10 - 1) + 1);
   });
 
   describe("behaviour on arrow key down", () => {
+
     it("returns correctly when indexToFocus is undefined", () => {
       searchModalResultsArrowNavigation(
         downArrowKeypress,
@@ -123,19 +132,58 @@ describe("Search Modal Results Keyboard Navigation", () => {
       );
 
       expect(downArrowKeypress.preventDefault).toHaveBeenCalled();
-      expect(setIndexToFocus).toHaveBeenCalledWith(0);
+      expect(setIndexToFocus).toHaveBeenNthCalledWith(1, 0);
+    });
+
+    it("returns correctly when indexToFocus is greater than searchResultsLength", () => {
+
+      indexToFocus = searchResultsLength + 1
+
+      searchModalResultsArrowNavigation(
+        downArrowKeypress,
+        searchResultsLength,
+        indexToFocus,
+        setIndexToFocus
+      );
+
+      expect(downArrowKeypress.preventDefault).toHaveBeenCalled();
+      expect(setIndexToFocus).toHaveBeenNthCalledWith(2, 0);
+    });
+
+    it("increments indexToFocus correctly when value passed in", () => {
+
+      indexToFocus = Math.floor(Math.random() * ((searchResultsLength - 2) - 1) + 1);
+
+      console.log(searchResultsLength, indexToFocus)
+
+      searchModalResultsArrowNavigation(
+        downArrowKeypress,
+        searchResultsLength,
+        indexToFocus,
+        setIndexToFocus
+      );
+
+      expect(downArrowKeypress.preventDefault).toHaveBeenCalled();
+      expect(setIndexToFocus).toHaveBeenNthCalledWith(3, indexToFocus + 1);
     });
   });
-  it("returns correctly when indexToFocus is undefined", () => {
-    searchModalResultsArrowNavigation(
-      downArrowKeypress,
-      searchResultsLength,
-      indexToFocus,
-      setIndexToFocus
-    );
 
-    expect(downArrowKeypress.preventDefault).toHaveBeenCalled();
-    expect(setIndexToFocus).toHaveBeenCalledWith(0);
+  describe("behaviour on arrow key up", () => {
+    it("sets indexToFocus correctly when value passed in is 0", () => {
+      indexToFocus = 0;
+
+      searchModalResultsArrowNavigation(
+        upArrowKeypress,
+        searchResultsLength,
+        indexToFocus,
+        setIndexToFocus
+      );
+
+      expect(downArrowKeypress.preventDefault).toHaveBeenCalled();
+      expect(setIndexToFocus).toHaveBeenNthCalledWith(
+        4,
+        searchResultsLength - 1
+      );
+    });
   });
 });
-
