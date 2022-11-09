@@ -9,12 +9,11 @@ import {
 } from "./TopNavSearchKeyboardHandlers";
 
 import type { ModalShortcutKeysType } from "./TopNavSearchKeyboardHandlers";
-import type { KeyboardEvent } from "react";
 
 describe("TopNav Search Keyboard Handlers", () => {
   let setKeysPressed: React.Dispatch<
     React.SetStateAction<ModalShortcutKeysType>
-  >;
+  > = vi.fn();
 
   const keypressEvents: any[] = [
     { key: "Meta" },
@@ -83,6 +82,7 @@ describe("TopNav Search Keyboard Handlers", () => {
       });
     });
   });
+
   describe("closeSearchModal", () => {
     it("calls passed-in function with false when correct values are used", () => {
       const openModal: React.Dispatch<React.SetStateAction<boolean>> = vi.fn();
@@ -150,7 +150,7 @@ describe("Search Modal Results Keyboard Navigation", () => {
       expect(setIndexToFocus).toHaveBeenNthCalledWith(2, 0);
     });
 
-    it("increments indexToFocus correctly when value passed in", () => {
+    it("increments indexToFocus correctly when value is neither undefined nor greater than searchResultsLength", () => {
 
       indexToFocus = Math.floor(Math.random() * ((searchResultsLength - 2) - 1) + 1);
 
