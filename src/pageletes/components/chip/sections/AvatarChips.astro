@@ -1,5 +1,4 @@
 ---
-import { CodeHighlight } from "components";
 import { Description, SectionHeader } from "components/astro";
 import { topics } from "../static";
 ---
@@ -7,28 +6,6 @@ import { topics } from "../static";
 <SectionHeader id={topics.avatar.id}>{topics.avatar.title}</SectionHeader>
 
 <Description>
-  To add an avatar to a chip, simply add the avatar code to the chip. Example:
+  To add an avatar to a chip, simply add the avatar code to the chip if using
+  HTML, or add the <code>avatarInitial</code> prop if using React.
 </Description>
-
-<CodeHighlight
-  code={`<div class="neo-chip neo-chip--default">
-  <figure class="neo-avatar neo-avatar--small" data-initials="H"></figure>
-  Handwriting
-</div>
-<div class="neo-chip neo-chip--success">
-  <figure class="neo-avatar neo-avatar--small" data-initials="D"></figure>
-  Dramatics
-</div>
-<div class="neo-chip neo-chip--info">
-  <figure class="neo-avatar neo-avatar--small" data-initials="PE"></figure>
-  Physical Education (P.E.)
-</div>
-<div class="neo-chip neo-chip--alert">
-  <figure class="neo-avatar neo-avatar--small" data-initials="M"></figure>
-  Mathematics
-</div>
-<div class="neo-chip neo-chip--warning">
-  <figure class="neo-avatar neo-avatar--small" data-initials="H"></figure>
-  History
-</div>`}
-/>
