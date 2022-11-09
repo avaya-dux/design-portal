@@ -7,6 +7,9 @@ export { Behavior };
 import ButtonPlayground from "./ButtonPlayground.astro";
 export { ButtonPlayground };
 
+import Color from "./Color.astro";
+export { Color };
+
 import Anatomy from "./Anatomy.astro";
 export { Anatomy };
 
