@@ -154,8 +154,6 @@ describe("Search Modal Results Keyboard Navigation", () => {
 
       indexToFocus = Math.floor(Math.random() * ((searchResultsLength - 2) - 1) + 1);
 
-      console.log(searchResultsLength, indexToFocus)
-
       searchModalResultsArrowNavigation(
         downArrowKeypress,
         searchResultsLength,
