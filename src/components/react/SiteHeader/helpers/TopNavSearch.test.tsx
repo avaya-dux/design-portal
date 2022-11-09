@@ -31,7 +31,6 @@ describe("TopNavSearch", () => {
     },
   ];
 
-
   it("passes basic axe compliance", async () => {
     const { container } = render(<TopNavSearch pages={pagesMockData} />);
     const results = await axe(container);
