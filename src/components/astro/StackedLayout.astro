@@ -1,0 +1,41 @@
+---
+export interface Props {
+  showBorder: boolean;
+  gap: string;
+}
+
+const { showBorder, gap } = Astro.props as Props;
+
+let borderStyle = showBorder ? "solid" : "none";
+---
+
+<div class="stack-container">
+  <slot />
+</div>
+
+<style define:vars={{ borderStyle, gap }}>
+  div.stack-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    border-width: 1px;
+    border-style: var(--borderStyle) ;
+    border-color: #c9c9c9;
+    border-right: none;
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  div.stack-container > * {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: max-content;
+  }
+
+  div.stack-container:last-child {
+    border-right-style: var(--borderStyle);
+    border-right-color:#c9c9c9;
+    border-right-width: 1px;
+  }
+</style>

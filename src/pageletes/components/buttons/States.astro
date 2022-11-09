@@ -6,6 +6,7 @@ import {
   ColumnLayout,
   InfoTable,
   SectionHeader,
+  StackedLayout,
   InfoTableBody,
   InfoTableRow,
   InfoTableCell,
@@ -30,21 +31,21 @@ const defaultImageText =
   </Description>
 
   <ColumnLayout gap={"0"} numOfColumns={4}>
-    <div class="btn-display-wrapper">
+    <StackedLayout showBorder gap="1rem">
       <Image src={StateDefaultImage} alt={defaultImageText} />
-    </div>
+    </StackedLayout>
 
-    <div class="btn-display-wrapper">
+    <StackedLayout showBorder gap="1rem">
       <Image src={StateHoverImage} alt={"Buttons with hover state look like this"} />
-    </div>
+    </StackedLayout>
 
-    <div class="btn-display-wrapper">
+    <StackedLayout showBorder gap="1rem">
       <Image src={StatePressedImage} alt={"Buttons with pressed state look like this"} />
-    </div>
+    </StackedLayout>
 
-    <div class="btn-display-wrapper">
+    <StackedLayout showBorder gap="1rem">
       <Image src={StateDisabledImage} alt={"Buttons with disabled state look like this"} />
-    </div>
+    </StackedLayout>
   </ColumnLayout>
 
   <InfoTable>
