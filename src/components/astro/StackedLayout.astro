@@ -1,8 +1,8 @@
 ---
 export interface Props {
-  showBorder: boolean;
-  gap: string;
-  vPadding: string;
+  showBorder?: boolean;
+  gap?: string;
+  vPadding?: string;
 }
 
 const { showBorder = false, gap = "3rem", vPadding = "3rem"} = Astro.props as Props;

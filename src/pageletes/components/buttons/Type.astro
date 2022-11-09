@@ -6,6 +6,7 @@ import {
   ColumnLayout,
   InfoTable,
   SectionHeader,
+  StackedLayout,
   InfoTableBody,
   InfoTableRow,
   InfoTableCell,
@@ -22,17 +23,17 @@ import { topics } from "./static";
   </Description>
 
   <ColumnLayout gap={"0"} numOfColumns={3}>
-    <div class="btn-display-wrapper">
+    <StackedLayout showBorder>
       <Button>Primary Button</Button>
-    </div>
+    </StackedLayout>
 
-    <div class="btn-display-wrapper">
+    <StackedLayout showBorder>
       <Button variant="secondary">Secondary Button</Button>
-    </div>
+    </StackedLayout>
 
-    <div class="btn-display-wrapper">
+    <StackedLayout showBorder>
       <Button variant="tertiary">Tertiary Button</Button>
-    </div>
+    </StackedLayout>
   </ColumnLayout>
 
   <InfoTable>
@@ -69,28 +70,3 @@ import { topics } from "./static";
     </InfoTableBody>
   </InfoTable>
 </section>
-
-<style is:global>
-  div.btn-display-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #c9c9c9;
-    border-right: none;
-    align-items: center;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-
-  div.btn-display-wrapper > * {
-    flex-grow: 0;
-    flex-shrink: 0;
-    width: max-content;
-  }
-
-  div.btn-display-wrapper:last-child {
-    border-right: 1px solid #c9c9c9;
-  }
-</style>
