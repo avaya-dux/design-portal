@@ -1,5 +1,5 @@
 ---
-import { Button, Image } from "@avaya/neo-react";
+import { Image } from "@avaya/neo-react";
 
 import {
   Description,
@@ -18,16 +18,15 @@ import StateDisabledImage from "./button-imgs/states-disabled.svg";
 import StateHoverImage from "./button-imgs/states-hover.svg";
 import StatePressedImage from "./button-imgs/states-pressed.svg";
 
-const defaultImageText =
-  "Buttons with default state look like this";
+const defaultImageText = "Buttons with default state look like this";
 ---
 
 <section>
   <SectionHeader id={topics.states.id}>{topics.states.title}</SectionHeader>
 
   <Description>
-    Each button can exist in one of 4 states.
-    The button’s state will change as the user moves around the screen.
+    Each button can exist in one of 4 states. The button’s state will change as
+    the user moves around the screen.
   </Description>
 
   <ColumnLayout gap={"0"} numOfColumns={4}>
@@ -36,15 +35,24 @@ const defaultImageText =
     </StackedLayout>
 
     <StackedLayout showBorder>
-      <Image src={StateHoverImage} alt={"Buttons with hover state look like this"} />
+      <Image
+        src={StateHoverImage}
+        alt={"Buttons with hover state look like this"}
+      />
     </StackedLayout>
 
     <StackedLayout showBorder>
-      <Image src={StatePressedImage} alt={"Buttons with pressed state look like this"} />
+      <Image
+        src={StatePressedImage}
+        alt={"Buttons with pressed state look like this"}
+      />
     </StackedLayout>
 
     <StackedLayout showBorder>
-      <Image src={StateDisabledImage} alt={"Buttons with disabled state look like this"} />
+      <Image
+        src={StateDisabledImage}
+        alt={"Buttons with disabled state look like this"}
+      />
     </StackedLayout>
   </ColumnLayout>
 

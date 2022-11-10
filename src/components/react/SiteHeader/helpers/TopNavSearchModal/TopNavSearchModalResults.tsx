@@ -74,6 +74,17 @@ export const TopNavSearchModalResults = ({
               event.target != anchorRefs[indexToFocus]?.current
             )
               setIndexToFocus(i);
+
+            if (indexToFocus === undefined) {
+              setIndexToFocus(0);
+            }
+          }}
+          onBlur={(event) => {
+            if (
+              event.relatedTarget?.classList.contains("search-modal__button")
+            ) {
+              setIndexToFocus(undefined);
+            }
           }}
         >
           {option.title}
