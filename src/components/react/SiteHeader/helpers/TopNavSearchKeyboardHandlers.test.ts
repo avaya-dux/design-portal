@@ -1,12 +1,6 @@
 import { vi } from "vitest";
 
-import {
-  closeSearchModal,
-  openSearchModal,
-  searchModalResultsArrowNavigation,
-  topNavSearchOnKeyDown,
-  topNavSearchOnKeyUp,
-} from "./TopNavSearchKeyboardHandlers";
+import { closeSearchModal, openSearchModal, searchModalResultsArrowNavigation, topNavSearchOnKeyDown, topNavSearchOnKeyUp } from "./TopNavSearchKeyboardHandlers";
 
 import type { ModalShortcutKeysType } from "./TopNavSearchKeyboardHandlers";
 
@@ -15,7 +9,7 @@ describe("TopNav Search Keyboard Handlers", () => {
     React.SetStateAction<ModalShortcutKeysType>
   > = vi.fn();
 
-  const keypressEvents: any[] = [
+  const keypressEvents = [
     { key: "Meta" },
     { key: "Control" },
     { key: "k" },
@@ -28,7 +22,7 @@ describe("TopNav Search Keyboard Handlers", () => {
   describe("topNavSearchOnKeyDown", () => {
     it("detects the correct keys and calls the passed-in function as necessary", () => {
       keypressEvents.forEach((keyEvent) => {
-        topNavSearchOnKeyDown(keyEvent, setKeysPressed);
+        topNavSearchOnKeyDown(keyEvent as KeyboardEvent, setKeysPressed);
         expect(setKeysPressed).toHaveBeenCalled();
       });
     });
@@ -44,7 +38,7 @@ describe("TopNav Search Keyboard Handlers", () => {
   describe("topNavSearchOnKeyDown", () => {
     it("detects the correct keys and calls the passed-in function as necessary", () => {
       keypressEvents.forEach((keyEvent) => {
-        topNavSearchOnKeyUp(keyEvent, setKeysPressed);
+        topNavSearchOnKeyUp(keyEvent as KeyboardEvent, setKeysPressed);
         expect(setKeysPressed).toHaveBeenCalled();
       });
     });
@@ -89,15 +83,15 @@ describe("TopNav Search Keyboard Handlers", () => {
 
       let isOpen = false;
 
-      const keyPressEvent: any = { key: "Escape" };
+      const keyPressEvent = { key: "Escape" };
 
-      closeSearchModal(keyPressEvent, isOpen, openModal);
+      closeSearchModal(keyPressEvent as KeyboardEvent, isOpen, openModal);
 
       expect(openModal).not.toHaveBeenCalled();
 
       isOpen = true;
 
-      closeSearchModal(keyPressEvent, isOpen, openModal);
+      closeSearchModal(keyPressEvent as KeyboardEvent, isOpen, openModal);
 
       expect(openModal).toHaveBeenCalledWith(false);
     });
@@ -105,9 +99,9 @@ describe("TopNav Search Keyboard Handlers", () => {
 });
 
 describe("Search Modal Results Keyboard Navigation", () => {
-  const downArrowKeypress: any = { key: "ArrowDown", preventDefault: vi.fn() };
+  const downArrowKeypress = { key: "ArrowDown", preventDefault: vi.fn() };
 
-  const upArrowKeypress: any = { key: "ArrowUp", preventDefault: vi.fn() };
+  const upArrowKeypress = { key: "ArrowUp", preventDefault: vi.fn() };
 
   let searchResultsLength: number;
 
@@ -122,9 +116,10 @@ describe("Search Modal Results Keyboard Navigation", () => {
   });
 
   describe("behaviour on arrow key down", () => {
+
     it("returns correctly when indexToFocus is undefined", () => {
       searchModalResultsArrowNavigation(
-        downArrowKeypress,
+        downArrowKeypress as unknown as KeyboardEvent,
         searchResultsLength,
         indexToFocus,
         setIndexToFocus
@@ -135,10 +130,11 @@ describe("Search Modal Results Keyboard Navigation", () => {
     });
 
     it("returns correctly when indexToFocus is greater than searchResultsLength", () => {
-      indexToFocus = searchResultsLength + 1;
+
+      indexToFocus = searchResultsLength + 1
 
       searchModalResultsArrowNavigation(
-        downArrowKeypress,
+        downArrowKeypress as unknown as KeyboardEvent,
         searchResultsLength,
         indexToFocus,
         setIndexToFocus
@@ -149,12 +145,11 @@ describe("Search Modal Results Keyboard Navigation", () => {
     });
 
     it("increments indexToFocus correctly when value is neither undefined nor greater than searchResultsLength", () => {
-      indexToFocus = Math.floor(
-        Math.random() * (searchResultsLength - 2 - 1) + 1
-      );
+
+      indexToFocus = Math.floor(Math.random() * ((searchResultsLength - 2) - 1) + 1);
 
       searchModalResultsArrowNavigation(
-        downArrowKeypress,
+        downArrowKeypress as unknown as KeyboardEvent,
         searchResultsLength,
         indexToFocus,
         setIndexToFocus
@@ -170,7 +165,7 @@ describe("Search Modal Results Keyboard Navigation", () => {
       indexToFocus = 0;
 
       searchModalResultsArrowNavigation(
-        upArrowKeypress,
+        upArrowKeypress as unknown as KeyboardEvent,
         searchResultsLength,
         indexToFocus,
         setIndexToFocus
@@ -187,14 +182,17 @@ describe("Search Modal Results Keyboard Navigation", () => {
       indexToFocus = 1;
 
       searchModalResultsArrowNavigation(
-        upArrowKeypress,
+        upArrowKeypress as unknown as KeyboardEvent,
         searchResultsLength,
         indexToFocus,
         setIndexToFocus
       );
 
       expect(downArrowKeypress.preventDefault).toHaveBeenCalled();
-      expect(setIndexToFocus).toHaveBeenNthCalledWith(5, indexToFocus - 1);
+      expect(setIndexToFocus).toHaveBeenNthCalledWith(
+        5,
+        indexToFocus - 1
+      );
     });
   });
 });
