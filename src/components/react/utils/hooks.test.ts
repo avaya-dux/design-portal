@@ -12,7 +12,7 @@ describe("custom hooks", () => {
         configurable: true,
       });
 
-      const { result } = renderHook(() => useOsName());
+      const { result } = renderHook(useOsName);
 
       expect(result.current).toBe("macos");
     });
@@ -24,7 +24,7 @@ describe("custom hooks", () => {
         },
       });
 
-      const { result } = renderHook(() => useOsName());
+      const { result } = renderHook(useOsName);
 
       expect(result.current).toBe("windows");
     });
