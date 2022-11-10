@@ -28,9 +28,9 @@ describe("TopNav Search Keyboard Handlers", () => {
     });
 
     it("does not call the passed-in function when the wrong key is pressed", () => {
-      const keyPressEvent: any = { key: "Enter" };
+      const keyPressEvent = { key: "Enter" };
 
-      topNavSearchOnKeyDown(keyPressEvent, setKeysPressed);
+      topNavSearchOnKeyDown(keyPressEvent as KeyboardEvent, setKeysPressed);
       expect(setKeysPressed).not.toHaveBeenCalled();
     });
   });
@@ -44,9 +44,9 @@ describe("TopNav Search Keyboard Handlers", () => {
     });
 
     it("does not call the passed-in function when the wrong key is pressed", () => {
-      const keyPressEvent: any = { key: "Enter" };
+      const keyPressEvent = { key: "Enter" };
 
-      topNavSearchOnKeyUp(keyPressEvent, setKeysPressed);
+      topNavSearchOnKeyUp(keyPressEvent as KeyboardEvent, setKeysPressed);
       expect(setKeysPressed).not.toHaveBeenCalled();
     });
   });
