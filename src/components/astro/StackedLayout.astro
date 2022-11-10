@@ -5,7 +5,11 @@ export interface Props {
   vPadding?: string;
 }
 
-const { showBorder = false, gap = "3rem", vPadding = "3rem"} = Astro.props as Props;
+const {
+  showBorder = false,
+  gap = "3rem",
+  vPadding = "3rem",
+} = Astro.props as Props;
 
 let borderStyle = showBorder ? "solid" : "none";
 ---
@@ -20,7 +24,7 @@ let borderStyle = showBorder ? "solid" : "none";
     flex-direction: column;
     gap: var(--gap);
     border-width: 1px;
-    border-style: var(--borderStyle) ;
+    border-style: var(--borderStyle);
     border-color: var(--neo-color-base-200);
     border-right: none;
     align-items: center;

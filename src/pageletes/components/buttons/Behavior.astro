@@ -3,7 +3,11 @@ import { Description, SectionHeader, SubHeader } from "components";
 
 import { topics } from "./static";
 
-import { Arrangement, Color, CompactButton } from "pageletes/components/buttons";
+import {
+  Arrangement,
+  Color,
+  CompactButton,
+} from "pageletes/components/buttons";
 ---
 
 <SectionHeader id={topics.behavior.id}>
@@ -11,24 +15,23 @@ import { Arrangement, Color, CompactButton } from "pageletes/components/buttons"
 </SectionHeader>
 
 <Description>
-  A Primary button should immediately draw the user’s attention within the region containing the button.
-  It indicates what needs to be done at any moment.
+  A Primary button should immediately draw the user’s attention within the
+  region containing the button. It indicates what needs to be done at any
+  moment.
 </Description>
 
-<SubHeader id="all-buttons">
-  All buttons
-</SubHeader>
+<SubHeader id="all-buttons">All buttons</SubHeader>
 
 <Description>
-  Moving the mouse pointer over a button changes the button to its Hover state and allows a
-  mouse-click or keystroke to start the action item.
+  Moving the mouse pointer over a button changes the button to its Hover state
+  and allows a mouse-click or keystroke to start the action item.
 </Description>
 
 <Description>
-  Buttons must also be reachable using the keyboard alone.
-  Typically, the Tab key will cycle through all buttons and fields on the screen/region.
-  Once the correct button is selected, using the Enter key or the Spacebar will start the action item.
-  For further details, please read the Accessibility section.
+  Buttons must also be reachable using the keyboard alone. Typically, the Tab
+  key will cycle through all buttons and fields on the screen/region. Once the
+  correct button is selected, using the Enter key or the Spacebar will start the
+  action item. For further details, please read the Accessibility section.
 </Description>
 
 <Color />
