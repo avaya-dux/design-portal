@@ -1,11 +1,15 @@
 import { renderHook } from "@testing-library/react";
+
 import { useOsName } from "./hooks";
 
 describe("custom hooks", () => {
   describe("useOsName", () => {
     it("returns the correct value when user agent string is macos", () => {
-      (<any>navigator)["__defineGetter__"]("userAgent", function () {
-        return "macos";
+      Object.defineProperty(window.navigator, "userAgent", {
+        get: function () {
+          return "macos";
+        },
+        configurable: true,
       });
 
       const { result } = renderHook(() => useOsName());
@@ -14,8 +18,10 @@ describe("custom hooks", () => {
     });
 
     it("returns the correct value when user agent string is not macos", () => {
-      (<any>navigator)["__defineGetter__"]("userAgent", function () {
-        return "linux";
+      Object.defineProperty(window.navigator, "userAgent", {
+        get: function () {
+          return "linux";
+        },
       });
 
       const { result } = renderHook(() => useOsName());

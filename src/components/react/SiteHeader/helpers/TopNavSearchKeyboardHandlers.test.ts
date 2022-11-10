@@ -1,22 +1,24 @@
 import { vi } from "vitest";
 
-import { closeSearchModal, openSearchModal, searchModalResultsArrowNavigation, topNavSearchOnKeyDown, topNavSearchOnKeyUp } from "./TopNavSearchKeyboardHandlers";
+import {
+  closeSearchModal,
+  openSearchModal,
+  searchModalResultsArrowNavigation,
+  topNavSearchOnKeyDown,
+  topNavSearchOnKeyUp,
+} from "./TopNavSearchKeyboardHandlers";
 
 import type { ModalShortcutKeysType } from "./TopNavSearchKeyboardHandlers";
 
 describe("TopNav Search Keyboard Handlers", () => {
-  let setKeysPressed: React.Dispatch<
+  const setKeysPressed: React.Dispatch<
     React.SetStateAction<ModalShortcutKeysType>
   > = vi.fn();
 
-  const keypressEvents = [
-    { key: "Meta" },
-    { key: "Control" },
-    { key: "k" },
-  ];
+  const keypressEvents = [{ key: "Meta" }, { key: "Control" }, { key: "k" }];
 
   beforeEach(() => {
-    setKeysPressed = vi.fn();
+    vi.resetAllMocks();
   });
 
   describe("topNavSearchOnKeyDown", () => {
@@ -81,17 +83,13 @@ describe("TopNav Search Keyboard Handlers", () => {
     it("calls passed-in function with false when correct values are used", () => {
       const openModal: React.Dispatch<React.SetStateAction<boolean>> = vi.fn();
 
-      let isOpen = false;
-
       const keyPressEvent = { key: "Escape" };
 
-      closeSearchModal(keyPressEvent as KeyboardEvent, isOpen, openModal);
+      closeSearchModal(keyPressEvent as KeyboardEvent, false, openModal);
 
       expect(openModal).not.toHaveBeenCalled();
 
-      isOpen = true;
-
-      closeSearchModal(keyPressEvent as KeyboardEvent, isOpen, openModal);
+      closeSearchModal(keyPressEvent as KeyboardEvent, true, openModal);
 
       expect(openModal).toHaveBeenCalledWith(false);
     });
@@ -116,7 +114,6 @@ describe("Search Modal Results Keyboard Navigation", () => {
   });
 
   describe("behaviour on arrow key down", () => {
-
     it("returns correctly when indexToFocus is undefined", () => {
       searchModalResultsArrowNavigation(
         downArrowKeypress as unknown as KeyboardEvent,
@@ -130,8 +127,7 @@ describe("Search Modal Results Keyboard Navigation", () => {
     });
 
     it("returns correctly when indexToFocus is greater than searchResultsLength", () => {
-
-      indexToFocus = searchResultsLength + 1
+      indexToFocus = searchResultsLength + 1;
 
       searchModalResultsArrowNavigation(
         downArrowKeypress as unknown as KeyboardEvent,
@@ -145,8 +141,9 @@ describe("Search Modal Results Keyboard Navigation", () => {
     });
 
     it("increments indexToFocus correctly when value is neither undefined nor greater than searchResultsLength", () => {
-
-      indexToFocus = Math.floor(Math.random() * ((searchResultsLength - 2) - 1) + 1);
+      indexToFocus = Math.floor(
+        Math.random() * (searchResultsLength - 2 - 1) + 1
+      );
 
       searchModalResultsArrowNavigation(
         downArrowKeypress as unknown as KeyboardEvent,
@@ -189,10 +186,7 @@ describe("Search Modal Results Keyboard Navigation", () => {
       );
 
       expect(downArrowKeypress.preventDefault).toHaveBeenCalled();
-      expect(setIndexToFocus).toHaveBeenNthCalledWith(
-        5,
-        indexToFocus - 1
-      );
+      expect(setIndexToFocus).toHaveBeenNthCalledWith(5, indexToFocus - 1);
     });
   });
 });
