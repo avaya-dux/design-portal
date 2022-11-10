@@ -16,5 +16,8 @@ export { SiteFooter };
 import StackedLayout from "./StackedLayout.astro";
 export { StackedLayout };
 
+import SubHeader from "./SubHeader.astro";
+export { SubHeader };
+
 export * from "./InfoTable";
 export * from "./Topics";
