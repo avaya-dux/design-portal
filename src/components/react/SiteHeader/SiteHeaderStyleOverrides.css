@@ -9,3 +9,36 @@ body nav.neo-navbar .neo-nav--left {
   height: 100%;
   align-items: unset;
 }
+
+body nav.neo-navbar .neo-nav--left a {
+  height: 48px;
+}
+
+.neo-navbar {
+  overflow: hidden;
+}
+
+nav.neo-navbar a.neo-nav-link-btn {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+
+@media (max-width: 799px) {
+  nav.neo-navbar {
+    overflow: visible;
+    margin-bottom: 48px;
+  }
+  nav.neo-navbar .neo-nav {
+    height: 48px;
+    border-bottom: 1px solid var(--navbar-border-bottom-color);
+  }
+  nav.neo-navbar .neo-nav--right {
+    display: flex;
+    justify-content: flex-end;
+  }
+  nav.neo-navbar .neo-nav--right button.neo-btn {
+    border: none;
+  }
+}
+

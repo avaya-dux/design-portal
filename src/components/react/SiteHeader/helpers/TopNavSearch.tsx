@@ -1,7 +1,7 @@
 import { TextInput, Button } from "@avaya/neo-react";
 import { useEffect, useRef, useState } from "react";
 
-import { useOsName } from "components/react/utils";
+import { useOsName, useWindowSize, breakpoints } from "components/react/utils";
 
 import { TopNavSearchModal } from "./TopNavSearchModal/TopNavSearchModal";
 
@@ -28,6 +28,8 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
       k: false,
     });
   const os = useOsName();
+
+  const size = useWindowSize();
 
   const searchModalRef = useRef<HTMLDivElement>(null);
 
@@ -97,13 +99,23 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
         onClick={() => setIsOpen(true)}
         className="search__button search-icon"
       >
-        {os === "macos" ? "⌘ K" : "Ctrl K"}
+        {size.width > breakpoints.tablet
+          ? os === "macos"
+            ? "⌘ K"
+            : "Ctrl K"
+          : ""}
       </Button>
 
-      <TopNavSearchModal
-        open={isOpen}
-        options={options}
-        searchModalRef={searchModalRef}
+      <div
+        style={{
+          position: "absolute",
+          width: "100vw",
+          top: "96px",
+          bottom: "0",
+          backgroundColor: "white",
+          zIndex: "10",
+          padding: '50px'
+        }}
       >
         <TextInput
           aria-label="Search site"
@@ -120,7 +132,31 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
           }
           autoFocus
         />
-      </TopNavSearchModal>
+      </div>
+
+      {size.width > breakpoints.tablet && (
+        <TopNavSearchModal
+          open={isOpen}
+          options={options}
+          searchModalRef={searchModalRef}
+        >
+          <TextInput
+            aria-label="Search site"
+            onChange={(e) => setSearch(e.currentTarget.value)}
+            value={search}
+            clearable={false}
+            endAddon={
+              <button
+                onClick={() => setIsOpen(false)}
+                className="search-modal__button"
+              >
+                esc
+              </button>
+            }
+            autoFocus
+          />
+        </TopNavSearchModal>
+      )}
     </>
   );
 };

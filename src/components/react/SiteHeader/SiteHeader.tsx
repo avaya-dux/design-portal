@@ -48,7 +48,7 @@ export const SiteHeader = ({
         active={isActiveLink("/whats-new")}
         rel="prefetch"
       >
-        What's New
+        Docs
       </TopNav.LinkButton>
 
       <TopNav.LinkButton
@@ -75,13 +75,6 @@ export const SiteHeader = ({
         Icons
       </TopNav.LinkButton>
 
-      <TopNav.LinkButton
-        href="/faqs"
-        active={isActiveLink("/faqs")}
-        rel="prefetch"
-      >
-        FAQs
-      </TopNav.LinkButton>
     </TopNav>
   );
 };
