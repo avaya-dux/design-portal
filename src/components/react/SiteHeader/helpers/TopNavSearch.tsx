@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { useOsName, useWindowSize, breakpoints } from "components/react/utils";
 
-import { TopNavSearchModal } from "./TopNavSearchModal/TopNavSearchModal";
+import { TopNavSearchPanel } from "./TopNavSearchPanel";
 
 import "./TopNavSearch.css";
 
@@ -104,19 +104,12 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
             ? "⌘ K"
             : "Ctrl K"
           : ""}
-        {os === "macos" ? "⌘ K" : "Ctrl K"}
       </Button>
 
-      <div
-        style={{
-          position: "absolute",
-          width: "100vw",
-          top: "96px",
-          bottom: "0",
-          backgroundColor: "white",
-          zIndex: "10",
-          padding: '50px'
-        }}
+      <TopNavSearchPanel
+        open={isOpen}
+        options={options}
+        searchModalRef={searchModalRef}
       >
         <TextInput
           aria-label="Search site"
@@ -126,38 +119,14 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
           endAddon={
             <button
               onClick={() => setIsOpen(false)}
-              className="search-modal__button"
+              className="search-panel__button"
             >
               esc
             </button>
           }
           autoFocus
         />
-      </div>
-
-      {size.width > breakpoints.tablet && (
-        <TopNavSearchModal
-          open={isOpen}
-          options={options}
-          searchModalRef={searchModalRef}
-        >
-          <TextInput
-            aria-label="Search site"
-            onChange={(e) => setSearch(e.currentTarget.value)}
-            value={search}
-            clearable={false}
-            endAddon={
-              <button
-                onClick={() => setIsOpen(false)}
-                className="search-modal__button"
-              >
-                esc
-              </button>
-            }
-            autoFocus
-          />
-        </TopNavSearchModal>
-      )}
+      </TopNavSearchPanel>
     </>
   );
 };

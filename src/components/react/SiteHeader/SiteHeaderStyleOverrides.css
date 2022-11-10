@@ -23,7 +23,6 @@ nav.neo-navbar a.neo-nav-link-btn {
   padding-left: 16px;
 }
 
-
 @media (max-width: 799px) {
   nav.neo-navbar {
     overflow: visible;
@@ -41,4 +40,3 @@ nav.neo-navbar a.neo-nav-link-btn {
     border: none;
   }
 }
-

@@ -74,7 +74,6 @@ export const SiteHeader = ({
       >
         Icons
       </TopNav.LinkButton>
-
     </TopNav>
   );
 };
