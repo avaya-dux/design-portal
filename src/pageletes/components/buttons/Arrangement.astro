@@ -1,11 +1,9 @@
 ---
 import { Image } from "@avaya/neo-react";
-import { Description, SectionHeader, DoAndDont } from "components";
+import { Description, SubHeader, DoAndDont } from "components";
 
-import { topics } from "./static";
-
-import ArrangementDo from "./button-imgs/do-arrangement-1.svg";
-import ArrangementDont from "./button-imgs/dont-arrangement-1.svg";
+import ArrangementDo from "./button-imgs/do-arrangement1.svg";
+import ArrangementDont from "./button-imgs/dont-arrangement1.svg";
 
 const arrangementDoInstructions =
   "Prioritize the calls to actions by using one primary button per page. Multiple secondary and tertiary actions can be used.";
@@ -17,30 +15,18 @@ const arrangementDontImgAltText =
   "image showing a confirmation with three buttons, one secondary and then two primary";
 ---
 
-<SectionHeader id={topics.arrangement.id}>
-  {topics.arrangement.title}
-</SectionHeader>
+<SubHeader id="button-arrangement">Arrangement</SubHeader>
 
 <Description>
-  The purpose of highlighted object (like a Primary button) is to draw the
-  user's attention to the key item on the screen. Too many highlights can be
+  The purpose of highlighting an object (like a Primary button) is to draw the
+  user’s attention to the key item on the screen. Too many highlights can be
   confusing for the user, making the important bit disappear into background
   noise.
 </Description>
 
 <Description>
-  For Primary buttons, only add one to each screen or region to keep the user's
+  For Primary buttons, only add one to each screen or region to keep the user’s
   attention properly focused.
-</Description>
-
-<Description>
-  Icons may be added beside the button text if it will help the user.
-</Description>
-
-<Description>
-  Where space limitations do not permit text on the button, an icon can be used
-  alone if the icon is sufficiently clear to communicate the action. All icon
-  buttons must include a Tooltip to replace the button text.
 </Description>
 
 <DoAndDont size="wide">
