@@ -72,10 +72,10 @@ export const searchModalResultsArrowNavigation = (
   if (event.key === "ArrowDown") {
     event.preventDefault();
 
-    if (indexToFocus === undefined || indexToFocus + 2 > searchResultsLength) {
+    if (indexToFocus === undefined || indexToFocus + 1 >= searchResultsLength) {
       setIndexToFocus(0);
     } else {
-      setIndexToFocus((indexToFocus) => indexToFocus + 1);
+      setIndexToFocus(indexToFocus + 1);
     }
   }
 
@@ -84,8 +84,8 @@ export const searchModalResultsArrowNavigation = (
 
     if (indexToFocus !== undefined && indexToFocus - 1 < 0) {
       setIndexToFocus(searchResultsLength - 1);
-    } else {
-      setIndexToFocus(() => indexToFocus - 1);
+    } else if (indexToFocus) {
+      setIndexToFocus(indexToFocus - 1);
     }
   }
 };
