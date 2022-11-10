@@ -104,6 +104,7 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
             ? "⌘ K"
             : "Ctrl K"
           : ""}
+        {os === "macos" ? "⌘ K" : "Ctrl K"}
       </Button>
 
       <div
