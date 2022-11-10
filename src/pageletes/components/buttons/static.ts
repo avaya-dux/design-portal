@@ -13,7 +13,6 @@ type ButtonsTopicNames =
   | "playground"
   | "anatomy"
   | "textLabel"
-  | "arrangement"
   | "states"
   | "behavior"
   | "type";
