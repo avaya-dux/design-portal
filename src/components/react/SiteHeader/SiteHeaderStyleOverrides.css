@@ -37,6 +37,8 @@ nav.neo-navbar a.neo-nav-link-btn {
   }
   nav.neo-navbar .neo-nav a.neo-nav-link-btn {
     padding: 0px;
+    width: 25%;
+    justify-content: center;
   }
 
   nav.neo-navbar .neo-nav--right {
