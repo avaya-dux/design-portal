@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 export const useOsName = () => {
   const [os, setOs] = useState<string>("");
@@ -23,7 +23,7 @@ export const useWindowSize = () => {
     height: 0,
   });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     function handleResize() {
       setWindowSize({
         width: window.innerWidth,
