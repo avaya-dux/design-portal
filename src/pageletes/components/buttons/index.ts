@@ -16,6 +16,9 @@ export { Color };
 import Anatomy from "./Anatomy.astro";
 export { Anatomy };
 
+import Tooltip from "./Tooltip.astro";
+export { Tooltip };
+
 import Type from "./Type.astro";
 export { Type };
 
