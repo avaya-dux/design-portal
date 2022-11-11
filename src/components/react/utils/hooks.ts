@@ -1,11 +1,11 @@
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 
 export const useOsName = () => {
   const [os, setOs] = useState<string>("");
 
   const macPlatforms = /(macintosh|macintel|macppc|mac68k|macos)/i;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const userAgent = window.navigator.userAgent.toLowerCase();
 
     setOs(macPlatforms.test(userAgent) ? "macos" : "windows");
