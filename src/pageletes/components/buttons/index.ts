@@ -25,6 +25,9 @@ export { Type };
 import TextLabel from "./TextLabel.astro";
 export { TextLabel };
 
+import Animation from "./Animation.astro";
+export { Animation };
+
 import Arrangement from "./Arrangement.astro";
 export { Arrangement };
 
