@@ -1,6 +1,6 @@
 import { InfoModal } from "@avaya/neo-react";
 
-import type { ReactElement } from "react";
+import { ReactElement, useEffect } from "react";
 import type { PageAstroInstance } from "components/index";
 
 import { TopNavSearchResults } from "./TopNavSearchResults";
@@ -23,6 +23,22 @@ export const TopNavSearchPanel = ({
   searchModalRef,
 }: TopNavSearchPanelProps) => {
   const size = useWindowSize();
+
+  // HACK to disable scroll at mobile screen sizes when search panel is open
+  // may not be needed depending on design feedback
+  function disableScroll() {
+    if (open && size.width < breakpoints.mobileMax) {
+      window.scroll(0, 0);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", disableScroll);
+
+    return () => {
+      window.removeEventListener("scroll", disableScroll);
+    };
+  }, [open, size]);
 
   const searchInputAndResults = (
     <div

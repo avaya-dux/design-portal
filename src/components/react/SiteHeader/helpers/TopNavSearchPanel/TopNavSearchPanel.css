@@ -93,6 +93,7 @@
   .search-panel .neo-modal__content {
     position: absolute;
     width: 100vw;
+    height: 100vh;
     top: 66px;
     bottom: 0;
     background-color: var(--global-background);
