@@ -99,7 +99,7 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
         onClick={() => setIsOpen(true)}
         className="search__button search-icon"
       >
-        {size.width > breakpoints.tablet
+        {size.width > breakpoints.tabletMax
           ? os === "macos"
             ? "⌘ K"
             : "Ctrl K"

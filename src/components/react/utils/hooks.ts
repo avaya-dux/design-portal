@@ -1,11 +1,11 @@
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 export const useOsName = () => {
   const [os, setOs] = useState<string>("");
 
   const macPlatforms = /(macintosh|macintel|macppc|mac68k|macos)/i;
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const userAgent = window.navigator.userAgent.toLowerCase();
 
     setOs(macPlatforms.test(userAgent) ? "macos" : "windows");
@@ -23,7 +23,7 @@ export const useWindowSize = () => {
     height: 0,
   });
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     function handleResize() {
       setWindowSize({
         width: window.innerWidth,

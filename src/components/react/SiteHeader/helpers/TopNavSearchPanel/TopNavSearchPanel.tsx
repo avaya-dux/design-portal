@@ -27,13 +27,13 @@ export const TopNavSearchPanel = ({
   const searchInputAndResults = (
     <div
       className="link-container"
-      ref={size.width > breakpoints.mobile ? searchModalRef : null}
+      ref={size.width > breakpoints.mobileMax ? searchModalRef : null}
     >
       {children}
       <div className="search-panel__results">
         <TopNavSearchResults options={options} />
       </div>
-      {size.width > breakpoints.mobile && (
+      {size.width > breakpoints.mobileMax && (
         <div className="search-panel__keyboard-nav">
           <div>
             <span className="search-panel__button">Enter</span> to select
@@ -47,7 +47,7 @@ export const TopNavSearchPanel = ({
     </div>
   );
 
-  return size.width > breakpoints.mobile ? (
+  return size.width > breakpoints.mobileMax ? (
     <InfoModal
       open={open}
       // HACK: Design of Search Modal does not have a close button, but this prop is required in our Modal Component.
