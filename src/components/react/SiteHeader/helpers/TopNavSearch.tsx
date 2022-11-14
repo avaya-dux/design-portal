@@ -1,7 +1,7 @@
 import { Button, TextInput } from "@avaya/neo-react";
 import { useEffect, useRef, useState } from "react";
 
-import { breakpoints, useOsName, useWindowSize } from "components/react/utils";
+import { useOsName } from "components/react/utils";
 
 import { TopNavSearchPanel } from "./TopNavSearchPanel";
 
@@ -28,8 +28,6 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
       k: false,
     });
   const os = useOsName();
-
-  const size = useWindowSize();
 
   const searchModalRef = useRef<HTMLDivElement>(null);
 
