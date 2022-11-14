@@ -1,7 +1,7 @@
-import { TextInput, Button } from "@avaya/neo-react";
+import { Button, TextInput } from "@avaya/neo-react";
 import { useEffect, useRef, useState } from "react";
 
-import { useOsName, useWindowSize, breakpoints } from "components/react/utils";
+import { breakpoints, useOsName, useWindowSize } from "components/react/utils";
 
 import { TopNavSearchPanel } from "./TopNavSearchPanel";
 
@@ -99,11 +99,9 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
         onClick={() => setIsOpen(true)}
         className="search__button search-icon"
       >
-        {size.width > breakpoints.tabletMax
-          ? os === "macos"
-            ? "⌘ K"
-            : "Ctrl K"
-          : ""}
+        <span className="search__button--content">
+          {os === "macos" ? "⌘ K" : "Ctrl K"}
+        </span>
       </Button>
 
       <TopNavSearchPanel
