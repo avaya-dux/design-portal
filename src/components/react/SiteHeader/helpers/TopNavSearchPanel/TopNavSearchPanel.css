@@ -38,7 +38,6 @@
 }
 
 .search-panel__button {
-  color: var(--global-font-color);
   background: none;
   padding: 4px 8px;
   border: 1px solid var(--input-border-color);
@@ -96,7 +95,7 @@
     top: 66px;
     bottom: 0;
     background-color: var(--global-background);
-    z-index: 10;
+    z-index: 1000;
     padding: 16px 40px 0 40px;
   }
   .search-panel__keyboard-nav {

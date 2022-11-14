@@ -11,7 +11,7 @@ body nav.neo-navbar .neo-nav--left {
 }
 
 body nav.neo-navbar .neo-nav--left a {
-  height: 48px;
+  height: 3rem;
 }
 
 .neo-navbar {
@@ -29,7 +29,7 @@ nav.neo-navbar a.neo-nav-link-btn {
     border: none;
   }
   nav.neo-navbar .neo-nav {
-    height: 48px;
+    height: 3rem;
     border-bottom: 1px solid var(--navbar-border-bottom-color);
     border-top: 1px solid var(--navbar-border-bottom-color);
     justify-content: space-around;
