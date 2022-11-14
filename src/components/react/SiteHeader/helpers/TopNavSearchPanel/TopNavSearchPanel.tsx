@@ -46,16 +46,16 @@ export const TopNavSearchPanel = ({
   );
 
   return (
-      <InfoModal
-        open={open}
-        // HACK: Design of Search Modal does not have a close button, but this prop is required in our Modal Component.
-        // Removing close button using CSS instead & will address in React library
-        onClose={() => null}
-        title=""
-        // Our React Modal renders outside the top-level div element so it needed its own 'neo-dynamic' class name to respond to theming
-        className="search-panel neo-dynamic"
-      >
-        {searchInputAndResults}
-      </InfoModal>
+    <InfoModal
+      open={open}
+      // HACK: Design of Search Modal does not have a close button, but this prop is required in our Modal Component.
+      // Removing close button using CSS instead & will address in React library
+      onClose={() => null}
+      title=""
+      // Our React Modal renders outside the top-level div element so it needed its own 'neo-dynamic' class name to respond to theming
+      className="search-panel neo-dynamic"
+    >
+      {searchInputAndResults}
+    </InfoModal>
   );
 };

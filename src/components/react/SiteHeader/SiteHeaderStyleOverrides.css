@@ -33,7 +33,6 @@ nav.neo-navbar a.neo-nav-link-btn {
     border-bottom: 1px solid var(--navbar-border-bottom-color);
     border-top: 1px solid var(--navbar-border-bottom-color);
     justify-content: space-around;
-
   }
   nav.neo-navbar .neo-nav a.neo-nav-link-btn {
     padding: 0px;
@@ -51,7 +50,6 @@ nav.neo-navbar a.neo-nav-link-btn {
 }
 
 @media (max-width: 320px) {
-
   nav.neo-navbar .neo-nav {
     padding: 0 9px;
   }
@@ -59,5 +57,4 @@ nav.neo-navbar a.neo-nav-link-btn {
     width: auto;
     justify-content: center;
   }
-
 }
