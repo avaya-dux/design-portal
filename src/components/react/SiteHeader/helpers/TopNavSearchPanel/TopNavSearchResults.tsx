@@ -2,17 +2,15 @@ import { createRef, RefObject, useEffect, useState } from "react";
 
 import type { PageAstroInstance } from "components/index";
 
-import "./TopNavSearchModalResults.css";
+import "./TopNavSearchResults.css";
 
-import { searchModalResultsArrowNavigation } from "../TopNavSearchKeyboardHandlers";
+import { searchResultsArrowNavigation } from "../TopNavSearchKeyboardHandlers";
 
-type TopNavSearchModalResultsProps = {
+type TopNavSearchResultsProps = {
   options: PageAstroInstance[];
 };
 
-export const TopNavSearchModalResults = ({
-  options,
-}: TopNavSearchModalResultsProps) => {
+export const TopNavSearchResults = ({ options }: TopNavSearchResultsProps) => {
   const [indexToFocus, setIndexToFocus] = useState<number | undefined>();
 
   const [anchorRefs, setAnchorRefs] = useState<RefObject<HTMLAnchorElement>[]>(
@@ -35,7 +33,7 @@ export const TopNavSearchModalResults = ({
   }, [indexToFocus]);
 
   const handleArrowNavigation = (event: KeyboardEvent) => {
-    searchModalResultsArrowNavigation(
+    searchResultsArrowNavigation(
       event,
       options.length,
       indexToFocus,
@@ -81,7 +79,7 @@ export const TopNavSearchModalResults = ({
           }}
           onBlur={(event) => {
             if (
-              event.relatedTarget?.classList.contains("search-modal__button")
+              event.relatedTarget?.classList.contains("search-panel__button")
             ) {
               setIndexToFocus(undefined);
             }

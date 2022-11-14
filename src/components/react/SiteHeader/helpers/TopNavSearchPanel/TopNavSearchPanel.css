@@ -37,50 +37,74 @@
   padding: 4px 7px 5px 0px;
 }
 
-.search-modal__button {
+.search-panel__button {
   background: none;
   padding: 4px 8px;
-  border: 1px solid var(--neo-color-base-200);
+  border: 1px solid var(--input-border-color);
   border-radius: 2px;
 }
 
-.neo-input-group__addon .search-modal__button {
+.neo-input-group__addon .search-panel__button {
+  color: var(--global-font-color);
   cursor: pointer;
   outline-offset: 0;
 }
 
-.search-modal .neo-modal__content {
+.search-panel .neo-modal__content {
   margin: 60px auto auto;
   min-width: 560px;
   padding: 16px 16px 8px 16px;
 }
 
-.search-modal .neo-modal__content .neo-modal__info-close {
+.search-panel .neo-modal__content .neo-modal__info-close {
   display: none;
 }
 
-.search-modal__keyboard-nav {
+.search-panel__keyboard-nav {
   padding: 8px 12px 0px 12px;
   display: flex;
   justify-content: flex-start;
 }
 
-.search-modal__keyboard-nav div:first-child {
+.search-panel__keyboard-nav div:first-child {
   margin-right: 24px;
 }
 
-.search-modal__keyboard-nav div:last-child span:first-child {
+.search-panel__keyboard-nav div:last-child span:first-child {
   margin-right: 4px;
 }
 
-.search-modal__results {
+.search-panel__results {
   padding: 8px;
   display: flex;
   flex-direction: column;
   margin-bottom: 8px;
-  border-bottom: 1px solid var(--neo-color-base-200);
+  border-bottom: 1px solid var(--input-border-color);
 }
 
-.neo-form-control:focus-within + .search-modal__results {
+.neo-form-control:focus-within + .search-panel__results {
   margin-top: -0.5px;
+}
+
+@media (max-width: 799px) {
+  .search-panel .neo-modal__background {
+    display: none;
+  }
+  .search-panel .neo-modal__content {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 66px;
+    bottom: 0;
+    background-color: var(--global-background);
+    z-index: 1000;
+    padding: 16px 40px 0 40px;
+    min-width: unset;
+  }
+  .search-panel__keyboard-nav {
+    display: none;
+  }
+  .search-panel .search-panel__results {
+    border-bottom: none;
+  }
 }

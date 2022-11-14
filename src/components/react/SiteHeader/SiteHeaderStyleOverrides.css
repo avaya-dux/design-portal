@@ -9,3 +9,52 @@ body nav.neo-navbar .neo-nav--left {
   height: 100%;
   align-items: unset;
 }
+
+body nav.neo-navbar .neo-nav--left a {
+  height: 3rem;
+}
+
+.neo-navbar {
+  overflow: hidden;
+}
+
+nav.neo-navbar a.neo-nav-link-btn {
+  padding: 0 16px;
+}
+
+@media (max-width: 799px) {
+  nav.neo-navbar {
+    overflow: visible;
+    margin-bottom: 48px;
+    border: none;
+  }
+  nav.neo-navbar .neo-nav {
+    height: 3rem;
+    border-bottom: 1px solid var(--navbar-border-bottom-color);
+    border-top: 1px solid var(--navbar-border-bottom-color);
+    justify-content: space-around;
+  }
+  nav.neo-navbar .neo-nav a.neo-nav-link-btn {
+    padding: 0px;
+    width: 25%;
+    justify-content: center;
+  }
+
+  nav.neo-navbar .neo-nav--right {
+    display: flex;
+    justify-content: flex-end;
+  }
+  nav.neo-navbar .neo-nav--right button.neo-btn {
+    border: none;
+  }
+}
+
+@media (max-width: 320px) {
+  nav.neo-navbar .neo-nav {
+    padding: 0 9px;
+  }
+  nav.neo-navbar .neo-nav a.neo-nav-link-btn {
+    width: auto;
+    justify-content: center;
+  }
+}

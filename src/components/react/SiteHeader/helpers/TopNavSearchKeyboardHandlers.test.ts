@@ -3,7 +3,7 @@ import { vi } from "vitest";
 import {
   closeSearchModal,
   openSearchModal,
-  searchModalResultsArrowNavigation,
+  searchResultsArrowNavigation,
   topNavSearchOnKeyDown,
   topNavSearchOnKeyUp,
 } from "./TopNavSearchKeyboardHandlers";
@@ -115,7 +115,7 @@ describe("Search Modal Results Keyboard Navigation", () => {
 
   describe("behaviour on arrow key down", () => {
     it("returns correctly when indexToFocus is undefined", () => {
-      searchModalResultsArrowNavigation(
+      searchResultsArrowNavigation(
         downArrowKeypress as unknown as KeyboardEvent,
         searchResultsLength,
         indexToFocus,
@@ -129,7 +129,7 @@ describe("Search Modal Results Keyboard Navigation", () => {
     it("returns correctly when indexToFocus is greater than searchResultsLength", () => {
       indexToFocus = searchResultsLength + 1;
 
-      searchModalResultsArrowNavigation(
+      searchResultsArrowNavigation(
         downArrowKeypress as unknown as KeyboardEvent,
         searchResultsLength,
         indexToFocus,
@@ -145,7 +145,7 @@ describe("Search Modal Results Keyboard Navigation", () => {
         Math.random() * (searchResultsLength - 2 - 1) + 1
       );
 
-      searchModalResultsArrowNavigation(
+      searchResultsArrowNavigation(
         downArrowKeypress as unknown as KeyboardEvent,
         searchResultsLength,
         indexToFocus,
@@ -161,7 +161,7 @@ describe("Search Modal Results Keyboard Navigation", () => {
     it("sets indexToFocus correctly when value passed in is 0", () => {
       indexToFocus = 0;
 
-      searchModalResultsArrowNavigation(
+      searchResultsArrowNavigation(
         upArrowKeypress as unknown as KeyboardEvent,
         searchResultsLength,
         indexToFocus,
@@ -178,7 +178,7 @@ describe("Search Modal Results Keyboard Navigation", () => {
     it("sets indexToFocus correctly when value passed in is greater than 0", () => {
       indexToFocus = 1;
 
-      searchModalResultsArrowNavigation(
+      searchResultsArrowNavigation(
         upArrowKeypress as unknown as KeyboardEvent,
         searchResultsLength,
         indexToFocus,
