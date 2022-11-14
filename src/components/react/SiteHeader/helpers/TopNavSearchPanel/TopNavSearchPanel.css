@@ -45,6 +45,7 @@
 }
 
 .neo-input-group__addon .search-panel__button {
+  color: var(--global-font-color);
   cursor: pointer;
   outline-offset: 0;
 }
@@ -97,6 +98,7 @@
     background-color: var(--global-background);
     z-index: 1000;
     padding: 16px 40px 0 40px;
+    min-width: unset;
   }
   .search-panel__keyboard-nav {
     display: none;
