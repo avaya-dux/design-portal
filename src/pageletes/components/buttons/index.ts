@@ -7,6 +7,9 @@ export { Behavior };
 import ButtonPlayground from "./ButtonPlayground.astro";
 export { ButtonPlayground };
 
+import ButtonsUsingIcons from "./ButtonsUsingIcons.astro";
+export { ButtonsUsingIcons };
+
 import CompactButton from "./CompactButton.astro";
 export { CompactButton };
 
