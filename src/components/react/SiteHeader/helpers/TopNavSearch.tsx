@@ -1,9 +1,9 @@
-import { TextInput, Button } from "@avaya/neo-react";
+import { Button, TextInput } from "@avaya/neo-react";
 import { useEffect, useRef, useState } from "react";
 
 import { useOsName } from "components/react/utils";
 
-import { TopNavSearchModal } from "./TopNavSearchModal/TopNavSearchModal";
+import { TopNavSearchPanel } from "./TopNavSearchPanel";
 
 import "./TopNavSearch.css";
 
@@ -97,10 +97,12 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
         onClick={() => setIsOpen(true)}
         className="search__button search-icon"
       >
-        {os === "macos" ? "⌘ K" : "Ctrl K"}
+        <span className="search__button--content">
+          {os === "macos" ? "⌘ K" : "Ctrl K"}
+        </span>
       </Button>
 
-      <TopNavSearchModal
+      <TopNavSearchPanel
         open={isOpen}
         options={options}
         searchModalRef={searchModalRef}
@@ -113,14 +115,14 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
           endAddon={
             <button
               onClick={() => setIsOpen(false)}
-              className="search-modal__button"
+              className="search-panel__button"
             >
               esc
             </button>
           }
           autoFocus
         />
-      </TopNavSearchModal>
+      </TopNavSearchPanel>
     </>
   );
 };

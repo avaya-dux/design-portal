@@ -63,7 +63,7 @@ export const closeSearchModal = (
   }
 };
 
-export const searchModalResultsArrowNavigation = (
+export const searchResultsArrowNavigation = (
   event: KeyboardEvent,
   searchResultsLength: number,
   indexToFocus: number | undefined,
