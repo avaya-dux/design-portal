@@ -1,0 +1,38 @@
+---
+import { Image } from "@avaya/neo-react";
+import { Description, SubHeader, DoAndDont } from "components";
+
+import doImage from "./button-imgs/do-animation1.svg";
+import dontImage from "./button-imgs/dont-animation1.svg";
+
+const doInstructions =
+  "Use pulsing buttons sparingly to focus the user’s attention on critical time sensitive items, such as incoming or active calls.";
+const doImgAltText =
+  "image showing joining metting button with glowing animation.";
+
+const dontInstructions =
+  "Use pulsing buttons for decoration or to attract the user’s attention if it’s not critical.";
+const dontImgAltText = "image showing sign in button with glowing animation";
+---
+
+<SubHeader id="button-compact">Animation</SubHeader>
+
+<Description>
+  Animations are like Color, in that they help to draw the user’s attention to
+  something. And just like Color, overuse of animations makes everything seem
+  important, so the impact is lost.
+</Description>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={doInstructions}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={doImage} alt={doImgAltText} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={dontInstructions}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={dontImage} alt={dontImgAltText} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>
