@@ -33,7 +33,7 @@ describe("TopNavSearch", () => {
 
     const modalAfterClickAway = screen.queryByRole("dialog");
 
-    expect(modalAfterClickAway).not.toBeTruthy();
+    expect(modalAfterClickAway).not.toBeInTheDocument();
   });
 
   it("responds correctly to keyboard events", async () => {
