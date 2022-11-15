@@ -51,11 +51,11 @@ export const TopNavSearchPanel = ({
       </div>
       <div className="search-panel__keyboard-nav">
         <div>
-          <span className="search-panel__button">Enter</span> to select
+          <span className="search-panel__button" role="img" aria-label="Enter key">Enter</span> to select
         </div>
         <div>
-          <span className="search-panel__button">↑</span>
-          <span className="search-panel__button">↓</span> to navigate
+          <span className="search-panel__button" role="img" aria-label="Up key">↑</span>
+          <span className="search-panel__button" role="img" aria-label="Down key">↓</span> to navigate
         </div>
       </div>
     </div>

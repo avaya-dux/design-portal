@@ -1,5 +1,5 @@
-import { TextInput } from "@avaya/neo-react";
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 
 import { pagesMockData } from "../mocks";
@@ -15,6 +15,26 @@ describe("TopNavSearchResults", () => {
 
     const rootElement = screen.getAllByRole("link");
     expect(rootElement).toBeDefined();
+  });
+
+  it("responds correctly to keyboard navigation", async () => {
+
+    const { getAllByRole } = render(
+      <TopNavSearchResults
+      options={pagesMockData}
+      />
+    );
+
+    const rootElement = getAllByRole("link");
+
+    await userEvent.keyboard("{arrowdown}");
+
+    expect(rootElement[0]).toHaveFocus();
+
+    await userEvent.keyboard("{arrowup}");
+
+    expect(rootElement[rootElement.length - 1]).toHaveFocus();
+
   });
 
   it("passes basic accessibility compliance", async () => {
