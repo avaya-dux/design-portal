@@ -1,5 +1,5 @@
 import { TextInput } from "@avaya/neo-react";
-import { act, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { act, render, screen, waitFor } from "@testing-library/react";
 import { axe } from "jest-axe";
 
 import { pagesMockData } from "../mocks";
@@ -20,10 +20,12 @@ describe("TopNavSearchPanel", () => {
   });
 
   it("renders correctly when window resizes to mobile screen sizes", () => {
-
-    const customGlobal: any = global;
-
-    customGlobal.innerWidth = 800;
+    Object.defineProperty(window, "innerWidth", {
+      get: function () {
+        return 800;
+      },
+      configurable: true,
+    });
 
     render(
       <TopNavSearchPanel
@@ -35,21 +37,19 @@ describe("TopNavSearchPanel", () => {
 
     const keyboardNavInstructions = screen.getAllByRole("img");
 
-    keyboardNavInstructions.forEach(async element => {
+    keyboardNavInstructions.forEach(async (element) => {
       await waitFor(() => expect(element).toBeVisible());
-    })
-
-    act(() => {
-      customGlobal.innerWidth = 300;
-      fireEvent(customGlobal, new Event("resize"));
     });
 
-    const keyBoardNavInstructionsAtMobile = screen.getAllByRole("img")
+    act(() => {
+      window.innerWidth = 300;
+    });
 
-    keyBoardNavInstructionsAtMobile.forEach(async element => {
+    const keyBoardNavInstructionsAtMobile = screen.getAllByRole("img");
+
+    keyBoardNavInstructionsAtMobile.forEach(async (element) => {
       await waitFor(() => expect(element).not.toBeVisible());
-    })
-
+    });
   });
 
   it("passes basic accessibility compliance", async () => {

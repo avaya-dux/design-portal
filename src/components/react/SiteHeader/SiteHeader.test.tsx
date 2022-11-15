@@ -3,10 +3,9 @@ import { axe } from "jest-axe";
 import { vi } from "vitest";
 
 import { SiteHeader } from ".";
-import { pagesMockData } from './helpers/mocks'
+import { pagesMockData } from "./helpers/mocks";
 
 describe("SiteHeader", () => {
-
   beforeEach(() => {
     // for the `Logo` component, need to mock `window.matchMedia`
     vi.stubGlobal(

@@ -1,4 +1,4 @@
-import { act, fireEvent, renderHook } from "@testing-library/react";
+import { act, renderHook } from "@testing-library/react";
 
 import { useOsName, useWindowSize } from "./hooks";
 
@@ -31,12 +31,16 @@ describe("custom hooks", () => {
   });
 
   describe("useWindowSize", () => {
-    // mocking window resize event
-    // reference https://alexboffey.co.uk/blog/jest-window-mock/
-    const customGlobal: any = global;
-
-    customGlobal.innerWidth = 500;
-    customGlobal.innerHeight = 900;
+    Object.defineProperty(window, "innerWidth", {
+      value: 500,
+      writable: true,
+      configurable: true,
+    });
+    Object.defineProperty(window, "innerHeight", {
+      value: 900,
+      writable: true,
+      configurable: true,
+    });
 
     it("returns the correct values when reading innerWidth and innerHeight of window", () => {
       const { result } = renderHook(useWindowSize);
@@ -52,10 +56,10 @@ describe("custom hooks", () => {
       expect(result.current.height).toBe(900);
 
       act(() => {
-        customGlobal.innerWidth = 1000;
-        customGlobal.innerHeight = 1000;
+        window.innerWidth = 1000;
+        window.innerHeight = 1000;
 
-        fireEvent(customGlobal, new Event("resize"));
+        window.dispatchEvent(new Event("resize"));
       });
 
       expect(result.current.width).toBe(1000);

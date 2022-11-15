@@ -7,22 +7,15 @@ import { TopNavSearchResults } from "./TopNavSearchResults";
 
 describe("TopNavSearchResults", () => {
   it("renders without exploding", () => {
-    render(
-      <TopNavSearchResults
-      options={pagesMockData}
-      />
-    );
+    render(<TopNavSearchResults options={pagesMockData} />);
 
     const rootElement = screen.getAllByRole("link");
     expect(rootElement).toBeDefined();
   });
 
   it("responds correctly to keyboard navigation", async () => {
-
     const { getAllByRole } = render(
-      <TopNavSearchResults
-      options={pagesMockData}
-      />
+      <TopNavSearchResults options={pagesMockData} />
     );
 
     const rootElement = getAllByRole("link");
@@ -34,14 +27,11 @@ describe("TopNavSearchResults", () => {
     await userEvent.keyboard("{arrowup}");
 
     expect(rootElement[rootElement.length - 1]).toHaveFocus();
-
   });
 
   it("passes basic accessibility compliance", async () => {
     const { container } = render(
-      <TopNavSearchResults
-      options={pagesMockData}
-      />
+      <TopNavSearchResults options={pagesMockData} />
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

@@ -5,7 +5,11 @@ import type { PageAstroInstance } from "components/index";
 
 import { TopNavSearchResults } from "./TopNavSearchResults";
 
-import { useWindowSize, breakpoints } from "components/react/utils";
+import {
+  disableScroll,
+  useWindowSize,
+  breakpoints,
+} from "components/react/utils";
 
 import "./TopNavSearchPanel.css";
 
@@ -24,19 +28,15 @@ export const TopNavSearchPanel = ({
 }: TopNavSearchPanelProps) => {
   const size = useWindowSize();
 
-  // HACK to disable scroll at mobile screen sizes when search panel is open
-  // may not be needed depending on design feedback
-  function disableScroll() {
-    if (open && size.width < breakpoints.mobileMax) {
-      window.scroll(0, 0);
-    }
-  }
+  const handleScrollAtMobile = () => {
+    disableScroll(open, size.width, breakpoints.mobileMax);
+  };
 
   useEffect(() => {
-    window.addEventListener("scroll", disableScroll);
+    window.addEventListener("scroll", handleScrollAtMobile);
 
     return () => {
-      window.removeEventListener("scroll", disableScroll);
+      window.removeEventListener("scroll", handleScrollAtMobile);
     };
   }, [open, size]);
 
@@ -51,11 +51,27 @@ export const TopNavSearchPanel = ({
       </div>
       <div className="search-panel__keyboard-nav">
         <div>
-          <span className="search-panel__button" role="img" aria-label="Enter key">Enter</span> to select
+          <span
+            className="search-panel__button"
+            role="img"
+            aria-label="Enter key"
+          >
+            Enter
+          </span>{" "}
+          to select
         </div>
         <div>
-          <span className="search-panel__button" role="img" aria-label="Up key">↑</span>
-          <span className="search-panel__button" role="img" aria-label="Down key">↓</span> to navigate
+          <span className="search-panel__button" role="img" aria-label="Up key">
+            ↑
+          </span>
+          <span
+            className="search-panel__button"
+            role="img"
+            aria-label="Down key"
+          >
+            ↓
+          </span>{" "}
+          to navigate
         </div>
       </div>
     </div>

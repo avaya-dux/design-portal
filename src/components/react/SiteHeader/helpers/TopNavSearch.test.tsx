@@ -1,4 +1,4 @@
-import { act, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 
@@ -37,22 +37,21 @@ describe("TopNavSearch", () => {
   });
 
   it("responds correctly to keyboard events", async () => {
-
-    render(<TopNavSearch pages={pagesMockData}/>);
+    render(<TopNavSearch pages={pagesMockData} />);
 
     const modal = screen.queryByRole("dialog");
 
     expect(modal).not.toBeInTheDocument();
 
-    await userEvent.keyboard('{Control>}');
+    await userEvent.keyboard("{Control>}");
 
-    await userEvent.keyboard('{K}');
+    await userEvent.keyboard("{K}");
 
     const modalAfterKeydown = await screen.findByRole("dialog");
 
     expect(modalAfterKeydown).toBeTruthy();
 
-    await userEvent.keyboard('{Escape}');
+    await userEvent.keyboard("{Escape}");
 
     const modalAfterEscapeKeyPress = screen.queryByRole("dialog");
 
@@ -60,7 +59,6 @@ describe("TopNavSearch", () => {
   });
 
   it("displays search results when typed into modal", async () => {
-
     render(<TopNavSearch pages={pagesMockData} />);
 
     const buttonElement = screen.getByRole("button");
@@ -73,9 +71,7 @@ describe("TopNavSearch", () => {
 
     const link = screen.getByRole("link");
 
-    expect(link).toBeTruthy()
-
-
+    expect(link).toBeTruthy();
   });
 
   it("passes basic axe compliance", async () => {
