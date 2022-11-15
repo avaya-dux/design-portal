@@ -6,7 +6,7 @@ import type { PageAstroInstance } from "components/index";
 import { TopNavSearchResults } from "./TopNavSearchResults";
 
 import {
-  disableScroll,
+  disableScrollOnMobile,
   useWindowSize,
   breakpoints,
 } from "components/react/utils";
@@ -29,7 +29,7 @@ export const TopNavSearchPanel = ({
   const size = useWindowSize();
 
   const handleScrollAtMobile = () => {
-    disableScroll(open, size.width, breakpoints.mobileMax);
+    disableScrollOnMobile(open, size.width, breakpoints.mobileMax);
   };
 
   useEffect(() => {

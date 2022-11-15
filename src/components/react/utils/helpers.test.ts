@@ -1,19 +1,19 @@
 import { vi } from "vitest";
 
-import { disableScroll } from "./helpers";
+import { disableScrollOnMobile } from "./helpers";
 
 describe("disableScroll", () => {
   const spyScroll = vi.fn();
   Object.defineProperty(window, "scroll", { value: spyScroll });
 
   it("fires the correct event when the appropiate values are passed in", () => {
-    disableScroll(true, 320, 799);
+    disableScrollOnMobile(true, 320, 799);
 
     expect(window.scroll).toHaveBeenCalled();
   });
 
   it("does not fire when the appropiate values are passed in", () => {
-    disableScroll(false, 320, 799);
+    disableScrollOnMobile(false, 320, 799);
 
     expect(window.scroll).not.toHaveBeenCalledTimes(2);
   });
