@@ -8,15 +8,13 @@ import { TopNavSearchPanel } from "./TopNavSearchPanel";
 describe("TopNavSearchPanel", () => {
   it("renders without exploding", () => {
     render(
-      <TopNavSearchPanel
-        open
-        options={pagesMockData}
-        children={<TextInput aria-label="test text input" />}
-      />
+      <TopNavSearchPanel open options={pagesMockData}>
+        <TextInput aria-label="test text input" />
+      </TopNavSearchPanel>
     );
 
     const rootElement = screen.getByRole("dialog");
-    expect(rootElement).toBeDefined();
+    expect(rootElement).toBeInTheDocument();
   });
 
   it("renders correctly when window resizes to mobile screen sizes", () => {
@@ -28,11 +26,9 @@ describe("TopNavSearchPanel", () => {
     });
 
     render(
-      <TopNavSearchPanel
-        open
-        options={pagesMockData}
-        children={<TextInput aria-label="test text input" />}
-      />
+      <TopNavSearchPanel open options={pagesMockData}>
+        <TextInput aria-label="test text input" />
+      </TopNavSearchPanel>
     );
 
     const keyboardNavInstructions = screen.getAllByRole("img");
@@ -54,11 +50,9 @@ describe("TopNavSearchPanel", () => {
 
   it("passes basic accessibility compliance", async () => {
     const { container } = render(
-      <TopNavSearchPanel
-        open
-        options={pagesMockData}
-        children={<TextInput aria-label="test text input" />}
-      />
+      <TopNavSearchPanel open options={pagesMockData}>
+        <TextInput aria-label="test text input" />
+      </TopNavSearchPanel>
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

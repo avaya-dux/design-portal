@@ -24,7 +24,7 @@ describe("SiteHeader", () => {
     render(<SiteHeader pathname="/" pages={pagesMockData} />);
 
     const rootElement = screen.getByRole("navigation");
-    expect(rootElement).toBeDefined();
+    expect(rootElement).toBeInTheDocument();
   });
 
   it("passes basic axe compliance", async () => {

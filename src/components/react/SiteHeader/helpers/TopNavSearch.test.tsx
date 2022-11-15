@@ -11,7 +11,7 @@ describe("TopNavSearch", () => {
 
     const rootElement = screen.getByLabelText("Search Site");
 
-    expect(rootElement).toBeTruthy();
+    expect(rootElement).toBeInTheDocument();
   });
 
   it("responds correctly to mouse click events", async () => {
@@ -27,7 +27,7 @@ describe("TopNavSearch", () => {
 
     const modalAfterClick = await screen.findByRole("dialog");
 
-    expect(modalAfterClick).toBeTruthy();
+    expect(modalAfterClick).toBeInTheDocument();
 
     await userEvent.click(document.body);
 
@@ -49,7 +49,7 @@ describe("TopNavSearch", () => {
 
     const modalAfterKeydown = await screen.findByRole("dialog");
 
-    expect(modalAfterKeydown).toBeTruthy();
+    expect(modalAfterKeydown).toBeInTheDocument();
 
     await userEvent.keyboard("{Escape}");
 
@@ -71,7 +71,7 @@ describe("TopNavSearch", () => {
 
     const link = screen.getByRole("link");
 
-    expect(link).toBeTruthy();
+    expect(link).toBeInTheDocument();
   });
 
   it("passes basic axe compliance", async () => {

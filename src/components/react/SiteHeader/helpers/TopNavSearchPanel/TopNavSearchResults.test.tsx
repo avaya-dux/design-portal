@@ -9,8 +9,8 @@ describe("TopNavSearchResults", () => {
   it("renders without exploding", () => {
     render(<TopNavSearchResults options={pagesMockData} />);
 
-    const rootElement = screen.getAllByRole("link");
-    expect(rootElement).toBeDefined();
+    const allLinkElements = screen.getAllByRole("link");
+    expect(allLinkElements).toBeTruthy();
   });
 
   it("responds correctly to keyboard navigation", async () => {
