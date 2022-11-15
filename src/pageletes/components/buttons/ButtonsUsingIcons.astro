@@ -1,0 +1,73 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  ColumnLayout,
+  Description,
+  DoAndDont,
+  SectionHeader,
+  SubHeader,
+} from "components";
+
+import { topics } from "./static";
+
+import doImage from "./button-imgs/do-icon-button1.svg";
+import dontImage from "./button-imgs/dont-icon-button1.svg";
+import iconButtons from "./button-imgs/icon-buttons.png";
+
+const doInstructions =
+  "Add an icon to a button if it will help the user to understand the attached function.";
+const doImgAltText =
+  "image showing button with download icon next to text label";
+
+const dontInstructions =
+  "Use icons for cosmetic purposes only. If it has no value, leave it out.";
+const dontImgAltText =
+  "image showing Cancel and Save buttons with icons in them";
+---
+
+<SectionHeader id={topics.usingIcons.id}>
+  {topics.usingIcons.title}
+</SectionHeader>
+
+<Description>
+  Icons can be placed within the button to the left of the labels to clarify an
+  action and call attention to a button. There are instances where an icon can
+  be used without a text label, but use icon-only buttons cautiously.
+</Description>
+
+<SubHeader id="icons-inside-buttons">Icons Inside Buttons</SubHeader>
+
+<Description>
+  Icons may be included to the left of the button text if it will help the user.
+  They should never be used for purely cosmetic purposes.
+</Description>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={doInstructions}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={doImage} alt={doImgAltText} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={dontInstructions}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={dontImage} alt={dontImgAltText} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>
+
+<SubHeader id="icon-buttons">Icon Buttons</SubHeader>
+
+<Description>
+  Buttons that contain only an icon and no text label can be used where the
+  function of the button is clear from the icon. This can also be employed where
+  space is limited. Generally, these should be used for control bars, or common
+  and easily recognizable actions such as Close, Search, or expandable menus.
+</Description>
+
+<ColumnLayout numOfColumns={1}>
+  <Image
+    src={iconButtons}
+    alt="image showing different uses for icon buttons"
+  />
+</ColumnLayout>
