@@ -1,6 +1,6 @@
 import { InfoModal } from "@avaya/neo-react";
-
 import { ReactElement, useEffect } from "react";
+
 import type { PageAstroInstance } from "components/index";
 
 import { TopNavSearchResults } from "./TopNavSearchResults";

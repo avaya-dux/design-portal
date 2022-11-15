@@ -1,35 +1,11 @@
 import { render, screen } from "@testing-library/react";
-
-import type { AstroComponentFactory } from "astro/dist/runtime/server";
 import { axe } from "jest-axe";
 import { vi } from "vitest";
 
-import { PageAstroInstance, SiteHeader } from ".";
+import { SiteHeader } from ".";
+import { pagesMockData } from './helpers/mocks'
 
 describe("SiteHeader", () => {
-  const pagesMockData: PageAstroInstance[] = [
-    {
-      url: "",
-      title: "Home",
-      keywords: "Neo landing page",
-      default: {} as AstroComponentFactory,
-      file: "",
-    },
-    {
-      url: "/about",
-      title: "About",
-      keywords: "About page",
-      default: {} as AstroComponentFactory,
-      file: "",
-    },
-    {
-      url: "/contact",
-      title: "Contact",
-      keywords: "Contact page",
-      default: {} as AstroComponentFactory,
-      file: "",
-    },
-  ];
 
   beforeEach(() => {
     // for the `Logo` component, need to mock `window.matchMedia`
