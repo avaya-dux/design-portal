@@ -1,35 +1,20 @@
-import { render } from "@testing-library/react";
-
-import type { AstroComponentFactory } from "astro/dist/runtime/server";
+import { render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
 
 import { TopNavSearch } from ".";
-import type { PageAstroInstance } from "../";
+import { pagesMockData } from "./mocks";
 
 describe("TopNavSearch", () => {
-  const pagesMockData: PageAstroInstance[] = [
-    {
-      url: "",
-      title: "Home",
-      keywords: "Neo landing page",
-      default: {} as AstroComponentFactory,
-      file: "",
-    },
-    {
-      url: "/about",
-      title: "About",
-      keywords: "About page",
-      default: {} as AstroComponentFactory,
-      file: "",
-    },
-    {
-      url: "/contact",
-      title: "Contact",
-      keywords: "Contact page",
-      default: {} as AstroComponentFactory,
-      file: "",
-    },
-  ];
+
+  it("renders without exploding", () => {
+
+    render(<TopNavSearch pages={pagesMockData}/>)
+
+    const rootElement = screen.getByLabelText("Search Site");
+
+    expect(rootElement).toBeTruthy();
+
+  })
 
   it("passes basic axe compliance", async () => {
     const { container } = render(<TopNavSearch pages={pagesMockData} />);
