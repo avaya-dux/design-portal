@@ -37,7 +37,8 @@
   padding: 4px 7px 5px 0px;
 }
 
-.search-panel__button {
+.search-panel__button,
+.search-panel__image {
   background: none;
   padding: 4px 8px;
   border: 1px solid var(--input-border-color);

@@ -1,6 +1,6 @@
-import { renderHook } from "@testing-library/react";
+import { act, renderHook } from "@testing-library/react";
 
-import { useOsName } from "./hooks";
+import { useOsName, useWindowSize } from "./hooks";
 
 describe("custom hooks", () => {
   describe("useOsName", () => {
@@ -27,6 +27,43 @@ describe("custom hooks", () => {
       const { result } = renderHook(useOsName);
 
       expect(result.current).toBe("windows");
+    });
+  });
+
+  describe("useWindowSize", () => {
+    Object.defineProperty(window, "innerWidth", {
+      value: 500,
+      writable: true,
+      configurable: true,
+    });
+    Object.defineProperty(window, "innerHeight", {
+      value: 900,
+      writable: true,
+      configurable: true,
+    });
+
+    it("returns the correct values when reading innerWidth and innerHeight of window", () => {
+      const { result } = renderHook(useWindowSize);
+
+      expect(result.current.width).toBe(500);
+      expect(result.current.height).toBe(900);
+    });
+
+    it("updates correctly when window is resized", () => {
+      const { result } = renderHook(useWindowSize);
+
+      expect(result.current.width).toBe(500);
+      expect(result.current.height).toBe(900);
+
+      act(() => {
+        window.innerWidth = 1000;
+        window.innerHeight = 1000;
+
+        window.dispatchEvent(new Event("resize"));
+      });
+
+      expect(result.current.width).toBe(1000);
+      expect(result.current.height).toBe(1000);
     });
   });
 });
