@@ -16,6 +16,8 @@ type ButtonsTopicNames =
   | "states"
   | "behavior"
   | "usingIcons"
+  | "specs"
+  | "keyboard"
   | "type";
 
 export const topics: TopicsDict<ButtonsTopicNames> = {
@@ -53,5 +55,15 @@ export const topics: TopicsDict<ButtonsTopicNames> = {
     order: 6,
     id: "button-using-icons",
     title: "Buttons Using Icons",
+  },
+  specs: {
+    order: 7,
+    id: "button-specs",
+    title: "Specs",
+  },
+  keyboard: {
+    order: 8,
+    id: "button-keyboard-interactions",
+    title: "Keyboard Interactions",
   },
 };

@@ -34,5 +34,11 @@ export { Animation };
 import Arrangement from "./Arrangement.astro";
 export { Arrangement };
 
+import Specs from "./Specs.astro";
+export { Specs };
+
+import KeyboardInteractions from "./KeyboardInteractions.astro";
+export { KeyboardInteractions };
+
 import States from "./States.astro";
 export { States };
