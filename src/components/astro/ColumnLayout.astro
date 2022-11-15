@@ -1,20 +1,22 @@
 ---
 export interface Props {
   numOfColumns: number;
-  gap: string;
+  gap?: string;
+  bkgColor?: string;
 }
 
-const { numOfColumns, gap } = Astro.props as Props;
+const { numOfColumns, gap = "0", bkgColor = "white" } = Astro.props as Props;
 ---
 
 <div class="variable-grid-columns">
   <slot />
 </div>
 
-<style define:vars={{ numOfColumns, gap }}>
+<style define:vars={{ numOfColumns, gap, bkgColor }}>
   .variable-grid-columns {
     display: grid;
     gap: var(--gap);
     grid-template-columns: repeat(var(--numOfColumns), 1fr);
+    background-color: var(--bkgColor);
   }
 </style>

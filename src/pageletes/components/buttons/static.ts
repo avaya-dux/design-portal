@@ -15,6 +15,7 @@ type ButtonsTopicNames =
   | "textLabel"
   | "states"
   | "behavior"
+  | "usingIcons"
   | "type";
 
 export const topics: TopicsDict<ButtonsTopicNames> = {
@@ -47,5 +48,10 @@ export const topics: TopicsDict<ButtonsTopicNames> = {
     order: 5,
     id: "button-behavior",
     title: "Behavior",
+  },
+  usingIcons: {
+    order: 6,
+    id: "button-using-icons",
+    title: "Buttons Using Icons",
   },
 };

@@ -1,0 +1,79 @@
+---
+import { Image } from "@avaya/neo-react";
+import { Description, SubHeader, DoAndDont } from "components";
+
+import tooltipDoImage from "./button-imgs/do-tooltip1.svg";
+import tooltipDontImage from "./button-imgs/dont-tooltip1.svg";
+
+import tooltipDoImage2 from "./button-imgs/do-tooltip2.svg";
+import tooltipDoImage3 from "./button-imgs/do-tooltip3.svg";
+
+const tooltipDoInstructions =
+  "Use tooltips on icon buttons to provide additional context on the button’s function. Text buttons should seldom have a tooltip unless the text alone is not enough to explain the action.";
+const tooltipDoImgAltText = "image showing tooltip on top of icon button.";
+
+const tooltipDontInstructions =
+  "Use tooltips on regular buttons, unless they are in a disabled state. Disabled items should have tooltips that say why the object is not available.";
+const tooltipDontImgAltText =
+  "image showing tooltip on top of button with text.";
+
+const tooltipDoInstructions2 =
+  "Use tooltips on icon buttons to provide additional context on the button’s function.";
+
+const tooltipDoImgAltText2 = "image showing tooltip on top of disabled button.";
+
+const tooltipDoInstructions3 =
+  "Use tooltips on icon buttons to provide additional context on the button’s function.";
+
+const tooltipDoImgAltText3 =
+  "image showing explanatory tooltip on top of button.";
+---
+
+<SubHeader id="button-compact">Tooltip</SubHeader>
+
+<Description>
+  These pop-ups are used to provide additional information on the function of a
+  button.
+</Description>
+
+<Description>
+  Icon buttons should always have a Tooltip to explain the button’s action. The
+  Tooltip replaces the button text.
+</Description>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={tooltipDoInstructions}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={tooltipDoImage} alt={tooltipDoImgAltText} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={tooltipDontInstructions}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={tooltipDontImage} alt={tooltipDontImgAltText} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>
+
+<Description>
+  Disabled items should have tooltips that say why the object is not available.
+</Description>
+
+<Description>
+  Explanatory and Alert Tooltips should use sentence case, with only the first
+  letter capitalized and a period at the end.
+</Description>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={tooltipDoInstructions2}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={tooltipDoImage2} alt={tooltipDoImgAltText2} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DoContainer instructions={tooltipDoInstructions3}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={tooltipDoImage3} alt={tooltipDoImgAltText3} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+</DoAndDont>
