@@ -101,24 +101,18 @@ describe("Search Modal Results Keyboard Navigation", () => {
 
   const upArrowKeypress = { key: "ArrowUp", preventDefault: vi.fn() };
 
-  let searchResultsLength: number;
-
-  let indexToFocus: number | undefined;
+  const searchResultsLength = 10;
 
   const setIndexToFocus: React.Dispatch<
     React.SetStateAction<number | undefined>
   > = vi.fn();
-
-  beforeEach(() => {
-    searchResultsLength = Math.floor(Math.random() * (10 - 1) + 1);
-  });
 
   describe("behaviour on arrow key down", () => {
     it("returns correctly when indexToFocus is undefined", () => {
       searchResultsArrowNavigation(
         downArrowKeypress as unknown as KeyboardEvent,
         searchResultsLength,
-        indexToFocus,
+        undefined,
         setIndexToFocus
       );
 
@@ -127,12 +121,10 @@ describe("Search Modal Results Keyboard Navigation", () => {
     });
 
     it("returns correctly when indexToFocus is greater than searchResultsLength", () => {
-      indexToFocus = searchResultsLength + 1;
-
       searchResultsArrowNavigation(
         downArrowKeypress as unknown as KeyboardEvent,
         searchResultsLength,
-        indexToFocus,
+        11,
         setIndexToFocus
       );
 
@@ -140,31 +132,25 @@ describe("Search Modal Results Keyboard Navigation", () => {
       expect(setIndexToFocus).toHaveBeenNthCalledWith(2, 0);
     });
 
-    it("increments indexToFocus correctly when value is neither undefined nor greater than searchResultsLength", () => {
-      indexToFocus = Math.floor(
-        Math.random() * (searchResultsLength - 2 - 1) + 1
-      );
-
+    it("increments indexToFocus correctly when value is neither undefined nor equal to the index of the final element", () => {
       searchResultsArrowNavigation(
         downArrowKeypress as unknown as KeyboardEvent,
         searchResultsLength,
-        indexToFocus,
+        8,
         setIndexToFocus
       );
 
       expect(downArrowKeypress.preventDefault).toHaveBeenCalled();
-      expect(setIndexToFocus).toHaveBeenNthCalledWith(3, indexToFocus + 1);
+      expect(setIndexToFocus).toHaveBeenNthCalledWith(3, 9);
     });
   });
 
   describe("behaviour on arrow key up", () => {
     it("sets indexToFocus correctly when value passed in is 0", () => {
-      indexToFocus = 0;
-
       searchResultsArrowNavigation(
         upArrowKeypress as unknown as KeyboardEvent,
         searchResultsLength,
-        indexToFocus,
+        0,
         setIndexToFocus
       );
 
@@ -176,17 +162,15 @@ describe("Search Modal Results Keyboard Navigation", () => {
     });
 
     it("sets indexToFocus correctly when value passed in is greater than 0", () => {
-      indexToFocus = 1;
-
       searchResultsArrowNavigation(
         upArrowKeypress as unknown as KeyboardEvent,
         searchResultsLength,
-        indexToFocus,
+        1,
         setIndexToFocus
       );
 
       expect(downArrowKeypress.preventDefault).toHaveBeenCalled();
-      expect(setIndexToFocus).toHaveBeenNthCalledWith(5, indexToFocus - 1);
+      expect(setIndexToFocus).toHaveBeenNthCalledWith(5, 0);
     });
   });
 });
