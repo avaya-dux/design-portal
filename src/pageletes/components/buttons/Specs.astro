@@ -17,63 +17,65 @@ import buttonSpecs5 from "./button-imgs/buttons-specs5.png";
 import buttonSpecs6 from "./button-imgs/buttons-specs6.png";
 ---
 
-<SectionHeader id={topics.specs.id}>
-  {topics.specs.title}
-</SectionHeader>
+<section>
+  <SectionHeader id={topics.specs.id}>
+    {topics.specs.title}
+  </SectionHeader>
 
-<Description>
-  Primary, Secondary and Tertiary buttons have a default height of 36 pixels,
-  icon only buttons are 32 pixels high, and compact buttons are 24 pixels high.
-</Description>
+  <Description>
+    Primary, Secondary and Tertiary buttons have a default height of 36 pixels,
+    icon only buttons are 32 pixels high, and compact buttons are 24 pixels high.
+  </Description>
 
-<Description>
-  The width of all buttons will expand according to the text or the icon they
-  contain. All text and icons are center-justified.
-</Description>
+  <Description>
+    The width of all buttons will expand according to the text or the icon they
+    contain. All text and icons are center-justified.
+  </Description>
 
-<ColumnLayout numOfColumns={4}>
-  <StackedLayout vPadding="0" showBorder>
-    <Image
-      src={buttonSpecs1}
-      alt="image showing vertical dimensions of primary button."
-    />
-  </StackedLayout>
-  <StackedLayout vPadding="0" showBorder>
-    <Image
-      src={buttonSpecs2}
-      alt="image showing vertical dimensions of secondary button."
-    />
-  </StackedLayout>
-  <StackedLayout vPadding="0" showBorder>
-    <Image
-      src={buttonSpecs3}
-      alt="image showing vertical dimensions of tertiary button."
-    />
-  </StackedLayout>
-  <StackedLayout vPadding="0" showBorder>
-    <Image
-      src={buttonSpecs4}
-      alt="image showing vertical dimensions of icon button."
-    />
-  </StackedLayout>
-</ColumnLayout>
+  <ColumnLayout numOfColumns={4}>
+    <StackedLayout vPadding="0" showBorder>
+      <Image
+        src={buttonSpecs1}
+        alt="image showing vertical dimensions of primary button."
+      />
+    </StackedLayout>
+    <StackedLayout vPadding="0" showBorder>
+      <Image
+        src={buttonSpecs2}
+        alt="image showing vertical dimensions of secondary button."
+      />
+    </StackedLayout>
+    <StackedLayout vPadding="0" showBorder>
+      <Image
+        src={buttonSpecs3}
+        alt="image showing vertical dimensions of tertiary button."
+      />
+    </StackedLayout>
+    <StackedLayout vPadding="0" showBorder>
+      <Image
+        src={buttonSpecs4}
+        alt="image showing vertical dimensions of icon button."
+      />
+    </StackedLayout>
+  </ColumnLayout>
 
-<Description>
-  Padding on all sides of a button, regardless of button type, should be 8
-  pixels.
-</Description>
+  <Description>
+    Padding on all sides of a button, regardless of button type, should be 8
+    pixels.
+  </Description>
 
-<ColumnLayout numOfColumns={2}>
-  <StackedLayout vPadding="0" showBorder>
-    <Image
-      src={buttonSpecs5}
-      alt="image showing vertical dimensions of primary button."
-    />
-  </StackedLayout>
-  <StackedLayout vPadding="0" showBorder>
-    <Image
-      src={buttonSpecs6}
-      alt="image showing vertical dimensions of secondary button."
-    />
-  </StackedLayout>
-</ColumnLayout>
+  <ColumnLayout numOfColumns={2}>
+    <StackedLayout vPadding="0" showBorder>
+      <Image
+        src={buttonSpecs5}
+        alt="image showing vertical dimensions of primary button."
+      />
+    </StackedLayout>
+    <StackedLayout vPadding="0" showBorder>
+      <Image
+        src={buttonSpecs6}
+        alt="image showing vertical dimensions of secondary button."
+      />
+    </StackedLayout>
+  </ColumnLayout>
+</section>

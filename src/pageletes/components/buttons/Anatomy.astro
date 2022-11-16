@@ -9,44 +9,46 @@ const anatomyImgAltText =
   "Image showing the different parts that make up a button";
 ---
 
-<SectionHeader id={topics.anatomy.id}>{topics.anatomy.title}</SectionHeader>
+<section>
+  <SectionHeader id={topics.anatomy.id}>{topics.anatomy.title}</SectionHeader>
 
-<Description>
-  Each of the 4 button types are built using standardized parts as shown below.
-  For each button, some parts are required, while others can be omitted as
-  desired.
-</Description>
+  <Description>
+    Each of the 4 button types are built using standardized parts as shown below.
+    For each button, some parts are required, while others can be omitted as
+    desired.
+  </Description>
 
-<ColumnLayout numOfColumns={1}>
-  <Image src={AnatomyImage} alt={anatomyImgAltText} />
-</ColumnLayout>
-<ColumnLayout numOfColumns={4}>
-  <ul>
-    <li><strong>1. Primary button</strong></li>
-    <li>A. Text Label</li>
-    <li>B. Container</li>
-    <li>C. Icon (optional)</li>
-  </ul>
+  <ColumnLayout numOfColumns={1}>
+    <Image src={AnatomyImage} alt={anatomyImgAltText} />
+  </ColumnLayout>
+  <ColumnLayout numOfColumns={4}>
+    <ul>
+      <li><strong>1. Primary button</strong></li>
+      <li>A. Text Label</li>
+      <li>B. Container</li>
+      <li>C. Icon (optional)</li>
+    </ul>
 
-  <ul>
-    <li><strong>2. Secondary button</strong></li>
-    <li>A. Text Label</li>
-    <li>B. Container</li>
-    <li>C. Icon (optional)</li>
-  </ul>
+    <ul>
+      <li><strong>2. Secondary button</strong></li>
+      <li>A. Text Label</li>
+      <li>B. Container</li>
+      <li>C. Icon (optional)</li>
+    </ul>
 
-  <ul>
-    <li><strong>3. Tertiary button</strong></li>
-    <li>A. Text Label</li>
-    <li>B. Icon (optional)</li>
-  </ul>
+    <ul>
+      <li><strong>3. Tertiary button</strong></li>
+      <li>A. Text Label</li>
+      <li>B. Icon (optional)</li>
+    </ul>
 
-  <ul>
-    <li><strong>4. Icon button</strong></li>
-    <li>A. Container</li>
-    <li>B. Icon</li>
-  </ul>
-</ColumnLayout>
+    <ul>
+      <li><strong>4. Icon button</strong></li>
+      <li>A. Container</li>
+      <li>B. Icon</li>
+    </ul>
+  </ColumnLayout>
+</section>
 
 <style>
   ul {

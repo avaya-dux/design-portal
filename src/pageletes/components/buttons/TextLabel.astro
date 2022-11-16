@@ -28,52 +28,54 @@ const colorDontImgAltText =
   "image showing a form confirmation dialog with a 'no' button and 'yes' button";
 ---
 
-<SectionHeader id={topics.textLabel.id}>
-  {topics.textLabel.title}
-</SectionHeader>
+<section>
+  <SectionHeader id={topics.textLabel.id}>
+    {topics.textLabel.title}
+  </SectionHeader>
 
-<Description>
-  The text on a button tells the user what action will be performed when
-  activated. There is very little room, so whatever text you add must be clear,
-  direct, short, and descriptive.
-</Description>
+  <Description>
+    The text on a button tells the user what action will be performed when
+    activated. There is very little room, so whatever text you add must be clear,
+    direct, short, and descriptive.
+  </Description>
 
-<Description>
-  The text should not be a simple binary choice (e.g. Yes / No, True / False)
-  but should refer to the action being performed (e.g. Save, Delete, Cancel,
-  Restore, Continue).
-</Description>
+  <Description>
+    The text should not be a simple binary choice (e.g. Yes / No, True / False)
+    but should refer to the action being performed (e.g. Save, Delete, Cancel,
+    Restore, Continue).
+  </Description>
 
-<Description>
-  Icons may be added beside the button text if it will help the user.
-</Description>
+  <Description>
+    Icons may be added beside the button text if it will help the user.
+  </Description>
 
-<Description>
-  Where space limitations do not permit text on the button, an icon can be used
-  alone if the icon is sufficiently clear to communicate the action. All icon
-  buttons must include a Tooltip to replace the button text.
-</Description>
+  <Description>
+    Where space limitations do not permit text on the button, an icon can be used
+    alone if the icon is sufficiently clear to communicate the action. All icon
+    buttons must include a Tooltip to replace the button text.
+  </Description>
 
-<DoAndDont>
-  <DoAndDont.DoContainer instructions={textDoInstructions}>
-    <DoAndDont.ImageExampleContainer>
-      <Image src={TextLabel1Do} alt={textDoImgAltText} width={400} />
-    </DoAndDont.ImageExampleContainer>
-  </DoAndDont.DoContainer>
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={textDoInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={TextLabel1Do} alt={textDoImgAltText} width={400} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
 
-  <DoAndDont.DontContainer instructions={textDontInstructions}>
-    <DoAndDont.ImageExampleContainer>
-      <Image src={TextLabel1Dont} alt={textDontImgAltText} width={400} />
-    </DoAndDont.ImageExampleContainer>
-  </DoAndDont.DontContainer>
-</DoAndDont>
+    <DoAndDont.DontContainer instructions={textDontInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={TextLabel1Dont} alt={textDontImgAltText} width={400} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
 
-<DoAndDont>
-  <DoAndDont.DoContainer instructions={colorDoInstructions}>
-    <Image src={TextLabel2Do} alt={colorDoImgAltText} />
-  </DoAndDont.DoContainer>
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={colorDoInstructions}>
+      <Image src={TextLabel2Do} alt={colorDoImgAltText} />
+    </DoAndDont.DoContainer>
 
-  <DoAndDont.DontContainer instructions={colorDontInstructions}>
-    <Image src={TextLabel2Dont} alt={colorDontImgAltText} />
-  </DoAndDont.DontContainer>
-</DoAndDont>
+    <DoAndDont.DontContainer instructions={colorDontInstructions}>
+      <Image src={TextLabel2Dont} alt={colorDontImgAltText} />
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+</section>
