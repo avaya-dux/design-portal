@@ -73,3 +73,13 @@
   border-bottom-right-radius: 4px;
 }
 /* END: code examples styles */
+
+@media (max-width: 799px) {
+  .playground-code .neo-tabs__nav {
+    justify-content: center;
+  }
+
+  .playground-code .neo-tabs__item a {
+    padding: 8px 12px 0;
+  }
+}
