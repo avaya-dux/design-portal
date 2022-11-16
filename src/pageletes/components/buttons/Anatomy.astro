@@ -1,6 +1,6 @@
 ---
 import { Image } from "@avaya/neo-react";
-import { Description, ColumnLayout, SectionHeader } from "components/astro";
+import { Description, ColumnLayout, PageleteSection, SectionHeader } from "components/astro";
 
 import { topics } from "./static";
 
@@ -9,7 +9,7 @@ const anatomyImgAltText =
   "Image showing the different parts that make up a button";
 ---
 
-<section>
+<PageleteSection>
   <SectionHeader id={topics.anatomy.id}>{topics.anatomy.title}</SectionHeader>
 
   <Description>
@@ -48,7 +48,7 @@ const anatomyImgAltText =
       <li>B. Icon</li>
     </ul>
   </ColumnLayout>
-</section>
+</PageleteSection>
 
 <style>
   ul {

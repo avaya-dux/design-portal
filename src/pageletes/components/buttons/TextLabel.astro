@@ -1,6 +1,6 @@
 ---
 import { Image } from "@avaya/neo-react";
-import { Description, SectionHeader } from "components/astro";
+import { Description, PageleteSection, SectionHeader } from "components/astro";
 import { DoAndDont } from "components/react";
 
 import { topics } from "./static";
@@ -28,7 +28,7 @@ const colorDontImgAltText =
   "image showing a form confirmation dialog with a 'no' button and 'yes' button";
 ---
 
-<section>
+<PageleteSection bottomMargin="0rem">
   <SectionHeader id={topics.textLabel.id}>
     {topics.textLabel.title}
   </SectionHeader>
@@ -78,4 +78,4 @@ const colorDontImgAltText =
       <Image src={TextLabel2Dont} alt={colorDontImgAltText} />
     </DoAndDont.DontContainer>
   </DoAndDont>
-</section>
+</PageleteSection>

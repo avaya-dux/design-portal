@@ -1,5 +1,5 @@
 ---
-import { Description, SectionHeader, SubHeader } from "components";
+import { Description, PageleteSection, SectionHeader, SubHeader } from "components";
 
 import { topics } from "./static";
 
@@ -12,7 +12,7 @@ import {
 } from "pageletes/components/buttons";
 ---
 
-<section>
+<PageleteSection bottomMargin="0rem">
   <SectionHeader id={topics.behavior.id}>
     {topics.behavior.title}
   </SectionHeader>
@@ -46,4 +46,4 @@ import {
   <Tooltip />
 
   <Animation />
-</section>
+</PageleteSection>

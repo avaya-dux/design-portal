@@ -4,12 +4,13 @@ import {
   InfoTableBody,
   InfoTableCell,
   InfoTableRow,
+  PageleteSection,
   SectionHeader,
 } from "components/astro";
 import { topics } from "./static";
 ---
 
-<section>
+<PageleteSection bottomMargin="2rem">
   <SectionHeader id={topics.keyboard.id}>{topics.keyboard.title}</SectionHeader>
 
   <InfoTable>
@@ -34,4 +35,4 @@ import { topics } from "./static";
       </InfoTableRow>
     </InfoTableBody>
   </InfoTable>
-</section>
+</PageleteSection>

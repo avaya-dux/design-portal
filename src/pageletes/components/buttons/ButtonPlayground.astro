@@ -1,12 +1,12 @@
 ---
-import { Description, SectionHeader } from "components/astro";
+import { Description, PageleteSection, SectionHeader } from "components/astro";
 
 import { PlaygroundImplementation } from "./PlaygroundImplementation";
 
 import { topics } from "./static";
 ---
 
-<section>
+<PageleteSection>
   <SectionHeader id={topics.playground.id}>
     {topics.playground.title}
   </SectionHeader>
@@ -18,4 +18,4 @@ import { topics } from "./static";
   </Description>
 
   <PlaygroundImplementation client:load />
-</section>
+</PageleteSection>
