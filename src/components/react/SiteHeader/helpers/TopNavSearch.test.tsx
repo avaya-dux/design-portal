@@ -1,35 +1,78 @@
-import { render } from "@testing-library/react";
-
-import type { AstroComponentFactory } from "astro/dist/runtime/server";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 
 import { TopNavSearch } from ".";
-import type { PageAstroInstance } from "../";
+import { pagesMockData } from "./mocks";
 
 describe("TopNavSearch", () => {
-  const pagesMockData: PageAstroInstance[] = [
-    {
-      url: "",
-      title: "Home",
-      keywords: "Neo landing page",
-      default: {} as AstroComponentFactory,
-      file: "",
-    },
-    {
-      url: "/about",
-      title: "About",
-      keywords: "About page",
-      default: {} as AstroComponentFactory,
-      file: "",
-    },
-    {
-      url: "/contact",
-      title: "Contact",
-      keywords: "Contact page",
-      default: {} as AstroComponentFactory,
-      file: "",
-    },
-  ];
+  it("renders without exploding", () => {
+    render(<TopNavSearch pages={pagesMockData} />);
+
+    const rootElement = screen.getByLabelText("Search Site");
+
+    expect(rootElement).toBeInTheDocument();
+  });
+
+  it("responds correctly to mouse click events", async () => {
+    render(<TopNavSearch pages={pagesMockData} />);
+
+    const buttonElement = screen.getByRole("button");
+
+    const modal = screen.queryByRole("dialog");
+
+    expect(modal).not.toBeInTheDocument();
+
+    await userEvent.click(buttonElement);
+
+    const modalAfterClick = await screen.findByRole("dialog");
+
+    expect(modalAfterClick).toBeInTheDocument();
+
+    await userEvent.click(document.body);
+
+    const modalAfterClickAway = screen.queryByRole("dialog");
+
+    expect(modalAfterClickAway).not.toBeInTheDocument();
+  });
+
+  it("responds correctly to keyboard events", async () => {
+    render(<TopNavSearch pages={pagesMockData} />);
+
+    const modal = screen.queryByRole("dialog");
+
+    expect(modal).not.toBeInTheDocument();
+
+    await userEvent.keyboard("{Control>}");
+
+    await userEvent.keyboard("{K}");
+
+    const modalAfterKeydown = await screen.findByRole("dialog");
+
+    expect(modalAfterKeydown).toBeInTheDocument();
+
+    await userEvent.keyboard("{Escape}");
+
+    const modalAfterEscapeKeyPress = screen.queryByRole("dialog");
+
+    expect(modalAfterEscapeKeyPress).not.toBeInTheDocument();
+  });
+
+  it("displays search results when typed into modal", async () => {
+    render(<TopNavSearch pages={pagesMockData} />);
+
+    const buttonElement = screen.getByRole("button");
+
+    await userEvent.click(buttonElement);
+
+    const textInput = screen.getByRole("textbox");
+
+    await userEvent.type(textInput, "About");
+
+    const link = screen.getByRole("link");
+
+    expect(link).toBeInTheDocument();
+  });
 
   it("passes basic axe compliance", async () => {
     const { container } = render(<TopNavSearch pages={pagesMockData} />);
