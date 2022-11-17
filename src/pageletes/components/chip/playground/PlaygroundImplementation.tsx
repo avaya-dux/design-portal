@@ -56,16 +56,10 @@ export const PlaygroundImplementation = () => {
     chipType === "icon",
     disabled,
     closable
-  )}" ${clsx(dir === "rtl" && 'dir="rtl"')}>
-    ${clsx(
-      chipType === "avatar" &&
-        '<figure class="neo-avatar neo-avatar--small" data-initials="EX"></figure>'
-    )}
+  )}" ${calculateHtmlCodeDir(dir === "rtl")}>
+      ${calculateHtmlCodeAvatar(chipType === "avatar")}
     This
-    ${clsx(
-      closable &&
-        '<button class="neo-close neo-close--clear" aria-label="Close"></button>'
-    )}
+    ${calculateHtmlCodeClosable(closable)}
   </div>
 
   <div class="${calculateHtmlCodeClasses(
@@ -73,16 +67,10 @@ export const PlaygroundImplementation = () => {
     chipType === "icon",
     disabled,
     closable
-  )}" ${clsx(dir === "rtl" && 'dir="rtl"')}>
-    ${clsx(
-      chipType === "avatar" &&
-        '<figure class="neo-avatar neo-avatar--small" data-initials="EX"></figure>'
-    )}
+  )}" ${calculateHtmlCodeDir(dir === "rtl")}>
+      ${calculateHtmlCodeAvatar(chipType === "avatar")}
     is
-    ${clsx(
-      closable &&
-        '<button class="neo-close neo-close--clear" aria-label="Close"></button>'
-    )}
+    ${calculateHtmlCodeClosable(closable)}
   </div>
 
   <div class="${calculateHtmlCodeClasses(
@@ -90,16 +78,10 @@ export const PlaygroundImplementation = () => {
     chipType === "icon",
     disabled,
     closable
-  )}" ${clsx(dir === "rtl" && 'dir="rtl"')}>
-    ${clsx(
-      chipType === "avatar" &&
-        '<figure class="neo-avatar neo-avatar--small" data-initials="EX"></figure>'
-    )}
+  )}" ${calculateHtmlCodeDir(dir === "rtl")}>
+      ${calculateHtmlCodeAvatar(chipType === "avatar")}
     a
-    ${clsx(
-      closable &&
-        '<button class="neo-close neo-close--clear" aria-label="Close"></button>'
-    )}
+    ${calculateHtmlCodeClosable(closable)}
   </div>
 
   <div class="${calculateHtmlCodeClasses(
@@ -107,16 +89,10 @@ export const PlaygroundImplementation = () => {
     chipType === "icon",
     disabled,
     closable
-  )}" ${clsx(dir === "rtl" && 'dir="rtl"')}>
-    ${clsx(
-      chipType === "avatar" &&
-        '<figure class="neo-avatar neo-avatar--small" data-initials="EX"></figure>'
-    )}
+  )}" ${calculateHtmlCodeDir(dir === "rtl")}>
+    ${calculateHtmlCodeAvatar(chipType === "avatar")}
     placeholder
-    ${clsx(
-      closable &&
-        '<button class="neo-close neo-close--clear" aria-label="Close"></button>'
-    )}
+    ${calculateHtmlCodeClosable(closable)}
   </div>
 
   <div class="${calculateHtmlCodeClasses(
@@ -124,20 +100,15 @@ export const PlaygroundImplementation = () => {
     chipType === "icon",
     disabled,
     closable
-  )}" ${clsx(dir === "rtl" && 'dir="rtl"')}>
-    ${clsx(
-      chipType === "avatar" &&
-        '<figure class="neo-avatar neo-avatar--small" data-initials="EX"></figure>'
-    )}
+  )}" ${calculateHtmlCodeDir(dir === "rtl")}>
+      ${calculateHtmlCodeAvatar(chipType === "avatar")}
     example
-    ${clsx(
-      closable &&
-        '<button class="neo-close neo-close--clear" aria-label="Close"></button>'
-    )}
+    ${calculateHtmlCodeClosable(closable)}
   </div>
 </div>
 `
     );
+
     return [isDefaultResult, reactCode, htmlCode];
   }, [chipType, closable, dir, disabled]);
 
@@ -266,3 +237,15 @@ const calculateHtmlCodeClasses = (
     closable && `neo-chip--close neo-chip--close--${variant}`,
     "neo-chips__item"
   );
+
+const calculateHtmlCodeDir = (isRtl: boolean) => (isRtl ? 'dir="rtl"' : "");
+
+const calculateHtmlCodeAvatar = (isAvatar: boolean) =>
+  isAvatar
+    ? '<figure class="neo-avatar neo-avatar--small" data-initials="EX"></figure>'
+    : "";
+
+const calculateHtmlCodeClosable = (isClosable: boolean) =>
+  isClosable
+    ? '<button class="neo-close neo-close--clear" aria-label="Close"></button>'
+    : "";
