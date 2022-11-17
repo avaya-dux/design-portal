@@ -2,6 +2,7 @@ import {
   Checkbox,
   CheckboxGroup,
   Chip,
+  ChipProps,
   ChipsContainer,
   Radio,
   RadioGroup,
@@ -47,15 +48,93 @@ export const PlaygroundImplementation = () => {
 `
     );
 
-    // TODO: Add HTML code
     const htmlCode = prettyPrintHtml(
       `
 <div class="neo-chips">
-<div class="neo-chip neo-chip--default neo-chips__item">This</div>
-<div class="neo-chip neo-chip--success neo-chips__item">is</div>
-<div class="neo-chip neo-chip--info neo-chips__item">a</div>
-<div class="neo-chip neo-chip--alert neo-chips__item">placeholder</div>
-<div class="neo-chip neo-chip--warning neo-chips__item">example</div>
+  <div class="${calculateHtmlCodeClasses(
+    "default",
+    chipType === "icon",
+    disabled,
+    closable
+  )}" ${clsx(dir === "rtl" && 'dir="rtl"')}>
+    ${clsx(
+      chipType === "avatar" &&
+        '<figure class="neo-avatar neo-avatar--small" data-initials="EX"></figure>'
+    )}
+    This
+    ${clsx(
+      closable &&
+        '<button class="neo-close neo-close--clear" aria-label="Close"></button>'
+    )}
+  </div>
+
+  <div class="${calculateHtmlCodeClasses(
+    "success",
+    chipType === "icon",
+    disabled,
+    closable
+  )}" ${clsx(dir === "rtl" && 'dir="rtl"')}>
+    ${clsx(
+      chipType === "avatar" &&
+        '<figure class="neo-avatar neo-avatar--small" data-initials="EX"></figure>'
+    )}
+    is
+    ${clsx(
+      closable &&
+        '<button class="neo-close neo-close--clear" aria-label="Close"></button>'
+    )}
+  </div>
+
+  <div class="${calculateHtmlCodeClasses(
+    "info",
+    chipType === "icon",
+    disabled,
+    closable
+  )}" ${clsx(dir === "rtl" && 'dir="rtl"')}>
+    ${clsx(
+      chipType === "avatar" &&
+        '<figure class="neo-avatar neo-avatar--small" data-initials="EX"></figure>'
+    )}
+    a
+    ${clsx(
+      closable &&
+        '<button class="neo-close neo-close--clear" aria-label="Close"></button>'
+    )}
+  </div>
+
+  <div class="${calculateHtmlCodeClasses(
+    "alert",
+    chipType === "icon",
+    disabled,
+    closable
+  )}" ${clsx(dir === "rtl" && 'dir="rtl"')}>
+    ${clsx(
+      chipType === "avatar" &&
+        '<figure class="neo-avatar neo-avatar--small" data-initials="EX"></figure>'
+    )}
+    placeholder
+    ${clsx(
+      closable &&
+        '<button class="neo-close neo-close--clear" aria-label="Close"></button>'
+    )}
+  </div>
+
+  <div class="${calculateHtmlCodeClasses(
+    "warning",
+    chipType === "icon",
+    disabled,
+    closable
+  )}" ${clsx(dir === "rtl" && 'dir="rtl"')}>
+    ${clsx(
+      chipType === "avatar" &&
+        '<figure class="neo-avatar neo-avatar--small" data-initials="EX"></figure>'
+    )}
+    example
+    ${clsx(
+      closable &&
+        '<button class="neo-close neo-close--clear" aria-label="Close"></button>'
+    )}
+  </div>
 </div>
 `
     );
@@ -173,3 +252,17 @@ export const PlaygroundImplementation = () => {
     </Playground>
   );
 };
+
+const calculateHtmlCodeClasses = (
+  variant: ChipProps["variant"],
+  icon: boolean,
+  disabled: boolean,
+  closable: boolean
+) =>
+  clsx(
+    `neo-chip neo-chip--${variant}`,
+    disabled && `neo-chip--${variant}--disabled`,
+    icon && "neo-icon-info",
+    closable && `neo-chip--close neo-chip--close--${variant}`,
+    "neo-chips__item"
+  );
