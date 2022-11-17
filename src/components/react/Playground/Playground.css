@@ -33,6 +33,7 @@
 /* START: code examples styles */
 .playground-container .playground-examples .playground-code {
   flex-basis: 100%;
+  overflow: auto;
 }
 
 .playground-container
