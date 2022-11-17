@@ -25,9 +25,13 @@
 }
 
 @media (max-width: 799px) {
+  .code-container {
+    flex-direction: column;
+    padding-top: 51px;
+  }
   .code-container .copy-button {
-    top: 0;
-    right: 0;
+    top: 8px;
+    right: 8px;
   }
   .code-container pre {
     white-space: pre-wrap;
