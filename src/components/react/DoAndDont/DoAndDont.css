@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  margin-bottom: 5rem;
 }
 
 .do-and-dont-container.do-and-dont-container-wide {

@@ -5,7 +5,11 @@ export interface Props {
   bkgColor?: string;
 }
 
-const { numOfColumns, gap = "0", bkgColor = "white" } = Astro.props as Props;
+const {
+  numOfColumns,
+  gap = "0",
+  bkgColor = "transparent",
+} = Astro.props as Props;
 ---
 
 <div class="variable-grid-columns">

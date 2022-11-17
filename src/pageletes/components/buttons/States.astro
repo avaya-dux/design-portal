@@ -5,6 +5,7 @@ import {
   Description,
   ColumnLayout,
   InfoTable,
+  PageleteSection,
   SectionHeader,
   StackedLayout,
   InfoTableBody,
@@ -21,7 +22,7 @@ import StatePressedImage from "./button-imgs/states-pressed.svg";
 const defaultImageText = "Buttons with default state look like this";
 ---
 
-<section>
+<PageleteSection>
   <SectionHeader id={topics.states.id}>{topics.states.title}</SectionHeader>
 
   <Description>
@@ -29,7 +30,7 @@ const defaultImageText = "Buttons with default state look like this";
     the user moves around the screen.
   </Description>
 
-  <ColumnLayout numOfColumns={4}>
+  <ColumnLayout bkgColor="white" numOfColumns={4}>
     <StackedLayout showBorder>
       <Image src={StateDefaultImage} alt={defaultImageText} />
     </StackedLayout>
@@ -89,4 +90,4 @@ const defaultImageText = "Buttons with default state look like this";
       </InfoTableRow>
     </InfoTableBody>
   </InfoTable>
-</section>
+</PageleteSection>
