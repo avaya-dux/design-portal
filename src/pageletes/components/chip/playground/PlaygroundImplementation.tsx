@@ -34,7 +34,7 @@ export const PlaygroundImplementation = () => {
       chipType === "icon" && 'icon="info"',
       disabled && "disabled",
       closable && "closable",
-      dir === "rtl" && 'dir="rt"'
+      dir === "rtl" && 'dir="rtl"'
     );
     const reactCode = prettyPrintReact(
       `
