@@ -75,6 +75,10 @@
 /* END: code examples styles */
 
 @media (max-width: 671px) {
+  .playground-container .playground-examples .playground-code .neo-tabs .neo-tabs__nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .playground-code .neo-tabs__item a {
     padding: 8px 12px 0;
   }
