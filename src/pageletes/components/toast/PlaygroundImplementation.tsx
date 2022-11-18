@@ -82,11 +82,12 @@ export const PlaygroundImplementation = () => {
             </Playground.OptionsSection>
             <Playground.OptionsSection title="Icon">
               <Checkbox
-                label="Icon"
                 value="icon"
                 checked={icon}
                 onChange={() => setIcon(!icon)}
-              />
+              >
+                Icon
+              </Checkbox>
             </Playground.OptionsSection>
             <Playground.OptionsSection title="Duration (seconds)">
               <RadioGroup
