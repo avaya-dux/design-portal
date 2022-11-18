@@ -2,10 +2,12 @@ import {
   Checkbox,
   CheckboxGroup,
   Chip,
+  ChipProps,
   ChipsContainer,
   Radio,
   RadioGroup,
 } from "@avaya/neo-react";
+import clsx from "clsx";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components";
@@ -23,11 +25,91 @@ export const PlaygroundImplementation = () => {
   const [dir, setDir] = useState<"ltr" | "rtl">("ltr");
   const [disabled, setDisabled] = useState(false);
 
-  const react = useMemo(() => {
-    return prettyPrintReact(``);
-  }, [chipType, closable, dir, disabled]);
-  const html = useMemo(() => {
-    return prettyPrintHtml(``);
+  const [isDefault, react, html] = useMemo(() => {
+    const isDefaultResult =
+      chipType === "default" && dir === "ltr" && !closable && !disabled;
+
+    const reactCodeProps = clsx(
+      chipType === "avatar" && 'avatarInitials="EX"',
+      chipType === "icon" && 'icon="info"',
+      disabled && "disabled",
+      closable && "closable",
+      dir === "rtl" && 'dir="rtl"'
+    );
+    const reactCode = prettyPrintReact(
+      `
+<ChipsContainer>
+<Chip variant="default" ${reactCodeProps}>This</Chip>
+<Chip variant="success" ${reactCodeProps}>is</Chip>
+<Chip variant="info" ${reactCodeProps}>a</Chip>
+<Chip variant="alert" ${reactCodeProps}>placeholder</Chip>
+<Chip variant="warning" ${reactCodeProps}>example</Chip>
+</ChipsContainer>
+`
+    );
+
+    const htmlCode = prettyPrintHtml(
+      `
+<div class="neo-chips">
+  <div class="${calculateHtmlCodeClasses(
+    "default",
+    chipType === "icon",
+    disabled,
+    closable
+  )}" ${calculateHtmlCodeDir(dir === "rtl")}>
+      ${calculateHtmlCodeAvatar(chipType === "avatar")}
+    This
+    ${calculateHtmlCodeClosable(closable)}
+  </div>
+
+  <div class="${calculateHtmlCodeClasses(
+    "success",
+    chipType === "icon",
+    disabled,
+    closable
+  )}" ${calculateHtmlCodeDir(dir === "rtl")}>
+      ${calculateHtmlCodeAvatar(chipType === "avatar")}
+    is
+    ${calculateHtmlCodeClosable(closable)}
+  </div>
+
+  <div class="${calculateHtmlCodeClasses(
+    "info",
+    chipType === "icon",
+    disabled,
+    closable
+  )}" ${calculateHtmlCodeDir(dir === "rtl")}>
+      ${calculateHtmlCodeAvatar(chipType === "avatar")}
+    a
+    ${calculateHtmlCodeClosable(closable)}
+  </div>
+
+  <div class="${calculateHtmlCodeClasses(
+    "alert",
+    chipType === "icon",
+    disabled,
+    closable
+  )}" ${calculateHtmlCodeDir(dir === "rtl")}>
+    ${calculateHtmlCodeAvatar(chipType === "avatar")}
+    placeholder
+    ${calculateHtmlCodeClosable(closable)}
+  </div>
+
+  <div class="${calculateHtmlCodeClasses(
+    "warning",
+    chipType === "icon",
+    disabled,
+    closable
+  )}" ${calculateHtmlCodeDir(dir === "rtl")}>
+      ${calculateHtmlCodeAvatar(chipType === "avatar")}
+    example
+    ${calculateHtmlCodeClosable(closable)}
+  </div>
+</div>
+`
+    );
+
+    return [isDefaultResult, reactCode, htmlCode];
   }, [chipType, closable, dir, disabled]);
 
   return (
@@ -80,8 +162,8 @@ export const PlaygroundImplementation = () => {
         </Playground.OptionsContainer>
       }
       examples={{
-        html: chipType === "default" ? defaultHtml : html,
-        react: chipType === "default" ? defaultReact : react,
+        html: isDefault ? defaultHtml : html,
+        react: isDefault ? defaultReact : react,
         sandbox,
         storybook,
       }}
@@ -141,3 +223,29 @@ export const PlaygroundImplementation = () => {
     </Playground>
   );
 };
+
+const calculateHtmlCodeClasses = (
+  variant: ChipProps["variant"],
+  icon: boolean,
+  disabled: boolean,
+  closable: boolean
+) =>
+  clsx(
+    `neo-chip neo-chip--${variant}`,
+    disabled && `neo-chip--${variant}--disabled`,
+    icon && "neo-icon-info",
+    closable && `neo-chip--close neo-chip--close--${variant}`,
+    "neo-chips__item"
+  );
+
+const calculateHtmlCodeDir = (isRtl: boolean) => (isRtl ? 'dir="rtl"' : "");
+
+const calculateHtmlCodeAvatar = (isAvatar: boolean) =>
+  isAvatar
+    ? '<figure class="neo-avatar neo-avatar--small" data-initials="EX"></figure>'
+    : "";
+
+const calculateHtmlCodeClosable = (isClosable: boolean) =>
+  isClosable
+    ? '<button class="neo-close neo-close--clear" aria-label="Close"></button>'
+    : "";
