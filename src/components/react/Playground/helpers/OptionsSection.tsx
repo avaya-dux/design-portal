@@ -22,24 +22,21 @@ import clsx from "clsx";
               { label: "Secondary", value: "secondary" },
             ]}
           />
-
-          <CheckboxGroup
-            groupName="Variant"
-            onChange={setVariant}
-            checkboxes={[
-              {
-                label: "Primary",
-                value: "primary",
-                checked: true,
-              },
-              {
-                label: "Secondary",
-                value: "secondary",
-                checked: false,
-              },
-            ]}
-          />
         </Playground.OptionsSection>
+
+        <Playground.OptionsSection title="Variables" id="variables">
+            <CheckboxGroup
+              groupName="Variables"
+              aria-labelledby="variables"
+            >
+              <Checkbox value="dir" checked={dir === "rtl"}>
+                RTL
+              </Checkbox>
+              <Checkbox value="disabled" checked={disabled}>
+                Disabled
+              </Checkbox>
+            </CheckboxGroup>
+          </Playground.OptionsSection>
       </Playground.OptionsContainer>
     }
   >
@@ -50,20 +47,20 @@ export const OptionsSection = ({
   title,
   children,
   className,
-  htmlFor,
+  id,
   style,
 }: {
   title: string;
   children: React.ReactNode;
   className?: string;
-  htmlFor?: string;
+  id?: string;
   style?: React.CSSProperties;
 }) => (
   <section
     className={clsx("playground-options-section", className)}
     style={style}
   >
-    <label className="playground-options-section-label" htmlFor={htmlFor}>
+    <label className="playground-options-section-label" id={id}>
       {title}
     </label>
 
