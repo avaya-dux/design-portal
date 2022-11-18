@@ -1,0 +1,52 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Description,
+  ColumnLayout,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import StatesImage from "../imgs/states.svg";
+const statesImgAltText = "Image showing the different states of an accordion";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.states.id}>{topics.states.title}</SectionHeader>
+
+  <Description>
+    Accordions include standard components as shown below, all of which are
+    required. The number of items within the accordion list can vary.
+  </Description>
+
+  <ColumnLayout numOfColumns={1}>
+    <Image src={StatesImage} alt={statesImgAltText} />
+  </ColumnLayout>
+
+  <ul>
+    <li>
+      <strong>Deafult:</strong> When the accordion does not have focus, it is in
+      the Default state.
+    </li>
+
+    <li>
+      <strong>Hover:</strong> Once the accordion has focus, it changes to the Hover
+      state.
+    </li>
+
+    <li>
+      <strong>Disabled:</strong> If the accordion is not available, it is displayed
+      in the Disabled state and is inactive.
+    </li>
+  </ul>
+</PageleteSection>
+
+<style>
+  ul {
+    list-style-type: decimal;
+    margin: 0;
+    margin-left: 1rem;
+  }
+</style>
