@@ -1,7 +1,0 @@
-/*
-TODO: need to go into the `CheckboxGroup` and allow user to _optionally_ pass a label.
-Maybe need to allow the use of `describedby` to ensure that a `lable` is always present.
- */
-.hack-hide-me .neo-form-control .neo-input-group > label:first-child {
-  display: none;
-}
