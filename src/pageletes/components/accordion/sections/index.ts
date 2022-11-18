@@ -13,5 +13,8 @@ export { States };
 import Usage from "./Usage.astro";
 export { Usage };
 
+import Specs from "./Specs.astro";
+export { Specs };
+
 import KeyboardInteractions from "./KeyboardInteractions.astro";
 export { KeyboardInteractions };
