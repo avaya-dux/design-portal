@@ -38,11 +38,12 @@ export const PlaygroundImplementation = () => {
 
           <Playground.OptionsSection
             title="Variables"
-            htmlFor="Variables"
+            id="variables"
             className="hack-hide-me"
           >
             <CheckboxGroup
               groupName="Variables"
+              aria-labelledby="variables"
               onChange={(e) => {
                 const { value } = e.target as HTMLInputElement;
                 switch (value) {
@@ -55,8 +56,12 @@ export const PlaygroundImplementation = () => {
                 }
               }}
             >
-              <Checkbox label="Open" value="open" checked={open} />
-              <Checkbox label="Disabled" value="disabled" checked={disabled} />
+              <Checkbox value="open" checked={open}>
+                Open
+              </Checkbox>
+              <Checkbox value="disabled" checked={disabled}>
+                Disabled
+              </Checkbox>
             </CheckboxGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
