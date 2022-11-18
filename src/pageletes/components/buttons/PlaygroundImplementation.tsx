@@ -87,7 +87,7 @@ export const PlaygroundImplementation = () => {
             </Select>
           </Playground.OptionsSection>
 
-          <Playground.OptionsSection title="Size" style={{ gridGap: "0.3rem" }}>
+          <Playground.OptionsSection title="Size">
             <RadioGroup
               groupName="Size"
               selected={size as string}
@@ -99,12 +99,10 @@ export const PlaygroundImplementation = () => {
             </RadioGroup>
           </Playground.OptionsSection>
 
-          <Playground.OptionsSection
-            title="Variables"
-            style={{ gridGap: "0.7rem" }}
-          >
+          <Playground.OptionsSection title="Variables" id="variables">
             <CheckboxGroup
               groupName="Variables"
+              aria-labelledby="variables"
               onChange={(e) => {
                 const { value } = e.target as HTMLInputElement;
                 switch (value) {
@@ -123,17 +121,25 @@ export const PlaygroundImplementation = () => {
                 }
               }}
             >
-              <Checkbox label="RTL" value="dir" checked={dir === "rtl"} />
-              <Checkbox label="Disabled" value="disabled" checked={disabled} />
-              <Checkbox label="Icon" value="icon" checked={!!icon} />
-              <Checkbox label="Badge" value="badge" checked={!!badge} />
+              <Checkbox value="dir" checked={dir === "rtl"}>
+                RTL
+              </Checkbox>
+
+              <Checkbox value="disabled" checked={disabled}>
+                Disabled
+              </Checkbox>
+
+              <Checkbox value="icon" checked={!!icon}>
+                Icon
+              </Checkbox>
+
+              <Checkbox value="badge" checked={!!badge}>
+                Badge
+              </Checkbox>
             </CheckboxGroup>
           </Playground.OptionsSection>
 
-          <Playground.OptionsSection
-            title="Animation"
-            style={{ gridGap: "0.3rem" }}
-          >
+          <Playground.OptionsSection title="Animation">
             <RadioGroup
               groupName="Animation"
               selected={animation || "none"}

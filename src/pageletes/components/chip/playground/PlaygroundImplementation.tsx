@@ -15,8 +15,6 @@ import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
 import { defaultHtml, defaultReact, sandbox, storybook } from "../static";
 
-import "./PlaygroundImplementation.css";
-
 type ChipTypeOption = "default" | "icon" | "avatar";
 
 export const PlaygroundImplementation = () => {
@@ -130,13 +128,10 @@ export const PlaygroundImplementation = () => {
             </RadioGroup>
           </Playground.OptionsSection>
 
-          <Playground.OptionsSection
-            title="Variables"
-            htmlFor="Variables"
-            className="hack-hide-me"
-          >
+          <Playground.OptionsSection title="Variables" id="variables">
             <CheckboxGroup
               groupName="Variables"
+              aria-labelledby="variables"
               onChange={(e) => {
                 const { value } = e.target as HTMLInputElement;
                 switch (value) {
@@ -154,9 +149,15 @@ export const PlaygroundImplementation = () => {
                 }
               }}
             >
-              <Checkbox label="Closable" value="closable" checked={closable} />
-              <Checkbox label="RTL" value="dir" checked={dir === "rtl"} />
-              <Checkbox label="Disabled" value="disabled" checked={disabled} />
+              <Checkbox value="closable" checked={closable}>
+                Closable
+              </Checkbox>
+              <Checkbox value="dir" checked={dir === "rtl"}>
+                RTL
+              </Checkbox>
+              <Checkbox value="disabled" checked={disabled}>
+                Disabled
+              </Checkbox>
             </CheckboxGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
