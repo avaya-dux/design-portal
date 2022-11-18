@@ -87,17 +87,6 @@
   .playground-code .neo-tabs__item a {
     padding: 8px 12px 0;
   }
-  .playground-container
-    .playground-examples
-    .playground-code
-    .neo-tabs__container--active,
-  .playground-container
-    .playground-examples
-    .playground-code
-    .neo-tabs__item
-    .neo-icon-screenpop-on {
-    padding: 0px;
-  }
 
   .playground-container .playground-examples .playground-code .neo-tabs__item {
     justify-content: center;
