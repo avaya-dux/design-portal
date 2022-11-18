@@ -18,3 +18,6 @@ export { Specs };
 
 import KeyboardInteractions from "./KeyboardInteractions.astro";
 export { KeyboardInteractions };
+
+import Related from "./Related.astro";
+export { Related };
