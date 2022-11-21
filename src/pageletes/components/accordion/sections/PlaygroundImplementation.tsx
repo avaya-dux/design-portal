@@ -15,6 +15,8 @@ import { sandbox, storybook } from "../static";
 
 type TypeOption = "single" | "group";
 
+import "./PlaygroundImplementation.css";
+
 export const PlaygroundImplementation = () => {
   const [typeOption, setTypeOption] = useState<TypeOption>("single");
   const [open, setOpen] = useState(true);

@@ -1,0 +1,6 @@
+/* TEMP: TODO: remove this once update is made in neo-css */
+@media (prefers-color-scheme: dark) {
+  .neo-accordion button.neo-accordion__header-text {
+    color: var(--global-font-color);
+  }
+}
