@@ -1,0 +1,42 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Description,
+  ColumnLayout,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import SpecsImage from "../imgs/specs.svg";
+const specsImgAltText =
+  "Image showing the specific pixel settings of an accordion";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.specs.id}>{topics.specs.title}</SectionHeader>
+
+  <Description>
+    The height of a collapsed accordion is 46 pixels. An expanded accordion is
+    as tall as necessary based upon the content.
+  </Description>
+
+  <Description>
+    Interior padding for all accordions is 12 pixels above and below, and 16
+    pixels on either side.
+  </Description>
+
+  <Description>
+    The chevron points to the left when the accordion is collapsed, and downward
+    when it is expanded.
+  </Description>
+
+  <Description>
+    Different accordions are separated by 8 pixels and are stacked vertically.
+  </Description>
+
+  <ColumnLayout numOfColumns={1}>
+    <Image src={SpecsImage} alt={specsImgAltText} />
+  </ColumnLayout>
+</PageleteSection>

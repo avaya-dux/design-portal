@@ -1,0 +1,55 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Description,
+  ColumnLayout,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import AnatomyImage from "../imgs/anatomy.svg";
+const anatomyImgAltText =
+  "Image showing the different parts that make up an accordion";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.anatomy.id}>{topics.anatomy.title}</SectionHeader>
+
+  <Description>
+    Accordions include standard components as shown below, all of which are
+    required. The number of items within the accordion list can vary.
+  </Description>
+
+  <ColumnLayout numOfColumns={1}>
+    <Image src={AnatomyImage} alt={anatomyImgAltText} />
+  </ColumnLayout>
+
+  <ul class="numbered-list">
+    <li>
+      <strong>Collapsed accordion:</strong> The default state of the accordion. It
+      occupies one line on the page.
+    </li>
+
+    <li>
+      <strong>Header:</strong> This text field explains the content within the accordion.
+      It should be a single line of text that clearly explains what is inside.
+    </li>
+
+    <li>
+      <strong>Chevron Icon:</strong> The icon toggles the state of the accordion
+      between Expanded and Collapsed. The icon changes to reflect the current state.
+    </li>
+
+    <li>
+      <strong>Expanded accordion:</strong> When the chevron is activated, the accordion
+      expands to reveal its content.
+    </li>
+
+    <li>
+      <strong>Panel:</strong> This is the content within the accordion: instructions,
+      links, descriptions, etc.
+    </li>
+  </ul>
+</PageleteSection>

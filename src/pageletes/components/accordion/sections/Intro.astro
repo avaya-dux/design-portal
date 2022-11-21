@@ -1,0 +1,17 @@
+---
+import { Description, PageleteSection, PageTitle, Topics } from "components";
+
+import { topics } from "../static";
+---
+
+<PageleteSection marginTop="2rem">
+  <PageTitle>Accordion</PageTitle>
+
+  <Description>
+    An Accordion is a vertically stacked menu. In its default state, it is a
+    single line that shows only the header. When opened, the list expands to
+    reveal the associated content.
+  </Description>
+
+  <Topics topics={topics} />
+</PageleteSection>
