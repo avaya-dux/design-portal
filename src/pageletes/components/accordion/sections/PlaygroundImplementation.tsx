@@ -56,7 +56,11 @@ export const PlaygroundImplementation = () => {
                 }
               }}
             >
-              <Checkbox value="open" checked={open}>
+              <Checkbox
+                value="open"
+                checked={open}
+                disabled={typeOption === "group"}
+              >
                 Open
               </Checkbox>
               <Checkbox value="disabled" checked={disabled}>
@@ -74,18 +78,27 @@ export const PlaygroundImplementation = () => {
       }}
     >
       {typeOption === "single" ? (
-        <Accordion header="Single Accordion Example">
+        <Accordion
+          header="Single Accordion Example"
+          disabled={disabled}
+          isOpen={open}
+          handleClick={() => setOpen(!open)}
+        >
           Inner content of Accordion example
         </Accordion>
       ) : (
-        <AccordionGroup>
-          <Accordion header="Accordion Group Example 1">
+        <AccordionGroup
+          allowOnlyOne
+          defaultOpenAccordingIndex={1}
+          header="Accordion Group Example"
+        >
+          <Accordion header="Accordion 1" disabled={disabled}>
             Inner content of Accordion example
           </Accordion>
-          <Accordion header="Accordion Group Example 2">
+          <Accordion header="Accordion 2" disabled={disabled}>
             Inner content of Accordion example
           </Accordion>
-          <Accordion header="Accordion Group Example 3">
+          <Accordion header="Accordion 3" disabled={disabled}>
             Inner content of Accordion example
           </Accordion>
         </AccordionGroup>
