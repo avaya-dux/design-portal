@@ -6,18 +6,55 @@ import {
   Radio,
   RadioGroup,
 } from "@avaya/neo-react";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import { Playground } from "components";
+import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
-import { defaultHtml, defaultReact, sandbox, storybook } from "../static";
+import { defaultHtml, sandbox, storybook } from "../static";
 
 type TypeOption = "single" | "group";
 
 export const PlaygroundImplementation = () => {
   const [typeOption, setTypeOption] = useState<TypeOption>("single");
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const [disabled, setDisabled] = useState(false);
+
+  const [react, html] = useMemo(() => {
+    const isDefaultResult = typeOption === "single" && open && !disabled;
+
+    const reactCode =
+      typeOption === "single"
+        ? prettyPrintReact(`
+<Accordion
+  header="Single Accordion Example"
+  disabled={${disabled}}
+  isOpen={${open}}
+  handleClick={() => setOpen(!open)}
+>
+  Inner content of Accordion example
+</Accordion>`)
+        : prettyPrintReact(`
+<AccordionGroup
+  allowOnlyOne
+  defaultOpenAccordingIndex={1}
+  header="Accordion Group Example"
+>
+  <Accordion header="Accordion 1" disabled={${disabled}}>
+    Inner content of Accordion example
+  </Accordion>
+  <Accordion header="Accordion 2" disabled={${disabled}}>
+    Inner content of Accordion example
+  </Accordion>
+  <Accordion header="Accordion 3" disabled={${disabled}}>
+    Inner content of Accordion example
+  </Accordion>
+</AccordionGroup>
+      `);
+    const htmlCode = prettyPrintHtml(``);
+
+    return [reactCode, isDefaultResult ? defaultHtml : htmlCode];
+  }, [typeOption, open, disabled]);
 
   return (
     <Playground
@@ -36,11 +73,7 @@ export const PlaygroundImplementation = () => {
             </RadioGroup>
           </Playground.OptionsSection>
 
-          <Playground.OptionsSection
-            title="Variables"
-            id="variables"
-            className="hack-hide-me"
-          >
+          <Playground.OptionsSection title="Variables" id="variables">
             <CheckboxGroup
               groupName="Variables"
               aria-labelledby="variables"
@@ -71,8 +104,8 @@ export const PlaygroundImplementation = () => {
         </Playground.OptionsContainer>
       }
       examples={{
-        html: defaultHtml,
-        react: defaultReact,
+        html,
+        react,
         sandbox,
         storybook,
       }}
