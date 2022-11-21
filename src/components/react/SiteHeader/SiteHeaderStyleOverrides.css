@@ -25,7 +25,7 @@ nav.neo-navbar a.neo-nav-link-btn {
 @media (max-width: 799px) {
   nav.neo-navbar {
     overflow: visible;
-    margin-bottom: 48px;
+    margin-bottom: 3rem;
     border: none;
   }
   nav.neo-navbar .neo-nav {
