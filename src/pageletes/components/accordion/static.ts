@@ -21,16 +21,16 @@ type AccordionTopicNames =
 export const topics: TopicsDict<AccordionTopicNames> = {
   playground: {
     order: 0,
-    id: "accordions-playground",
+    id: "accordion-playground",
     title: "Interactive Playground",
   },
   anatomy: { order: 1, id: "accordion-anatomy", title: "Anatomy" },
   states: {
     order: 2,
-    id: "accordions-states",
+    id: "accordion-states",
     title: "States",
   },
-  usage: { order: 3, id: "accordions-usage", title: "Usages" },
+  usage: { order: 3, id: "accordion-usage", title: "Usages" },
   specs: {
     order: 4,
     id: "accordion-specs",
@@ -38,12 +38,12 @@ export const topics: TopicsDict<AccordionTopicNames> = {
   },
   keyboard: {
     order: 5,
-    id: "accordions-keyboard-interactions",
+    id: "accordion-keyboard-interactions",
     title: "Keyboard Interactions",
   },
   related: {
     order: 6,
-    id: "accordions-related-content",
+    id: "accordion-related-content",
     title: "Related Content",
   },
 };
