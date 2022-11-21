@@ -11,7 +11,7 @@ import { useMemo, useState } from "react";
 import { Playground } from "components";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
-import { defaultHtml, sandbox, storybook } from "../static";
+import { sandbox, storybook } from "../static";
 
 type TypeOption = "single" | "group";
 
@@ -19,10 +19,10 @@ export const PlaygroundImplementation = () => {
   const [typeOption, setTypeOption] = useState<TypeOption>("single");
   const [open, setOpen] = useState(true);
   const [disabled, setDisabled] = useState(false);
+  const [htmlCodeExampleExpandedIndex, setHtmlCodeExampleExpandedIndex] =
+    useState(1);
 
   const [react, html] = useMemo(() => {
-    const isDefaultResult = typeOption === "single" && open && !disabled;
-
     const reactCode =
       typeOption === "single"
         ? prettyPrintReact(`
@@ -51,10 +51,98 @@ export const PlaygroundImplementation = () => {
   </Accordion>
 </AccordionGroup>
       `);
-    const htmlCode = prettyPrintHtml(``);
 
-    return [reactCode, isDefaultResult ? defaultHtml : htmlCode];
-  }, [typeOption, open, disabled]);
+    const htmlCode =
+      typeOption === "single"
+        ? prettyPrintHtml(`
+<div class="neo-accordion">
+  <div class="neo-accordion__item">
+    <div
+      class="neo-accordion__header"
+      role="heading"
+      aria-label="Accordion Heading"
+      aria-level="2"
+    >
+      <button
+        class="neo-accordion__header-text"
+        aria-expanded="${open}"
+        aria-controls="accordion-control-accordion-button"
+        id="accordion-button"
+      >
+        Single Accordion Example
+      </button>
+    </div>
+
+    ${
+      open
+        ? `
+    <div id="accordion-control-accordion-button" class="neo-accordion__body">
+      <div class="neo-accordion__content">
+        Inner content of Accordion example
+      </div>
+    </div>
+    `
+        : ""
+    }
+  </div>
+</div>
+      `)
+        : prettyPrintHtml(`
+<div class="neo-accordion-group">
+  <p>Accordion Group Example</p>
+
+  <div class="neo-accordion">
+    <div class="neo-accordion__item">
+      <div class="neo-accordion__header" role="heading" aria-label="Accordion Heading" aria-level="2">
+        <button class="neo-accordion__header-text" aria-expanded="${
+          htmlCodeExampleExpandedIndex === 0
+        }" aria-controls="accordion-control-accordion-one" id="accordion-one" aria-disabled="${
+            htmlCodeExampleExpandedIndex === 0
+          }">
+          Accordion 1
+        </button>
+      </div>
+    /div>
+  </div>
+
+  <div class="neo-accordion">
+    <div class="neo-accordion__item neo-accordion__item--active">
+      <div class="neo-accordion__header" role="heading" aria-label="Accordion Heading" aria-level="2">
+        <button class="neo-accordion__header-text" aria-expanded="${
+          htmlCodeExampleExpandedIndex === 1
+        }" aria-controls="accordion-control-accordion-two" id="accordion-two" aria-disabled="${
+            htmlCodeExampleExpandedIndex === 1
+          }">
+          Accordion 2
+        </button>
+      </div>
+
+      <div id="accordion-control-accordion-two" class="neo-accordion__body">
+        <div class="neo-accordion__content">
+          Inner content of Accordion example
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="neo-accordion">
+    <div class="neo-accordion__item">
+      <div class="neo-accordion__header" role="heading" aria-label="Accordion Heading" aria-level="2">
+        <button class="neo-accordion__header-text" aria-expanded="${
+          htmlCodeExampleExpandedIndex === 2
+        }" aria-controls="accordion-control-accordion-three" id="accordion-three" aria-disabled="${
+            htmlCodeExampleExpandedIndex === 2
+          }">
+          Accordion 3
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+        `);
+
+    return [reactCode, htmlCode];
+  }, [typeOption, open, disabled, htmlCodeExampleExpandedIndex]);
 
   return (
     <Playground
@@ -122,16 +210,28 @@ export const PlaygroundImplementation = () => {
       ) : (
         <AccordionGroup
           allowOnlyOne
-          defaultOpenAccordingIndex={1}
+          defaultOpenAccordingIndex={htmlCodeExampleExpandedIndex}
           header="Accordion Group Example"
         >
-          <Accordion header="Accordion 1" disabled={disabled}>
+          <Accordion
+            header="Accordion 1"
+            disabled={disabled}
+            handleClick={() => setHtmlCodeExampleExpandedIndex(0)}
+          >
             Inner content of Accordion example
           </Accordion>
-          <Accordion header="Accordion 2" disabled={disabled}>
+          <Accordion
+            header="Accordion 2"
+            disabled={disabled}
+            handleClick={() => setHtmlCodeExampleExpandedIndex(1)}
+          >
             Inner content of Accordion example
           </Accordion>
-          <Accordion header="Accordion 3" disabled={disabled}>
+          <Accordion
+            header="Accordion 3"
+            disabled={disabled}
+            handleClick={() => setHtmlCodeExampleExpandedIndex(2)}
+          >
             Inner content of Accordion example
           </Accordion>
         </AccordionGroup>
