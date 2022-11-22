@@ -1,8 +1,4 @@
 import type { TopicsDict } from "components";
-import { prettyPrintHtml, prettyPrintReact } from "helpers";
-
-export const defaultHtml = prettyPrintHtml(``);
-export const defaultReact = prettyPrintReact(``);
 
 export const sandbox =
   "https://codesandbox.io/s/neo-react-accodion-m7zsdz?file=/src/App.js";
