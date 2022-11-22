@@ -10,3 +10,11 @@
     color: var(--neo-color-base-900);
   }
 }
+
+/*
+  NOTE: our classes are shrinking the accordion's innapropriately,
+  thus, manually setting width here so that it displays correctly
+*/
+.neo-accordion {
+  width: 100%;
+}
