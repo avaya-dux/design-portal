@@ -32,7 +32,7 @@ export const PlaygroundImplementation = () => {
   header="Single Accordion Example"
   disabled={${disabled}}
   isOpen={${open}}
-  handleClick={() => setOpen(!open)}
+  onClick={() => setOpen(!open)}
 >
   Inner content of Accordion example
 </Accordion>`)
@@ -205,7 +205,7 @@ export const PlaygroundImplementation = () => {
           header="Single Accordion Example"
           disabled={disabled}
           isOpen={open}
-          handleClick={() => setOpen(!open)}
+          onClick={() => setOpen(!open)}
         >
           Inner content of Accordion example
         </Accordion>
@@ -218,21 +218,21 @@ export const PlaygroundImplementation = () => {
           <Accordion
             header="Accordion 1"
             disabled={disabled}
-            handleClick={() => setHtmlCodeExampleExpandedIndex(0)}
+            onClick={() => setHtmlCodeExampleExpandedIndex(0)}
           >
             Inner content of Accordion example
           </Accordion>
           <Accordion
             header="Accordion 2"
             disabled={disabled}
-            handleClick={() => setHtmlCodeExampleExpandedIndex(1)}
+            onClick={() => setHtmlCodeExampleExpandedIndex(1)}
           >
             Inner content of Accordion example
           </Accordion>
           <Accordion
             header="Accordion 3"
             disabled={disabled}
-            handleClick={() => setHtmlCodeExampleExpandedIndex(2)}
+            onClick={() => setHtmlCodeExampleExpandedIndex(2)}
           >
             Inner content of Accordion example
           </Accordion>
