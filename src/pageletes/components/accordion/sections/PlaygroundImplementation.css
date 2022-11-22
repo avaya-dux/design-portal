@@ -15,6 +15,7 @@
   NOTE: our classes are shrinking the accordion's innapropriately,
   thus, manually setting width here so that it displays correctly
 */
-.neo-accordion {
+.neo-accordion,
+.neo-accordion-group {
   width: 100%;
 }
