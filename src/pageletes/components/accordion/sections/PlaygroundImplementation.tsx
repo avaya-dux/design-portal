@@ -150,7 +150,7 @@ export const PlaygroundImplementation = () => {
     <Playground
       options={
         <Playground.OptionsContainer>
-          <Playground.OptionsSection title="Types">
+          <Playground.OptionsSection title="Type">
             <RadioGroup
               groupName="type-options"
               selected={typeOption}
