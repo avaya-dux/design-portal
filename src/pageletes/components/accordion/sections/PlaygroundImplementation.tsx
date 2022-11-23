@@ -2,6 +2,7 @@ import {
   Accordion,
   Checkbox,
   CheckboxGroup,
+  CheckboxProps,
   Radio,
   RadioGroup,
 } from "@avaya/neo-react";
@@ -18,7 +19,7 @@ import "./PlaygroundImplementation.css";
 
 export const PlaygroundImplementation = () => {
   const [typeOption, setTypeOption] = useState<TypeOption>("single");
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<CheckboxProps["checked"]>(false);
   const [disabled, setDisabled] = useState(false);
   const [htmlCodeExampleExpandedIndex, setHtmlCodeExampleExpandedIndex] =
     useState(1);
@@ -155,6 +156,12 @@ export const PlaygroundImplementation = () => {
               selected={typeOption}
               onChange={(e) => {
                 setTypeOption(e.target.value as TypeOption);
+
+                if (e.target.value === "single" && open !== false) {
+                  setOpen(true);
+                } else if (e.target.value === "stacked") {
+                  setOpen(false);
+                }
               }}
             >
               <Radio value="single">Single</Radio>
@@ -179,7 +186,11 @@ export const PlaygroundImplementation = () => {
                 }
               }}
             >
-              <Checkbox value="open" checked={open}>
+              <Checkbox
+                value="open"
+                checked={open}
+                disabled={disabled || typeOption === "stacked"}
+              >
                 Open
               </Checkbox>
               <Checkbox value="disabled" checked={disabled}>
@@ -200,7 +211,7 @@ export const PlaygroundImplementation = () => {
         <Accordion
           header="Single Accordion Example"
           disabled={disabled}
-          isOpen={open}
+          isOpen={open === true}
           onClick={() => setOpen(!open)}
         >
           Inner content of Accordion example
