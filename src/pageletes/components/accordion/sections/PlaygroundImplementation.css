@@ -16,6 +16,12 @@
   thus, manually setting width here so that it displays correctly
 */
 .neo-accordion,
-.neo-accordion-group {
+.dpv3-accordion-stack {
   width: 100%;
+}
+
+/* NOTE: this is just for making it look slightly better, per Matt's instructions */
+.dpv3-accordion-stack,
+.neo-accordion__item {
+  margin-bottom: 0.5rem;
 }

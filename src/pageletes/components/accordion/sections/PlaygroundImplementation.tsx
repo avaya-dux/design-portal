@@ -1,6 +1,5 @@
 import {
   Accordion,
-  AccordionGroup,
   Checkbox,
   CheckboxGroup,
   Radio,
@@ -13,13 +12,13 @@ import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
 import { sandbox, storybook } from "../static";
 
-type TypeOption = "single" | "group";
+type TypeOption = "single" | "stacked";
 
 import "./PlaygroundImplementation.css";
 
 export const PlaygroundImplementation = () => {
   const [typeOption, setTypeOption] = useState<TypeOption>("single");
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [disabled, setDisabled] = useState(false);
   const [htmlCodeExampleExpandedIndex, setHtmlCodeExampleExpandedIndex] =
     useState(1);
@@ -159,7 +158,7 @@ export const PlaygroundImplementation = () => {
               }}
             >
               <Radio value="single">Single</Radio>
-              <Radio value="group">Group</Radio>
+              <Radio value="stacked">Stacked</Radio>
             </RadioGroup>
           </Playground.OptionsSection>
 
@@ -174,16 +173,13 @@ export const PlaygroundImplementation = () => {
                     setOpen(!open);
                     break;
                   case "disabled":
+                    setOpen(false);
                     setDisabled(!disabled);
                     break;
                 }
               }}
             >
-              <Checkbox
-                value="open"
-                checked={open}
-                disabled={typeOption === "group"}
-              >
+              <Checkbox value="open" checked={open}>
                 Open
               </Checkbox>
               <Checkbox value="disabled" checked={disabled}>
@@ -210,11 +206,7 @@ export const PlaygroundImplementation = () => {
           Inner content of Accordion example
         </Accordion>
       ) : (
-        <AccordionGroup
-          allowOnlyOne
-          defaultOpenAccordingIndex={htmlCodeExampleExpandedIndex}
-          header="Accordion Group Example"
-        >
+        <div className="dpv3-accordion-stack">
           <Accordion
             header="Accordion 1"
             disabled={disabled}
@@ -236,7 +228,7 @@ export const PlaygroundImplementation = () => {
           >
             Inner content of Accordion example
           </Accordion>
-        </AccordionGroup>
+        </div>
       )}
     </Playground>
   );
