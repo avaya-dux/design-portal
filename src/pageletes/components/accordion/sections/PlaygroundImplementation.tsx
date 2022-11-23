@@ -24,9 +24,7 @@ export const PlaygroundImplementation = () => {
     [boolean, boolean, boolean]
   >([false, false, false]);
   const [disabled, setDisabled] = useState(false);
-  const [htmlCodeExampleExpandedIndex] = useState(1); // TODO: with the "stacked" updated, this is out of date and needs fixin'
 
-  // TODO: with the "stacked" updated, this is out of date and needs fixin'
   const [react, html] = useMemo(() => {
     const reactCode =
       typeOption === "single"
@@ -40,11 +38,7 @@ export const PlaygroundImplementation = () => {
   Inner content of Accordion example
 </Accordion>`)
         : prettyPrintReact(`
-<AccordionGroup
-  allowOnlyOne
-  defaultOpenAccordingIndex={1}
-  header="Accordion Group Example"
->
+<div>
   <Accordion header="Accordion 1" disabled={${disabled}}>
     Inner content of Accordion example
   </Accordion>
@@ -54,7 +48,7 @@ export const PlaygroundImplementation = () => {
   <Accordion header="Accordion 3" disabled={${disabled}}>
     Inner content of Accordion example
   </Accordion>
-</AccordionGroup>
+</div>
       `);
 
     const htmlCode =
@@ -99,11 +93,7 @@ export const PlaygroundImplementation = () => {
   <div class="neo-accordion">
     <div class="neo-accordion__item">
       <div class="neo-accordion__header" role="heading" aria-label="Accordion Heading" aria-level="2">
-        <button class="neo-accordion__header-text" aria-expanded="${
-          htmlCodeExampleExpandedIndex === 0
-        }" aria-controls="accordion-control-accordion-one" id="accordion-one" aria-disabled="${
-            htmlCodeExampleExpandedIndex === 0
-          }">
+        <button class="neo-accordion__header-text" aria-expanded="${stackedOpenIndexes[0]}" aria-controls="accordion-control-accordion-one" id="accordion-one" aria-disabled="${stackedOpenIndexes[0]}">
           Accordion 1
         </button>
       </div>
@@ -113,11 +103,7 @@ export const PlaygroundImplementation = () => {
   <div class="neo-accordion">
     <div class="neo-accordion__item neo-accordion__item--active">
       <div class="neo-accordion__header" role="heading" aria-label="Accordion Heading" aria-level="2">
-        <button class="neo-accordion__header-text" aria-expanded="${
-          htmlCodeExampleExpandedIndex === 1
-        }" aria-controls="accordion-control-accordion-two" id="accordion-two" aria-disabled="${
-            htmlCodeExampleExpandedIndex === 1
-          }">
+        <button class="neo-accordion__header-text" aria-expanded="${stackedOpenIndexes[1]}" aria-controls="accordion-control-accordion-two" id="accordion-two" aria-disabled="${stackedOpenIndexes[1]}">
           Accordion 2
         </button>
       </div>
@@ -133,11 +119,7 @@ export const PlaygroundImplementation = () => {
   <div class="neo-accordion">
     <div class="neo-accordion__item">
       <div class="neo-accordion__header" role="heading" aria-label="Accordion Heading" aria-level="2">
-        <button class="neo-accordion__header-text" aria-expanded="${
-          htmlCodeExampleExpandedIndex === 2
-        }" aria-controls="accordion-control-accordion-three" id="accordion-three" aria-disabled="${
-            htmlCodeExampleExpandedIndex === 2
-          }">
+        <button class="neo-accordion__header-text" aria-expanded="${stackedOpenIndexes[2]}" aria-controls="accordion-control-accordion-three" id="accordion-three" aria-disabled="${stackedOpenIndexes[2]}">
           Accordion 3
         </button>
       </div>
@@ -147,7 +129,7 @@ export const PlaygroundImplementation = () => {
         `);
 
     return [reactCode, htmlCode];
-  }, [typeOption, open, disabled, htmlCodeExampleExpandedIndex]);
+  }, [typeOption, open, disabled, stackedOpenIndexes]);
 
   return (
     <Playground
@@ -164,6 +146,7 @@ export const PlaygroundImplementation = () => {
                   setOpen(true);
                 } else if (e.target.value === "stacked") {
                   setOpen(false);
+                  setStackedOpenIndexes([false, false, false]);
                 }
               }}
             >
@@ -185,6 +168,7 @@ export const PlaygroundImplementation = () => {
                     break;
                   case "disabled":
                     setOpen(false);
+                    setStackedOpenIndexes([false, false, false]);
                     setDisabled(!disabled);
                     break;
                 }
