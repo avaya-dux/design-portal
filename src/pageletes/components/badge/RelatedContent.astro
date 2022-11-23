@@ -1,16 +1,16 @@
 ---
-import { Description, PageleteSection, SectionHeader, Topics } from "components";
+import { PageleteSection, SectionHeader } from "components";
 
 import { topics } from "./topics";
 const buttonPageUrl = "./buttons";
 ---
 
 <PageleteSection>
-  <SectionHeader id={topics.relatedContent.id}>{topics.relatedContent.title}</SectionHeader>
+  <SectionHeader id={topics.relatedContent.id}
+    >{topics.relatedContent.title}</SectionHeader
+  >
 
-  <p class="related-content-label">
-    Components
-  </p>
+  <p class="related-content-label">Components</p>
   <ul>
     <li><a href={buttonPageUrl}>Button</a></li>
   </ul>

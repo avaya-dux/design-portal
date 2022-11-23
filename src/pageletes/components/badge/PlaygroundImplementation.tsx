@@ -4,8 +4,6 @@ import { useMemo, useState } from "react";
 
 import { Playground } from "components";
 
-// import { sandbox } from "../buttons/static";
-
 const sandbox =
   "https://codesandbox.io/s/neo-react-badge-forked-zjf97s?file=/src/App.js";
 const storybook =
