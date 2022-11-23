@@ -1,21 +1,25 @@
 ---
 import { Image } from "@avaya/neo-react";
-import { Description, PageleteSection, SectionHeader, DoAndDont } from "components";
+import {
+  Description,
+  PageleteSection,
+  SectionHeader,
+  DoAndDont,
+} from "components";
 
 import { topics } from "./topics";
 
-import doImg1 from "./button-imgs/do-arrangement1.svg";
-import dontImg1 from "./button-imgs/dont-arrangement1.svg";
-import doImg2 from "./button-imgs/do-arrangement1.svg";
-import dontImg2 from "./button-imgs/dont-arrangement1.svg";
+import doImg1 from "./badge-imgs/do-usage1.svg";
+import dontImg1 from "./badge-imgs/dont-usage1.svg";
+import doImg2 from "./badge-imgs/do-usage2.svg";
+import dontImg2 from "./badge-imgs/dont-usage2.svg";
 
 const doInstructions1 =
   "Prioritize the calls to actions by using one primary button per page. Multiple secondary and tertiary actions can be used.";
 const doImgAltText1 =
   "image showing a notification icon with a badge showing 3 items.";
 const dontInstructions1 = "Do not use multiple primary buttons.";
-const dontImgAltText1 =
-  "image showing a badge displaying a currency value.";
+const dontImgAltText1 = "image showing a badge displaying a currency value.";
 
 const doInstructions2 =
   "Where there is limited space, truncate the counter by using +, or shorten thousands with a K.";
@@ -27,39 +31,39 @@ const dontImgAltText2 =
 ---
 
 <PageleteSection>
-<SectionHeader id={topics.usage.id}>{topics.usage.title}</SectionHeader>
+  <SectionHeader id={topics.usage.id}>{topics.usage.title}</SectionHeader>
 
-<Description>
-  Badges are only used to display the number of outstanding notifications for a function.
-  For example, how many unread email messages a user has waiting, or the number of system alerts they have not yet viewed.
-</Description>
+  <Description>
+    Badges are only used to display the number of outstanding notifications for
+    a function. For example, how many unread email messages a user has waiting,
+    or the number of system alerts they have not yet viewed.
+  </Description>
 
-<DoAndDont>
-  <DoAndDont.DoContainer instructions={doInstructions1}>
-    <DoAndDont.ImageExampleContainer>
-      <Image src={doImg1} alt={doImgAltText1} />
-    </DoAndDont.ImageExampleContainer>
-  </DoAndDont.DoContainer>
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={doInstructions1}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImg1} alt={doImgAltText1} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
 
-  <DoAndDont.DontContainer instructions={dontInstructions1}>
-    <DoAndDont.ImageExampleContainer>
-      <Image src={dontImg1} alt={dontImgAltText1} />
-    </DoAndDont.ImageExampleContainer>
-  </DoAndDont.DontContainer>
-</DoAndDont>
+    <DoAndDont.DontContainer instructions={dontInstructions1}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImg1} alt={dontImgAltText1} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
 
-<DoAndDont>
-  <DoAndDont.DoContainer instructions={doInstructions2}>
-    <DoAndDont.ImageExampleContainer>
-      <Image src={doImg2} alt={doImgAltText2} />
-    </DoAndDont.ImageExampleContainer>
-  </DoAndDont.DoContainer>
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={doInstructions2}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImg2} alt={doImgAltText2} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
 
-  <DoAndDont.DontContainer instructions={dontInstructions2}>
-    <DoAndDont.ImageExampleContainer>
-      <Image src={dontImg2} alt={dontImgAltText2} />
-    </DoAndDont.ImageExampleContainer>
-  </DoAndDont.DontContainer>
-</DoAndDont>
-
+    <DoAndDont.DontContainer instructions={dontInstructions2}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImg2} alt={dontImgAltText2} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
 </PageleteSection>

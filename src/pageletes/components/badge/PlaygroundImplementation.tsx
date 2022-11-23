@@ -25,7 +25,6 @@ export const PlaygroundImplementation = () => {
   //   "badge with 27 items"
   // );
 
-
   const react = useMemo(
     () =>
       `<Badge
@@ -54,7 +53,8 @@ export const PlaygroundImplementation = () => {
       options={
         <Playground.OptionsContainer>
           <Playground.OptionsSection title="Size">
-            <TextInput label="badge value"
+            <TextInput
+              label="badge value"
               onChange={(e) => setData(e.target.value as BadgeProps["data"])}
             ></TextInput>
           </Playground.OptionsSection>
