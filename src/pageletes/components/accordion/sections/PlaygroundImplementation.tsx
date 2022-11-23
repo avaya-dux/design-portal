@@ -6,7 +6,7 @@ import {
   Radio,
   RadioGroup,
 } from "@avaya/neo-react";
-import { useMemo, useState } from "react";
+import { SetStateAction, useMemo, useState } from "react";
 
 import { Playground } from "components";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
@@ -20,10 +20,13 @@ import "./PlaygroundImplementation.css";
 export const PlaygroundImplementation = () => {
   const [typeOption, setTypeOption] = useState<TypeOption>("single");
   const [open, setOpen] = useState<CheckboxProps["checked"]>(false);
+  const [stackedOpenIndexes, setStackedOpenIndexes] = useState<
+    [boolean, boolean, boolean]
+  >([false, false, false]);
   const [disabled, setDisabled] = useState(false);
-  const [htmlCodeExampleExpandedIndex, setHtmlCodeExampleExpandedIndex] =
-    useState(1);
+  const [htmlCodeExampleExpandedIndex] = useState(1); // TODO: with the "stacked" updated, this is out of date and needs fixin'
 
+  // TODO: with the "stacked" updated, this is out of date and needs fixin'
   const [react, html] = useMemo(() => {
     const reactCode =
       typeOption === "single"
@@ -178,6 +181,7 @@ export const PlaygroundImplementation = () => {
                 switch (value) {
                   case "open":
                     setOpen(!open);
+                    setStackedOpenIndexes([!open, !open, !open]);
                     break;
                   case "disabled":
                     setOpen(false);
@@ -186,11 +190,7 @@ export const PlaygroundImplementation = () => {
                 }
               }}
             >
-              <Checkbox
-                value="open"
-                checked={open}
-                disabled={disabled || typeOption === "stacked"}
-              >
+              <Checkbox value="open" checked={open} disabled={disabled}>
                 Open
               </Checkbox>
               <Checkbox value="disabled" checked={disabled}>
@@ -221,21 +221,45 @@ export const PlaygroundImplementation = () => {
           <Accordion
             header="Accordion 1"
             disabled={disabled}
-            onClick={() => setHtmlCodeExampleExpandedIndex(0)}
+            isOpen={stackedOpenIndexes[0]}
+            onClick={() =>
+              handleStackClick(
+                0,
+                stackedOpenIndexes,
+                setStackedOpenIndexes,
+                setOpen
+              )
+            }
           >
             Inner content of Accordion example
           </Accordion>
           <Accordion
             header="Accordion 2"
             disabled={disabled}
-            onClick={() => setHtmlCodeExampleExpandedIndex(1)}
+            isOpen={stackedOpenIndexes[1]}
+            onClick={() =>
+              handleStackClick(
+                1,
+                stackedOpenIndexes,
+                setStackedOpenIndexes,
+                setOpen
+              )
+            }
           >
             Inner content of Accordion example
           </Accordion>
           <Accordion
             header="Accordion 3"
             disabled={disabled}
-            onClick={() => setHtmlCodeExampleExpandedIndex(2)}
+            isOpen={stackedOpenIndexes[2]}
+            onClick={() =>
+              handleStackClick(
+                2,
+                stackedOpenIndexes,
+                setStackedOpenIndexes,
+                setOpen
+              )
+            }
           >
             Inner content of Accordion example
           </Accordion>
@@ -243,4 +267,23 @@ export const PlaygroundImplementation = () => {
       )}
     </Playground>
   );
+};
+
+const handleStackClick = (
+  index: number,
+  stack: [boolean, boolean, boolean],
+  setStack: React.Dispatch<SetStateAction<[boolean, boolean, boolean]>>,
+  setOpen: React.Dispatch<SetStateAction<boolean | "mixed" | undefined>>
+) => {
+  const newStack: [boolean, boolean, boolean] = [...stack];
+  newStack[index] = !newStack[index];
+  setStack(newStack);
+
+  if (newStack.every((item) => item === true)) {
+    setOpen(true);
+  } else if (newStack.every((item) => item === false)) {
+    setOpen(false);
+  } else {
+    setOpen("mixed");
+  }
 };
