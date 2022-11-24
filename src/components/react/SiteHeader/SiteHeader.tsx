@@ -1,15 +1,11 @@
-import type { AstroInstance } from "astro";
 import { TopNav } from "@avaya/neo-react";
 import { useCallback } from "react";
+import type { PageAstroInstance } from "../utils";
 
 import { TopNavSearch } from "./helpers";
 
 import "./SiteHeaderStyleOverrides.css";
 
-export interface PageAstroInstance extends AstroInstance {
-  title: string;
-  keywords: string;
-}
 
 /**
  * IMPORTANT: DPv3 is SSRd, and this component requires browser APIs.
@@ -28,6 +24,7 @@ export const SiteHeader = ({
   pathname: string;
   pages: PageAstroInstance[];
 }) => {
+
   const isActiveLink = useCallback(
     (link: string) => pathname.startsWith(link),
     [pathname]

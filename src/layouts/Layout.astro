@@ -7,9 +7,13 @@ const { title } = Astro.props as Props;
 
 import { NeoThemeProvider } from "@avaya/neo-react";
 
-import { SiteHeader, SiteFooter, PageAstroInstance } from "components";
+import { SiteHeader, SiteFooter, LeftNavigation } from "components";
+
+import type { PageAstroInstance } from "components/react/utils";
 
 import "@avaya/neo-react/avaya-neo-react.css";
+
+const { url } = Astro.request
 
 const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
   .filter((page) => page.title)
@@ -34,9 +38,13 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
     <NeoThemeProvider initialMode="dynamic">
       <SiteHeader pathname={Astro.url.pathname} pages={pages} client:load />
 
-      <main id="main-content">
-        <slot />
-      </main>
+      <div class="main__wrapper">
+        <LeftNavigation url={url} pages={pages} client:load />
+
+        <main id="main-content">
+          <slot />
+        </main>
+      </div>
 
       <SiteFooter />
     </NeoThemeProvider>
@@ -103,6 +111,10 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
             100vh - var(--header-height) - (var(--footer-height) * 3) - 1px
           );
         }
+      }
+
+      .main__wrapper {
+        display: flex;
       }
     </style>
   </body>

@@ -1,0 +1,14 @@
+.left-navigation {
+  min-width: 15rem;
+  border-right: 1px solid var(--navbar-border-bottom-color);
+  padding-top: 1.5rem;
+}
+
+[dir="rtl"] .left-navigation {
+  border-right: none;
+  border-left: 1px solid var(--navbar-border-bottom-color)
+}
+
+.left-navigation .neo-leftnav--wrapper .neo-leftnav .neo-leftnav__nav .neo-leftnav__main a {
+  padding: 16px 32px 16px 40px
+}
