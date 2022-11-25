@@ -20,6 +20,20 @@
     border: none;
   }
   .left-navigation {
-    display: none;
+    position: absolute;
+    transform: translate3d(-15rem, 0, 0);
+    padding-top: 0;
+    top: 0;
+    bottom: 0;
+    background-color: var(--leftnav-background-color);
+    z-index: 9999;
+  }
+  .left-navigation.left-navigation--active {
+    transition: transform 0.35s;
+    transform: translate3d(0rem, 0, 0);
+  }
+  .left-navigation.left-navigation--hidden {
+    transition: transform 0.35s;
+    transform: translate3d(-15rem, 0, 0);
   }
 }

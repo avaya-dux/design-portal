@@ -40,7 +40,7 @@ export const LeftNavigation = ({
   }
 
   return (
-    <div className="left-navigation">
+    <div className="left-navigation" id="left-navigation">
       <LeftNav
         aria-label="Collapsible Navigation Menu"
         onNavigate={navigateToPage}
