@@ -8,28 +8,43 @@ import "./LeftNavigationStyleOverrides.css";
 
 Links should change depending on what page we are on
 
+Stop component from flickering on every load
+
 */
 
 export const LeftNavigation = ({
-  url,
+  components,
   pages,
 }: {
-  url: string;
+  components: boolean;
   pages: PageAstroInstance[];
 }) => {
-  console.log(url);
 
   const [filteredPages, setFilteredPages] = useState<PageAstroInstance[]>([]);
 
   useEffect(() => {
-    if (url.includes("components")) {
-      setFilteredPages(pages.filter(page => page.url?.includes("components")))
+
+    if (components) {
+      setFilteredPages(
+        pages.filter((page) => page.url?.includes("components"))
+      );
     }
-  }, [pages]);
+  }, [components,pages]);
+
+  function navigateToPage(_: string, url: string) {
+    const ephemeralLink = document.createElement("a");
+    ephemeralLink.href = url;
+
+    document.body.appendChild(ephemeralLink);
+    ephemeralLink.click();
+  }
 
   return (
     <div className="left-navigation">
-      <LeftNav aria-label="Collapsible Navigation Menu">
+      <LeftNav
+        aria-label="Collapsible Navigation Menu"
+        onNavigate={navigateToPage}
+      >
         {filteredPages.map((page, index) => {
           return (
             <LeftNav.TopLinkItem

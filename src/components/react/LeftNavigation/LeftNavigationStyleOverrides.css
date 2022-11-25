@@ -12,3 +12,14 @@
 .left-navigation .neo-leftnav--wrapper .neo-leftnav .neo-leftnav__nav .neo-leftnav__main a {
   padding: 16px 32px 16px 40px
 }
+
+@media (max-width: 799px) {
+  nav.neo-navbar {
+    overflow: visible;
+    margin-bottom: 3rem;
+    border: none;
+  }
+  .left-navigation {
+    display: none;
+  }
+}

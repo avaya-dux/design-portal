@@ -1,9 +1,10 @@
 ---
 export interface Props {
   title: string;
+  id: string
 }
 
-const { title } = Astro.props as Props;
+const { title, id } = Astro.props as Props;
 
 import { NeoThemeProvider } from "@avaya/neo-react";
 
@@ -14,6 +15,8 @@ import type { PageAstroInstance } from "components/react/utils";
 import "@avaya/neo-react/avaya-neo-react.css";
 
 const { url } = Astro.request
+
+const componentPage = url.includes("components");
 
 const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
   .filter((page) => page.title)
@@ -34,12 +37,12 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
     <title>{title}</title>
   </head>
 
-  <body>
+  <body id={id}>
     <NeoThemeProvider initialMode="dynamic">
       <SiteHeader pathname={Astro.url.pathname} pages={pages} client:load />
 
       <div class="main__wrapper">
-        <LeftNavigation url={url} pages={pages} client:load />
+        <LeftNavigation components={componentPage} pages={pages} client:load />
 
         <main id="main-content">
           <slot />
@@ -119,3 +122,8 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
     </style>
   </body>
 </html>
+
+<script>
+
+console.log("I am layout being rendered")
+</script>

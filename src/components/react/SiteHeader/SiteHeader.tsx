@@ -6,7 +6,6 @@ import { TopNavSearch } from "./helpers";
 
 import "./SiteHeaderStyleOverrides.css";
 
-
 /**
  * IMPORTANT: DPv3 is SSRd, and this component requires browser APIs.
  * Thus, in Astro, this component _must_ be rendered client-side via:
@@ -24,7 +23,6 @@ export const SiteHeader = ({
   pathname: string;
   pages: PageAstroInstance[];
 }) => {
-
   const isActiveLink = useCallback(
     (link: string) => pathname.startsWith(link),
     [pathname]
@@ -39,6 +37,7 @@ export const SiteHeader = ({
           Skip To Main Content
         </TopNav.SkipNav>
       }
+      menuToggleBtn={<TopNav.IconButton aria-label="Toggle Menu" className="topnav-menu-toggle" icon="menu" />}
     >
       <TopNav.LinkButton
         href="/whats-new"
