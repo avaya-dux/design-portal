@@ -3,6 +3,10 @@ import { Image } from "@avaya/neo-react";
 import {
   Description,
   ColumnLayout,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableRow,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -26,18 +30,25 @@ const anatomyImgAltText =
     <Image src={AnatomyImage} alt={anatomyImgAltText} />
   </ColumnLayout>
 
-  <br />
+  <InfoTable>
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>1. Container:</InfoTableCell>
+        <InfoTableCell>
+          The container is left-justified (expands to the right) to hold all the
+          digits in the number count.
+        </InfoTableCell>
+      </InfoTableRow>
 
-  <ul>
-    <li>
-      <strong>1. Container:</strong> The container is left-justified (expands to
-      the right) to hold all the digits in the number count.
-    </li>
-    <li>
-      <strong>2. Number count:</strong> There is no limit to size of this value.
-      The text is center-justified within the container.
-    </li>
-  </ul>
+      <InfoTableRow>
+        <InfoTableCell>2. Number count:</InfoTableCell>
+        <InfoTableCell>
+          There is no limit to size of this value. The text is center-justified
+          within the container.
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
 </PageleteSection>
 
 <style>
