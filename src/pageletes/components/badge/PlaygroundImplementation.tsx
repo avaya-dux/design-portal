@@ -5,8 +5,7 @@ import { useMemo, useState } from "react";
 import { Playground } from "components";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
-const sandbox =
-  "https://codesandbox.io/s/neo-react-badge-forked-zjf97s?file=/src/App.js";
+const sandbox = "https://codesandbox.io/s/neo-react-badge-forked-zjf97s";
 const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-badge";
 
