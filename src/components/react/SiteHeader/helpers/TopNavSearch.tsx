@@ -1,5 +1,5 @@
 import { Button, TextInput } from "@avaya/neo-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import { useOsName } from "components/react/utils";
 
@@ -28,6 +28,15 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
       k: false,
     });
   const os = useOsName();
+  const searchButtonContent = useMemo(() => {
+    if (os === "macos") {
+      return "⌘ K";
+    } else if (os === "windows") {
+      return "Ctrl K";
+    }
+
+    return "K";
+  }, [os]);
 
   const searchModalRef = useRef<HTMLDivElement>(null);
 
@@ -97,9 +106,7 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
         onClick={() => setIsOpen(true)}
         className="search__button search-icon"
       >
-        <span className="search__button--content">
-          {os === "macos" ? "⌘ K" : "Ctrl K"}
-        </span>
+        <span className="search__button--content">{searchButtonContent}</span>
       </Button>
 
       <TopNavSearchPanel
