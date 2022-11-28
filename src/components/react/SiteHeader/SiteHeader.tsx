@@ -1,6 +1,7 @@
 import { TopNav } from "@avaya/neo-react";
-import { useCallback, MouseEvent } from "react";
-import type { PageAstroInstance } from "../utils";
+import { MouseEvent, useCallback } from "react";
+
+import type { PageAstroInstance } from "../../../helpers/types";
 
 import { TopNavSearch } from "./helpers";
 
