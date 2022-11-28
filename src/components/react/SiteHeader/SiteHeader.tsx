@@ -1,5 +1,5 @@
 import { TopNav } from "@avaya/neo-react";
-import { MouseEventHandler, useCallback } from "react";
+import { useCallback, MouseEvent } from "react";
 import type { PageAstroInstance } from "../utils";
 
 import { TopNavSearch } from "./helpers";
@@ -29,15 +29,11 @@ export const SiteHeader = ({
   );
 
   function toggleLeftNavigation(event: MouseEvent) {
-
-    console.log("Button clicked")
-
-    console.log(event.target)
-
-    const toggleLeftNavEvent = new CustomEvent('toggleLeftNavigation', { bubbles: true });
+    const toggleLeftNavEvent = new CustomEvent("toggleLeftNavigation", {
+      bubbles: true,
+    });
 
     event.target?.dispatchEvent(toggleLeftNavEvent);
-
   }
 
   return (
@@ -49,7 +45,14 @@ export const SiteHeader = ({
           Skip To Main Content
         </TopNav.SkipNav>
       }
-      menuToggleBtn={<TopNav.IconButton aria-label="Toggle Menu" className="topnav-menu-toggle" icon="menu" onClick={(e) => toggleLeftNavigation(e)} />}
+      menuToggleBtn={
+        <TopNav.IconButton
+          aria-label="Toggle Menu"
+          className="topnav-menu-toggle"
+          icon="menu"
+          onClick={(e) => toggleLeftNavigation(e)}
+        />
+      }
     >
       <TopNav.LinkButton
         href="/whats-new"

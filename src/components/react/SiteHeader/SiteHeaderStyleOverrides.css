@@ -25,14 +25,12 @@ nav.neo-navbar a.neo-nav-link-btn {
 nav.neo-navbar .neo-nav--left .neo-badge__navbutton {
   display: none;
   margin-top: 0px;
-
 }
 
 nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle {
   /* No equivalent to Avaya red in Neo design system */
-  background-color: #DA291C;
+  background-color: #da291c;
   border-radius: 0;
-
 }
 
 @media (max-width: 799px) {

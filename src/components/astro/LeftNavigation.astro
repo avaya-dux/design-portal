@@ -21,11 +21,16 @@ if (componentPage) {
 <div class="left-navigation" id="left-navigation">
   <div class="neo-leftnav--wrapper">
     <nav class="neo-leftnav">
-      <ul class="neo-leftnav__nav" role="menu">
+      <ul class="neo-leftnav__nav">
         {
           filteredPages.map((page) => (
-            <li class={clsx("neo-leftnav__main", page.url && pathname === page.url && "neo-leftnav__main--active")}>
-              <a aria-label={page.title} tabindex="0" href={page.url}>
+            <li
+              class={clsx(
+                "neo-leftnav__main",
+                page.url && pathname === page.url && "neo-leftnav__main--active"
+              )}
+            >
+              <a aria-label={page.title} href={page.url}>
                 {page.title}
               </a>
             </li>
