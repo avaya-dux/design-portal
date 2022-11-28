@@ -13,10 +13,6 @@ import type { PageAstroInstance } from "components/react/utils";
 
 import "@avaya/neo-react/avaya-neo-react.css";
 
-const { url } = Astro.request;
-
-const componentPage = url.includes("components");
-
 const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
   .filter((page) => page.title)
   .map((page) => ({
@@ -41,7 +37,7 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
       <SiteHeader pathname={Astro.url.pathname} pages={pages} client:load />
 
       <div class="main__wrapper">
-        <LeftNavigation components={componentPage} pages={pages} client:load />
+        <LeftNavigation pages={pages} />
 
         <main id="main-content">
           <slot />
@@ -129,9 +125,7 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
 </html>
 
 <script>
-  function toggleLeftNavigation(event: Event) {
-    console.log(event, "Left Nav toggled");
-
+  function toggleLeftNavigation() {
     const leftNavigationElement = document.getElementById("left-navigation");
 
     if (leftNavigationElement?.classList.contains("left-navigation--active")) {
@@ -143,15 +137,11 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
       leftNavigationElement.classList.add("left-navigation--active");
       leftNavigationElement.classList.remove("left-navigation--hidden");
     } else {
-      leftNavigationElement?.classList.add("left-navigation--active")
+      leftNavigationElement?.classList.add("left-navigation--active");
     }
   }
 
   const elem = document.getElementById("main-content-wrapper");
 
-  console.log(elem);
-
-  elem?.addEventListener("toggleLeftNavigation", (e) =>
-    toggleLeftNavigation(e)
-  );
+  elem?.addEventListener("toggleLeftNavigation", () => toggleLeftNavigation());
 </script>
