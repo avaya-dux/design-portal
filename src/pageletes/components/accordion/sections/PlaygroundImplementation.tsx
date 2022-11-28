@@ -1,28 +1,29 @@
 import {
   Accordion,
-  AccordionGroup,
   Checkbox,
   CheckboxGroup,
+  CheckboxProps,
   Radio,
   RadioGroup,
 } from "@avaya/neo-react";
-import { useMemo, useState } from "react";
+import { SetStateAction, useMemo, useState } from "react";
 
 import { Playground } from "components";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
 import { sandbox, storybook } from "../static";
 
-type TypeOption = "single" | "group";
+type TypeOption = "single" | "stacked";
 
 import "./PlaygroundImplementation.css";
 
 export const PlaygroundImplementation = () => {
   const [typeOption, setTypeOption] = useState<TypeOption>("single");
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState<CheckboxProps["checked"]>(false);
+  const [stackedOpenIndexes, setStackedOpenIndexes] = useState<
+    [boolean, boolean, boolean]
+  >([false, false, false]);
   const [disabled, setDisabled] = useState(false);
-  const [htmlCodeExampleExpandedIndex, setHtmlCodeExampleExpandedIndex] =
-    useState(1);
 
   const [react, html] = useMemo(() => {
     const reactCode =
@@ -37,11 +38,7 @@ export const PlaygroundImplementation = () => {
   Inner content of Accordion example
 </Accordion>`)
         : prettyPrintReact(`
-<AccordionGroup
-  allowOnlyOne
-  defaultOpenAccordingIndex={1}
-  header="Accordion Group Example"
->
+<div>
   <Accordion header="Accordion 1" disabled={${disabled}}>
     Inner content of Accordion example
   </Accordion>
@@ -51,7 +48,7 @@ export const PlaygroundImplementation = () => {
   <Accordion header="Accordion 3" disabled={${disabled}}>
     Inner content of Accordion example
   </Accordion>
-</AccordionGroup>
+</div>
       `);
 
     const htmlCode =
@@ -96,11 +93,7 @@ export const PlaygroundImplementation = () => {
   <div class="neo-accordion">
     <div class="neo-accordion__item">
       <div class="neo-accordion__header" role="heading" aria-label="Accordion Heading" aria-level="2">
-        <button class="neo-accordion__header-text" aria-expanded="${
-          htmlCodeExampleExpandedIndex === 0
-        }" aria-controls="accordion-control-accordion-one" id="accordion-one" aria-disabled="${
-            htmlCodeExampleExpandedIndex === 0
-          }">
+        <button class="neo-accordion__header-text" aria-expanded="${stackedOpenIndexes[0]}" aria-controls="accordion-control-accordion-one" id="accordion-one" aria-disabled="${stackedOpenIndexes[0]}">
           Accordion 1
         </button>
       </div>
@@ -110,11 +103,7 @@ export const PlaygroundImplementation = () => {
   <div class="neo-accordion">
     <div class="neo-accordion__item neo-accordion__item--active">
       <div class="neo-accordion__header" role="heading" aria-label="Accordion Heading" aria-level="2">
-        <button class="neo-accordion__header-text" aria-expanded="${
-          htmlCodeExampleExpandedIndex === 1
-        }" aria-controls="accordion-control-accordion-two" id="accordion-two" aria-disabled="${
-            htmlCodeExampleExpandedIndex === 1
-          }">
+        <button class="neo-accordion__header-text" aria-expanded="${stackedOpenIndexes[1]}" aria-controls="accordion-control-accordion-two" id="accordion-two" aria-disabled="${stackedOpenIndexes[1]}">
           Accordion 2
         </button>
       </div>
@@ -130,11 +119,7 @@ export const PlaygroundImplementation = () => {
   <div class="neo-accordion">
     <div class="neo-accordion__item">
       <div class="neo-accordion__header" role="heading" aria-label="Accordion Heading" aria-level="2">
-        <button class="neo-accordion__header-text" aria-expanded="${
-          htmlCodeExampleExpandedIndex === 2
-        }" aria-controls="accordion-control-accordion-three" id="accordion-three" aria-disabled="${
-            htmlCodeExampleExpandedIndex === 2
-          }">
+        <button class="neo-accordion__header-text" aria-expanded="${stackedOpenIndexes[2]}" aria-controls="accordion-control-accordion-three" id="accordion-three" aria-disabled="${stackedOpenIndexes[2]}">
           Accordion 3
         </button>
       </div>
@@ -144,22 +129,29 @@ export const PlaygroundImplementation = () => {
         `);
 
     return [reactCode, htmlCode];
-  }, [typeOption, open, disabled, htmlCodeExampleExpandedIndex]);
+  }, [typeOption, open, disabled, stackedOpenIndexes]);
 
   return (
     <Playground
       options={
         <Playground.OptionsContainer>
-          <Playground.OptionsSection title="Types">
+          <Playground.OptionsSection title="Type">
             <RadioGroup
               groupName="type-options"
               selected={typeOption}
               onChange={(e) => {
                 setTypeOption(e.target.value as TypeOption);
+
+                if (e.target.value === "single" && open !== false) {
+                  setOpen(true);
+                } else if (e.target.value === "stacked") {
+                  setOpen(false);
+                  setStackedOpenIndexes([false, false, false]);
+                }
               }}
             >
               <Radio value="single">Single</Radio>
-              <Radio value="group">Group</Radio>
+              <Radio value="stacked">Stacked</Radio>
             </RadioGroup>
           </Playground.OptionsSection>
 
@@ -172,18 +164,17 @@ export const PlaygroundImplementation = () => {
                 switch (value) {
                   case "open":
                     setOpen(!open);
+                    setStackedOpenIndexes([!open, !open, !open]);
                     break;
                   case "disabled":
+                    setOpen(false);
+                    setStackedOpenIndexes([false, false, false]);
                     setDisabled(!disabled);
                     break;
                 }
               }}
             >
-              <Checkbox
-                value="open"
-                checked={open}
-                disabled={typeOption === "group"}
-              >
+              <Checkbox value="open" checked={open} disabled={disabled}>
                 Open
               </Checkbox>
               <Checkbox value="disabled" checked={disabled}>
@@ -204,40 +195,79 @@ export const PlaygroundImplementation = () => {
         <Accordion
           header="Single Accordion Example"
           disabled={disabled}
-          isOpen={open}
+          isOpen={open === true}
           onClick={() => setOpen(!open)}
         >
           Inner content of Accordion example
         </Accordion>
       ) : (
-        <AccordionGroup
-          allowOnlyOne
-          defaultOpenAccordingIndex={htmlCodeExampleExpandedIndex}
-          header="Accordion Group Example"
-        >
+        <div className="dpv3-accordion-stack">
           <Accordion
             header="Accordion 1"
             disabled={disabled}
-            onClick={() => setHtmlCodeExampleExpandedIndex(0)}
+            isOpen={stackedOpenIndexes[0]}
+            onClick={() =>
+              handleStackClick(
+                0,
+                stackedOpenIndexes,
+                setStackedOpenIndexes,
+                setOpen
+              )
+            }
           >
             Inner content of Accordion example
           </Accordion>
           <Accordion
             header="Accordion 2"
             disabled={disabled}
-            onClick={() => setHtmlCodeExampleExpandedIndex(1)}
+            isOpen={stackedOpenIndexes[1]}
+            onClick={() =>
+              handleStackClick(
+                1,
+                stackedOpenIndexes,
+                setStackedOpenIndexes,
+                setOpen
+              )
+            }
           >
             Inner content of Accordion example
           </Accordion>
           <Accordion
             header="Accordion 3"
             disabled={disabled}
-            onClick={() => setHtmlCodeExampleExpandedIndex(2)}
+            isOpen={stackedOpenIndexes[2]}
+            onClick={() =>
+              handleStackClick(
+                2,
+                stackedOpenIndexes,
+                setStackedOpenIndexes,
+                setOpen
+              )
+            }
           >
             Inner content of Accordion example
           </Accordion>
-        </AccordionGroup>
+        </div>
       )}
     </Playground>
   );
+};
+
+const handleStackClick = (
+  index: number,
+  stack: [boolean, boolean, boolean],
+  setStack: React.Dispatch<SetStateAction<[boolean, boolean, boolean]>>,
+  setOpen: React.Dispatch<SetStateAction<boolean | "mixed" | undefined>>
+) => {
+  const newStack: [boolean, boolean, boolean] = [...stack];
+  newStack[index] = !newStack[index];
+  setStack(newStack);
+
+  if (newStack.every((item) => item === true)) {
+    setOpen(true);
+  } else if (newStack.every((item) => item === false)) {
+    setOpen(false);
+  } else {
+    setOpen("mixed");
+  }
 };
