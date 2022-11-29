@@ -1,5 +1,5 @@
 import { Button, TextInput } from "@avaya/neo-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import { TopNavSearchPanel } from "./TopNavSearchPanel";
 
@@ -103,6 +103,7 @@ export const TopNavSearch = ({
         <span className="search__button--content">
           {userAgent === "macos" ? "⌘ K" : "Ctrl K"}
         </span>
+
       </Button>
 
       <TopNavSearchPanel
