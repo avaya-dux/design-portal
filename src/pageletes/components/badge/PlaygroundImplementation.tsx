@@ -1,4 +1,4 @@
-import { Badge, BadgeProps, Radio, RadioGroup } from "@avaya/neo-react";
+import { Badge, Radio, RadioGroup } from "@avaya/neo-react";
 
 import { useMemo, useState } from "react";
 
