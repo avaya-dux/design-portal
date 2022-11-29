@@ -3,13 +3,19 @@ export interface Props {
   title: string;
 }
 
-const { title } = Astro.props as Props;
-
 import { NeoThemeProvider } from "@avaya/neo-react";
 
 import { SiteHeader, SiteFooter, PageAstroInstance } from "components";
 
 import "@avaya/neo-react/avaya-neo-react.css";
+
+const userAgentString = Astro.request.headers.get("user-agent");
+
+const userAgent = userAgentString?.toLowerCase().includes("mac")
+  ? "macos"
+  : "windows";
+
+const { title } = Astro.props as Props;
 
 const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
   .filter((page) => page.title)
@@ -32,7 +38,12 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
 
   <body>
     <NeoThemeProvider initialMode="dynamic">
-      <SiteHeader pathname={Astro.url.pathname} pages={pages} client:load />
+      <SiteHeader
+        pathname={Astro.url.pathname}
+        pages={pages}
+        userAgent={userAgent}
+        client:load
+      />
 
       <main id="main-content">
         <slot />
