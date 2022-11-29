@@ -8,9 +8,9 @@ export interface Props {
 
 const { pages } = Astro.props as Props;
 
-const { pathname } = Astro.url;
+const { pathname: pageURL } = Astro.url;
 
-const isComponentPage = pathname.includes("components");
+const isComponentPage = pageURL.includes("components");
 let componentPages: PageAstroInstance[] = [];
 
 if (isComponentPage) {
@@ -59,7 +59,7 @@ if (isComponentPage) {
             <li
               class={clsx(
                 "neo-leftnav__main",
-                page.url && pathname === page.url && "neo-leftnav__main--active"
+                page.url && pageURL === page.url && "neo-leftnav__main--active"
               )}
             >
               <a href={page.url}>{page.title}</a>
