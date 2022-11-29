@@ -1,7 +1,7 @@
 import { TopNav } from "@avaya/neo-react";
-import { MouseEvent, useCallback } from "react";
+import { useCallback } from "react";
 
-import type { PageAstroInstance } from "../../../helpers/types";
+import type { PageAstroInstance } from "helpers/types";
 
 import { TopNavSearch } from "./helpers";
 
@@ -29,14 +29,6 @@ export const SiteHeader = ({
     [pathname]
   );
 
-  function toggleLeftNavigation(event: MouseEvent) {
-    const toggleLeftNavEvent = new CustomEvent("toggleLeftNavigation", {
-      bubbles: true,
-    });
-
-    event.target?.dispatchEvent(toggleLeftNavEvent);
-  }
-
   return (
     <TopNav
       logo={<Logo />}
@@ -51,7 +43,13 @@ export const SiteHeader = ({
           aria-label="Toggle Menu"
           className="topnav-menu-toggle"
           icon="menu"
-          onClick={(e) => toggleLeftNavigation(e)}
+          onClick={(e) => {
+            const toggleLeftNavEvent = new CustomEvent("toggleLeftNavigation", {
+              bubbles: true,
+            });
+
+            e.target?.dispatchEvent(toggleLeftNavEvent);
+          }}
         />
       }
     >

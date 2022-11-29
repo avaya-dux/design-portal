@@ -32,7 +32,7 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
     <title>{title}</title>
   </head>
 
-  <body id="main-content-wrapper">
+  <body id="body-content-wrapper">
     <NeoThemeProvider initialMode="dynamic">
       <SiteHeader pathname={Astro.url.pathname} pages={pages} client:load />
 
@@ -116,7 +116,7 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
 </html>
 
 <script>
-  function toggleLeftNavigation() {
+  const toggleLeftNavigation = () => {
     const leftNavigationElement = document.getElementById("left-navigation");
 
     if (leftNavigationElement?.classList.contains("left-navigation--active")) {
@@ -130,9 +130,9 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
     } else {
       leftNavigationElement?.classList.add("left-navigation--active");
     }
-  }
+  };
 
-  const elem = document.getElementById("main-content-wrapper");
+  const elem = document.getElementById("body-content-wrapper");
 
-  elem?.addEventListener("toggleLeftNavigation", () => toggleLeftNavigation());
+  elem?.addEventListener("toggleLeftNavigation", toggleLeftNavigation);
 </script>
