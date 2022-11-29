@@ -26,7 +26,7 @@ const { id, title, sections } = Astro.props as Props;
   {
     sections.map((section) => (
       <>
-        <h3 class="neo-bold">{section.title}</h3>
+        <h3 class="neo-semibold neo-body-large">{section.title}</h3>
 
         <ul class="dash-list">
           {section.links.map((link) => (
