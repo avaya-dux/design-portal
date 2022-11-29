@@ -13,7 +13,7 @@ const fullSectionURL = `${url}#${id}`;
 
 <div class="section-header__wrapper">
   <h3 class="neo-bold" id={id}><slot /></h3>
-  <a href={`#${id}`} class="section-header__link">
+  <a href={`#${id}`} class="section-header__link" tabindex="-1">
     <SectionLink url={fullSectionURL} client:load />
   </a>
 </div>
