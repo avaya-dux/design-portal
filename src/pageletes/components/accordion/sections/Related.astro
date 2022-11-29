@@ -1,27 +1,30 @@
 ---
-import { PageleteSection, SectionHeader } from "components/astro";
+import { PageleteSection, RelatedContent } from "components/astro";
+import type { SectionWithLinks } from "components/astro/RelatedContent.astro";
 
 import { topics } from "../static";
+
+const sections: SectionWithLinks[] = [
+  {
+    title: "Components",
+    links: [
+      {
+        title: "Widget",
+        href: "/components/widget",
+      },
+      {
+        title: "Tree View",
+        href: "/components/tree-view",
+      },
+    ],
+  },
+];
 ---
 
 <PageleteSection>
-  <SectionHeader id={topics.related.id}>{topics.related.title}</SectionHeader>
-
-  <div>Components</div>
-
-  <ul>
-    <!-- TODO: add links once those pages are completed -->
-    <li>Widget</li>
-    <li>Tree View</li>
-  </ul>
+  <RelatedContent
+    id={topics.related.id}
+    title={topics.related.title}
+    sections={sections}
+  />
 </PageleteSection>
-
-<style>
-  div {
-    font-weight: bold;
-  }
-
-  ul {
-    list-style-type: "- ";
-  }
-</style>

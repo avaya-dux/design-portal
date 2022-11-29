@@ -10,12 +10,6 @@ const { topics } = Astro.props as Props;
 const links: Topic[] = topicsSortedByOrder(topics) || [];
 ---
 
-<ul>
+<ul class="dash-list">
   {links.map((link) => <TopicLink topicId={link.id}>{link.title}</TopicLink>)}
 </ul>
-
-<style>
-  ul {
-    list-style-type: "- ";
-  }
-</style>

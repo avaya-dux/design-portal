@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export const useOsName = () => {
-  const [os, setOs] = useState<string>("");
+  const [os, setOs] = useState<"macos" | "windows" | "">("");
 
   const macPlatforms = /(macintosh|macintel|macppc|mac68k|macos)/i;
 
