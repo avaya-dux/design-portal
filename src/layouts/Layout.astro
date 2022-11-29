@@ -7,7 +7,9 @@ const { title } = Astro.props as Props;
 
 import { NeoThemeProvider } from "@avaya/neo-react";
 
-import { SiteHeader, SiteFooter, PageAstroInstance } from "components";
+import { SiteHeader, SiteFooter, LeftNavigation } from "components";
+
+import type { PageAstroInstance } from "helpers/types";
 
 import "@avaya/neo-react/avaya-neo-react.css";
 
@@ -30,13 +32,17 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
     <title>{title}</title>
   </head>
 
-  <body>
+  <body id="body-content-wrapper">
     <NeoThemeProvider initialMode="dynamic">
       <SiteHeader pathname={Astro.url.pathname} pages={pages} client:load />
 
-      <main id="main-content">
-        <slot />
-      </main>
+      <div class="main__wrapper">
+        <LeftNavigation pages={pages} />
+
+        <main id="main-content">
+          <slot />
+        </main>
+      </div>
 
       <SiteFooter />
     </NeoThemeProvider>
@@ -93,13 +99,58 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
         margin: auto;
       }
 
+      .main__wrapper {
+        display: flex;
+      }
+
       @media screen and (max-width: 799px) {
         body main {
           --body-main-height: calc(
             100vh - var(--header-height) - (var(--footer-height) * 3) - 1px
           );
         }
+
+        .main__wrapper {
+          display: block;
+          position: relative;
+          overflow-x: hidden;
+        }
       }
     </style>
   </body>
 </html>
+
+<script>
+  const leftNavigationElement = document.getElementById("left-navigation");
+
+  const elem = document.getElementById("body-content-wrapper");
+
+  const leftNavScrim = document.getElementById("left-navigation-scrim");
+
+  const closeOnClickAway = (event: MouseEvent) => {
+    if (
+      leftNavigationElement?.classList.contains("left-navigation--active") &&
+      event.target != leftNavigationElement
+    ) {
+      leftNavigationElement.classList.remove("left-navigation--active");
+      leftNavigationElement.classList.add("left-navigation--hidden");
+    }
+  };
+
+  const toggleLeftNavigation = () => {
+    if (leftNavigationElement?.classList.contains("left-navigation--active")) {
+      leftNavigationElement.classList.remove("left-navigation--active");
+      leftNavigationElement.classList.add("left-navigation--hidden");
+    } else if (
+      leftNavigationElement?.classList.contains("left-navigation--hidden")
+    ) {
+      leftNavigationElement.classList.add("left-navigation--active");
+      leftNavigationElement.classList.remove("left-navigation--hidden");
+    } else {
+      leftNavigationElement?.classList.add("left-navigation--active");
+    }
+  };
+
+  leftNavScrim?.addEventListener("click", closeOnClickAway);
+  elem?.addEventListener("toggleLeftNavigation", toggleLeftNavigation);
+</script>
