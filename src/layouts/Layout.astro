@@ -49,8 +49,6 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
 
       <div class="main__wrapper">
         <LeftNavigation pages={pages} />
-        <p>{userAgentString}</p>
-        <p>{userAgent}</p>
 
         <main id="main-content">
           <slot />
