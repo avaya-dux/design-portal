@@ -12,11 +12,10 @@ const storybook =
 type BadgeTypeOption = "icon" | "text";
 
 export const PlaygroundImplementation = () => {
-
   const [badgeType, setBadgeType] = useState<BadgeTypeOption>("icon");
 
   const badgeContent = useMemo(() => {
-    if (badgeType == "icon") return <span className="neo-icon-customer" />
+    if (badgeType == "icon") return <span className="neo-icon-customer" />;
     else return `Badge with Text`;
   }, [badgeType]);
 
