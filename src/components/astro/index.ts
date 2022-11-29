@@ -10,6 +10,9 @@ export { PageleteSection };
 import PageTitle from "./PageTitle.astro";
 export { PageTitle };
 
+import RelatedContent from "./RelatedContent.astro";
+export { RelatedContent };
+
 import SectionHeader from "./SectionHeader.astro";
 export { SectionHeader };
 
@@ -21,6 +24,9 @@ export { StackedLayout };
 
 import SubHeader from "./SubHeader.astro";
 export { SubHeader };
+
+import LeftNavigation from "./LeftNavigation.astro";
+export { LeftNavigation };
 
 export * from "./InfoTable";
 export * from "./Topics";
