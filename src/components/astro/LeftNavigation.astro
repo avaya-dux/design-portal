@@ -10,20 +10,52 @@ const { pages } = Astro.props as Props;
 
 const { pathname } = Astro.url;
 
-const componentPage = pathname.includes("components");
-let filteredPages: PageAstroInstance[] = [];
+const isComponentPage = pathname.includes("components");
+let componentPages: PageAstroInstance[] = [];
 
-if (componentPage) {
-  filteredPages = pages.filter((page) => page.url?.includes("components"));
+if (isComponentPage) {
+  componentPages = pages.filter((page) => page.url?.includes("components"));
 }
 ---
 
 <div class="left-navigation" id="left-navigation">
   <div class="neo-leftnav--wrapper">
+    <div class="neo-nav--left">
+      <div class="neo-badge__navbutton">
+        <button
+          class="neo-badge__navbutton--content neo-btn neo-icon-close"
+          id="left-navigation-close"></button>
+      </div>
+      <a href="/" aria-label="Homepage">
+        <picture>
+          <source
+            media="(max-width: 799px) and (prefers-color-scheme: dark)"
+            srcset="/imgs/logo-mobile-dark.svg"
+          />
+          <source
+            media="(max-width: 799px)"
+            srcset="/imgs/logo-mobile-light.svg"
+          />
+          <source
+            media="(max-width: 1279px) and (prefers-color-scheme: dark)"
+            srcset="/imgs/logo-condensed-dark.svg"
+          />
+          <source
+            media="(max-width: 1279px)"
+            srcset="/imgs/logo-condensed-light.svg"
+          />
+          <source
+            media="(min-width: 1280px) and (prefers-color-scheme: dark)"
+            srcset="/imgs/logo-full-dark.svg"
+          />
+          <img src="/imgs/logo-full-light.svg" alt="Avaya Logo" />
+        </picture>
+      </a>
+    </div>
     <nav class="neo-leftnav" aria-label="Left Navigation">
       <ul class="neo-leftnav__nav">
         {
-          filteredPages.map((page) => (
+          componentPages.map((page) => (
             <li
               class={clsx(
                 "neo-leftnav__main",
@@ -38,7 +70,7 @@ if (componentPage) {
     </nav>
   </div>
 </div>
-<div class="left-navigation-scrim"></div>
+<div class="left-navigation-scrim" id="left-navigation-scrim"></div>
 
 <style>
   .left-navigation {
@@ -66,6 +98,18 @@ if (componentPage) {
   }
 
   @media (max-width: 799px) {
+    .left-navigation .neo-nav--left {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .left-navigation .neo-nav--left {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1279px) {
     nav.neo-navbar {
       overflow: visible;
       margin-bottom: 3rem;
@@ -98,5 +142,33 @@ if (componentPage) {
       background-color: rgba(0, 0, 0, 0.8);
       z-index: 99;
     }
+
+    .left-navigation .neo-nav--left {
+      height: var(--header-height);
+      min-height: var(--header-height);
+    }
+    .left-navigation .neo-nav--left .neo-badge__navbutton {
+      margin-top: 0px;
+    }
+
+    .left-navigation .neo-nav--left .neo-badge__navbutton .neo-btn {
+      /* No equivalent to Avaya red in Neo design system */
+      background-color: #da291c;
+      border-radius: 0;
+    }
+
+    .left-navigation .neo-nav--left .neo-badge__navbutton + a {
+      height: 100%;
+    }
   }
 </style>
+
+<script>
+  document
+    .getElementById("left-navigation-close")
+    ?.addEventListener("click", () => {
+      const leftNavigationElement = document.getElementById("left-navigation");
+      leftNavigationElement?.classList.remove("left-navigation--active");
+      leftNavigationElement?.classList.add("left-navigation--hidden");
+    });
+</script>

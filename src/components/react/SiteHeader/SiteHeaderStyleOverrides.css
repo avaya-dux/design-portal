@@ -55,12 +55,6 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle {
     display: flex;
     justify-content: flex-end;
   }
-  nav.neo-navbar .neo-nav--right button.neo-btn {
-    border: none;
-  }
-  nav.neo-navbar .neo-nav--left .neo-badge__navbutton {
-    display: block;
-  }
 }
 
 @media (max-width: 320px) {
@@ -70,5 +64,14 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle {
   nav.neo-navbar .neo-nav a.neo-nav-link-btn {
     width: auto;
     justify-content: center;
+  }
+}
+
+@media (max-width: 1279px) {
+  nav.neo-navbar .neo-nav--right button.neo-btn {
+    border: none;
+  }
+  nav.neo-navbar .neo-nav--left .neo-badge__navbutton {
+    display: block;
   }
 }

@@ -116,9 +116,23 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
 </html>
 
 <script>
-  const toggleLeftNavigation = () => {
-    const leftNavigationElement = document.getElementById("left-navigation");
+  const leftNavigationElement = document.getElementById("left-navigation");
 
+  const elem = document.getElementById("body-content-wrapper");
+
+  const leftNavScrim = document.getElementById("left-navigation-scrim");
+
+  const closeOnClickAway = (event: MouseEvent) => {
+    if (
+      leftNavigationElement?.classList.contains("left-navigation--active") &&
+      event.target != leftNavigationElement
+    ) {
+      leftNavigationElement.classList.remove("left-navigation--active");
+      leftNavigationElement.classList.add("left-navigation--hidden");
+    }
+  };
+
+  const toggleLeftNavigation = () => {
     if (leftNavigationElement?.classList.contains("left-navigation--active")) {
       leftNavigationElement.classList.remove("left-navigation--active");
       leftNavigationElement.classList.add("left-navigation--hidden");
@@ -132,7 +146,6 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
     }
   };
 
-  const elem = document.getElementById("body-content-wrapper");
-
+  leftNavScrim?.addEventListener("click", closeOnClickAway);
   elem?.addEventListener("toggleLeftNavigation", toggleLeftNavigation);
 </script>
