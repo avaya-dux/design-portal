@@ -13,14 +13,15 @@ export interface SectionWithLinks {
 
 export interface Props {
   id: string;
+  title: string;
   sections: SectionWithLinks[];
 }
 
-const { id, sections } = Astro.props as Props;
+const { id, title, sections } = Astro.props as Props;
 ---
 
 <PageleteSection>
-  <SectionHeader id={id}>Related Content</SectionHeader>
+  <SectionHeader id={id}>{title}</SectionHeader>
 
   {
     sections.map((section) => (
