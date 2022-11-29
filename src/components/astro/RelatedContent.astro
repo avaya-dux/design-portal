@@ -1,0 +1,40 @@
+---
+import { PageleteSection, SectionHeader } from "components/astro";
+
+export interface PageLink {
+  title: string;
+  href: string;
+}
+
+export interface SectionWithLinks {
+  title: string;
+  links: PageLink[];
+}
+
+export interface Props {
+  id: string;
+  sections: SectionWithLinks[];
+}
+
+const { id, sections } = Astro.props as Props;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>Related Content</SectionHeader>
+
+  {
+    sections.map((section) => (
+      <>
+        <h3 class="neo-bold">{section.title}</h3>
+
+        <ul class="dash-list">
+          {section.links.map((link) => (
+            <li>
+              <a href={link.href}>{link.title}</a>
+            </li>
+          ))}
+        </ul>
+      </>
+    ))
+  }
+</PageleteSection>
