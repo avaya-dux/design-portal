@@ -20,7 +20,7 @@ if (componentPage) {
 
 <div class="left-navigation" id="left-navigation">
   <div class="neo-leftnav--wrapper">
-    <div class="neo-leftnav" role="navigation">
+    <nav class="neo-leftnav" aria-label="Left Navigation">
       <ul class="neo-leftnav__nav">
         {
           filteredPages.map((page) => (
@@ -35,7 +35,7 @@ if (componentPage) {
           ))
         }
       </ul>
-    </div>
+    </nav>
   </div>
 </div>
 <div class="left-navigation-scrim"></div>
