@@ -1,4 +1,4 @@
-import { Badge, BadgeProps, TextInput } from "@avaya/neo-react";
+import { Badge, BadgeProps, Radio, RadioGroup } from "@avaya/neo-react";
 
 import { useMemo, useState } from "react";
 
@@ -9,8 +9,16 @@ const sandbox = "https://codesandbox.io/s/neo-react-badge-forked-zjf97s";
 const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-badge";
 
+type BadgeTypeOption = "icon" | "text";
+
 export const PlaygroundImplementation = () => {
-  const [data, setData] = useState<BadgeProps["data"]>("27");
+
+  const [badgeType, setBadgeType] = useState<BadgeTypeOption>("icon");
+
+  const badgeContent = useMemo(() => {
+    if (badgeType == "icon") return <span className="neo-icon-customer" />
+    else return `Badge with Text`;
+  }, [badgeType]);
 
   const react = prettyPrintReact(
     `<Badge
@@ -23,7 +31,7 @@ export const PlaygroundImplementation = () => {
     `<div>
       <span
         class="neo-badge"
-        data={${data}}
+        data-badge="27"
         aria-label="badge with 27 items"
       >
       </span>
@@ -34,11 +42,17 @@ export const PlaygroundImplementation = () => {
     <Playground
       options={
         <Playground.OptionsContainer>
-          <Playground.OptionsSection title="Size">
-            <TextInput
-              label="badge value"
-              onChange={(e) => setData(e.target.value as BadgeProps["data"])}
-            ></TextInput>
+          <Playground.OptionsSection title="Type">
+            <RadioGroup
+              groupName="options"
+              selected={badgeType}
+              onChange={(e) => {
+                setBadgeType(e.target.value as BadgeTypeOption);
+              }}
+            >
+              <Radio value="icon">With Icon</Radio>
+              <Radio value="text">With Text</Radio>
+            </RadioGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
       }
@@ -49,8 +63,8 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      <Badge data={data || ""} aria-label="text with badge">
-        Text with badge
+      <Badge data="27" aria-label="text with badge">
+        {badgeContent}
       </Badge>
     </Playground>
   );

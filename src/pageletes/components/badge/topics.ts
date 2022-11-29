@@ -20,7 +20,7 @@ export const topics: TopicsDict<BadgeTopicNames> = {
   },
   relatedContent: {
     order: 3,
-    id: "related-content",
+    id: "badge-related-content",
     title: "Related Content",
   },
 };
