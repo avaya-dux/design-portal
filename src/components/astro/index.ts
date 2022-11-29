@@ -10,6 +10,9 @@ export { PageleteSection };
 import PageTitle from "./PageTitle.astro";
 export { PageTitle };
 
+import RelatedContent from "./RelatedContent.astro";
+export { RelatedContent };
+
 import SectionHeader from "./SectionHeader.astro";
 export { SectionHeader };
 

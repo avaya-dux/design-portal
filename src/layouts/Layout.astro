@@ -75,6 +75,11 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
       a {
         text-decoration: none;
       }
+
+      ul.dash-list {
+        list-style-type: "- ";
+        line-height: 28px;
+      }
     </style>
 
     <style>

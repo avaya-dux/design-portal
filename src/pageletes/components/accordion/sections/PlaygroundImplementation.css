@@ -1,12 +1,14 @@
 /* TEMP: TODO: remove this once update is made in neo-css */
 @media (prefers-color-scheme: dark) {
-  .neo-accordion .neo-accordion__header > button.neo-accordion__header-text {
+  .neo-accordion
+    .neo-accordion__header
+    > button.neo-accordion__header-text:not(:disabled) {
     color: var(--global-font-color);
   }
 
   .neo-accordion
     .neo-accordion__header
-    > button.neo-accordion__header-text:hover {
+    > button.neo-accordion__header-text:not(:disabled):hover {
     color: var(--neo-color-base-900);
   }
 }
