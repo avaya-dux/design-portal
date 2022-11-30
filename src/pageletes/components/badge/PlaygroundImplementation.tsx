@@ -44,16 +44,18 @@ export const PlaygroundImplementation = () => {
 </Badge>`
   );
 
-  const htmlWithIcon = prettyPrintHtml(
+  const htmlWithIcon = useMemo(
+    () =>
     `<div>
-      <span
-        class="neo-badge"
-        data-badge="27"
-        aria-label="badge with 27 items"
-      >
-      <span class="neo-icon-customer" />
-    </span>
-    </div>`
+  <span
+    class="neo-badge"
+    data-badge="27"
+    aria-label="badge with 27 items"
+  >
+    <span class="neo-icon-customer" />
+  </span>
+</div>`,
+    [badgeType]
   );
 
   const htmlWithText = prettyPrintHtml(
