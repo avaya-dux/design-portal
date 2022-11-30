@@ -27,7 +27,10 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton {
   margin-top: 0px;
 }
 
-nav.neo-navbar .neo-nav--left .neo-badge__navbutton .neo-badge__navbutton--content:before {
+nav.neo-navbar
+  .neo-nav--left
+  .neo-badge__navbutton
+  .neo-badge__navbutton--content:before {
   color: var(--neo-color-base-0);
 }
 

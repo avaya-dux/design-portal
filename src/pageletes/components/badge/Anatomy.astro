@@ -1,0 +1,52 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Description,
+  ColumnLayout,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableRow,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "./topics";
+
+import AnatomyImage from "./badge-imgs/anatomy.svg";
+const anatomyImgAltText =
+  "Image showing the different parts that make up a badge";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.anatomy.id}>{topics.anatomy.title}</SectionHeader>
+
+  <Description>
+    Badges include the two components shown below. The number of the count can
+    vary.
+  </Description>
+
+  <ColumnLayout bkgColor="white" numOfColumns={1}>
+    <Image src={AnatomyImage} alt={anatomyImgAltText} />
+  </ColumnLayout>
+
+  <InfoTable>
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>1. Container:</InfoTableCell>
+        <InfoTableCell>
+          The container is left-justified (expands to the right) to hold all the
+          digits in the number count.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>2. Number count:</InfoTableCell>
+        <InfoTableCell>
+          There is no limit to size of this value. The text is center-justified
+          within the container.
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
+</PageleteSection>
