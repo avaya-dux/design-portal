@@ -1,4 +1,4 @@
-import { Badge, Radio, RadioGroup } from "@avaya/neo-react";
+import { Badge, Icon, Radio, RadioGroup } from "@avaya/neo-react";
 
 import { useMemo, useState } from "react";
 
@@ -15,7 +15,7 @@ export const PlaygroundImplementation = () => {
   const [badgeType, setBadgeType] = useState<BadgeTypeOption>("icon");
 
   const badgeContent = useMemo(() => {
-    if (badgeType == "icon") return <span className="neo-icon-customer" />;
+    if (badgeType === "icon") return <Icon icon="customer" aria-label="customer icon" />;
     else return "Badge with Text";
   }, [badgeType]);
 
