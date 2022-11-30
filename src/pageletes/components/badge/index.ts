@@ -4,8 +4,8 @@ export { Intro };
 import Anatomy from "./Anatomy.astro";
 export { Anatomy };
 
-import RelatedContent from "./RelatedContent.astro";
-export { RelatedContent };
+import Related from "./Related.astro";
+export { Related };
 
 import Usage from "./Usage.astro";
 export { Usage };
