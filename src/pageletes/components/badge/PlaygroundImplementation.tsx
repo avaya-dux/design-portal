@@ -15,60 +15,69 @@ export const PlaygroundImplementation = () => {
   const [badgeType, setBadgeType] = useState<BadgeTypeOption>("icon");
 
   const badgeContent = useMemo(() => {
-    if (badgeType == "icon") return <span className="neo-icon-customer" />;
-    else return `Badge with Text`;
-  },
-    [badgeType]
-  );
+    if (badgeType == "icon")
+      return (
+        <span className="neo-icon-customer" />
+      );
+    else return "Badge with Text";
+  }, [badgeType]);
 
-  const isWithIcon = useMemo(
-    () => badgeType === "icon",
-    [badgeType]
-  );
+  const [
+    isWithIcon,
+    reactWithIcon,
+    reactWithText,
+    htmlWithIcon,
+    htmlWithText,
+  ] = useMemo(() => {
+    const isWithIcon = badgeType === "icon";
 
-  const reactWithIcon = prettyPrintReact(
-    `<Badge
+    const reactWithIcon = prettyPrintReact(
+      `<Badge
   aria-label="badge with 27 items"
   data="27"
 >
-  <span className="neo-icon-customer" />
+  <Icon icon="customer" aria-label="customer icon" />
 </Badge>`
-  );
+    );
 
-  const reactWithText = prettyPrintReact(
-    `<Badge
+    const reactWithText = prettyPrintReact(
+      `<Badge
   aria-label="badge with 27 items"
   data="27"
 >
   Badge with Text
 </Badge>`
-  );
+    );
 
-  const htmlWithIcon = useMemo(
-    () =>
-    `<div>
+    const htmlWithIcon = `<div>
   <span
     class="neo-badge"
     data-badge="27"
     aria-label="badge with 27 items"
   >
-    <span class="neo-icon-customer" />
+    <span class="neo-icon-customer" aria-label="customer icon" />
   </span>
-</div>`,
-    [badgeType]
-  );
+</div>`;
 
-  const htmlWithText = prettyPrintHtml(
-    `<div>
-      <span
-        class="neo-badge"
-        data-badge="27"
-        aria-label="badge with 27 items"
-      >
-      Badge with Text
-      </span>
-    </div>`
-  );
+    const htmlWithText = prettyPrintHtml(
+      `<div>
+            <span
+            class="neo-badge"
+            data-badge="27"
+            aria-label="badge with 27 items"
+            >
+            Badge with Text
+            </span>
+            </div>`
+    );
+    return [
+      isWithIcon,
+      reactWithIcon,
+      reactWithText,
+      htmlWithIcon,
+      htmlWithText,
+    ];
+  }, [badgeType]);
 
   return (
     <Playground
@@ -95,7 +104,7 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      <Badge data="27" aria-label="text with badge">
+      <Badge data="27" aria-label="badge with 27 items">
         {badgeContent}
       </Badge>
     </Playground>
