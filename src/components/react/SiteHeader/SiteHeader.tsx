@@ -1,15 +1,11 @@
-import type { AstroInstance } from "astro";
 import { TopNav } from "@avaya/neo-react";
 import { useCallback } from "react";
+
+import type { PageAstroInstance } from "helpers/types";
 
 import { TopNavSearch } from "./helpers";
 
 import "./SiteHeaderStyleOverrides.css";
-
-export interface PageAstroInstance extends AstroInstance {
-  title: string;
-  keywords: string;
-}
 
 /**
  * IMPORTANT: DPv3 is SSRd, and this component requires browser APIs.
@@ -43,6 +39,20 @@ export const SiteHeader = ({
         <TopNav.SkipNav href="#main-content">
           Skip To Main Content
         </TopNav.SkipNav>
+      }
+      menuToggleBtn={
+        <TopNav.IconButton
+          aria-label="Toggle Menu"
+          className="topnav-menu-toggle"
+          icon="menu"
+          onClick={(e) => {
+            const toggleLeftNavEvent = new CustomEvent("toggleLeftNavigation", {
+              bubbles: true,
+            });
+
+            e.target?.dispatchEvent(toggleLeftNavEvent);
+          }}
+        />
       }
     >
       <TopNav.LinkButton

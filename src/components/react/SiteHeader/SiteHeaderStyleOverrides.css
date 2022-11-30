@@ -22,6 +22,21 @@ nav.neo-navbar a.neo-nav-link-btn {
   padding: 0 16px;
 }
 
+nav.neo-navbar .neo-nav--left .neo-badge__navbutton {
+  display: none;
+  margin-top: 0px;
+}
+
+nav.neo-navbar .neo-nav--left .neo-badge__navbutton .neo-badge__navbutton--content:before {
+  color: var(--neo-color-base-0);
+}
+
+nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle {
+  /* No equivalent to Avaya red in Neo design system */
+  background-color: #da291c;
+  border-radius: 0;
+}
+
 @media (max-width: 799px) {
   nav.neo-navbar {
     overflow: visible;
@@ -44,9 +59,6 @@ nav.neo-navbar a.neo-nav-link-btn {
     display: flex;
     justify-content: flex-end;
   }
-  nav.neo-navbar .neo-nav--right button.neo-btn {
-    border: none;
-  }
 }
 
 @media (max-width: 320px) {
@@ -56,5 +68,14 @@ nav.neo-navbar a.neo-nav-link-btn {
   nav.neo-navbar .neo-nav a.neo-nav-link-btn {
     width: auto;
     justify-content: center;
+  }
+}
+
+@media (max-width: 1279px) {
+  nav.neo-navbar .neo-nav--right button.neo-btn {
+    border: none;
+  }
+  nav.neo-navbar .neo-nav--left .neo-badge__navbutton {
+    display: block;
   }
 }

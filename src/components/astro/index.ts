@@ -25,5 +25,8 @@ export { StackedLayout };
 import SubHeader from "./SubHeader.astro";
 export { SubHeader };
 
+import LeftNavigation from "./LeftNavigation.astro";
+export { LeftNavigation };
+
 export * from "./InfoTable";
 export * from "./Topics";

@@ -1,0 +1,178 @@
+---
+import clsx from "clsx";
+import type { PageAstroInstance } from "helpers/types";
+
+export interface Props {
+  pages: PageAstroInstance[];
+}
+
+const { pages } = Astro.props as Props;
+
+const { pathname: pageURL } = Astro.url;
+
+const isComponentPage = pageURL.includes("components");
+let componentPages: PageAstroInstance[] = [];
+
+if (isComponentPage) {
+  componentPages = pages.filter((page) => page.url?.includes("components"));
+}
+---
+
+<div class="left-navigation" id="left-navigation">
+  <div class="neo-leftnav--wrapper">
+    <div class="neo-nav--left">
+      <div class="neo-badge__navbutton">
+        <button
+          class="neo-badge__navbutton--content neo-btn neo-icon-close"
+          id="left-navigation-close"></button>
+      </div>
+      <a href="/" aria-label="Homepage">
+        <picture>
+          <source
+            media="(max-width: 799px) and (prefers-color-scheme: dark)"
+            srcset="/imgs/logo-mobile-dark.svg"
+          />
+          <source
+            media="(max-width: 799px)"
+            srcset="/imgs/logo-mobile-light.svg"
+          />
+          <source
+            media="(max-width: 1279px) and (prefers-color-scheme: dark)"
+            srcset="/imgs/logo-condensed-dark.svg"
+          />
+          <source
+            media="(max-width: 1279px)"
+            srcset="/imgs/logo-condensed-light.svg"
+          />
+          <source
+            media="(min-width: 1280px) and (prefers-color-scheme: dark)"
+            srcset="/imgs/logo-full-dark.svg"
+          />
+          <img src="/imgs/logo-full-light.svg" alt="Avaya Logo" />
+        </picture>
+      </a>
+    </div>
+    <nav class="neo-leftnav" aria-label="Left Navigation">
+      <ul class="neo-leftnav__nav">
+        {
+          componentPages.map((page) => (
+            <li
+              class={clsx(
+                "neo-leftnav__main",
+                page.url && pageURL === page.url && "neo-leftnav__main--active"
+              )}
+            >
+              <a href={page.url}>{page.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</div>
+<div class="left-navigation-scrim" id="left-navigation-scrim"></div>
+
+<style>
+  .left-navigation {
+    min-width: 15rem;
+    border-right: 1px solid var(--navbar-border-bottom-color);
+    padding-top: 1.5rem;
+  }
+
+  [dir="rtl"] .left-navigation {
+    border-right: none;
+    border-left: 1px solid var(--navbar-border-bottom-color);
+  }
+
+  .left-navigation
+    .neo-leftnav--wrapper
+    .neo-leftnav
+    .neo-leftnav__nav
+    .neo-leftnav__main
+    a {
+    padding: 1rem 2rem 1rem 2.5rem;
+  }
+
+  .left-navigation + .left-navigation-scrim {
+    display: none;
+  }
+
+  @media (max-width: 799px) {
+    .left-navigation .neo-nav--left {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .left-navigation .neo-nav--left {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1279px) {
+    nav.neo-navbar {
+      overflow: visible;
+      margin-bottom: 3rem;
+      border: none;
+    }
+    .left-navigation {
+      position: absolute;
+      transform: translate3d(-15rem, 0, 0);
+      padding-top: 0;
+      top: 0;
+      bottom: 0;
+      background-color: var(--leftnav-background-color);
+      z-index: 100;
+    }
+    .left-navigation.left-navigation--active {
+      transition: transform 0.35s;
+      transform: translate3d(0rem, 0, 0);
+    }
+    .left-navigation.left-navigation--hidden {
+      transition: transform 0.35s;
+      transform: translate3d(-15rem, 0, 0);
+    }
+    .left-navigation.left-navigation--active + .left-navigation-scrim {
+      display: block;
+      position: absolute;
+      width: 100vw;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 99;
+    }
+
+    .left-navigation .neo-nav--left {
+      height: var(--header-height);
+      min-height: var(--header-height);
+    }
+    .left-navigation .neo-nav--left .neo-badge__navbutton {
+      margin-top: 0px;
+    }
+
+    .left-navigation .neo-nav--left .neo-badge__navbutton .neo-badge__navbutton--content {
+      color: var(--neo-color-base-0);
+    }
+
+    .left-navigation .neo-nav--left .neo-badge__navbutton .neo-btn {
+      /* No equivalent to Avaya red in Neo design system */
+      background-color: #da291c;
+      border-radius: 0;
+    }
+
+    .left-navigation .neo-nav--left .neo-badge__navbutton + a {
+      height: 100%;
+    }
+  }
+</style>
+
+<script>
+  document
+    .getElementById("left-navigation-close")
+    ?.addEventListener("click", () => {
+      const leftNavigationElement = document.getElementById("left-navigation");
+      leftNavigationElement?.classList.remove("left-navigation--active");
+      leftNavigationElement?.classList.add("left-navigation--hidden");
+    });
+</script>
