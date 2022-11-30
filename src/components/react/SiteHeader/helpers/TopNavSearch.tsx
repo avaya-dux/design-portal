@@ -1,13 +1,11 @@
 import { Button, TextInput } from "@avaya/neo-react";
-import { useEffect, useMemo, useRef, useState } from "react";
-
-import { useOsName } from "components/react/utils";
+import { useEffect, useRef, useState } from "react";
 
 import { TopNavSearchPanel } from "./TopNavSearchPanel";
 
 import "./TopNavSearch.css";
 
-import type { PageAstroInstance } from "../";
+import type { PageAstroInstance } from "helpers/types";
 import {
   closeSearchModal,
   ModalShortcutKeysType,
@@ -17,7 +15,13 @@ import {
 } from "./TopNavSearchKeyboardHandlers";
 import { closeSearchModalOnClick } from "./TopNavSearchMouseHandlers";
 
-export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
+export const TopNavSearch = ({
+  pages,
+  userAgent,
+}: {
+  pages: PageAstroInstance[];
+  userAgent: string;
+}) => {
   const [search, setSearch] = useState("");
   const [options, setOptions] = useState<PageAstroInstance[]>([]);
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -27,16 +31,6 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
       Control: false,
       k: false,
     });
-  const os = useOsName();
-  const searchButtonContent = useMemo(() => {
-    if (os === "macos") {
-      return "⌘ K";
-    } else if (os === "windows") {
-      return "Ctrl K";
-    }
-
-    return "K";
-  }, [os]);
 
   const searchModalRef = useRef<HTMLDivElement>(null);
 
@@ -76,7 +70,7 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
 
   useEffect(() => {
     openSearchModal(shortcutKeysPressed, setIsOpen, setShortcutKeysPressed);
-  }, [os, shortcutKeysPressed]);
+  }, [userAgent, shortcutKeysPressed]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -106,7 +100,9 @@ export const TopNavSearch = ({ pages }: { pages: PageAstroInstance[] }) => {
         onClick={() => setIsOpen(true)}
         className="search__button search-icon"
       >
-        <span className="search__button--content">{searchButtonContent}</span>
+        <span className="search__button--content">
+          {userAgent === "macos" ? "⌘ K" : "Ctrl K"}
+        </span>
       </Button>
 
       <TopNavSearchPanel

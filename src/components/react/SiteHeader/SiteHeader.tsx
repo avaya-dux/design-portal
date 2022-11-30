@@ -19,9 +19,11 @@ import "./SiteHeaderStyleOverrides.css";
  */
 export const SiteHeader = ({
   pathname,
+  userAgent,
   pages,
 }: {
   pathname: string;
+  userAgent: string;
   pages: PageAstroInstance[];
 }) => {
   const isActiveLink = useCallback(
@@ -32,7 +34,7 @@ export const SiteHeader = ({
   return (
     <TopNav
       logo={<Logo />}
-      search={<TopNavSearch pages={pages} />}
+      search={<TopNavSearch pages={pages} userAgent={userAgent} />}
       skipNav={
         <TopNav.SkipNav href="#main-content">
           Skip To Main Content
