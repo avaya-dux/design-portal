@@ -17,22 +17,53 @@ export const PlaygroundImplementation = () => {
   const badgeContent = useMemo(() => {
     if (badgeType == "icon") return <span className="neo-icon-customer" />;
     else return `Badge with Text`;
-  }, [badgeType]);
+  },
+    [badgeType]
+  );
 
-  const react = prettyPrintReact(
+  const isWithIcon = useMemo(
+    () => badgeType === "icon",
+    [badgeType]
+  );
+
+  const reactWithIcon = prettyPrintReact(
     `<Badge
-      aria-label="badge with 27 items"
-      data="27"
-      >
+  aria-label="badge with 27 items"
+  data="27"
+>
+  <span className="neo-icon-customer" />
 </Badge>`
   );
-  const html = prettyPrintHtml(
+
+  const reactWithText = prettyPrintReact(
+    `<Badge
+  aria-label="badge with 27 items"
+  data="27"
+>
+  Badge with Text
+</Badge>`
+  );
+
+  const htmlWithIcon = prettyPrintHtml(
     `<div>
       <span
         class="neo-badge"
         data-badge="27"
         aria-label="badge with 27 items"
       >
+      <span class="neo-icon-customer" />
+    </span>
+    </div>`
+  );
+
+  const htmlWithText = prettyPrintHtml(
+    `<div>
+      <span
+        class="neo-badge"
+        data-badge="27"
+        aria-label="badge with 27 items"
+      >
+      Badge with Text
       </span>
     </div>`
   );
@@ -56,8 +87,8 @@ export const PlaygroundImplementation = () => {
         </Playground.OptionsContainer>
       }
       examples={{
-        html,
-        react,
+        html: isWithIcon ? htmlWithIcon : htmlWithText,
+        react: isWithIcon ? reactWithIcon : reactWithText,
         sandbox,
         storybook,
       }}
