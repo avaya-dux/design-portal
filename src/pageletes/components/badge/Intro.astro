@@ -1,0 +1,17 @@
+---
+import { Description, PageleteSection, PageTitle, Topics } from "components";
+
+import { topics } from "./topics";
+---
+
+<PageleteSection marginTop="2rem">
+  <PageTitle>Badge</PageTitle>
+
+  <Description>
+    Badges are used to indicate the number of notifications pending for a
+    particular function, such as unread email, voicemail, text, and chat
+    messages.
+  </Description>
+
+  <Topics topics={topics} />
+</PageleteSection>
