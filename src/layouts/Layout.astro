@@ -149,43 +149,52 @@ if (isComponentPage)
 </html>
 
 <script>
-  document
-    .getElementById("left-navigation-close")
-    ?.addEventListener("click", () => {
-      const leftNavigationElement = document.getElementById("left-navigation");
-      leftNavigationElement?.classList.remove("left-navigation--active");
-      leftNavigationElement?.classList.add("left-navigation--hidden");
-    });
-  const leftNavigationElement = document.getElementById("left-navigation");
+  const leftNavCloseButton = document.getElementById("left-navigation-close");
 
-  const elem = document.getElementById("body-content-wrapper");
+  const leftNavElement = document.getElementById("left-navigation");
+
+  const bodyContentElement = document.getElementById("body-content-wrapper");
 
   const leftNavScrim = document.getElementById("left-navigation-scrim");
 
   const closeOnClickAway = (event: MouseEvent) => {
     if (
-      leftNavigationElement?.classList.contains("left-navigation--active") &&
-      event.target != leftNavigationElement
+      leftNavElement?.classList.contains("left-navigation--active") &&
+      event.target != leftNavElement
     ) {
-      leftNavigationElement.classList.remove("left-navigation--active");
-      leftNavigationElement.classList.add("left-navigation--hidden");
+      leftNavElement.classList.remove("left-navigation--active");
+      leftNavElement.classList.add("left-navigation--hidden");
     }
   };
 
   const toggleLeftNavigation = () => {
-    if (leftNavigationElement?.classList.contains("left-navigation--active")) {
-      leftNavigationElement.classList.remove("left-navigation--active");
-      leftNavigationElement.classList.add("left-navigation--hidden");
-    } else if (
-      leftNavigationElement?.classList.contains("left-navigation--hidden")
-    ) {
-      leftNavigationElement.classList.add("left-navigation--active");
-      leftNavigationElement.classList.remove("left-navigation--hidden");
+    if (leftNavElement?.classList.contains("left-navigation--active")) {
+      leftNavElement.classList.remove("left-navigation--active");
+      leftNavElement.classList.add("left-navigation--hidden");
+    } else if (leftNavElement?.classList.contains("left-navigation--hidden")) {
+      leftNavElement.classList.add("left-navigation--active");
+      leftNavElement.classList.remove("left-navigation--hidden");
     } else {
-      leftNavigationElement?.classList.add("left-navigation--active");
+      leftNavElement?.classList.add("left-navigation--active");
     }
   };
 
+  const closeLeftNavigation = () => {
+    const leftNavigationElement = document.getElementById("left-navigation");
+    leftNavigationElement?.classList.remove("left-navigation--active");
+    leftNavigationElement?.classList.add("left-navigation--hidden");
+  };
+
+  leftNavCloseButton?.addEventListener("click", closeLeftNavigation);
+
+  bodyContentElement?.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeLeftNavigation();
+  });
+
+  bodyContentElement?.addEventListener(
+    "toggleLeftNavigation",
+    toggleLeftNavigation
+  );
+
   leftNavScrim?.addEventListener("click", closeOnClickAway);
-  elem?.addEventListener("toggleLeftNavigation", toggleLeftNavigation);
 </script>

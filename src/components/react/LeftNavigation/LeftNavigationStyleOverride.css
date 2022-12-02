@@ -54,6 +54,10 @@
     display: none;
   }
 
+  .left-navigation:not(.left-navigation--active) button {
+    display: none;
+  }
+
   .left-navigation.left-navigation--active {
     transition: transform 0.35s;
     transform: translate3d(0rem, 0, 0);
