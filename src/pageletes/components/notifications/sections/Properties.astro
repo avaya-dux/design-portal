@@ -2,12 +2,27 @@
 import { Description, PageleteSection, SectionHeader } from "components/astro";
 
 import { topics } from "../static";
+// <code>{"neo-notification"}</code>
 ---
 
 <PageleteSection>
   <SectionHeader id={topics.properties.id}>
     {topics.properties.title}
   </SectionHeader>
+
+  <Description>
+    The right side of a notification can take on multiple properties by using
+    specific class names.
+  </Description>
+
+  <Description>
+    Note that when using the <code>{"neo-notification__options"}</code> class, you
+    must use the correct type of Button with each state, For example
+    <code>{"neo-notification--info"}</code>
+    and <code>{"neo-btn-secondary--info"}</code> -- except for the
+    <code>{"neo-notification--event"}</code> state, which uses the
+    <code>--default</code> button state.
+  </Description>
 
   <Description>
     Notifications :

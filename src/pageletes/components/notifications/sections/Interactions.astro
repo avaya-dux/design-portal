@@ -1,5 +1,13 @@
 ---
-import { Description, PageleteSection, SectionHeader } from "components/astro";
+import {
+  Description,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableRow,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
 
 import { topics } from "../static";
 ---
@@ -10,7 +18,39 @@ import { topics } from "../static";
   </SectionHeader>
 
   <Description>
-    Notifications :
-    <code>{"neo-notification neo-notification--<modifier>"}</code>
+    This section illustrates Keyboard Interactions for the Notifications
+    Component.
   </Description>
+
+  <InfoTable>
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>Tab</InfoTableCell>
+        <InfoTableCell>
+          Moves forward to the next interactive element
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Shift + Tab</InfoTableCell>
+        <InfoTableCell>
+          Moves backward to the previous interactive element
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Enter or Spacebar</InfoTableCell>
+        <InfoTableCell>
+          Activates the notification (if applicable)
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Delete</InfoTableCell>
+        <InfoTableCell>
+          Closes the notification if possible, equivalent to the close button
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
 </PageleteSection>
