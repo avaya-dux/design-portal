@@ -17,16 +17,24 @@ export const topics: TopicsDict<NotificationsTopicNames> = {
     id: "notifications-playground",
     title: "Interactive Playground",
   },
-  stateful: { order: 1, id: "notifications-stateful", title: "Stateful" },
+  stateful: {
+    order: 1,
+    id: "notifications-stateful",
+    title: "Stateful Notifications",
+  },
   properties: {
     order: 2,
     id: "notifications-properties",
-    title: "Properties",
+    title: "Notification Properties",
   },
-  elevation: { order: 3, id: "notifications-elevation", title: "Elevation" },
+  elevation: {
+    order: 3,
+    id: "notifications-elevation",
+    title: "Notification Elevation",
+  },
   interactions: {
     order: 4,
     id: "notifications-interactions",
-    title: "Interactions",
+    title: "Keyboard Interactions",
   },
 };

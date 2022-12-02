@@ -1,0 +1,16 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components/astro";
+
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.interactions.id}>
+    {topics.interactions.title}
+  </SectionHeader>
+
+  <Description>
+    Notifications :
+    <code>{"neo-notification neo-notification--<modifier>"}</code>
+  </Description>
+</PageleteSection>
