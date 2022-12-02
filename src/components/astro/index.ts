@@ -1,4 +1,5 @@
 import ColumnLayout from "./ColumnLayout.astro";
+
 export { ColumnLayout };
 
 import Description from "./Description.astro";
@@ -24,9 +25,6 @@ export { StackedLayout };
 
 import SubHeader from "./SubHeader.astro";
 export { SubHeader };
-
-import LeftNavigation from "./LeftNavigation.astro";
-export { LeftNavigation };
 
 export * from "./InfoTable";
 export * from "./Topics";

@@ -1,0 +1,105 @@
+.left-navigation {
+  min-width: 15rem;
+  border-right: 1px solid var(--navbar-border-bottom-color);
+  padding-top: 1.5rem;
+}
+
+[dir="rtl"] .left-navigation {
+  border-right: none;
+  border-left: 1px solid var(--navbar-border-bottom-color);
+}
+
+.left-navigation
+  .neo-leftnav--wrapper
+  .neo-leftnav
+  .neo-leftnav__nav
+  .neo-leftnav__main
+  a {
+  padding: 1rem 2rem 1rem 2.5rem;
+}
+
+.left-navigation + .left-navigation-scrim {
+  display: none;
+}
+
+@media (max-width: 799px) {
+  .left-navigation .neo-nav--left {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .left-navigation .neo-nav--left {
+    display: none;
+  }
+}
+
+@media (max-width: 1279px) {
+  nav.neo-navbar {
+    overflow: visible;
+    margin-bottom: 3rem;
+    border: none;
+  }
+  .left-navigation {
+    position: absolute;
+    transform: translate3d(-15rem, 0, 0);
+    padding-top: 0;
+    top: 0;
+    bottom: 0;
+    background-color: var(--leftnav-background-color);
+    z-index: 100;
+  }
+
+  .left-navigation:not(.left-navigation--active) a {
+    display: none;
+  }
+
+  .left-navigation.left-navigation--active {
+    transition: transform 0.35s;
+    transform: translate3d(0rem, 0, 0);
+  }
+  .left-navigation.left-navigation--hidden {
+    transition: transform 0.35s;
+    transform: translate3d(-15rem, 0, 0);
+  }
+  .left-navigation.left-navigation--active + .left-navigation-scrim {
+    display: block;
+    position: absolute;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 99;
+  }
+
+  .left-navigation .neo-nav--left {
+    height: var(--header-height);
+    min-height: var(--header-height);
+  }
+  .left-navigation .neo-nav--left .neo-badge__navbutton {
+    margin-top: 0px;
+  }
+
+  .left-navigation
+    .neo-nav--left
+    .neo-badge__navbutton
+    .neo-badge__navbutton--content {
+    color: var(--neo-color-base-0);
+  }
+
+  .left-navigation .neo-nav--left .neo-badge__navbutton .neo-btn {
+    /* No equivalent to Avaya red in Neo design system */
+    background-color: #da291c;
+    border-radius: 0;
+  }
+
+  .left-navigation .neo-nav--left .neo-badge__navbutton .neo-btn:hover {
+    background-color: #da291c;
+    cursor: pointer;
+  }
+
+  .left-navigation .neo-nav--left .neo-badge__navbutton + a {
+    height: 100%;
+  }
+}

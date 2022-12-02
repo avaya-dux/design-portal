@@ -27,7 +27,10 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton {
   margin-top: 0px;
 }
 
-nav.neo-navbar .neo-nav--left .neo-badge__navbutton .neo-badge__navbutton--content:before {
+nav.neo-navbar
+  .neo-nav--left
+  .neo-badge__navbutton
+  .neo-badge__navbutton--content:before {
   color: var(--neo-color-base-0);
 }
 
@@ -35,6 +38,10 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle {
   /* No equivalent to Avaya red in Neo design system */
   background-color: #da291c;
   border-radius: 0;
+}
+
+nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
+  cursor: pointer;
 }
 
 @media (max-width: 799px) {

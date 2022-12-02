@@ -51,7 +51,7 @@
   "dependencies": {
     "@astrojs/netlify": "1.2.1",
     "@astrojs/prefetch": "0.1.1",
-    "@avaya/neo-react": "0.7.9",
+    "@avaya/neo-react": "^0.7.10",
     "clsx": "1.2.1",
     "diffable-html": "^5.0.0",
     "prism-react-renderer": "^1.3.5"
