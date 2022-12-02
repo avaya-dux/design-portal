@@ -5,6 +5,7 @@ import {
   Description,
   DoAndDont,
   PageleteSection,
+  PageleteSubSection,
   SectionHeader,
   SubHeader,
 } from "components";
@@ -37,41 +38,45 @@ const dontImgAltText =
     can be used without a text label, but use icon-only buttons cautiously.
   </Description>
 
-  <SubHeader id="icons-inside-buttons">Icons Inside Buttons</SubHeader>
+  <PageleteSubSection marginTop="64px">
+    <SubHeader id="icons-inside-buttons">Icons Inside Buttons</SubHeader>
 
-  <Description>
-    Icons may be included to the left of the button text if it will help the
-    user. They should never be used for purely cosmetic purposes.
-  </Description>
+    <Description>
+      Icons may be included to the left of the button text if it will help the
+      user. They should never be used for purely cosmetic purposes.
+    </Description>
 
-  <DoAndDont>
-    <DoAndDont.DoContainer instructions={doInstructions}>
-      <DoAndDont.ImageExampleContainer>
-        <Image src={doImage} alt={doImgAltText} />
-      </DoAndDont.ImageExampleContainer>
-    </DoAndDont.DoContainer>
+    <DoAndDont>
+      <DoAndDont.DoContainer instructions={doInstructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={doImage} alt={doImgAltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
 
-    <DoAndDont.DontContainer instructions={dontInstructions}>
-      <DoAndDont.ImageExampleContainer>
-        <Image src={dontImage} alt={dontImgAltText} />
-      </DoAndDont.ImageExampleContainer>
-    </DoAndDont.DontContainer>
-  </DoAndDont>
+      <DoAndDont.DontContainer instructions={dontInstructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={dontImage} alt={dontImgAltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DontContainer>
+    </DoAndDont>
+  </PageleteSubSection>
 
-  <SubHeader id="icon-buttons">Icon Buttons</SubHeader>
+  <PageleteSubSection>
+    <SubHeader id="icon-buttons">Icon Buttons</SubHeader>
 
-  <Description>
-    Buttons that contain only an icon and no text label can be used where the
-    function of the button is clear from the icon. This can also be employed
-    where space is limited. Generally, these should be used for control bars, or
-    common and easily recognizable actions such as Close, Search, or expandable
-    menus.
-  </Description>
+    <Description>
+      Buttons that contain only an icon and no text label can be used where the
+      function of the button is clear from the icon. This can also be employed
+      where space is limited. Generally, these should be used for control bars, or
+      common and easily recognizable actions such as Close, Search, or expandable
+      menus.
+    </Description>
 
-  <ColumnLayout numOfColumns={1}>
-    <Image
-      src={iconButtons}
-      alt="image showing different uses for icon buttons"
-    />
-  </ColumnLayout>
+    <ColumnLayout numOfColumns={1}>
+      <Image
+        src={iconButtons}
+        alt="image showing different uses for icon buttons"
+      />
+    </ColumnLayout>
+  </PageleteSubSection>
 </PageleteSection>

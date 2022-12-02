@@ -2,6 +2,7 @@
 import {
   Description,
   PageleteSection,
+  PageleteSubSection,
   SectionHeader,
   SubHeader,
 } from "components";
@@ -28,27 +29,39 @@ import {
     moment.
   </Description>
 
-  <SubHeader id="all-buttons">All buttons</SubHeader>
+  <PageleteSubSection marginTop="64px">
+    <SubHeader id="all-buttons">All buttons</SubHeader>
 
-  <Description>
-    Moving the mouse pointer over a button changes the button to its Hover state
-    and allows a mouse-click or keystroke to start the action item.
-  </Description>
+    <Description>
+      Moving the mouse pointer over a button changes the button to its Hover state
+      and allows a mouse-click or keystroke to start the action item.
+    </Description>
 
-  <Description>
-    Buttons must also be reachable using the keyboard alone. Typically, the Tab
-    key will cycle through all buttons and fields on the screen/region. Once the
-    correct button is selected, using the Enter key or the Spacebar will start
-    the action item. For further details, please read the Accessibility section.
-  </Description>
+    <Description>
+      Buttons must also be reachable using the keyboard alone. Typically, the Tab
+      key will cycle through all buttons and fields on the screen/region. Once the
+      correct button is selected, using the Enter key or the Spacebar will start
+      the action item. For further details, please read the Accessibility section.
+    </Description>
+  </PageleteSubSection>
 
-  <Color />
+  <PageleteSubSection>
+    <Color />
+  </PageleteSubSection>
 
-  <Arrangement />
+  <PageleteSubSection>
+    <Arrangement />
+  </PageleteSubSection>
 
-  <CompactButton />
+  <PageleteSubSection>
+    <CompactButton />
+  </PageleteSubSection>
 
-  <Tooltip />
+  <PageleteSubSection>
+    <Tooltip />
+  </PageleteSubSection>
 
-  <Animation />
+  <PageleteSubSection>
+    <Animation />
+  </PageleteSubSection>
 </PageleteSection>
