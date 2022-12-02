@@ -41,7 +41,7 @@ describe("Playground", () => {
   it("fully renders without exploding", () => {
     render(DefaultExample);
 
-    expect(screen.getAllByRole("link")).toHaveLength(2); // sandbox and storybook links
+    expect(screen.getAllByRole("tab")).toHaveLength(4); // html, react, sandbox and storybook tabs
     expect(screen.getAllByRole("button")).toHaveLength(4); // reset, copy, html tab, react tab
   });
 
