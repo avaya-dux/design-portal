@@ -12,7 +12,7 @@ describe("PlaygroundImplementation", () => {
   it("fully renders with correct elements and code snippets", () => {
     render(<PlaygroundImplementation />);
 
-    expect(screen.getAllByRole("link")).toHaveLength(2); // sandbox and storybook links
+    expect(screen.getAllByRole("tab")).toHaveLength(4); // html, react sandbox and storybook links
     expect(screen.getAllByRole("button")).toHaveLength(3); // copy, html tab, react tab
     expect(screen.getAllByRole("switch")).toHaveLength(1); // loop infinitely
     expect(screen.getAllByRole("radio")).toHaveLength(5); // 3 sizes + 2 shapes
