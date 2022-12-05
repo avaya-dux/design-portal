@@ -165,15 +165,16 @@
   resolved "https://registry.yarnpkg.com/@atomic-layout/core/-/core-0.14.1.tgz#3d69be5f79775f11b8008f18bc603b04a2141ccd"
   integrity sha512-o5nhk/1djuKzB20C2LSOuetTDytsbGg4c0UfxXkq1pqoaN3hKJcHPYF9nV+p6+P5CWqNBaaJddZ32OsFSppULQ==
 
-"@avaya/neo-react@0.7.9":
-  version "0.7.9"
-  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-0.7.9.tgz#3246618e83b31f9d98820c956f3902edad56b531"
-  integrity sha512-hmUDTbmlZEDE+U99fnjI5emzdZybPBYnfwERaLJHNZb5CPP8Fijas6VgHZ+WF5rnUfHG6ntuwvPkIC6jRXWQiw==
+"@avaya/neo-react@0.7.10":
+  version "0.7.10"
+  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-0.7.10.tgz#a3a27acda7bb693a63168cf2911358853ebcd5c5"
+  integrity sha512-sVsKIHJamf3CuNMq4v2YcM+hlbyRWVoLtgbP7XwUUBPydjHWIGJaWiz3UuXUS8jz8G8YN/2QDVkt5cCTcsZkFg==
   dependencies:
     atomic-layout "^0.16.2"
     loglevel "^1.8.0"
     react-click-away-listener "^2.2.2"
     react-focus-lock "^2.9.1"
+    react-node-to-string "^0.1.0"
     styled-components "^5.3.6"
 
 "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.18.6":
@@ -5547,6 +5548,11 @@ react-is@^18.0.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
+
+react-node-to-string@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-node-to-string/-/react-node-to-string-0.1.0.tgz#dc53c215948b6e565a52cb24c88b9a2c68b56d2f"
+  integrity sha512-7JM/2fb8UZ4BaGr2hEhf76CYSkLc8ec/9i5GLg+MuuHoMMGJBwnmeIn2WdCe9lf+9IjZUJ0q41yI8oiQU7Hv0g==
 
 react-refresh@^0.14.0:
   version "0.14.0"
