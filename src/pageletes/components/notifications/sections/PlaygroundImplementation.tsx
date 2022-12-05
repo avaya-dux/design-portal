@@ -11,7 +11,7 @@ export const PlaygroundImplementation = () => {
   const [typeOption, setTypeOption] = useState<TypeOption>("default");
 
   const [react, html] = useMemo(() => {
-    return [``, ``];
+    return [``, ``]; // TODO: implement code examples
   }, [typeOption]);
 
   return (
