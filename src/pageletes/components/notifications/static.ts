@@ -1,6 +1,7 @@
 import type { TopicsDict } from "components";
 
-export const sandbox = "";
+export const sandbox =
+  "https://codesandbox.io/s/neo-react-notifications-dcplsu?file=/src/App.js";
 export const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-notification";
 
