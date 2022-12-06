@@ -1,6 +1,9 @@
+import { LeftNav } from "@avaya/neo-react";
 import clsx from "clsx";
 
-import { LeftNav } from "@avaya/neo-react";
+import { useStore } from "@nanostores/react";
+
+import { isLeftNavigationOpen } from "helpers/layoutState";
 
 import type { PageAstroInstance } from "helpers/types";
 
@@ -17,43 +20,18 @@ export const LeftNavigation = ({
     window.location.href = url;
   };
 
+  const isOpen = useStore(isLeftNavigationOpen);
+
   return (
     <>
-      <div className="left-navigation" id="left-navigation">
-        <div className="neo-nav--left">
-          <div className="neo-badge__navbutton">
-            <button
-              className="neo-badge__navbutton--content neo-btn neo-icon-close"
-              id="left-navigation-close"
-              aria-label="close left navigation"
-            ></button>
-          </div>
-          <a href="/" aria-label="Homepage">
-            <picture>
-              <source
-                media="(max-width: 799px) and (prefers-color-scheme: dark)"
-                srcSet="/imgs/logo-mobile-dark.svg"
-              />
-              <source
-                media="(max-width: 799px)"
-                srcSet="/imgs/logo-mobile-light.svg"
-              />
-              <source
-                media="(max-width: 1279px) and (prefers-color-scheme: dark)"
-                srcSet="/imgs/logo-condensed-dark.svg"
-              />
-              <source
-                media="(max-width: 1279px)"
-                srcSet="/imgs/logo-condensed-light.svg"
-              />
-              <source
-                media="(min-width: 1280px) and (prefers-color-scheme: dark)"
-                srcSet="/imgs/logo-full-dark.svg"
-              />
-              <img src="/imgs/logo-full-light.svg" alt="Avaya Logo" />
-            </picture>
-          </a>
-        </div>
+      <div
+        className={clsx(
+          "left-navigation",
+          isOpen ? "left-navigation--active" : "left-navigation--hidden"
+        )}
+        id="left-navigation"
+      >
+        <LeftNavigationTopElement />
         <LeftNav
           aria-label="left-navigation"
           currentUrl={currentUrl}
@@ -62,7 +40,7 @@ export const LeftNavigation = ({
         >
           {pages.map((page, index) => (
             <LeftNav.TopLinkItem
-              key={index}
+              key={`${index}${page.title}`}
               label={page.title}
               href={page.url as string}
               className={clsx(
@@ -72,7 +50,55 @@ export const LeftNavigation = ({
           ))}
         </LeftNav>
       </div>
-      <div className="left-navigation-scrim" id="left-navigation-scrim"></div>
+      <div
+        className="left-navigation-scrim"
+        id="left-navigation-scrim"
+        onClick={() => isLeftNavigationOpen.set(false)}
+        onKeyDown={(event) => {
+          if (isOpen && event.key === "Escape") {
+            isLeftNavigationOpen.set(false);
+          }
+        }}
+        role="presentation"
+      ></div>
     </>
   );
 };
+
+const LeftNavigationTopElement = () => (
+  <div className="neo-nav--left">
+    <div className="neo-badge__navbutton">
+      <button
+        className="neo-badge__navbutton--content neo-btn neo-icon-close"
+        id="left-navigation-close"
+        aria-label="close left navigation"
+        onClick={() => isLeftNavigationOpen.set(false)}
+      ></button>
+    </div>
+    <a href="/" aria-label="Homepage">
+      <picture>
+        <source
+          media="(max-width: 799px) and (prefers-color-scheme: dark)"
+          srcSet="/imgs/logo-mobile-dark.svg"
+        />
+        <source
+          media="(max-width: 799px)"
+          srcSet="/imgs/logo-mobile-light.svg"
+        />
+        <source
+          media="(max-width: 1279px) and (prefers-color-scheme: dark)"
+          srcSet="/imgs/logo-condensed-dark.svg"
+        />
+        <source
+          media="(max-width: 1279px)"
+          srcSet="/imgs/logo-condensed-light.svg"
+        />
+        <source
+          media="(min-width: 1280px) and (prefers-color-scheme: dark)"
+          srcSet="/imgs/logo-full-dark.svg"
+        />
+        <img src="/imgs/logo-full-light.svg" alt="Avaya Logo" />
+      </picture>
+    </a>
+  </div>
+);

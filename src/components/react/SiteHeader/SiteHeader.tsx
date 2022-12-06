@@ -1,6 +1,8 @@
 import { TopNav } from "@avaya/neo-react";
 import { useCallback } from "react";
 
+import { isLeftNavigationOpen } from "helpers/layoutState";
+
 import type { PageAstroInstance } from "helpers/types";
 
 import { TopNavSearch } from "./helpers";
@@ -45,13 +47,7 @@ export const SiteHeader = ({
           aria-label="Toggle Menu"
           className="topnav-menu-toggle"
           icon="menu"
-          onClick={(e) => {
-            const toggleLeftNavEvent = new CustomEvent("toggleLeftNavigation", {
-              bubbles: true,
-            });
-
-            e.target?.dispatchEvent(toggleLeftNavEvent);
-          }}
+          onClick={() => isLeftNavigationOpen.set(true)}
         />
       }
     >
