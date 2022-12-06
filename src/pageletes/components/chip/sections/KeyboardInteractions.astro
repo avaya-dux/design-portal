@@ -4,39 +4,42 @@ import {
   InfoTableBody,
   InfoTableCell,
   InfoTableRow,
+  PageleteSection,
   SectionHeader,
 } from "components/astro";
 import { topics } from "../static";
 ---
 
-<SectionHeader id={topics.keyboard.id}>{topics.keyboard.title}</SectionHeader>
+<PageleteSection marginBottom="2rem">
+  <SectionHeader id={topics.keyboard.id}>{topics.keyboard.title}</SectionHeader>
 
-<InfoTable>
-  <InfoTableBody>
-    <InfoTableRow>
-      <InfoTableCell>Tab</InfoTableCell>
-      <InfoTableCell>
-        Moves forward to the next interactive element
-      </InfoTableCell>
-    </InfoTableRow>
+  <InfoTable>
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>Tab</InfoTableCell>
+        <InfoTableCell>
+          Moves forward to the next interactive element
+        </InfoTableCell>
+      </InfoTableRow>
 
-    <InfoTableRow>
-      <InfoTableCell>Shift + Tab</InfoTableCell>
-      <InfoTableCell>
-        Moves backward to the previous interactive element
-      </InfoTableCell>
-    </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>Shift + Tab</InfoTableCell>
+        <InfoTableCell>
+          Moves backward to the previous interactive element
+        </InfoTableCell>
+      </InfoTableRow>
 
-    <InfoTableRow>
-      <InfoTableCell>Enter or Spacebar</InfoTableCell>
-      <InfoTableCell>Activates the chip (if applicable)</InfoTableCell>
-    </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>Enter or Spacebar</InfoTableCell>
+        <InfoTableCell>Activates the chip (if applicable)</InfoTableCell>
+      </InfoTableRow>
 
-    <InfoTableRow>
-      <InfoTableCell>Delete</InfoTableCell>
-      <InfoTableCell>
-        Removes the chip (for chips with a close buttton)
-      </InfoTableCell>
-    </InfoTableRow>
-  </InfoTableBody>
-</InfoTable>
+      <InfoTableRow>
+        <InfoTableCell>Delete</InfoTableCell>
+        <InfoTableCell>
+          Removes the chip (for chips with a close buttton)
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
+</PageleteSection>
