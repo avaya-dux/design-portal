@@ -2,6 +2,7 @@
 import { Description, PageleteSection, SectionHeader } from "components/astro";
 
 import { topics } from "../static";
+import { PlaygroundImplementation } from "./PlaygroundImplementation";
 ---
 
 <PageleteSection>
@@ -15,5 +16,5 @@ import { topics } from "../static";
     the HTML or React code provided and paste it into your application.
   </Description>
 
-  <!-- <PlaygroundImplementation client:load /> -->
+  <PlaygroundImplementation client:load />
 </PageleteSection>
