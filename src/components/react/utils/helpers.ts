@@ -24,17 +24,17 @@ export const trapFocus = (
   firstFocusableItem: HTMLElement,
   lastFocusableItem: HTMLElement
 ) => {
-  if (event.shiftKey && event.key === "Tab") {
-    if (document.activeElement === firstFocusableItem) {
-      event.preventDefault();
-      lastFocusableItem.focus();
-    }
+  if (event.key !== "Tab") {
+    return;
   }
 
-  if (!event.shiftKey && event.key === "Tab") {
-    if (document.activeElement === lastFocusableItem) {
-      event.preventDefault();
-      firstFocusableItem.focus();
-    }
+  if (event.shiftKey && document.activeElement === firstFocusableItem) {
+    event.preventDefault();
+    lastFocusableItem.focus();
+  }
+
+  if (!event.shiftKey && document.activeElement === lastFocusableItem) {
+    event.preventDefault();
+    firstFocusableItem.focus();
   }
 };

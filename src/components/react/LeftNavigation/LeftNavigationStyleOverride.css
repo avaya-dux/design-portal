@@ -89,7 +89,11 @@
   .left-navigation
     .neo-nav--left
     .neo-badge__navbutton
-    .neo-badge__navbutton--content:before {
+    .neo-badge__navbutton--content:before,
+  .left-navigation
+    .neo-nav--left
+    .neo-badge__navbutton
+    .neo-badge__navbutton--content:hover:before {
     color: var(--neo-color-base-100);
   }
 
@@ -106,5 +110,9 @@
 
   .left-navigation .neo-nav--left .neo-badge__navbutton + a {
     height: 100%;
+  }
+
+  .left-navigation .neo-nav--left a picture img {
+    height: 57px;
   }
 }

@@ -41,8 +41,6 @@ export const LeftNavigation = ({
       leftNavigationTopElementRef.current as Element
     );
 
-    console.log(leftNavTopElementStyles.display);
-
     const firstFocusableElement =
       leftNavTopElementStyles.display !== "none"
         ? (closeButtonRef.current as HTMLElement)
@@ -52,7 +50,9 @@ export const LeftNavigation = ({
           (document.getElementById("topnav-menu-toggle") as HTMLElement);
 
     function handleKeyDown(event: KeyboardEvent) {
-      if (isOpen && event.key === "Escape") isLeftNavigationOpen.set(false);
+      if (isOpen && event.key === "Escape") {
+        isLeftNavigationOpen.set(false);
+      }
 
       trapFocus(event, firstFocusableElement, lastFocusableElement);
     }
@@ -116,10 +116,13 @@ const LeftNavigationTopElement = ({
   topElementRef: RefObject<HTMLDivElement>;
 }) => {
   useEffect(() => {
-    if (buttonRef.current && isOpen) buttonRef.current.focus();
+    if (buttonRef.current && isOpen) {
+      buttonRef.current.focus();
+    }
 
-    if (buttonRef.current && !isOpen)
+    if (buttonRef.current && !isOpen) {
       document.getElementById("topnav-menu-toggle")?.focus();
+    }
   }, [isOpen]);
 
   return (
