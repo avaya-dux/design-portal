@@ -48,7 +48,7 @@ export const SiteHeader = ({
       menuToggleBtn={
         <TopNav.IconButton
           id="topnav-menu-toggle"
-          aria-label="Toggle Menu"
+          aria-label={isOpen ? "close left navigation" : "open left navigation"}
           className="topnav-menu-toggle"
           icon={isOpen ? "close" : "menu"}
           onClick={() => isLeftNavigationOpen.set(!isOpen)}
