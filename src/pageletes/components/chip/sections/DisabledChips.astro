@@ -1,11 +1,13 @@
 ---
-import { Description, SectionHeader } from "components/astro";
+import { Description, PageleteSection, SectionHeader } from "components/astro";
 import { topics } from "../static";
 ---
 
-<SectionHeader id={topics.disabled.id}>{topics.disabled.title}</SectionHeader>
+<PageleteSection>
+  <SectionHeader id={topics.disabled.id}>{topics.disabled.title}</SectionHeader>
 
-<Description>
-  To set a chip's disabled state, add the
-  <code>{"neo-chip--<modifier>--disabled"}</code> class.
-</Description>
+  <Description>
+    To set a chip's disabled state, add the
+    <code>{"neo-chip--<modifier>--disabled"}</code> class.
+  </Description>
+</PageleteSection>

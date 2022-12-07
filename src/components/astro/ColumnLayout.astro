@@ -1,11 +1,15 @@
 ---
 export interface Props {
+  marginTop?: string;
+  marginBottom?: string;
   numOfColumns: number;
   gap?: string;
   bkgColor?: string;
 }
 
 const {
+  marginTop = "0",
+  marginBottom = "1.5rem",
   numOfColumns,
   gap = "0",
   bkgColor = "transparent",
@@ -16,13 +20,13 @@ const {
   <slot />
 </div>
 
-<style define:vars={{ numOfColumns, gap, bkgColor }}>
+<style define:vars={{ marginTop, marginBottom, numOfColumns, gap, bkgColor }}>
   .variable-grid-columns {
     display: grid;
     gap: var(--gap);
     grid-template-columns: repeat(var(--numOfColumns), 1fr);
     background-color: var(--bkgColor);
-
-    margin-bottom: 1.5rem;
+    margin-top: var(--marginTop);
+    margin-bottom: var(--marginBottom);
   }
 </style>
