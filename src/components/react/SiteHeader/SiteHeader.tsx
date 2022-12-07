@@ -8,6 +8,7 @@ import type { PageAstroInstance } from "helpers/types";
 import { TopNavSearch } from "./helpers";
 
 import "./SiteHeaderStyleOverrides.css";
+import { useStore } from "@nanostores/react";
 
 /**
  * IMPORTANT: DPv3 is SSRd, and this component requires browser APIs.
@@ -33,6 +34,8 @@ export const SiteHeader = ({
     [pathname]
   );
 
+  const isOpen = useStore(isLeftNavigationOpen);
+
   return (
     <TopNav
       logo={<Logo />}
@@ -44,10 +47,11 @@ export const SiteHeader = ({
       }
       menuToggleBtn={
         <TopNav.IconButton
+          id="topnav-menu-toggle"
           aria-label="Toggle Menu"
           className="topnav-menu-toggle"
-          icon="menu"
-          onClick={() => isLeftNavigationOpen.set(true)}
+          icon={isOpen ? "close" : "menu"}
+          onClick={() => isLeftNavigationOpen.set(!isOpen)}
         />
       }
     >

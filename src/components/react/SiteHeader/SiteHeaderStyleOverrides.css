@@ -42,6 +42,7 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle {
 
 nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
   cursor: pointer;
+  background-color: var(--neo-color-red-600);
 }
 
 @media (max-width: 799px) {

@@ -165,7 +165,7 @@
   resolved "https://registry.npmjs.org/@atomic-layout/core/-/core-0.14.1.tgz"
   integrity sha512-o5nhk/1djuKzB20C2LSOuetTDytsbGg4c0UfxXkq1pqoaN3hKJcHPYF9nV+p6+P5CWqNBaaJddZ32OsFSppULQ==
 
-"@avaya/neo-react@^0.7.10":
+"@avaya/neo-react@0.7.10":
   version "0.7.10"
   resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-0.7.10.tgz#a3a27acda7bb693a63168cf2911358853ebcd5c5"
   integrity sha512-sVsKIHJamf3CuNMq4v2YcM+hlbyRWVoLtgbP7XwUUBPydjHWIGJaWiz3UuXUS8jz8G8YN/2QDVkt5cCTcsZkFg==

@@ -73,13 +73,14 @@
     top: 0;
     left: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 99;
   }
 
   .left-navigation .neo-nav--left {
     height: var(--header-height);
     min-height: var(--header-height);
+    border-bottom: 1px solid var(--navbar-border-bottom-color);
   }
   .left-navigation .neo-nav--left .neo-badge__navbutton {
     margin-top: 0px;
@@ -88,8 +89,8 @@
   .left-navigation
     .neo-nav--left
     .neo-badge__navbutton
-    .neo-badge__navbutton--content {
-    color: var(--neo-color-base-0);
+    .neo-badge__navbutton--content:before {
+    color: var(--neo-color-base-100);
   }
 
   .left-navigation .neo-nav--left .neo-badge__navbutton .neo-btn {
@@ -99,7 +100,7 @@
   }
 
   .left-navigation .neo-nav--left .neo-badge__navbutton .neo-btn:hover {
-    background-color: #da291c;
+    background-color: var(--neo-color-red-600);
     cursor: pointer;
   }
 
