@@ -1,11 +1,14 @@
 import { TopNav } from "@avaya/neo-react";
 import { useCallback } from "react";
 
+import { isLeftNavigationOpen } from "helpers/layoutState";
+
 import type { PageAstroInstance } from "helpers/types";
 
 import { TopNavSearch } from "./helpers";
 
 import "./SiteHeaderStyleOverrides.css";
+import { useStore } from "@nanostores/react";
 
 /**
  * IMPORTANT: DPv3 is SSRd, and this component requires browser APIs.
@@ -31,6 +34,8 @@ export const SiteHeader = ({
     [pathname]
   );
 
+  const isOpen = useStore(isLeftNavigationOpen);
+
   return (
     <TopNav
       logo={<Logo />}
@@ -42,16 +47,11 @@ export const SiteHeader = ({
       }
       menuToggleBtn={
         <TopNav.IconButton
-          aria-label="Toggle Menu"
+          id="topnav-menu-toggle"
+          aria-label={isOpen ? "close left navigation" : "open left navigation"}
           className="topnav-menu-toggle"
-          icon="menu"
-          onClick={(e) => {
-            const toggleLeftNavEvent = new CustomEvent("toggleLeftNavigation", {
-              bubbles: true,
-            });
-
-            e.target?.dispatchEvent(toggleLeftNavEvent);
-          }}
+          icon={isOpen ? "close" : "menu"}
+          onClick={() => isLeftNavigationOpen.set(!isOpen)}
         />
       }
     >

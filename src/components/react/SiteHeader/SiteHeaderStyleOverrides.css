@@ -14,6 +14,10 @@ body nav.neo-navbar .neo-nav--left a {
   height: 3rem;
 }
 
+body nav.neo-navbar .neo-nav--left a img {
+  height: 57px;
+}
+
 .neo-navbar {
   overflow: hidden;
 }
@@ -38,6 +42,11 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle {
   /* No equivalent to Avaya red in Neo design system */
   background-color: #da291c;
   border-radius: 0;
+}
+
+nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
+  cursor: pointer;
+  background-color: var(--neo-color-red-600);
 }
 
 @media (max-width: 799px) {

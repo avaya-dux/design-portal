@@ -18,3 +18,23 @@ export const disableScrollOnMobile = (
     window.scroll(0, 0);
   }
 };
+
+export const trapFocus = (
+  event: KeyboardEvent,
+  firstFocusableItem: HTMLElement,
+  lastFocusableItem: HTMLElement
+) => {
+  if (event.key !== "Tab") {
+    return;
+  }
+
+  if (event.shiftKey && document.activeElement === firstFocusableItem) {
+    event.preventDefault();
+    lastFocusableItem.focus();
+  }
+
+  if (!event.shiftKey && document.activeElement === lastFocusableItem) {
+    event.preventDefault();
+    firstFocusableItem.focus();
+  }
+};
