@@ -8,6 +8,9 @@ export { Description };
 import PageleteSection from "./PageleteSection.astro";
 export { PageleteSection };
 
+import PageleteSubSection from "./PageleteSubSection.astro";
+export { PageleteSubSection };
+
 import PageTitle from "./PageTitle.astro";
 export { PageTitle };
 

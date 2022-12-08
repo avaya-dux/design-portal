@@ -4,15 +4,15 @@ export interface Props {
   marginBottom?: string;
 }
 
-const { marginTop = "0", marginBottom = "6rem" } = Astro.props as Props;
+const { marginTop = "0", marginBottom = "64px" } = Astro.props as Props;
 ---
 
-<section class="pagelete-section">
+<div class="pagelete-sub-section">
   <slot />
-</section>
+</div>
 
 <style define:vars={{ marginTop, marginBottom }}>
-  .pagelete-section {
+  .pagelete-sub-section {
     margin-top: var(--marginTop);
     margin-bottom: var(--marginBottom);
   }

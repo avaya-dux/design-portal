@@ -1,11 +1,13 @@
 ---
-import { Description, SectionHeader } from "components/astro";
+import { Description, PageleteSection, SectionHeader } from "components/astro";
 import { topics } from "../static";
 ---
 
-<SectionHeader id={topics.avatar.id}>{topics.avatar.title}</SectionHeader>
+<PageleteSection>
+  <SectionHeader id={topics.avatar.id}>{topics.avatar.title}</SectionHeader>
 
-<Description>
-  To add an avatar to a chip, simply add the avatar code to the chip if using
-  HTML, or add the <code>avatarInitial</code> prop if using React.
-</Description>
+  <Description>
+    To add an avatar to a chip, simply add the avatar code to the chip if using
+    HTML, or add the <code>avatarInitial</code> prop if using React.
+  </Description>
+</PageleteSection>
