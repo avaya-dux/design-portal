@@ -21,7 +21,7 @@ describe("SiteHeader", () => {
   });
 
   it("fully renders without exploding", () => {
-    render(<SiteHeader pathname="/" pages={pagesMockData} />);
+    render(<SiteHeader pathname="/" pages={pagesMockData} userAgent="" />);
 
     const rootElement = screen.getByRole("navigation");
     expect(rootElement).toBeInTheDocument();
@@ -29,7 +29,7 @@ describe("SiteHeader", () => {
 
   it("passes basic axe compliance", async () => {
     const { container } = render(
-      <SiteHeader pathname="/" pages={pagesMockData} />
+      <SiteHeader pathname="/" pages={pagesMockData} userAgent="" />
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
