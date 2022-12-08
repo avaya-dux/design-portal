@@ -1,7 +1,6 @@
 import { LeftNav } from "@avaya/neo-react";
-import clsx from "clsx";
-
 import { useStore } from "@nanostores/react";
+import clsx from "clsx";
 
 import { isLeftNavigationOpen } from "helpers/layoutState";
 
@@ -117,7 +116,12 @@ const LeftNavigationTopElement = ({
 }) => {
   useEffect(() => {
     if (buttonRef.current && isOpen) {
-      buttonRef.current.focus();
+      // HACK: React LeftNav.TopLinkItem does not currently support using refs
+      (
+        document
+          .querySelector(".left-navigation")
+          ?.querySelectorAll(".neo-leftnav__main a")[0] as HTMLElement
+      ).focus();
     }
 
     if (buttonRef.current && !isOpen) {
