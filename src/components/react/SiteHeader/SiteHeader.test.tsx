@@ -1,6 +1,10 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
+import { cleanStores, keepMount } from "nanostores";
 import { vi } from "vitest";
+
+import { isLeftNavigationOpen } from "helpers/layoutState";
 
 import { SiteHeader } from ".";
 import { pagesMockData } from "./helpers/mocks";
@@ -21,15 +25,36 @@ describe("SiteHeader", () => {
   });
 
   it("fully renders without exploding", () => {
-    render(<SiteHeader pathname="/" pages={pagesMockData} />);
+    render(<SiteHeader pathname="/" pages={pagesMockData} userAgent="" />);
 
     const rootElement = screen.getByRole("navigation");
     expect(rootElement).toBeInTheDocument();
   });
 
+  it("updates whether Left Navigation is open correctly in layout state", async () => {
+    const user = userEvent.setup();
+    keepMount(isLeftNavigationOpen);
+
+    render(<SiteHeader pathname="/" pages={pagesMockData} userAgent="" />);
+
+    expect(isLeftNavigationOpen.get()).toEqual(undefined);
+
+    const toggleButton = screen.getAllByRole("button")[0];
+
+    await user.click(toggleButton as Element);
+
+    expect(isLeftNavigationOpen.get()).toEqual(true);
+
+    await user.click(toggleButton as Element);
+
+    expect(isLeftNavigationOpen.get()).toEqual(false);
+
+    cleanStores(isLeftNavigationOpen);
+  });
+
   it("passes basic axe compliance", async () => {
     const { container } = render(
-      <SiteHeader pathname="/" pages={pagesMockData} />
+      <SiteHeader pathname="/" pages={pagesMockData} userAgent="" />
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

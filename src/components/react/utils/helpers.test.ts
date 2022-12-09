@@ -1,6 +1,6 @@
 import { vi } from "vitest";
 
-import { disableScrollOnMobile } from "./helpers";
+import { disableScrollOnMobile, trapFocus } from "./helpers";
 
 describe("disableScroll", () => {
   const spyScroll = vi.fn();
@@ -16,5 +16,58 @@ describe("disableScroll", () => {
     disableScrollOnMobile(false, 320, 799);
 
     expect(window.scroll).not.toHaveBeenCalledTimes(2);
+  });
+});
+
+describe("trapFocus", () => {
+  const firstFocusableItem = { focus: vi.fn() };
+  const lastFocusableItem = { focus: vi.fn() };
+
+  beforeEach(() => {
+    vi.resetAllMocks();
+  });
+
+  it("focuses correctly when tabbing from last focusable item", () => {
+    Object.defineProperty(global.document, "activeElement", {
+      value: lastFocusableItem,
+      configurable: true,
+    });
+
+    trapFocus(
+      { key: "Tab", preventDefault: vi.fn() } as unknown as KeyboardEvent,
+      firstFocusableItem as unknown as HTMLElement,
+      lastFocusableItem as unknown as HTMLElement
+    );
+
+    expect(firstFocusableItem.focus).toHaveBeenCalled();
+  });
+
+  it("focuses correctly when tabbing up from first focusable item", () => {
+    Object.defineProperty(global.document, "activeElement", {
+      value: firstFocusableItem,
+    });
+
+    trapFocus(
+      {
+        key: "Tab",
+        shiftKey: true,
+        preventDefault: vi.fn(),
+      } as unknown as KeyboardEvent,
+      firstFocusableItem as unknown as HTMLElement,
+      lastFocusableItem as unknown as HTMLElement
+    );
+
+    expect(lastFocusableItem.focus).toHaveBeenCalled();
+  });
+
+  it("does nothing if key pressed is not Tab", () => {
+    trapFocus(
+      { key: "Enter" } as KeyboardEvent,
+      firstFocusableItem as unknown as HTMLElement,
+      lastFocusableItem as unknown as HTMLElement
+    );
+
+    expect(firstFocusableItem.focus).not.toHaveBeenCalled();
+    expect(lastFocusableItem.focus).not.toHaveBeenCalled();
   });
 });
