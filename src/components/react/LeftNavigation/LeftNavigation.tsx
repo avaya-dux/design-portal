@@ -2,7 +2,10 @@ import { LeftNav } from "@avaya/neo-react";
 import { useStore } from "@nanostores/react";
 import clsx from "clsx";
 
-import { isLeftNavigationOpen } from "helpers/layoutState";
+import {
+  isLeftNavigationOpen,
+  leftNavToggleButtonRef,
+} from "helpers/layoutState";
 
 import type { PageAstroInstance } from "helpers/types";
 
@@ -24,6 +27,8 @@ export const LeftNavigation = ({
 
   const isOpen = useStore(isLeftNavigationOpen);
 
+  const toggleButtonRef = useStore(leftNavToggleButtonRef);
+
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   const leftNavigationTopElementRef = useRef<HTMLDivElement>(null);
@@ -43,17 +48,16 @@ export const LeftNavigation = ({
     const firstFocusableElement =
       leftNavTopElementStyles.display !== "none"
         ? (closeButtonRef.current as HTMLElement)
-        : // HACK: I haven't found a better way to get the TopNav Menu Toggle button
-          // There is no way that I have found to forward the Ref through the Layout Astro file
-          // Same on line 111 below
-          (document.getElementById("topnav-menu-toggle") as HTMLElement);
+        : ((toggleButtonRef as RefObject<HTMLButtonElement>)
+            .current as HTMLElement);
 
     function handleKeyDown(event: KeyboardEvent) {
       if (isOpen && event.key === "Escape") {
         isLeftNavigationOpen.set(false);
       }
-
-      trapFocus(event, firstFocusableElement, lastFocusableElement);
+      if (isOpen) {
+        trapFocus(event, firstFocusableElement, lastFocusableElement);
+      }
     }
 
     document.addEventListener("keydown", handleKeyDown);
@@ -74,8 +78,9 @@ export const LeftNavigation = ({
       >
         <LeftNavigationTopElement
           isOpen={isOpen}
-          buttonRef={closeButtonRef}
+          closeButtonRef={closeButtonRef}
           topElementRef={leftNavigationTopElementRef}
+          toggleButtonRef={toggleButtonRef as RefObject<HTMLButtonElement>}
         />
         <LeftNav
           aria-label="left-navigation"
@@ -107,15 +112,17 @@ export const LeftNavigation = ({
 
 const LeftNavigationTopElement = ({
   isOpen,
-  buttonRef,
+  closeButtonRef,
   topElementRef,
+  toggleButtonRef,
 }: {
   isOpen: boolean | undefined;
-  buttonRef: RefObject<HTMLButtonElement>;
+  closeButtonRef: RefObject<HTMLButtonElement>;
   topElementRef: RefObject<HTMLDivElement>;
+  toggleButtonRef: RefObject<HTMLButtonElement>;
 }) => {
   useEffect(() => {
-    if (buttonRef.current && isOpen) {
+    if (closeButtonRef.current && isOpen) {
       // HACK: React LeftNav.TopLinkItem does not currently support using refs
       (
         document
@@ -124,10 +131,10 @@ const LeftNavigationTopElement = ({
       ).focus();
     }
 
-    if (buttonRef.current && !isOpen) {
-      document.getElementById("topnav-menu-toggle")?.focus();
+    if (closeButtonRef.current && toggleButtonRef?.current && !isOpen) {
+      toggleButtonRef.current?.focus();
     }
-  }, [isOpen]);
+  }, [isOpen, toggleButtonRef]);
 
   return (
     <div className="neo-nav--left" ref={topElementRef}>
@@ -137,7 +144,7 @@ const LeftNavigationTopElement = ({
           id="left-navigation-close"
           aria-label="close left navigation"
           onClick={() => isLeftNavigationOpen.set(false)}
-          ref={buttonRef}
+          ref={closeButtonRef}
         ></button>
       </div>
       <a href="/" aria-label="Homepage">
