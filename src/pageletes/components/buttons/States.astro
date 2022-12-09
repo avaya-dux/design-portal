@@ -60,32 +60,42 @@ const defaultImageText = "Buttons with default state look like this";
   <InfoTable>
     <InfoTableBody>
       <InfoTableRow>
-        <InfoTableCell>Primary button</InfoTableCell>
+        <InfoTableCell>Normal</InfoTableCell>
 
         <InfoTableCell>
-          Use these buttons to perform the most important action item on the
-          current page. For example, Save or Continue. Too many Primary buttons
-          can be confusing for the user, so only include one Primary button on
-          each screen or region.
+          This is the default state for the button. When nothing else is
+          happening, it adopts the Normal state (sometimes called “Up”).
         </InfoTableCell>
       </InfoTableRow>
 
       <InfoTableRow>
-        <InfoTableCell>Secondary button</InfoTableCell>
+        <InfoTableCell>Hover</InfoTableCell>
 
         <InfoTableCell>
-          Secondaries offer alternate or opposite actions to the Primary. For
-          example, Cancel, Back, or Reset. Multiple Secondary buttons can be
-          used with each Primary.
+          When the user moves the mouse over the button, or when the button
+          becomes the focus using the keyboard, its state changes to Hover. This
+          lasts until the user moves off the button. While in the Hover state,
+          use the Enter key, the Spacebar, or click the mouse button to launch
+          the button’s action.
         </InfoTableCell>
       </InfoTableRow>
 
       <InfoTableRow>
-        <InfoTableCell>Tertiary button</InfoTableCell>
+        <InfoTableCell>Pressed</InfoTableCell>
 
         <InfoTableCell>
-          Use them on their own or pair them up with other buttons. Tertiary
-          buttons contain the least important action items on the page.
+          While the button’s function is activated, it is displayed in the
+          Pressed state.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Disabled</InfoTableCell>
+
+        <InfoTableCell>
+          This shows that the button cannot be used. Maybe a required field has
+          not been filled in, or this action is not allowed with the currently
+          selected options.
         </InfoTableCell>
       </InfoTableRow>
     </InfoTableBody>

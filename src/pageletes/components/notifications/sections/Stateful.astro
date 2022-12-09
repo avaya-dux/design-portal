@@ -1,0 +1,27 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components/astro";
+
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.stateful.id}>{topics.stateful.title}</SectionHeader>
+
+  <Description>
+    Notifications can be styled by adding the <code>{"neo-notification"}</code> class
+    and the appropriate modifier as follows:
+    <code>{"neo-notification neo-notification--<modifier>"}</code>
+  </Description>
+
+  <Description>
+    Note that the <code>{"neo-notification--event"}</code> class does not render
+    a specific icon by default. Instead, the desired icon must be added via class
+    name, <code>{"neo-notification__icon neo-icon-copy"}</code> as shown in the example
+    below.
+  </Description>
+
+  <Description>
+    Add the <code>{"neo-slide neo-slide--in"}</code> and
+    <code>{"neo-slide neo-slide--out"}</code> classes to animate a notification.
+  </Description>
+</PageleteSection>

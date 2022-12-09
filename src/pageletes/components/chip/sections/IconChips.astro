@@ -1,11 +1,13 @@
 ---
-import { Description, SectionHeader } from "components/astro";
+import { Description, PageleteSection, SectionHeader } from "components/astro";
 import { topics } from "../static";
 ---
 
-<SectionHeader id={topics.icon.id}>{topics.icon.title}</SectionHeader>
+<PageleteSection>
+  <SectionHeader id={topics.icon.id}>{topics.icon.title}</SectionHeader>
 
-<Description>
-  To add an icon to a chip, add the icon class, example:
-  <code>{"neo-icon-info"}</code>
-</Description>
+  <Description>
+    To add an icon to a chip, add the icon class, example:
+    <code>{"neo-icon-info"}</code>
+  </Description>
+</PageleteSection>

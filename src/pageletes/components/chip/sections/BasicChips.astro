@@ -1,17 +1,19 @@
 ---
-import { Description, SectionHeader } from "components/astro";
+import { Description, PageleteSection, SectionHeader } from "components/astro";
 import { topics } from "../static";
 ---
 
-<SectionHeader id={topics.basic.id}>{topics.basic.title}</SectionHeader>
+<PageleteSection>
+  <SectionHeader id={topics.basic.id}>{topics.basic.title}</SectionHeader>
 
-<Description>
-  Chips can be styled by adding the <code>neo-chip</code> class and the appropriate
-  modifier
-  <code>{"neo-chip neo-chip--<modifier>"}</code>.
-</Description>
+  <Description>
+    Chips can be styled by adding the <code>neo-chip</code> class and the appropriate
+    modifier
+    <code>{"neo-chip neo-chip--<modifier>"}</code>.
+  </Description>
 
-<Description>
-  If you want to select a chip, add the
-  <code>{"neo-chip--<modifier>--selected"}</code> class.
-</Description>
+  <Description>
+    If you want to select a chip, add the
+    <code>{"neo-chip--<modifier>--selected"}</code> class.
+  </Description>
+</PageleteSection>
