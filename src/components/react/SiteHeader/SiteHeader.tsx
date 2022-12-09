@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef } from "react";
 import {
   isLeftNavigationOpen,
   leftNavToggleButtonRef,
-} from "helpers/layoutState";
+} from "components/react/utils/layoutState";
 
 import type { PageAstroInstance } from "helpers/types";
 
