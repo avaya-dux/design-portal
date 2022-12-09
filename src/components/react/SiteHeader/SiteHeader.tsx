@@ -1,7 +1,10 @@
 import { TopNav } from "@avaya/neo-react";
-import { useCallback } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
-import { isLeftNavigationOpen } from "helpers/layoutState";
+import {
+  isLeftNavigationOpen,
+  leftNavToggleButtonRef,
+} from "components/react/utils/layoutState";
 
 import type { PageAstroInstance } from "helpers/types";
 
@@ -36,6 +39,14 @@ export const SiteHeader = ({
 
   const isOpen = useStore(isLeftNavigationOpen);
 
+  const toggleButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (toggleButtonRef.current) {
+      leftNavToggleButtonRef.set(toggleButtonRef);
+    }
+  }, []);
+
   return (
     <TopNav
       logo={<Logo />}
@@ -52,6 +63,7 @@ export const SiteHeader = ({
           className="topnav-menu-toggle"
           icon={isOpen ? "close" : "menu"}
           onClick={() => isLeftNavigationOpen.set(!isOpen)}
+          ref={toggleButtonRef}
         />
       }
     >

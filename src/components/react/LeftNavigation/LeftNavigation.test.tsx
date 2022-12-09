@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import { cleanStores, keepMount } from "nanostores";
 
-import { isLeftNavigationOpen } from "helpers/layoutState";
+import { isLeftNavigationOpen } from "components/react/utils/layoutState";
 
 import { LeftNavigation } from ".";
 import { pagesMockData } from "../SiteHeader/helpers/mocks";

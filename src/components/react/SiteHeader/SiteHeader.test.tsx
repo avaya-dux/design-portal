@@ -4,7 +4,7 @@ import { axe } from "jest-axe";
 import { cleanStores, keepMount } from "nanostores";
 import { vi } from "vitest";
 
-import { isLeftNavigationOpen } from "helpers/layoutState";
+import { isLeftNavigationOpen } from "components/react/utils/layoutState";
 
 import { SiteHeader } from ".";
 import { pagesMockData } from "./helpers/mocks";
