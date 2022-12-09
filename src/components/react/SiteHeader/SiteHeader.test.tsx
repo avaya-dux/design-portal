@@ -39,13 +39,13 @@ describe("SiteHeader", () => {
 
     expect(isLeftNavigationOpen.get()).toEqual(undefined);
 
-    const rootElement = screen.getAllByRole("button")[0];
+    const toggleButton = screen.getAllByRole("button")[0];
 
-    await user.click(rootElement as Element);
+    await user.click(toggleButton as Element);
 
     expect(isLeftNavigationOpen.get()).toEqual(true);
 
-    await user.click(rootElement as Element);
+    await user.click(toggleButton as Element);
 
     expect(isLeftNavigationOpen.get()).toEqual(false);
 
