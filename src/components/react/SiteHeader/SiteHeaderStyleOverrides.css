@@ -71,6 +71,9 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
     display: flex;
     justify-content: flex-end;
   }
+  body nav.neo-navbar .neo-nav--left a img {
+    height: 48px;
+  }
 }
 
 @media (max-width: 320px) {
