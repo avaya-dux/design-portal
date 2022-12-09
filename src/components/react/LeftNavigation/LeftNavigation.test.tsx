@@ -43,18 +43,14 @@ describe("Left Navigation", () => {
     });
 
     expect(parentDivElement).toHaveClass("left-navigation--hidden");
-
-    cleanStores(isLeftNavigationOpen);
   });
 
   it("sets and traps focus correctly", async () => {
-    keepMount(isLeftNavigationOpen);
-
     isLeftNavigationOpen.set(true);
 
     render(<LeftNavigation pages={pagesMockData} currentUrl="/" />);
 
-    const button = screen.getByRole("button");
+    const leftNavToggleButton = screen.getByRole("button");
     const firstLink = screen.getByText("Home");
     const lastLink = screen.getByText("Contact");
 
@@ -64,7 +60,7 @@ describe("Left Navigation", () => {
     await userEvent.keyboard("{Tab}");
     await userEvent.keyboard("{Tab}");
 
-    expect(button).toHaveFocus();
+    expect(leftNavToggleButton).toHaveFocus();
 
     await userEvent.keyboard("{Shift>}{Tab}");
 
