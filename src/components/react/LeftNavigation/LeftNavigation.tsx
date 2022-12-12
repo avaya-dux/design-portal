@@ -12,7 +12,7 @@ import type { PageAstroInstance } from "helpers/types";
 import "./LeftNavigationStyleOverride.css";
 import { RefObject, useEffect, useRef } from "react";
 
-import { trapFocus } from "../utils";
+import { trapFocus, useWindowSize } from "../utils";
 
 export const LeftNavigation = ({
   pages,
@@ -33,39 +33,49 @@ export const LeftNavigation = ({
 
   const leftNavigationTopElementRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    // HACK: React LeftNav.TopLinkItem does not currently support using refs
-    const lastFocusableElement = document
-      .querySelector(".left-navigation")
-      ?.querySelectorAll(
-        `[href="${pages[pages.length - 1]?.url}"]`
-      )[0] as HTMLElement;
+  const { width } = useWindowSize();
 
-    const leftNavTopElementStyles = getComputedStyle(
-      leftNavigationTopElementRef.current as Element
-    );
-
-    const firstFocusableElement =
-      leftNavTopElementStyles.display !== "none"
-        ? (closeButtonRef.current as HTMLElement)
-        : ((toggleButtonRef as RefObject<HTMLButtonElement>)
-            .current as HTMLElement);
-
-    function handleKeyDown(event: KeyboardEvent) {
-      if (isOpen && event.key === "Escape") {
-        isLeftNavigationOpen.set(false);
-      }
-      if (isOpen) {
-        trapFocus(event, firstFocusableElement, lastFocusableElement);
-      }
+  function handleKeyDown(
+    event: KeyboardEvent,
+    firstFocusableElement: HTMLElement,
+    lastFocusableElement: HTMLElement
+  ) {
+    if (isOpen && event.key === "Escape") {
+      isLeftNavigationOpen.set(false);
     }
 
-    document.addEventListener("keydown", handleKeyDown);
+    trapFocus(event, firstFocusableElement, lastFocusableElement);
+  }
 
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [isOpen]);
+  useEffect(() => {
+    if (isOpen) {
+      // HACK: React LeftNav.TopLinkItem does not currently support using refs
+      const lastFocusableElement = document
+        .querySelector(".left-navigation")
+        ?.querySelectorAll(
+          `[href="${pages[pages.length - 1]?.url}"]`
+        )[0] as HTMLElement;
+
+      const firstFocusableElement =
+        width > 799
+          ? (closeButtonRef.current as HTMLElement)
+          : ((toggleButtonRef as RefObject<HTMLButtonElement>)
+              .current as HTMLElement);
+
+      document.addEventListener("keydown", (event) =>
+        handleKeyDown(event, firstFocusableElement, lastFocusableElement)
+      );
+
+      return () => {
+        document.removeEventListener("keydown", (event) =>
+          handleKeyDown(event, firstFocusableElement, lastFocusableElement)
+        );
+      };
+    } else {
+      // Linter complaining about not all code paths returning a value if no 'else' block declared
+      return;
+    }
+  }, [isOpen, width]);
 
   return (
     <>
