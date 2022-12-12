@@ -48,33 +48,32 @@ export const LeftNavigation = ({
   }
 
   useEffect(() => {
-    if (isOpen) {
-      // HACK: React LeftNav.TopLinkItem does not currently support using refs
-      const lastFocusableElement = document
-        .querySelector(".left-navigation")
-        ?.querySelectorAll(
-          `[href="${pages[pages.length - 1]?.url}"]`
-        )[0] as HTMLElement;
-
-      const firstFocusableElement =
-        width > 799
-          ? (closeButtonRef.current as HTMLElement)
-          : ((toggleButtonRef as RefObject<HTMLButtonElement>)
-              .current as HTMLElement);
-
-      document.addEventListener("keydown", (event) =>
-        handleKeyDown(event, firstFocusableElement, lastFocusableElement)
-      );
-
-      return () => {
-        document.removeEventListener("keydown", (event) =>
-          handleKeyDown(event, firstFocusableElement, lastFocusableElement)
-        );
-      };
-    } else {
-      // Linter complaining about not all code paths returning a value if no 'else' block declared
+    if (!isOpen) {
       return;
     }
+
+    // HACK: React LeftNav.TopLinkItem does not currently support using refs
+    const lastFocusableElement = document
+      .querySelector(".left-navigation")
+      ?.querySelectorAll(
+        `[href="${pages[pages.length - 1]?.url}"]`
+      )[0] as HTMLElement;
+
+    const firstFocusableElement =
+      width > 799
+        ? (closeButtonRef.current as HTMLElement)
+        : ((toggleButtonRef as RefObject<HTMLButtonElement>)
+            .current as HTMLElement);
+
+    document.addEventListener("keydown", (event) =>
+      handleKeyDown(event, firstFocusableElement, lastFocusableElement)
+    );
+
+    return () => {
+      document.removeEventListener("keydown", (event) =>
+        handleKeyDown(event, firstFocusableElement, lastFocusableElement)
+      );
+    };
   }, [isOpen, width]);
 
   return (
