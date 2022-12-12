@@ -2,11 +2,17 @@ import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import { cleanStores, keepMount } from "nanostores";
+import { vi } from "vitest";
 
-import { isLeftNavigationOpen } from "components/react/utils/layoutState";
+import {
+  isLeftNavigationOpen,
+  leftNavToggleButtonRef,
+} from "components/react/utils/layoutState";
 
 import { LeftNavigation } from ".";
 import { pagesMockData } from "../SiteHeader/helpers/mocks";
+
+import type { Ref } from "react";
 
 describe("Left Navigation", () => {
   it("renders without exploding", () => {
@@ -47,6 +53,12 @@ describe("Left Navigation", () => {
 
   it("sets and traps focus correctly", async () => {
     isLeftNavigationOpen.set(true);
+
+    leftNavToggleButtonRef.set({
+      current: {
+        focus: vi.fn(),
+      },
+    } as unknown as Ref<HTMLButtonElement>);
 
     render(<LeftNavigation pages={pagesMockData} currentUrl="/" />);
 

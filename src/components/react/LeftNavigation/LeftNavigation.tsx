@@ -12,7 +12,7 @@ import type { PageAstroInstance } from "helpers/types";
 import "./LeftNavigationStyleOverride.css";
 import { RefObject, useEffect, useRef } from "react";
 
-import { trapFocus } from "../utils";
+import { trapFocus, useWindowSize } from "../utils";
 
 export const LeftNavigation = ({
   pages,
@@ -33,7 +33,25 @@ export const LeftNavigation = ({
 
   const leftNavigationTopElementRef = useRef<HTMLDivElement>(null);
 
+  const { width } = useWindowSize();
+
+  function handleKeyDown(
+    event: KeyboardEvent,
+    firstFocusableElement: HTMLElement,
+    lastFocusableElement: HTMLElement
+  ) {
+    if (isOpen && event.key === "Escape") {
+      isLeftNavigationOpen.set(false);
+    }
+
+    trapFocus(event, firstFocusableElement, lastFocusableElement);
+  }
+
   useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
     // HACK: React LeftNav.TopLinkItem does not currently support using refs
     const lastFocusableElement = document
       .querySelector(".left-navigation")
@@ -41,31 +59,22 @@ export const LeftNavigation = ({
         `[href="${pages[pages.length - 1]?.url}"]`
       )[0] as HTMLElement;
 
-    const leftNavTopElementStyles = getComputedStyle(
-      leftNavigationTopElementRef.current as Element
-    );
-
     const firstFocusableElement =
-      leftNavTopElementStyles.display !== "none"
+      width > 799
         ? (closeButtonRef.current as HTMLElement)
         : ((toggleButtonRef as RefObject<HTMLButtonElement>)
             .current as HTMLElement);
 
-    function handleKeyDown(event: KeyboardEvent) {
-      if (isOpen && event.key === "Escape") {
-        isLeftNavigationOpen.set(false);
-      }
-      if (isOpen) {
-        trapFocus(event, firstFocusableElement, lastFocusableElement);
-      }
-    }
-
-    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("keydown", (event) =>
+      handleKeyDown(event, firstFocusableElement, lastFocusableElement)
+    );
 
     return () => {
-      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("keydown", (event) =>
+        handleKeyDown(event, firstFocusableElement, lastFocusableElement)
+      );
     };
-  }, [isOpen]);
+  }, [isOpen, width]);
 
   return (
     <>
