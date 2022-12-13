@@ -1,7 +1,7 @@
 import { InfoModal } from "@avaya/neo-react";
 import { ReactElement, useEffect } from "react";
 
-import type { PageAstroInstance } from "components/index";
+import type { PageAstroInstance } from "helpers/types";
 
 import { TopNavSearchResults } from "./TopNavSearchResults";
 
@@ -28,11 +28,11 @@ export const TopNavSearchPanel = ({
 }: TopNavSearchPanelProps) => {
   const size = useWindowSize();
 
-  const handleScrollAtMobile = () => {
-    disableScrollOnMobile(open, size.width, breakpoints.mobileMax);
-  };
-
   useEffect(() => {
+    const handleScrollAtMobile = () => {
+      disableScrollOnMobile(open, size.width, breakpoints.mobileMax);
+    };
+
     window.addEventListener("scroll", handleScrollAtMobile);
 
     return () => {

@@ -10,7 +10,7 @@ import {
 import type { PageAstroInstance } from "helpers/types";
 
 import "./LeftNavigationStyleOverride.css";
-import { RefObject, useEffect, useRef } from "react";
+import { RefObject, useCallback, useEffect, useRef } from "react";
 
 import { trapFocus, useWindowSize } from "../utils";
 
@@ -35,17 +35,20 @@ export const LeftNavigation = ({
 
   const { width } = useWindowSize();
 
-  function handleKeyDown(
-    event: KeyboardEvent,
-    firstFocusableElement: HTMLElement,
-    lastFocusableElement: HTMLElement
-  ) {
-    if (isOpen && event.key === "Escape") {
-      isLeftNavigationOpen.set(false);
-    }
+  const handleKeyDown = useCallback(
+    (
+      event: KeyboardEvent,
+      firstFocusableElement: HTMLElement,
+      lastFocusableElement: HTMLElement
+    ) => {
+      if (isOpen && event.key === "Escape") {
+        isLeftNavigationOpen.set(false);
+      }
 
-    trapFocus(event, firstFocusableElement, lastFocusableElement);
-  }
+      trapFocus(event, firstFocusableElement, lastFocusableElement);
+    },
+    [isOpen]
+  );
 
   useEffect(() => {
     if (!isOpen) {
@@ -74,7 +77,7 @@ export const LeftNavigation = ({
         handleKeyDown(event, firstFocusableElement, lastFocusableElement)
       );
     };
-  }, [isOpen, width]);
+  }, [handleKeyDown, isOpen, pages, toggleButtonRef, width]);
 
   return (
     <>
@@ -143,7 +146,7 @@ const LeftNavigationTopElement = ({
     if (closeButtonRef.current && toggleButtonRef?.current && !isOpen) {
       toggleButtonRef.current?.focus();
     }
-  }, [isOpen, toggleButtonRef]);
+  }, [closeButtonRef, isOpen, toggleButtonRef]);
 
   return (
     <div className="neo-nav--left" ref={topElementRef}>
