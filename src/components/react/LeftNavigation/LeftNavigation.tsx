@@ -35,17 +35,20 @@ export const LeftNavigation = ({
 
   const { width } = useWindowSize();
 
-  const handleKeyDown = useCallback((
-    event: KeyboardEvent,
-    firstFocusableElement: HTMLElement,
-    lastFocusableElement: HTMLElement
-  ) => {
-    if (isOpen && event.key === "Escape") {
-      isLeftNavigationOpen.set(false);
-    }
+  const handleKeyDown = useCallback(
+    (
+      event: KeyboardEvent,
+      firstFocusableElement: HTMLElement,
+      lastFocusableElement: HTMLElement
+    ) => {
+      if (isOpen && event.key === "Escape") {
+        isLeftNavigationOpen.set(false);
+      }
 
-    trapFocus(event, firstFocusableElement, lastFocusableElement);
-  }, [isOpen])
+      trapFocus(event, firstFocusableElement, lastFocusableElement);
+    },
+    [isOpen]
+  );
 
   useEffect(() => {
     if (!isOpen) {
@@ -63,7 +66,7 @@ export const LeftNavigation = ({
       width > 799
         ? (closeButtonRef.current as HTMLElement)
         : ((toggleButtonRef as RefObject<HTMLButtonElement>)
-          .current as HTMLElement);
+            .current as HTMLElement);
 
     document.addEventListener("keydown", (event) =>
       handleKeyDown(event, firstFocusableElement, lastFocusableElement)

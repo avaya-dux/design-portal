@@ -32,8 +32,6 @@ export const TopNavSearchResults = ({ options }: TopNavSearchResultsProps) => {
     }
   }, [anchorRefs, indexToFocus]);
 
-
-
   useEffect(() => {
     const handleArrowNavigation = (event: KeyboardEvent) => {
       searchResultsArrowNavigation(
@@ -43,7 +41,7 @@ export const TopNavSearchResults = ({ options }: TopNavSearchResultsProps) => {
         setIndexToFocus
       );
     };
-    
+
     window.addEventListener("keydown", handleArrowNavigation);
 
     return () => {
