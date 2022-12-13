@@ -1,5 +1,5 @@
 import type { AstroComponentFactory } from "astro/dist/runtime/server";
-import type { PageAstroInstance } from "components";
+import type { PageAstroInstance } from "helpers/types";
 
 export const pagesMockData: PageAstroInstance[] = [
   {

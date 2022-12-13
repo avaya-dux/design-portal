@@ -165,10 +165,10 @@
   resolved "https://registry.npmjs.org/@atomic-layout/core/-/core-0.14.1.tgz"
   integrity sha512-o5nhk/1djuKzB20C2LSOuetTDytsbGg4c0UfxXkq1pqoaN3hKJcHPYF9nV+p6+P5CWqNBaaJddZ32OsFSppULQ==
 
-"@avaya/neo-react@0.7.10":
-  version "0.7.10"
-  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-0.7.10.tgz#a3a27acda7bb693a63168cf2911358853ebcd5c5"
-  integrity sha512-sVsKIHJamf3CuNMq4v2YcM+hlbyRWVoLtgbP7XwUUBPydjHWIGJaWiz3UuXUS8jz8G8YN/2QDVkt5cCTcsZkFg==
+"@avaya/neo-react@0.7.11":
+  version "0.7.11"
+  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-0.7.11.tgz#e60c9306ff93faa6b0af879d5d78a437a7e233f3"
+  integrity sha512-SnxsZxYgGkHyfVlAyixxR4rdzKoBgx42ecdPB8lm17gdXDz9xJh/8GKGK/Dawc0Uo2K2Cjt3KZBlD9crT3xzRA==
   dependencies:
     atomic-layout "^0.16.2"
     loglevel "^1.8.0"
@@ -3024,6 +3024,11 @@ eslint-plugin-jsx-a11y@6.6.1:
     language-tags "^1.0.5"
     minimatch "^3.1.2"
     semver "^6.3.0"
+
+eslint-plugin-react-hooks@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.6.0.tgz#4c3e697ad95b77e93f8646aaa1630c1ba607edd3"
+  integrity sha512-oFc7Itz9Qxh2x4gNHStv3BqJq54ExXmfC+a1NjAta66IAN87Wu0R/QArgIS9qKzX3dXKPI9H5crl9QchNMY9+g==
 
 eslint-plugin-react@7.31.11:
   version "7.31.11"

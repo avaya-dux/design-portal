@@ -48,7 +48,7 @@ export const TopNavSearch = ({
     } else {
       setOptions([]);
     }
-  }, [search]);
+  }, [pages, search]);
 
   useEffect(() => {
     window.addEventListener("keydown", (event) =>

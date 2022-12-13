@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 export const useOsName = () => {
   const [os, setOs] = useState<"macos" | "windows" | "">("");
 
-  const macPlatforms = /(macintosh|macintel|macppc|mac68k|macos)/i;
 
   useEffect(() => {
+    const macPlatforms = /(macintosh|macintel|macppc|mac68k|macos)/i;
+
     const userAgent = window.navigator.userAgent.toLowerCase();
 
     setOs(macPlatforms.test(userAgent) ? "macos" : "windows");

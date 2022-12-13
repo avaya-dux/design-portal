@@ -49,7 +49,7 @@ export const PlaygroundImplementation = () => {
 >
   ${isDefault ? "default" : "custom"}
 </Button>`,
-    [animation, badge, dir, disabled, icon, size, variant]
+    [animation, badge, dir, disabled, icon, isDefault, size, variant]
   );
   const html = useMemo(
     () =>
@@ -68,7 +68,7 @@ export const PlaygroundImplementation = () => {
         isDefault ? "default" : "custom"
       }
 </button>`,
-    [animation, badge, dir, disabled, icon, size, variant]
+    [animation, badge, dir, disabled, isDefault, size, variant]
   );
 
   return (

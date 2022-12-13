@@ -1,6 +1,6 @@
 import { createRef, RefObject, useEffect, useState } from "react";
 
-import type { PageAstroInstance } from "components/index";
+import type { PageAstroInstance } from "helpers/types";
 
 import "./TopNavSearchResults.css";
 
@@ -30,18 +30,20 @@ export const TopNavSearchResults = ({ options }: TopNavSearchResultsProps) => {
     if (indexToFocus !== undefined && anchorRefs[indexToFocus]) {
       anchorRefs[indexToFocus]?.current?.focus();
     }
-  }, [indexToFocus]);
+  }, [anchorRefs, indexToFocus]);
 
-  const handleArrowNavigation = (event: KeyboardEvent) => {
-    searchResultsArrowNavigation(
-      event,
-      options.length,
-      indexToFocus,
-      setIndexToFocus
-    );
-  };
+
 
   useEffect(() => {
+    const handleArrowNavigation = (event: KeyboardEvent) => {
+      searchResultsArrowNavigation(
+        event,
+        options.length,
+        indexToFocus,
+        setIndexToFocus
+      );
+    };
+    
     window.addEventListener("keydown", handleArrowNavigation);
 
     return () => {
