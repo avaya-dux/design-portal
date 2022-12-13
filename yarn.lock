@@ -165,10 +165,10 @@
   resolved "https://registry.npmjs.org/@atomic-layout/core/-/core-0.14.1.tgz"
   integrity sha512-o5nhk/1djuKzB20C2LSOuetTDytsbGg4c0UfxXkq1pqoaN3hKJcHPYF9nV+p6+P5CWqNBaaJddZ32OsFSppULQ==
 
-"@avaya/neo-react@0.7.11":
-  version "0.7.11"
-  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-0.7.11.tgz#e60c9306ff93faa6b0af879d5d78a437a7e233f3"
-  integrity sha512-SnxsZxYgGkHyfVlAyixxR4rdzKoBgx42ecdPB8lm17gdXDz9xJh/8GKGK/Dawc0Uo2K2Cjt3KZBlD9crT3xzRA==
+"@avaya/neo-react@0.7.13":
+  version "0.7.13"
+  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-0.7.13.tgz#23f7fc38412d531b787f303fab00e2c45b054f6a"
+  integrity sha512-tsZtw/SJ5Z1HoB1NEEM3f/cwadkpNBnuYnDlPlcZ3V4bOnbTbB0KmmomI2oxKdBfFcX4K2r27pRAtYL/aroBUA==
   dependencies:
     atomic-layout "^0.16.2"
     loglevel "^1.8.0"
