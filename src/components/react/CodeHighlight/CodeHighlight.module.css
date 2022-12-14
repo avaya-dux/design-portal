@@ -13,9 +13,9 @@
 }
 
 .code-container .copy-button {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
+  position: fixed;
+  right: 2rem;
+  top: 4.5rem;
 }
 
 .code-container__notification-wrapper {
