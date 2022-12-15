@@ -18,22 +18,20 @@
   top: 4.5rem;
 }
 
-.code-container__notification-wrapper {
-  position: fixed;
-  bottom: 0;
-  left: 10px;
-}
-
 @media (max-width: 799px) {
   .code-container {
     flex-direction: column;
     padding-top: 51px;
   }
-  .code-container .copy-button {
-    top: 8px;
-    right: 8px;
-  }
   .code-container pre {
     white-space: pre-wrap;
+  }
+}
+
+@media (max-width: 668px) {
+  .code-container .copy-button {
+    position: fixed;
+    right: 2rem;
+    top: 6rem;
   }
 }
