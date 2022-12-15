@@ -22,12 +22,12 @@ describe("CodeHighlight", () => {
     render(<CodeHighlight code={code} active />);
 
     expect(screen.queryByRole("tooltip")?.textContent).toEqual(
-      "copy code to clipboard"
+      "Copy code to clipboard"
     );
 
     await user.click(screen.getByRole("button"));
 
-    expect(screen.queryByRole("tooltip")?.textContent).toEqual("copied");
+    expect(screen.queryByRole("tooltip")?.textContent).toEqual("Copied");
   });
 
   it("passes basic axe compliance", async () => {

@@ -42,7 +42,7 @@ export const CodeHighlight = ({
       <Highlighter code={code} language={language} />
       <Tooltip
         className={styles["copy-button"]}
-        label={isCopied ? "copied" : "copy code to clipboard"}
+        label={isCopied ? "Copied" : "Copy code to clipboard"}
         position="left"
       >
         <IconButton
