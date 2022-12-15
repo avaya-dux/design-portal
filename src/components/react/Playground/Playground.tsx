@@ -7,7 +7,7 @@ import {
   Tabs,
 } from "@avaya/neo-react";
 
-import type { ReactNode } from "react";
+import { ReactNode, useCallback, useState } from "react";
 import { CodeHighlight } from "components/react";
 import { OptionsSection, OptionsContainer } from "./helpers";
 
@@ -87,6 +87,14 @@ export const Playground = ({
   options,
   title,
 }: PlaygroundProps) => {
+  const [activePanel, setActivePanel] = useState(0);
+  const onTabPanelChange = useCallback(
+    (panel: number) => {
+      setActivePanel(panel);
+    },
+    [setActivePanel]
+  );
+
   return (
     <div className="playground-container">
       {title && <label className="playground-title">{title}</label>}
@@ -98,7 +106,7 @@ export const Playground = ({
         {options}
 
         <div className="playground-code">
-          <Tabs>
+          <Tabs onTabPanelChange={onTabPanelChange}>
             <TabList>
               <Tab id="html">HTML</Tab>
 
@@ -115,11 +123,15 @@ export const Playground = ({
 
             <TabPanels>
               <TabPanel>
-                <CodeHighlight code={html} />
+                <CodeHighlight code={html} active={activePanel === 0} />
               </TabPanel>
 
               <TabPanel>
-                <CodeHighlight code={react} language="jsx" />
+                <CodeHighlight
+                  code={react}
+                  language="jsx"
+                  active={activePanel === 1}
+                />
               </TabPanel>
             </TabPanels>
           </Tabs>
