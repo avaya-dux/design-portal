@@ -1,4 +1,12 @@
-import { IconButton, Notification, Tooltip, PopupId, PopupPosition, removePopupManagerContainer, usePopup } from "@avaya/neo-react";
+import {
+  IconButton,
+  Notification,
+  Tooltip,
+  PopupId,
+  PopupPosition,
+  removePopupManagerContainer,
+  usePopup,
+} from "@avaya/neo-react";
 import { copyTextToClipboard } from "../utils";
 import { useState, useRef, useEffect } from "react";
 import Highlight, { defaultProps, Language } from "prism-react-renderer";
@@ -32,64 +40,58 @@ export const CodeHighlight = ({
 
   const notificationRef = useRef(
     <Notification
-    action={{ onClick: () => setIsCopied(false) }}
-    header="Code copied to clipboard"
-    icon="copy"
-    type="event"
-  />
+      action={{ onClick: () => setIsCopied(false) }}
+      header="Code copied to clipboard"
+      icon="copy"
+      type="event"
+    />
   );
   const popupRef = useRef<
     { id: PopupId; position: PopupPosition } | undefined
   >();
 
-
   const buttonRef = useRef(null);
 
   useEffect(() => {
     if (isCopied) {
-     popupRef.current =notify({
-          node: notificationRef.current,
-          position: "bottom-left",
-        });
-    
+      popupRef.current = notify({
+        node: notificationRef.current,
+        position: "bottom-left",
+      });
     } else {
-      if(popupRef.current){
-        remove(
-          popupRef.current.id,
-          popupRef.current.position
-        );
-      } 
+      if (popupRef.current) {
+        remove(popupRef.current.id, popupRef.current.position);
+      }
     }
   }, [isCopied, notify, remove]);
 
-
   return (
-      <div className={styles["code-container"]}>
-        <Highlighter code={code} language={language} />
-        <Tooltip
-          className={styles["copy-button"]}
-          label="copy code to clipboard"
-          position="left"
-        >
-          <IconButton
-            aria-label="copy content to clipboard"
-            icon="copy"
-            shape="circle"
-            ref={buttonRef}
-            onClick={(e) => {
-              copyTextToClipboard(code);
+    <div className={styles["code-container"]}>
+      <Highlighter code={code} language={language} />
+      <Tooltip
+        className={styles["copy-button"]}
+        label="copy code to clipboard"
+        position="left"
+      >
+        <IconButton
+          aria-label="copy content to clipboard"
+          icon="copy"
+          shape="circle"
+          ref={buttonRef}
+          onClick={(e) => {
+            copyTextToClipboard(code);
 
-              e.currentTarget.blur();
+            e.currentTarget.blur();
 
-              setIsCopied(true);
+            setIsCopied(true);
 
-              setTimeout(() => {
-                setIsCopied(false);
-              }, 3000);
-            }}
-          />
-        </Tooltip>
-      </div>
+            setTimeout(() => {
+              setIsCopied(false);
+            }, 3000);
+          }}
+        />
+      </Tooltip>
+    </div>
   );
 };
 
