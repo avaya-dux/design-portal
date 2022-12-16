@@ -61,18 +61,11 @@ if (isComponentPage)
       />
 
       <div class="main__wrapper">
-        {
-          // TO-DO: It would probably be good to create an object with all the pathnames of pages
-          // which don't have/need the Left Navigation, when we have a better idea of these
-          // and use it here instead of this single comparison
-          pathname !== "/icons" && (
-            <LeftNavigation
-              pages={componentPages}
-              currentUrl={pathname}
-              client:load
-            />
-          )
-        }
+        <LeftNavigation
+          pages={componentPages}
+          currentUrl={pathname}
+          client:load
+        />
 
         <main id="main-content">
           <slot />
