@@ -78,7 +78,11 @@ label.playground-options-section-label {
   font-size: 12px; /* TODO: use `var(--neo-web-body-small-font-size)` */
 }
 
-.playground-options-section div.neo-input-group,
+.playground-options-section div.neo-multiselect,
 .playground-options-section input.neo-check + label {
   padding: 0.75rem 0 0 0;
+}
+
+.playground-options-section div.neo-input-editable__wrapper {
+  margin-top: 0.75rem;
 }
