@@ -1,0 +1,8 @@
+---
+import { iconCategories } from "./icons";
+import IconCategory from "./IconCategory.astro";
+---
+
+<div>
+  {iconCategories.map((category) => <IconCategory category={category} />)}
+</div>
