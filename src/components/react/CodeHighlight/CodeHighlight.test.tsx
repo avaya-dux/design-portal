@@ -1,8 +1,4 @@
-import {
-  render,
-  screen,
-  waitForElementToBeRemoved,
-} from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 
@@ -13,7 +9,7 @@ describe("CodeHighlight", () => {
   const code = "npm install @avaya/neo";
 
   it("fully renders without exploding", () => {
-    const { container } = render(<CodeHighlight code={code} />);
+    const { container } = render(<CodeHighlight code={code} active />);
 
     const copyBtn = screen.getByRole("button");
     expect(copyBtn).toBeDefined();
@@ -22,23 +18,20 @@ describe("CodeHighlight", () => {
     expect(codeElement).toBeDefined();
   });
 
-  it("copies code to clipboard", async () => {
-    render(<CodeHighlight code={code} />);
+  it("copies code to clipboard and changes tooltip text", async () => {
+    render(<CodeHighlight code={code} active />);
 
-    expect(screen.queryByRole("img", { name: "icon copy" })).toBeNull();
+    expect(screen.queryByRole("tooltip")?.textContent).toEqual(
+      "Copy code to clipboard"
+    );
 
     await user.click(screen.getByRole("button"));
 
-    const notification = screen.getByRole("img", { name: "icon copy" });
-    expect(notification).toBeDefined();
-
-    waitForElementToBeRemoved(notification).then(() => {
-      expect(screen.queryByRole("img", { name: "icon copy" })).toBeNull();
-    });
+    expect(screen.queryByRole("tooltip")?.textContent).toEqual("Copied");
   });
 
   it("passes basic axe compliance", async () => {
-    const { container } = render(<CodeHighlight code={code} />);
+    const { container } = render(<CodeHighlight code={code} active />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
 
