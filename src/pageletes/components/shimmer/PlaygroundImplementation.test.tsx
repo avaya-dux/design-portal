@@ -4,7 +4,7 @@ import { axe } from "jest-axe";
 import { PlaygroundImplementation } from "./PlaygroundImplementation";
 
 const codeContent = (element?: Node) => {
-  return element?.textContent?.trim().replace("copy code to clipboard", "");
+  return element?.textContent?.trim().replace("Copy code to clipboard", "");
 };
 describe("PlaygroundImplementation", () => {
   const user = userEvent.setup();

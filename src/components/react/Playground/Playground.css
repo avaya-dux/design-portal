@@ -34,6 +34,7 @@
 .playground-container .playground-examples .playground-code {
   flex-basis: 100%;
   overflow: auto;
+  transform: translateZ(0);
 }
 
 .playground-container

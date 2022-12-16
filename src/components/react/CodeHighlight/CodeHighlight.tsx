@@ -1,6 +1,6 @@
-import { IconButton, Notification, Tooltip } from "@avaya/neo-react";
+import { IconButton, Tooltip } from "@avaya/neo-react";
 import { copyTextToClipboard } from "../utils";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Highlight, { defaultProps, Language } from "prism-react-renderer";
 import theme from "prism-react-renderer/themes/vsDark";
 import styles from "./CodeHighlight.module.css";
@@ -18,20 +18,35 @@ import styles from "./CodeHighlight.module.css";
 export const CodeHighlight = ({
   code,
   language = "markdown",
+  active,
 }: {
   code: string;
+  active: boolean;
   language?: Language;
 }) => {
   const [isCopied, setIsCopied] = useState(false);
 
   const buttonRef = useRef(null);
 
+  useEffect(() => {
+    if (!active) {
+      setIsCopied(false);
+    }
+    return () => {
+      setIsCopied(false);
+    };
+  }, [active]);
+
+  useEffect(() => {
+    setIsCopied(false);
+  }, [code]);
+
   return (
     <div className={styles["code-container"]}>
       <Highlighter code={code} language={language} />
       <Tooltip
         className={styles["copy-button"]}
-        label="copy code to clipboard"
+        label={isCopied ? "Copied" : "Copy code to clipboard"}
         position="left"
       >
         <IconButton
@@ -41,28 +56,11 @@ export const CodeHighlight = ({
           ref={buttonRef}
           onClick={(e) => {
             copyTextToClipboard(code);
-
             e.currentTarget.blur();
-
             setIsCopied(true);
-
-            setTimeout(() => {
-              setIsCopied(false);
-            }, 3000);
           }}
         />
       </Tooltip>
-
-      {isCopied && (
-        <div className={styles["code-container__notification-wrapper"]}>
-          <Notification
-            action={{ onClick: () => setIsCopied(false) }}
-            header="Code copied to clipboard"
-            icon="copy"
-            type="event"
-          />
-        </div>
-      )}
     </div>
   );
 };
