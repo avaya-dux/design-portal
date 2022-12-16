@@ -54,12 +54,11 @@
   .playground-examples
   .playground-options
   .playground-options-section {
-  margin: 1rem 1rem 0rem 1rem;
-  padding-bottom: 1rem;
+  margin: 0.75rem 1rem 0rem 1rem;
+  padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--neo-color-base-200);
 
   display: grid;
-  grid-gap: 1rem;
 }
 .playground-container
   .playground-examples
@@ -77,4 +76,13 @@
 
 label.playground-options-section-label {
   font-size: 12px; /* TODO: use `var(--neo-web-body-small-font-size)` */
+}
+
+.playground-options-section div.neo-multiselect,
+.playground-options-section div.neo-form-control input.neo-check + label {
+  padding: 0.75rem 0 0 0;
+}
+
+.playground-options-section div.neo-input-editable__wrapper {
+  margin-top: 0.75rem;
 }
