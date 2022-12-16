@@ -6,6 +6,6 @@ import IconLibrary from "./IconLibrary.astro";
 
 export { IconLibrary };
 
-import IconActions from './IconActions.astro';
+import IconActions from "./IconActions.astro";
 
 export { IconActions };
