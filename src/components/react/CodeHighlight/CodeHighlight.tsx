@@ -37,6 +37,10 @@ export const CodeHighlight = ({
     };
   }, [active]);
 
+  useEffect(() => {
+    setIsCopied(false)
+  }, [code])
+
   return (
     <div className={styles["code-container"]}>
       <Highlighter code={code} language={language} />
