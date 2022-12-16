@@ -79,8 +79,8 @@ label.playground-options-section-label {
 }
 
 .playground-options-section div.neo-multiselect,
-.playground-options-section input.neo-check + label {
-  padding: 0.75rem 0 0 0 !important;
+.playground-options-section div.neo-form-control input.neo-check + label {
+  padding: 0.75rem 0 0 0;
 }
 
 .playground-options-section div.neo-input-editable__wrapper {
