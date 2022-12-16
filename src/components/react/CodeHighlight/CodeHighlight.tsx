@@ -38,8 +38,8 @@ export const CodeHighlight = ({
   }, [active]);
 
   useEffect(() => {
-    setIsCopied(false)
-  }, [code])
+    setIsCopied(false);
+  }, [code]);
 
   return (
     <div className={styles["code-container"]}>
