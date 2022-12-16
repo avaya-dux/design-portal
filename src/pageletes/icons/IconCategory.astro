@@ -7,24 +7,21 @@ export interface Props {
 }
 
 const { category } = Astro.props as Props;
+
+const iconsInCategory = icons
+  .filter((icon) => icon.category === category)
+  .sort((a, b) => (a.name > b.name ? 1 : -1));
 ---
 
 <div class="icon-category">
   <h4>{category}</h4><div class="icon-category__icons">
     {
-      icons.sort((icon) => icon.name).map((icon) => {
-        if (icon.category === category)
-          return (
-            <div class="icon-category__icons__card">
-              <Icon
-                icon={icon.name}
-                aria-label={`${icon.name} icon`}
-                size="lg"
-              />
-              <p>{icon.name}</p>
-            </div>
-          );
-      })
+      iconsInCategory.map((icon) => (
+        <div class="icon-category__icons__card">
+          <Icon icon={icon.name} aria-label={`${icon.name} icon`} size="lg" />
+          <p>{icon.name}</p>
+        </div>
+      ))
     }
   </div>
 </div>
@@ -63,7 +60,6 @@ const { category } = Astro.props as Props;
     );
     grid-gap: var(--grid-layout-gap);
     grid-row-gap: 16px;
-
   }
 
   .icon-category__icons__card {
