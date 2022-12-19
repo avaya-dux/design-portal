@@ -1,0 +1,14 @@
+.icon-filters {
+  display: flex;
+  flex-direction: column;
+  min-width: 15rem;
+  border-right: 1px solid var(--navbar-border-bottom-color);
+}
+
+.icon-filters__section {
+  padding: 1rem 0px 1.5px 1.25rem
+}
+
+.icon-filters__section .neo-form-control {
+  margin-top: 1.3rem;
+}

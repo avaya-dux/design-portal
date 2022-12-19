@@ -9,3 +9,11 @@ export { IconLibrary };
 import IconActions from "./IconActions.astro";
 
 export { IconActions };
+
+import { IconFilters } from "./IconFilters";
+
+export { IconFilters };
+
+import { iconCategories, icons } from "./icons";
+
+export { iconCategories, icons }
