@@ -1,6 +1,5 @@
 import { Checkbox, CheckboxGroup, Radio, RadioGroup } from "@avaya/neo-react";
 import { useStore } from "@nanostores/react";
-import { useEffect } from "react";
 
 import {
   categoriesToFilterFor,
@@ -47,7 +46,7 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
           onChange={(e) => {
             const { value: category } = e.target as HTMLInputElement;
 
-            let tempFilteredCategories = updateFilteredArray(
+            const tempFilteredCategories = updateFilteredArray(
               filteredCategories,
               category
             );
@@ -77,7 +76,7 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
           onChange={(e) => {
             const { value: variation } = e.target as HTMLInputElement;
 
-            let tempFilteredVariations = updateFilteredArray(
+            const tempFilteredVariations = updateFilteredArray(
               filteredVariations,
               variation
             );

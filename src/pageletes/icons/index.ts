@@ -16,4 +16,4 @@ export { IconFilters };
 
 import { iconCategories, icons } from "./helpers/icons";
 
-export { iconCategories, icons }
+export { iconCategories, icons };

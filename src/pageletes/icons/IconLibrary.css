@@ -4,5 +4,5 @@
 }
 
 .icon-library span[class*="neo-icon-"]::before {
-  color: var(--global-font-color)
+  color: var(--global-font-color);
 }
