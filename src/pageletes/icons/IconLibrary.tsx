@@ -1,14 +1,17 @@
 import { IconCategory } from "./IconCategory";
 
-import { categoriesToFilterFor } from "./helpers/iconPageState";
+import { categoriesToFilterFor, themesToFilterFor } from "./helpers/iconPageState";
 import { useStore } from "@nanostores/react";
 import { Fragment, useEffect, useState } from "react";
+
+import './IconLibrary.css'
 
 export const IconLibrary = ({ categories }: { categories: string[] }) => {
   const [iconCategoriesToDisplay, setIconCategoriesToDisplay] =
     useState<string[]>(categories);
 
   const filteredCategories = useStore(categoriesToFilterFor);
+  const filteredTheme = useStore(themesToFilterFor)
 
   useEffect(() => {
     if (!filteredCategories.length) {
@@ -16,15 +19,13 @@ export const IconLibrary = ({ categories }: { categories: string[] }) => {
       return;
     }
 
-    // need to reset filter
-
     let tempArray = [...filteredCategories].sort((a, b) => (a > b ? 1 : -1));
 
     setIconCategoriesToDisplay([...tempArray]);
   }, [filteredCategories]);
 
   return (
-    <div>
+    <div className={`icon-library neo-${filteredTheme}`}>
       {iconCategoriesToDisplay.map((category, index) => (
         <Fragment key={index}>
           <IconCategory category={category} />

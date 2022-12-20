@@ -1,4 +1,4 @@
-import { Checkbox, CheckboxGroup } from "@avaya/neo-react";
+import { Checkbox, CheckboxGroup, Radio, RadioGroup } from "@avaya/neo-react";
 import { useStore } from "@nanostores/react";
 import { useEffect } from "react";
 
@@ -28,7 +28,7 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
 
   const filteredVariations = useStore(variationsToFilterFor);
 
-  const filteredThemes = useStore(themesToFilterFor);
+  const filteredTheme = useStore(themesToFilterFor);
 
   return (
     <div className="icon-filters">
@@ -82,7 +82,7 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
               variation
             );
 
-            variationsToFilterFor.set(tempFilteredVariations);
+            variationsToFilterFor.set([...tempFilteredVariations]);
           }}
         >
           <Checkbox value="bidirectional">Bidirectional</Checkbox>
@@ -98,20 +98,18 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
           Theme
         </label>
 
-        <CheckboxGroup
-          groupName="Icon themes"
-          aria-labelledby="themes"
+        <RadioGroup
+          groupName="type-options"
+          selected={filteredTheme}
           onChange={(e) => {
             const { value: theme } = e.target as HTMLInputElement;
 
-            let tempFilteredThemes = updateFilteredArray(filteredThemes, theme);
-
-            themesToFilterFor.set(tempFilteredThemes);
+            themesToFilterFor.set(theme);
           }}
         >
-          <Checkbox value="light">Light</Checkbox>
-          <Checkbox value="dark">Dark</Checkbox>
-        </CheckboxGroup>
+          <Radio value="light">Light</Radio>
+          <Radio value="dark">Dark</Radio>
+        </RadioGroup>
       </section>
     </div>
   );
