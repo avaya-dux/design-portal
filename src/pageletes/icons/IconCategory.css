@@ -14,7 +14,12 @@
   margin-bottom: 1rem;
 }
 
-.icon-category__icons {
+.icon-category__icons--flex {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.icon-category__icons--grid {
   --grid-layout-gap: 15px;
   --grid-column-count: 10;
   --grid-item--min-width: 160px;
@@ -44,5 +49,5 @@
 
 .icon-category__no-icons {
   display: block;
-  color: var(--button-color-warning);
+  color: var(--button-color-alert);
 }

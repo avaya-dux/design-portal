@@ -41,7 +41,7 @@ export const IconCategory = ({ category }: { category: string }) => {
   return (
     <div className="icon-category">
       <h4>{category}</h4>
-      <div className="icon-category__icons">
+      <div className={iconsToDisplay.length ? "icon-category__icons--grid" : "icon-category__icons--flex"}>
         {iconsToDisplay.length
           ? iconsToDisplay.map((icon, index) => (
               <div className="icon-category__icons__card" key={index}>
@@ -53,7 +53,7 @@ export const IconCategory = ({ category }: { category: string }) => {
                 <p>{icon.name}</p>
               </div>
             ))
-          : [<p className="icon-category__no-icons neo-icon-warning">No icons to display with current filters</p>]}
+          : [<p className="icon-category__no-icons neo-icon-error">No icons to display with current filters</p>]}
       </div>
     </div>
   );
