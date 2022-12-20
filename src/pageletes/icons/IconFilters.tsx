@@ -1,30 +1,34 @@
 import { Checkbox, CheckboxGroup } from "@avaya/neo-react";
+import { useStore } from "@nanostores/react";
+import { useEffect } from "react";
 
-import { categoriesToFilterFor } from "./iconPageState";
+import {
+  categoriesToFilterFor,
+  themesToFilterFor,
+  variationsToFilterFor,
+} from "./helpers/iconPageState";
 
 import "./IconFilters.css";
-import { useEffect } from "react";
-import { useStore } from "@nanostores/react";
 
-interface Icon {
-  name: string;
-  bidirectional: boolean;
-  category: string;
-  animated: boolean;
+export function updateFilteredArray(array: string[], value: string) {
+  let tempArray = [];
+
+  if (array.includes(value)) {
+    tempArray = array.filter((values) => values !== value);
+  } else {
+    tempArray = array;
+    tempArray.push(value);
+  }
+
+  return tempArray;
 }
 
-export const IconFilters = ({
-  categories,
-  icons,
-}: {
-  categories: string[];
-  icons: Icon[];
-}) => {
+export const IconFilters = ({ categories }: { categories: string[] }) => {
   const filteredCategories = useStore(categoriesToFilterFor);
 
-  useEffect(() => {
-    console.log(filteredCategories);
-  }, [filteredCategories]);
+  const filteredVariations = useStore(variationsToFilterFor);
+
+  const filteredThemes = useStore(themesToFilterFor);
 
   return (
     <div className="icon-filters">
@@ -43,20 +47,12 @@ export const IconFilters = ({
           onChange={(e) => {
             const { value: category } = e.target as HTMLInputElement;
 
-            let tempFilteredCategories = filteredCategories;
+            let tempFilteredCategories = updateFilteredArray(
+              filteredCategories,
+              category
+            );
 
-            if (tempFilteredCategories.includes(category)) {
-              tempFilteredCategories = filteredCategories.filter(
-                (filtered) => filtered !== category
-              )
-            } else {
-              console.log("This ran")
-              tempFilteredCategories.push(category);
-            }
-
-            console.log(tempFilteredCategories)
-
-            categoriesToFilterFor.set(tempFilteredCategories);
+            categoriesToFilterFor.set([...tempFilteredCategories]);
           }}
         >
           {categories.map((category, index) => (
@@ -69,18 +65,24 @@ export const IconFilters = ({
       <section className="icon-filters__section">
         <label
           className="icon-filters__section__label"
-          id="types"
-          htmlFor="Icon types"
+          id="variations"
+          htmlFor="Icon variations"
         >
           Variations
         </label>
 
         <CheckboxGroup
-          groupName="Icon types"
-          aria-labelledby="types"
+          groupName="Icon variations"
+          aria-labelledby="variations"
           onChange={(e) => {
-            const { value } = e.target as HTMLInputElement;
-            console.log(value);
+            const { value: variation } = e.target as HTMLInputElement;
+
+            let tempFilteredVariations = updateFilteredArray(
+              filteredVariations,
+              variation
+            );
+
+            variationsToFilterFor.set(tempFilteredVariations);
           }}
         >
           <Checkbox value="bidirectional">Bidirectional</Checkbox>
@@ -100,8 +102,11 @@ export const IconFilters = ({
           groupName="Icon themes"
           aria-labelledby="themes"
           onChange={(e) => {
-            const { value } = e.target as HTMLInputElement;
-            console.log(value);
+            const { value: theme } = e.target as HTMLInputElement;
+
+            let tempFilteredThemes = updateFilteredArray(filteredThemes, theme);
+
+            themesToFilterFor.set(tempFilteredThemes);
           }}
         >
           <Checkbox value="light">Light</Checkbox>

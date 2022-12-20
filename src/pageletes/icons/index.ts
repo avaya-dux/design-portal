@@ -2,7 +2,7 @@ import Intro from "./Intro.astro";
 
 export { Intro };
 
-import IconLibrary from "./IconLibrary.astro";
+import { IconLibrary } from "./IconLibrary";
 
 export { IconLibrary };
 
@@ -14,6 +14,6 @@ import { IconFilters } from "./IconFilters";
 
 export { IconFilters };
 
-import { iconCategories, icons } from "./icons";
+import { iconCategories, icons } from "./helpers/icons";
 
 export { iconCategories, icons }

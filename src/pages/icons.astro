@@ -4,6 +4,10 @@ export const keywords = "A collection of icons";
 
 import { Layout } from "layouts";
 import { Intro, IconLibrary, IconActions } from "pageletes/icons";
+
+import { iconCategories } from "pageletes/icons";
+
+const sortedCategories = iconCategories.sort((a, b) => (a > b ? 1 : -1));
 ---
 
 <Layout title="Icons">
@@ -11,5 +15,5 @@ import { Intro, IconLibrary, IconActions } from "pageletes/icons";
 
   <IconActions />
 
-  <IconLibrary />
+  <IconLibrary categories={sortedCategories} client:load />
 </Layout>
