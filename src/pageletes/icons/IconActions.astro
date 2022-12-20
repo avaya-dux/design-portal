@@ -1,0 +1,65 @@
+---
+import { TextInput, Button } from "@avaya/neo-react";
+---
+
+<div class="icon__actions">
+  <div class="icon__actions__search">
+    <TextInput aria-label="Search icons" startIcon="search" clearable={true} />
+  </div>
+
+  <div class="icon__actions__buttons">
+    <a class="icon__actions__link" href="neo-icons.zip" download="neo-icons"
+      ><Button
+        variant="primary"
+        icon="download"
+        className="icon__actions__button">Download Icons (.zip)</Button
+      >
+    </a>
+    <a
+      class="icon__actions__link"
+      href="https://forms.office.com/pages/responsepage.aspx?id=bGOiBG0y_0iT-HCYdb06qdx81vACnlBCiUOv8EhyYyJUNTBSN01VSDlZRjBROTRFUzJVSDZTNVBWUS4u"
+      target="blank"
+      ><Button variant="secondary">Request an Icon</Button>
+    </a>
+  </div>
+</div>
+
+<style>
+  .icon__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  .icon__actions .icon__actions__search {
+    flex-grow: 1;
+    margin-right: 1rem;
+  }
+
+  .icon__actions__buttons {
+    display: flex;
+    align-items: center;
+  }
+
+  .icon__actions__button {
+    margin-right: 1rem;
+  }
+
+  .icon__actions a.icon__actions__link:hover {
+    text-decoration: none;
+  }
+
+  @media (max-width: 799px) {
+    .icon__actions {
+      display: block;
+    }
+    .icon__actions .icon__actions__search {
+      margin-bottom: 1rem;
+    }
+
+    .icon__actions a.icon__actions__link:not(:last-child) {
+      margin-top: 1px;
+    }
+  }
+</style>

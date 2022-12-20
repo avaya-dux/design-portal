@@ -49,9 +49,12 @@ describe("Left Navigation", () => {
     });
 
     expect(parentDivElement).toHaveClass("left-navigation--hidden");
+
+    cleanStores(isLeftNavigationOpen);
   });
 
   it("sets and traps focus correctly", async () => {
+    keepMount(isLeftNavigationOpen);
     isLeftNavigationOpen.set(true);
 
     leftNavToggleButtonRef.set({
