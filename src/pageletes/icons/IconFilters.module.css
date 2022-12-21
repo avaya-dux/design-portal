@@ -16,7 +16,7 @@
 }
 
 .icon-filters__section {
-  padding: 1rem 0px 1.5rem 1.25rem;
+  padding: 1rem 0px 0.75rem 1.25rem;
   border-bottom: 1px solid var(--navbar-border-bottom-color);
 }
 
@@ -31,10 +31,23 @@
 }
 
 .icon-filters__section
-  .neo-form-control
-  .neo-input-group
-  input.neo-check
-  + label {
+  :global
+  div.neo-input-group
+  input
+  + label:not(.neo-switch) {
   text-transform: capitalize;
   padding-bottom: 0.75rem;
+}
+
+.icon-filters__section
+  :global
+  div.neo-input-group
+  input:not(.neo-check)
+  + label:not(.neo-switch):first-of-type,
+.icon-filters__section
+  :global
+  div.neo-form-control:not(:nth-of-type(2)) div.neo-input-group
+  input.neo-check
+  + label:not(.neo-switch):first-of-type {
+  margin-top: 0.75rem;
 }

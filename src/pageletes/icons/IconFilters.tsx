@@ -48,8 +48,18 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
   useEffect(() => {
     if (filteredCategories.length) {
       setShowAllCategories("");
+    } else {
+      setShowAllCategories("selectAll")
     }
   }, [filteredCategories]);
+
+  useEffect(() => {
+    return () => {
+      categoriesToFilterFor.set([]);
+      variationsToFilterFor.set([]);
+      themesToFilterFor.set("dynamic");
+    };
+  }, []);
 
   return (
     <div className={styles["icon-filters"]}>
