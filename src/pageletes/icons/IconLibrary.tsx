@@ -42,15 +42,22 @@ export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
           .length
       );
     } else {
-      setTotalNumberOfIconsDisplayed(icons.length)
+      setTotalNumberOfIconsDisplayed(icons.length);
     }
   }, [filteredCategories]);
 
-  let totalNumberOfIconsDisplayedString = `${totalNumberOfIconsDisplayed} icons displayed`
+  const totalNumberOfIconsDisplayedString = `${totalNumberOfIconsDisplayed} icons displayed`;
 
   return (
     <div className={`${styles["icon-library"]} neo-${filteredTheme}`}>
-      <Chip variant="default" role="alert" aira-live="assertive" className={styles["icon-library__alert"]}>{totalNumberOfIconsDisplayedString}</Chip>
+      <Chip
+        variant="default"
+        role="alert"
+        aira-live="assertive"
+        className={styles["icon-library__alert"]}
+      >
+        {totalNumberOfIconsDisplayedString}
+      </Chip>
       {iconCategoriesToDisplay.map((category, index) => (
         <IconCategory category={category} key={index} />
       ))}

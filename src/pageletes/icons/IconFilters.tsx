@@ -49,7 +49,7 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
     if (filteredCategories.length) {
       setShowAllCategories("");
     } else {
-      setShowAllCategories("selectAll")
+      setShowAllCategories("selectAll");
     }
   }, [filteredCategories]);
 
