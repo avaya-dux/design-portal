@@ -15,5 +15,5 @@ const sortedCategories = iconCategories.sort((a, b) => (a > b ? 1 : -1));
 
   <IconActions />
 
-  <IconLibrary categories={sortedCategories} client:load />
+  <IconLibrary allCategories={sortedCategories} client:load />
 </Layout>

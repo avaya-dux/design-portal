@@ -9,24 +9,23 @@ import { Fragment, useEffect, useState } from "react";
 
 import "./IconLibrary.css";
 
-// TO-DO: Rename categories to allCategories
-export const IconLibrary = ({ categories }: { categories: string[] }) => {
+export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
   const [iconCategoriesToDisplay, setIconCategoriesToDisplay] =
-    useState<string[]>(categories);
+    useState<string[]>(allCategories);
 
   const filteredCategories = useStore(categoriesToFilterFor);
   const filteredTheme = useStore(themesToFilterFor);
 
   useEffect(() => {
     if (!filteredCategories.length) {
-      setIconCategoriesToDisplay(categories);
+      setIconCategoriesToDisplay(allCategories);
       return;
     }
 
     const tempArray = [...filteredCategories].sort((a, b) => (a > b ? 1 : -1));
 
     setIconCategoriesToDisplay([...tempArray]);
-  }, [filteredCategories, categories]);
+  }, [filteredCategories, allCategories]);
 
   return (
     <div className={`icon-library neo-${filteredTheme}`}>
