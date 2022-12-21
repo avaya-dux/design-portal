@@ -1,8 +1,18 @@
-import { Checkbox, CheckboxGroup, IconButton, Radio, RadioGroup } from "@avaya/neo-react";
+import {
+  Checkbox,
+  CheckboxGroup,
+  IconButton,
+  Radio,
+  RadioGroup,
+} from "@avaya/neo-react";
 import { useStore } from "@nanostores/react";
 import { useEffect, useState } from "react";
 
-import { categoriesToFilterFor, themesToFilterFor, variationsToFilterFor } from "./helpers/iconPageState";
+import {
+  categoriesToFilterFor,
+  themesToFilterFor,
+  variationsToFilterFor,
+} from "./helpers/iconPageState";
 
 import "./IconFilters.css";
 
@@ -26,24 +36,20 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
 
   const filteredTheme = useStore(themesToFilterFor);
 
-  const [showAllCategories, setShowAllCategories] = useState<string>("selectAll")
+  const [showAllCategories, setShowAllCategories] =
+    useState<string>("selectAll");
 
   useEffect(() => {
-
     if (showAllCategories) {
-      categoriesToFilterFor.set([])
+      categoriesToFilterFor.set([]);
     }
-
-
-  }, [showAllCategories])
+  }, [showAllCategories]);
 
   useEffect(() => {
-
     if (filteredCategories.length) {
-      setShowAllCategories("")
+      setShowAllCategories("");
     }
-
-  }, [filteredCategories])
+  }, [filteredCategories]);
 
   return (
     <div className="icon-filters">
@@ -71,7 +77,7 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
           onChange={(e) => {
             const { value: selectAll } = e.target as HTMLInputElement;
 
-            setShowAllCategories(selectAll)
+            setShowAllCategories(selectAll);
           }}
         >
           <Radio value="selectAll"> Select All</Radio>
@@ -92,7 +98,11 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
           }}
         >
           {categories.map((category, index) => (
-            <Checkbox value={category} key={index} checked={filteredCategories.includes(category)}>
+            <Checkbox
+              value={category}
+              key={index}
+              checked={filteredCategories.includes(category)}
+            >
               {category}
             </Checkbox>
           ))}

@@ -30,7 +30,11 @@
   margin-top: 1.3rem;
 }
 
-.icon-filters__section .neo-form-control .neo-input-group input.neo-check + label {
+.icon-filters__section
+  .neo-form-control
+  .neo-input-group
+  input.neo-check
+  + label {
   text-transform: capitalize;
   padding-bottom: 0.75rem;
 }

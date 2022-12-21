@@ -35,8 +35,13 @@ export const IconCategory = ({ category }: { category: string }) => {
       tempArray = iconsToDisplay.filter((icon) => icon.bidirectional);
     }
 
-    if (filteredVariations.includes("bidirectional") && filteredVariations.includes("animated")) {
-      tempArray = iconsToDisplay.filter((icon) => icon.bidirectional && icon.animated);
+    if (
+      filteredVariations.includes("bidirectional") &&
+      filteredVariations.includes("animated")
+    ) {
+      tempArray = iconsToDisplay.filter(
+        (icon) => icon.bidirectional && icon.animated
+      );
     }
 
     setIconsToDisplay([...tempArray]);
