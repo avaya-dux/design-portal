@@ -1,22 +1,32 @@
-import { Checkbox, CheckboxGroup, IconButton, Radio, RadioGroup } from "@avaya/neo-react";
+import {
+  Checkbox,
+  CheckboxGroup,
+  IconButton,
+  Radio,
+  RadioGroup,
+} from "@avaya/neo-react";
 import { useStore } from "@nanostores/react";
 import { useEffect, useState } from "react";
 
-import { categoriesToFilterFor, themesToFilterFor, variationsToFilterFor } from "./helpers/iconPageState";
+import {
+  categoriesToFilterFor,
+  themesToFilterFor,
+  variationsToFilterFor,
+} from "./helpers/iconPageState";
 
-import "./IconFilters.css";
+import styles from "./IconFilters.module.css";
 
 export function updateFilteredArray(array: string[], value: string) {
-  let tempArray = [];
+  let categoriesToFilter = [];
 
   if (array.includes(value)) {
-    tempArray = array.filter((values) => values !== value);
+    categoriesToFilter = array.filter((values) => values !== value);
   } else {
-    tempArray = array;
-    tempArray.push(value);
+    categoriesToFilter = array;
+    categoriesToFilter.push(value);
   }
 
-  return tempArray;
+  return categoriesToFilter;
 }
 
 export const IconFilters = ({ categories }: { categories: string[] }) => {
@@ -26,28 +36,24 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
 
   const filteredTheme = useStore(themesToFilterFor);
 
-  const [showAllCategories, setShowAllCategories] = useState<string>("selectAll")
+  const [showAllCategories, setShowAllCategories] =
+    useState<string>("selectAll");
 
   useEffect(() => {
-
     if (showAllCategories) {
-      categoriesToFilterFor.set([])
+      categoriesToFilterFor.set([]);
     }
-
-
-  }, [showAllCategories])
+  }, [showAllCategories]);
 
   useEffect(() => {
-
     if (filteredCategories.length) {
-      setShowAllCategories("")
+      setShowAllCategories("");
     }
-
-  }, [filteredCategories])
+  }, [filteredCategories]);
 
   return (
-    <div className="icon-filters">
-      <div className="icon-filters__toggle">
+    <div className={styles["icon-filters"]}>
+      <div className={styles["icon-filters__toggle"]}>
         <IconButton
           aria-label="Toggle filters"
           icon="preferences"
@@ -56,9 +62,9 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
         <p className="neo-body-regular">Filter</p>
       </div>
 
-      <section className="icon-filters__section">
+      <section className={styles["icon-filters__section"]}>
         <label
-          className="icon-filters__section__label"
+          className={styles["icon-filters__section__label"]}
           id="categories"
           htmlFor="Icon categories"
         >
@@ -71,7 +77,7 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
           onChange={(e) => {
             const { value: selectAll } = e.target as HTMLInputElement;
 
-            setShowAllCategories(selectAll)
+            setShowAllCategories(selectAll);
           }}
         >
           <Radio value="selectAll"> Select All</Radio>
@@ -92,16 +98,20 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
           }}
         >
           {categories.map((category, index) => (
-            <Checkbox value={category} key={index} checked={filteredCategories.includes(category)}>
+            <Checkbox
+              value={category}
+              key={index}
+              checked={filteredCategories.includes(category)}
+            >
               {category}
             </Checkbox>
           ))}
         </CheckboxGroup>
       </section>
 
-      <section className="icon-filters__section">
+      <section className={styles["icon-filters__section"]}>
         <label
-          className="icon-filters__section__label"
+          className={styles["icon-filters__section__label"]}
           id="variations"
           htmlFor="Icon variations"
         >
@@ -127,9 +137,9 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
         </CheckboxGroup>
       </section>
 
-      <section className="icon-filters__section">
+      <section className={styles["icon-filters__section"]}>
         <label
-          className="icon-filters__section__label"
+          className={styles["icon-filters__section__label"]}
           id="themes"
           htmlFor="Icon themes"
         >

@@ -7,7 +7,7 @@ import {
 import { useStore } from "@nanostores/react";
 import { Fragment, useEffect, useState } from "react";
 
-import "./IconLibrary.css";
+import styles from "./IconLibrary.module.css";
 
 export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
   const [iconCategoriesToDisplay, setIconCategoriesToDisplay] =
@@ -22,17 +22,17 @@ export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
       return;
     }
 
-    const tempArray = [...filteredCategories].sort((a, b) => (a > b ? 1 : -1));
+    const newCategories = [...filteredCategories].sort((a, b) =>
+      a > b ? 1 : -1
+    );
 
-    setIconCategoriesToDisplay([...tempArray]);
+    setIconCategoriesToDisplay([...newCategories]);
   }, [filteredCategories, allCategories]);
 
   return (
-    <div className={`icon-library neo-${filteredTheme}`}>
+    <div className={`${styles["icon-library"]} neo-${filteredTheme}`}>
       {iconCategoriesToDisplay.map((category, index) => (
-        <Fragment key={index}>
-          <IconCategory category={category} />
-        </Fragment>
+        <IconCategory category={category} key={index} />
       ))}
     </div>
   );
