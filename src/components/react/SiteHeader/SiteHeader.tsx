@@ -66,6 +66,7 @@ export const SiteHeader = ({
           ref={toggleButtonRef}
         />
       }
+      sticky
     >
       <TopNav.LinkButton
         href="/whats-new"

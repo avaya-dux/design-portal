@@ -1,0 +1,36 @@
+.icon-filters {
+  display: flex;
+  flex-direction: column;
+  min-width: 15rem;
+  border-right: 1px solid var(--navbar-border-bottom-color);
+  position: fixed;
+  height: 100%;
+}
+
+.icon-filters__toggle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid var(--navbar-border-bottom-color);
+  height: 3rem;
+}
+
+.icon-filters__section {
+  padding: 1rem 0px 1.5rem 1.25rem;
+  border-bottom: 1px solid var(--navbar-border-bottom-color);
+}
+
+.icon-filters__section__label {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--neo-color-base-500);
+}
+
+.icon-filters__section .neo-form-control {
+  margin-top: 1.3rem;
+}
+
+.icon-filters__section .neo-form-control .neo-input-group input.neo-check + label {
+  text-transform: capitalize;
+  padding-bottom: 0.75rem;
+}

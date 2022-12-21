@@ -7,7 +7,7 @@ import { NeoThemeProvider } from "@avaya/neo-react";
 
 import { SiteHeader, SiteFooter } from "components";
 
-import { LeftNavigation } from "components/react";
+import LeftPanel from "./LeftPanel.astro";
 
 import type { PageAstroInstance } from "helpers/types";
 
@@ -21,13 +21,7 @@ const userAgent = userAgentString?.toLowerCase().includes("mac")
 
 const { title } = Astro.props as Props;
 
-const { url } = Astro.request;
-
 const { pathname } = Astro.url;
-
-const isComponentPage = url.includes("components");
-
-let componentPages: PageAstroInstance[] = [];
 
 const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
   .filter((page) => page.title)
@@ -36,9 +30,6 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
     title: page.title,
     keywords: page.keywords,
   }));
-
-if (isComponentPage)
-  componentPages = pages.filter((page) => page.url?.includes("components"));
 ---
 
 <!DOCTYPE html>
@@ -54,18 +45,14 @@ if (isComponentPage)
   <body id="body-content-wrapper">
     <NeoThemeProvider initialMode="dynamic">
       <SiteHeader
-        pathname={Astro.url.pathname}
+        pathname={pathname}
         pages={pages}
         userAgent={userAgent}
         client:load
       />
 
       <div class="main__wrapper">
-        <LeftNavigation
-          pages={componentPages}
-          currentUrl={pathname}
-          client:load
-        />
+        <LeftPanel />
 
         <main id="main-content">
           <slot />
