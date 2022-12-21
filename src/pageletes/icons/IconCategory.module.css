@@ -6,7 +6,9 @@
   margin-bottom: 4rem;
 }
 
-.icon-category h4 {
+.icon-category > p {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   width: 100%;
   text-transform: capitalize;
   border-bottom: 1px solid var(--navbar-border-bottom-color);

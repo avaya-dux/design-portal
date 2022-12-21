@@ -1,8 +1,11 @@
 .icon-library {
-  padding: 1rem;
   background-color: var(--global-background);
 }
 
 .icon-library span[class*="neo-icon-"]::before {
   color: var(--global-font-color);
+}
+
+.icon-library__alert {
+  margin-bottom: 2rem;
 }

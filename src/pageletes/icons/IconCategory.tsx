@@ -10,7 +10,7 @@ import type { IconProps } from "./helpers/iconType";
 import styles from "./IconCategory.module.css";
 
 const NoIconsFoundMessage = () => (
-  <p className={styles["icon-category__no-icons neo-icon-error"]}>
+  <p className={`${styles["icon-category__no-icons"]} neo-icon-error`}>
     No icons to display with current filters
   </p>
 );
@@ -54,7 +54,7 @@ export const IconCategory = ({ category }: { category: string }) => {
 
   return (
     <div className={styles["icon-category"]}>
-      <h4>{category}</h4>
+      <p>{category}</p>
       <div
         className={
           iconsToDisplay.length
@@ -62,7 +62,7 @@ export const IconCategory = ({ category }: { category: string }) => {
             : styles["icon-category__icons--flex"]
         }
       >
-        {iconsToDisplay.length &&
+        {iconsToDisplay.length ? (
           iconsToDisplay.map((icon, index) => (
             <div className={styles["icon-category__icons__card"]} key={index}>
               <Icon
@@ -72,8 +72,10 @@ export const IconCategory = ({ category }: { category: string }) => {
               />
               <p>{icon.name}</p>
             </div>
-          ))}
-        {!iconsToDisplay.length && <NoIconsFoundMessage />}
+          ))
+        ) : (
+          <NoIconsFoundMessage />
+        )}
       </div>
     </div>
   );
