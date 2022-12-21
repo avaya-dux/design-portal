@@ -14,8 +14,8 @@ body nav.neo-navbar .neo-nav--left a {
   height: 3rem;
 }
 
-body nav.neo-navbar .neo-nav--left a img {
-  height: 57px;
+body nav.neo-navbar .neo-nav--left .neo-badge__navbutton {
+  height: var(--header-height);
 }
 
 .neo-navbar {
