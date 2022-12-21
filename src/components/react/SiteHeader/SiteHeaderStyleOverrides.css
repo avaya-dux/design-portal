@@ -14,10 +14,6 @@ body nav.neo-navbar .neo-nav--left a {
   height: 3rem;
 }
 
-body nav.neo-navbar .neo-nav--left a img {
-  height: 57px;
-}
-
 .neo-navbar {
   overflow: hidden;
 }
