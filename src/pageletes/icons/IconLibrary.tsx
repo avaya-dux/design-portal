@@ -9,6 +9,7 @@ import { Fragment, useEffect, useState } from "react";
 
 import "./IconLibrary.css";
 
+// TO-DO: Rename categories to allCategories
 export const IconLibrary = ({ categories }: { categories: string[] }) => {
   const [iconCategoriesToDisplay, setIconCategoriesToDisplay] =
     useState<string[]>(categories);

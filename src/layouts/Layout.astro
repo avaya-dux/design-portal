@@ -7,7 +7,7 @@ import { NeoThemeProvider } from "@avaya/neo-react";
 
 import { SiteHeader, SiteFooter } from "components";
 
-import LeftElement from "./LeftElement.astro";
+import LeftPanel from "./LeftPanel.astro";
 
 import type { PageAstroInstance } from "helpers/types";
 
@@ -52,7 +52,7 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
       />
 
       <div class="main__wrapper">
-        <LeftElement />
+        <LeftPanel />
 
         <main id="main-content">
           <slot />

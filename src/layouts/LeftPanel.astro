@@ -27,7 +27,7 @@ if (isComponentPage)
 
 {
   pathname.includes("icons") ? (
-    <IconFilters categories={iconCategories} icons={icons} client:load />
+    <IconFilters categories={iconCategories} client:load />
   ) : (
     <LeftNavigation pages={componentPages} currentUrl={pathname} client:load />
   )

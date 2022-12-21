@@ -1,9 +1,9 @@
-import { icons } from "./helpers/icons";
 import { Icon } from "@avaya/neo-react";
-
-import { variationsToFilterFor } from "./helpers/iconPageState";
 import { useStore } from "@nanostores/react";
 import { useEffect, useState } from "react";
+
+import { variationsToFilterFor } from "./helpers/iconPageState";
+import { icons } from "./helpers/icons";
 
 import type { IconProps } from "./helpers/iconType";
 
@@ -33,6 +33,10 @@ export const IconCategory = ({ category }: { category: string }) => {
 
     if (filteredVariations.includes("bidirectional")) {
       tempArray = iconsToDisplay.filter((icon) => icon.bidirectional);
+    }
+
+    if (filteredVariations.includes("bidirectional") && filteredVariations.includes("animated")) {
+      tempArray = iconsToDisplay.filter((icon) => icon.bidirectional && icon.animated);
     }
 
     setIconsToDisplay([...tempArray]);

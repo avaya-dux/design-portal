@@ -1,11 +1,8 @@
-import { Checkbox, CheckboxGroup, Radio, RadioGroup } from "@avaya/neo-react";
+import { Checkbox, CheckboxGroup, IconButton, Radio, RadioGroup } from "@avaya/neo-react";
 import { useStore } from "@nanostores/react";
+import { useEffect, useState } from "react";
 
-import {
-  categoriesToFilterFor,
-  themesToFilterFor,
-  variationsToFilterFor,
-} from "./helpers/iconPageState";
+import { categoriesToFilterFor, themesToFilterFor, variationsToFilterFor } from "./helpers/iconPageState";
 
 import "./IconFilters.css";
 
@@ -29,8 +26,36 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
 
   const filteredTheme = useStore(themesToFilterFor);
 
+  const [showAllCategories, setShowAllCategories] = useState<string>("selectAll")
+
+  useEffect(() => {
+
+    if (showAllCategories) {
+      categoriesToFilterFor.set([])
+    }
+
+
+  }, [showAllCategories])
+
+  useEffect(() => {
+
+    if (filteredCategories.length) {
+      setShowAllCategories("")
+    }
+
+  }, [filteredCategories])
+
   return (
     <div className="icon-filters">
+      <div className="icon-filters__toggle">
+        <IconButton
+          aria-label="Toggle filters"
+          icon="preferences"
+          variant="tertiary"
+        />
+        <p className="neo-body-regular">Filter</p>
+      </div>
+
       <section className="icon-filters__section">
         <label
           className="icon-filters__section__label"
@@ -39,6 +64,18 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
         >
           Categories
         </label>
+
+        <RadioGroup
+          groupName="selectAll"
+          selected={showAllCategories}
+          onChange={(e) => {
+            const { value: selectAll } = e.target as HTMLInputElement;
+
+            setShowAllCategories(selectAll)
+          }}
+        >
+          <Radio value="selectAll"> Select All</Radio>
+        </RadioGroup>
 
         <CheckboxGroup
           groupName="Icon categories"
@@ -55,12 +92,13 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
           }}
         >
           {categories.map((category, index) => (
-            <Checkbox value={category} key={index}>
+            <Checkbox value={category} key={index} checked={filteredCategories.includes(category)}>
               {category}
             </Checkbox>
           ))}
         </CheckboxGroup>
       </section>
+
       <section className="icon-filters__section">
         <label
           className="icon-filters__section__label"
@@ -88,6 +126,7 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
           <Checkbox value="animated">Animated</Checkbox>
         </CheckboxGroup>
       </section>
+
       <section className="icon-filters__section">
         <label
           className="icon-filters__section__label"
