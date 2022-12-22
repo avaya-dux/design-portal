@@ -5,24 +5,21 @@ import { LeftNavigation } from "components";
 
 import { IconFilters, iconCategories } from "pageletes/icons";
 
-const { url } = Astro.request;
-
 const { pathname } = Astro.url;
 
-const isComponentPage = url.includes("components");
+const isComponentPage = pathname.includes("components");
 
 let componentPages: PageAstroInstance[] = [];
 
 const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
   .filter((page) => page.title)
   .map((page) => ({
-    ...page,
-    title: page.title,
-    keywords: page.keywords,
+    ...page
   }));
 
-if (isComponentPage)
+if (isComponentPage) {
   componentPages = pages.filter((page) => page.url?.includes("components"));
+}
 ---
 
 {
