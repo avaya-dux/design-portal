@@ -14,7 +14,7 @@ let componentPages: PageAstroInstance[] = [];
 const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
   .filter((page) => page.title)
   .map((page) => ({
-    ...page
+    ...page,
   }));
 
 if (isComponentPage) {
