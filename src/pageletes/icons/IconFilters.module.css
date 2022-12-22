@@ -3,8 +3,40 @@
   flex-direction: column;
   min-width: 15rem;
   border-right: 1px solid var(--navbar-border-bottom-color);
-  position: fixed;
-  height: 100%;
+  position: sticky;
+  left: 0;
+  top: var(--header-height);
+  height: 100vh;
+}
+
+@media (max-width: 1279px) {
+  .icon-filters {
+    position: fixed;
+    transform: translate3d(-15rem, 0, 0);
+    padding-top: 0;
+    top: var(--header-height);
+    bottom: 0;
+    background-color: var(--leftnav-background-color);
+    z-index: 100;
+  }
+
+  .icon-filters.icon-filters--active {
+    transition: transform 0.35s;
+    transform: translate3d(0rem, 0, 0);
+  }
+
+  .icon-filters.icon-filters--hidden {
+    transition: transform 0.35s;
+    transform: translate3d(-15rem, 0, 0);
+  }
+}
+
+@media (max-width: 799px) {
+  .icon-filters {
+
+    top: calc(var(--header-height) * 2);
+
+  }
 }
 
 .icon-filters__toggle {

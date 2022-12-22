@@ -6,6 +6,8 @@ import {
   RadioGroup,
 } from "@avaya/neo-react";
 import { useStore } from "@nanostores/react";
+import clsx from "clsx";
+import { isLeftNavigationOpen } from "components/react/utils/layoutState";
 import { useEffect, useState } from "react";
 
 import {
@@ -36,6 +38,8 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
 
   const filteredTheme = useStore(themesToFilterFor);
 
+  const isOpen = useStore(isLeftNavigationOpen);
+
   const [showAllCategories, setShowAllCategories] =
     useState<string>("selectAll");
 
@@ -62,7 +66,10 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
   }, []);
 
   return (
-    <div className={styles["icon-filters"]}>
+    <div className={clsx(
+      styles["icon-filters"],
+      isOpen ? styles["icon-filters--active"] : styles["icon-filters--hidden"]
+    )}>
       <div className={styles["icon-filters__toggle"]}>
         <IconButton
           aria-label="Toggle filters"

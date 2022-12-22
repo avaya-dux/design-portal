@@ -3,6 +3,7 @@
 body nav.neo-navbar {
   height: var(--header-height);
   min-height: var(--header-height);
+  z-index: 100;
 }
 
 body nav.neo-navbar .neo-nav--left {
@@ -56,10 +57,11 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
     border: none;
   }
   nav.neo-navbar .neo-nav {
-    height: 3rem;
+    height: var(--header-height);
     border-bottom: 1px solid var(--navbar-border-bottom-color);
     border-top: 1px solid var(--navbar-border-bottom-color);
     justify-content: space-around;
+    background-color: var(--global-background);
   }
   nav.neo-navbar .neo-nav a.neo-nav-link-btn {
     padding: 0px;
