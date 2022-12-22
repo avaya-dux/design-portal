@@ -1,6 +1,6 @@
 import type { TopicsDict } from "components";
 
-type TooltipTopicNames = "playground" | "basics" | "multiline" | "positioning";
+type TooltipTopicNames = "playground" | "basics";
 
 export const topics: TopicsDict<TooltipTopicNames> = {
   playground: {
@@ -10,17 +10,7 @@ export const topics: TopicsDict<TooltipTopicNames> = {
   },
   basics: {
     order: 1,
-    id: "tooltip-basics",
-    title: "Tooltip Basics",
-  },
-  multiline: {
-    order: 2,
-    id: "tooltip-multiline",
-    title: "Multiline Tooltip",
-  },
-  positioning: {
-    order: 3,
-    id: "tooltip-positioning",
-    title: "Tooltip Positioning",
+    id: "tooltip-html-instructions",
+    title: "HTML Instructions",
   },
 };
