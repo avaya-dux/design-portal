@@ -1,66 +1,87 @@
 import {
-  Icon,
-  IconProps,
-  Radio,
-  RadioGroup,
+  Button,
   Select,
   SelectOption,
   TextInput,
+  Tooltip,
+  TooltipCSSPosition,
+  TooltipPosition,
+  TooltipProps,
 } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
-import clsx from "clsx";
 
-const defaultLabel = "Save Icon";
 const sandbox =
   "https://codesandbox.io/s/neo-react-tooltip-v43d4k?file=/src/App.js";
 const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-tooltip";
 
+const defaultLabel = "Example text inside of a tooltip that wraps a button";
+const posiblePositions: TooltipPosition[] = [
+  "auto",
+  "top",
+  "bottom",
+  "left",
+  "right",
+  "top-left",
+  "top-right",
+  "bottom-left",
+  "bottom-right",
+];
+
 export const PlaygroundImplementation = () => {
-  const [icon, setIcon] = useState<IconProps["icon"]>("email");
-  const [label, setLabel] = useState<IconProps["aria-label"]>(defaultLabel);
-  const [size, setSize] = useState<IconProps["size"]>("lg");
-  const [status, setStatus] = useState<IconProps["status"]>("available");
+  const [label, setLabel] = useState<TooltipProps["label"]>(defaultLabel);
+  const [position, setPosition] = useState<TooltipProps["position"]>("auto");
 
   const react = useMemo(
     () =>
-      prettyPrintReact(
-        `<Icon aria-label="${label}" icon="${icon}" size="${size}" status="${status}" />`
-      ),
-    [icon, label, size, status]
+      prettyPrintReact(`
+<Tooltip label="${label}" position="${position}">
+  <Button>Hover me to see a tooltip</Button>
+</Tooltip>`),
+    [label, position]
   );
 
-  const html = useMemo(
-    () =>
-      prettyPrintHtml(
-        `<span
-        role="img"
-        aria-label="${label}"
-        class="${clsx(
-          "neo-icon-state",
-          size === "lg" && "neo-icon-state--large",
-          `neo-icon-state--${status}`,
-          `neo-icon-${icon}`
-        )}"
-        ></span>`
-      ),
-    [icon, label, size, status]
-  );
+  const html = useMemo(() => {
+    const cssPosition = translatePositionToCSSName(position || "auto");
+    const positionClass = `neo-tooltip--${cssPosition}`;
+
+    return prettyPrintHtml(`
+<div class="neo-tooltip ${positionClass} neo-tooltip--onhover">
+  <button
+    aria-describedby="tooltip-div-id"
+    class="neo-btn neo-btn--default neo-btn-primary neo-btn-primary--default"
+  >
+    Hover me to see a tooltip
+  </button>
+
+  <div
+    id="tooltip-div-id"
+    role="tooltip"
+    class="neo-tooltip__content neo-tooltip__content--multiline"
+  >
+    <div class="neo-arrow"></div>
+    ${label}
+  </div>
+</div>
+  `);
+  }, [position, label]);
 
   return (
     <Playground
       options={
         <Playground.OptionsContainer>
-          <Playground.OptionsSection title="Icon">
+          <Playground.OptionsSection title="Position">
             <Select
-              aria-label="Icon"
-              value={icon}
-              onChange={(value) => setIcon(value as IconProps["icon"])}
+              aria-label="Position"
+              value={position}
+              onChange={(value) =>
+                setPosition(value as TooltipProps["position"])
+              }
             >
-              {["menu", "table", "email"].map((value) => (
+              {posiblePositions.map((value) => (
                 <SelectOption key={value} value={value}>
                   {value}
                 </SelectOption>
@@ -68,36 +89,9 @@ export const PlaygroundImplementation = () => {
             </Select>
           </Playground.OptionsSection>
 
-          <Playground.OptionsSection title="Status">
-            <Select
-              aria-label="Status"
-              value={status}
-              onChange={(value) => setStatus(value as IconProps["status"])}
-            >
-              {["available", "away", "busy"].map((value) => (
-                <SelectOption key={value} value={value}>
-                  {value}
-                </SelectOption>
-              ))}
-            </Select>
-          </Playground.OptionsSection>
-
-          <Playground.OptionsSection title="Size">
-            <RadioGroup
-              groupName="size-options"
-              selected={size}
-              onChange={(e) => {
-                setSize(e.target.value as IconProps["size"]);
-              }}
-            >
-              <Radio value="sm">Small</Radio>
-              <Radio value="lg">Large</Radio>
-            </RadioGroup>
-          </Playground.OptionsSection>
-
-          <Playground.OptionsSection title="Aria Label">
+          <Playground.OptionsSection title="Label">
             <TextInput
-              aria-label="Aria Label"
+              aria-label="Label"
               defaultValue={label}
               onChange={(e) => setLabel(e.target.value || defaultLabel)}
             />
@@ -111,7 +105,40 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      <Icon aria-label={label} icon={icon} size={size} status={status} />
+      <Tooltip label={label} position={position}>
+        <Button>Hover me to see a tooltip</Button>
+      </Tooltip>
     </Playground>
   );
+};
+
+// (mostly) copy-pasted from Tooltip/helpers.ts
+const translatePositionToCSSName = (
+  passedPosition: TooltipPosition
+): TooltipCSSPosition => {
+  switch (passedPosition) {
+    case "left":
+      return "left";
+    case "right":
+      return "right";
+    case "bottom":
+      return "down";
+    case "top":
+    case "auto":
+      return "up";
+    case "top-left":
+      return "up-left";
+    case "top-right":
+      return "up-right";
+    case "bottom-left":
+      return "down-left";
+    case "bottom-right":
+      return "down-right";
+
+    default:
+      console.error(
+        `Unexpected position encountered: ${passedPosition}. Defaulting to default "position='up'"`
+      );
+      return "up";
+  }
 };
