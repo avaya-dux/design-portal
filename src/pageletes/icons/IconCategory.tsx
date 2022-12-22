@@ -1,0 +1,82 @@
+import { Icon } from "@avaya/neo-react";
+import { useStore } from "@nanostores/react";
+import { useEffect, useState } from "react";
+
+import { variationsToFilterFor } from "./helpers/iconPageState";
+import { icons } from "./helpers/icons";
+
+import type { IconProps } from "./helpers/iconType";
+
+import styles from "./IconCategory.module.css";
+
+const NoIconsFoundMessage = () => (
+  <p className={`${styles["icon-category__no-icons"]} neo-icon-error`}>
+    No icons to display with current filters
+  </p>
+);
+export const IconCategory = ({ category }: { category: string }) => {
+  const allIconsInCategory = icons
+    .filter((icon) => icon.category === category)
+    .sort((a, b) => (a.name > b.name ? 1 : -1));
+
+  const [iconsToDisplay, setIconsToDisplay] =
+    useState<IconProps[]>(allIconsInCategory);
+
+  const filteredVariations = useStore(variationsToFilterFor);
+
+  useEffect(() => {
+    if (!filteredVariations.length) {
+      setIconsToDisplay(allIconsInCategory);
+      return;
+    }
+
+    let filteredIcons: IconProps[] = [];
+
+    if (filteredVariations.includes("animated")) {
+      filteredIcons = iconsToDisplay.filter((icon) => icon.animated);
+    }
+
+    if (filteredVariations.includes("bidirectional")) {
+      filteredIcons = iconsToDisplay.filter((icon) => icon.bidirectional);
+    }
+
+    if (
+      filteredVariations.includes("bidirectional") &&
+      filteredVariations.includes("animated")
+    ) {
+      filteredIcons = iconsToDisplay.filter(
+        (icon) => icon.bidirectional && icon.animated
+      );
+    }
+
+    setIconsToDisplay([...filteredIcons]);
+  }, [filteredVariations, allIconsInCategory, iconsToDisplay]);
+
+  return (
+    <div className={styles["icon-category"]}>
+      <p>{category}</p>
+      <div
+        className={
+          iconsToDisplay.length
+            ? styles["icon-category__icons--grid"]
+            : styles["icon-category__icons--flex"]
+        }
+      >
+        {iconsToDisplay.length ? (
+          iconsToDisplay.map((icon, index) => (
+            <div className={styles["icon-category__icons__card"]} key={index}>
+              <Icon
+                icon={icon.name}
+                aria-label={`${icon.name} icon`}
+                size="lg"
+              />
+              <p>{icon.name}</p>
+            </div>
+          ))
+        ) : (
+          <NoIconsFoundMessage />
+        )}
+      </div>
+    </div>
+  );
+};

@@ -1,0 +1,31 @@
+---
+import type { PageAstroInstance } from "helpers/types";
+
+import { LeftNavigation } from "components";
+
+import { IconFilters, iconCategories } from "pageletes/icons";
+
+const { pathname } = Astro.url;
+
+const isComponentPage = pathname.includes("components");
+
+let componentPages: PageAstroInstance[] = [];
+
+const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
+  .filter((page) => page.title)
+  .map((page) => ({
+    ...page
+  }));
+
+if (isComponentPage) {
+  componentPages = pages.filter((page) => page.url?.includes("components"));
+}
+---
+
+{
+  pathname.includes("icons") ? (
+    <IconFilters categories={iconCategories} client:load />
+  ) : (
+    <LeftNavigation pages={componentPages} currentUrl={pathname} client:load />
+  )
+}
