@@ -15,10 +15,13 @@ const NoIconsFoundMessage = () => (
   </p>
 );
 export const IconCategory = ({ category }: { category: string }) => {
-
-  const allIconsInCategory = useMemo(() => icons
-    .filter((icon) => icon.category === category)
-    .sort((a, b) => (a.name > b.name ? 1 : -1)), [icons]);
+  const allIconsInCategory = useMemo(
+    () =>
+      icons
+        .filter((icon) => icon.category === category)
+        .sort((a, b) => (a.name > b.name ? 1 : -1)),
+    [category]
+  );
 
   const [iconsToDisplay, setIconsToDisplay] =
     useState<IconProps[]>(allIconsInCategory);

@@ -28,9 +28,13 @@
   margin-left: 3.5rem;
 }
 
+.licon-filters + .icon-filters__scrim {
+  display: none;
+}
+
 @media (min-width: 1279px) {
   .icon-filters__toggle button span::before {
-    content: var(--neo-icon-preferences)
+    content: var(--neo-icon-preferences);
   }
 }
 
@@ -49,7 +53,6 @@
 
   .icon-filters__toggle {
     pointer-events: initial;
-
   }
 
   .icon-filters .icon-filters__section {
@@ -87,6 +90,17 @@
   .icon-filters.icon-filters--hidden {
     transition: min-width 0.35s;
     min-width: 3.5rem;
+  }
+
+  .icon-filters.icon-filters--active + .icon-filters__scrim {
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
   }
 }
 

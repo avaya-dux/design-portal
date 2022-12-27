@@ -8,7 +8,7 @@ import {
 import { useStore } from "@nanostores/react";
 import clsx from "clsx";
 import { isLeftNavigationOpen } from "components/react/utils/layoutState";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import {
   categoriesToFilterFor,
@@ -43,6 +43,15 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
   const [showAllCategories, setShowAllCategories] =
     useState<string>("selectAll");
 
+  const handleKeyDown = useCallback(
+    (event: KeyboardEvent) => {
+      if (isOpen && event.key === "Escape") {
+        isLeftNavigationOpen.set(false);
+      }
+    },
+    [isOpen]
+  );
+
   useEffect(() => {
     if (showAllCategories) {
       categoriesToFilterFor.set([]);
@@ -65,121 +74,138 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
     };
   }, []);
 
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [handleKeyDown]);
+
   return (
-    <aside
-      className={clsx(
-        styles["icon-filters"],
-        isOpen ? styles["icon-filters--active"] : styles["icon-filters--hidden"]
-      )}
+    <>
+      <aside
+        className={clsx(
+          styles["icon-filters"],
+          isOpen
+            ? styles["icon-filters--active"]
+            : styles["icon-filters--hidden"]
+        )}
+      >
+        <div className={styles["icon-filters__toggle"]}>
+          <IconButton
+            aria-label="Toggle filters"
+            icon={isOpen ? "close" : "preferences"}
+            variant="tertiary"
+            onClick={() => isLeftNavigationOpen.set(!isOpen)}
+          />
+          <p className="neo-body-regular">Filter</p>
+        </div>
 
-    >
-      <div className={styles["icon-filters__toggle"]}>
-        <IconButton
-          aria-label="Toggle filters"
-          icon={isOpen ? "close" : "preferences"}
-          variant="tertiary"
-          onClick={() => isLeftNavigationOpen.set(!isOpen)}
-        />
-        <p className="neo-body-regular">Filter</p>
-      </div>
+        <section className={styles["icon-filters__section"]}>
+          <label
+            className={styles["icon-filters__section__label"]}
+            id="categories"
+            htmlFor="Icon categories"
+          >
+            Categories
+          </label>
 
-      <section className={styles["icon-filters__section"]}>
-        <label
-          className={styles["icon-filters__section__label"]}
-          id="categories"
-          htmlFor="Icon categories"
-        >
-          Categories
-        </label>
+          <RadioGroup
+            groupName="selectAll"
+            selected={showAllCategories}
+            onChange={(e) => {
+              const { value: selectAll } = e.target as HTMLInputElement;
 
-        <RadioGroup
-          groupName="selectAll"
-          selected={showAllCategories}
-          onChange={(e) => {
-            const { value: selectAll } = e.target as HTMLInputElement;
+              setShowAllCategories(selectAll);
+            }}
+          >
+            <Radio value="selectAll"> Select All</Radio>
+          </RadioGroup>
 
-            setShowAllCategories(selectAll);
-          }}
-        >
-          <Radio value="selectAll"> Select All</Radio>
-        </RadioGroup>
+          <CheckboxGroup
+            groupName="Icon categories"
+            aria-labelledby="categories"
+            onChange={(e) => {
+              const { value: category } = e.target as HTMLInputElement;
 
-        <CheckboxGroup
-          groupName="Icon categories"
-          aria-labelledby="categories"
-          onChange={(e) => {
-            const { value: category } = e.target as HTMLInputElement;
+              const tempFilteredCategories = updateFilteredArray(
+                filteredCategories,
+                category
+              );
 
-            const tempFilteredCategories = updateFilteredArray(
-              filteredCategories,
-              category
-            );
+              categoriesToFilterFor.set([...tempFilteredCategories]);
+            }}
+          >
+            {categories.map((category, index) => (
+              <Checkbox
+                value={category}
+                key={index}
+                checked={filteredCategories.includes(category)}
+              >
+                {category}
+              </Checkbox>
+            ))}
+          </CheckboxGroup>
+        </section>
 
-            categoriesToFilterFor.set([...tempFilteredCategories]);
-          }}
-        >
-          {categories.map((category, index) => (
-            <Checkbox
-              value={category}
-              key={index}
-              checked={filteredCategories.includes(category)}
-            >
-              {category}
-            </Checkbox>
-          ))}
-        </CheckboxGroup>
-      </section>
+        <section className={styles["icon-filters__section"]}>
+          <label
+            className={styles["icon-filters__section__label"]}
+            id="variations"
+            htmlFor="Icon variations"
+          >
+            Variations
+          </label>
 
-      <section className={styles["icon-filters__section"]}>
-        <label
-          className={styles["icon-filters__section__label"]}
-          id="variations"
-          htmlFor="Icon variations"
-        >
-          Variations
-        </label>
+          <CheckboxGroup
+            groupName="Icon variations"
+            aria-labelledby="variations"
+            onChange={(e) => {
+              const { value: variation } = e.target as HTMLInputElement;
 
-        <CheckboxGroup
-          groupName="Icon variations"
-          aria-labelledby="variations"
-          onChange={(e) => {
-            const { value: variation } = e.target as HTMLInputElement;
+              const tempFilteredVariations = updateFilteredArray(
+                filteredVariations,
+                variation
+              );
 
-            const tempFilteredVariations = updateFilteredArray(
-              filteredVariations,
-              variation
-            );
+              variationsToFilterFor.set([...tempFilteredVariations]);
+            }}
+          >
+            <Checkbox value="bidirectional">Bidirectional</Checkbox>
+            <Checkbox value="animated">Animated</Checkbox>
+          </CheckboxGroup>
+        </section>
 
-            variationsToFilterFor.set([...tempFilteredVariations]);
-          }}
-        >
-          <Checkbox value="bidirectional">Bidirectional</Checkbox>
-          <Checkbox value="animated">Animated</Checkbox>
-        </CheckboxGroup>
-      </section>
+        <section className={styles["icon-filters__section"]}>
+          <label
+            className={styles["icon-filters__section__label"]}
+            id="themes"
+            htmlFor="Icon themes"
+          >
+            Theme
+          </label>
 
-      <section className={styles["icon-filters__section"]}>
-        <label
-          className={styles["icon-filters__section__label"]}
-          id="themes"
-          htmlFor="Icon themes"
-        >
-          Theme
-        </label>
+          <RadioGroup
+            groupName="type-options"
+            selected={filteredTheme}
+            onChange={(e) => {
+              const { value: theme } = e.target as HTMLInputElement;
 
-        <RadioGroup
-          groupName="type-options"
-          selected={filteredTheme}
-          onChange={(e) => {
-            const { value: theme } = e.target as HTMLInputElement;
-
-            themesToFilterFor.set(theme);
-          }}
-        >
-          <Radio value="light">Light</Radio>
-          <Radio value="dark">Dark</Radio>
-        </RadioGroup>
-      </section>
-    </aside>
+              themesToFilterFor.set(theme);
+            }}
+          >
+            <Radio value="light">Light</Radio>
+            <Radio value="dark">Dark</Radio>
+          </RadioGroup>
+        </section>
+      </aside>
+      <div
+        className={styles["icon-filters__scrim"]}
+        id="icon-filter-scrim"
+        onClick={() => isLeftNavigationOpen.set(false)}
+        role="presentation"
+      ></div>
+    </>
   );
 };
