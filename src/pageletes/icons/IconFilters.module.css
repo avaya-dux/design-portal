@@ -1,10 +1,113 @@
+:root {
+  --neo-icon-preferences: "\f220";
+}
+
 .icon-filters {
   display: flex;
   flex-direction: column;
   min-width: 15rem;
   border-right: 1px solid var(--navbar-border-bottom-color);
-  position: fixed;
-  height: 100%;
+  position: sticky;
+  left: 0;
+  top: var(--header-height);
+  height: 100vh;
+  overflow: auto;
+}
+
+.icon-filters__toggle {
+  pointer-events: none;
+  position: relative;
+}
+
+.icon-filters__toggle button {
+  position: absolute;
+  left: 0.6rem;
+}
+
+.icon-filters .icon-filters__toggle p {
+  margin-left: 3.5rem;
+}
+
+.licon-filters + .icon-filters__scrim {
+  display: none;
+}
+
+@media (min-width: 1279px) {
+  .icon-filters__toggle button span::before {
+    content: var(--neo-icon-preferences);
+  }
+}
+
+@media (max-width: 1279px) {
+  .icon-filters {
+    position: fixed;
+    padding-top: 0;
+    top: var(--header-height);
+    bottom: 0;
+    background-color: var(--leftnav-background-color);
+    z-index: 100;
+    transition: min-width 0.35s;
+    min-width: 3.5rem;
+    max-width: 3.5rem;
+  }
+
+  .icon-filters__toggle {
+    pointer-events: initial;
+  }
+
+  .icon-filters .icon-filters__section {
+    visibility: hidden;
+  }
+
+  .icon-filters .icon-filters__toggle p {
+    display: none;
+  }
+
+  .icon-filters .icon-filters__toggle,
+  .icon-filters.icon-filters--hidden .icon-filters__toggle {
+    justify-content: center;
+  }
+
+  .icon-filters.icon-filters--active {
+    transition: min-width 0.35s;
+    min-width: 15rem;
+  }
+
+  .icon-filters.icon-filters--active .icon-filters__section {
+    transition-property: visibility;
+    transition-delay: 0.1s;
+    visibility: visible;
+  }
+
+  .icon-filters.icon-filters--active .icon-filters__toggle p {
+    display: block;
+  }
+
+  .icon-filters.icon-filters--active .icon-filters__toggle {
+    justify-content: flex-start;
+  }
+
+  .icon-filters.icon-filters--hidden {
+    transition: min-width 0.35s;
+    min-width: 3.5rem;
+  }
+
+  .icon-filters.icon-filters--active + .icon-filters__scrim {
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+  }
+}
+
+@media (max-width: 799px) {
+  .icon-filters {
+    top: calc(var(--header-height) * 2);
+  }
 }
 
 .icon-filters__toggle {

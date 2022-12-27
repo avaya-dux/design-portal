@@ -791,12 +791,6 @@ export const icons = [
     category: "status",
     animated: false,
   },
-  {
-    name: "social-media",
-    bidirectional: false,
-    category: "social",
-    animated: false,
-  },
   { name: "bold", bidirectional: false, category: "editor", animated: false },
   {
     name: "noise-off",
