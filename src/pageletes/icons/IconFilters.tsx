@@ -66,15 +66,18 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
   }, []);
 
   return (
-    <div className={clsx(
-      styles["icon-filters"],
-      isOpen ? styles["icon-filters--active"] : styles["icon-filters--hidden"]
-    )}>
+    <div
+      className={clsx(
+        styles["icon-filters"],
+        isOpen ? styles["icon-filters--active"] : styles["icon-filters--hidden"]
+      )}
+    >
       <div className={styles["icon-filters__toggle"]}>
         <IconButton
           aria-label="Toggle filters"
           icon="preferences"
           variant="tertiary"
+          onClick={() => isLeftNavigationOpen.set(!isOpen)}
         />
         <p className="neo-body-regular">Filter</p>
       </div>
