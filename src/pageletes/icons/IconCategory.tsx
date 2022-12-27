@@ -50,7 +50,7 @@ export const IconCategory = ({ category }: { category: string }) => {
     }
 
     setIconsToDisplay([...filteredIcons]);
-  }, [filteredVariations, allIconsInCategory, iconsToDisplay]);
+  }, [filteredVariations]);
 
   return (
     <div className={styles["icon-category"]}>

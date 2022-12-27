@@ -66,11 +66,12 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
   }, []);
 
   return (
-    <div
+    <aside
       className={clsx(
         styles["icon-filters"],
         isOpen ? styles["icon-filters--active"] : styles["icon-filters--hidden"]
       )}
+
     >
       <div className={styles["icon-filters__toggle"]}>
         <IconButton
@@ -179,6 +180,6 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
           <Radio value="dark">Dark</Radio>
         </RadioGroup>
       </section>
-    </div>
+    </aside>
   );
 };
