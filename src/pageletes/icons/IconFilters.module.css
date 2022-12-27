@@ -1,3 +1,7 @@
+:root {
+  --neo-icon-preferences: "\f220";
+}
+
 .icon-filters {
   display: flex;
   flex-direction: column;
@@ -12,6 +16,22 @@
 
 .icon-filters__toggle {
   pointer-events: none;
+  position: relative;
+}
+
+.icon-filters__toggle button {
+  position: absolute;
+  left: 0.6rem;
+}
+
+.icon-filters .icon-filters__toggle p {
+  margin-left: 3.5rem;
+}
+
+@media (min-width: 1279px) {
+  .icon-filters__toggle button span::before {
+    content: var(--neo-icon-preferences)
+  }
 }
 
 @media (max-width: 1279px) {
@@ -29,6 +49,7 @@
 
   .icon-filters__toggle {
     pointer-events: initial;
+
   }
 
   .icon-filters .icon-filters__section {

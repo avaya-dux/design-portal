@@ -76,7 +76,7 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
       <div className={styles["icon-filters__toggle"]}>
         <IconButton
           aria-label="Toggle filters"
-          icon="preferences"
+          icon={isOpen ? "close" : "preferences"}
           variant="tertiary"
           onClick={() => isLeftNavigationOpen.set(!isOpen)}
         />
