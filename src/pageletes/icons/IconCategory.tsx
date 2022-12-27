@@ -1,6 +1,6 @@
 import { Icon } from "@avaya/neo-react";
 import { useStore } from "@nanostores/react";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { variationsToFilterFor } from "./helpers/iconPageState";
 import { icons } from "./helpers/icons";
@@ -15,9 +15,10 @@ const NoIconsFoundMessage = () => (
   </p>
 );
 export const IconCategory = ({ category }: { category: string }) => {
-  const allIconsInCategory = icons
+
+  const allIconsInCategory = useMemo(() => icons
     .filter((icon) => icon.category === category)
-    .sort((a, b) => (a.name > b.name ? 1 : -1));
+    .sort((a, b) => (a.name > b.name ? 1 : -1)), [icons]);
 
   const [iconsToDisplay, setIconsToDisplay] =
     useState<IconProps[]>(allIconsInCategory);
@@ -33,24 +34,24 @@ export const IconCategory = ({ category }: { category: string }) => {
     let filteredIcons: IconProps[] = [];
 
     if (filteredVariations.includes("animated")) {
-      filteredIcons = iconsToDisplay.filter((icon) => icon.animated);
+      filteredIcons = allIconsInCategory.filter((icon) => icon.animated);
     }
 
     if (filteredVariations.includes("bidirectional")) {
-      filteredIcons = iconsToDisplay.filter((icon) => icon.bidirectional);
+      filteredIcons = allIconsInCategory.filter((icon) => icon.bidirectional);
     }
 
     if (
       filteredVariations.includes("bidirectional") &&
       filteredVariations.includes("animated")
     ) {
-      filteredIcons = iconsToDisplay.filter(
+      filteredIcons = allIconsInCategory.filter(
         (icon) => icon.bidirectional && icon.animated
       );
     }
 
     setIconsToDisplay([...filteredIcons]);
-  }, [filteredVariations]);
+  }, [filteredVariations, allIconsInCategory]);
 
   return (
     <div className={styles["icon-category"]}>
