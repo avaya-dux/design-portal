@@ -39,6 +39,8 @@ describe("IconLibrary", () => {
     expect(iconLibraryChipElement).toHaveTextContent(
       `${iconsInCategoryLength} icons displayed`
     );
+
+    cleanStores(categoriesToFilterFor)
   });
 
   it("passes basic axe compliance", async () => {
