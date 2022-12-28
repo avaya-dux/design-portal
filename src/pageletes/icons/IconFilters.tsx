@@ -7,15 +7,15 @@ import {
 } from "@avaya/neo-react";
 import { useStore } from "@nanostores/react";
 import clsx from "clsx";
-import { isLeftNavigationOpen } from "components/react/utils/layoutState";
 import { useCallback, useEffect, useState } from "react";
+
+import { isLeftNavigationOpen } from "components/react/utils/layoutState";
 
 import {
   categoriesToFilterFor,
   themesToFilterFor,
   variationsToFilterFor,
 } from "./helpers/iconPageState";
-
 import styles from "./IconFilters.module.css";
 
 export function updateFilteredArray(array: string[], value: string) {
