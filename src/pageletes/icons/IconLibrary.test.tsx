@@ -40,7 +40,7 @@ describe("IconLibrary", () => {
       `${iconsInCategoryLength} icons displayed`
     );
 
-    cleanStores(categoriesToFilterFor)
+    cleanStores(categoriesToFilterFor);
   });
 
   it("passes basic axe compliance", async () => {
