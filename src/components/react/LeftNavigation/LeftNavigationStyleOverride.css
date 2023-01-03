@@ -4,6 +4,15 @@
   padding-top: 1.5rem;
 }
 
+@media (min-width: 1280px) {
+  .left-navigation {
+    position: sticky;
+    left: 0;
+    top: var(--header-height);
+    height: 100vh;
+  }
+}
+
 [dir="rtl"] .left-navigation {
   border-right: none;
   border-left: 1px solid var(--navbar-border-bottom-color);
@@ -39,8 +48,9 @@
     overflow: visible;
     margin-bottom: 3rem;
   }
+
   .left-navigation {
-    position: absolute;
+    position: fixed;
     transform: translate3d(-15rem, 0, 0);
     padding-top: 0;
     top: 0;
@@ -67,8 +77,8 @@
   }
   .left-navigation.left-navigation--active + .left-navigation-scrim {
     display: block;
-    position: absolute;
-    width: 100vw;
+    position: fixed;
+    width: 100%;
     top: 0;
     left: 0;
     bottom: 0;
@@ -115,5 +125,17 @@
 
   .left-navigation .neo-nav--left a picture img {
     height: 57px;
+  }
+}
+
+@media (max-width: 799px) {
+  .left-navigation {
+    position: fixed;
+    transform: translate3d(-15rem, 0, 0);
+    padding-top: 0;
+    top: calc(var(--header-height) * 2);
+    bottom: 0;
+    background-color: var(--leftnav-background-color);
+    z-index: 100;
   }
 }

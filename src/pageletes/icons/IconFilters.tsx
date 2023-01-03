@@ -6,27 +6,29 @@ import {
   RadioGroup,
 } from "@avaya/neo-react";
 import { useStore } from "@nanostores/react";
-import { useEffect, useState } from "react";
+import clsx from "clsx";
+import { useCallback, useEffect, useState } from "react";
+
+import { isLeftNavigationOpen } from "components/react/utils/layoutState";
 
 import {
   categoriesToFilterFor,
   themesToFilterFor,
   variationsToFilterFor,
 } from "./helpers/iconPageState";
-
-import "./IconFilters.css";
+import styles from "./IconFilters.module.css";
 
 export function updateFilteredArray(array: string[], value: string) {
-  let tempArray = [];
+  let categoriesToFilter = [];
 
   if (array.includes(value)) {
-    tempArray = array.filter((values) => values !== value);
+    categoriesToFilter = array.filter((values) => values !== value);
   } else {
-    tempArray = array;
-    tempArray.push(value);
+    categoriesToFilter = array;
+    categoriesToFilter.push(value);
   }
 
-  return tempArray;
+  return categoriesToFilter;
 }
 
 export const IconFilters = ({ categories }: { categories: string[] }) => {
@@ -36,8 +38,19 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
 
   const filteredTheme = useStore(themesToFilterFor);
 
+  const isOpen = useStore(isLeftNavigationOpen);
+
   const [showAllCategories, setShowAllCategories] =
     useState<string>("selectAll");
+
+  const handleKeyDown = useCallback(
+    (event: KeyboardEvent) => {
+      if (isOpen && event.key === "Escape") {
+        isLeftNavigationOpen.set(false);
+      }
+    },
+    [isOpen]
+  );
 
   useEffect(() => {
     if (showAllCategories) {
@@ -48,117 +61,151 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
   useEffect(() => {
     if (filteredCategories.length) {
       setShowAllCategories("");
+    } else {
+      setShowAllCategories("selectAll");
     }
   }, [filteredCategories]);
 
+  useEffect(() => {
+    return () => {
+      categoriesToFilterFor.set([]);
+      variationsToFilterFor.set([]);
+      themesToFilterFor.set("dynamic");
+    };
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [handleKeyDown]);
+
   return (
-    <div className="icon-filters">
-      <div className="icon-filters__toggle">
-        <IconButton
-          aria-label="Toggle filters"
-          icon="preferences"
-          variant="tertiary"
-        />
-        <p className="neo-body-regular">Filter</p>
-      </div>
+    <>
+      <aside
+        className={clsx(
+          styles["icon-filters"],
+          isOpen
+            ? styles["icon-filters--active"]
+            : styles["icon-filters--hidden"]
+        )}
+      >
+        <div className={styles["icon-filters__toggle"]}>
+          <IconButton
+            aria-label="Toggle filters"
+            icon={isOpen ? "close" : "preferences"}
+            variant="tertiary"
+            onClick={() => isLeftNavigationOpen.set(!isOpen)}
+          />
+          <p className="neo-body-regular">Filter</p>
+        </div>
 
-      <section className="icon-filters__section">
-        <label
-          className="icon-filters__section__label"
-          id="categories"
-          htmlFor="Icon categories"
-        >
-          Categories
-        </label>
+        <section className={styles["icon-filters__section"]}>
+          <label
+            className={styles["icon-filters__section__label"]}
+            id="categories"
+            htmlFor="Icon categories"
+          >
+            Categories
+          </label>
 
-        <RadioGroup
-          groupName="selectAll"
-          selected={showAllCategories}
-          onChange={(e) => {
-            const { value: selectAll } = e.target as HTMLInputElement;
+          <RadioGroup
+            groupName="selectAll"
+            selected={showAllCategories}
+            onChange={(e) => {
+              const { value: selectAll } = e.target as HTMLInputElement;
 
-            setShowAllCategories(selectAll);
-          }}
-        >
-          <Radio value="selectAll"> Select All</Radio>
-        </RadioGroup>
+              setShowAllCategories(selectAll);
+            }}
+          >
+            <Radio value="selectAll"> Select All</Radio>
+          </RadioGroup>
 
-        <CheckboxGroup
-          groupName="Icon categories"
-          aria-labelledby="categories"
-          onChange={(e) => {
-            const { value: category } = e.target as HTMLInputElement;
+          <CheckboxGroup
+            groupName="Icon categories"
+            aria-labelledby="categories"
+            onChange={(e) => {
+              const { value: category } = e.target as HTMLInputElement;
 
-            const tempFilteredCategories = updateFilteredArray(
-              filteredCategories,
-              category
-            );
+              const tempFilteredCategories = updateFilteredArray(
+                filteredCategories,
+                category
+              );
 
-            categoriesToFilterFor.set([...tempFilteredCategories]);
-          }}
-        >
-          {categories.map((category, index) => (
-            <Checkbox
-              value={category}
-              key={index}
-              checked={filteredCategories.includes(category)}
-            >
-              {category}
-            </Checkbox>
-          ))}
-        </CheckboxGroup>
-      </section>
+              categoriesToFilterFor.set([...tempFilteredCategories]);
+            }}
+          >
+            {categories.map((category, index) => (
+              <Checkbox
+                value={category}
+                key={index}
+                checked={filteredCategories.includes(category)}
+              >
+                {category}
+              </Checkbox>
+            ))}
+          </CheckboxGroup>
+        </section>
 
-      <section className="icon-filters__section">
-        <label
-          className="icon-filters__section__label"
-          id="variations"
-          htmlFor="Icon variations"
-        >
-          Variations
-        </label>
+        <section className={styles["icon-filters__section"]}>
+          <label
+            className={styles["icon-filters__section__label"]}
+            id="variations"
+            htmlFor="Icon variations"
+          >
+            Variations
+          </label>
 
-        <CheckboxGroup
-          groupName="Icon variations"
-          aria-labelledby="variations"
-          onChange={(e) => {
-            const { value: variation } = e.target as HTMLInputElement;
+          <CheckboxGroup
+            groupName="Icon variations"
+            aria-labelledby="variations"
+            onChange={(e) => {
+              const { value: variation } = e.target as HTMLInputElement;
 
-            const tempFilteredVariations = updateFilteredArray(
-              filteredVariations,
-              variation
-            );
+              const tempFilteredVariations = updateFilteredArray(
+                filteredVariations,
+                variation
+              );
 
-            variationsToFilterFor.set([...tempFilteredVariations]);
-          }}
-        >
-          <Checkbox value="bidirectional">Bidirectional</Checkbox>
-          <Checkbox value="animated">Animated</Checkbox>
-        </CheckboxGroup>
-      </section>
+              variationsToFilterFor.set([...tempFilteredVariations]);
+            }}
+          >
+            <Checkbox value="bidirectional">Bidirectional</Checkbox>
+            <Checkbox value="animated">Animated</Checkbox>
+          </CheckboxGroup>
+        </section>
 
-      <section className="icon-filters__section">
-        <label
-          className="icon-filters__section__label"
-          id="themes"
-          htmlFor="Icon themes"
-        >
-          Theme
-        </label>
+        <section className={styles["icon-filters__section"]}>
+          <label
+            className={styles["icon-filters__section__label"]}
+            id="themes"
+            htmlFor="Icon themes"
+          >
+            Theme
+          </label>
 
-        <RadioGroup
-          groupName="type-options"
-          selected={filteredTheme}
-          onChange={(e) => {
-            const { value: theme } = e.target as HTMLInputElement;
+          <RadioGroup
+            groupName="type-options"
+            selected={filteredTheme}
+            onChange={(e) => {
+              const { value: theme } = e.target as HTMLInputElement;
 
-            themesToFilterFor.set(theme);
-          }}
-        >
-          <Radio value="light">Light</Radio>
-          <Radio value="dark">Dark</Radio>
-        </RadioGroup>
-      </section>
-    </div>
+              themesToFilterFor.set(theme);
+            }}
+          >
+            <Radio value="light">Light</Radio>
+            <Radio value="dark">Dark</Radio>
+          </RadioGroup>
+        </section>
+      </aside>
+      <div
+        className={styles["icon-filters__scrim"]}
+        id="icon-filter-scrim"
+        onClick={() => isLeftNavigationOpen.set(false)}
+        role="presentation"
+      ></div>
+    </>
   );
 };

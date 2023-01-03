@@ -1,17 +1,23 @@
 import { IconCategory } from "./IconCategory";
 
+import { icons } from "./helpers/icons";
+
 import {
   categoriesToFilterFor,
   themesToFilterFor,
 } from "./helpers/iconPageState";
 import { useStore } from "@nanostores/react";
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-import "./IconLibrary.css";
+import styles from "./IconLibrary.module.css";
+import { Chip } from "@avaya/neo-react";
 
 export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
   const [iconCategoriesToDisplay, setIconCategoriesToDisplay] =
     useState<string[]>(allCategories);
+
+  const [totalNumberOfIconsDisplayed, setTotalNumberOfIconsDisplayed] =
+    useState<number>(icons.length);
 
   const filteredCategories = useStore(categoriesToFilterFor);
   const filteredTheme = useStore(themesToFilterFor);
@@ -22,17 +28,38 @@ export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
       return;
     }
 
-    const tempArray = [...filteredCategories].sort((a, b) => (a > b ? 1 : -1));
+    const newCategories = [...filteredCategories].sort((a, b) =>
+      a > b ? 1 : -1
+    );
 
-    setIconCategoriesToDisplay([...tempArray]);
+    setIconCategoriesToDisplay([...newCategories]);
   }, [filteredCategories, allCategories]);
 
+  useEffect(() => {
+    if (filteredCategories.length) {
+      setTotalNumberOfIconsDisplayed(
+        icons.filter((icon) => filteredCategories.includes(icon.category))
+          .length
+      );
+    } else {
+      setTotalNumberOfIconsDisplayed(icons.length);
+    }
+  }, [filteredCategories]);
+
+  const totalNumberOfIconsDisplayedString = `${totalNumberOfIconsDisplayed} icons displayed`;
+
   return (
-    <div className={`icon-library neo-${filteredTheme}`}>
+    <div className={`${styles["icon-library"]} neo-${filteredTheme}`}>
+      <Chip
+        variant="default"
+        role="alert"
+        aira-live="assertive"
+        className={styles["icon-library__alert"]}
+      >
+        {totalNumberOfIconsDisplayedString}
+      </Chip>
       {iconCategoriesToDisplay.map((category, index) => (
-        <Fragment key={index}>
-          <IconCategory category={category} />
-        </Fragment>
+        <IconCategory category={category} key={index} />
       ))}
     </div>
   );
