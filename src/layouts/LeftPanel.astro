@@ -11,6 +11,7 @@ export interface Props {
 const { pages } = Astro.props;
 const { pathname } = Astro.url;
 
+// HACK: logic specific to the Icons page should exist in Icons page
 const isIconPage = pathname.includes("icons");
 ---
 
