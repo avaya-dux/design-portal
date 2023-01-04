@@ -5,27 +5,18 @@ import { LeftNavigation } from "components";
 
 import { IconFilters, iconCategories } from "pageletes/icons";
 
+export interface Props {
+  pages: PageAstroInstance[];
+}
+const { pages } = Astro.props;
 const { pathname } = Astro.url;
 
-const isComponentPage = pathname.includes("components");
-
-let componentPages: PageAstroInstance[] = [];
-
-const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
-  .filter((page) => page.title)
-  .map((page) => ({
-    ...page,
-  }));
-
-if (isComponentPage) {
-  componentPages = pages.filter((page) => page.url?.includes("components"));
-}
+const isIconPage = pathname.includes("icons");
 ---
 
+{isIconPage && <IconFilters categories={iconCategories} client:load />}
 {
-  pathname.includes("icons") ? (
-    <IconFilters categories={iconCategories} client:load />
-  ) : (
-    <LeftNavigation pages={componentPages} currentUrl={pathname} client:load />
+  pages.length > 0 && (
+    <LeftNavigation pages={pages} currentUrl={pathname} client:load />
   )
 }

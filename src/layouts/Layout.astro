@@ -32,6 +32,16 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
     title,
     keywords,
   }));
+
+let leftNavPages: PageAstroInstance[] = [];
+switch (pathname.split("/")[1]) {
+  case "components":
+    leftNavPages = pages.filter((page) => page.url?.includes("components"));
+    break;
+
+  default:
+    break;
+}
 ---
 
 <!DOCTYPE html>
@@ -50,11 +60,12 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
         pathname={pathname}
         pages={pages}
         userAgent={userAgent}
+        showToggleBtn={leftNavPages.length > 0}
         client:load
       />
 
       <div class="main__wrapper">
-        <LeftPanel />
+        <LeftPanel pages={leftNavPages} />
 
         <main id="main-content">
           <slot />
