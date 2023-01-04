@@ -27,10 +27,10 @@ const isIconPage = pathname.includes("icon");
 
 const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
   .filter((page) => page.title)
-  .map((page) => ({
-    ...page,
-    title: page.title,
-    keywords: page.keywords,
+  .map(({ title, keywords, ...rest }) => ({
+    ...rest,
+    title,
+    keywords,
   }));
 ---
 
