@@ -170,10 +170,10 @@
   resolved "https://registry.npmjs.org/@atomic-layout/core/-/core-0.14.1.tgz"
   integrity sha512-o5nhk/1djuKzB20C2LSOuetTDytsbGg4c0UfxXkq1pqoaN3hKJcHPYF9nV+p6+P5CWqNBaaJddZ32OsFSppULQ==
 
-"@avaya/neo-react@0.7.13":
-  version "0.7.13"
-  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-0.7.13.tgz#23f7fc38412d531b787f303fab00e2c45b054f6a"
-  integrity sha512-tsZtw/SJ5Z1HoB1NEEM3f/cwadkpNBnuYnDlPlcZ3V4bOnbTbB0KmmomI2oxKdBfFcX4K2r27pRAtYL/aroBUA==
+"@avaya/neo-react@0.7.14":
+  version "0.7.14"
+  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-0.7.14.tgz#9e08a039967dc4af05cf5efcae53049322ad761b"
+  integrity sha512-6F3uo2gkys2MSrzYLAqso6vR3XoW9P6C6mPO2NwA9O0Adrz3WohD/XS56yPZWIUS5CmGJg65powhXfqYG8D99g==
   dependencies:
     atomic-layout "^0.16.2"
     loglevel "^1.8.0"
@@ -792,7 +792,7 @@
   resolved "https://registry.npmjs.org/@ljharb/has-package-exports-patterns/-/has-package-exports-patterns-0.0.2.tgz"
   integrity sha512-4/RWEeXDO6bocPONheFe6gX/oQdP/bEpv0oL4HqjPP5DCenBSt0mHgahppY49N0CpsaqffdwPq+TlX9CYOq2Dw==
 
-"@nanostores/react@^0.4.0":
+"@nanostores/react@0.4.0":
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/@nanostores/react/-/react-0.4.0.tgz#41b8eebd11aa85bd05ab1e3e632d5c5dff09e100"
   integrity sha512-u7Y3s1B4hwsBxpIxClx0F/Q7TF1AsCU/F7Tt3n+tWeCebQ0cs2spthmskJY689XIMTRJXfBZF83kJDaDZeavVA==
