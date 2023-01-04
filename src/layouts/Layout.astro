@@ -23,8 +23,6 @@ const { title } = Astro.props as Props;
 
 const { pathname } = Astro.url;
 
-const isIconPage = pathname.includes("icon");
-
 const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
   .filter((page) => page.title)
   .map(({ title, keywords, ...rest }) => ({
@@ -54,7 +52,7 @@ switch (pathname.split("/")[1]) {
     <title>{title}</title>
   </head>
 
-  <body id="body-content-wrapper" class={isIconPage ? "icons-page" : ""}>
+  <body id="body-content-wrapper">
     <NeoThemeProvider initialMode="dynamic">
       <SiteHeader
         pathname={pathname}
@@ -143,12 +141,6 @@ switch (pathname.split("/")[1]) {
           display: block;
           position: relative;
           overflow-x: hidden;
-        }
-      }
-
-      @media (max-width: 1280px) {
-        .icons-page .main__wrapper {
-          margin-left: 3.5rem;
         }
       }
     </style>
