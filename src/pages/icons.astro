@@ -11,9 +11,19 @@ const sortedCategories = iconCategories.sort((a, b) => (a > b ? 1 : -1));
 ---
 
 <Layout title="Icons">
-  <Intro />
+  <div class="icons-page-wrapper">
+    <Intro />
 
-  <IconActions />
+    <IconActions />
 
-  <IconLibrary allCategories={sortedCategories} client:load />
+    <IconLibrary allCategories={sortedCategories} client:load />
+  </div>
 </Layout>
+
+<style>
+  @media (max-width: 1280px) {
+    .icons-page-wrapper {
+      margin-left: 3.5rem;
+    }
+  }
+</style>
