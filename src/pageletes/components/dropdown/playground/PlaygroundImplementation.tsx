@@ -14,7 +14,7 @@ import { useMemo, useState } from "react";
 import { Playground } from "components";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
-import { defaultHtml, defaultReact, sandbox, storybook } from "../static";
+import { sandbox, storybook } from "../static";
 
 type DropdownTypeOption = "default" | "icon" | "input" | "avatar";
 
@@ -22,8 +22,7 @@ export const PlaygroundImplementation = () => {
   const [dropdownType, setDropdownType] =
     useState<DropdownTypeOption>("default");
 
-  const [isDefault, react, html] = useMemo(() => {
-    const isDefaultResult = dropdownType === "default";
+  const [react, html] = useMemo(() => {
 
     const reactCode = prettyPrintReact(
       `
@@ -87,7 +86,7 @@ export const PlaygroundImplementation = () => {
 `
     );
 
-    return [isDefaultResult, reactCode, htmlCode];
+    return [reactCode, htmlCode];
   }, [dropdownType]);
 
   return (
@@ -110,8 +109,8 @@ export const PlaygroundImplementation = () => {
         </Playground.OptionsContainer>
       }
       examples={{
-        html: isDefault ? defaultHtml : html,
-        react: isDefault ? defaultReact : react,
+        html,
+        react,
         sandbox,
         storybook,
       }}

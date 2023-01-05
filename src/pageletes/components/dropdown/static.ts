@@ -1,51 +1,8 @@
 import type { TopicsDict } from "components";
-import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
-export const defaultHtml = prettyPrintHtml(`
-<div class="neo-dropdown neo-dropdown--active">
-  <button
-    class="neo-btn neo-btn-primary neo-btn-primary--primary neo-dropdown__link-header"
-  >
-    Action
-  </button>
-  <div class="neo-dropdown__content" role="menu">
-    <a class="neo-dropdown__link" role="menuitem">Option 1</a>
-    <a class="neo-dropdown__link" role="menuitem">Option 2</a>
-    <a class="neo-dropdown__link">Option 3</a>
-    <div class="neo-dropdown__item">
-      <a class="neo-dropdown__link" role="menuitem">Option 4</a>
-      <div class="neo-dropdown__content" role="menu">
-        <a class="neo-dropdown__link" role="menuitem>
-          Sub Option 1
-        </a>
-        <a class="neo-dropdown__link" role="menuitem">
-         Sub Option 2
-        </a>
-        <a class="neo-dropdown__link" role="menuitem">
-        Sub Option 3
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-`);
-
-export const defaultReact = prettyPrintReact(`
-<Menu menuRootElement={<Button>Action</Button>}>
-    <MenuItem>Option 1</MenuItem>
-    <MenuItem>Option 2</MenuItem>
-    <MenuItem>Option 3</MenuItem>
-    <SubMenu menuRootElement={<MenuItem>Option 4</MenuItem>}>
-      <MenuItem>Sub Option 1</MenuItem>
-      <MenuItem>Sub Option 2</MenuItem>
-      <MenuItem>Sub Option 3</MenuItem>
-    </SubMenu>
-</Menu>
-`);
-
-export const sandbox = "https://codesandbox.io/s/neo-react-dropdown-7rc6m9?fontsize=14&hidena";
+export const sandbox = "https://codesandbox.io/s/neo-react-dropdown-7rc6m9";
 export const storybook =
-  "https://neo-react-library-storybook.netlify.app/?path=/story/components-menu--simple-menu";
+  "https://neo-react-library-storybook.netlify.app/?path=/story/components-menu";
 
 type DropdownTopicNames =
   | "anatomy"
