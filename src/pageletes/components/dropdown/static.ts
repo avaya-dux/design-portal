@@ -43,7 +43,7 @@ export const defaultReact = prettyPrintReact(`
 </Menu>
 `);
 
-export const sandbox = "#";
+export const sandbox = "https://codesandbox.io/s/neo-react-dropdown-7rc6m9?fontsize=14&hidena";
 export const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-menu--simple-menu";
 

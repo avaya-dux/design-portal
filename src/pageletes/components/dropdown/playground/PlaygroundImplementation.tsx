@@ -119,6 +119,7 @@ export const PlaygroundImplementation = () => {
       <Menu
         className="neo-dropdown--active"
         menuRootElement={<Button>Action</Button>}
+        closeOnSelect={false}
       >
         <MenuItem
           className={dropdownType === "icon" ? "neo-icon-error-filled" : ""}
