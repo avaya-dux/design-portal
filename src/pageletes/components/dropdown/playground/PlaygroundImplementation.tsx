@@ -117,7 +117,6 @@ export const PlaygroundImplementation = () => {
       }}
     >
       <Menu
-        className="neo-dropdown--active"
         menuRootElement={<Button>Action</Button>}
         closeOnSelect={false}
       >
