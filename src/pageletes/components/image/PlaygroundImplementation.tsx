@@ -25,7 +25,30 @@ export const PlaygroundImplementation = () => {
   const [isThumbnail, setIsThumbnail] =
     useState<ImageProps["thumbnail"]>(false);
 
-  const react = useMemo(() => prettyPrintReact(``), []);
+  const react = useMemo(
+    () =>
+      prettyPrintReact(`
+<Image
+  src="${isBroken ? "baduri" : src}"
+  alt="Random image"
+  thumbnail={${isThumbnail}}
+  isDecorativeOrBranding={${isDecoration}}
+  fallback="https://via.placeholder.com/200x300"
+/>
+
+${
+  isThumbnail
+    ? `
+<p style={{ paddingLeft: '2rem' }}>
+  The image displayed is chosen at random from a collection of image
+  provided by Lorem Picsum
+</p>
+`
+    : ""
+}
+  `),
+    [isBroken, isDecoration, isThumbnail, src]
+  );
 
   const html = useMemo(() => {
     return prettyPrintHtml(``);
@@ -94,7 +117,7 @@ export const PlaygroundImplementation = () => {
       />
 
       {isThumbnail && (
-        <p style={{ paddingLeft: '2rem' }}>
+        <p style={{ paddingLeft: "2rem" }}>
           The image displayed is chosen at random from a collection of image
           provided by Lorem Picsum
         </p>
