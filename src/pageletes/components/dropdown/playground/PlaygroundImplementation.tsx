@@ -27,12 +27,25 @@ export const PlaygroundImplementation = () => {
 
     const reactCode = prettyPrintReact(
       `
-<Menu menuRootElement={<Button>Open Menu</Button>}>
+<Menu menuRootElement={<Button>Action</Button>}>
   <MenuItem ${
     dropdownType === "icon" ? "className='neo-icon-error-filled'" : ""
-  }>Menu Item 1</MenuItem>
-  <MenuItem>Menu Item 2</MenuItem>
-  <MenuItem>Menu Item 3</MenuItem>
+  }>Option 1</MenuItem>
+  ${
+    dropdownType === "input"
+      ? '<div className="neo-dropdown--input"><TextInput aria-label="dropdown text input"></TextInput><IconButton aria-label="voice" icon="voice" /></div>'
+      : "<MenuItem>Option 2</MenuItem>"
+  }
+  ${
+    dropdownType === "avatar"
+      ? '<MenuItem><Avatar size="sm"></Avatar>Option 3</MenuItem>'
+      : "<MenuItem>Option 3</MenuItem>"
+  }
+  <SubMenu menuRootElement={<MenuItem>Option 4</MenuItem>}>
+      <MenuItem>Sub Option 1</MenuItem>
+      <MenuItem>Sub Option 2</MenuItem>
+      <MenuItem>Sub Option 3</MenuItem>
+    </SubMenu>
 </Menu>
 `
     );
