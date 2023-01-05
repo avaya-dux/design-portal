@@ -27,10 +27,12 @@ export const SiteHeader = ({
   pathname,
   userAgent,
   pages,
+  showToggleBtn = false,
 }: {
   pathname: string;
   userAgent: string;
   pages: PageAstroInstance[];
+  showToggleBtn?: boolean;
 }) => {
   const isActiveLink = useCallback(
     (link: string) => pathname.startsWith(link),
@@ -57,14 +59,18 @@ export const SiteHeader = ({
         </TopNav.SkipNav>
       }
       menuToggleBtn={
-        <TopNav.IconButton
-          id="topnav-menu-toggle"
-          aria-label={isOpen ? "close left navigation" : "open left navigation"}
-          className="topnav-menu-toggle"
-          icon={isOpen ? "close" : "menu"}
-          onClick={() => isLeftNavigationOpen.set(!isOpen)}
-          ref={toggleButtonRef}
-        />
+        showToggleBtn ? (
+          <TopNav.IconButton
+            id="topnav-menu-toggle"
+            aria-label={
+              isOpen ? "close left navigation" : "open left navigation"
+            }
+            className="topnav-menu-toggle"
+            icon={isOpen ? "close" : "menu"}
+            onClick={() => isLeftNavigationOpen.set(!isOpen)}
+            ref={toggleButtonRef}
+          />
+        ) : undefined
       }
       sticky
     >
