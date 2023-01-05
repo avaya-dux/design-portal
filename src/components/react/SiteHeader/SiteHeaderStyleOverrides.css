@@ -95,7 +95,4 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
   nav.neo-navbar .neo-nav--left .neo-badge__navbutton {
     display: block;
   }
-  .icons-page nav.neo-navbar .neo-nav--left .neo-badge__navbutton {
-    display: none;
-  }
 }

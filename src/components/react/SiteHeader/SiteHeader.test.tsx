@@ -35,7 +35,14 @@ describe("SiteHeader", () => {
     const user = userEvent.setup();
     keepMount(isLeftNavigationOpen);
 
-    render(<SiteHeader pathname="/" pages={pagesMockData} userAgent="" />);
+    render(
+      <SiteHeader
+        pathname="/"
+        pages={pagesMockData}
+        userAgent=""
+        showToggleBtn
+      />
+    );
 
     expect(isLeftNavigationOpen.get()).toEqual(undefined);
 
