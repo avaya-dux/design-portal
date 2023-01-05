@@ -29,6 +29,7 @@ const positioningImg3AltText =
   "Image showing a series of open dropdown content sections cascading to the right";
 
 import PositioningImage4 from "../imgs/positioning-4.svg";
+import { DoAndDont } from "components";
 const positioningImg4AltText =
 "Image showing a series of open dropdown content sections cascading to the left";
 ---
@@ -101,6 +102,29 @@ const positioningImg4AltText =
 
       </InfoTableBody>
     </InfoTable>
+
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="tooltip-positioning-width">Width</SubHeader>
+
+    <Description>
+      The control should never be wider than the container, but it can be narrower.
+    </Description>
+
+    <DoAndDont>
+      <DoAndDont.DoContainer instructions={usageImgDoAltText}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={UsageImageDo} alt={usageImgDoAltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
+
+      <DoAndDont.DontContainer instructions={usageImgDontAltText}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={UsageImageDont} alt={usageImgDontAltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DontContainer>
+    </DoAndDont>
 
   </PageleteSubSection>
 </PageleteSection>
