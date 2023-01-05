@@ -126,7 +126,7 @@ export const PlaygroundImplementation = () => {
         </MenuItem>
         {dropdownType === "input" ? (
           <div className="neo-dropdown--input">
-            <TextInput aria-label="dropdown text input"></TextInput>
+            <TextInput aria-label="dropdown text input"/>
             <IconButton aria-label="voice" icon="voice" />
           </div>
         ) : (
