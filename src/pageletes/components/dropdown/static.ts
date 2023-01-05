@@ -6,21 +6,40 @@ export const defaultHtml = prettyPrintHtml(`
   <button
     class="neo-btn neo-btn-primary neo-btn-primary--primary neo-dropdown__link-header"
   >
-    Open Menu
+    Action
   </button>
   <div class="neo-dropdown__content" role="menu">
-    <a class="neo-dropdown__link" role="menuitem">Menu Item 1</a>
-    <a class="neo-dropdown__link" role="menuitem">Menu Item 2</a>
-    <a class="neo-dropdown__link">Menu Item 3</a>
+    <a class="neo-dropdown__link" role="menuitem">Option 1</a>
+    <a class="neo-dropdown__link" role="menuitem">Option 2</a>
+    <a class="neo-dropdown__link">Option 3</a>
+    <div class="neo-dropdown__item">
+      <a class="neo-dropdown__link" role="menuitem">Option 4</a>
+      <div class="neo-dropdown__content" role="menu">
+        <a class="neo-dropdown__link" role="menuitem>
+          Sub Option 1
+        </a>
+        <a class="neo-dropdown__link" role="menuitem">
+         Sub Option 2
+        </a>
+        <a class="neo-dropdown__link" role="menuitem">
+        Sub Option 3
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 `);
 
 export const defaultReact = prettyPrintReact(`
-<Menu menuRootElement={<Button>Open Menu</Button>}>
-    <MenuItem>Menu Item 1</MenuItem>
-    <MenuItem>Menu Item 2</MenuItem>
-    <MenuItem>Menu Item 3</MenuItem>
+<Menu menuRootElement={<Button>Action</Button>}>
+    <MenuItem>Option 1</MenuItem>
+    <MenuItem>Option 2</MenuItem>
+    <MenuItem>Option 3</MenuItem>
+    <SubMenu menuRootElement={<MenuItem>Option 4</MenuItem>}>
+      <MenuItem>Sub Option 1</MenuItem>
+      <MenuItem>Sub Option 2</MenuItem>
+      <MenuItem>Sub Option 3</MenuItem>
+    </SubMenu>
 </Menu>
 `);
 

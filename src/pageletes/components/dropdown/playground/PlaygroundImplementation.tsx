@@ -4,6 +4,7 @@ import {
   IconButton,
   Menu,
   MenuItem,
+  SubMenu,
   Radio,
   RadioGroup,
   TextInput,
@@ -54,8 +55,22 @@ export const PlaygroundImplementation = () => {
             ? "<a class='neo-dropdown__link'><figure class='neo-avatar neo-avatar--small'></figure>Menu Item 3</a>"
             : "<a class='neo-dropdown__link'>Menu Item 3</a>"
         }
+        <div class="neo-dropdown__item">
+          <a class="neo-dropdown__link" role="menuitem">Option 4</a>
+          <div class="neo-dropdown__content" role="menu">
+            <a class="neo-dropdown__link" role="menuitem>
+            Sub Option 1
+            </a>
+            <a class="neo-dropdown__link" role="menuitem">
+            Sub Option 2
+            </a>
+            <a class="neo-dropdown__link" role="menuitem">
+            Sub Option 3
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
+      </div>
 `
     );
 
@@ -112,6 +127,11 @@ export const PlaygroundImplementation = () => {
         ) : (
           <MenuItem>Option 3</MenuItem>
         )}
+        <SubMenu menuRootElement={<MenuItem>Option 4</MenuItem>}>
+          <MenuItem>Sub Option 1</MenuItem>
+          <MenuItem>Sub Option 2</MenuItem>
+          <MenuItem>Sub Option 3</MenuItem>
+        </SubMenu>
       </Menu>
     </Playground>
   );
