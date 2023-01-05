@@ -1,5 +1,13 @@
-import { Avatar, Button, IconButton, Menu, MenuItem, MenuProps, Radio, RadioGroup, TextInput } from "@avaya/neo-react";
-import clsx from "clsx";
+import {
+  Avatar,
+  Button,
+  IconButton,
+  Menu,
+  MenuItem,
+  Radio,
+  RadioGroup,
+  TextInput,
+} from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components";
@@ -19,7 +27,9 @@ export const PlaygroundImplementation = () => {
     const reactCode = prettyPrintReact(
       `
 <Menu menuRootElement={<Button>Open Menu</Button>}>
-  <MenuItem ${dropdownType === "icon" ? "className='neo-icon-error-filled'" : ""}>Menu Item 1</MenuItem>
+  <MenuItem ${
+    dropdownType === "icon" ? "className='neo-icon-error-filled'" : ""
+  }>Menu Item 1</MenuItem>
   <MenuItem>Menu Item 2</MenuItem>
   <MenuItem>Menu Item 3</MenuItem>
 </Menu>
@@ -31,9 +41,19 @@ export const PlaygroundImplementation = () => {
       <div class="neo-dropdown neo-dropdown--active">
       <button class="neo-btn neo-btn-primary neo-btn-primary--primary neo-dropdown__link-header">Open Menu</button>
       <div class="neo-dropdown__content" role="menu">
-        <a class="neo-dropdown__link ${dropdownType === "icon" && "neo-icon-error-filled"}" role="menuitem">Menu Item 1</a>
-        <a class="neo-dropdown__link" role="menuitem">Menu Item 2</a>
-        <a class="neo-dropdown__link">Menu Item 3</a>
+        <a class="neo-dropdown__link ${
+          dropdownType === "icon" && "neo-icon-error-filled"
+        }" role="menuitem">Menu Item 1</a>
+        ${
+          dropdownType === "input"
+            ? "<div class='neo-dropdown--input'><div class='neo-form-control'><div class='neo-input-editable__wrapper'><input class='neo-input' id='input-no-label' placeholder='Input With No Label' type='text' /></div></div><button class='neo-btn-square neo-btn-square-tertiary neo-btn-square-tertiary--info neo-icon-voice'></button></div>"
+            : "<a class='neo-dropdown__link' role='menuitem'>Menu Item 2</a>"
+        }
+        ${
+          dropdownType === "avatar"
+            ? "<a class='neo-dropdown__link'><figure class='neo-avatar neo-avatar--small'></figure>Menu Item 3</a>"
+            : "<a class='neo-dropdown__link'>Menu Item 3</a>"
+        }
       </div>
     </div>
 `
@@ -68,10 +88,30 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      <Menu className="neo-dropdown--active" menuRootElement={<Button>Open Menu</Button>}>
-        <MenuItem className={dropdownType === 'icon' ? "neo-icon-error-filled" : ""}>Menu Item 1</MenuItem>
-        {dropdownType === "input" ? (<div className="neo-dropdown--input"><TextInput aria-label="dropdown text input"></TextInput><IconButton aria-label="voice" icon="voice" /></div>) : <MenuItem>Menu Item 2</MenuItem>}
-        {dropdownType === "avatar" ? <MenuItem><Avatar size="sm"></Avatar>Menu Item 3</MenuItem> : <MenuItem>Menu Item 3</MenuItem>}
+      <Menu
+        className="neo-dropdown--active"
+        menuRootElement={<Button>Action</Button>}
+      >
+        <MenuItem
+          className={dropdownType === "icon" ? "neo-icon-error-filled" : ""}
+        >
+          Option 1
+        </MenuItem>
+        {dropdownType === "input" ? (
+          <div className="neo-dropdown--input">
+            <TextInput aria-label="dropdown text input"></TextInput>
+            <IconButton aria-label="voice" icon="voice" />
+          </div>
+        ) : (
+          <MenuItem>Option 2</MenuItem>
+        )}
+        {dropdownType === "avatar" ? (
+          <MenuItem>
+            <Avatar size="sm"></Avatar>Option 3
+          </MenuItem>
+        ) : (
+          <MenuItem>Option 3</MenuItem>
+        )}
       </Menu>
     </Playground>
   );
