@@ -11,7 +11,7 @@ import {
 } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
-import { Playground } from "components";
+import { Playground } from "components/react";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
 import { sandbox, storybook } from "../static";
@@ -52,7 +52,7 @@ export const PlaygroundImplementation = () => {
     const htmlCode = prettyPrintHtml(
       `
       <div class="neo-dropdown neo-dropdown--active">
-      <button class="neo-btn neo-btn-primary neo-btn-primary--primary neo-dropdown__link-header">Open Menu</button>
+      <button class="neo-btn neo-btn-primary neo-btn-primary--primary neo-dropdown__link-header">Action</button>
       <div class="neo-dropdown__content" role="menu">
         <a class="neo-dropdown__link ${
           dropdownType === "icon" && "neo-icon-error-filled"
@@ -126,7 +126,7 @@ export const PlaygroundImplementation = () => {
         </MenuItem>
         {dropdownType === "input" ? (
           <div className="neo-dropdown--input">
-            <TextInput aria-label="dropdown text input"></TextInput>
+            <TextInput aria-label="dropdown text input"/>
             <IconButton aria-label="voice" icon="voice" />
           </div>
         ) : (
