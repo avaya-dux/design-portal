@@ -20,8 +20,6 @@ export const PlaygroundImplementation = () => {
   const [src, setSrc] = useState<ImageProps["src"]>(defaultSrc);
 
   const [isBroken, setIsBroken] = useState(false);
-  const [isDecoration, setIsDecoration] =
-    useState<ImageProps["isDecorativeOrBranding"]>(false);
   const [isThumbnail, setIsThumbnail] =
     useState<ImageProps["thumbnail"]>(false);
 
@@ -32,7 +30,6 @@ export const PlaygroundImplementation = () => {
   src="${isBroken ? "baduri" : src}"
   alt="Random image"
   thumbnail={${isThumbnail}}
-  isDecorativeOrBranding={${isDecoration}}
   fallback="https://via.placeholder.com/200x300"
 />
 
@@ -47,12 +44,31 @@ ${
     : ""
 }
   `),
-    [isBroken, isDecoration, isThumbnail, src]
+    [isBroken, isThumbnail, src]
   );
 
-  const html = useMemo(() => {
-    return prettyPrintHtml(``);
-  }, []);
+  const html = useMemo(
+    () =>
+      prettyPrintHtml(`
+  <img
+    alt="Random image"
+    src="${isBroken ? "baduri" : src}"
+    class="${isThumbnail ? "neo-thumbnail" : "neo-img neo-img--fluid"}"
+  />
+
+  ${
+    isThumbnail
+      ? `
+  <p style="padding-left: 2rem">
+    The image displayed is chosen at random from a collection of image
+    provided by Lorem Picsum
+  </p>
+  `
+      : ""
+  }
+  `),
+    [isBroken, isThumbnail, src]
+  );
 
   return (
     <Playground
@@ -76,9 +92,6 @@ ${
                   case "isBroken":
                     setIsBroken(!isBroken);
                     break;
-                  case "isDecoration":
-                    setIsDecoration(!isDecoration);
-                    break;
                   case "isThumbnail":
                     setIsThumbnail(!isThumbnail);
 
@@ -88,10 +101,6 @@ ${
             >
               <Checkbox value="isBroken" checked={isBroken}>
                 Is Broken URI
-              </Checkbox>
-
-              <Checkbox value="isDecoration" checked={isDecoration}>
-                Is Decoration Image
               </Checkbox>
 
               <Checkbox value="isThumbnail" checked={isThumbnail}>
@@ -112,7 +121,6 @@ ${
         src={isBroken ? "baduri" : src}
         alt="Random image"
         thumbnail={isThumbnail}
-        isDecorativeOrBranding={isDecoration}
         fallback="https://via.placeholder.com/200x300"
       />
 
