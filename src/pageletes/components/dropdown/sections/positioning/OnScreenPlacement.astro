@@ -1,0 +1,55 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { ColumnLayout, Description, InfoTable, InfoTableBody, InfoTableCell, InfoTableRow, SubHeader } from "components";
+
+import { PositioningImage3, PositioningImage4 } from "../../imgs";
+
+const positioningImg3AltText =
+  "Image showing a series of open dropdown content sections cascading to the right";
+
+const positioningImg4AltText =
+"Image showing a series of open dropdown content sections cascading to the left";
+
+---
+
+
+<SubHeader id="tooltip-positioning-on-screen-placement">On Screen Placement</SubHeader>
+
+<Description>
+  Whenever a dropdown includes sub menus, they should cascade to the right where possible. When the control is near to the right side of the window, it can cascade to the left. Do not expand in both directions for a single dropdown.
+</Description>
+
+<ColumnLayout bkgColor="white" numOfColumns={1}>
+  <Image src={PositioningImage3} alt={positioningImg3AltText} />
+</ColumnLayout>
+
+<ColumnLayout bkgColor="white" numOfColumns={1}>
+  <Image src={PositioningImage4} alt={positioningImg4AltText} />
+</ColumnLayout>
+
+<InfoTable>
+  <InfoTableBody>
+    <InfoTableRow>
+      <InfoTableCell>1. Position 1:</InfoTableCell>
+      <InfoTableCell>
+        This is the primary container with the top tier action items.
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>2. Position 2:</InfoTableCell>
+      <InfoTableCell>
+        Some primary items may have additional settings. The secondary tier container shows these items.
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>3. Position 3:</InfoTableCell>
+      <InfoTableCell>
+        The tertiary tier shows any settings associated with secondary items.
+      </InfoTableCell>
+    </InfoTableRow>
+
+  </InfoTableBody>
+</InfoTable>

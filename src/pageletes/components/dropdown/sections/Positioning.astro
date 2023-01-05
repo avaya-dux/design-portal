@@ -1,130 +1,36 @@
 ---
-import { Image } from "@avaya/neo-react";
-
 import {
-ColumnLayout,
   Description,
-  InfoTable,
-  InfoTableBody,
-  InfoTableCell,
-  InfoTableRow,
   PageleteSection,
   PageleteSubSection,
   SectionHeader,
-  SubHeader,
 } from "components/astro";
 
+import { Placement, OnScreenPlacement, Width } from "./positioning";
+
 import { topics } from "../static";
-
-import PositioningImage1 from "../imgs/positioning-1.svg";
-const positioningImg1AltText =
-  "Image showing a positioning configuration wherein the dropdown opens downwards or upwards";
-
-import PositioningImage2 from "../imgs/positioning-2.svg";
-const positioningImg2AltText =
-"Image showing a positioning configuration wherein the dropdown opens left or right";
-
-import PositioningImage3 from "../imgs/positioning-3.svg";
-const positioningImg3AltText =
-  "Image showing a series of open dropdown content sections cascading to the right";
-
-import PositioningImage4 from "../imgs/positioning-4.svg";
-import { DoAndDont } from "components";
-const positioningImg4AltText =
-"Image showing a series of open dropdown content sections cascading to the left";
 ---
 
 <PageleteSection>
-  <SectionHeader id={topics.positioning.id}>{topics.positioning.title}</SectionHeader>
+  <SectionHeader id={topics.positioning.id}>
+    {topics.positioning.title}
+  </SectionHeader>
 
   <Description>
-    The positioning of the dropdown, and how it expands when selected, is determined by where it is located in the window and the available space around it.
+    The positioning of the dropdown, and how it expands when selected, is
+    determined by where it is located in the window and the available space
+    around it.
   </Description>
 
   <PageleteSubSection>
-    <SubHeader id="tooltip-positioning-placement">Placement</SubHeader>
-
-    <Description>
-      Wherever possible, the dropdown should appear below the control and both are left-justified. When a dropdown is close to the right side of the window, the container can be right-justified with the control. If the dropdown is near the bottom of the window, the dropdown can expand upward.
-    </Description>
-
-    <ColumnLayout bkgColor="white" numOfColumns={1}>
-      <Image src={PositioningImage1} alt={positioningImg1AltText} />
-    </ColumnLayout>
-
-    <Description>
-      Whenever space is limited, the container can appear beside the control and expand either up or down as required.
-    </Description>
-
-    <ColumnLayout bkgColor="white" numOfColumns={1}>
-      <Image src={PositioningImage2} alt={positioningImg2AltText} />
-    </ColumnLayout>
-
+    <Placement />
   </PageleteSubSection>
 
   <PageleteSubSection>
-    <SubHeader id="tooltip-positioning-on-screen-placement">On Screen Placement</SubHeader>
-
-    <Description>
-      Whenever a dropdown includes sub menus, they should cascade to the right where possible. When the control is near to the right side of the window, it can cascade to the left. Do not expand in both directions for a single dropdown.
-    </Description>
-
-    <ColumnLayout bkgColor="white" numOfColumns={1}>
-      <Image src={PositioningImage3} alt={positioningImg3AltText} />
-    </ColumnLayout>
-
-    <ColumnLayout bkgColor="white" numOfColumns={1}>
-      <Image src={PositioningImage4} alt={positioningImg4AltText} />
-    </ColumnLayout>
-
-    <InfoTable>
-      <InfoTableBody>
-        <InfoTableRow>
-          <InfoTableCell>1. Position 1:</InfoTableCell>
-          <InfoTableCell>
-            This is the primary container with the top tier action items.
-          </InfoTableCell>
-        </InfoTableRow>
-
-        <InfoTableRow>
-          <InfoTableCell>2. Position 2:</InfoTableCell>
-          <InfoTableCell>
-            Some primary items may have additional settings. The secondary tier container shows these items.
-          </InfoTableCell>
-        </InfoTableRow>
-
-        <InfoTableRow>
-          <InfoTableCell>3. Position 3:</InfoTableCell>
-          <InfoTableCell>
-            The tertiary tier shows any settings associated with secondary items.
-          </InfoTableCell>
-        </InfoTableRow>
-
-      </InfoTableBody>
-    </InfoTable>
-
+    <OnScreenPlacement />
   </PageleteSubSection>
 
   <PageleteSubSection>
-    <SubHeader id="tooltip-positioning-width">Width</SubHeader>
-
-    <Description>
-      The control should never be wider than the container, but it can be narrower.
-    </Description>
-
-    <DoAndDont>
-      <DoAndDont.DoContainer instructions={usageImgDoAltText}>
-        <DoAndDont.ImageExampleContainer>
-          <Image src={UsageImageDo} alt={usageImgDoAltText} />
-        </DoAndDont.ImageExampleContainer>
-      </DoAndDont.DoContainer>
-
-      <DoAndDont.DontContainer instructions={usageImgDontAltText}>
-        <DoAndDont.ImageExampleContainer>
-          <Image src={UsageImageDont} alt={usageImgDontAltText} />
-        </DoAndDont.ImageExampleContainer>
-      </DoAndDont.DontContainer>
-    </DoAndDont>
-
+    <Width />
   </PageleteSubSection>
 </PageleteSection>

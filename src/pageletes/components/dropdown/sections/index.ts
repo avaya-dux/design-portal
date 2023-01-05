@@ -8,4 +8,12 @@ export { Intro };
 
 import Anatomy from "./Anatomy.astro";
 
-export { Anatomy }
+export { Anatomy };
+
+import States from './States.astro';
+
+export { States }
+
+import Positioning from "./Positioning.astro";
+
+export { Positioning };
