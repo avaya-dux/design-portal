@@ -1,0 +1,36 @@
+---
+import {
+  Description,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+} from "components/astro";
+
+import { Placement, OnScreenPlacement, Width } from "./positioning";
+
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.positioning.id}>
+    {topics.positioning.title}
+  </SectionHeader>
+
+  <Description>
+    The positioning of the dropdown, and how it expands when selected, is
+    determined by where it is located in the window and the available space
+    around it.
+  </Description>
+
+  <PageleteSubSection>
+    <Placement />
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <OnScreenPlacement />
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <Width />
+  </PageleteSubSection>
+</PageleteSection>

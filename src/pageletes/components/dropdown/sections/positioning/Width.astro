@@ -1,0 +1,50 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { Description, DoAndDont, SubHeader } from "components";
+
+import { Do1, Dont1, Do2, Dont2 } from "../../imgs";
+
+const Do1AltText = "The container should match the width of the control.";
+
+const Dont1AltText = "Do not make the container narrower than the control.";
+
+const Do2AltText =
+  "The container can extend beyond the control to accommodate longer text.";
+
+const Dont2AltText = "Do not truncate a long string of text.";
+---
+
+<SubHeader id="tooltip-positioning-width">Width</SubHeader>
+
+<Description>
+  The control should never be wider than the container, but it can be narrower.
+</Description>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={Do1AltText}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={Do1} alt={Do1AltText} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={Dont1AltText}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={Dont1} alt={Dont1AltText} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={Do2AltText}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={Do2} alt={Do2AltText} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={Dont2AltText}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={Dont2} alt={Dont2AltText} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>
