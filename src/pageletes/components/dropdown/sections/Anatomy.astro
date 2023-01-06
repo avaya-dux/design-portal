@@ -1,0 +1,74 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Description,
+  ColumnLayout,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableRow,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import AnatomyImage from "../imgs/anatomy.svg";
+const anatomyImgAltText =
+  "Image showing the different parts that make up a dropdown";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.anatomy.id}>{topics.anatomy.title}</SectionHeader>
+
+  <Description>
+    A component, such as a button, is used as a trigger for the dropdown. When
+    selected, it reveals the container with the selectable items inside. Some of
+    the items may also have their own sub-selection available.
+  </Description>
+
+  <ColumnLayout bkgColor="white" numOfColumns={1}>
+    <Image src={AnatomyImage} alt={anatomyImgAltText} />
+  </ColumnLayout>
+
+  <InfoTable>
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>1. Control:</InfoTableCell>
+        <InfoTableCell>
+          This is the Neo component that holds the dropdown menu.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>2. Trigger:</InfoTableCell>
+        <InfoTableCell>
+          Appearing beside the Control, the trigger shows that this component
+          contains a dropdown.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>3. Container:</InfoTableCell>
+        <InfoTableCell>
+          The box that holds the list of action items.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>4. List of Items:</InfoTableCell>
+        <InfoTableCell>
+          These are the action items and options that users can select.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>5. Expand Trigger:</InfoTableCell>
+        <InfoTableCell>
+          This trigger is shown when a menu item has its own supplementary
+          dropdown list.
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
+</PageleteSection>
