@@ -17,3 +17,7 @@ export { States };
 import Positioning from "./Positioning.astro";
 
 export { Positioning };
+
+import Types from "./Types.astro";
+
+export { Types };

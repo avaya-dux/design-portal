@@ -1,0 +1,83 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Description,
+  ColumnLayout,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableRow,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import { TypesImage1, Do3, Dont3 } from "../imgs";
+import { DoAndDont } from "components";
+
+const TypesImage1AltText = "An image of default, selected, checkbox and grouped with titles dropdowns."
+
+const Do3AltText = "Use dividers to group related items."
+
+const Dont3AltText = "Do not place dividers between each item."
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.types.id}>{topics.types.title}</SectionHeader>
+
+  <Description>
+    Dropdowns can be deployed using different types depending upon the options and formatting requirements of the action items.
+  </Description>
+
+  <ColumnLayout bkgColor="white" numOfColumns={1}>
+    <Image src={TypesImage1} alt={TypesImage1AltText} />
+  </ColumnLayout>
+
+  <InfoTable>
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>1. Default:</InfoTableCell>
+        <InfoTableCell>
+          The default type shows the action item list. Selecting any option activates it and closes the dropdown.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>2. Selected:</InfoTableCell>
+        <InfoTableCell>
+          When an action items is selected, it is tagged with a checkmark and the dropdown remains open. If the dropdown is opened again, the currently selected item will still be tagged.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>3. Checkbox:</InfoTableCell>
+        <InfoTableCell>
+          In situations where more than one action item can be selected, use the checkbox type.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>4. Grouped with Titles:</InfoTableCell>
+        <InfoTableCell>
+          This type is used to organize the action items into easily understandable sections. This makes it easier to find items in longer lists.
+        </InfoTableCell>
+      </InfoTableRow>
+
+    </InfoTableBody>
+  </InfoTable>
+
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={Do3AltText}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={Do3} alt={Do3AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={Dont3AltText}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={Dont3} alt={Dont3AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+</PageleteSection>
