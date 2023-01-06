@@ -21,7 +21,7 @@ export const LeftNavigation = ({
   pages: PageAstroInstance[];
   currentUrl: string;
 }) => {
-  const handleNavigate = (id: string, url: string) => {
+  const handleNavigate = (_: string, url: string) => {
     window.location.href = url;
   };
 
