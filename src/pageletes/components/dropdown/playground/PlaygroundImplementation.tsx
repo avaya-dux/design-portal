@@ -1,14 +1,4 @@
-import {
-  Avatar,
-  Button,
-  IconButton,
-  Menu,
-  MenuItem,
-  SubMenu,
-  Radio,
-  RadioGroup,
-  TextInput,
-} from "@avaya/neo-react";
+import { Avatar, Button, IconButton, Menu, MenuItem, Radio, RadioGroup, SubMenu, TextInput } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components/react";
@@ -55,7 +45,7 @@ export const PlaygroundImplementation = () => {
       <button class="neo-btn neo-btn-primary neo-btn-primary--primary neo-dropdown__link-header">Action</button>
       <div class="neo-dropdown__content" role="menu">
         <a class="neo-dropdown__link ${
-          dropdownType === "icon" && "neo-icon-error-filled"
+          dropdownType === "icon" ? "neo-icon-error-filled" : ""
         }" role="menuitem">Menu Item 1</a>
         ${
           dropdownType === "input"
