@@ -14,9 +14,9 @@ import Do2 from "./do-2.svg";
 
 import Dont2 from "./dont-2.svg";
 
-import States from './states.svg';
+import States from "./states.svg";
 
-import Anatomy from './anatomy.svg'
+import Anatomy from "./anatomy.svg";
 
 export {
   PositioningImage1,
@@ -28,5 +28,5 @@ export {
   Do2,
   Dont2,
   States,
-  Anatomy
+  Anatomy,
 };

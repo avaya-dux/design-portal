@@ -2,7 +2,6 @@ import { TextInput } from "@avaya/neo-react";
 import { searchFor } from "./helpers/iconPageState";
 
 export const IconSearch = () => {
-
   return (
     <div className="icon__actions__search">
       <TextInput
