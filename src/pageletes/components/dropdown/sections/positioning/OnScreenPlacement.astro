@@ -1,7 +1,15 @@
 ---
 import { Image } from "@avaya/neo-react";
 
-import { ColumnLayout, Description, InfoTable, InfoTableBody, InfoTableCell, InfoTableRow, SubHeader } from "components";
+import {
+  ColumnLayout,
+  Description,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableRow,
+  SubHeader,
+} from "components";
 
 import { PositioningImage3, PositioningImage4 } from "../../imgs";
 
@@ -9,15 +17,17 @@ const positioningImg3AltText =
   "Image showing a series of open dropdown content sections cascading to the right";
 
 const positioningImg4AltText =
-"Image showing a series of open dropdown content sections cascading to the left";
-
+  "Image showing a series of open dropdown content sections cascading to the left";
 ---
 
-
-<SubHeader id="tooltip-positioning-on-screen-placement">On Screen Placement</SubHeader>
+<SubHeader id="tooltip-positioning-on-screen-placement">
+  On Screen Placement
+</SubHeader>
 
 <Description>
-  Whenever a dropdown includes sub menus, they should cascade to the right where possible. When the control is near to the right side of the window, it can cascade to the left. Do not expand in both directions for a single dropdown.
+  Whenever a dropdown includes sub menus, they should cascade to the right where
+  possible. When the control is near to the right side of the window, it can
+  cascade to the left. Do not expand in both directions for a single dropdown.
 </Description>
 
 <ColumnLayout bkgColor="white" numOfColumns={1}>
@@ -40,7 +50,8 @@ const positioningImg4AltText =
     <InfoTableRow>
       <InfoTableCell>2. Position 2:</InfoTableCell>
       <InfoTableCell>
-        Some primary items may have additional settings. The secondary tier container shows these items.
+        Some primary items may have additional settings. The secondary tier
+        container shows these items.
       </InfoTableCell>
     </InfoTableRow>
 
@@ -50,6 +61,5 @@ const positioningImg4AltText =
         The tertiary tier shows any settings associated with secondary items.
       </InfoTableCell>
     </InfoTableRow>
-
   </InfoTableBody>
 </InfoTable>

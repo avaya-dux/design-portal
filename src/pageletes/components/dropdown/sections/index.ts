@@ -10,9 +10,9 @@ import Anatomy from "./Anatomy.astro";
 
 export { Anatomy };
 
-import States from './States.astro';
+import States from "./States.astro";
 
-export { States }
+export { States };
 
 import Positioning from "./Positioning.astro";
 
