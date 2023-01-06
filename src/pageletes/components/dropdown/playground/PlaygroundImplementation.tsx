@@ -1,4 +1,14 @@
-import { Avatar, Button, IconButton, Menu, MenuItem, Radio, RadioGroup, SubMenu, TextInput } from "@avaya/neo-react";
+import {
+  Avatar,
+  Button,
+  IconButton,
+  Menu,
+  MenuItem,
+  Radio,
+  RadioGroup,
+  SubMenu,
+  TextInput,
+} from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components/react";
@@ -13,7 +23,6 @@ export const PlaygroundImplementation = () => {
     useState<DropdownTypeOption>("default");
 
   const [react, html] = useMemo(() => {
-
     const reactCode = prettyPrintReact(
       `
 <Menu menuRootElement={<Button>Action</Button>}>
@@ -105,10 +114,7 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      <Menu
-        menuRootElement={<Button>Action</Button>}
-        closeOnSelect={false}
-      >
+      <Menu menuRootElement={<Button>Action</Button>} closeOnSelect={false}>
         <MenuItem
           className={dropdownType === "icon" ? "neo-icon-error-filled" : ""}
         >
@@ -116,7 +122,7 @@ export const PlaygroundImplementation = () => {
         </MenuItem>
         {dropdownType === "input" ? (
           <div className="neo-dropdown--input">
-            <TextInput aria-label="dropdown text input"/>
+            <TextInput aria-label="dropdown text input" />
             <IconButton aria-label="voice" icon="voice" />
           </div>
         ) : (
