@@ -11,10 +11,9 @@ export const IconSearch = () => {
         startIcon="search"
         clearable={true}
         onChange={(e) => {
-          e.preventDefault();
           searchFor.set(e.target.value);
         }}
       />
     </div>
   );
-}
+};

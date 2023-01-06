@@ -19,29 +19,26 @@ const NoIconsFoundMessage = () => (
 export const IconCategory = ({ category }: { category: string }) => {
   const searchIconNameFor = useStore(searchFor);
 
-  const allIconsInCategory = useMemo(
-    () => {
-      let iconSearchResults = icons;
-      if (searchIconNameFor.length > 0) {
+  const allIconsInCategory = useMemo(() => {
+    let iconSearchResults = icons;
+    if (searchIconNameFor.length > 0) {
+      const options = {
+        useExtendedSearch: true,
+        threshohld: 0.1,
+        findAllMatches: true,
+        keys: ["name"],
+      };
 
-        const options = {
-          useExtendedSearch: true,
-          keys: ["name"],
-        };
-
-        const fuse = new Fuse(icons, options);
-        iconSearchResults = fuse
-          .search(searchIconNameFor)
-          .map((icon) => icon.item);
-      }
-
-      iconSearchResults
-        .filter((icon) => icon.category === category)
-        .sort((a, b) => (a.name > b.name ? 1 : -1));
+      const fuse = new Fuse(icons, options);
+      iconSearchResults = fuse
+        .search(searchIconNameFor)
+        .map((icon) => icon.item);
     }
-    ,
-    [category, searchIconNameFor]
-  );
+
+    return iconSearchResults
+      .filter((icon) => icon.category === category)
+      .sort((a, b) => (a.name > b.name ? 1 : -1));
+  }, [category, searchIconNameFor]);
 
   const [iconsToDisplay, setIconsToDisplay] =
     useState<IconProps[]>(allIconsInCategory);
