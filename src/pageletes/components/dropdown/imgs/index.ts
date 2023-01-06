@@ -8,7 +8,7 @@ import PositioningImage4 from "./positioning-4.svg";
 
 import Do1 from "./do-1.svg";
 
-import Dont1 from "./do-2.svg";
+import Dont1 from "./dont-1.svg";
 
 import Do2 from "./do-2.svg";
 
