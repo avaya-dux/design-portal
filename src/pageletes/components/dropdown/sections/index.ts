@@ -21,3 +21,19 @@ export { Positioning };
 import Types from "./Types.astro";
 
 export { Types };
+
+import Behavior from "./Behavior.astro";
+
+export { Behavior };
+
+import Specs from "./Specs.astro";
+
+export { Specs };
+
+import KeyboardInteractions from "./KeyboardInteractions.astro";
+
+export { KeyboardInteractions };
+
+import RelatedContent from "./RelatedContent.astro";
+
+export { RelatedContent };

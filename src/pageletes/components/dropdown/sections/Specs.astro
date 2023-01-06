@@ -1,0 +1,42 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Description,
+  ColumnLayout,
+  PageleteSection,
+  SectionHeader,
+  SubHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import { SpecsImage } from "../imgs/";
+const specsImgAltText =
+  "Image showing the default height of 36px for a dropdown element";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.specs.id}>{topics.specs.title}</SectionHeader>
+
+  <Description>
+    Each dropdown includes several default design elements.
+  </Description>
+
+  <ColumnLayout bkgColor="white" numOfColumns={1}>
+    <Image src={SpecsImage} alt={specsImgAltText} />
+  </ColumnLayout>
+
+  <SubHeader id="tooltip-specs-elevation">Elevation</SubHeader>
+
+  <Description>
+    The dropdown component uses Elevation-100. The <a href="#fixme">Elevation</a
+    > design token will apply a dropshadow to the container.
+  </Description>
+
+  <SubHeader id="tooltip-specs-border-style">Border Style</SubHeader>
+
+  <Description>
+    The dropdown component uses the <a href="#fixme">Border/Elevation</a> design
+    token to apply borders/strokes to components.
+  </Description>
+</PageleteSection>
