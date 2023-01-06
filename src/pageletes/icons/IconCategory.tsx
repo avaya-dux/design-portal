@@ -1,8 +1,9 @@
 import { Icon } from "@avaya/neo-react";
 import { useStore } from "@nanostores/react";
+import Fuse from "fuse.js";
 import { useEffect, useMemo, useState } from "react";
 
-import { variationsToFilterFor } from "./helpers/iconPageState";
+import { searchFor, variationsToFilterFor } from "./helpers/iconPageState";
 import { icons } from "./helpers/icons";
 
 import type { IconProps } from "./helpers/iconType";
@@ -14,13 +15,32 @@ const NoIconsFoundMessage = () => (
     No icons to display with current filters
   </p>
 );
+
 export const IconCategory = ({ category }: { category: string }) => {
+  const searchIconNameFor = useStore(searchFor);
+
   const allIconsInCategory = useMemo(
-    () =>
-      icons
+    () => {
+      let iconSearchResults = icons;
+      if (searchIconNameFor.length > 0) {
+
+        const options = {
+          useExtendedSearch: true,
+          keys: ["name"],
+        };
+
+        const fuse = new Fuse(icons, options);
+        iconSearchResults = fuse
+          .search(searchIconNameFor)
+          .map((icon) => icon.item);
+      }
+
+      iconSearchResults
         .filter((icon) => icon.category === category)
-        .sort((a, b) => (a.name > b.name ? 1 : -1)),
-    [category]
+        .sort((a, b) => (a.name > b.name ? 1 : -1));
+    }
+    ,
+    [category, searchIconNameFor]
   );
 
   const [iconsToDisplay, setIconsToDisplay] =
@@ -30,6 +50,7 @@ export const IconCategory = ({ category }: { category: string }) => {
 
   useEffect(() => {
     if (!filteredVariations.length) {
+      // const iconsInCategory = FindIconsWithName(allIconsInCategory)
       setIconsToDisplay(allIconsInCategory);
       return;
     }
