@@ -1,7 +1,7 @@
 import { IconCategory } from "./IconCategory";
 
 import { icons } from "./helpers/icons";
-import Fuse from "fuse.js";
+import { findIcons } from "./helpers/findIcons";
 
 import {
   categoriesToFilterFor,
@@ -40,20 +40,7 @@ export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
   }, [filteredCategories, allCategories]);
 
   useEffect(() => {
-    let iconSearchResults = icons;
-    if (searchIconNameFor.length > 0) {
-      const options = {
-        useExtendedSearch: true,
-        threshohld: 0.1,
-        findAllMatches: true,
-        keys: ["name"],
-      };
-
-      const fuse = new Fuse(icons, options);
-      iconSearchResults = fuse
-        .search(searchIconNameFor)
-        .map((icon) => icon.item);
-    }
+    let iconSearchResults = findIcons(icons, searchIconNameFor);
 
     if (filteredCategories.length) {
       setTotalNumberOfIconsDisplayed(

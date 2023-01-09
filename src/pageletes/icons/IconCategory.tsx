@@ -1,12 +1,12 @@
 import { Icon } from "@avaya/neo-react";
 import { useStore } from "@nanostores/react";
-import Fuse from "fuse.js";
 import { useEffect, useMemo, useState } from "react";
 
 import { searchFor, variationsToFilterFor } from "./helpers/iconPageState";
 import { icons } from "./helpers/icons";
 
 import type { IconProps } from "./helpers/iconType";
+import { findIcons } from "./helpers/findIcons";
 
 import styles from "./IconCategory.module.css";
 
@@ -20,20 +20,7 @@ export const IconCategory = ({ category }: { category: string }) => {
   const searchIconNameFor = useStore(searchFor);
 
   const allIconsInCategory = useMemo(() => {
-    let iconSearchResults = icons;
-    if (searchIconNameFor.length > 0) {
-      const options = {
-        useExtendedSearch: true,
-        threshohld: 0.1,
-        findAllMatches: true,
-        keys: ["name"],
-      };
-
-      const fuse = new Fuse(icons, options);
-      iconSearchResults = fuse
-        .search(searchIconNameFor)
-        .map((icon) => icon.item);
-    }
+    let iconSearchResults = findIcons(icons, searchIconNameFor);
 
     return iconSearchResults
       .filter((icon) => icon.category === category)
