@@ -6,7 +6,6 @@ export const IconSearch = () => {
     <div className="icon__actions__search">
       <TextInput
         aria-label="Search icons"
-        label="it's a component!"
         startIcon="search"
         clearable={true}
         onChange={(e) => {
