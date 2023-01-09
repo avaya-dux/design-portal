@@ -14,7 +14,7 @@ import { useMemo, useState } from "react";
 import { Playground } from "components/react";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
-import { sandbox, storybook } from "../static";
+import { defaultHtml, defaultReact, sandbox, storybook } from "../static";
 
 type DropdownTypeOption = "default" | "icon" | "input" | "avatar";
 
@@ -23,6 +23,9 @@ export const PlaygroundImplementation = () => {
     useState<DropdownTypeOption>("default");
 
   const [react, html] = useMemo(() => {
+
+    const isDefault = dropdownType === "default"
+
     const reactCode = prettyPrintReact(
       `
 <Menu menuRootElement={<Button>Action</Button>}>
@@ -50,7 +53,7 @@ export const PlaygroundImplementation = () => {
 
     const htmlCode = prettyPrintHtml(
       `
-      <div class="neo-dropdown neo-dropdown--active">
+      <div class="neo-dropdown">
       <button class="neo-btn neo-btn-primary neo-btn-primary--primary neo-dropdown__link-header">Action</button>
       <div class="neo-dropdown__content" role="menu">
         <a class="neo-dropdown__link ${
@@ -85,7 +88,7 @@ export const PlaygroundImplementation = () => {
 `
     );
 
-    return [reactCode, htmlCode];
+    return isDefault ? [defaultReact, defaultHtml] : [reactCode, htmlCode];
   }, [dropdownType]);
 
   return (
@@ -100,6 +103,7 @@ export const PlaygroundImplementation = () => {
                 setDropdownType(e.target.value as DropdownTypeOption);
               }}
             >
+              <Radio value="default">Default</Radio>
               <Radio value="icon">With Icon</Radio>
               <Radio value="input">With Input</Radio>
               <Radio value="avatar">With Avatar</Radio>
