@@ -47,7 +47,6 @@ export const IconCategory = ({ category }: { category: string }) => {
 
   useEffect(() => {
     if (!filteredVariations.length) {
-      // const iconsInCategory = FindIconsWithName(allIconsInCategory)
       setIconsToDisplay(allIconsInCategory);
       return;
     }
