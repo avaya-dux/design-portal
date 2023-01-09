@@ -22,13 +22,16 @@ export const PlaygroundImplementation = () => {
   const [dropdownType, setDropdownType] =
     useState<DropdownTypeOption>("default");
 
-  const [react, html] = useMemo(() => {
+  const [parentMenuIsOpen, setParentMenuIsOpen] = useState<boolean>(false);
 
-    const isDefault = dropdownType === "default"
+  const [subMenuIsOpen, setSubMenuIsOpen] = useState<boolean>(false);
+
+  const [react, html] = useMemo(() => {
+    const isDefault = dropdownType === "default" && !parentMenuIsOpen;
 
     const reactCode = prettyPrintReact(
       `
-<Menu menuRootElement={<Button>Action</Button>}>
+<Menu menuRootElement={<Button>Action</Button>} closeOnSelect={false}>
   <MenuItem ${
     dropdownType === "icon" ? "className='neo-icon-error-filled'" : ""
   }>Option 1</MenuItem>
@@ -53,11 +56,13 @@ export const PlaygroundImplementation = () => {
 
     const htmlCode = prettyPrintHtml(
       `
-      <div class="neo-dropdown">
-      <button class="neo-btn neo-btn-primary neo-btn-primary--primary neo-dropdown__link-header">Action</button>
+      <div class="neo-dropdown${
+        parentMenuIsOpen ? " neo-dropdown--active" : ""
+      }">
+      <button aria-expanded=${parentMenuIsOpen} class="neo-btn neo-btn-primary neo-btn-primary--primary neo-dropdown__link-header">Action</button>
       <div class="neo-dropdown__content" role="menu">
-        <a class="neo-dropdown__link ${
-          dropdownType === "icon" ? "neo-icon-error-filled" : ""
+        <a class="neo-dropdown__link${
+          dropdownType === "icon" ? " neo-icon-error-filled" : ""
         }" role="menuitem">Menu Item 1</a>
         ${
           dropdownType === "input"
@@ -69,10 +74,12 @@ export const PlaygroundImplementation = () => {
             ? "<a class='neo-dropdown__link'><figure class='neo-avatar neo-avatar--small'></figure>Menu Item 3</a>"
             : "<a class='neo-dropdown__link'>Menu Item 3</a>"
         }
-        <div class="neo-dropdown__item">
+        <div class="neo-dropdown__item${
+          subMenuIsOpen ? " neo-dropdown--active" : ""
+        }" aria-expanded=${parentMenuIsOpen}>
           <a class="neo-dropdown__link" role="menuitem">Option 4</a>
           <div class="neo-dropdown__content" role="menu">
-            <a class="neo-dropdown__link" role="menuitem>
+            <a class="neo-dropdown__link" role="menuitem">
             Sub Option 1
             </a>
             <a class="neo-dropdown__link" role="menuitem">
@@ -89,7 +96,7 @@ export const PlaygroundImplementation = () => {
     );
 
     return isDefault ? [defaultReact, defaultHtml] : [reactCode, htmlCode];
-  }, [dropdownType]);
+  }, [dropdownType, parentMenuIsOpen, subMenuIsOpen]);
 
   return (
     <Playground
@@ -118,7 +125,18 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      <Menu menuRootElement={<Button>Action</Button>} closeOnSelect={false}>
+      <Menu
+        menuRootElement={
+          <Button onClick={() => setParentMenuIsOpen(!parentMenuIsOpen)}>
+            Action
+          </Button>
+        }
+        closeOnSelect={false}
+        onMenuClose={() => {
+          setParentMenuIsOpen(false);
+          setSubMenuIsOpen(false);
+        }}
+      >
         <MenuItem
           className={dropdownType === "icon" ? "neo-icon-error-filled" : ""}
         >
@@ -139,7 +157,10 @@ export const PlaygroundImplementation = () => {
         ) : (
           <MenuItem>Option 3</MenuItem>
         )}
-        <SubMenu menuRootElement={<MenuItem>Option 4</MenuItem>}>
+        <SubMenu
+          onMouseEnter={() => setSubMenuIsOpen(true)}
+          menuRootElement={<MenuItem>Option 4</MenuItem>}
+        >
           <MenuItem>Sub Option 1</MenuItem>
           <MenuItem>Sub Option 2</MenuItem>
           <MenuItem>Sub Option 3</MenuItem>
