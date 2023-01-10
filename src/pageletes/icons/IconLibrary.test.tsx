@@ -6,6 +6,7 @@ import { categoriesToFilterFor, searchFor } from "./helpers/iconPageState";
 import { iconCategories, icons } from "./helpers/icons";
 import { IconLibrary } from "./IconLibrary";
 import { findIcons } from "./helpers/findIcons";
+import { testIcons } from "./helpers/testIcons";
 
 describe("IconLibrary", () => {
   it("renders without exploding", () => {
@@ -62,6 +63,14 @@ describe("IconLibrary", () => {
     );
 
     cleanStores(searchFor);
+  });
+
+  it("findIcons() unit tests", () => {
+    const searchIconsLength = findIcons(testIcons, "conference").length;
+    expect(searchIconsLength).toBe(2);
+
+    const notFoundSearchLength = findIcons(testIcons, "sky").length;
+    expect(notFoundSearchLength).toBe(0);
   });
 
   it("passes basic axe compliance", async () => {
