@@ -1,0 +1,86 @@
+---
+import { Image } from "@avaya/neo-react";
+import { Description, PageleteSection, SectionHeader } from "components/astro";
+
+import { topics } from "../static";
+
+import {
+  BehaviorDoImage1,
+  BehaviorDontImage1,
+  BehaviorDoImage2,
+  BehaviorDontImage2,
+  BehaviorDoImage3,
+  BehaviorDontImage3,
+} from "../imgs";
+import { DoAndDont } from "components";
+
+const BehaviorDoImage1AltText =
+  "Use a consistent design within a list. Only use icons when they add essential value and have a strong association with the action item.";
+
+const BehaviorDontImage1AltText =
+  "Do not add icons to some items but not others. Do not use them for decoration.";
+
+const BehaviorDoImage2AltText =
+  "Group related items together making it easier to move through the various menus.";
+
+const BehaviorDontImage2AltText =
+  "Do not have too many levels as it quickly becomes difficult to follow.";
+
+const BehaviorDoImage3AltText =
+  "Use a scrollbar when Action items exceed 10 items.";
+
+const BehaviorDontImage3AltText =
+  "Do not create dropdowns with more than 10 Action items.";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.behavior.id}>{topics.behavior.title}</SectionHeader>
+
+  <Description>
+    Consistent design and presentation of the dropdown is important to improve
+    usability. Do not mix and match elements, but pick a style and stick with it
+    throughout that container.
+  </Description>
+
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={BehaviorDoImage1AltText}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={BehaviorDoImage1} alt={BehaviorDoImage1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={BehaviorDontImage1AltText}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={BehaviorDontImage1} alt={BehaviorDontImage1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+
+  <DoAndDont size="wide">
+    <DoAndDont.DoContainer instructions={BehaviorDoImage2AltText}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={BehaviorDoImage2} alt={BehaviorDoImage2AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={BehaviorDontImage2AltText}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={BehaviorDontImage2} alt={BehaviorDontImage2AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={BehaviorDoImage3AltText}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={BehaviorDoImage3} alt={BehaviorDoImage3AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={BehaviorDontImage3AltText}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={BehaviorDontImage3} alt={BehaviorDontImage3AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+</PageleteSection>
