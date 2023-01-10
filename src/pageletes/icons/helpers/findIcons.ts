@@ -1,7 +1,10 @@
 import Fuse from "fuse.js";
-import type { IconProps }from "./iconType";
+import type { IconProps } from "./iconType";
 
-export const findIcons = (icons: IconProps[], searchFor: string): IconProps[] => {
+export const findIcons = (
+  icons: IconProps[],
+  searchFor: string
+): IconProps[] => {
   let iconSearchResults = icons;
   if (searchFor.length > 0) {
     const searchName = `'${searchFor}`; // single quote prefix specifies partial matches
@@ -17,4 +20,4 @@ export const findIcons = (icons: IconProps[], searchFor: string): IconProps[] =>
   }
 
   return iconSearchResults;
-}
+};

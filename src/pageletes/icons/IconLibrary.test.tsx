@@ -2,9 +2,10 @@ import { act, render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
 import { cleanStores, keepMount } from "nanostores";
 
-import { categoriesToFilterFor } from "./helpers/iconPageState";
+import { categoriesToFilterFor, searchFor } from "./helpers/iconPageState";
 import { iconCategories, icons } from "./helpers/icons";
 import { IconLibrary } from "./IconLibrary";
+import { findIcons } from "./helpers/findIcons";
 
 describe("IconLibrary", () => {
   it("renders without exploding", () => {
@@ -41,6 +42,26 @@ describe("IconLibrary", () => {
     );
 
     cleanStores(categoriesToFilterFor);
+  });
+
+  it("updates number of icons displayed in chip based on seach by icon name", () => {
+    keepMount(searchFor);
+
+    render(<IconLibrary allCategories={iconCategories} />);
+
+    const iconLibraryChipElement = screen.getByRole("alert");
+
+    act(() => {
+      searchFor.set("chevron");
+    });
+
+    const searchIconsLength = findIcons(icons, "chevron").length;
+
+    expect(iconLibraryChipElement).toHaveTextContent(
+      `${searchIconsLength} icons displayed`
+    );
+
+    cleanStores(searchFor);
   });
 
   it("passes basic axe compliance", async () => {

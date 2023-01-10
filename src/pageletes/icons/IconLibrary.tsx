@@ -40,7 +40,7 @@ export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
   }, [filteredCategories, allCategories]);
 
   useEffect(() => {
-    let iconSearchResults = findIcons(icons, searchIconNameFor);
+    const iconSearchResults = findIcons(icons, searchIconNameFor);
 
     if (filteredCategories.length) {
       setTotalNumberOfIconsDisplayed(

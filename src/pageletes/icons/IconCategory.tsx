@@ -20,7 +20,7 @@ export const IconCategory = ({ category }: { category: string }) => {
   const searchIconNameFor = useStore(searchFor);
 
   const allIconsInCategory = useMemo(() => {
-    let iconSearchResults = findIcons(icons, searchIconNameFor);
+    const iconSearchResults = findIcons(icons, searchIconNameFor);
 
     return iconSearchResults
       .filter((icon) => icon.category === category)
