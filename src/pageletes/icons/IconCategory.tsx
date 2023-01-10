@@ -2,10 +2,11 @@ import { Icon } from "@avaya/neo-react";
 import { useStore } from "@nanostores/react";
 import { useEffect, useMemo, useState } from "react";
 
-import { variationsToFilterFor } from "./helpers/iconPageState";
+import { searchFor, variationsToFilterFor } from "./helpers/iconPageState";
 import { icons } from "./helpers/icons";
 
 import type { IconProps } from "./helpers/iconType";
+import { findIcons } from "./helpers/findIcons";
 
 import styles from "./IconCategory.module.css";
 
@@ -14,14 +15,17 @@ const NoIconsFoundMessage = () => (
     No icons to display with current filters
   </p>
 );
+
 export const IconCategory = ({ category }: { category: string }) => {
-  const allIconsInCategory = useMemo(
-    () =>
-      icons
-        .filter((icon) => icon.category === category)
-        .sort((a, b) => (a.name > b.name ? 1 : -1)),
-    [category]
-  );
+  const searchIconNameFor = useStore(searchFor);
+
+  const allIconsInCategory = useMemo(() => {
+    const iconSearchResults = findIcons(icons, searchIconNameFor);
+
+    return iconSearchResults
+      .filter((icon) => icon.category === category)
+      .sort((a, b) => (a.name > b.name ? 1 : -1));
+  }, [category, searchIconNameFor]);
 
   const [iconsToDisplay, setIconsToDisplay] =
     useState<IconProps[]>(allIconsInCategory);

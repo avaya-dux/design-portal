@@ -1,11 +1,10 @@
 ---
-import { TextInput, Button } from "@avaya/neo-react";
+import { Button } from "@avaya/neo-react";
+import { IconSearch } from "./IconSearch";
 ---
 
 <div class="icon__actions">
-  <div class="icon__actions__search">
-    <TextInput aria-label="Search icons" startIcon="search" clearable={true} />
-  </div>
+  <IconSearch client:load />
 
   <div class="icon__actions__buttons">
     <a class="icon__actions__link" href="neo-icons.zip" download="neo-icons"
