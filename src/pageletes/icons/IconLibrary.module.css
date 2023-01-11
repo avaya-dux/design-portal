@@ -9,3 +9,8 @@
 .icon-library__alert {
   margin-bottom: 2rem;
 }
+
+.icon-library__no-icons {
+  display: block;
+  color: var(--button-color-alert);
+}

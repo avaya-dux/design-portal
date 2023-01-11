@@ -14,6 +14,12 @@ import { searchFor } from "./helpers/iconPageState";
 import styles from "./IconLibrary.module.css";
 import { Chip } from "@avaya/neo-react";
 
+const NoIconsFoundMessage = () => (
+  <p className={`${styles["icon-library__no-icons"]} neo-icon-error`}>
+    No icons to display with current selections
+  </p>
+);
+
 export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
   const [iconCategoriesToDisplay, setIconCategoriesToDisplay] =
     useState<string[]>(allCategories);
@@ -65,9 +71,13 @@ export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
       >
         {totalNumberOfIconsDisplayedString}
       </Chip>
-      {iconCategoriesToDisplay.map((category, index) => (
-        <IconCategory category={category} key={index} />
-      ))}
+      {totalNumberOfIconsDisplayed ?
+
+          iconCategoriesToDisplay.map((category, index) => (
+            <IconCategory category={category} key={index} />
+          ))
+        : (
+          <NoIconsFoundMessage />)}
     </div>
   );
 };

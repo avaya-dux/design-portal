@@ -60,7 +60,7 @@ export const IconCategory = ({ category }: { category: string }) => {
     setIconsToDisplay([...filteredIcons]);
   }, [filteredVariations, allIconsInCategory]);
 
-  return (
+  return iconsToDisplay.length ? (
     <div className={styles["icon-category"]}>
       <p>{category}</p>
       <div
@@ -70,7 +70,7 @@ export const IconCategory = ({ category }: { category: string }) => {
             : styles["icon-category__icons--flex"]
         }
       >
-        {iconsToDisplay.length ? (
+        {
           iconsToDisplay.map((icon, index) => (
             <div className={styles["icon-category__icons__card"]} key={index}>
               <Icon
@@ -81,10 +81,8 @@ export const IconCategory = ({ category }: { category: string }) => {
               <p>{icon.name}</p>
             </div>
           ))
-        ) : (
-          <NoIconsFoundMessage />
-        )}
+        }
       </div>
     </div>
-  );
+  ): <div/>;
 };
