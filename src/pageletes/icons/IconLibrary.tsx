@@ -71,13 +71,13 @@ export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
       >
         {totalNumberOfIconsDisplayedString}
       </Chip>
-      {totalNumberOfIconsDisplayed ?
-
-          iconCategoriesToDisplay.map((category, index) => (
-            <IconCategory category={category} key={index} />
-          ))
-        : (
-          <NoIconsFoundMessage />)}
+      {totalNumberOfIconsDisplayed ? (
+        iconCategoriesToDisplay.map((category, index) => (
+          <IconCategory category={category} key={index} />
+        ))
+      ) : (
+        <NoIconsFoundMessage />
+      )}
     </div>
   );
 };

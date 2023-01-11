@@ -70,19 +70,15 @@ export const IconCategory = ({ category }: { category: string }) => {
             : styles["icon-category__icons--flex"]
         }
       >
-        {
-          iconsToDisplay.map((icon, index) => (
-            <div className={styles["icon-category__icons__card"]} key={index}>
-              <Icon
-                icon={icon.name}
-                aria-label={`${icon.name} icon`}
-                size="lg"
-              />
-              <p>{icon.name}</p>
-            </div>
-          ))
-        }
+        {iconsToDisplay.map((icon, index) => (
+          <div className={styles["icon-category__icons__card"]} key={index}>
+            <Icon icon={icon.name} aria-label={`${icon.name} icon`} size="lg" />
+            <p>{icon.name}</p>
+          </div>
+        ))}
       </div>
     </div>
-  ): <div/>;
+  ) : (
+    <div />
+  );
 };
