@@ -10,12 +10,6 @@ import { findIcons } from "./helpers/findIcons";
 
 import styles from "./IconCategory.module.css";
 
-const NoIconsFoundMessage = () => (
-  <p className={`${styles["icon-category__no-icons"]} neo-icon-error`}>
-    No icons to display with current filters
-  </p>
-);
-
 export const IconCategory = ({ category }: { category: string }) => {
   const searchIconNameFor = useStore(searchFor);
 
