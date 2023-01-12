@@ -6,8 +6,8 @@ type TooltipTopicNames =
   | "positioning"
   | "behavior"
   | "specs"
-  | "keyboard-interactions"
-  | "related-components";
+  | "keyboardInteractions"
+  | "relatedComponents";
 
 export const topics: TopicsDict<TooltipTopicNames> = {
   playground: {
@@ -35,12 +35,12 @@ export const topics: TopicsDict<TooltipTopicNames> = {
     id: "tooltip-specs",
     title: "Specs",
   },
-  "keyboard-interactions": {
+  keyboardInteractions: {
     order: 5,
     id: "tooltip-keyboard-interactions",
     title: "Keyboard Interactions",
   },
-  "related-components": {
+  relatedComponents: {
     order: 6,
     id: "tooltip-related-components",
     title: "Related Components",

@@ -18,6 +18,3 @@ export { Anatomy };
 
 // import KeyboardInteractions from "./KeyboardInteractions.astro";
 // export { KeyboardInteractions };
-
-// import RelatedComponents from "./RelatedComponents.astro";
-// export { RelatedComponents };
