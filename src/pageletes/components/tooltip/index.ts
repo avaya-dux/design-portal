@@ -10,8 +10,8 @@ export { Anatomy };
 import Positioning from "./Positioning.astro";
 export { Positioning };
 
-// import Behavior from "./Behavior.astro";
-// export { Behavior };
+import Behavior from "./Behavior.astro";
+export { Behavior };
 
 import Specs from "./Specs.astro";
 export { Specs };
