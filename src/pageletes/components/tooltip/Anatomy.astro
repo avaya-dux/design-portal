@@ -1,14 +1,19 @@
 ---
+import { Image } from "@avaya/neo-react";
+
 import {
+  ColumnLayout,
   Description,
   PageleteSection,
-  PageleteSubSection,
   SectionHeader,
-  SubHeader,
 } from "components/astro";
 
 import { topics } from "./static";
 const { id, title } = topics.anatomy;
+
+import AnatomyImage from "./imgs/anatomy.svg";
+const anatomyImgAltText =
+  "Image showing the different parts that make up a tooltip";
 ---
 
 <PageleteSection>
@@ -20,40 +25,29 @@ const { id, title } = topics.anatomy;
     will do when selected, or what type of information is required.
   </Description>
 
-  <PageleteSubSection>
-    <SubHeader id="tooltip-instructions-basics">Basics</SubHeader>
+  <ColumnLayout bkgColor="white" numOfColumns={1}>
+    <Image src={AnatomyImage} alt={anatomyImgAltText} />
+  </ColumnLayout>
 
-    <Description>
-      To add a tooltip to an element, wrap them in a <code>{"div"}</code> with the
-      <code>{"neo-tooltip"}</code> and
-      <code>{"neo-tooltip--onhover"}</code> classes. You also need to specifiy the
-      tooltip position by adding the
-      <code>{"neo-tooltip--<modifier>"}</code>
-      class with the appropriate direction.
-    </Description>
-
-    <Description>
-      Then add a div element with the class
-      <code>{"neo-tooltip__content"}</code>. This
-      <code>{"div"}</code> should contain a nested <code>{"div"}</code> with class
-      <code>{"neo-arrow"}</code>, and the text of the tooltip itself.
-    </Description>
-  </PageleteSubSection>
-
-  <PageleteSubSection>
-    <SubHeader id="tooltip-instructions-positioning">Positioning</SubHeader>
-
-    <Description>
-      You can use the following classes to position the tooltip:
-      <code>{"neo-tooltip--up-right"}</code>,
-      <code>{"neo-tooltip--up-left"}</code>,
-      <code>{"neo-tooltip--down-right"}</code>,
-      <code>{"neo-tooltip--down-left"}</code>.
-    </Description>
-
-    <Description>
-      Note that these should only be used where tight spacing precludes the use
-      of the default Tooltip alignment.
-    </Description>
-  </PageleteSubSection>
+  <ul>
+    <li>
+      <strong>Container</strong>: The tooltip text is white and appears within a
+      black container near the action item
+    </li>
+    <li>
+      <strong>Text Block</strong>: This is the text for the tooltip. It can be
+      one or more lines, but it should be brief
+    </li>
+    <li>
+      <strong>Tooltip Anchor</strong>: The anchor arrow points toward the action
+      item associated with the tooltip
+    </li>
+  </ul>
 </PageleteSection>
+
+<style>
+  ul {
+    list-style-type: decimal;
+    margin: 1rem;
+  }
+</style>
