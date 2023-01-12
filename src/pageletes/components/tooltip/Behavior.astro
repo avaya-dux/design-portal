@@ -1,27 +1,16 @@
 ---
-import { Image } from "@avaya/neo-react";
-
-import {
-  Description,
-  DoAndDont,
-  PageleteSection,
-  SectionHeader,
-} from "components";
-
-import doImage from "./imgs/behavior/do-behavior1.svg";
-import dontImage from "./imgs/behavior/dont-behavior1.svg";
-
-const doInstructions =
-  "Use basic tooltips by default. Off center tooltips can be used when there is limited space.";
-const doImgAltText =
-  "image showing an array of icon buttons with tooltips positioned above to of the icon buttons";
-
-const dontInstructions =
-  "Do not mix and match the placement of the tooltip within the same component.";
-const dontImgAltText =
-  "image showing an array of icon buttons with a tooltip positioned above one of the icon buttons, and a tooltip positioned below another of the icon buttons";
+import { Description, PageleteSection, SectionHeader } from "components";
 
 import { topics } from "./static";
+import {
+  ContentRules,
+  HelperText,
+  Instructions,
+  Multiline,
+  Placement,
+  Positioning,
+  Wording,
+} from "./BehaviorDoAndDont";
 const { id, title } = topics.behavior;
 ---
 
@@ -34,17 +23,17 @@ const { id, title } = topics.behavior;
     information about what it does or what information is required.
   </Description>
 
-  <DoAndDont>
-    <DoAndDont.DoContainer instructions={doInstructions}>
-      <DoAndDont.ImageExampleContainer>
-        <Image src={doImage} alt={doImgAltText} />
-      </DoAndDont.ImageExampleContainer>
-    </DoAndDont.DoContainer>
+  <Placement />
 
-    <DoAndDont.DontContainer instructions={dontInstructions}>
-      <DoAndDont.ImageExampleContainer>
-        <Image src={dontImage} alt={dontImgAltText} />
-      </DoAndDont.ImageExampleContainer>
-    </DoAndDont.DontContainer>
-  </DoAndDont>
+  <Instructions />
+
+  <HelperText />
+
+  <ContentRules />
+
+  <Wording />
+
+  <Positioning />
+
+  <Multiline />
 </PageleteSection>

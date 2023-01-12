@@ -1,0 +1,32 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { DoAndDont, PageleteSubSection } from "components";
+
+import doImage from "./imgs/do-wording.svg";
+import dontImage from "./imgs/dont-wording.svg";
+
+const doInstructions =
+  "Use concise wording to describe the action or the state.";
+const doImgAltText = "TODO: add alt text";
+
+const dontInstructions =
+  "Do not describe the visual appearance of the element.";
+const dontImgAltText = "TODO: add alt text";
+---
+
+<PageleteSubSection>
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={doInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage} alt={doImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dontInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage} alt={dontImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+</PageleteSubSection>

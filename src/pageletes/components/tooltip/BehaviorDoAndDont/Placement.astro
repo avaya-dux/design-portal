@@ -1,0 +1,34 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { DoAndDont, PageleteSubSection } from "components";
+
+import doImage from "./imgs/do-placement.svg";
+import dontImage from "./imgs/dont-placement.svg";
+
+const doInstructions =
+  "Use basic tooltips by default. Off center tooltips can be used when there is limited space.";
+const doImgAltText =
+  "image showing an array of icon buttons with tooltips positioned above to of the icon buttons";
+
+const dontInstructions =
+  "Do not mix and match the placement of the tooltip within the same component.";
+const dontImgAltText =
+  "image showing an array of icon buttons with a tooltip positioned above one of the icon buttons, and a tooltip positioned below another of the icon buttons";
+---
+
+<PageleteSubSection>
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={doInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage} alt={doImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dontInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage} alt={dontImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+</PageleteSubSection>
