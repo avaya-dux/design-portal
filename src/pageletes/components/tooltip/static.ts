@@ -1,6 +1,13 @@
 import type { TopicsDict } from "components";
 
-type TooltipTopicNames = "playground" | "basics";
+type TooltipTopicNames =
+  | "playground"
+  | "anatomy"
+  | "positioning"
+  | "behavior"
+  | "specs"
+  | "keyboard-interactions"
+  | "related-components";
 
 export const topics: TopicsDict<TooltipTopicNames> = {
   playground: {
@@ -8,9 +15,34 @@ export const topics: TopicsDict<TooltipTopicNames> = {
     id: "tooltip-playground",
     title: "Interactive Playground",
   },
-  basics: {
+  anatomy: {
     order: 1,
-    id: "tooltip-html-instructions",
-    title: "HTML Instructions",
+    id: "tooltip-anatomy",
+    title: "Anatomy",
+  },
+  positioning: {
+    order: 2,
+    id: "tooltip-positioning",
+    title: "Positioning",
+  },
+  behavior: {
+    order: 3,
+    id: "tooltip-behavior",
+    title: "Behavior",
+  },
+  specs: {
+    order: 4,
+    id: "tooltip-specs",
+    title: "Specs",
+  },
+  "keyboard-interactions": {
+    order: 5,
+    id: "tooltip-keyboard-interactions",
+    title: "Keyboard Interactions",
+  },
+  "related-components": {
+    order: 6,
+    id: "tooltip-related-components",
+    title: "Related Components",
   },
 };

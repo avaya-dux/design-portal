@@ -3,12 +3,11 @@ import { Description, PageleteSection, SectionHeader } from "components/astro";
 import { PlaygroundImplementation } from "./PlaygroundImplementation";
 
 import { topics } from "./static";
+const { id, title } = topics.playground;
 ---
 
 <PageleteSection>
-  <SectionHeader id={topics.playground.id}>
-    {topics.playground.title}
-  </SectionHeader>
+  <SectionHeader id={id}>{title}</SectionHeader>
 
   <Description>
     The Interactive Playground allows you to experiment with various tooltip

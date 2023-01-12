@@ -8,14 +8,16 @@ import {
 } from "components/astro";
 
 import { topics } from "./static";
+const { id, title } = topics.anatomy;
 ---
 
 <PageleteSection>
-  <SectionHeader id={topics.basics.id}>{topics.basics.title}</SectionHeader>
+  <SectionHeader id={id}>{title}</SectionHeader>
 
   <Description>
-    The following are the basic rules for implementing a tooltip via HTML+CSS
-    with the Neo CSS library.
+    An action item in the UI may include a tooltip that appears when the item
+    has focus. The tooltip text explains in more detail what the action item
+    will do when selected, or what type of information is required.
   </Description>
 
   <PageleteSubSection>
