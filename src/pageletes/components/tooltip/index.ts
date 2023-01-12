@@ -13,8 +13,8 @@ export { Positioning };
 // import Behavior from "./Behavior.astro";
 // export { Behavior };
 
-// import Specs from "./Specs.astro";
-// export { Specs };
+import Specs from "./Specs.astro";
+export { Specs };
 
-// import KeyboardInteractions from "./KeyboardInteractions.astro";
-// export { KeyboardInteractions };
+import KeyboardInteractions from "./KeyboardInteractions.astro";
+export { KeyboardInteractions };

@@ -7,8 +7,10 @@ import { RelatedContent } from "components/astro";
 import {
   Anatomy,
   Intro,
+  KeyboardInteractions,
   Playground,
   Positioning,
+  Specs,
 } from "pageletes/components/tooltip";
 
 import { topics } from "pageletes/components/tooltip/static";
@@ -36,9 +38,9 @@ const sections: SectionWithLinks[] = [
 
   <!-- <Behavior /> -->
 
-  <!-- <Specs /> -->
+  <Specs />
 
-  <!-- <KeyboardInteractions /> -->
+  <KeyboardInteractions />
 
   <RelatedContent
     id={topics.relatedComponents.id}
