@@ -7,8 +7,8 @@ export { Playground };
 import Anatomy from "./Anatomy.astro";
 export { Anatomy };
 
-// import Positioning from "./Positioning.astro";
-// export { Positioning };
+import Positioning from "./Positioning.astro";
+export { Positioning };
 
 // import Behavior from "./Behavior.astro";
 // export { Behavior };

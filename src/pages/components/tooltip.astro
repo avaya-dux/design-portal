@@ -4,7 +4,12 @@ export const keywords = "Tooltip components";
 
 import { Layout } from "layouts";
 import { RelatedContent } from "components/astro";
-import { Intro, Playground, Anatomy } from "pageletes/components/tooltip";
+import {
+  Anatomy,
+  Intro,
+  Playground,
+  Positioning,
+} from "pageletes/components/tooltip";
 
 import { topics } from "pageletes/components/tooltip/static";
 import type { SectionWithLinks } from "components/astro/RelatedContent.astro";
@@ -27,7 +32,7 @@ const sections: SectionWithLinks[] = [
 
   <Anatomy />
 
-  <!-- <Positioning /> -->
+  <Positioning />
 
   <!-- <Behavior /> -->
 
