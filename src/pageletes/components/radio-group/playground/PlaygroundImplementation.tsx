@@ -16,11 +16,15 @@ export const PlaygroundImplementation = () => {
   const [selectedExampleRadio, setSelectedExampleRadio] = useState<string>("");
 
   const [react, html] = useMemo(() => {
-    const isDefault = withLabel === "withLabel" && isVertical === "isVertical" && selectedExampleRadio === "";
+    const isDefault =
+      withLabel === "withLabel" &&
+      isVertical === "isVertical" &&
+      selectedExampleRadio === "";
 
-    const labelAttr = withLabel === "withLabel" ? "label='Select Option'" : undefined
+    const labelAttr =
+      withLabel === "withLabel" ? "label='Select Option'" : undefined;
 
-    const inlineAttr = isVertical === "isNotVertical" ? "inline" : undefined
+    const inlineAttr = isVertical === "isNotVertical" ? "inline" : undefined;
 
     const reactCode = prettyPrintReact(
       `
@@ -45,7 +49,11 @@ export const PlaygroundImplementation = () => {
     <div class="neo-input-group${
       isVertical === "isNotVertical" ? "neo-input-group--inline" : ""
     }">
-      ${withLabel === "withLabel" ? '<label for="Default Radio Group">Select Option</label>' : ""}
+      ${
+        withLabel === "withLabel"
+          ? '<label for="Default Radio Group">Select Option</label>'
+          : ""
+      }
       <input
         class="neo-radio"
         type="radio"
