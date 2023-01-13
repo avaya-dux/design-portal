@@ -1,11 +1,12 @@
 import { IconCategory } from "./IconCategory";
 
 import { icons } from "./helpers/icons";
-import { findIcons } from "./helpers/findIcons";
+import { filterIconsWithVariations, findIcons } from "./helpers/findIcons";
 
 import {
   categoriesToFilterFor,
   themesToFilterFor,
+  variationsToFilterFor,
 } from "./helpers/iconPageState";
 import { useStore } from "@nanostores/react";
 import { useEffect, useState } from "react";
@@ -31,6 +32,7 @@ export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
   const filteredTheme = useStore(themesToFilterFor);
 
   const searchIconNameFor = useStore(searchFor);
+  const filteredVariations = useStore(variationsToFilterFor);
 
   useEffect(() => {
     if (!filteredCategories.length) {
@@ -46,7 +48,12 @@ export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
   }, [filteredCategories, allCategories]);
 
   useEffect(() => {
-    const iconSearchResults = findIcons(icons, searchIconNameFor);
+    const iconsWithVariations = filterIconsWithVariations(
+      icons,
+      filteredVariations
+    );
+
+    const iconSearchResults = findIcons(iconsWithVariations, searchIconNameFor);
 
     if (filteredCategories.length) {
       setTotalNumberOfIconsDisplayed(
@@ -57,7 +64,7 @@ export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
     } else {
       setTotalNumberOfIconsDisplayed(iconSearchResults.length);
     }
-  }, [filteredCategories, searchIconNameFor]);
+  }, [filteredCategories, searchIconNameFor, filteredVariations]);
 
   const totalNumberOfIconsDisplayedString = `${totalNumberOfIconsDisplayed} icons displayed`;
 

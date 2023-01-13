@@ -21,3 +21,30 @@ export const findIcons = (
 
   return iconSearchResults;
 };
+
+export const filterIconsWithVariations = (
+  icons: IconProps[],
+  filteredVariations: string[]
+): IconProps[] => {
+  let iconsWithVariations = icons;
+  if (filteredVariations.length) {
+    if (
+      filteredVariations.includes("bidirectional") &&
+      filteredVariations.includes("animated")
+    ) {
+        iconsWithVariations = icons.filter(
+        (icon) => icon.bidirectional && icon.animated
+      );
+    } else {
+      if (filteredVariations.includes("animated")) {
+        iconsWithVariations = icons.filter((icon) => icon.animated);
+      }
+
+      if (filteredVariations.includes("bidirectional")) {
+        iconsWithVariations = icons.filter((icon) => icon.bidirectional);
+      }
+    }
+  }
+
+  return iconsWithVariations;
+};
