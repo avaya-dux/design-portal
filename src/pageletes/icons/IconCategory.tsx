@@ -6,7 +6,7 @@ import { searchFor, variationsToFilterFor } from "./helpers/iconPageState";
 import { icons } from "./helpers/icons";
 
 import type { IconProps } from "./helpers/iconType";
-import { findIcons } from "./helpers/findIcons";
+import { filterIconsWithVariations, findIcons } from "./helpers/iconPageUtils";
 
 import styles from "./IconCategory.module.css";
 
@@ -32,24 +32,7 @@ export const IconCategory = ({ category }: { category: string }) => {
       return;
     }
 
-    let filteredIcons: IconProps[] = [];
-
-    if (filteredVariations.includes("animated")) {
-      filteredIcons = allIconsInCategory.filter((icon) => icon.animated);
-    }
-
-    if (filteredVariations.includes("bidirectional")) {
-      filteredIcons = allIconsInCategory.filter((icon) => icon.bidirectional);
-    }
-
-    if (
-      filteredVariations.includes("bidirectional") &&
-      filteredVariations.includes("animated")
-    ) {
-      filteredIcons = allIconsInCategory.filter(
-        (icon) => icon.bidirectional && icon.animated
-      );
-    }
+    let filteredIcons: IconProps[] = filterIconsWithVariations(allIconsInCategory, filteredVariations);
 
     setIconsToDisplay([...filteredIcons]);
   }, [filteredVariations, allIconsInCategory]);

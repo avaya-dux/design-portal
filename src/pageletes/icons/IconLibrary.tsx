@@ -1,7 +1,7 @@
 import { IconCategory } from "./IconCategory";
 
 import { icons } from "./helpers/icons";
-import { filterIconsWithVariations, findIcons } from "./helpers/findIcons";
+import { filterIconsWithVariations, findIcons } from "./helpers/iconPageUtils";
 
 import {
   categoriesToFilterFor,
