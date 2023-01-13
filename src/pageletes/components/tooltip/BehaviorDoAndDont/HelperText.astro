@@ -1,0 +1,31 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { DoAndDont, PageleteSubSection } from "components";
+
+import doImage from "./imgs/do-helper-text.svg";
+import dontImage from "./imgs/dont-helper-text.svg";
+
+const doInstructions =
+  "Use tooltips only when the associated text cannot be displayed on the screen.";
+const doImgAltText = "TODO: add alt text";
+
+const dontInstructions = "Do not substitute tooltips for helper text.";
+const dontImgAltText = "TODO: add alt text";
+---
+
+<PageleteSubSection>
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={doInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage} alt={doImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dontInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage} alt={dontImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+</PageleteSubSection>

@@ -1,0 +1,39 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components";
+
+import { topics } from "./static";
+import {
+  ContentRules,
+  HelperText,
+  Instructions,
+  Multiline,
+  Placement,
+  Positioning,
+  Wording,
+} from "./BehaviorDoAndDont";
+const { id, title } = topics.behavior;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    A tooltip is a message box that is displayed when a user hovers over or
+    gives focus to, an interactive UI element. The tooltip provides additional
+    information about what it does or what information is required.
+  </Description>
+
+  <Placement />
+
+  <Instructions />
+
+  <HelperText />
+
+  <ContentRules />
+
+  <Wording />
+
+  <Positioning />
+
+  <Multiline />
+</PageleteSection>

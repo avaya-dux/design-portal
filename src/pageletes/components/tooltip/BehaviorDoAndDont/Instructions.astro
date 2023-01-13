@@ -1,0 +1,31 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { DoAndDont, PageleteSubSection } from "components";
+
+import doImage from "./imgs/do-instructions.svg";
+import dontImage from "./imgs/dont-instructions.svg";
+
+const doInstructions =
+  "Put all critical instructions and labels directly onto the UI.";
+const doImgAltText = "TODO: add alt text";
+
+const dontInstructions = "Do not put important instructions into a tooltip.";
+const dontImgAltText = "TODO: add alt text";
+---
+
+<PageleteSubSection>
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={doInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage} alt={doImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dontInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage} alt={dontImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+</PageleteSubSection>
