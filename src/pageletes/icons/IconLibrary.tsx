@@ -1,11 +1,14 @@
 import { IconCategory } from "./IconCategory";
 
 import { icons } from "./helpers/icons";
-import { findIcons } from "./helpers/findIcons";
+import { filterIconsWithVariations, findIcons } from "./helpers/iconPageUtils";
+
+import clsx from "clsx";
 
 import {
   categoriesToFilterFor,
   themesToFilterFor,
+  variationsToFilterFor,
 } from "./helpers/iconPageState";
 import { useStore } from "@nanostores/react";
 import { useEffect, useState } from "react";
@@ -13,6 +16,12 @@ import { searchFor } from "./helpers/iconPageState";
 
 import styles from "./IconLibrary.module.css";
 import { Chip } from "@avaya/neo-react";
+
+const NoIconsFoundMessage = () => (
+  <p className={clsx(styles["icon-library__no-icons"], "neo-icon-error")}>
+    No icons to display with current selections
+  </p>
+);
 
 export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
   const [iconCategoriesToDisplay, setIconCategoriesToDisplay] =
@@ -25,6 +34,7 @@ export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
   const filteredTheme = useStore(themesToFilterFor);
 
   const searchIconNameFor = useStore(searchFor);
+  const filteredVariations = useStore(variationsToFilterFor);
 
   useEffect(() => {
     if (!filteredCategories.length) {
@@ -40,7 +50,12 @@ export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
   }, [filteredCategories, allCategories]);
 
   useEffect(() => {
-    const iconSearchResults = findIcons(icons, searchIconNameFor);
+    const iconsWithVariations = filterIconsWithVariations(
+      icons,
+      filteredVariations
+    );
+
+    const iconSearchResults = findIcons(iconsWithVariations, searchIconNameFor);
 
     if (filteredCategories.length) {
       setTotalNumberOfIconsDisplayed(
@@ -51,7 +66,7 @@ export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
     } else {
       setTotalNumberOfIconsDisplayed(iconSearchResults.length);
     }
-  }, [filteredCategories, searchIconNameFor]);
+  }, [filteredCategories, searchIconNameFor, filteredVariations]);
 
   const totalNumberOfIconsDisplayedString = `${totalNumberOfIconsDisplayed} icons displayed`;
 
@@ -65,9 +80,13 @@ export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
       >
         {totalNumberOfIconsDisplayedString}
       </Chip>
-      {iconCategoriesToDisplay.map((category, index) => (
-        <IconCategory category={category} key={index} />
-      ))}
+      {totalNumberOfIconsDisplayed ? (
+        iconCategoriesToDisplay.map((category, index) => (
+          <IconCategory category={category} key={index} />
+        ))
+      ) : (
+        <NoIconsFoundMessage />
+      )}
     </div>
   );
 };

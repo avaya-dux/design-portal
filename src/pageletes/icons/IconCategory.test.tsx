@@ -17,16 +17,6 @@ describe("IconCategory", () => {
     expect(iconCategoryElement).toBeInTheDocument();
   });
 
-  it("displays error message when no icons are displayed", () => {
-    render(<IconCategory category="" />);
-
-    const errorMessage = screen.getByText(
-      "No icons to display with current filters"
-    );
-
-    expect(errorMessage).toBeInTheDocument();
-  });
-
   it("responds correctly when variants are filtered for", () => {
     keepMount(variationsToFilterFor);
 
