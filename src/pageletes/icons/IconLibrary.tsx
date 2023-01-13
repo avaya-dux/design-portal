@@ -3,6 +3,8 @@ import { IconCategory } from "./IconCategory";
 import { icons } from "./helpers/icons";
 import { filterIconsWithVariations, findIcons } from "./helpers/iconPageUtils";
 
+import clsx from "clsx";
+
 import {
   categoriesToFilterFor,
   themesToFilterFor,
@@ -16,7 +18,7 @@ import styles from "./IconLibrary.module.css";
 import { Chip } from "@avaya/neo-react";
 
 const NoIconsFoundMessage = () => (
-  <p className={`${styles["icon-library__no-icons"]} neo-icon-error`}>
+  <p className={clsx(styles["icon-library__no-icons"], "neo-icon-error")}>
     No icons to display with current selections
   </p>
 );
