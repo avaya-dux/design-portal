@@ -1,6 +1,8 @@
 import { Form, Radio, RadioGroup } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
+import clsx from "clsx";
+
 import { Playground } from "components/react";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
@@ -14,21 +16,25 @@ export const PlaygroundImplementation = () => {
   const [selectedExampleRadio, setSelectedExampleRadio] = useState<string>("");
 
   const [react, html] = useMemo(() => {
-    const isDefault = withLabel && isVertical;
+    const isDefault = withLabel === "withLabel" && isVertical === "isVertical" && selectedExampleRadio === "";
+
+    const labelAttr = withLabel === "withLabel" ? "label='Select Option'" : undefined
+
+    const inlineAttr = isVertical === "isNotVertical" ? "inline" : undefined
 
     const reactCode = prettyPrintReact(
       `
-      <Form id="radio-form">
-      <RadioGroup
-        groupName="Default Radio Group"
-        label=${withLabel === "withLabel" ? "Select Option" : ""}
-        inline=${isVertical === "isNotVertical"}
-      >
-      <Radio value="Calendar">Calendar</Radio>
-      <Radio value="Calculator">Calculator</Radio>
-      <Radio value="Notes">Notes</Radio>
-      </RadioGroup>
-    </Form>
+<Form id="radio-form">
+  <RadioGroup
+    ${clsx("groupName='Default Radio Group'", labelAttr, inlineAttr)}
+    selected={selectedExampleRadio}
+    onChange={(e) => setSelectedExampleRadio(e.target.value)}
+  >
+    <Radio value="Calendar">Calendar</Radio>
+    <Radio value="Calculator">Calculator</Radio>
+    <Radio value="Notes">Notes</Radio>
+  </RadioGroup>
+</Form>
 `
     );
 
@@ -36,11 +42,10 @@ export const PlaygroundImplementation = () => {
       `
       <form class="neo-form">
   <div class="neo-form-control">
-    <div class="neo-input-group ${
+    <div class="neo-input-group${
       isVertical === "isNotVertical" ? "neo-input-group--inline" : ""
     }">
-      ${withLabel ? '<label for="Default Radio Group">Select Option</label>' : ""}
-      <label for="Default Radio Group">Select Option</label>
+      ${withLabel === "withLabel" ? '<label for="Default Radio Group">Select Option</label>' : ""}
       <input
         class="neo-radio"
         type="radio"
@@ -78,7 +83,7 @@ export const PlaygroundImplementation = () => {
     );
 
     return isDefault ? [defaultReact, defaultHtml] : [reactCode, htmlCode];
-  }, [isVertical, withLabel]);
+  }, [isVertical, withLabel, selectedExampleRadio]);
 
   return (
     <Playground

@@ -50,6 +50,8 @@ export const defaultReact = prettyPrintReact(`
   <RadioGroup
     groupName="Default Radio Group"
     label="Select Option"
+    selected={selectedExampleRadio}
+    onChange={(e) => setSelectedExampleRadio(e.target.value)}
   >
     <Radio value="Calendar">Calendar</Radio>
     <Radio value="Calculator">Calculator</Radio>
