@@ -21,12 +21,12 @@ export const PlaygroundImplementation = () => {
       <Form id="radio-form">
       <RadioGroup
         groupName="Default Radio Group"
-        label="Select Option"
+        label=${withLabel === "withLabel" ? "Select Option" : ""}
         inline=${isVertical === "isNotVertical"}
       >
-        <Radio value="Radio 1">Radio 1</Radio>
-        <Radio value="Radio 2">Radio 2</Radio>
-        <Radio value="Radio 3">Radio 3</Radio>
+      <Radio value="Calendar">Calendar</Radio>
+      <Radio value="Calculator">Calculator</Radio>
+      <Radio value="Notes">Notes</Radio>
       </RadioGroup>
     </Form>
 `
@@ -39,38 +39,39 @@ export const PlaygroundImplementation = () => {
     <div class="neo-input-group ${
       isVertical === "isNotVertical" ? "neo-input-group--inline" : ""
     }">
-    <label for="Default Radio Group">Select Option</label>
+      ${withLabel ? '<label for="Default Radio Group">Select Option</label>' : ""}
+      <label for="Default Radio Group">Select Option</label>
       <input
         class="neo-radio"
         type="radio"
         name="Default Radio Group"
-        value="Radio 1"
-        id="radio-1"
+        value="Calendar"
+        id="calendar"
         role="radio"
-        aria-checked="false"
+        aria-checked=${selectedExampleRadio === "Calendar"}
       />
-      <label for="radio-1">Radio 1</label>
+      <label for="calendar">Calendar</label>
       <input
         class="neo-radio"
         type="radio"
         name="Default Radio Group"
-        value="Radio 2"
-        id="radio-2"
+        value="Calculator"
+        id="calculator"
         role="radio"
-        aria-checked="false"
+        aria-checked=${selectedExampleRadio === "Calculator"}
       />
-      <label for="radio-2">Radio 2</label>
+      <label for="calculator">Calculator</label>
       <input
         class="neo-radio"
         type="radio"
         name="Default Radio Group"
-        value="Radio 3"
-        id="radio-3"
+        value="Notes"
+        id="notes"
         role="radio"
-        aria-checked="false"
+        aria-checked=${selectedExampleRadio === "Notes"}
       />
-      <label for="radio-3">Radio 3</label>
-    </div>
+      <label for="notes">Notes</label>
+      </div>
   </div>
 </form>
 `

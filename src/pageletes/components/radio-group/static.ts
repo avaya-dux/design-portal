@@ -1,7 +1,7 @@
 import type { TopicsDict } from "components";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
-export const sandbox = "#fixme";
+export const sandbox = "https://codesandbox.io/s/neo-react-radio-group-d5l4uz";
 export const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-radio-group";
 
@@ -14,32 +14,32 @@ export const defaultHtml = prettyPrintHtml(`
         class="neo-radio"
         type="radio"
         name="Default Radio Group"
-        value="Radio 1"
-        id="radio-1"
+        value="Calendar"
+        id="calendar"
         role="radio"
         aria-checked="false"
       />
-      <label for="radio-1">Radio 1</label>
+      <label for="calendar">Calendar</label>
       <input
         class="neo-radio"
         type="radio"
         name="Default Radio Group"
-        value="Radio 2"
-        id="radio-2"
+        value="Calculator"
+        id="calculator"
         role="radio"
         aria-checked="false"
       />
-      <label for="radio-2">Radio 2</label>
+      <label for="calculator">Calculator</label>
       <input
         class="neo-radio"
         type="radio"
         name="Default Radio Group"
-        value="Radio 3"
-        id="radio-3"
+        value="Notes"
+        id="notes"
         role="radio"
         aria-checked="false"
       />
-      <label for="radio-3">Radio 3</label>
+      <label for="notes">Notes</label>
     </div>
   </div>
 </form>
@@ -51,9 +51,9 @@ export const defaultReact = prettyPrintReact(`
     groupName="Default Radio Group"
     label="Select Option"
   >
-    <Radio value="Radio 1">Radio 1</Radio>
-    <Radio value="Radio 2">Radio 2</Radio>
-    <Radio value="Radio 3">Radio 3</Radio>
+    <Radio value="Calendar">Calendar</Radio>
+    <Radio value="Calculator">Calculator</Radio>
+    <Radio value="Notes">Notes</Radio>
   </RadioGroup>
 </Form>
   `);
