@@ -6,15 +6,9 @@ import { searchFor, variationsToFilterFor } from "./helpers/iconPageState";
 import { icons } from "./helpers/icons";
 
 import type { IconProps } from "./helpers/iconType";
-import { findIcons } from "./helpers/findIcons";
+import { filterIconsWithVariations, findIcons } from "./helpers/iconPageUtils";
 
 import styles from "./IconCategory.module.css";
-
-const NoIconsFoundMessage = () => (
-  <p className={`${styles["icon-category__no-icons"]} neo-icon-error`}>
-    No icons to display with current filters
-  </p>
-);
 
 export const IconCategory = ({ category }: { category: string }) => {
   const searchIconNameFor = useStore(searchFor);
@@ -38,29 +32,15 @@ export const IconCategory = ({ category }: { category: string }) => {
       return;
     }
 
-    let filteredIcons: IconProps[] = [];
-
-    if (filteredVariations.includes("animated")) {
-      filteredIcons = allIconsInCategory.filter((icon) => icon.animated);
-    }
-
-    if (filteredVariations.includes("bidirectional")) {
-      filteredIcons = allIconsInCategory.filter((icon) => icon.bidirectional);
-    }
-
-    if (
-      filteredVariations.includes("bidirectional") &&
-      filteredVariations.includes("animated")
-    ) {
-      filteredIcons = allIconsInCategory.filter(
-        (icon) => icon.bidirectional && icon.animated
-      );
-    }
+    const filteredIcons: IconProps[] = filterIconsWithVariations(
+      allIconsInCategory,
+      filteredVariations
+    );
 
     setIconsToDisplay([...filteredIcons]);
   }, [filteredVariations, allIconsInCategory]);
 
-  return (
+  return iconsToDisplay.length ? (
     <div className={styles["icon-category"]}>
       <p>{category}</p>
       <div
@@ -70,21 +50,13 @@ export const IconCategory = ({ category }: { category: string }) => {
             : styles["icon-category__icons--flex"]
         }
       >
-        {iconsToDisplay.length ? (
-          iconsToDisplay.map((icon, index) => (
-            <div className={styles["icon-category__icons__card"]} key={index}>
-              <Icon
-                icon={icon.name}
-                aria-label={`${icon.name} icon`}
-                size="lg"
-              />
-              <p>{icon.name}</p>
-            </div>
-          ))
-        ) : (
-          <NoIconsFoundMessage />
-        )}
+        {iconsToDisplay.map((icon, index) => (
+          <div className={styles["icon-category__icons__card"]} key={index}>
+            <Icon icon={icon.name} aria-label={`${icon.name} icon`} size="lg" />
+            <p>{icon.name}</p>
+          </div>
+        ))}
       </div>
     </div>
-  );
+  ) : undefined;
 };

@@ -5,7 +5,7 @@ import { cleanStores, keepMount } from "nanostores";
 import { categoriesToFilterFor, searchFor } from "./helpers/iconPageState";
 import { iconCategories, icons } from "./helpers/icons";
 import { IconLibrary } from "./IconLibrary";
-import { findIcons } from "./helpers/findIcons";
+import { findIcons } from "./helpers/iconPageUtils";
 import { testIcons } from "./helpers/testIcons";
 
 describe("IconLibrary", () => {
