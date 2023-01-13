@@ -32,7 +32,10 @@ export const IconCategory = ({ category }: { category: string }) => {
       return;
     }
 
-    let filteredIcons: IconProps[] = filterIconsWithVariations(allIconsInCategory, filteredVariations);
+    const filteredIcons: IconProps[] = filterIconsWithVariations(
+      allIconsInCategory,
+      filteredVariations
+    );
 
     setIconsToDisplay([...filteredIcons]);
   }, [filteredVariations, allIconsInCategory]);

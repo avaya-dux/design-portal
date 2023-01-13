@@ -32,7 +32,7 @@ export const filterIconsWithVariations = (
       filteredVariations.includes("bidirectional") &&
       filteredVariations.includes("animated")
     ) {
-        iconsWithVariations = icons.filter(
+      iconsWithVariations = icons.filter(
         (icon) => icon.bidirectional && icon.animated
       );
     } else {
