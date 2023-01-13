@@ -1,0 +1,32 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { DoAndDont, PageleteSubSection } from "components";
+
+import doImage from "./imgs/do-content-rules.svg";
+import dontImage from "./imgs/dont-content-rules.svg";
+
+const doInstructions =
+  "Use tooltips to display the full content when it is too large to be shown in the allocated space.";
+const doImgAltText = "TODO: add alt text";
+
+const dontInstructions =
+  "Do not use tooltips within navigation items. Instead, either expand the item to show all of the text, or wrap it onto multiple lines.";
+const dontImgAltText = "TODO: add alt text";
+---
+
+<PageleteSubSection>
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={doInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage} alt={doImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dontInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage} alt={dontImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+</PageleteSubSection>

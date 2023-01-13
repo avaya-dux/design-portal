@@ -1,0 +1,32 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { DoAndDont, PageleteSubSection } from "components";
+
+import doImage from "./imgs/do-multiline.svg";
+import dontImage from "./imgs/dont-multiline.svg";
+
+const doInstructions =
+  "Multiline text is applied when the container width exceeds 300 pixels.";
+const doImgAltText = "TODO: add alt text";
+
+const dontInstructions =
+  "Do not create unusually large tooltips with one line of text. Use multiline tooltips instead.";
+const dontImgAltText = "TODO: add alt text";
+---
+
+<PageleteSubSection>
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={doInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage} alt={doImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dontInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage} alt={dontImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+</PageleteSubSection>

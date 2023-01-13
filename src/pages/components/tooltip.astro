@@ -3,7 +3,29 @@ export const title = "Tooltip";
 export const keywords = "Tooltip components";
 
 import { Layout } from "layouts";
-import { Intro, Playground, Instructions } from "pageletes/components/tooltip";
+import { RelatedContent } from "components/astro";
+import {
+  Anatomy,
+  Behavior,
+  Intro,
+  KeyboardInteractions,
+  Playground,
+  Positioning,
+  Specs,
+} from "pageletes/components/tooltip";
+
+import { topics } from "pageletes/components/tooltip/static";
+import type { SectionWithLinks } from "components/astro/RelatedContent.astro";
+
+const sections: SectionWithLinks[] = [
+  {
+    title: "Components",
+    links: [
+      { title: "Button", href: "/components/buttons" },
+      { title: "Navbar", href: "/components/topnav" },
+    ],
+  },
+];
 ---
 
 <Layout title="Tooltip">
@@ -11,5 +33,19 @@ import { Intro, Playground, Instructions } from "pageletes/components/tooltip";
 
   <Playground />
 
-  <Instructions />
+  <Anatomy />
+
+  <Positioning />
+
+  <Behavior />
+
+  <Specs />
+
+  <KeyboardInteractions />
+
+  <RelatedContent
+    id={topics.relatedComponents.id}
+    title={topics.relatedComponents.title}
+    sections={sections}
+  />
 </Layout>

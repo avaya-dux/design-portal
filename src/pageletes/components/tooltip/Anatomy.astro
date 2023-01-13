@@ -1,0 +1,53 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  ColumnLayout,
+  Description,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "./static";
+const { id, title } = topics.anatomy;
+
+import AnatomyImage from "./imgs/anatomy.svg";
+const anatomyImgAltText =
+  "Image showing the different parts that make up a tooltip";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    An action item in the UI may include a tooltip that appears when the item
+    has focus. The tooltip text explains in more detail what the action item
+    will do when selected, or what type of information is required.
+  </Description>
+
+  <ColumnLayout bkgColor="white" numOfColumns={1}>
+    <Image src={AnatomyImage} alt={anatomyImgAltText} />
+  </ColumnLayout>
+
+  <ul>
+    <li>
+      <strong>Container</strong>: The tooltip text is white and appears within a
+      black container near the action item
+    </li>
+    <li>
+      <strong>Text Block</strong>: This is the text for the tooltip. It can be
+      one or more lines, but it should be brief
+    </li>
+    <li>
+      <strong>Tooltip Anchor</strong>: The anchor arrow points toward the action
+      item associated with the tooltip
+    </li>
+  </ul>
+</PageleteSection>
+
+<style>
+  ul {
+    list-style-type: decimal;
+    margin: 1rem;
+  }
+</style>

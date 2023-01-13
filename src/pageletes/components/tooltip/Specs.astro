@@ -1,0 +1,38 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  ColumnLayout,
+  Description,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "./static";
+const { id, title } = topics.specs;
+
+import image from "./imgs/specs.svg";
+const imgAltText =
+  "Image showing the height, and width relative to the tooltip anchor";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Single line tooltips are 32 pixels in height not including the anchor.
+    Tooltips will detect the edges of the browser to be properly placed in the
+    window so the container does not get cutoff and the anchor is correctly
+    positioned.
+  </Description>
+
+  <ColumnLayout bkgColor="white" numOfColumns={1}>
+    <Image src={image} alt={imgAltText} />
+  </ColumnLayout>
+
+  <Description>
+    If the text makes the tooltip wider than 300 pixels, it will automatically
+    wrap to a new line. All text is left aligned regardless of the tooltip
+    position or anchor direction.
+  </Description>
+</PageleteSection>

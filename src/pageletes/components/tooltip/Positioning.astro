@@ -1,0 +1,91 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  ColumnLayout,
+  Description,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  SubHeader,
+} from "components/astro";
+
+import { topics } from "./static";
+const { id, title } = topics.positioning;
+
+import positioning1Img from "./imgs/positioning1.svg";
+const positioning1ImgAltText =
+  "Image showing the different directions that a tooltip can be positioned in relation to the anchor";
+import positioning2Img from "./imgs/positioning2.svg";
+const positioning2ImgAltText =
+  "Image showing the different offsets that a tooltip can be positioned in relation to the anchor";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Position the tooltip so that it does not obscure the action item it is
+    associated with. Try to keep the tooltip away from other UI elements,
+    particularly other action items.
+  </Description>
+
+  <PageleteSubSection>
+    <SubHeader id="tooltip-positioning-placement">Placement</SubHeader>
+
+    <Description>
+      The tooltip can appear to the right, left, top or bottom of the action
+      item. The anchor can also be offset toward the corner of the container.
+      Select the correct placement so that the tooltip does not cover the action
+      item or any other interactive field. The tooltip text is left justified
+      within the container.
+    </Description>
+
+    <ColumnLayout bkgColor="white" numOfColumns={1}>
+      <Image src={positioning1Img} alt={positioning1ImgAltText} />
+    </ColumnLayout>
+
+    <ul>
+      <li>
+        <strong>Left</strong>: The tooltip appears to the left of the action
+        item at about the same level. The container is vertically centered
+        around the anchor.
+      </li>
+
+      <li>
+        <strong>Top</strong>: The tooltip appears above the action item and is
+        centered horizontally around the anchor.
+      </li>
+
+      <li>
+        <strong>Bottom</strong>: The tooltip appears beneath the action item and
+        is centered horizontally around the anchor.
+      </li>
+
+      <li>
+        <strong>Right</strong>: The tooltip appears to the right of the action
+        item at about the same level. The container is vertically centered
+        around the anchor.
+      </li>
+    </ul>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <ColumnLayout bkgColor="white" numOfColumns={1}>
+      <Image src={positioning2Img} alt={positioning2ImgAltText} />
+    </ColumnLayout>
+
+    <Description>
+      For tooltips set to top or bottom, the anchor can be moved to the left or
+      right corner of the container. Use this feature to prevent the tooltip
+      from blocking another field, or where space limitations exist.
+    </Description>
+  </PageleteSubSection>
+</PageleteSection>
+
+<style>
+  ul {
+    list-style-type: none;
+    margin: 0;
+  }
+</style>
