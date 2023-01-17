@@ -1,0 +1,16 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components/astro";
+import { topics } from "../static";
+
+const { id, title } = topics.keyboard;
+---
+
+<PageleteSection marginBottom="2rem">
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate aut quas
+    modi accusamus nam quidem eveniet iure dolores, a, officia corporis adipisci
+    id assumenda et ducimus! Corporis unde magnam laborum.
+  </Description>
+</PageleteSection>
