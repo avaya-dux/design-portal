@@ -94,34 +94,34 @@ export const PlaygroundImplementation = () => {
           </Playground.OptionsSection>
 
           <Playground.OptionsSection title="Position Placement">
-            <Select
-              aria-label="Position Placement"
-              value={placement}
-              onChange={(value) => {
+            <RadioGroup
+              groupName="position-lacement"
+              selected={placement}
+              onChange={(e) => {
                 // TODO: if "left"/"right", disable offset and set to "none"
-                setPlacement(value as TooltipPlacement);
+                setPlacement(e.target.value as TooltipPlacement);
               }}
             >
               {posiblePlacements.map((value) => (
-                <SelectOption key={value} value={value}>
+                <Radio key={value} value={value}>
                   {value}
-                </SelectOption>
+                </Radio>
               ))}
-            </Select>
+            </RadioGroup>
           </Playground.OptionsSection>
 
           <Playground.OptionsSection title="Position Offset">
-            <Select
-              aria-label="Position Offset"
-              value={offset}
-              onChange={(value) => setOffset(value as TooltipOffset)}
+            <RadioGroup
+              groupName="position-offset"
+              selected={offset}
+              onChange={(e) => setOffset(e.target.value as TooltipOffset)}
             >
               {possibleOffsets.map((value) => (
-                <SelectOption key={value} value={value}>
+                <Radio key={value} value={value}>
                   {value}
-                </SelectOption>
+                </Radio>
               ))}
-            </Select>
+            </RadioGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
       }
