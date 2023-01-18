@@ -10,6 +10,7 @@ import { useMemo, useState } from "react";
 
 import { Playground } from "components";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
+import clsx from "clsx";
 
 const sandbox =
   "https://codesandbox.io/s/neo-react-tooltip-v43d4k?file=/src/App.js";
@@ -32,7 +33,7 @@ type TooltipPlacement = "auto" | "top" | "bottom" | "left" | "right";
 type TooltipOffset = "none" | "left" | "right";
 
 export const PlaygroundImplementation = () => {
-  const [typeOption, setTypeOption] = useState<TypeOption>("default"); // TODO: use
+  const [typeOption, setTypeOption] = useState<TypeOption>("default");
   const [placement, setPlacement] = useState<TooltipPlacement>("auto");
   const [offset, setOffset] = useState<TooltipOffset>("none");
 
@@ -44,10 +45,14 @@ export const PlaygroundImplementation = () => {
   const react = useMemo(
     () =>
       prettyPrintReact(`
-<Tooltip label="${label}" position="${reactPosition}">
+<Tooltip
+  label="${label}"
+  position="${reactPosition}"
+  multiline={${typeOption === "multiline"}}
+>
   <Button>Hover me to see a tooltip</Button>
 </Tooltip>`),
-    [reactPosition]
+    [reactPosition, typeOption]
   );
 
   const html = useMemo(
@@ -64,14 +69,17 @@ export const PlaygroundImplementation = () => {
   <div
     id="tooltip-div-id"
     role="tooltip"
-    class="neo-tooltip__content neo-tooltip__content--multiline"
+    class="${clsx(
+      "neo-tooltip__content",
+      typeOption === "multiline" && "neo-tooltip__content--multiline"
+    )}"
   >
     <div class="neo-arrow"></div>
     ${label}
   </div>
 </div>
   `),
-    [cssPositionClassName]
+    [cssPositionClassName, typeOption]
   );
 
   return (
@@ -136,7 +144,11 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      <Tooltip label={label} position={reactPosition}>
+      <Tooltip
+        label={label}
+        position={reactPosition}
+        multiline={typeOption === "multiline"}
+      >
         <Button>Hover me to see a tooltip</Button>
       </Tooltip>
     </Playground>
