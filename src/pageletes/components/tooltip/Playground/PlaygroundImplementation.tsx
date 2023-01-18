@@ -99,7 +99,7 @@ export const PlaygroundImplementation = () => {
 
           <Playground.OptionsSection title="Position Placement">
             <RadioGroup
-              groupName="position-lacement"
+              groupName="position-placement"
               selected={placement}
               onChange={(e) => {
                 const value = e.target.value as TooltipPlacement;
