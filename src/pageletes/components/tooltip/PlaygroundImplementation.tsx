@@ -1,12 +1,12 @@
 import {
   Button,
+  Radio,
+  RadioGroup,
   Select,
   SelectOption,
-  TextInput,
   Tooltip,
   TooltipCSSPosition,
   TooltipPosition,
-  TooltipProps,
 } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
@@ -18,38 +18,44 @@ const sandbox =
 const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-tooltip";
 
-const defaultLabel = "Example text inside of a tooltip that wraps a button";
-const posiblePositions: TooltipPosition[] = [
+const label =
+  "Tooltip text provides additional information about the attached UI element.";
+const posiblePlacements: TooltipPlacement[] = [
   "auto",
   "top",
   "bottom",
   "left",
   "right",
-  "top-left",
-  "top-right",
-  "bottom-left",
-  "bottom-right",
 ];
+const possibleOffsets: TooltipOffset[] = ["none", "left", "right"];
+
+type TypeOption = "default" | "multiline";
+type TooltipPlacement = "auto" | "top" | "bottom" | "left" | "right";
+type TooltipOffset = "none" | "left" | "right";
 
 export const PlaygroundImplementation = () => {
-  const [label, setLabel] = useState<TooltipProps["label"]>(defaultLabel);
-  const [position, setPosition] = useState<TooltipProps["position"]>("auto");
+  const [typeOption, setTypeOption] = useState<TypeOption>("default"); // TODO: use
+  const [placement, setPlacement] = useState<TooltipPlacement>("auto");
+  const [offset, setOffset] = useState<TooltipOffset>("none");
+
+  const [reactPosition, cssPositionClassName] = useMemo(
+    () => convertToPosition(placement, offset),
+    [placement, offset]
+  );
 
   const react = useMemo(
     () =>
       prettyPrintReact(`
-<Tooltip label="${label}" position="${position}">
+<Tooltip label="${label}" position="${reactPosition}">
   <Button>Hover me to see a tooltip</Button>
 </Tooltip>`),
-    [label, position]
+    [reactPosition]
   );
 
-  const html = useMemo(() => {
-    const cssPosition = translatePositionToCSSName(position || "auto");
-    const positionClass = `neo-tooltip--${cssPosition}`;
-
-    return prettyPrintHtml(`
-<div class="neo-tooltip ${positionClass} neo-tooltip--onhover">
+  const html = useMemo(
+    () =>
+      prettyPrintHtml(`
+<div class="neo-tooltip ${cssPositionClassName} neo-tooltip--onhover">
   <button
     aria-describedby="tooltip-div-id"
     class="neo-btn neo-btn--default neo-btn-primary neo-btn-primary--default"
@@ -66,22 +72,37 @@ export const PlaygroundImplementation = () => {
     ${label}
   </div>
 </div>
-  `);
-  }, [position, label]);
+  `),
+    [cssPositionClassName]
+  );
 
   return (
     <Playground
       options={
         <Playground.OptionsContainer>
-          <Playground.OptionsSection title="Position">
-            <Select
-              aria-label="Position"
-              value={position}
-              onChange={(value) =>
-                setPosition(value as TooltipProps["position"])
-              }
+          <Playground.OptionsSection title="Type">
+            <RadioGroup
+              groupName="type-options"
+              selected={typeOption}
+              onChange={(e) => {
+                setTypeOption(e.target.value as TypeOption);
+              }}
             >
-              {posiblePositions.map((value) => (
+              <Radio value="default">Default</Radio>
+              <Radio value="multiline">Multiline Tooltip</Radio>
+            </RadioGroup>
+          </Playground.OptionsSection>
+
+          <Playground.OptionsSection title="Position Placement">
+            <Select
+              aria-label="Position Placement"
+              value={placement}
+              onChange={(value) => {
+                // TODO: if "left"/"right", disable offset and set to "none"
+                setPlacement(value as TooltipPlacement);
+              }}
+            >
+              {posiblePlacements.map((value) => (
                 <SelectOption key={value} value={value}>
                   {value}
                 </SelectOption>
@@ -89,12 +110,18 @@ export const PlaygroundImplementation = () => {
             </Select>
           </Playground.OptionsSection>
 
-          <Playground.OptionsSection title="Label">
-            <TextInput
-              aria-label="Label"
-              defaultValue={label}
-              onChange={(e) => setLabel(e.target.value || defaultLabel)}
-            />
+          <Playground.OptionsSection title="Position Offset">
+            <Select
+              aria-label="Position Offset"
+              value={offset}
+              onChange={(value) => setOffset(value as TooltipOffset)}
+            >
+              {possibleOffsets.map((value) => (
+                <SelectOption key={value} value={value}>
+                  {value}
+                </SelectOption>
+              ))}
+            </Select>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
       }
@@ -105,11 +132,42 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      <Tooltip label={label} position={position}>
+      <Tooltip label={label} position={reactPosition}>
         <Button>Hover me to see a tooltip</Button>
       </Tooltip>
     </Playground>
   );
+};
+
+const convertToPosition = (
+  direction: TooltipPlacement,
+  offset: TooltipOffset
+): [TooltipPosition, string] => {
+  let position: TooltipPosition = "auto";
+  if (direction === "left") {
+    position = "left";
+  } else if (direction === "right") {
+    position = "right";
+  } else if (direction === "top") {
+    position = "top";
+    if (offset === "left") {
+      position = "top-left";
+    } else if (offset === "right") {
+      position = "top-right";
+    }
+  } else if (direction === "bottom") {
+    position = "bottom";
+    if (offset === "left") {
+      position = "bottom-left";
+    } else if (offset === "right") {
+      position = "bottom-right";
+    }
+  }
+
+  const cssPosition = translatePositionToCSSName(position);
+  const positionClass = `neo-tooltip--${cssPosition}`;
+
+  return [position, positionClass];
 };
 
 // (mostly) copy-pasted from Tooltip/helpers.ts
