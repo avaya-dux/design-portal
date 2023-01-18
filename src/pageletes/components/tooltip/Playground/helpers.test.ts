@@ -1,5 +1,8 @@
 import type { TooltipPosition } from "@avaya/neo-react";
+import { vi } from "vitest";
+
 import {
+  convertToPosition,
   shouldDisableOffset,
   translatePositionToCSSName,
 } from "./helpers";
@@ -14,6 +17,71 @@ describe("shouldDisableOffset", () => {
   it("should return false for top and bottom", () => {
     expect(shouldDisableOffset("top")).toBe(false);
     expect(shouldDisableOffset("bottom")).toBe(false);
+  });
+});
+
+describe("convertToPosition", () => {
+  it("should return 'auto' and 'up' if passed 'auto' and 'none'", () => {
+    expect(convertToPosition("auto", "none")).toEqual([
+      "auto",
+      "neo-tooltip--up",
+    ]);
+  });
+
+  it("should return 'left' and 'left' if passed 'left' and 'none'", () => {
+    expect(convertToPosition("left", "none")).toEqual([
+      "left",
+      "neo-tooltip--left",
+    ]);
+  });
+
+  it("should return 'right' and 'right' if passed 'right' and 'none'", () => {
+    expect(convertToPosition("right", "none")).toEqual([
+      "right",
+      "neo-tooltip--right",
+    ]);
+  });
+
+  it("should return 'top' and 'up' if passed 'top' and 'none'", () => {
+    expect(convertToPosition("top", "none")).toEqual([
+      "top",
+      "neo-tooltip--up",
+    ]);
+  });
+
+  it("should return 'top-left' and 'up-left' if passed 'top' and 'left'", () => {
+    expect(convertToPosition("top", "left")).toEqual([
+      "top-left",
+      "neo-tooltip--up-left",
+    ]);
+  });
+
+  it("should return 'top-right' and 'up-right' if passed 'top' and 'right'", () => {
+    expect(convertToPosition("top", "right")).toEqual([
+      "top-right",
+      "neo-tooltip--up-right",
+    ]);
+  });
+
+  it("should return 'bottom' and 'down' if passed 'bottom' and 'none'", () => {
+    expect(convertToPosition("bottom", "none")).toEqual([
+      "bottom",
+      "neo-tooltip--down",
+    ]);
+  });
+
+  it("should return 'bottom-left' and 'down-left' if passed 'bottom' and 'left'", () => {
+    expect(convertToPosition("bottom", "left")).toEqual([
+      "bottom-left",
+      "neo-tooltip--down-left",
+    ]);
+  });
+
+  it("should return 'bottom-right' and 'down-right' if passed 'bottom' and 'right'", () => {
+    expect(convertToPosition("bottom", "right")).toEqual([
+      "bottom-right",
+      "neo-tooltip--down-right",
+    ]);
   });
 });
 
@@ -49,6 +117,9 @@ describe("translatePositionToCSSName", () => {
   });
 
   it("should return 'up' if passed a bad value", () => {
+    // ignore tooltip position warning
+    vi.spyOn(console, "warn").mockImplementation(() => null);
+
     expect(translatePositionToCSSName("bad" as TooltipPosition)).toBe("up");
   });
 });
