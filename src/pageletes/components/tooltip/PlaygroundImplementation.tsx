@@ -2,8 +2,6 @@ import {
   Button,
   Radio,
   RadioGroup,
-  Select,
-  SelectOption,
   Tooltip,
   TooltipCSSPosition,
   TooltipPosition,
@@ -98,8 +96,13 @@ export const PlaygroundImplementation = () => {
               groupName="position-lacement"
               selected={placement}
               onChange={(e) => {
-                // TODO: if "left"/"right", disable offset and set to "none"
-                setPlacement(e.target.value as TooltipPlacement);
+                const value = e.target.value as TooltipPlacement;
+
+                if (shouldDisableOffset(value)) {
+                  setOffset("none");
+                }
+
+                setPlacement(value);
               }}
             >
               {posiblePlacements.map((value) => (
@@ -114,6 +117,7 @@ export const PlaygroundImplementation = () => {
             <RadioGroup
               groupName="position-offset"
               selected={offset}
+              disabled={shouldDisableOffset(placement)}
               onChange={(e) => setOffset(e.target.value as TooltipOffset)}
             >
               {possibleOffsets.map((value) => (
@@ -138,6 +142,11 @@ export const PlaygroundImplementation = () => {
     </Playground>
   );
 };
+
+// TODO: move to helpers and write tests
+
+const shouldDisableOffset = (placement: TooltipPlacement) =>
+  placement === "left" || placement === "right" || placement === "auto";
 
 const convertToPosition = (
   direction: TooltipPlacement,
