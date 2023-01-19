@@ -1,4 +1,6 @@
 ---
+import clsx from "clsx";
+
 export interface Props {
   isDescription?: boolean;
 }
@@ -7,9 +9,10 @@ const { isDescription } = Astro.props as Props;
 ---
 
 <table
-  class={`neo-table neo-table--info ${
+  class={clsx(
+    "neo-table neo-table--info",
     isDescription && "neo-table--description"
-  }`}
+  )}
 >
   <slot />
 </table>
