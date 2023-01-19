@@ -26,6 +26,10 @@ const { isKeyboardInteraction } = Astro.props as Props;
     border-bottom: 1px solid var(--neo-color-base-200);
   }
 
+  table.neo-table.neo-table--info:not(.neo-table--keyboard-interaction) {
+    margin-left: 1.1rem;
+  }
+
   table.neo-table.neo-table--info:not(.neo-table--keyboard-interaction)
     tbody
     tr,
