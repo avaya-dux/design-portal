@@ -2,16 +2,16 @@
 import clsx from "clsx";
 
 export interface Props {
-  isDescription?: boolean;
+  isKeyboardInteraction?: boolean;
 }
 
-const { isDescription } = Astro.props as Props;
+const { isKeyboardInteraction } = Astro.props as Props;
 ---
 
 <table
   class={clsx(
     "neo-table neo-table--info",
-    isDescription && "neo-table--description"
+    isKeyboardInteraction && "neo-table--keyboard-interaction"
   )}
 >
   <slot />
@@ -26,17 +26,40 @@ const { isDescription } = Astro.props as Props;
     border-bottom: 1px solid var(--neo-color-base-200);
   }
 
-  table.neo-table.neo-table--info.neo-table--description tbody tr,
-  table.neo-table.neo-table--info.neo-table--description tbody tr td {
-    padding: 0;
+  table.neo-table.neo-table--info:not(.neo-table--keyboard-interaction)
+    tbody
+    tr,
+  table.neo-table.neo-table--info:not(.neo-table--keyboard-interaction)
+    tbody
+    tr
+    td {
+    padding: 0.1rem 0;
     border-bottom: none;
+  }
+
+  table.neo-table.neo-table--info:not(.neo-table--keyboard-interaction)
+    tbody
+    tr
+    td {
+    text-indent: -1.1rem;
+  }
+
+  table.neo-table.neo-table--info:not(.neo-table--keyboard-interaction)
+    tbody
+    tr
+    td
+    strong {
+    font-weight: 600;
   }
 
   table.neo-table.neo-table--info thead tr th {
     padding-left: 0;
   }
 
-  table.neo-table.neo-table--info.neo-table--description:not(:last-child) {
+  table.neo-table.neo-table--info:not(
+      :last-child,
+      .neo-table--keyboard-interaction
+    ) {
     margin-bottom: 2rem;
   }
 
@@ -44,8 +67,13 @@ const { isDescription } = Astro.props as Props;
     table.neo-table.neo-table--info tbody tr td {
       border-bottom: 1px solid var(--neo-color-base-600);
     }
-    table.neo-table.neo-table--info.neo-table--description tbody tr,
-    table.neo-table.neo-table--info.neo-table--description tbody tr td {
+    table.neo-table.neo-table--info:not(.neo-table--keyboard-interaction)
+      tbody
+      tr,
+    table.neo-table.neo-table--info:not(.neo-table--keyboard-interaction)
+      tbody
+      tr
+      td {
       border-bottom: none;
     }
   }
