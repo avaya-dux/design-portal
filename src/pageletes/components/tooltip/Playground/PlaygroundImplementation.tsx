@@ -10,6 +10,7 @@ import {
   shouldDisableOffset,
   TooltipOffset,
   TooltipPlacement,
+  upperCaseFirstLetter,
 } from "./helpers";
 
 const sandbox =
@@ -113,7 +114,7 @@ export const PlaygroundImplementation = () => {
             >
               {posiblePlacements.map((value) => (
                 <Radio key={value} value={value}>
-                  {value}
+                  {upperCaseFirstLetter(value)}
                 </Radio>
               ))}
             </RadioGroup>
@@ -128,7 +129,7 @@ export const PlaygroundImplementation = () => {
             >
               {possibleOffsets.map((value) => (
                 <Radio key={value} value={value}>
-                  {value}
+                  {upperCaseFirstLetter(value)}
                 </Radio>
               ))}
             </RadioGroup>

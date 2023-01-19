@@ -5,6 +5,7 @@ import {
   convertToPosition,
   shouldDisableOffset,
   translatePositionToCSSName,
+  upperCaseFirstLetter,
 } from "./helpers";
 
 describe("shouldDisableOffset", () => {
@@ -121,5 +122,11 @@ describe("translatePositionToCSSName", () => {
     vi.spyOn(console, "warn").mockImplementation(() => null);
 
     expect(translatePositionToCSSName("bad" as TooltipPosition)).toBe("up");
+  });
+});
+
+describe("upperCaseFirstLetter", () => {
+  it("should return the string with the first letter uppercased", () => {
+    expect(upperCaseFirstLetter("hello friend")).toBe("Hello friend");
   });
 });
