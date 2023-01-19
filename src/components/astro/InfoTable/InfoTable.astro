@@ -1,4 +1,16 @@
-<table class="neo-table neo-table--info">
+---
+export interface Props {
+  isDescription?: boolean;
+}
+
+const { isDescription } = Astro.props as Props;
+---
+
+<table
+  class={`neo-table neo-table--info ${
+    isDescription && "neo-table--description"
+  }`}
+>
   <slot />
 </table>
 
@@ -11,13 +23,27 @@
     border-bottom: 1px solid var(--neo-color-base-200);
   }
 
+  table.neo-table.neo-table--info.neo-table--description tbody tr,
+  table.neo-table.neo-table--info.neo-table--description tbody tr td {
+    padding: 0;
+    border-bottom: none;
+  }
+
   table.neo-table.neo-table--info thead tr th {
     padding-left: 0;
+  }
+
+  table.neo-table.neo-table--info.neo-table--description:not(:last-child) {
+    margin-bottom: 2rem;
   }
 
   @media (prefers-color-scheme: dark) {
     table.neo-table.neo-table--info tbody tr td {
       border-bottom: 1px solid var(--neo-color-base-600);
+    }
+    table.neo-table.neo-table--info.neo-table--description tbody tr,
+    table.neo-table.neo-table--info.neo-table--description tbody tr td {
+      border-bottom: none;
     }
   }
 
