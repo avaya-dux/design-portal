@@ -20,7 +20,7 @@ const storybook =
 
 const label =
   "Tooltip text provides additional information about the attached UI element.";
-const posiblePlacements: TooltipPlacement[] = [
+const possiblePlacements: TooltipPlacement[] = [
   "auto",
   "top",
   "bottom",
@@ -112,7 +112,7 @@ export const PlaygroundImplementation = () => {
                 setPlacement(value);
               }}
             >
-              {posiblePlacements.map((value) => (
+              {possiblePlacements.map((value) => (
                 <Radio key={value} value={value}>
                   {upperCaseFirstLetter(value)}
                 </Radio>
