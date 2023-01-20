@@ -1,0 +1,23 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components/astro";
+import { PlaygroundImplementation } from "./PlaygroundImplementation";
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.playground.id}>
+    {topics.playground.title}
+  </SectionHeader>
+
+  <Description>
+    The Interactive Playground allows you to experiment with various link styles
+    and features. Once you get the results you want, copy the HTML or React code
+    provided and paste it into your application.
+  </Description>
+  <Description>
+    You can add the link text and destination on the code page and it will
+    appear in the playground window.x
+  </Description>
+
+  <PlaygroundImplementation client:load />
+</PageleteSection>
