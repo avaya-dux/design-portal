@@ -1,17 +1,17 @@
-import { Button, Radio, RadioGroup, Tooltip } from "@avaya/neo-react";
+import {
+  Button,
+  Radio,
+  RadioGroup,
+  Tooltip,
+  TooltipPosition,
+} from "@avaya/neo-react";
 import clsx from "clsx";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
-import {
-  convertToPosition,
-  shouldDisableOffset,
-  TooltipOffset,
-  TooltipPlacement,
-  upperCaseFirstLetter,
-} from "./helpers";
+import { upperCaseFirstLetter, translatePositionToCSSName } from "./helpers";
 
 const sandbox =
   "https://codesandbox.io/s/neo-react-tooltip-v43d4k?file=/src/App.js";
@@ -20,43 +20,31 @@ const storybook =
 
 const label =
   "Tooltip text provides additional information about the attached UI element.";
-const possiblePlacements: TooltipPlacement[] = [
-  "auto",
-  "top",
-  "bottom",
-  "left",
-  "right",
-];
-const possibleOffsets: TooltipOffset[] = ["none", "left", "right"];
+const possiblePositions: TooltipPosition[] = ["top", "bottom", "left", "right"];
 
 type TypeOption = "default" | "multiline";
 
 export const PlaygroundImplementation = () => {
   const [typeOption, setTypeOption] = useState<TypeOption>("default");
-  const [placement, setPlacement] = useState<TooltipPlacement>("auto");
-  const [offset, setOffset] = useState<TooltipOffset>("none");
-
-  const [reactPosition, cssPositionClassName] = useMemo(
-    () => convertToPosition(placement, offset),
-    [placement, offset]
-  );
+  const [position, setPosition] = useState<TooltipPosition>("top");
 
   const react = useMemo(
     () =>
       prettyPrintReact(`
 <Tooltip
   label="${label}"
-  position="${reactPosition}"
+  position="${position}"
   multiline={${typeOption === "multiline"}}
 >
   <Button>Hover me to see a tooltip</Button>
 </Tooltip>`),
-    [reactPosition, typeOption]
+    [position, typeOption]
   );
 
-  const html = useMemo(
-    () =>
-      prettyPrintHtml(`
+  const html = useMemo(() => {
+    const cssPositionClassName = translatePositionToCSSName(position);
+
+    return prettyPrintHtml(`
 <div class="neo-tooltip ${cssPositionClassName} neo-tooltip--onhover">
   <button
     aria-describedby="tooltip-div-id"
@@ -77,9 +65,8 @@ export const PlaygroundImplementation = () => {
     ${label}
   </div>
 </div>
-  `),
-    [cssPositionClassName, typeOption]
-  );
+  `);
+  }, [position, typeOption]);
 
   return (
     <Playground
@@ -101,33 +88,10 @@ export const PlaygroundImplementation = () => {
           <Playground.OptionsSection title="Position Placement">
             <RadioGroup
               groupName="position-placement"
-              selected={placement}
-              onChange={(e) => {
-                const value = e.target.value as TooltipPlacement;
-
-                if (shouldDisableOffset(value)) {
-                  setOffset("none");
-                }
-
-                setPlacement(value);
-              }}
+              selected={position}
+              onChange={(e) => setPosition(e.target.value as TooltipPosition)}
             >
-              {possiblePlacements.map((value) => (
-                <Radio key={value} value={value}>
-                  {upperCaseFirstLetter(value)}
-                </Radio>
-              ))}
-            </RadioGroup>
-          </Playground.OptionsSection>
-
-          <Playground.OptionsSection title="Position Offset">
-            <RadioGroup
-              groupName="position-offset"
-              selected={offset}
-              disabled={shouldDisableOffset(placement)}
-              onChange={(e) => setOffset(e.target.value as TooltipOffset)}
-            >
-              {possibleOffsets.map((value) => (
+              {possiblePositions.map((value) => (
                 <Radio key={value} value={value}>
                   {upperCaseFirstLetter(value)}
                 </Radio>
@@ -145,7 +109,7 @@ export const PlaygroundImplementation = () => {
     >
       <Tooltip
         label={label}
-        position={reactPosition}
+        position={position}
         multiline={typeOption === "multiline"}
       >
         <Button>Hover me to see a tooltip</Button>
