@@ -28,6 +28,14 @@ export const PlaygroundImplementation = () => {
   const [typeOption, setTypeOption] = useState<TypeOption>("default");
   const [position, setPosition] = useState<TooltipPosition>("top");
 
+  const tooltipStyle = useMemo(() => {
+    if (typeOption === "multiline" && ["left", "right"].includes(position)) {
+      return { width: "200px" };
+    }
+
+    return undefined;
+  }, [position, typeOption]);
+
   const react = useMemo(
     () =>
       prettyPrintReact(`
@@ -111,6 +119,7 @@ export const PlaygroundImplementation = () => {
         label={label}
         position={position}
         multiline={typeOption === "multiline"}
+        tooltipDivProps={{ style: tooltipStyle }}
       >
         <Button>Hover me to see a tooltip</Button>
       </Tooltip>
