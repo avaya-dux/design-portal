@@ -47,7 +47,7 @@ export const translatePositionToCSSName = (
       cssPosition = "up";
   }
 
-  return `neo-tooltip--${cssPosition};`;
+  return `neo-tooltip--${cssPosition}`;
 };
 
 export const upperCaseFirstLetter = (string: string) =>
