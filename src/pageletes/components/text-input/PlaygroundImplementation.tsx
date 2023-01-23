@@ -1,4 +1,4 @@
-import { Radio, RadioGroup, Spinner,TextInput, TextInputProps } from "@avaya/neo-react";
+import { Radio, RadioGroup, TextInput, TextInputProps } from "@avaya/neo-react";
 // import clsx from "clsx";
 import { useMemo, useState } from "react";
 
@@ -15,7 +15,10 @@ export const PlaygroundImplementation = () => {
 
   // const isDefault = useMemo(() => size === "md", [size]);
 
-  const react = useMemo(() => `<TextInput > label={label} helperText="Helper text" </TextInput>`, [label]);
+  const react = useMemo(
+    () => `<TextInput > label=${label} helperText="Helper text" </TextInput>`,
+    [label]
+  );
 
   //   const html = useMemo(
   //     () =>
@@ -63,7 +66,10 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      <TextInput> label={label} helperText="Helper text" required={required} </TextInput>
+      <TextInput>
+        {" "}
+        label={label} helperText="Helper text" required={required}{" "}
+      </TextInput>
     </Playground>
   );
 };
