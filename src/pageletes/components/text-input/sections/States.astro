@@ -1,0 +1,103 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ColumnLayout,
+  InfoTable,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+  InfoTableBody,
+  InfoTableRow,
+  InfoTableCell,
+} from "components/astro";
+import { topics } from "../static";
+
+import StateDefaultImage from "./button-imgs/states-default.svg";
+import StateDisabledImage from "./button-imgs/states-disabled.svg";
+import StateHoverImage from "./button-imgs/states-hover.svg";
+import StatePressedImage from "./button-imgs/states-pressed.svg";
+
+const defaultImageText = "Buttons with default state look like this";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.states.id}>{topics.states.title}</SectionHeader>
+
+  <Description>
+    Each button can exist in one of 4 states. The button’s state will change as
+    the user moves around the screen.
+  </Description>
+
+  <ColumnLayout bkgColor="white" numOfColumns={4}>
+    <StackedLayout showBorder>
+      <Image src={StateDefaultImage} alt={defaultImageText} />
+    </StackedLayout>
+
+    <StackedLayout showBorder>
+      <Image
+        src={StateHoverImage}
+        alt="Buttons with hover state look like this"
+      />
+    </StackedLayout>
+
+    <StackedLayout showBorder>
+      <Image
+        src={StatePressedImage}
+        alt="Buttons with pressed state look like this"
+      />
+    </StackedLayout>
+
+    <StackedLayout showBorder>
+      <Image
+        src={StateDisabledImage}
+        alt="Buttons with disabled state look like this"
+      />
+    </StackedLayout>
+  </ColumnLayout>
+
+  <InfoTable>
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>Normal</InfoTableCell>
+
+        <InfoTableCell>
+          This is the default state for the button. When nothing else is
+          happening, it adopts the Normal state (sometimes called “Up”).
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Hover</InfoTableCell>
+
+        <InfoTableCell>
+          When the user moves the mouse over the button, or when the button
+          becomes the focus using the keyboard, its state changes to Hover. This
+          lasts until the user moves off the button. While in the Hover state,
+          use the Enter key, the Spacebar, or click the mouse button to launch
+          the button’s action.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Pressed</InfoTableCell>
+
+        <InfoTableCell>
+          While the button’s function is activated, it is displayed in the
+          Pressed state.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Disabled</InfoTableCell>
+
+        <InfoTableCell>
+          This shows that the button cannot be used. Maybe a required field has
+          not been filled in, or this action is not allowed with the currently
+          selected options.
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
+</PageleteSection>
