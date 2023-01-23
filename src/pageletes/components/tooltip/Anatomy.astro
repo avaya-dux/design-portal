@@ -4,6 +4,10 @@ import { Image } from "@avaya/neo-react";
 import {
   ColumnLayout,
   Description,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableRow,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -29,20 +33,30 @@ const anatomyImgAltText =
     <Image src={AnatomyImage} alt={anatomyImgAltText} />
   </ColumnLayout>
 
-  <ul>
-    <li>
-      <strong>Container</strong>: The tooltip text is white and appears within a
-      black container near the action item
-    </li>
-    <li>
-      <strong>Text Block</strong>: This is the text for the tooltip. It can be
-      one or more lines, but it should be brief
-    </li>
-    <li>
-      <strong>Tooltip Anchor</strong>: The anchor arrow points toward the action
-      item associated with the tooltip
-    </li>
-  </ul>
+  <InfoTable>
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>
+          <strong>Container</strong>: The tooltip text is white and appears
+          within a black container near the action item
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>
+          <strong>Text Block</strong>: This is the text for the tooltip. It can
+          be one or more lines, but it should be brief
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>
+          <strong>Tooltip Anchor</strong>: The anchor arrow points toward the
+          action item associated with the tooltip
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
 </PageleteSection>
 
 <style>

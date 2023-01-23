@@ -4,6 +4,10 @@ import { Image } from "@avaya/neo-react";
 import {
   ColumnLayout,
   Description,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableRow,
   PageleteSection,
   PageleteSubSection,
   SectionHeader,
@@ -45,29 +49,39 @@ const positioning2ImgAltText =
       <Image src={positioning1Img} alt={positioning1ImgAltText} />
     </ColumnLayout>
 
-    <ul>
-      <li>
-        <strong>Left</strong>: The tooltip appears to the left of the action
-        item at about the same level. The container is vertically centered
-        around the anchor.
-      </li>
+    <InfoTable>
+      <InfoTableBody>
+        <InfoTableRow>
+          <InfoTableCell>
+            <strong>Left</strong>: The tooltip appears to the left of the action
+            item at about the same level. The container is vertically centered
+            around the anchor.
+          </InfoTableCell>
+        </InfoTableRow>
 
-      <li>
-        <strong>Top</strong>: The tooltip appears above the action item and is
-        centered horizontally around the anchor.
-      </li>
+        <InfoTableRow>
+          <InfoTableCell>
+            <strong>Top</strong>: The tooltip appears above the action item and
+            is centered horizontally around the anchor.
+          </InfoTableCell>
+        </InfoTableRow>
 
-      <li>
-        <strong>Bottom</strong>: The tooltip appears beneath the action item and
-        is centered horizontally around the anchor.
-      </li>
+        <InfoTableRow>
+          <InfoTableCell>
+            <strong>Bottom</strong>: The tooltip appears beneath the action item
+            and is centered horizontally around the anchor.
+          </InfoTableCell>
+        </InfoTableRow>
 
-      <li>
-        <strong>Right</strong>: The tooltip appears to the right of the action
-        item at about the same level. The container is vertically centered
-        around the anchor.
-      </li>
-    </ul>
+        <InfoTableRow>
+          <InfoTableCell>
+            <strong>Right</strong>: The tooltip appears to the right of the
+            action item at about the same level. The container is vertically
+            centered around the anchor.
+          </InfoTableCell>
+        </InfoTableRow>
+      </InfoTableBody>
+    </InfoTable>
   </PageleteSubSection>
 
   <PageleteSubSection>
