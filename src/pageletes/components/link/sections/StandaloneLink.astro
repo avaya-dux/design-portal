@@ -1,0 +1,122 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Description,
+  ColumnLayout,
+  PageleteSection,
+  SectionHeader,
+  SubHeader,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableRow,
+} from "components/astro";
+
+import { DoAndDont } from "components/react";
+
+import { topics } from "../static";
+
+import StandaloneStates from "../imgs/standalone.states.svg";
+import UsageImageDo from "../imgs/standalone.usage.do.svg";
+import UsageImageDont from "../imgs/standalone.usage.dont.svg";
+
+const standaloneStatesAltText = "States of stand alone links: default, hover, disabled"
+const usageImgDoAltText =
+  "Use links in a list or on their own without an underline.";
+const usageImgDontAltText =
+  "Do not underline standalone links.";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.standalone.id}>{topics.standalone.title}</SectionHeader>
+
+  <Description>
+    A Standalone Link can appear anywhere on the page that is not embedded into text (in a sentence or paragraph). It exists independently, such as in a table of contents, a list, or a directory. 
+  </Description>
+  <Description>
+    Standalone links are not underlined as that can make them difficult to read when grouped together into tables of contents or lists, etc. Icons cannot be attached to a Standalone link.
+  </Description>
+
+  <ColumnLayout bkgColor="white" numOfColumns={1}>
+    <Image src={StandaloneStates} alt={standaloneStatesAltText} />
+  </ColumnLayout>
+  <InfoTable>
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>1. Default</InfoTableCell>
+        <InfoTableCell>
+          The default state of the Standalone link is blue text without any underlining.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>2. Hover</InfoTableCell>
+        <InfoTableCell>
+          When the user moves focus onto the link, it becomes underlined. Selecting the link in this state will jump the user to the specified location.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>3. Disabled</InfoTableCell>
+        <InfoTableCell>
+          A link that is disabled appears on the page, but is currently unavailable. For example, when something has to happen (i.e. create a user name, fill in a field) before the link becomes active.
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
+
+  <SubHeader id="standalone-link-with-icon">Link with Icon</SubHeader>
+  <Description>
+    Standalone links can include an icon either in front of or at the end of the text. Only use icons for links that are for functions rather than for navigation. The icon must be representative of the action provided by the link.
+  </Description>
+  <Description>
+    For accessibility, aria-text must be included that explains where the link goes, and also if there are associated actions, such as to download a PDF file, or go to a data entry screen.
+  </Description>
+  <InfoTable>
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>1. Default</InfoTableCell>
+        <InfoTableCell>
+          The default state of the Standalone link is blue text without any underlining.
+        </InfoTableCell>
+      </InfoTableRow>
+      
+      <InfoTableRow>
+        <InfoTableCell>2. Hover</InfoTableCell>
+        <InfoTableCell>
+          When the user moves focus onto the link, it becomes underlined. Selecting the link in this state will jump the user to the specified location.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>3. Disabled</InfoTableCell>
+        <InfoTableCell>
+          A link that is disabled appears on the page, but is currently unavailable. For example, when something has to happen (i.e. create a user name, fill in a field) before the link becomes active.
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
+
+  <SubHeader id="standalone-link-usage">Usage</SubHeader>
+
+  <Description>
+    Use a Standalone link whenever you need to provide navigation options that are not embedded into other text.
+    Make sure that the link text is descriptive of where the user will be taken once selected.
+  </Description>
+  <Description>
+    For accessibility, aria-text must be included that explains where the link goes, and also if there are associated actions, such as to download a PDF file, or go to a data entry screen.
+  </Description>
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={usageImgDoAltText}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={UsageImageDo} alt={usageImgDoAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={usageImgDontAltText}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={UsageImageDont} alt={usageImgDontAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+</PageleteSection>
