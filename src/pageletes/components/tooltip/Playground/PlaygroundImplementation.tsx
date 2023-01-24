@@ -80,24 +80,27 @@ export const PlaygroundImplementation = () => {
     <Playground
       options={
         <Playground.OptionsContainer>
-          <Playground.OptionsSection title="Type">
-            <RadioGroup
-              groupName="type-options"
-              selected={typeOption}
-              onChange={(e) => {
-                setTypeOption(e.target.value as TypeOption);
-              }}
-            >
-              <Radio value="default">Default</Radio>
-              <Radio value="multiline">Multiline Tooltip</Radio>
-            </RadioGroup>
-          </Playground.OptionsSection>
-
           <Playground.OptionsSection title="Position Placement">
             <RadioGroup
               groupName="position-placement"
               selected={position}
-              onChange={(e) => setPosition(e.target.value as TooltipPosition)}
+              onChange={(e) => {
+                const position = e.target.value as TooltipPosition;
+                setPosition(position);
+
+                switch (position) {
+                  case "left":
+                  case "right":
+                    setTypeOption("multiline");
+                    break;
+
+                  case "top":
+                  case "bottom":
+                  default:
+                    setTypeOption("default");
+                    break;
+                }
+              }}
             >
               {possiblePositions.map((value) => (
                 <Radio key={value} value={value}>
