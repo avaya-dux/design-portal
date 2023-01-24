@@ -2,6 +2,8 @@
 import {
   Description,
   InfoTable,
+  InfoTableHead,
+  InfoTableCellHead,
   InfoTableBody,
   InfoTableCell,
   InfoTableRow,
@@ -23,7 +25,13 @@ import { topics } from "../static";
     Keyboard navigation employs the following shortcuts.
   </Description>
 
-  <InfoTable>
+  <InfoTable isKeyboardInteraction>
+    <InfoTableHead>
+      <InfoTableRow>
+        <InfoTableCellHead>Keystrokes</InfoTableCellHead>
+        <InfoTableCellHead>Interaction</InfoTableCellHead>
+      </InfoTableRow>
+    </InfoTableHead>
     <InfoTableBody>
       <InfoTableRow>
         <InfoTableCell>Tab</InfoTableCell>
