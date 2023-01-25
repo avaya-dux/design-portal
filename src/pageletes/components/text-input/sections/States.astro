@@ -1,5 +1,5 @@
 ---
-// import { Image } from "@avaya/neo-react";
+import { Image } from "@avaya/neo-react";
 
 import {
   Description,
@@ -14,12 +14,13 @@ import {
 } from "components/astro";
 import { topics } from "../static";
 
-// import StateDefaultImage from "./button-imgs/states-default.svg";
-// import StateDisabledImage from "./button-imgs/states-disabled.svg";
-// import StateHoverImage from "./button-imgs/states-hover.svg";
-// import StatePressedImage from "./button-imgs/states-pressed.svg";
+import StateActiveImage from "../imgs/input-text-state-active.svg";
+import StateDefaultImage from "../imgs/input-text-state-default.svg";
+import StateDisabledImage from "../imgs/input-text-state-disabled.svg";
+import StateHoverImage from "../imgs/input-text-state-hover.svg";
+// import StateErrorImage from "../imgs/input-text-state-error.svg";
 
-// const defaultImageText = "";
+const defaultImageText = "todo";
 ---
 
 <PageleteSection>
@@ -30,74 +31,64 @@ import { topics } from "../static";
     the user moves around the screen.
   </Description>
 
-  <ColumnLayout bkgColor="white" numOfColumns={4}>
-    <StackedLayout showBorder>
-      <!-- <Image src={StateDefaultImage} alt={defaultImageText} /> -->
+  <ColumnLayout bkgColor="white" numOfColumns={1}>
+    <StackedLayout>
+      <Image src={StateDefaultImage} alt={defaultImageText} />
     </StackedLayout>
-
-    <StackedLayout showBorder>
-      <!-- <Image
+    <ColumnLayout bkgColor="white" numOfColumns={2}>
+    <StackedLayout>
+      <Image
         src={StateHoverImage}
         alt="Buttons with hover state look like this"
-      /> -->
+      />
     </StackedLayout>
 
-    <StackedLayout showBorder>
-      <!-- <Image
-        src={StatePressedImage}
+    <StackedLayout>
+      <Image
+        src={StateActiveImage}
         alt="Buttons with pressed state look like this"
-      /> -->
+      />
     </StackedLayout>
 
-    <StackedLayout showBorder>
-      <!-- <Image
+    <StackedLayout>
+      <Image
         src={StateDisabledImage}
         alt="Buttons with disabled state look like this"
-      /> -->
+      />
     </StackedLayout>
+    </ColumnLayout>
   </ColumnLayout>
 
   <InfoTable>
     <InfoTableBody>
-      <InfoTableRow>
-        <InfoTableCell>Normal</InfoTableCell>
+        <InfoTableRow>
+          <InfoTableCell><strong> Default</strong>: Description</InfoTableCell>
+        </InfoTableRow>
 
-        <InfoTableCell>
-          This is the default state for the button. When nothing else is
-          happening, it adopts the Normal state (sometimes called “Up”).
-        </InfoTableCell>
-      </InfoTableRow>
+        <InfoTableRow>
+          <InfoTableCell>
+            <strong> Hover</strong>: Description
+          </InfoTableCell>
+        </InfoTableRow>
 
-      <InfoTableRow>
-        <InfoTableCell>Hover</InfoTableCell>
+        <InfoTableRow>
+          <InfoTableCell>
+            <strong> Active</strong>: Description
+            in password
+          </InfoTableCell>
+        </InfoTableRow>
 
-        <InfoTableCell>
-          When the user moves the mouse over the button, or when the button
-          becomes the focus using the keyboard, its state changes to Hover. This
-          lasts until the user moves off the button. While in the Hover state,
-          use the Enter key, the Spacebar, or click the mouse button to launch
-          the button’s action.
-        </InfoTableCell>
-      </InfoTableRow>
+        <InfoTableRow>
+          <InfoTableCell>
+            <strong> Error</strong>: Description
+          </InfoTableCell>
+        </InfoTableRow>
 
-      <InfoTableRow>
-        <InfoTableCell>Pressed</InfoTableCell>
-
-        <InfoTableCell>
-          While the button’s function is activated, it is displayed in the
-          Pressed state.
-        </InfoTableCell>
-      </InfoTableRow>
-
-      <InfoTableRow>
-        <InfoTableCell>Disabled</InfoTableCell>
-
-        <InfoTableCell>
-          This shows that the button cannot be used. Maybe a required field has
-          not been filled in, or this action is not allowed with the currently
-          selected options.
-        </InfoTableCell>
-      </InfoTableRow>
-    </InfoTableBody>
+        <InfoTableRow>
+          <InfoTableCell>
+            <strong> Disabled</strong>: Description
+          </InfoTableCell>
+        </InfoTableRow>
+      </InfoTableBody>
   </InfoTable>
 </PageleteSection>
