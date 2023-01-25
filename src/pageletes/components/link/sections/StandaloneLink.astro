@@ -10,22 +10,23 @@ import {
   InfoTableBody,
   InfoTableCell,
   InfoTableRow,
+  StackedLayout,
 } from "components/astro";
 
 import { DoAndDont } from "components/react";
 
 import { topics } from "../static";
 
-import StandaloneStates from "../imgs/standalone.states.svg";
-import StandaloneStatesIcon from "../imgs/standalone.states.icon.svg";
+import StandaloneStateDefault from "../imgs/link-standalone-state-1.svg";
+import StandaloneStateHover from "../imgs/link-standalone-state-2.svg";
+import StandaloneStateDisabled from "../imgs/link-standalone-state-3.svg";
 
-import UsageImageDo from "../imgs/standalone.usage.do.svg";
-import UsageImageDont from "../imgs/standalone.usage.dont.svg";
+import StandaloneIconDefault from "../imgs/link-standalone-icon-1.svg";
+import StandaloneIconHover from "../imgs/link-standalone-icon-2.svg";
+import StandaloneIconDisabled from "../imgs/link-standalone-icon-3.svg";
 
-const standaloneStatesAltText =
-  "States of stand alone links: default, hover, disabled";
-const standaloneStatesIconAltText =
-  "States of stand alone links with icon: default, hover, disabled";
+import UsageImageDo from "../imgs/link-standalone-do-1.svg";
+import UsageImageDont from "../imgs/link-standalone-dont-1.svg";
 
 const usageImgDoAltText =
   "Use links in a list or on their own without an underline.";
@@ -48,9 +49,23 @@ const usageImgDontAltText = "Do not underline standalone links.";
     attached to a Standalone link.
   </Description>
 
-  <ColumnLayout bkgColor="white" numOfColumns={1}>
-    <Image src={StandaloneStates} alt={standaloneStatesAltText} />
+  <ColumnLayout numOfColumns={3}>
+    <StackedLayout showBorder>
+      <div>Default</div>
+      <Image src={StandaloneStateDefault} alt="Standalone Default Link" />
+    </StackedLayout>
+
+    <StackedLayout showBorder>
+      <div>Hover</div>
+      <Image src={StandaloneStateHover} alt="Standalone Hover Link" />
+    </StackedLayout>
+
+    <StackedLayout showBorder>
+      <div>Disabled</div>
+      <Image src={StandaloneStateDisabled} alt="Standalone Disabled Link" />
+    </StackedLayout>
   </ColumnLayout>
+
   <InfoTable>
     <InfoTableBody>
       <InfoTableRow>
@@ -93,8 +108,24 @@ const usageImgDontAltText = "Do not underline standalone links.";
     goes, and also if there are associated actions, such as to download a PDF
     file, or go to a data entry screen.
   </Description>
-  <ColumnLayout bkgColor="white" numOfColumns={1}>
-    <Image src={StandaloneStatesIcon} alt={standaloneStatesIconAltText} />
+  <ColumnLayout numOfColumns={3}>
+    <StackedLayout showBorder>
+      <div>Default</div>
+      <Image
+        src={StandaloneIconDefault}
+        alt="Standalone Default Link with Icon"
+      />
+    </StackedLayout>
+
+    <StackedLayout showBorder>
+      <div>Hover</div>
+      <Image src={StandaloneIconHover} alt="Standalone Hover Link with Icon" />
+    </StackedLayout>
+
+    <StackedLayout showBorder>
+      <div>Disabled</div>
+      <Image src={StandaloneIconDisabled} alt="Standalone Disabled Link Icon" />
+    </StackedLayout>
   </ColumnLayout>
   <InfoTable>
     <InfoTableBody>

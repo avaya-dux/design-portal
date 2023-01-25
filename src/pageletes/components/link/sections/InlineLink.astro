@@ -10,18 +10,19 @@ import {
   InfoTableBody,
   InfoTableCell,
   InfoTableRow,
+  StackedLayout,
 } from "components/astro";
 
 import { DoAndDont } from "components/react";
 
 import { topics } from "../static";
 
-import InlineLinkStates from "../imgs/inline.states.svg";
-import UsageImageDo from "../imgs/inline.usage.do.svg";
-import UsageImageDont from "../imgs/inline.usage.dont.svg";
+import InlineLinkStateDefault from "../imgs/link-inline-1.svg";
+import InlineLinkStateHover from "../imgs/link-inline-2.svg";
+import InlineLinkStateDisabled from "../imgs/link-inline-3.svg";
 
-const inlineLinkStatesAltText =
-  "States of inline links: default, hover, disabled";
+import UsageImageDo from "../imgs/link-inline-do-1.svg";
+import UsageImageDont from "../imgs/link-inline-dont-1.svg";
 
 const usageImgDoAltText = "Use blue underlined text for inline links.";
 
@@ -40,8 +41,21 @@ const usageImgDontAltText =
     them easily visible among the other text.
   </Description>
 
-  <ColumnLayout bkgColor="white" numOfColumns={1}>
-    <Image src={InlineLinkStates} alt={inlineLinkStatesAltText} />
+  <ColumnLayout numOfColumns={3}>
+    <StackedLayout showBorder>
+      <div>Default</div>
+      <Image src={InlineLinkStateDefault} alt="Inline Default Link" />
+    </StackedLayout>
+
+    <StackedLayout showBorder>
+      <div>Hover</div>
+      <Image src={InlineLinkStateHover} alt="Inline Hover Link" />
+    </StackedLayout>
+
+    <StackedLayout showBorder>
+      <div>Disabled</div>
+      <Image src={InlineLinkStateDisabled} alt="Inline Disabled Link" />
+    </StackedLayout>
   </ColumnLayout>
   <InfoTable>
     <InfoTableBody>
