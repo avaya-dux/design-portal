@@ -1,5 +1,4 @@
 import { Radio, RadioGroup, TextInput, TextInputProps } from "@avaya/neo-react";
-// import clsx from "clsx";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components";
@@ -13,24 +12,10 @@ export const PlaygroundImplementation = () => {
   const [required, setRequired] = useState<TextInputProps["required"]>(false);
   const [label, setLabel] = useState<TextInputProps["label"]>("Label");
 
-  // const isDefault = useMemo(() => size === "md", [size]);
-
   const react = useMemo(
     () => `<TextInput > label=${label} helperText="Helper text" </TextInput>`,
     [label]
   );
-
-  //   const html = useMemo(
-  //     () =>
-  //       `<div
-  //   class="${clsx(
-  //     "neo-spinner",
-  //     size === "lg" && "neo-spinner--large",
-  //     size === "xl" && "neo-spinner--x-large"
-  //   )}"
-  // ></div>`,
-  //     [size]
-  //   );
 
   return (
     <Playground
