@@ -2,7 +2,6 @@
 import {
   Checkbox,
   CheckboxGroup,
-  CheckboxProps,
   Radio,
   RadioGroup,
 } from "@avaya/neo-react";

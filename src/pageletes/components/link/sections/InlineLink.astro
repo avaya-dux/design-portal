@@ -41,7 +41,7 @@ const usageImgDontAltText =
     them easily visible among the other text.
   </Description>
 
-  <ColumnLayout numOfColumns={3}>
+  <ColumnLayout bkgColor="white" numOfColumns={3}>
     <StackedLayout showBorder>
       <div>Default</div>
       <Image src={InlineLinkStateDefault} alt="Inline Default Link" />
@@ -57,30 +57,29 @@ const usageImgDontAltText =
       <Image src={InlineLinkStateDisabled} alt="Inline Disabled Link" />
     </StackedLayout>
   </ColumnLayout>
-  <InfoTable>
+  <InfoTable isBulletedList>
     <InfoTableBody>
       <InfoTableRow>
-        <InfoTableCell>1. Default</InfoTableCell>
         <InfoTableCell>
+          <strong>1. Default:</strong>
           The default state of an Inline link is underlined blue text.
         </InfoTableCell>
       </InfoTableRow>
 
       <InfoTableRow>
-        <InfoTableCell>2. Hover</InfoTableCell>
         <InfoTableCell>
-          When the user move focus onto the link, the underlining is removed.
-          Selecting the link in this state will jump the user to the specified
-          location.
+          <strong>2. Hover:</strong>
+          When the user move focus onto the link, the underlining is removed. Selecting
+          the link in this state will jump the user to the specified location.
         </InfoTableCell>
       </InfoTableRow>
 
       <InfoTableRow>
-        <InfoTableCell>3. Disabled</InfoTableCell>
         <InfoTableCell>
-          A link that is disabled appears on the page, but is currently
-          unavailable. For example, when something has to happen (i.e. create a
-          user name, fill in a field) before the link becomes active.
+          <strong>3. Disabled:</strong>
+          A link that is disabled appears on the page, but is currently unavailable.
+          For example, when something has to happen (i.e. create a user name, fill
+          in a field) before the link becomes active.
         </InfoTableCell>
       </InfoTableRow>
     </InfoTableBody>
