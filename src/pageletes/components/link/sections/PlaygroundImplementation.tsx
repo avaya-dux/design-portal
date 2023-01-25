@@ -1,10 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {
-  Checkbox,
-  CheckboxGroup,
-  Radio,
-  RadioGroup,
-} from "@avaya/neo-react";
+import { Checkbox, CheckboxGroup, Radio, RadioGroup } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components/react";
