@@ -1,0 +1,33 @@
+---
+import {
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableRow,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+import { topics } from "../static";
+---
+
+<PageleteSection marginBottom="2rem">
+  <SectionHeader id={topics.interactions.id}>
+    {topics.interactions.title}
+  </SectionHeader>
+
+  <InfoTable isKeyboardInteraction>
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>Tab</InfoTableCell>
+        <InfoTableCell>Moves forward into and out of the input</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Shift + Tab</InfoTableCell>
+        <InfoTableCell>
+          Moves backward to the previous interactive element.
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
+</PageleteSection>

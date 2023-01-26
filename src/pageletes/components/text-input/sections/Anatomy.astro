@@ -1,0 +1,171 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Description,
+  ColumnLayout,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableRow,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  StackedLayout,
+  SubHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import AnatomyImage from "../imgs/text-input-anatomy.svg";
+import AnatomyImage2 from "../imgs/text-area-anatomy.svg";
+import AnatomyImage3 from "../imgs/text-password-input-anatomy.svg";
+const anatomyImgAltText =
+  "Image showing the different parts that make up a Text Input component.";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.anatomy.id}>{topics.anatomy.title}</SectionHeader>
+
+  <Description>Anatomy description</Description>
+
+  <PageleteSubSection>
+    <SubHeader id="all-buttons">Text Input</SubHeader>
+
+    <Description>Text Input description</Description>
+
+    <ColumnLayout bkgColor="white" numOfColumns={1}>
+      <StackedLayout showBorder>
+        <Image src={AnatomyImage} alt={anatomyImgAltText} />
+      </StackedLayout>
+    </ColumnLayout>
+
+    <InfoTable>
+      <InfoTableBody>
+        <InfoTableRow>
+          <InfoTableCell>1.<strong> Label</strong>: Input label</InfoTableCell>
+        </InfoTableRow>
+
+        <InfoTableRow>
+          <InfoTableCell>
+            2.<strong> Input Text</strong>: Text input where users type in an
+            input
+          </InfoTableCell>
+        </InfoTableRow>
+
+        <InfoTableRow>
+          <InfoTableCell>
+            3.<strong> Container</strong>: Text input container
+          </InfoTableCell>
+        </InfoTableRow>
+
+        <InfoTableRow>
+          <InfoTableCell>
+            4. <strong> Helper Text</strong>: Additional information to help
+            users
+          </InfoTableCell>
+        </InfoTableRow>
+      </InfoTableBody>
+    </InfoTable>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="all-buttons">Text Area</SubHeader>
+
+    <Description>Text Area description</Description>
+
+    <ColumnLayout bkgColor="white" numOfColumns={1}>
+      <StackedLayout showBorder>
+        <Image src={AnatomyImage2} alt={anatomyImgAltText} />
+      </StackedLayout>
+    </ColumnLayout>
+
+    <InfoTable>
+      <InfoTableBody>
+        <InfoTableRow>
+          <InfoTableCell>1.<strong> Label</strong>: Input label</InfoTableCell>
+        </InfoTableRow>
+
+        <InfoTableRow>
+          <InfoTableCell>
+            2.<strong> Input Text</strong>: Text input where users type in an
+            input
+          </InfoTableCell>
+        </InfoTableRow>
+
+        <InfoTableRow>
+          <InfoTableCell>
+            3.<strong> Container</strong>: Text input container
+          </InfoTableCell>
+        </InfoTableRow>
+
+        <InfoTableRow>
+          <InfoTableCell>
+            4. <strong> Helper Text</strong>: Additional information to help
+            users
+          </InfoTableCell>
+        </InfoTableRow>
+
+        <InfoTableRow>
+          <InfoTableCell>
+            5. <strong> Character Count</strong>: Indicates the max number of
+            characters and counts number of characters used as the user types
+          </InfoTableCell>
+        </InfoTableRow>
+      </InfoTableBody>
+    </InfoTable>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="all-buttons">Password Input</SubHeader>
+
+    <Description>Password description</Description>
+
+    <ColumnLayout bkgColor="white" numOfColumns={1}>
+      <StackedLayout showBorder>
+        <Image src={AnatomyImage3} alt={anatomyImgAltText} />
+      </StackedLayout>
+    </ColumnLayout>
+
+    <InfoTable>
+      <InfoTableBody>
+        <InfoTableRow>
+          <InfoTableCell>1.<strong>Label</strong>: Input label</InfoTableCell>
+        </InfoTableRow>
+
+        <InfoTableRow>
+          <InfoTableCell>
+            2.<strong>Required Label Icon</strong>: This icon indicates that
+            completing this input is mandatory
+          </InfoTableCell>
+        </InfoTableRow>
+
+        <InfoTableRow>
+          <InfoTableCell>
+            3.<strong>Password Input Text</strong>: Text input where users type
+            in password
+          </InfoTableCell>
+        </InfoTableRow>
+
+        <InfoTableRow>
+          <InfoTableCell>
+            4.<strong>Container</strong>: Text input container
+          </InfoTableCell>
+        </InfoTableRow>
+
+        <InfoTableRow>
+          <InfoTableCell>
+            5.<strong>Helper Text</strong>: Additional information to help
+            users
+          </InfoTableCell>
+        </InfoTableRow>
+
+        <InfoTableRow>
+          <InfoTableCell>
+            6.<strong>Password Icon Trigger</strong>: This icon turns the
+            user's password visible and hidden
+          </InfoTableCell>
+        </InfoTableRow>
+      </InfoTableBody>
+    </InfoTable>
+  </PageleteSubSection>
+</PageleteSection>
