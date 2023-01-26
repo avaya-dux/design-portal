@@ -9,3 +9,6 @@ export { Anatomy };
 
 import States from "./States.astro";
 export { States };
+
+import KeyboardInteractions from "./KeyboardInteractions.astro";
+export { KeyboardInteractions };

@@ -14,11 +14,11 @@ import {
 } from "components/astro";
 import { topics } from "../static";
 
-import StateActiveImage from "../imgs/input-text-state-active.svg";
-import StateDefaultImage from "../imgs/input-text-state-default.svg";
-import StateDisabledImage from "../imgs/input-text-state-disabled.svg";
-import StateHoverImage from "../imgs/input-text-state-hover.svg";
-// import StateErrorImage from "../imgs/input-text-state-error.svg";
+import StateActiveImage from "../imgs/text-input-states-active.svg";
+import StateDefaultImage from "../imgs/text-input-states-default.svg";
+import StateDisabledImage from "../imgs/text-input-states-disabled.svg";
+import StateHoverImage from "../imgs/text-input-states-hover.svg";
+import StateErrorImage from "../imgs/text-input-states-error.svg";
 
 const defaultImageText = "todo";
 ---
@@ -32,28 +32,33 @@ const defaultImageText = "todo";
   </Description>
 
   <ColumnLayout bkgColor="white" numOfColumns={1}>
-    <StackedLayout>
+    <StackedLayout showBorder>
       <Image src={StateDefaultImage} alt={defaultImageText} />
     </StackedLayout>
     <ColumnLayout bkgColor="white" numOfColumns={2}>
-      <StackedLayout>
+      <StackedLayout showBorder>
         <Image
           src={StateHoverImage}
-          alt="Buttons with hover state look like this"
+          alt="Text Input with hover state look like this"
         />
       </StackedLayout>
-
-      <StackedLayout>
+      <StackedLayout showBorder>
         <Image
           src={StateActiveImage}
-          alt="Buttons with pressed state look like this"
+          alt="Text Input with pressed state look like this"
         />
       </StackedLayout>
 
-      <StackedLayout>
+      <StackedLayout showBorder>
+        <Image
+          src={StateErrorImage}
+          alt="Text Input with disabled state look like this"
+        />
+      </StackedLayout>
+      <StackedLayout showBorder>
         <Image
           src={StateDisabledImage}
-          alt="Buttons with disabled state look like this"
+          alt="Text Input with disabled state look like this"
         />
       </StackedLayout>
     </ColumnLayout>
@@ -62,30 +67,30 @@ const defaultImageText = "todo";
   <InfoTable>
     <InfoTableBody>
       <InfoTableRow>
-        <InfoTableCell><strong> Default</strong>: Description</InfoTableCell>
+        <InfoTableCell><strong>Default</strong>: Description</InfoTableCell>
       </InfoTableRow>
 
       <InfoTableRow>
         <InfoTableCell>
-          <strong> Hover</strong>: Description
+          <strong>Hover</strong>: Description
         </InfoTableCell>
       </InfoTableRow>
 
       <InfoTableRow>
         <InfoTableCell>
-          <strong> Active</strong>: Description in password
+          <strong>Active</strong>: Description in password
         </InfoTableCell>
       </InfoTableRow>
 
       <InfoTableRow>
         <InfoTableCell>
-          <strong> Error</strong>: Description
+          <strong>Error</strong>: Description
         </InfoTableCell>
       </InfoTableRow>
 
       <InfoTableRow>
         <InfoTableCell>
-          <strong> Disabled</strong>: Description
+          <strong>Disabled</strong>: Description
         </InfoTableCell>
       </InfoTableRow>
     </InfoTableBody>
