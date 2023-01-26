@@ -2,8 +2,8 @@
 import { Image } from "@avaya/neo-react";
 
 import {
-  ColumnLayout,
   Description,
+  ImageWrapper,
   InfoTable,
   InfoTableBody,
   InfoTableCell,
@@ -45,9 +45,9 @@ const positioning2ImgAltText =
       within the container.
     </Description>
 
-    <ColumnLayout bkgColor="white" numOfColumns={1}>
+    <ImageWrapper>
       <Image src={positioning1Img} alt={positioning1ImgAltText} />
-    </ColumnLayout>
+    </ImageWrapper>
 
     <InfoTable>
       <InfoTableBody>
@@ -85,9 +85,9 @@ const positioning2ImgAltText =
   </PageleteSubSection>
 
   <PageleteSubSection>
-    <ColumnLayout bkgColor="white" numOfColumns={1}>
+    <ImageWrapper>
       <Image src={positioning2Img} alt={positioning2ImgAltText} />
-    </ColumnLayout>
+    </ImageWrapper>
 
     <Description>
       For tooltips set to top or bottom, the anchor can be moved to the left or

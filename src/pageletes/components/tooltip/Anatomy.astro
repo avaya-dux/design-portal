@@ -2,8 +2,8 @@
 import { Image } from "@avaya/neo-react";
 
 import {
-  ColumnLayout,
   Description,
+  ImageWrapper,
   InfoTable,
   InfoTableBody,
   InfoTableCell,
@@ -29,29 +29,29 @@ const anatomyImgAltText =
     will do when selected, or what type of information is required.
   </Description>
 
-  <ColumnLayout bkgColor="white" numOfColumns={1}>
+  <ImageWrapper>
     <Image src={AnatomyImage} alt={anatomyImgAltText} />
-  </ColumnLayout>
+  </ImageWrapper>
 
   <InfoTable>
     <InfoTableBody>
       <InfoTableRow>
         <InfoTableCell>
-          <strong>Container</strong>: The tooltip text is white and appears
+          1. <strong>Container</strong>: The tooltip text is white and appears
           within a black container near the action item
         </InfoTableCell>
       </InfoTableRow>
 
       <InfoTableRow>
         <InfoTableCell>
-          <strong>Text Block</strong>: This is the text for the tooltip. It can
+          2. <strong>Text Block</strong>: This is the text for the tooltip. It can
           be one or more lines, but it should be brief
         </InfoTableCell>
       </InfoTableRow>
 
       <InfoTableRow>
         <InfoTableCell>
-          <strong>Tooltip Anchor</strong>: The anchor arrow points toward the
+          3. <strong>Tooltip Anchor</strong>: The anchor arrow points toward the
           action item associated with the tooltip
         </InfoTableCell>
       </InfoTableRow>

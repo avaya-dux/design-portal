@@ -4,6 +4,7 @@ import { Image } from "@avaya/neo-react";
 import {
   ColumnLayout,
   Description,
+  ImageWrapper,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -30,9 +31,14 @@ const img2AltText =
     positioned.
   </Description>
 
-  <ColumnLayout bkgColor="white" numOfColumns={2}>
-    <Image src={image1} alt={img1AltText} />
-    <Image src={image2} alt={img2AltText} />
+  <ColumnLayout numOfColumns={2}>
+    <ImageWrapper>
+      <Image src={image1} alt={img1AltText} />
+    </ImageWrapper>
+
+    <ImageWrapper>
+      <Image src={image2} alt={img2AltText} />
+    </ImageWrapper>
   </ColumnLayout>
 
   <Description>
