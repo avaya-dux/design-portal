@@ -1,7 +1,7 @@
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: ["config:base", "group:allNonMajor"],
-  assignees: ["joe-s-avaya"],
-  reviewers: ["@avaya-dux/dux-devs", "joe-s-avaya"],
+  rangeStrategy: "pin", // pin dependencies
+  reviewers: ["mrazian85", "joe-s-avaya", "enrique-prado", "yangAtSpoken"],
   schedule: ["on monday before 5am"],
 }
