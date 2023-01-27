@@ -1,0 +1,9 @@
+a {
+  color: var(--link-color);
+}
+a:hover:not([class*="disabled"]) {
+  color: var(--link-color);
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.4s;
+}

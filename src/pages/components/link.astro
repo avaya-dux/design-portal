@@ -1,0 +1,40 @@
+---
+export const title = "Link";
+export const keywords = "Link";
+
+import { Layout } from "layouts";
+
+import {
+  Intro,
+  LinkPlayground,
+  StandaloneLink,
+  InlineLink,
+  KeyboardInteractions,
+  Related,
+} from "pageletes/components/link";
+---
+
+<Layout title={title}>
+  <Intro />
+
+  <LinkPlayground />
+  <StandaloneLink />
+
+  <InlineLink />
+
+  <KeyboardInteractions />
+
+  <Related />
+</Layout>
+<style is:inline>
+  div.stack-container > div:first-child {
+    width: 100%;
+    padding: 0px 40px;
+    color: var(--neo-color-base-1000);
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+  }
+</style>
