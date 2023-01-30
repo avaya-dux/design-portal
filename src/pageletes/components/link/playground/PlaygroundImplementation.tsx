@@ -11,6 +11,8 @@ import { useCallback, useMemo, useState } from "react";
 import { Playground } from "components/react";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
+import { createReactCode, createHtmlCode } from "./utils";
+
 type TypeOption = "standalone" | "inline";
 
 type IconPlacement = "none" | "left" | "right";
@@ -29,14 +31,13 @@ export const PlaygroundImplementation = () => {
   const [iconDisabled, setIconDisabled] = useState(false);
 
   const [react, html] = useMemo(() => {
-    const reactCode = prettyPrintReact(`
-  <div>
-  </div>
-        `);
+    const reactCode = prettyPrintReact(
+      createReactCode(typeOption, disabled, iconPlacement)
+    );
 
-    const htmlCode = prettyPrintHtml(`
-          <div></div>
-          `);
+    const htmlCode = prettyPrintHtml(
+      createHtmlCode(typeOption, disabled, iconPlacement)
+    );
 
     return [reactCode, htmlCode];
   }, [typeOption, iconPlacement, disabled]);
