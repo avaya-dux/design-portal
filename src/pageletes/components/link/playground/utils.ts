@@ -13,7 +13,7 @@ export const createHtmlCode = (
   );
 };
 
-export const createHtmlClasses = (
+const createHtmlClasses = (
   typeOption: string,
   disabled: boolean,
   iconPlacement: string
@@ -36,7 +36,8 @@ export const createReactCode = (
     iconPlacement
   )}>Link</Link>`;
 };
-export const createReacAttributes = (
+
+const createReacAttributes = (
   typeOption: string,
   disabled: boolean,
   iconPlacement: string
