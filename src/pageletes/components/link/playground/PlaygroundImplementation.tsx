@@ -20,7 +20,7 @@ type IconPlacement = "none" | "left" | "right";
 import "./PlaygroundImplementation.css";
 
 const storybook =
-  "https://neo-react-library-storybook.netlify.app/?path=/story/components-link--default";
+  "https://neo-react-library-storybook.netlify.app/?path=/story/components-link";
 const sandbox = "https://codesandbox.io/s/neo-react-link-pr4mw7";
 
 export const PlaygroundImplementation = () => {
