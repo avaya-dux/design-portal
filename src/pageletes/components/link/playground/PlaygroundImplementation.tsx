@@ -17,11 +17,9 @@ type TypeOption = "standalone" | "inline";
 
 type IconPlacement = "none" | "left" | "right";
 
-import "./PlaygroundImplementation.css";
-
-const sandbox =
+const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-link--default";
-const storybook = "https://codesandbox.io/s/neo-react-link-pr4mw7";
+const sandbox = "https://codesandbox.io/s/neo-react-link-pr4mw7";
 
 export const PlaygroundImplementation = () => {
   const [typeOption, setTypeOption] = useState<TypeOption>("standalone");
