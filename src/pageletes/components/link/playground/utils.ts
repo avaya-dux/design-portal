@@ -22,7 +22,7 @@ const createHtmlClasses = (
     "neo-link",
     iconPlacement !== "none" && "neo-icon-print",
     disabled && "neo-link__disabled",
-    typeOption === "inline" && "neo-icon__inline"
+    typeOption === "inline" && "neo-link__inline"
   );
 };
 export const createReactCode = (

@@ -18,12 +18,12 @@ describe(createHtmlCode.name, () => {
   });
   it("creates correctly for inline link", () => {
     expect(createHtmlCode("inline", false, "none")).toMatchInlineSnapshot(
-      '"<a class=\\"neo-link neo-icon__inline\\" href=\\"#main\\">Link</a>"'
+      '"<a class=\\"neo-link neo-link__inline\\" href=\\"#main\\">Link</a>"'
     );
   });
   it("creates correctly for disabled inline link", () => {
     expect(createHtmlCode("inline", true, "none")).toMatchInlineSnapshot(
-      '"<a class=\\"neo-link neo-link__disabled neo-icon__inline\\" href=\\"#main\\">Link</a>"'
+      '"<a class=\\"neo-link neo-link__disabled neo-link__inline\\" href=\\"#main\\">Link</a>"'
     );
   });
 });
@@ -46,12 +46,12 @@ describe(createReactCode.name, () => {
   });
   it("creates correctly for inline link", () => {
     expect(createHtmlCode("inline", false, "none")).toMatchInlineSnapshot(
-      '"<a class=\\"neo-link neo-icon__inline\\" href=\\"#main\\">Link</a>"'
+      '"<a class=\\"neo-link neo-link__inline\\" href=\\"#main\\">Link</a>"'
     );
   });
   it("creates correctly for disabled inline link", () => {
     expect(createHtmlCode("inline", true, "none")).toMatchInlineSnapshot(
-      '"<a class=\\"neo-link neo-link__disabled neo-icon__inline\\" href=\\"#main\\">Link</a>"'
+      '"<a class=\\"neo-link neo-link__disabled neo-link__inline\\" href=\\"#main\\">Link</a>"'
     );
   });
 });
