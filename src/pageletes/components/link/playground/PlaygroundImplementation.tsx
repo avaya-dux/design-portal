@@ -1,11 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { Checkbox, CheckboxGroup, Radio, RadioGroup } from "@avaya/neo-react";
-import { useMemo, useState } from "react";
+import {
+  Checkbox,
+  CheckboxGroup,
+  Radio,
+  RadioGroup,
+  Link,
+} from "@avaya/neo-react";
+import { useCallback, useMemo, useState } from "react";
 
 import { Playground } from "components/react";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
-
-import { sandbox, storybook } from "../static";
 
 type TypeOption = "standalone" | "inline";
 
@@ -13,10 +17,16 @@ type IconPlacement = "none" | "left" | "right";
 
 import "./PlaygroundImplementation.css";
 
+const sandbox =
+  "https://neo-react-library-storybook.netlify.app/?path=/story/components-link--default";
+const storybook = "https://codesandbox.io/s/neo-react-link-pr4mw7";
+
 export const PlaygroundImplementation = () => {
   const [typeOption, setTypeOption] = useState<TypeOption>("standalone");
   const [iconPlacement, setIconPlacement] = useState<IconPlacement>("none");
   const [disabled, setDisabled] = useState(false);
+
+  const [iconDisabled, setIconDisabled] = useState(false);
 
   const [react, html] = useMemo(() => {
     const reactCode = prettyPrintReact(`
@@ -31,6 +41,35 @@ export const PlaygroundImplementation = () => {
     return [reactCode, htmlCode];
   }, [typeOption, iconPlacement, disabled]);
 
+  const renderLink = useCallback(() => {
+    if (typeOption === "inline") {
+      return (
+        <Link href="#main" inline disabled={disabled}>
+          Link
+        </Link>
+      );
+    } else {
+      if (iconPlacement === "none") {
+        return (
+          <Link href="#main" disabled={disabled}>
+            Link
+          </Link>
+        );
+      } else {
+        return (
+          <Link
+            href="#main"
+            disabled={disabled}
+            placement={iconPlacement === "right" ? "right" : "left"}
+            icon="print"
+          >
+            Link
+          </Link>
+        );
+      }
+    }
+  }, [iconPlacement, disabled, typeOption]);
+
   return (
     <Playground
       options={
@@ -43,9 +82,9 @@ export const PlaygroundImplementation = () => {
                 setTypeOption(e.target.value as TypeOption);
 
                 if (e.target.value === "standalone") {
-                  // enable checkbox group
+                  setIconDisabled(false);
                 } else {
-                  // disable checkbox group
+                  setIconDisabled(true);
                 }
               }}
             >
@@ -58,6 +97,7 @@ export const PlaygroundImplementation = () => {
             <RadioGroup
               groupName="icon-placement"
               selected={iconPlacement}
+              disabled={iconDisabled}
               onChange={(e) => {
                 setIconPlacement(e.target.value as IconPlacement);
               }}
@@ -92,7 +132,7 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      <a href="#">Link</a>
+      {renderLink()}
     </Playground>
   );
 };
