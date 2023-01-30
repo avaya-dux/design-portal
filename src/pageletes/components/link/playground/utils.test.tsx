@@ -41,7 +41,7 @@ describe(createReactCode.name, () => {
   });
   it("creates correctly for disabled standalone link with right icon", () => {
     expect(createReactCode("standalone", true, "right")).toMatchInlineSnapshot(
-      '"<Link href=\\"#main\\" placement=\\"right\\" disabled icon=\\"print\\">Link</Link>"'
+      '"<Link href=\\"#main\\" disabled placement=\\"right\\" icon=\\"print\\">Link</Link>"'
     );
   });
   it("creates correctly for inline link", () => {

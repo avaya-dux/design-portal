@@ -30,30 +30,27 @@ export const createReactCode = (
   disabled: boolean,
   iconPlacement: string
 ) => {
-  return `<Link ${createReacAttributes(
+  return `<Link ${createReactAttributes(
     typeOption,
     disabled,
     iconPlacement
   )}>Link</Link>`;
 };
 
-const createReacAttributes = (
+const createReactAttributes = (
   typeOption: string,
   disabled: boolean,
   iconPlacement: string
 ) => {
-  if (typeOption === "inline") {
-    return clsx('href="#main"', "inline", disabled && "disabled");
-  } else {
-    if (iconPlacement === "none") {
-      return clsx('href="#main"', disabled && "disabled");
-    } else {
-      return clsx(
-        'href="#main"',
-        `placement="${iconPlacement === "right" ? "right" : "left"}"`,
-        disabled && "disabled",
-        'icon="print"'
-      );
-    }
+  const attributes = ['href="#main"'];
+  if (disabled) {
+    attributes.push("disabled");
   }
+  if (typeOption === "inline") {
+    attributes.push("inline");
+  } else if (iconPlacement !== "none") {
+    attributes.push(`placement="${iconPlacement}"`);
+    attributes.push('icon="print"');
+  }
+  return attributes.join(" ");
 };
