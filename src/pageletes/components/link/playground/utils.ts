@@ -1,5 +1,19 @@
 import clsx from "clsx";
 
+import { prettyPrintHtml, prettyPrintReact } from "helpers";
+
+export const reactCode = (
+  typeOption: string,
+  disabled: boolean,
+  iconPlacement: string
+) => prettyPrintReact(createReactCode(typeOption, disabled, iconPlacement));
+
+export const htmlCode = (
+  typeOption: string,
+  disabled: boolean,
+  iconPlacement: string
+) => prettyPrintHtml(createHtmlCode(typeOption, disabled, iconPlacement));
+
 export const createHtmlCode = (
   typeOption: string,
   disabled: boolean,
