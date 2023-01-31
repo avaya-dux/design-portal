@@ -1,0 +1,107 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ColumnLayout,
+  InfoTable,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+  InfoTableBody,
+  InfoTableRow,
+  InfoTableCell,
+} from "components/astro";
+import { topics } from "../static";
+
+import StateActiveImage from "../imgs/text-input-states-active.svg";
+import StateDefaultImage from "../imgs/text-input-states-default.svg";
+import StateDisabledImage from "../imgs/text-input-states-disabled.svg";
+import StateHoverImage from "../imgs/text-input-states-hover.svg";
+import StateErrorImage from "../imgs/text-input-states-error.svg";
+
+const defaultImageText = "todo";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.types.id}>{topics.types.title}</SectionHeader>
+
+  <Description>
+    Types description
+  </Description>
+
+  <ColumnLayout bkgColor="white" numOfColumns={1}>
+    <ColumnLayout bkgColor="white" numOfColumns={3}>
+      <StackedLayout showBorder>
+        <Image
+          src={StateHoverImage}
+          alt="Text Input with hover state look like this"
+        />
+      </StackedLayout>
+      <StackedLayout showBorder>
+        <Image
+          src={StateActiveImage}
+          alt="Text Input with pressed state look like this"
+        />
+      </StackedLayout>
+
+      <StackedLayout showBorder>
+        <Image
+          src={StateErrorImage}
+          alt="Text Input with disabled state look like this"
+        />
+      </StackedLayout>
+      <StackedLayout showBorder>
+        <Image
+          src={StateDisabledImage}
+          alt="Text Input with disabled state look like this"
+        />
+      </StackedLayout>
+
+      <StackedLayout showBorder>
+        <Image
+          src={StateErrorImage}
+          alt="Text Input with disabled state look like this"
+        />
+      </StackedLayout>
+      <StackedLayout showBorder>
+        <Image
+          src={StateDisabledImage}
+          alt="Text Input with disabled state look like this"
+        />
+      </StackedLayout>
+    </ColumnLayout>
+  </ColumnLayout>
+
+  <InfoTable>
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell><strong>Default</strong>: Description</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>
+          <strong>Hover</strong>: Description
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>
+          <strong>Active</strong>: Description in password
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>
+          <strong>Error</strong>: Description
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>
+          <strong>Disabled</strong>: Description
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
+</PageleteSection>

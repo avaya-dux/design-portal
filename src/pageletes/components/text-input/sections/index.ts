@@ -12,3 +12,6 @@ export { States };
 
 import KeyboardInteractions from "./KeyboardInteractions.astro";
 export { KeyboardInteractions };
+
+import Types from "./Types.astro";
+export { Types };
