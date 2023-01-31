@@ -22,46 +22,11 @@ const sandbox = "https://codesandbox.io/s/neo-react-link-pr4mw7";
 
 export const PlaygroundImplementation = () => {
   const [typeOption, setTypeOption] = useState<TypeOption>("standalone");
-  const [iconPlacement, setIconPlacement] = useState<IconPlacement>("none");
   const [disabled, setDisabled] = useState(false);
 
-  const [iconDisabled, setIconDisabled] = useState(false);
-
   const [react, html] = useMemo(() => {
-    return [
-      reactCode(typeOption, disabled, iconPlacement),
-      htmlCode(typeOption, disabled, iconPlacement),
-    ];
-  }, [typeOption, iconPlacement, disabled]);
-
-  const renderLink = useCallback(() => {
-    if (typeOption === "inline") {
-      return (
-        <Link href="#main" inline disabled={disabled}>
-          Link
-        </Link>
-      );
-    }
-
-    if (iconPlacement === "none") {
-      return (
-        <Link href="#main" disabled={disabled}>
-          Link
-        </Link>
-      );
-    }
-
-    return (
-      <Link
-        href="#main"
-        disabled={disabled}
-        placement={iconPlacement}
-        icon="print"
-      >
-        Link
-      </Link>
-    );
-  }, [iconPlacement, disabled, typeOption]);
+    return [reactCode(typeOption, disabled), htmlCode(typeOption, disabled)];
+  }, [typeOption, disabled]);
 
   return (
     <Playground
@@ -73,31 +38,10 @@ export const PlaygroundImplementation = () => {
               selected={typeOption}
               onChange={(e) => {
                 setTypeOption(e.target.value as TypeOption);
-
-                if (e.target.value === "standalone") {
-                  setIconDisabled(false);
-                } else {
-                  setIconDisabled(true);
-                }
               }}
             >
               <Radio value="standalone">Standalone</Radio>
               <Radio value="inline">Inline</Radio>
-            </RadioGroup>
-          </Playground.OptionsSection>
-
-          <Playground.OptionsSection title="Variants" id="icon-placement">
-            <RadioGroup
-              groupName="icon-placement"
-              selected={iconPlacement}
-              disabled={iconDisabled}
-              onChange={(e) => {
-                setIconPlacement(e.target.value as IconPlacement);
-              }}
-            >
-              <Radio value="none">No Icon</Radio>
-              <Radio value="left">Icon on Left</Radio>
-              <Radio value="right">Icon on Right</Radio>
             </RadioGroup>
           </Playground.OptionsSection>
           <Playground.OptionsSection title="Variables" id="variables">
@@ -125,7 +69,9 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      {renderLink()}
+      <Link href="#main" inline={typeOption === "inline"} disabled={disabled}>
+        Link
+      </Link>
     </Playground>
   );
 };

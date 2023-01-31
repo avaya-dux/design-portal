@@ -2,69 +2,38 @@ import clsx from "clsx";
 
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
-export const reactCode = (
-  typeOption: string,
-  disabled: boolean,
-  iconPlacement: string
-) => prettyPrintReact(createReactCode(typeOption, disabled, iconPlacement));
+export const reactCode = (typeOption: string, disabled: boolean) =>
+  prettyPrintReact(createReactCode(typeOption, disabled));
 
-export const htmlCode = (
-  typeOption: string,
-  disabled: boolean,
-  iconPlacement: string
-) => prettyPrintHtml(createHtmlCode(typeOption, disabled, iconPlacement));
+export const htmlCode = (typeOption: string, disabled: boolean) =>
+  prettyPrintHtml(createHtmlCode(typeOption, disabled));
 
-export const createHtmlCode = (
-  typeOption: string,
-  disabled: boolean,
-  iconPlacement: string
-) => {
+export const createHtmlCode = (typeOption: string, disabled: boolean) => {
   return clsx(
     "<a",
-    `class="${createHtmlClasses(typeOption, disabled, iconPlacement)}"`,
-    iconPlacement === "right" && typeOption === "standalone" && 'dir="rtl"',
+    `class="${createHtmlClasses(typeOption, disabled)}"`,
     'href="#main">Link</a>'
   );
 };
 
-const createHtmlClasses = (
-  typeOption: string,
-  disabled: boolean,
-  iconPlacement: string
-) => {
+const createHtmlClasses = (typeOption: string, disabled: boolean) => {
   return clsx(
     "neo-link",
-    typeOption === "standalone" && iconPlacement !== "none" && "neo-icon-print",
     disabled && "neo-link__disabled",
     typeOption === "inline" && "neo-link__inline"
   );
 };
-export const createReactCode = (
-  typeOption: string,
-  disabled: boolean,
-  iconPlacement: string
-) => {
-  return `<Link ${createReactAttributes(
-    typeOption,
-    disabled,
-    iconPlacement
-  )}>Link</Link>`;
+export const createReactCode = (typeOption: string, disabled: boolean) => {
+  return `<Link ${createReactAttributes(typeOption, disabled)}>Link</Link>`;
 };
 
-const createReactAttributes = (
-  typeOption: string,
-  disabled: boolean,
-  iconPlacement: string
-) => {
+const createReactAttributes = (typeOption: string, disabled: boolean) => {
   const attributes = ['href="#main"'];
   if (disabled) {
     attributes.push("disabled");
   }
   if (typeOption === "inline") {
     attributes.push("inline");
-  } else if (iconPlacement !== "none") {
-    attributes.push(`placement="${iconPlacement}"`);
-    attributes.push('icon="print"');
   }
   return attributes.join(" ");
 };
