@@ -44,13 +44,13 @@ describe(createReactCode.name, () => {
     });
   });
   describe("inline link react code tests", () => {
-    it("when enabled and icon is none", () => {
+    it("when enabled", () => {
       expect(createReactCode("inline", false)).toMatchInlineSnapshot(
         '"<Link href=\\"#main\\" inline>Link</Link>"'
       );
     });
 
-    it("when disabled and icon is none", () => {
+    it("when disabled", () => {
       expect(createReactCode("inline", true)).toMatchInlineSnapshot(
         '"<Link href=\\"#main\\" disabled inline>Link</Link>"'
       );

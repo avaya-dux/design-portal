@@ -6,15 +6,13 @@ import {
   RadioGroup,
   Link,
 } from "@avaya/neo-react";
-import { useCallback, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 import { Playground } from "components/react";
 
 import { reactCode, htmlCode } from "./utils";
 
 type TypeOption = "standalone" | "inline";
-
-type IconPlacement = "none" | "left" | "right";
 
 const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-link";
