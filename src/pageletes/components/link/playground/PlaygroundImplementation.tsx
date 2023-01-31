@@ -57,7 +57,7 @@ export const PlaygroundImplementation = () => {
       <Link
         href="#main"
         disabled={disabled}
-        placement={iconPlacement === "right" ? "right" : "left"}
+        placement={iconPlacement}
         icon="print"
       >
         Link
