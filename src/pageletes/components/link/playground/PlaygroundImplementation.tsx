@@ -49,26 +49,26 @@ export const PlaygroundImplementation = () => {
           Link
         </Link>
       );
-    } else {
-      if (iconPlacement === "none") {
-        return (
-          <Link href="#main" disabled={disabled}>
-            Link
-          </Link>
-        );
-      } else {
-        return (
-          <Link
-            href="#main"
-            disabled={disabled}
-            placement={iconPlacement === "right" ? "right" : "left"}
-            icon="print"
-          >
-            Link
-          </Link>
-        );
-      }
     }
+
+    if (iconPlacement === "none") {
+      return (
+        <Link href="#main" disabled={disabled}>
+          Link
+        </Link>
+      );
+    }
+
+    return (
+      <Link
+        href="#main"
+        disabled={disabled}
+        placement={iconPlacement === "right" ? "right" : "left"}
+        icon="print"
+      >
+        Link
+      </Link>
+    );
   }, [iconPlacement, disabled, typeOption]);
 
   return (

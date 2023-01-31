@@ -54,4 +54,14 @@ describe(createReactCode.name, () => {
       '"<a class=\\"neo-link neo-link__disabled neo-link__inline\\" href=\\"#main\\">Link</a>"'
     );
   });
+  it("creates correctly for disabled inline link ignoring icon placement left", () => {
+    expect(createHtmlCode("inline", true, "left")).toMatchInlineSnapshot(
+      '"<a class=\\"neo-link neo-link__disabled neo-link__inline\\" href=\\"#main\\">Link</a>"'
+    );
+  });
+  it("creates correctly for disabled inline link ignoring icon placement right", () => {
+    expect(createHtmlCode("inline", true, "right")).toMatchInlineSnapshot(
+      '"<a class=\\"neo-link neo-link__disabled neo-link__inline\\" href=\\"#main\\">Link</a>"'
+    );
+  });
 });

@@ -20,7 +20,7 @@ const createHtmlClasses = (
 ) => {
   return clsx(
     "neo-link",
-    iconPlacement !== "none" && "neo-icon-print",
+    typeOption === "standalone" && iconPlacement !== "none" && "neo-icon-print",
     disabled && "neo-link__disabled",
     typeOption === "inline" && "neo-link__inline"
   );
