@@ -1,35 +1,32 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { Checkbox, CheckboxGroup, Radio, RadioGroup } from "@avaya/neo-react";
+import {
+  Checkbox,
+  CheckboxGroup,
+  Radio,
+  RadioGroup,
+  Link,
+} from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components/react";
-import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
-import { sandbox, storybook } from "../static";
-
-type TypeOption = "standalone" | "inline";
-
-type IconPlacement = "none" | "left" | "right";
+import { reactCode, htmlCode } from "./utils";
 
 import "./PlaygroundImplementation.css";
 
+type TypeOption = "standalone" | "inline";
+
+const storybook =
+  "https://neo-react-library-storybook.netlify.app/?path=/story/components-link";
+const sandbox = "https://codesandbox.io/s/neo-react-link-pr4mw7";
+
 export const PlaygroundImplementation = () => {
   const [typeOption, setTypeOption] = useState<TypeOption>("standalone");
-  const [iconPlacement, setIconPlacement] = useState<IconPlacement>("none");
   const [disabled, setDisabled] = useState(false);
 
   const [react, html] = useMemo(() => {
-    const reactCode = prettyPrintReact(`
-  <div>
-  </div>
-        `);
-
-    const htmlCode = prettyPrintHtml(`
-          <div></div>
-          `);
-
-    return [reactCode, htmlCode];
-  }, [typeOption, iconPlacement, disabled]);
+    return [reactCode(typeOption, disabled), htmlCode(typeOption, disabled)];
+  }, [typeOption, disabled]);
 
   return (
     <Playground
@@ -41,30 +38,10 @@ export const PlaygroundImplementation = () => {
               selected={typeOption}
               onChange={(e) => {
                 setTypeOption(e.target.value as TypeOption);
-
-                if (e.target.value === "standalone") {
-                  // enable checkbox group
-                } else {
-                  // disable checkbox group
-                }
               }}
             >
               <Radio value="standalone">Standalone</Radio>
               <Radio value="inline">Inline</Radio>
-            </RadioGroup>
-          </Playground.OptionsSection>
-
-          <Playground.OptionsSection title="Variants" id="icon-placement">
-            <RadioGroup
-              groupName="icon-placement"
-              selected={iconPlacement}
-              onChange={(e) => {
-                setIconPlacement(e.target.value as IconPlacement);
-              }}
-            >
-              <Radio value="none">No Icon</Radio>
-              <Radio value="left">Icon on Left</Radio>
-              <Radio value="right">Icon on Right</Radio>
             </RadioGroup>
           </Playground.OptionsSection>
           <Playground.OptionsSection title="Variables" id="variables">
@@ -92,7 +69,9 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      <a href="#">Link</a>
+      <Link href="#main" inline={typeOption === "inline"} disabled={disabled}>
+        Link
+      </Link>
     </Playground>
   );
 };

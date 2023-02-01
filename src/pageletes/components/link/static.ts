@@ -1,18 +1,4 @@
 import type { TopicsDict } from "components";
-import { prettyPrintHtml, prettyPrintReact } from "helpers";
-
-export const sandbox = "http://to.do";
-export const storybook = "http://to.do";
-
-export const defaultHtml = prettyPrintHtml(`
-  <div> 
-  todo
-  </div>
-  `);
-
-export const defaultReact = prettyPrintReact(`
-    <div>todo<div>
-  `);
 
 type LinkTopicNames =
   | "playground"
