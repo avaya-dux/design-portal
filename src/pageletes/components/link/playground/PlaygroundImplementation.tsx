@@ -12,6 +12,8 @@ import { Playground } from "components/react";
 
 import { reactCode, htmlCode } from "./utils";
 
+import "./PlaygroundImplementation.css";
+
 type TypeOption = "standalone" | "inline";
 
 const storybook =

@@ -1,0 +1,25 @@
+a.neo-link {
+  text-decoration: none;
+  color: var(--neo-color-blue-500);
+}
+a.neo-link.neo-link__inline {
+  text-decoration: underline;
+  color: var(--neo-color-blue-500);
+  padding: 0 0.25rem;
+}
+
+a.neo-link:hover:not([class*="disabled"]) {
+  color: var(--neo-color-blue-600);
+}
+a.neo-link.neo-link__inline:hover:not([class*="disabled"]) {
+  text-decoration: none;
+  color: var(--neo-color-blue-600);
+}
+
+a.neo-link.neo-link.neo-link__disabled,
+a.neo-link.neo-link__inline.neo-link__disabled {
+  cursor: not-allowed;
+  color: var(--neo-color-base-400);
+  background-color: inherit;
+  pointer-events: none;
+}
