@@ -14,9 +14,15 @@ import {
 } from "components/astro";
 import { topics } from "../static";
 
-import TypesDefaultImage from "./imgs/text-input-states-default.svg";
-
-const defaultImageText = "todo";
+import TypesDefaultImage from "./imgs/text-input-types-default.svg";
+import TypesLeftIconImage from "./imgs/text-input-types-left-icon.svg";
+import TypesRightIconImage from "./imgs/text-input-types-right-icon.svg";
+import TypesLeftRightIconsImage from "./imgs/text-input-types-left-right-icons.svg";
+import TypesPrefixImage from "./imgs/text-input-types-prefix.svg";
+import TypesSuffixImage from "./imgs/text-input-types-suffix.svg";
+import TypesPrefixSuffixImage from "./imgs/text-input-types-prefix-suffix.svg";
+import TypesLeftIconSuffixImage from "./imgs/text-input-types-left-icon-suffix.svg";
+import TypesReadOnlyImage from "./imgs/text-input-types-readonly.svg";
 ---
 
 <PageleteSection>
@@ -36,33 +42,52 @@ const defaultImageText = "todo";
       </StackedLayout>
       <StackedLayout showBorder>
         <Image
-          src={TypesDefaultImage}
+          src={TypesLeftIconImage}
           alt="Text Input with pressed state look like this"
         />
       </StackedLayout>
 
       <StackedLayout showBorder>
         <Image
-          src={TypesDefaultImage}
-          alt="Text Input with disabled state look like this"
-        />
-      </StackedLayout>
-      <StackedLayout showBorder>
-        <Image
-          src={TypesDefaultImage}
+          src={TypesRightIconImage}
           alt="Text Input with disabled state look like this"
         />
       </StackedLayout>
 
       <StackedLayout showBorder>
         <Image
-          src={TypesDefaultImage}
+          src={TypesLeftRightIconsImage}
           alt="Text Input with disabled state look like this"
         />
       </StackedLayout>
       <StackedLayout showBorder>
         <Image
-          src={TypesDefaultImage}
+          src={TypesPrefixImage}
+          alt="Text Input with disabled state look like this"
+        />
+      </StackedLayout>
+      <StackedLayout showBorder>
+        <Image
+          src={TypesSuffixImage}
+          alt="Text Input with disabled state look like this"
+        />
+      </StackedLayout>
+
+      <StackedLayout showBorder>
+        <Image
+          src={TypesPrefixSuffixImage}
+          alt="Text Input with disabled state look like this"
+        />
+      </StackedLayout>
+      <StackedLayout showBorder>
+        <Image
+          src={TypesLeftIconSuffixImage}
+          alt="Text Input with disabled state look like this"
+        />
+      </StackedLayout>
+      <StackedLayout showBorder>
+        <Image
+          src={TypesReadOnlyImage}
           alt="Text Input with disabled state look like this"
         />
       </StackedLayout>
