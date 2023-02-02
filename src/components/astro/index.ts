@@ -5,6 +5,9 @@ export { ColumnLayout };
 import Description from "./Description.astro";
 export { Description };
 
+import ImageWrapper from "./ImageWrapper.astro";
+export { ImageWrapper };
+
 import PageleteSection from "./PageleteSection.astro";
 export { PageleteSection };
 
