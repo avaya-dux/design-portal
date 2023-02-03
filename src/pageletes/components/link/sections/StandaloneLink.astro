@@ -51,17 +51,17 @@ const usageImgDontAltText = "Do not underline standalone links.";
 
   <ColumnLayout bkgColor="white" numOfColumns={3}>
     <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
-      <div>Default</div>
+      <div class="no-borders">Default</div>
       <Image src={StandaloneStateDefault} alt="Standalone Default Link" />
     </StackedLayout>
 
     <StackedLayout showBorder>
-      <div>Hover</div>
+      <div class="no-borders">Hover</div>
       <Image src={StandaloneStateHover} alt="Standalone Hover Link" />
     </StackedLayout>
 
     <StackedLayout showBorder>
-      <div>Disabled</div>
+      <div class="no-borders">Disabled</div>
       <Image src={StandaloneStateDisabled} alt="Standalone Disabled Link" />
     </StackedLayout>
   </ColumnLayout>
@@ -108,7 +108,7 @@ const usageImgDontAltText = "Do not underline standalone links.";
   </Description>
   <ColumnLayout bkgColor="white" numOfColumns={3}>
     <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
-      <div>Default</div>
+      <div class="no-borders">Default</div>
       <Image
         src={StandaloneIconDefault}
         alt="Standalone Default Link with Icon"
@@ -116,12 +116,12 @@ const usageImgDontAltText = "Do not underline standalone links.";
     </StackedLayout>
 
     <StackedLayout showBorder>
-      <div>Hover</div>
+      <div class="no-borders">Hover</div>
       <Image src={StandaloneIconHover} alt="Standalone Hover Link with Icon" />
     </StackedLayout>
 
     <StackedLayout showBorder>
-      <div>Disabled</div>
+      <div class="no-borders">Disabled</div>
       <Image src={StandaloneIconDisabled} alt="Standalone Disabled Link Icon" />
     </StackedLayout>
   </ColumnLayout>
@@ -179,3 +179,9 @@ const usageImgDontAltText = "Do not underline standalone links.";
     </DoAndDont.DontContainer>
   </DoAndDont>
 </PageleteSection>
+
+<style>
+  div.no-borders {
+    border: none;
+  }
+</style>

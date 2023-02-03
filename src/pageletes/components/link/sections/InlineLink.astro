@@ -43,17 +43,17 @@ const usageImgDontAltText =
 
   <ColumnLayout bkgColor="white" numOfColumns={3}>
     <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
-      <div>Default</div>
+      <div class="no-borders">Default</div>
       <Image src={InlineLinkStateDefault} alt="Inline Default Link" />
     </StackedLayout>
 
     <StackedLayout showBorder>
-      <div>Hover</div>
+      <div class="no-borders">Hover</div>
       <Image src={InlineLinkStateHover} alt="Inline Hover Link" />
     </StackedLayout>
 
     <StackedLayout showBorder>
-      <div>Disabled</div>
+      <div class="no-borders">Disabled</div>
       <Image src={InlineLinkStateDisabled} alt="Inline Disabled Link" />
     </StackedLayout>
   </ColumnLayout>
@@ -115,3 +115,9 @@ const usageImgDontAltText =
     </DoAndDont.DontContainer>
   </DoAndDont>
 </PageleteSection>
+
+<style>
+  div.no-borders {
+    border: none;
+  }
+</style>
