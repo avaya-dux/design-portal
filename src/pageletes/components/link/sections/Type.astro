@@ -4,6 +4,7 @@ import {
   Description,
   ColumnLayout,
   PageleteSection,
+  PageleteSubSection,
   SectionHeader,
   SubHeader,
   InfoTable,
@@ -31,110 +32,115 @@ const { id, title } = topics.type;
     {title}
   </SectionHeader>
   <Description>Lorem ipsum</Description>
-  <SubHeader id="type-standalone">Standalone</SubHeader>
-  <Description>
-    A Standalone Link can appear anywhere on the page that is not embedded into
-    text (in a sentence or paragraph). It exists independently, such as in a
-    table of contents, a list, or a directory.
-  </Description>
-  <Description>
-    Standalone links are not underlined as that can make them difficult to read
-    when grouped together into tables of contents or lists, etc. Icons cannot be
-    attached to a Standalone link.
-  </Description>
+  <PageleteSubSection marginTop="4rem">
+    <SubHeader id="type-standalone">Standalone</SubHeader>
+    <Description>
+      A Standalone Link can appear anywhere on the page that is not embedded
+      into text (in a sentence or paragraph). It exists independently, such as
+      in a table of contents, a list, or a directory.
+    </Description>
+    <Description>
+      Standalone links are not underlined as that can make them difficult to
+      read when grouped together into tables of contents or lists, etc. Icons
+      cannot be attached to a Standalone link.
+    </Description>
 
-  <ColumnLayout bkgColor="white" numOfColumns={3}>
-    <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
-      <div>Default</div>
-      <Image src={StandaloneStateDefault} alt="Standalone Default Link" />
-    </StackedLayout>
+    <ColumnLayout bkgColor="white" numOfColumns={3}>
+      <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
+        <div>Default</div>
+        <Image src={StandaloneStateDefault} alt="Standalone Default Link" />
+      </StackedLayout>
 
-    <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
-      <div>Hover</div>
-      <Image src={StandaloneStateHover} alt="Standalone Hover Link" />
-    </StackedLayout>
+      <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
+        <div>Hover</div>
+        <Image src={StandaloneStateHover} alt="Standalone Hover Link" />
+      </StackedLayout>
 
-    <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
-      <div>Disabled</div>
-      <Image src={StandaloneStateDisabled} alt="Standalone Disabled Link" />
-    </StackedLayout>
-  </ColumnLayout>
+      <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
+        <div>Disabled</div>
+        <Image src={StandaloneStateDisabled} alt="Standalone Disabled Link" />
+      </StackedLayout>
+    </ColumnLayout>
 
-  <InfoTable isBulletedList>
-    <InfoTableBody>
-      <InfoTableRow>
-        <InfoTableCell>
-          1. <strong>Default</strong>: The default state of the Standalone link
-          is blue text without any underlining.
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoTable isBulletedList>
+      <InfoTableBody>
+        <InfoTableRow>
+          <InfoTableCell>
+            1. <strong>Default</strong>: The default state of the Standalone
+            link is blue text without any underlining.
+          </InfoTableCell>
+        </InfoTableRow>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          2. <strong>Hover</strong>: When the user moves focus onto the link, it
-          becomes underlined. Selecting the link in this state will jump the
-          user to the specified location.
-        </InfoTableCell>
-      </InfoTableRow>
+        <InfoTableRow>
+          <InfoTableCell>
+            2. <strong>Hover</strong>: When the user moves focus onto the link,
+            it becomes underlined. Selecting the link in this state will jump
+            the user to the specified location.
+          </InfoTableCell>
+        </InfoTableRow>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          3. <strong>Disabled</strong>: A link that is disabled appears on the
-          page, but is currently unavailable. For example, when something has to
-          happen (i.e. create a user name, fill in a field) before the link
-          becomes active.
-        </InfoTableCell>
-      </InfoTableRow>
-    </InfoTableBody>
-  </InfoTable>
-  <SubHeader id="type-inline">Inline</SubHeader>
-  <Description>
-    An Inline Link appears as part of the text. It is an active word or words
-    that are part of a sentence. Inline links are underlined as it helps to make
-    them easily visible among the other text.
-  </Description>
+        <InfoTableRow>
+          <InfoTableCell>
+            3. <strong>Disabled</strong>: A link that is disabled appears on the
+            page, but is currently unavailable. For example, when something has
+            to happen (i.e. create a user name, fill in a field) before the link
+            becomes active.
+          </InfoTableCell>
+        </InfoTableRow>
+      </InfoTableBody>
+    </InfoTable>
+  </PageleteSubSection>
 
-  <ColumnLayout bkgColor="white" numOfColumns={3}>
-    <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
-      <div>Default</div>
-      <Image src={InlineLinkStateDefault} alt="Inline Default Link" />
-    </StackedLayout>
+  <PageleteSubSection>
+    <SubHeader id="type-inline">Inline</SubHeader>
+    <Description>
+      An Inline Link appears as part of the text. It is an active word or words
+      that are part of a sentence. Inline links are underlined as it helps to
+      make them easily visible among the other text.
+    </Description>
 
-    <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
-      <div>Hover</div>
-      <Image src={InlineLinkStateHover} alt="Inline Hover Link" />
-    </StackedLayout>
+    <ColumnLayout bkgColor="white" numOfColumns={3}>
+      <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
+        <div>Default</div>
+        <Image src={InlineLinkStateDefault} alt="Inline Default Link" />
+      </StackedLayout>
 
-    <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
-      <div>Disabled</div>
-      <Image src={InlineLinkStateDisabled} alt="Inline Disabled Link" />
-    </StackedLayout>
-  </ColumnLayout>
-  <InfoTable isBulletedList>
-    <InfoTableBody>
-      <InfoTableRow>
-        <InfoTableCell>
-          1. <strong>Default</strong>: The default state of an Inline link is
-          underlined blue text.
-        </InfoTableCell>
-      </InfoTableRow>
+      <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
+        <div>Hover</div>
+        <Image src={InlineLinkStateHover} alt="Inline Hover Link" />
+      </StackedLayout>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          2. <strong>Hover</strong>: When the user move focus onto the link, the
-          underlining is removed. Selecting the link in this state will jump the
-          user to the specified location.
-        </InfoTableCell>
-      </InfoTableRow>
+      <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
+        <div>Disabled</div>
+        <Image src={InlineLinkStateDisabled} alt="Inline Disabled Link" />
+      </StackedLayout>
+    </ColumnLayout>
+    <InfoTable isBulletedList>
+      <InfoTableBody>
+        <InfoTableRow>
+          <InfoTableCell>
+            1. <strong>Default</strong>: The default state of an Inline link is
+            underlined blue text.
+          </InfoTableCell>
+        </InfoTableRow>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          3. <strong>Disabled</strong>: A link that is disabled appears on the
-          page, but is currently unavailable. For example, when something has to
-          happen (i.e. create a user name, fill in a field) before the link
-          becomes active.
-        </InfoTableCell>
-      </InfoTableRow>
-    </InfoTableBody>
-  </InfoTable>
+        <InfoTableRow>
+          <InfoTableCell>
+            2. <strong>Hover</strong>: When the user move focus onto the link,
+            the underlining is removed. Selecting the link in this state will
+            jump the user to the specified location.
+          </InfoTableCell>
+        </InfoTableRow>
+
+        <InfoTableRow>
+          <InfoTableCell>
+            3. <strong>Disabled</strong>: A link that is disabled appears on the
+            page, but is currently unavailable. For example, when something has
+            to happen (i.e. create a user name, fill in a field) before the link
+            becomes active.
+          </InfoTableCell>
+        </InfoTableRow>
+      </InfoTableBody>
+    </InfoTable>
+  </PageleteSubSection>
 </PageleteSection>
