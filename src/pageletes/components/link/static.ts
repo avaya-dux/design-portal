@@ -2,8 +2,8 @@ import type { TopicsDict } from "components";
 
 type LinkTopicNames =
   | "playground"
-  | "standalone"
-  | "inline"
+  | "type"
+  | "behavior"
   | "keyboard"
   | "related";
 
@@ -13,8 +13,8 @@ export const topics: TopicsDict<LinkTopicNames> = {
     id: "link-playground",
     title: "Interactive Playground",
   },
-  standalone: { order: 1, id: "link-standalone", title: "Standalone Link" },
-  inline: { order: 2, id: "link-inline", title: "Inline Link" },
+  type: { order: 1, id: "link-type", title: "Type" },
+  behavior: { order: 2, id: "link-behavior", title: "Behavior" },
   keyboard: {
     order: 3,
     id: "link-keyboard-interactions",

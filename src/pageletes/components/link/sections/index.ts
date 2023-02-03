@@ -5,11 +5,11 @@ export { Intro };
 import LinkPlayground from "./LinkPlayground.astro";
 export { LinkPlayground };
 
-import StandaloneLink from "./StandaloneLink.astro";
-export { StandaloneLink };
+import Type from "./Type.astro";
+export { Type };
 
-import InlineLink from "./InlineLink.astro";
-export { InlineLink };
+import Behavior from "./Behavior.astro";
+export { Behavior };
 
 import KeyboardInteractions from "./KeyboardInteractions.astro";
 export { KeyboardInteractions };
