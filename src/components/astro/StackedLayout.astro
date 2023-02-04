@@ -4,10 +4,7 @@ export interface Props {
   vPadding?: string;
 }
 
-const {
-  gap = "3rem",
-  vPadding = "3rem",
-} = Astro.props as Props;
+const { gap = "3rem", vPadding = "3rem" } = Astro.props as Props;
 ---
 
 <div class="stack-container">

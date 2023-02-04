@@ -20,10 +20,9 @@ const {
 
 const borderPatternClass = clsx(
   "variable-grid-columns",
-  showGridlines && `variable-grid-columns gridlines-enabled grid-borders-${numOfColumns}-columns`
+  showGridlines &&
+    `variable-grid-columns gridlines-enabled grid-borders-${numOfColumns}-columns`
 );
-
-
 ---
 
 <div class={borderPatternClass}>
@@ -46,21 +45,21 @@ const borderPatternClass = clsx(
     border-right: none;
   }
 
-  .grid-borders-1-columns :global(div:nth-child(n+2)) {
+  .grid-borders-1-columns :global(div:nth-child(n + 2)) {
     border-top: none;
   }
   .grid-borders-1-columns :global(div:nth-child(n)) {
     border-right: 1px solid var(--neo-color-base-200);
   }
 
-  .grid-borders-2-columns :global(div:nth-child(n+3)) {
+  .grid-borders-2-columns :global(div:nth-child(n + 3)) {
     border-top: none;
   }
   .grid-borders-2-columns :global(div:nth-child(2n)) {
     border-right: 1px solid var(--neo-color-base-200);
   }
 
-  .grid-borders-3-columns :global(div:nth-child(n+4)) {
+  .grid-borders-3-columns :global(div:nth-child(n + 4)) {
     border-top: none;
   }
 
@@ -68,7 +67,7 @@ const borderPatternClass = clsx(
     border-right: 1px solid var(--neo-color-base-200);
   }
 
-  .grid-borders-4-columns :global(div:nth-child(n+5)) {
+  .grid-borders-4-columns :global(div:nth-child(n + 5)) {
     border-top: none;
   }
 

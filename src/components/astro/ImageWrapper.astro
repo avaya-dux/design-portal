@@ -4,17 +4,10 @@ export interface Props {
   showBorders?: boolean;
 }
 
-const {
-  showBorders = true,
-} = Astro.props as Props;
+const { showBorders = true } = Astro.props as Props;
 ---
 
-<div
-  class={clsx(
-    "image-centered",
-    showBorders && "show-borders"
-  )}
->
+<div class={clsx("image-centered", showBorders && "show-borders")}>
   <slot />
 </div>
 
