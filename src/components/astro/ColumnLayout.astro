@@ -5,18 +5,27 @@ export interface Props {
   numOfColumns: number;
   gap?: string;
   bkgColor?: string;
+  showGridlines?: boolean;
 }
 
 const {
   marginTop = "0",
   marginBottom = "1.5rem",
-  numOfColumns,
+  numOfColumns = 1,
   gap = "0",
   bkgColor = "transparent",
+  showGridlines = true,
 } = Astro.props as Props;
+
+const borderPatternClass = showGridlines ?
+ `variable-grid-columns gridlines-enabled grid-borders-${numOfColumns}-columns`
+ : "variable-grid-columns";
+
+
+
 ---
 
-<div class="variable-grid-columns">
+<div class={borderPatternClass}>
   <slot />
 </div>
 
@@ -28,5 +37,41 @@ const {
     background-color: var(--bkgColor);
     margin-top: var(--marginTop);
     margin-bottom: var(--marginBottom);
+  }
+
+  /* Children border logic starts below */
+  .gridlines-enabled :global(div) {
+    border: 1px solid var(--neo-color-base-200);
+    border-right: none;
+  }
+
+  .grid-borders-1-columns :global(div:nth-child(n+2)) {
+    border-top: none;
+  }
+  .grid-borders-1-columns :global(div:nth-child(n)) {
+    border-right: 1px solid var(--neo-color-base-200);
+  }
+
+  .grid-borders-2-columns :global(div:nth-child(n+3)) {
+    border-top: none;
+  }
+  .grid-borders-2-columns :global(div:nth-child(2n)) {
+    border-right: 1px solid var(--neo-color-base-200);
+  }
+
+  .grid-borders-3-columns :global(div:nth-child(n+4)) {
+    border-top: none;
+  }
+
+  .grid-borders-3-columns :global(div:nth-child(3n)) {
+    border-right: 1px solid var(--neo-color-base-200);
+  }
+
+  .grid-borders-4-columns :global(div:nth-child(n+5)) {
+    border-top: none;
+  }
+
+  .grid-borders-4-columns :global(div:nth-child(4n)) {
+    border-right: 1px solid var(--neo-color-base-200);
   }
 </style>
