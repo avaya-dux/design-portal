@@ -155,3 +155,12 @@
   + label:not(.neo-switch):first-of-type {
   margin-top: 0.75rem;
 }
+
+.icon-filters__section
+  :global
+  div.neo-radio-group
+  input.neo-radio
+  + label:not(.neo-switch):nth-of-type(2) {
+  margin-top: 0;
+  padding-top: 3px;
+}
