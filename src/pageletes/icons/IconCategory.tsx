@@ -59,6 +59,6 @@ export const IconCategory = ({ category }: { category: string }) => {
       </div>
     </div>
   ) : (
-    <div>No Icons</div>
+    <div />
   );
 };
