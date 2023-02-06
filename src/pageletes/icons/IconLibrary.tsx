@@ -7,7 +7,6 @@ import clsx from "clsx";
 
 import {
   categoriesToFilterFor,
-  themesToFilterFor,
   variationsToFilterFor,
 } from "./helpers/iconPageState";
 import { useStore } from "@nanostores/react";
@@ -31,7 +30,6 @@ export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
     useState<number>(icons.length);
 
   const filteredCategories = useStore(categoriesToFilterFor);
-  const filteredTheme = useStore(themesToFilterFor);
 
   const searchIconNameFor = useStore(searchFor);
   const filteredVariations = useStore(variationsToFilterFor);
@@ -71,7 +69,7 @@ export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
   const totalNumberOfIconsDisplayedString = `${totalNumberOfIconsDisplayed} icons displayed`;
 
   return (
-    <div className={`${styles["icon-library"]} neo-${filteredTheme}`}>
+    <div className={`${styles["icon-library"]}`}>
       <Chip
         variant="default"
         role="alert"
