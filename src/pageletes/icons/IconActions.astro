@@ -35,7 +35,7 @@ import { IconSearch } from "./IconSearch";
     background-color: var(--global-background);
   }
 
-  .icon__actions .icon__actions__search {
+  .icon__actions :global(.icon__actions__search) {
     flex-grow: 1;
     margin-right: 1rem;
   }
@@ -57,7 +57,7 @@ import { IconSearch } from "./IconSearch";
     .icon__actions {
       display: block;
     }
-    .icon__actions .icon__actions__search {
+    .icon__actions :global(.icon__actions__search) {
       margin-bottom: 1rem;
     }
     .icon__actions a.icon__actions__link:not(:last-child) {
