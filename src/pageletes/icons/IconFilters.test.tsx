@@ -3,11 +3,13 @@ import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import { cleanStores, keepMount } from "nanostores";
 
-import { isLeftNavigationOpen } from "components/react/utils/layoutState";
+import {
+  themesToFilterFor,
+  isLeftNavigationOpen,
+} from "components/react/utils/layoutState";
 
 import {
   categoriesToFilterFor,
-  themesToFilterFor,
   variationsToFilterFor,
 } from "./helpers/iconPageState";
 import { iconCategories } from "./helpers/icons";

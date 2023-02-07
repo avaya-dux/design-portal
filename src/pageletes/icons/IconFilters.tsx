@@ -9,11 +9,13 @@ import { useStore } from "@nanostores/react";
 import clsx from "clsx";
 import { useCallback, useEffect, useState } from "react";
 
-import { isLeftNavigationOpen } from "components/react/utils/layoutState";
+import {
+  isLeftNavigationOpen,
+  themesToFilterFor,
+} from "components/react/utils/layoutState";
 
 import {
   categoriesToFilterFor,
-  themesToFilterFor,
   variationsToFilterFor,
 } from "./helpers/iconPageState";
 import styles from "./IconFilters.module.css";
