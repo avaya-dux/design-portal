@@ -1,32 +1,21 @@
 ---
 export interface Props {
-  showBorder?: boolean;
   gap?: string;
   vPadding?: string;
 }
 
-const {
-  showBorder = false,
-  gap = "3rem",
-  vPadding = "3rem",
-} = Astro.props as Props;
-
-let borderStyle = showBorder ? "solid" : "none";
+const { gap = "3rem", vPadding = "3rem" } = Astro.props as Props;
 ---
 
 <div class="stack-container">
   <slot />
 </div>
 
-<style define:vars={{ borderStyle, gap, vPadding }}>
+<style define:vars={{ gap, vPadding }}>
   div.stack-container {
     display: flex;
     flex-direction: column;
     gap: var(--gap);
-    border-width: 1px;
-    border-style: var(--borderStyle);
-    border-color: var(--neo-color-base-200);
-    border-right: none;
     align-items: center;
     padding-top: var(--vPadding);
     padding-bottom: var(--vPadding);
@@ -36,11 +25,5 @@ let borderStyle = showBorder ? "solid" : "none";
     flex-grow: 0;
     flex-shrink: 0;
     width: max-content;
-  }
-
-  div.stack-container:last-child {
-    border-right-style: var(--borderStyle);
-    border-right-color: var(--neo-color-base-200);
-    border-right-width: 1px;
   }
 </style>

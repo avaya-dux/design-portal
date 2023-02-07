@@ -1,0 +1,124 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ColumnLayout,
+  InfoTable,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+  InfoTableBody,
+  InfoTableRow,
+  InfoTableCell,
+} from "components/astro";
+import { topics } from "../static";
+
+import TypesDefaultImage from "./imgs/text-input-types-default.svg";
+import TypesLeftIconImage from "./imgs/text-input-types-left-icon.svg";
+import TypesRightIconImage from "./imgs/text-input-types-right-icon.svg";
+import TypesLeftRightIconsImage from "./imgs/text-input-types-left-right-icons.svg";
+import TypesPrefixImage from "./imgs/text-input-types-prefix.svg";
+import TypesSuffixImage from "./imgs/text-input-types-suffix.svg";
+import TypesPrefixSuffixImage from "./imgs/text-input-types-prefix-suffix.svg";
+import TypesLeftIconSuffixImage from "./imgs/text-input-types-left-icon-suffix.svg";
+import TypesReadOnlyImage from "./imgs/text-input-types-readonly.svg";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.types.id}>{topics.types.title}</SectionHeader>
+
+  <Description>Types description</Description>
+
+  <ColumnLayout bkgColor="white" numOfColumns={3}>
+    <StackedLayout>
+      <Image
+        src={TypesDefaultImage}
+        alt="Text Input with hover state look like this"
+      />
+    </StackedLayout>
+    <StackedLayout>
+      <Image
+        src={TypesLeftIconImage}
+        alt="Text Input with pressed state look like this"
+      />
+    </StackedLayout>
+
+    <StackedLayout>
+      <Image
+        src={TypesRightIconImage}
+        alt="Text Input with disabled state look like this"
+      />
+    </StackedLayout>
+
+    <StackedLayout>
+      <Image
+        src={TypesLeftRightIconsImage}
+        alt="Text Input with disabled state look like this"
+      />
+    </StackedLayout>
+    <StackedLayout>
+      <Image
+        src={TypesPrefixImage}
+        alt="Text Input with disabled state look like this"
+      />
+    </StackedLayout>
+    <StackedLayout>
+      <Image
+        src={TypesSuffixImage}
+        alt="Text Input with disabled state look like this"
+      />
+    </StackedLayout>
+
+    <StackedLayout>
+      <Image
+        src={TypesPrefixSuffixImage}
+        alt="Text Input with disabled state look like this"
+      />
+    </StackedLayout>
+    <StackedLayout>
+      <Image
+        src={TypesLeftIconSuffixImage}
+        alt="Text Input with disabled state look like this"
+      />
+    </StackedLayout>
+    <StackedLayout>
+      <Image
+        src={TypesReadOnlyImage}
+        alt="Text Input with disabled state look like this"
+      />
+    </StackedLayout>
+  </ColumnLayout>
+
+  <InfoTable>
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell><strong>Default</strong>: Description</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>
+          <strong>Hover</strong>: Description
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>
+          <strong>Active</strong>: Description in password
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>
+          <strong>Error</strong>: Description
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>
+          <strong>Disabled</strong>: Description
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
+</PageleteSection>

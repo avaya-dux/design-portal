@@ -14,11 +14,11 @@ import {
 } from "components/astro";
 import { topics } from "../static";
 
-import StateActiveImage from "../imgs/text-input-states-active.svg";
-import StateDefaultImage from "../imgs/text-input-states-default.svg";
-import StateDisabledImage from "../imgs/text-input-states-disabled.svg";
-import StateHoverImage from "../imgs/text-input-states-hover.svg";
-import StateErrorImage from "../imgs/text-input-states-error.svg";
+import StateActiveImage from "./imgs/text-input-states-active.svg";
+import StateDefaultImage from "./imgs/text-input-states-default.svg";
+import StateDisabledImage from "./imgs/text-input-states-disabled.svg";
+import StateHoverImage from "./imgs/text-input-states-hover.svg";
+import StateErrorImage from "./imgs/text-input-states-error.svg";
 
 const defaultImageText = "todo";
 ---
@@ -32,30 +32,30 @@ const defaultImageText = "todo";
   </Description>
 
   <ColumnLayout bkgColor="white" numOfColumns={1}>
-    <StackedLayout showBorder>
+    <StackedLayout>
       <Image src={StateDefaultImage} alt={defaultImageText} />
     </StackedLayout>
     <ColumnLayout bkgColor="white" numOfColumns={2}>
-      <StackedLayout showBorder>
+      <StackedLayout>
         <Image
           src={StateHoverImage}
           alt="Text Input with hover state look like this"
         />
       </StackedLayout>
-      <StackedLayout showBorder>
+      <StackedLayout>
         <Image
           src={StateActiveImage}
           alt="Text Input with pressed state look like this"
         />
       </StackedLayout>
 
-      <StackedLayout showBorder>
+      <StackedLayout>
         <Image
           src={StateErrorImage}
           alt="Text Input with disabled state look like this"
         />
       </StackedLayout>
-      <StackedLayout showBorder>
+      <StackedLayout>
         <Image
           src={StateDisabledImage}
           alt="Text Input with disabled state look like this"

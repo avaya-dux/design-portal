@@ -47,17 +47,17 @@ const { id, title } = topics.type;
 
     <ColumnLayout bkgColor="white" numOfColumns={3}>
       <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
-        <div>Default</div>
+        <div class="no-borders">Default</div>
         <Image src={StandaloneStateDefault} alt="Standalone Default Link" />
       </StackedLayout>
 
       <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
-        <div>Hover</div>
+        <div class="no-borders">Hover</div>
         <Image src={StandaloneStateHover} alt="Standalone Hover Link" />
       </StackedLayout>
 
       <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
-        <div>Disabled</div>
+        <div class="no-borders">Disabled</div>
         <Image src={StandaloneStateDisabled} alt="Standalone Disabled Link" />
       </StackedLayout>
     </ColumnLayout>
@@ -101,17 +101,17 @@ const { id, title } = topics.type;
 
     <ColumnLayout bkgColor="white" numOfColumns={3}>
       <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
-        <div>Default</div>
+        <div class="no-borders">Default</div>
         <Image src={InlineLinkStateDefault} alt="Inline Default Link" />
       </StackedLayout>
 
       <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
-        <div>Hover</div>
+        <div class="no-borders">Hover</div>
         <Image src={InlineLinkStateHover} alt="Inline Hover Link" />
       </StackedLayout>
 
       <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
-        <div>Disabled</div>
+        <div class="no-borders">Disabled</div>
         <Image src={InlineLinkStateDisabled} alt="Inline Disabled Link" />
       </StackedLayout>
     </ColumnLayout>
@@ -144,3 +144,9 @@ const { id, title } = topics.type;
     </InfoTable>
   </PageleteSubSection>
 </PageleteSection>
+
+<style>
+  div.no-borders {
+    border: none;
+  }
+</style>
