@@ -58,5 +58,7 @@ export const IconCategory = ({ category }: { category: string }) => {
         ))}
       </div>
     </div>
-  ) : undefined;
+  ) : (
+    <div />
+  );
 };

@@ -5,7 +5,7 @@ export interface Props {
 
 import { NeoThemeProvider } from "@avaya/neo-react";
 
-import { SiteHeader, SiteFooter } from "components";
+import { SiteHeader, SiteFooter, DynamicTheme } from "components";
 
 import LeftPanel from "./LeftPanel.astro";
 
@@ -61,13 +61,21 @@ switch (pathname.split("/")[1]) {
         showToggleBtn={leftNavPages.length > 0}
         client:load
       />
-
       <div class="main__wrapper">
         <LeftPanel pages={leftNavPages} />
-
-        <main id="main-content">
-          <slot />
-        </main>
+        {
+          pathname.endsWith("icons") ? (
+            <DynamicTheme client:only="react">
+              <main id="main-content">
+                <slot />
+              </main>
+            </DynamicTheme>
+          ) : (
+            <main id="main-content">
+              <slot />
+            </main>
+          )
+        }
       </div>
 
       <SiteFooter />
@@ -88,6 +96,12 @@ switch (pathname.split("/")[1]) {
       body {
         font-size: 1rem;
         color: var(--global-font-color);
+      }
+
+      .main__theme__styles {
+        width: 100%;
+        color: var(--global-font-color);
+        background-color: var(--global-background);
       }
 
       /* mobile */

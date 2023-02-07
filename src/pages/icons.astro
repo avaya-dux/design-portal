@@ -14,13 +14,19 @@ const sortedCategories = iconCategories.sort((a, b) => (a > b ? 1 : -1));
   <div class="icons-page-wrapper">
     <Intro />
 
-    <IconActions />
+    <div class="icon-actions-sticky-wrapper">
+      <IconActions />
+    </div>
 
     <IconLibrary allCategories={sortedCategories} client:load />
   </div>
 </Layout>
 
 <style>
+  .icon-actions-sticky-wrapper {
+    position: sticky;
+    top: 3.5rem;
+  }
   @media (max-width: 1280px) {
     .icons-page-wrapper {
       margin-left: 3.5rem;
