@@ -35,34 +35,35 @@ const defaultImageText = "todo";
     <StackedLayout>
       <Image src={StateDefaultImage} alt={defaultImageText} />
     </StackedLayout>
-    <ColumnLayout bkgColor="white" numOfColumns={2}>
-      <StackedLayout>
-        <Image
-          src={StateHoverImage}
-          alt="Text Input with hover state look like this"
-        />
-      </StackedLayout>
-      <StackedLayout>
-        <Image
-          src={StateActiveImage}
-          alt="Text Input with pressed state look like this"
-        />
-      </StackedLayout>
-
-      <StackedLayout>
-        <Image
-          src={StateErrorImage}
-          alt="Text Input with disabled state look like this"
-        />
-      </StackedLayout>
-      <StackedLayout>
-        <Image
-          src={StateDisabledImage}
-          alt="Text Input with disabled state look like this"
-        />
-      </StackedLayout>
-    </ColumnLayout>
   </ColumnLayout>
+  <ColumnLayout marginTop="-1.5rem" showTopBorder={false} bkgColor="white" numOfColumns={2}>
+    <StackedLayout>
+      <Image
+        src={StateHoverImage}
+        alt="Text Input with hover state look like this"
+      />
+    </StackedLayout>
+    <StackedLayout>
+      <Image
+        src={StateActiveImage}
+        alt="Text Input with pressed state look like this"
+      />
+    </StackedLayout>
+
+    <StackedLayout>
+      <Image
+        src={StateErrorImage}
+        alt="Text Input with disabled state look like this"
+      />
+    </StackedLayout>
+    <StackedLayout>
+      <Image
+        src={StateDisabledImage}
+        alt="Text Input with disabled state look like this"
+      />
+    </StackedLayout>
+  </ColumnLayout>
+
 
   <InfoTable>
     <InfoTableBody>
