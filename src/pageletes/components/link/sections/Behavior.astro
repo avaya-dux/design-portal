@@ -94,24 +94,21 @@ const standaloneUsageImgDontAltText = "Do not underline standalone links.";
       file, or go to a data entry screen.
     </Description>
     <ColumnLayout bkgColor="white" numOfColumns={3}>
-      <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
-        <div class="no-borders">Default</div>
+      <StackedLayout label="Default" vPadding="2.8rem" gap="2.8rem">
         <Image
           src={StandaloneIconDefault}
           alt="Standalone Default Link with Icon"
         />
       </StackedLayout>
 
-      <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
-        <div class="no-borders">Hover</div>
+      <StackedLayout label="Hover" vPadding="2.8rem" gap="2.8rem">
         <Image
           src={StandaloneIconHover}
           alt="Standalone Hover Link with Icon"
         />
       </StackedLayout>
 
-      <StackedLayout vPadding="2.8rem" gap="2.8rem" showBorder>
-        <div class="no-borders">Disabled</div>
+      <StackedLayout label="Disabled" vPadding="2.8rem" gap="2.8rem">
         <Image
           src={StandaloneIconDisabled}
           alt="Standalone Disabled Link Icon"
@@ -178,9 +175,3 @@ const standaloneUsageImgDontAltText = "Do not underline standalone links.";
     </DoAndDont>
   </PageleteSubSection>
 </PageleteSection>
-
-<style>
-  div.no-borders {
-    border: none;
-  }
-</style>

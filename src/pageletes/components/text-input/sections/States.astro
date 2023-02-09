@@ -32,31 +32,31 @@ const defaultImageText = "todo";
   </Description>
 
   <ColumnLayout bkgColor="white" numOfColumns={1}>
-    <StackedLayout>
+    <StackedLayout label="Default">
       <Image src={StateDefaultImage} alt={defaultImageText} />
     </StackedLayout>
   </ColumnLayout>
   <ColumnLayout marginTop="-1.5rem" showTopBorder={false} bkgColor="white" numOfColumns={2}>
-    <StackedLayout>
+    <StackedLayout label="Hover">
       <Image
         src={StateHoverImage}
         alt="Text Input with hover state look like this"
       />
     </StackedLayout>
-    <StackedLayout>
+    <StackedLayout label="Active">
       <Image
         src={StateActiveImage}
         alt="Text Input with pressed state look like this"
       />
     </StackedLayout>
 
-    <StackedLayout>
+    <StackedLayout label="Error">
       <Image
         src={StateErrorImage}
         alt="Text Input with disabled state look like this"
       />
     </StackedLayout>
-    <StackedLayout>
+    <StackedLayout label="Disabled">
       <Image
         src={StateDisabledImage}
         alt="Text Input with disabled state look like this"

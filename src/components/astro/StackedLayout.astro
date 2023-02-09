@@ -2,12 +2,14 @@
 export interface Props {
   gap?: string;
   vPadding?: string;
+  label?: string;
 }
 
-const { gap = "3rem", vPadding = "3rem" } = Astro.props as Props;
+const { gap = "3rem", vPadding = "3rem", label = "" } = Astro.props as Props;
 ---
 
 <div class="stack-container">
+  {label && <div class="label-text">{label}</div>}
   <slot />
 </div>
 
@@ -25,5 +27,16 @@ const { gap = "3rem", vPadding = "3rem" } = Astro.props as Props;
     flex-grow: 0;
     flex-shrink: 0;
     width: max-content;
+  }
+
+  div.stack-container > :global(div.label-text) {
+    width: 100%;
+    padding: 0px 40px;
+    color: var(--neo-color-base-1000);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    border: none;
   }
 </style>
