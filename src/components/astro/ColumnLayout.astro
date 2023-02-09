@@ -3,10 +3,11 @@ import clsx from "clsx";
 export interface Props {
   marginTop?: string;
   marginBottom?: string;
-  numOfColumns: number;
+  numOfColumns: 1 | 2 | 3 | 4;
   gap?: string;
   bkgColor?: string;
   showGridlines?: boolean;
+  showTopBorder?: boolean;
 }
 
 const {
@@ -16,12 +17,13 @@ const {
   gap = "0",
   bkgColor = "transparent",
   showGridlines = true,
+  showTopBorder = true,
 } = Astro.props as Props;
 
 const borderPatternClass = clsx(
   "variable-grid-columns",
-  showGridlines &&
-    `variable-grid-columns gridlines-enabled grid-borders-${numOfColumns}-columns`
+  showGridlines && `gridlines-enabled grid-borders-${numOfColumns}-columns`,
+  !showTopBorder && "no-top-border"
 );
 ---
 
@@ -73,5 +75,9 @@ const borderPatternClass = clsx(
 
   .grid-borders-4-columns :global(div:nth-child(4n)) {
     border-right: 1px solid var(--neo-color-base-200);
+  }
+
+  .no-top-border :global(div:nth-child(n)) {
+    border-top: none;
   }
 </style>
