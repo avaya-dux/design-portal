@@ -4,10 +4,15 @@ import { Description, SubHeader, DoAndDont } from "components";
 
 import inputDoImage1 from "./imgs/text-input-behavior-do-1.svg";
 import inputDontImage1 from "./imgs/text-input-behavior-dont-1.svg";
-
-const colorDoInstructions =
+const inputDoInstructions1 =
   "Use helper text to provide additional information on the input, such as format requirements or a description.";
-const colorDontInstructions = "Do not use helper text as a placeholder.";
+const inputDontInstructions1 = "Do not use helper text as a placeholder.";
+
+import inputDoImage2 from "./imgs/text-input-behavior-do-2.svg";
+import inputDontImage2 from "./imgs/text-input-behavior-dont-2.svg";
+const inputDoInstructions2 =
+  "Use labels by default unless the input is in a tight area (such as a navigation bar). In these regions, use additional hints such as icons to show what input is expected.";
+const inputDontInstructions2 = "Do not rely on placeholders alone as it is not visible once content is added.";
 
 ---
 <SubHeader id="text-input-subheader">Text Input</SubHeader>
@@ -17,15 +22,29 @@ const colorDontInstructions = "Do not use helper text as a placeholder.";
 </Description>
 
 <DoAndDont>
-  <DoAndDont.DoContainer instructions={colorDoInstructions}>
+  <DoAndDont.DoContainer instructions={inputDoInstructions1}>
     <DoAndDont.ImageExampleContainer>
       <Image src={inputDoImage1} alt={"Image showing correct helper text."} />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DoContainer>
 
-  <DoAndDont.DontContainer instructions={colorDontInstructions}>
+  <DoAndDont.DontContainer instructions={inputDontInstructions1}>
     <DoAndDont.ImageExampleContainer>
       <Image src={inputDontImage1} alt={"Image showing heper text inside placeholder"} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={inputDoInstructions2}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={inputDoImage2} alt={"Image showing correct helper text."} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={inputDontInstructions2}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={inputDontImage2} alt={"Image showing heper text inside placeholder"} />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DontContainer>
 </DoAndDont>
