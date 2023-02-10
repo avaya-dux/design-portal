@@ -1,0 +1,31 @@
+---
+import {
+  Description,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+} from "components";
+
+import { topics } from "../static";
+
+import {
+  TextInputBehavior,
+  // TextAreaBeahvior,
+  // Password,
+  // Alignment,
+} from "pageletes/components/text-input/sections";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.behavior.id}>
+    {topics.behavior.title}
+  </SectionHeader>
+
+  <Description>
+    Behavior Description goes here.
+  </Description>
+
+  <PageleteSubSection marginTop="4rem">
+    <TextInputBehavior />
+  </PageleteSubSection>
+</PageleteSection>

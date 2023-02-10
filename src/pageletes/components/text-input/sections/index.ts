@@ -15,3 +15,9 @@ export { KeyboardInteractions };
 
 import Types from "./Types.astro";
 export { Types };
+
+import Behavior from "./Behavior.astro";
+export { Behavior };
+
+import TextInputBehavior from "./TextInputBehavior.astro";
+export { TextInputBehavior };

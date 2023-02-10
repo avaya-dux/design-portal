@@ -1,0 +1,31 @@
+---
+import { Image } from "@avaya/neo-react";
+import { Description, SubHeader, DoAndDont } from "components";
+
+import inputDoImage1 from "./imgs/text-input-behavior-do-1.svg";
+import inputDontImage1 from "./imgs/text-input-behavior-dont-1.svg";
+
+const colorDoInstructions =
+  "Use helper text to provide additional information on the input, such as format requirements or a description.";
+const colorDontInstructions = "Do not use helper text as a placeholder.";
+
+---
+<SubHeader id="text-input-subheader">Text Input</SubHeader>
+
+<Description>
+  Text Input description.
+</Description>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={colorDoInstructions}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={inputDoImage1} alt={"Image showing correct helper text."} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={colorDontInstructions}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={inputDontImage1} alt={"Image showing heper text inside placeholder"} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>
