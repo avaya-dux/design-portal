@@ -20,7 +20,7 @@
   "devDependencies": {
     "@astrojs/react": "2.0.2",
     "@astrojs/svelte": "2.0.1",
-    "@astrojs/vue": "1.2.2",
+    "@astrojs/vue": "2.0.1",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "13.4.0",
     "@testing-library/user-event": "14.4.3",
