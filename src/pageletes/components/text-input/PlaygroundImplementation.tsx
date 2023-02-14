@@ -13,7 +13,7 @@ export const PlaygroundImplementation = () => {
   const [label, setLabel] = useState<TextInputProps["label"]>("Label");
 
   const react = useMemo(
-    () => `<TextInput > label=${label} helperText="Helper text" </TextInput>`,
+    () => `<TextInput label=${label} helperText="Helper text"> </TextInput>`,
     [label]
   );
 
@@ -21,7 +21,7 @@ export const PlaygroundImplementation = () => {
     <Playground
       options={
         <Playground.OptionsContainer>
-          <Playground.OptionsSection title="Label">
+          <Playground.OptionsSection title="Value">
             <RadioGroup
               groupName="type-options"
               selected={labelOption}
@@ -37,9 +37,8 @@ export const PlaygroundImplementation = () => {
                 }
               }}
             >
-              <Radio value="optional">Single</Radio>
-              <Radio value="required">Stacked</Radio>
-              <Radio value="required">Stacked</Radio>
+              <Radio value="optional">Optional</Radio>
+              <Radio value="required">Required</Radio>
             </RadioGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
@@ -51,9 +50,8 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      <TextInput>
-        {" "}
-        label={label} helperText="Helper text" required={required}{" "}
+      <TextInput
+        label={label} helperText="Helper text" required={required}>
       </TextInput>
     </Playground>
   );
