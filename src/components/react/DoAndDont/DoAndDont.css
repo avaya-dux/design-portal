@@ -16,13 +16,12 @@
 
 .do-and-dont-example-content {
   background-color: var(--neo-color-base-100);
-  border: 1px solid var(--neo-color-base-200);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   aspect-ratio: 1 / 0.7;
   padding: 1rem 1.5rem 2rem 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 
 .do-and-dont-example-content-do {
