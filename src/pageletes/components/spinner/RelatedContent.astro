@@ -1,0 +1,33 @@
+---
+import { PageleteSection, RelatedContent } from "components/astro";
+import type { SectionWithLinks } from "components/astro/RelatedContent.astro";
+
+import { topics } from "./static";
+const {
+  related: { id, title },
+} = topics;
+
+const sections: SectionWithLinks[] = [
+  {
+    title: "Components",
+    links: [
+      {
+        title: "Button",
+        href: "/components/widget",
+      },
+      {
+        title: "Select",
+        href: "/components/select",
+      },
+      {
+        title: "Shimmer",
+        href: "/components/shimmer",
+      },
+    ],
+  },
+];
+---
+
+<PageleteSection>
+  <RelatedContent id={id} title={title} sections={sections} />
+</PageleteSection>
