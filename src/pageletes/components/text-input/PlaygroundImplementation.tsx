@@ -36,12 +36,10 @@ export const PlaygroundImplementation = () => {
                   setRequired(false);
                   setError(false);
                   setHelperText("Helper text");
-                } else if (e.target.value === "required") {
+                } else {
                   setRequired(true);
                   setError(true);
                   setHelperText("This field is required");
-                } else {
-                  setLabel(undefined);
                 }
               }}
             >
