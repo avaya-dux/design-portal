@@ -8,8 +8,8 @@ import {
   SectionHeader,
 } from "components";
 
-import doImage from "./imgs/usage-dont.svg";
-import dontImage from "./imgs/usage-do.svg";
+import doImage from "./imgs/usage-do.svg";
+import dontImage from "./imgs/usage-dont.svg";
 
 import { topics } from "./static";
 const { id, title } = topics.behavior;
@@ -36,7 +36,7 @@ const dontImgAltText =
   <DoAndDont>
     <DoAndDont.DoContainer instructions={doInstructions}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={doImage} alt={doImgAltText} />
+        <Image src={doImage} alt={doImgAltText} width="300px" />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DoContainer>
 
