@@ -1,0 +1,41 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ImageWrapper,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableRow,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "./static";
+const { id, title } = topics.anatomy;
+
+import AnatomyImage from "./imgs/anatomy.svg";
+const anatomyImgAltText = "Image showing an still spinner";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>Anatomy Description.</Description>
+
+  <ImageWrapper>
+    <Image src={AnatomyImage} alt={anatomyImgAltText} />
+  </ImageWrapper>
+
+  <InfoTable>
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>
+          1. <strong>Spinner</strong>: Spinning circluar icon. Turning
+          clockwise.
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
+</PageleteSection>
