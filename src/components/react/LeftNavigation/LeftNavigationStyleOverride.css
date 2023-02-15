@@ -9,7 +9,7 @@
     position: sticky;
     left: 0;
     top: var(--header-height);
-    height: 100vh;
+    height: 100%;
   }
 }
 
