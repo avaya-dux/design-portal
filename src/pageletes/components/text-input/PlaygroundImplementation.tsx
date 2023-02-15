@@ -15,8 +15,8 @@ export const PlaygroundImplementation = () => {
   const [error, setError] = useState<TextInputProps["error"]>(false);
 
   const react = useMemo(
-    () => `<TextInput label=${label} helperText="Helper text"> </TextInput>`,
-    [label]
+    () => `<TextInput label="${label}" helperText="${helperText}"> </TextInput>`,
+    [label, helperText]
   );
 
   return (
@@ -33,9 +33,11 @@ export const PlaygroundImplementation = () => {
                 if (e.target.value === "optional") {
                   setRequired(false);
                   setError(false);
+                  setHelperText("Helper text");
                 } else if (e.target.value === "required") {
                   setRequired(true);
                   setError(true);
+                  setHelperText("This field is required");
                 } else {
                   setLabel(undefined);
                 }
@@ -55,7 +57,7 @@ export const PlaygroundImplementation = () => {
       }}
     >
       <TextInput
-        label={label} helperText="Helper text" required={required} error={error}>
+        label={label} helperText={helperText} required={required} error={error}>
       </TextInput>
     </Playground>
   );
