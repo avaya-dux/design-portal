@@ -9,7 +9,7 @@ export const storybook =
 type SpinnerTopicNames =
   | "playground"
   | "anatomy"
-  | "behavior"
+  | "usage"
   | "specs"
   | "related";
 
@@ -24,10 +24,10 @@ export const topics: TopicsDict<SpinnerTopicNames> = {
     id: "anatomy",
     title: "Anatomy",
   },
-  behavior: {
+  usage: {
     order: 2,
-    id: "behavior",
-    title: "Behavior",
+    id: "usage",
+    title: "Usage",
   },
   specs: {
     order: 3,
