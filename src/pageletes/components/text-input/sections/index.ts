@@ -21,3 +21,6 @@ export { Behavior };
 
 import TextInputBehavior from "./TextInputBehavior.astro";
 export { TextInputBehavior };
+
+import TextAreaBehavior from "./TextAreaBehavior.astro";
+export { TextAreaBehavior };
