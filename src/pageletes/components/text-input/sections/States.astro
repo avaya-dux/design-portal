@@ -19,8 +19,6 @@ import StateDefaultImage from "./imgs/text-input-states-default.svg";
 import StateDisabledImage from "./imgs/text-input-states-disabled.svg";
 import StateHoverImage from "./imgs/text-input-states-hover.svg";
 import StateErrorImage from "./imgs/text-input-states-error.svg";
-
-const defaultImageText = "todo";
 ---
 
 <PageleteSection>
@@ -33,7 +31,10 @@ const defaultImageText = "todo";
 
   <ColumnLayout marginBottom="0" bkgColor="white" numOfColumns={1}>
     <StackedLayout label="Default">
-      <Image src={StateDefaultImage} alt={defaultImageText} />
+      <Image
+        src={StateDefaultImage}
+        alt="Text Input with default state looks like this"
+      />
     </StackedLayout>
   </ColumnLayout>
   <ColumnLayout showTopBorder={false} bkgColor="white" numOfColumns={2}>
@@ -46,14 +47,14 @@ const defaultImageText = "todo";
     <StackedLayout label="Active">
       <Image
         src={StateActiveImage}
-        alt="Text Input with pressed state look like this"
+        alt="Text Input with active state look like this"
       />
     </StackedLayout>
 
     <StackedLayout label="Error">
       <Image
         src={StateErrorImage}
-        alt="Text Input with disabled state look like this"
+        alt="Text Input with error state look like this"
       />
     </StackedLayout>
     <StackedLayout label="Disabled">
@@ -64,33 +65,33 @@ const defaultImageText = "todo";
     </StackedLayout>
   </ColumnLayout>
 
-  <InfoTable>
+  <InfoTable isBulletedList={true}>
     <InfoTableBody>
       <InfoTableRow>
-        <InfoTableCell><strong>Default</strong>: Description</InfoTableCell>
+        <InfoTableCell><strong>• Default</strong>: Description</InfoTableCell>
       </InfoTableRow>
 
       <InfoTableRow>
         <InfoTableCell>
-          <strong>Hover</strong>: Description
+          <strong>• Hover</strong>: Description
         </InfoTableCell>
       </InfoTableRow>
 
       <InfoTableRow>
         <InfoTableCell>
-          <strong>Active</strong>: Description in password
+          <strong>• Active</strong>: Description in password
         </InfoTableCell>
       </InfoTableRow>
 
       <InfoTableRow>
         <InfoTableCell>
-          <strong>Error</strong>: Description
+          <strong>• Error</strong>: Description
         </InfoTableCell>
       </InfoTableRow>
 
       <InfoTableRow>
         <InfoTableCell>
-          <strong>Disabled</strong>: Description
+          <strong>• Disabled</strong>: Description
         </InfoTableCell>
       </InfoTableRow>
     </InfoTableBody>

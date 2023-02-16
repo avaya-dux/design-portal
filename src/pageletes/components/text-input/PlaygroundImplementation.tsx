@@ -11,17 +11,21 @@ export const PlaygroundImplementation = () => {
   const [labelOption, setLabelOption] = useState<LabelOption>("optional");
   const [required, setRequired] = useState<TextInputProps["required"]>(false);
   const [label, setLabel] = useState<TextInputProps["label"]>("Label");
+  const [helperText, setHelperText] =
+    useState<TextInputProps["helperText"]>("Helper text");
+  const [error, setError] = useState<TextInputProps["error"]>(false);
 
   const react = useMemo(
-    () => `<TextInput > label=${label} helperText="Helper text" </TextInput>`,
-    [label]
+    () =>
+      `<TextInput label="${label}" helperText="${helperText}"> </TextInput>`,
+    [label, helperText]
   );
 
   return (
     <Playground
       options={
         <Playground.OptionsContainer>
-          <Playground.OptionsSection title="Label">
+          <Playground.OptionsSection title="Value">
             <RadioGroup
               groupName="type-options"
               selected={labelOption}
@@ -30,16 +34,17 @@ export const PlaygroundImplementation = () => {
 
                 if (e.target.value === "optional") {
                   setRequired(false);
-                } else if (e.target.value === "required") {
-                  setRequired(true);
+                  setError(false);
+                  setHelperText("Helper text");
                 } else {
-                  setLabel(undefined);
+                  setRequired(true);
+                  setError(true);
+                  setHelperText("This field is required");
                 }
               }}
             >
-              <Radio value="optional">Single</Radio>
-              <Radio value="required">Stacked</Radio>
-              <Radio value="required">Stacked</Radio>
+              <Radio value="optional">Optional</Radio>
+              <Radio value="required">Required</Radio>
             </RadioGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
@@ -51,10 +56,12 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      <TextInput>
-        {" "}
-        label={label} helperText="Helper text" required={required}{" "}
-      </TextInput>
+      <TextInput
+        label={label}
+        helperText={helperText}
+        required={required}
+        error={error}
+      ></TextInput>
     </Playground>
   );
 };

@@ -34,89 +34,113 @@ import TypesReadOnlyImage from "./imgs/text-input-types-readonly.svg";
     <StackedLayout label="Default">
       <Image
         src={TypesDefaultImage}
-        alt="Text Input with hover state look like this"
+        alt="Text Input with default type look like this"
       />
     </StackedLayout>
     <StackedLayout label="Left Icon">
       <Image
         src={TypesLeftIconImage}
-        alt="Text Input with pressed state look like this"
+        alt="Text Input with left icon look like this"
       />
     </StackedLayout>
 
     <StackedLayout label="Right Icon">
       <Image
         src={TypesRightIconImage}
-        alt="Text Input with disabled state look like this"
+        alt="Text Input with right icon look like this"
       />
     </StackedLayout>
 
     <StackedLayout label="Left and Right Icons">
       <Image
         src={TypesLeftRightIconsImage}
-        alt="Text Input with disabled state look like this"
+        alt="Text Input with left and right icons look like this"
       />
     </StackedLayout>
     <StackedLayout label="Prefix">
       <Image
         src={TypesPrefixImage}
-        alt="Text Input with disabled state look like this"
+        alt="Text Input with prefix look like this"
       />
     </StackedLayout>
     <StackedLayout label="Suffix">
       <Image
         src={TypesSuffixImage}
-        alt="Text Input with disabled state look like this"
+        alt="Text Input with suffix look like this"
       />
     </StackedLayout>
 
     <StackedLayout label="Prefix and Suffix">
       <Image
         src={TypesPrefixSuffixImage}
-        alt="Text Input with disabled state look like this"
+        alt="Text Input with prefix and suffix look like this"
       />
     </StackedLayout>
     <StackedLayout label="Left Icon and Suffix">
       <Image
         src={TypesLeftIconSuffixImage}
-        alt="Text Input with disabled state look like this"
+        alt="Text Input with left icon and suffix look like this"
       />
     </StackedLayout>
     <StackedLayout label="Read Only">
       <Image
         src={TypesReadOnlyImage}
-        alt="Text Input with disabled state look like this"
+        alt="Text Input with read only type look like this"
       />
     </StackedLayout>
   </ColumnLayout>
 
-  <InfoTable>
+  <InfoTable isBulletedList={true}>
     <InfoTableBody>
       <InfoTableRow>
-        <InfoTableCell><strong>Default</strong>: Description</InfoTableCell>
+        <InfoTableCell><strong>• Default</strong>: Description</InfoTableCell>
       </InfoTableRow>
 
       <InfoTableRow>
         <InfoTableCell>
-          <strong>Hover</strong>: Description
+          <strong>• Left Icon</strong>: Description
         </InfoTableCell>
       </InfoTableRow>
 
       <InfoTableRow>
         <InfoTableCell>
-          <strong>Active</strong>: Description in password
+          <strong>• Right Icon</strong>: Description in password
         </InfoTableCell>
       </InfoTableRow>
 
       <InfoTableRow>
         <InfoTableCell>
-          <strong>Error</strong>: Description
+          <strong>• Left and Right Icons</strong>: Description
         </InfoTableCell>
       </InfoTableRow>
 
       <InfoTableRow>
         <InfoTableCell>
-          <strong>Disabled</strong>: Description
+          <strong>• Prefix</strong>: Description
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>
+          <strong>• Suffix</strong>: Description
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>
+          <strong>• Prefix and Suffix</strong>: Description
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>
+          <strong>• Left Icon and Suffix</strong>: Description
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>
+          <strong>• Read Only</strong>: Description
         </InfoTableCell>
       </InfoTableRow>
     </InfoTableBody>
