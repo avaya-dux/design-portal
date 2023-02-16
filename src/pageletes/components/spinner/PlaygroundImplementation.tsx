@@ -1,4 +1,5 @@
-import { Spinner, SpinnerProps, Select, SelectOption } from "@avaya/neo-react";
+import type { SpinnerProps } from "@avaya/neo-react";
+import { Radio, RadioGroup, Spinner } from "@avaya/neo-react";
 import clsx from "clsx";
 import { useMemo, useState } from "react";
 
@@ -31,15 +32,17 @@ export const PlaygroundImplementation = () => {
         options={
           <Playground.OptionsContainer>
             <Playground.OptionsSection title="Size">
-              <Select
-                aria-label="Spinner Size"
-                value={size || "md"}
-                onChange={(value) => setSize(value as SpinnerProps["size"])}
+              <RadioGroup
+                groupName="options"
+                selected={size}
+                onChange={(e) =>
+                  setSize(e.target.value as SpinnerProps["size"])
+                }
               >
-                <SelectOption value="md">Medium</SelectOption>
-                <SelectOption value="lg">Large</SelectOption>
-                <SelectOption value="xl">Extra Large</SelectOption>
-              </Select>
+                <Radio value="md">Small</Radio>
+                <Radio value="lg">Medium</Radio>
+                <Radio value="xl">Large</Radio>
+              </RadioGroup>
             </Playground.OptionsSection>
           </Playground.OptionsContainer>
         }
