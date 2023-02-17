@@ -12,21 +12,21 @@ type DropdownTopicNames =
 export const topics: TopicsDict<DropdownTopicNames> = {
   playground: {
     order: 0,
-    id: "radiogroup-playground",
+    id: "radio-playground",
     title: "Interactive Playground",
   },
-  anatomy: { order: 1, id: "radiogroup-anatomy", title: "Anatomy" },
-  states: { order: 2, id: "radiogroup-states", title: "States" },
-  behavior: { order: 3, id: "radiogroup-behavior", title: "Behavior" },
-  specs: { order: 4, id: "radiogroup-specs", title: "Specs" },
+  anatomy: { order: 1, id: "radio-anatomy", title: "Anatomy" },
+  states: { order: 2, id: "radio-states", title: "States" },
+  behavior: { order: 3, id: "radio-behavior", title: "Behavior" },
+  specs: { order: 4, id: "radio-specs", title: "Specs" },
   keyboard: {
     order: 5,
-    id: "radiogroup-keyboard-interactions",
+    id: "radio-keyboard-interactions",
     title: "Keyboard Interactions",
   },
   related: {
     order: 6,
-    id: "radiogroup-related-content",
+    id: "radio-related-content",
     title: "Related Content",
   },
 };
