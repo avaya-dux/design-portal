@@ -1,0 +1,62 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { Description, DoAndDont } from "components";
+
+import doImage1 from "./imgs/behavior-1-do.svg";
+import dontImage1 from "./imgs/behavior-1-dont.svg";
+
+const doInstructions1 =
+  "Use radio buttons to select a single item from a list.";
+const doImgAltText1 = "Image showing aaaaaaaaaaaaa";
+
+const dontInstructions1 =
+  "Do not use radio buttons to select multiple items. Use checkboxes instead.";
+const dontImgAltText1 = "Image showing aaaaaaaaaaaaa";
+
+import doImage2 from "./imgs/behavior-2-do.svg";
+import dontImage2 from "./imgs/behavior-2-dont.svg";
+
+const doInstructions2 =
+  "Use radio buttons to select a single item from a list.";
+const doImgAltText2 = "Image showing aaaaaaaaaaaaa";
+
+const dontInstructions2 =
+  "Do not use radio buttons to select multiple items. Use checkboxes instead.";
+const dontImgAltText2 = "Image showing aaaaaaaaaaaaa";
+---
+
+<Description>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, explicabo
+  adipisci aperiam laboriosam excepturi illo sint iure vero perferendis
+  doloribus reiciendis veniam libero, ratione quia vel quas ex magnam
+  consequatur.
+</Description>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={doInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={doImage1} alt={doImgAltText1} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={dontInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={dontImage1} alt={dontImgAltText1} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={doInstructions2}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={doImage2} alt={doImgAltText2} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={dontInstructions2}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={dontImage2} alt={dontImgAltText2} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>
