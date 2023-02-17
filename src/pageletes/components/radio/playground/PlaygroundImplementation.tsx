@@ -6,7 +6,64 @@ import clsx from "clsx";
 import { Playground } from "components/react";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
-import { defaultHtml, defaultReact, sandbox, storybook } from "../static";
+const sandbox = "https://codesandbox.io/s/neo-react-radio-group-d5l4uz";
+const storybook =
+  "https://neo-react-library-storybook.netlify.app/?path=/story/components-radio-group";
+
+const defaultHtml = prettyPrintHtml(`
+<form class="neo-form">
+  <div class="neo-form-control">
+    <div class="neo-input-group">
+      <label for="Default Radio Group">Select Option</label>
+      <input
+        class="neo-radio"
+        type="radio"
+        name="Default Radio Group"
+        value="Calendar"
+        id="calendar"
+        role="radio"
+        aria-checked="false"
+      />
+      <label for="calendar">Calendar</label>
+      <input
+        class="neo-radio"
+        type="radio"
+        name="Default Radio Group"
+        value="Calculator"
+        id="calculator"
+        role="radio"
+        aria-checked="false"
+      />
+      <label for="calculator">Calculator</label>
+      <input
+        class="neo-radio"
+        type="radio"
+        name="Default Radio Group"
+        value="Notes"
+        id="notes"
+        role="radio"
+        aria-checked="false"
+      />
+      <label for="notes">Notes</label>
+    </div>
+  </div>
+</form>
+  `);
+
+const defaultReact = prettyPrintReact(`
+<Form id="radio-form">
+  <RadioGroup
+    groupName="Default Radio Group"
+    label="Select Option"
+    selected={selectedExampleRadio}
+    onChange={(e) => setSelectedExampleRadio(e.target.value)}
+  >
+    <Radio value="Calendar">Calendar</Radio>
+    <Radio value="Calculator">Calculator</Radio>
+    <Radio value="Notes">Notes</Radio>
+  </RadioGroup>
+</Form>
+  `);
 
 export const PlaygroundImplementation = () => {
   const [withLabel, setWithLabel] = useState<string>("withLabel");
