@@ -1,9 +1,23 @@
 ---
-import { Description, PageleteSection, SectionHeader } from "components/astro";
+import {
+  Description,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableRow,
+  ImageWrapper,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
 
 import { topics } from "../static";
+import { Image } from "@avaya/neo-react";
 
 const { id, title } = topics.anatomy;
+
+import image1 from "./imgs/anatomy.svg";
+const img1AltText =
+  "Image showing a radio group with one selection, there are four notes pointed out and described below";
 ---
 
 <PageleteSection>
@@ -15,4 +29,36 @@ const { id, title } = topics.anatomy;
     doloribus reiciendis veniam libero, ratione quia vel quas ex magnam
     consequatur.
   </Description>
+
+  <ImageWrapper showBorders={false}>
+    <Image src={image1} alt={img1AltText} />
+  </ImageWrapper>
+
+  <InfoTable>
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>
+          1. <strong>Radio Group Label</strong>: Description
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>
+          2. <strong>Radio Button</strong>: Description
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>
+          3. <strong>Radio Label</strong>: Description
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>
+          4. <strong>Unselected Radio Button</strong>: Description
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
 </PageleteSection>
