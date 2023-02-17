@@ -27,3 +27,6 @@ export { TextAreaBehavior };
 
 import PasswordInputBehavior from "./PasswordInputBehavior.astro";
 export { PasswordInputBehavior };
+
+import AlignmentBehavior from "./AlignmentBehavior.astro";
+export { AlignmentBehavior };
