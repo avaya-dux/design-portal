@@ -30,3 +30,6 @@ export { PasswordInputBehavior };
 
 import AlignmentBehavior from "./AlignmentBehavior.astro";
 export { AlignmentBehavior };
+
+import Specs from "./Specs.astro";
+export { Specs };
