@@ -2,15 +2,17 @@ import {
   Radio,
   RadioGroup,
   Shimmer,
-  ShimmerProps,
   Switch,
 } from "@avaya/neo-react";
+
+import type {ShimmerProps} from "@avaya/neo-react";
+
 import { useMemo, useState } from "react";
 
 import { Playground } from "components/react";
 
 import { createHtmlString, createReactString } from "./helper";
-import { defaultHtml, defaultReact, sandbox, storybook } from "./static";
+import { defaultHtml, defaultReact, sandbox, storybook } from "../static";
 
 import "./style.css";
 

@@ -2,14 +2,11 @@
 export const title = "Shimmer";
 export const keywords = "Shimmer components";
 import { Layout } from "layouts";
-import {
-  ShimmerHeader as Header,
-  ShimmerPlayground as Playground,
-} from "pageletes/components/shimmer";
+import {Intro, Playground} from "pageletes/components/shimmer";
 ---
 
 <Layout title="Shimmer">
-  <Header />
+  <Intro />
 
   <Playground client:load />
 </Layout>
