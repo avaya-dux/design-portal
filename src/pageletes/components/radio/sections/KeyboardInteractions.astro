@@ -1,5 +1,15 @@
 ---
-import { Description, PageleteSection, SectionHeader } from "components/astro";
+import {
+  Description,
+  PageleteSection,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableCellHead,
+  InfoTableHead,
+  InfoTableRow,
+  SectionHeader,
+} from "components/astro";
 import { topics } from "../static";
 
 const { id, title } = topics.keyboard;
@@ -13,4 +23,34 @@ const { id, title } = topics.keyboard;
     modi accusamus nam quidem eveniet iure dolores, a, officia corporis adipisci
     id assumenda et ducimus! Corporis unde magnam laborum.
   </Description>
+
+  <InfoTable isKeyboardInteraction>
+    <InfoTableHead>
+      <InfoTableRow>
+        <InfoTableCellHead>Keystrokes</InfoTableCellHead>
+        <InfoTableCellHead>Interaction</InfoTableCellHead>
+      </InfoTableRow>
+    </InfoTableHead>
+
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>Tab</InfoTableCell>
+        <InfoTableCell>
+          Move forward into and out of the checkbox.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Shift + Tab</InfoTableCell>
+        <InfoTableCell>Move backward to the previous checkbox.</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Spacebar</InfoTableCell>
+        <InfoTableCell>
+          Toggle the checkbox between selected and not selected state.
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
 </PageleteSection>
