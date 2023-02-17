@@ -1,4 +1,5 @@
-import { Radio, RadioGroup, TextInput, TextInputProps } from "@avaya/neo-react";
+import type { TextInputProps } from "@avaya/neo-react";
+import { Radio, RadioGroup, TextInput } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components";
@@ -6,11 +7,11 @@ import { Playground } from "components";
 import { sandbox, storybook } from "./static";
 
 type LabelOption = "optional" | "required" | "none";
+const label = "Label";
 
 export const PlaygroundImplementation = () => {
   const [labelOption, setLabelOption] = useState<LabelOption>("optional");
   const [required, setRequired] = useState<TextInputProps["required"]>(false);
-  const [label, setLabel] = useState<TextInputProps["label"]>("Label");
   const [helperText, setHelperText] =
     useState<TextInputProps["helperText"]>("Helper text");
   const [error, setError] = useState<TextInputProps["error"]>(false);
@@ -18,7 +19,7 @@ export const PlaygroundImplementation = () => {
   const react = useMemo(
     () =>
       `<TextInput label="${label}" helperText="${helperText}"> </TextInput>`,
-    [label, helperText]
+    [helperText]
   );
 
   return (
