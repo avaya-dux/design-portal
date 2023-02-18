@@ -4,12 +4,20 @@ export { Intro };
 import Playground from "./InteractivePlayground.astro";
 export { Playground };
 
-// import Type from "./Type.astro";
-// export { Type };
+import Anatomy from "./Anatomy.astro";
+export { Anatomy };
 
-// import Behavior from "./Behavior.astro";
-// export { Behavior };
+import Behavior from "./Behavior.astro";
+export { Behavior };
 
+import Comparison from "./Comparison.astro";
+export { Comparison };
 
-// import Related from "./Related.astro";
-// export { Related };
+import Content from "./Content.astro";
+export { Content };
+
+import Loading from "./Loading.astro";
+export { Loading };
+
+import Related from "./Related.astro";
+export { Related };

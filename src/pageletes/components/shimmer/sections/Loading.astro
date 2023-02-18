@@ -1,0 +1,29 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Description,
+  ColumnLayout,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  SubHeader,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableRow,
+  StackedLayout,
+} from "components/astro";
+
+import { DoAndDont } from "components/react";
+
+import { topics } from "../static";
+
+const { id, title } = topics.progressiveLoading;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+  <Description>Lorem ipsum</Description>
+</PageleteSection>

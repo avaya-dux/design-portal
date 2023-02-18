@@ -1,11 +1,6 @@
-import {
-  Radio,
-  RadioGroup,
-  Shimmer,
-  Switch,
-} from "@avaya/neo-react";
+import { Radio, RadioGroup, Shimmer, Switch } from "@avaya/neo-react";
 
-import type {ShimmerProps} from "@avaya/neo-react";
+import type { ShimmerProps } from "@avaya/neo-react";
 
 import { useMemo, useState } from "react";
 
