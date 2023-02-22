@@ -3,13 +3,31 @@ export const title = "Shimmer";
 export const keywords = "Shimmer components";
 import { Layout } from "layouts";
 import {
-  ShimmerHeader as Header,
-  ShimmerPlayground as Playground,
+  Intro,
+  Playground,
+  Anatomy,
+  Behavior,
+  Comparison,
+  Content,
+  Loading,
+  Related,
 } from "pageletes/components/shimmer";
 ---
 
 <Layout title="Shimmer">
-  <Header />
+  <Intro />
 
-  <Playground client:load />
+  <Playground />
+
+  <Anatomy />
+
+  <Content />
+
+  <Loading />
+
+  <Behavior />
+
+  <Comparison />
+
+  <Related />
 </Layout>
