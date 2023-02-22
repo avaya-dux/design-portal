@@ -1,4 +1,5 @@
-import { Radio, RadioGroup, TextInput, TextInputProps } from "@avaya/neo-react";
+import type { TextInputProps } from "@avaya/neo-react";
+import { Radio, RadioGroup, TextInput } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
@@ -8,6 +9,7 @@ import { sandbox, storybook } from "./static";
 
 type TypeOption = "text" | "password";
 type LabelOption = "optional" | "required" | "none";
+const label = "Label";
 
 export const PlaygroundImplementation = () => {
   const [labelOption, setLabelOption] = useState<LabelOption>("optional");

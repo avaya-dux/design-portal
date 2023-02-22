@@ -1,0 +1,26 @@
+---
+import {
+  Description,
+  PageleteSection,
+  PageTitle,
+  Topics,
+} from "components/astro";
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <PageTitle>Shimmer</PageTitle>
+
+  <Description>
+    A shimmer is an animated placeholder used to inform users that some content
+    or data is still loading, while still providing access to other parts of the
+    page.
+  </Description>
+
+  <Description>
+    For more information about adding Dark Mode to the Shimmer Component, please
+    visit the Themes page.
+  </Description>
+
+  <Topics topics={topics} />
+</PageleteSection>
