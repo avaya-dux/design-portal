@@ -1,0 +1,19 @@
+---
+import {
+Description,
+PageleteSection,
+SectionHeader
+} from "components/astro";
+
+
+import { topics } from "../static";
+
+const { id, title } = topics.progressiveLoading;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+  <Description>Lorem ipsum</Description>
+</PageleteSection>
