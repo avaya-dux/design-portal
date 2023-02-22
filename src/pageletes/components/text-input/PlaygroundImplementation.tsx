@@ -19,7 +19,6 @@ export const PlaygroundImplementation = () => {
   const [error, setError] = useState<TextInputProps["error"]>(false);
   const [typeOption, setTypeOption] = useState<TypeOption>("text");
 
-
   const [html, react] = useMemo(() => {
     const htmlCode = prettyPrintHtml(
       `
@@ -43,12 +42,10 @@ export const PlaygroundImplementation = () => {
     );
 
     const reactCode = prettyPrintReact(
-
-      `<TextInput type="${typeOption}" label="Label" helperText="${helperText}"> </TextInput>`);
+      `<TextInput type="${typeOption}" label="Label" helperText="${helperText}"> </TextInput>`
+    );
     return [htmlCode, reactCode];
-  },
-    [helperText, typeOption]
-  );
+  }, [helperText, typeOption]);
 
   return (
     <Playground
