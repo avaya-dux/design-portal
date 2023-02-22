@@ -9,7 +9,6 @@ import { sandbox, storybook } from "./static";
 
 type TypeOption = "text" | "password";
 type LabelOption = "optional" | "required" | "none";
-const label = "Label";
 
 export const PlaygroundImplementation = () => {
   const [labelOption, setLabelOption] = useState<LabelOption>("optional");
