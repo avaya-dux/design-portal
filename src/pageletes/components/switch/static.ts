@@ -6,14 +6,13 @@ export const defaultHtml = prettyPrintHtml(
   <label class="neo-switch" for="switch">
     <input id="switch" type="checkbox" role="switch">
     <i class="neo-switch__icon"></i>
-    I'm initially unchecked
+    Option
   </label>
 </div>`
 );
 
-export const defaultReact = `<Switch>I'm initially unchecked</Switch>`;
-// TO-DO: Add working code sandbox example
-// export const sandbox = "https://codesandbox.io/s/neo-react-spinner-yj5o5i";
+export const defaultReact = `<Switch>Option</Switch>`;
+export const sandbox = "https://codesandbox.io/s/neo-react-switch-eeb2m1";
 export const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-switch--default";
 
