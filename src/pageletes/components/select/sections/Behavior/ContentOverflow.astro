@@ -1,0 +1,40 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { Description, DoAndDont, SubHeader } from "components";
+
+import doImage from "./imgs/behavior-3-do.svg";
+import dontImage from "./imgs/behavior-3-dont.svg";
+
+const doInstructions =
+  "When the label is too long for the horizontal space available, it forms another line.";
+const doImgAltText = "Image showing radio buttons with multiline text";
+
+const dontInstructions =
+  "Do not use multiline text when other labels are not multiline and when there is enough space";
+const dontImgAltText =
+  "Image showing radio buttons with mixed multiline text and long single line text";
+---
+
+<SubHeader id="radio-content-overflow">Content Overflow</SubHeader>
+
+<Description>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, explicabo
+  adipisci aperiam laboriosam excepturi illo sint iure vero perferendis
+  doloribus reiciendis veniam libero, ratione quia vel quas ex magnam
+  consequatur.
+</Description>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={doInstructions}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={doImage} alt={doImgAltText} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={dontInstructions}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={dontImage} alt={dontImgAltText} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>

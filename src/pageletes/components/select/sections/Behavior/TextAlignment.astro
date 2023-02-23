@@ -1,0 +1,39 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { Description, DoAndDont, SubHeader } from "components";
+
+import doImage from "./imgs/behavior-4-do.svg";
+import dontImage from "./imgs/behavior-4-dont.svg";
+
+const doInstructions =
+  "When the label is too long for the horizontal space available, it forms another line.";
+const doImgAltText =
+  "Image showing radio buttons with labels that wrap to a second line with their top aligned with the top of the radio button.";
+
+const dontInstructions =
+  "Do not place the checkmark in the center of multi-line text for checkbox labels.";
+const dontImgAltText =
+  "Image showing radio buttons with labels that wrap to a second line with their top aligned with the top above the radio button.";
+---
+
+<SubHeader id="radio-text-alignment">Text Alignment</SubHeader>
+
+<Description>
+  The Radio Button should always align to the first line of Labels with
+  multiline text content.
+</Description>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={doInstructions}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={doImage} alt={doImgAltText} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={dontInstructions}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={dontImage} alt={dontImgAltText} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>
