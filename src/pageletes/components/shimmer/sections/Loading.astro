@@ -1,14 +1,39 @@
 ---
-import { Description, PageleteSection, SectionHeader } from "components/astro";
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  PageleteSection,
+  SectionHeader,
+  ColumnLayout,
+} from "components/astro";
 
 import { topics } from "../static";
 
+import progressiveLoadingImage from "../imgs/shimmer-progressive-loading.svg";
+
 const { id, title } = topics.progressiveLoading;
+
+const progressiveLaodingImgAltText = "Image showing progressive loading";
 ---
 
 <PageleteSection>
   <SectionHeader id={id}>
     {title}
   </SectionHeader>
-  <Description>Lorem ipsum</Description>
+  <Description>
+    Progressive loading is a technique that loads pages in batches. The simplest
+    view of the page loads first, followed by progressively more detailed
+    batches until the entire viewport has loaded.
+  </Description>
+  <ColumnLayout bkgColor="white" numOfColumns={1}>
+    <Image src={progressiveLoadingImage} alt={progressiveLaodingImgAltText} />
+  </ColumnLayout>
+  <Description>
+    The primary batch should show a page’s basic structure (the skeleton state
+    versions of the container-based components), data-based text (the skeleton
+    state version of text) and non-data text. Following batches can include
+    images, content outside of the viewport, interactive (action-based)
+    components, and data-based text.
+  </Description>
 </PageleteSection>

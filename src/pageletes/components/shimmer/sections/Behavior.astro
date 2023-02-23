@@ -1,7 +1,25 @@
 ---
+import { Image } from "@avaya/neo-react";
+
 import { Description, PageleteSection, SectionHeader } from "components/astro";
 
+import { DoAndDont } from "components/react";
+
 import { topics } from "../static";
+
+import BehaviorImageDo1 from "../imgs/shimmer-behavior-do-1.svg";
+import BehaviorImageDont1 from "../imgs/shimmer-behavior-dont-1.svg";
+
+import BehaviorImageDo2 from "../imgs/shimmer-behavior-do-2.svg";
+import BehaviorImageDont2 from "../imgs/shimmer-behavior-dont-2.svg";
+
+const do1AltText =
+  "Do: Use a mix of shimmer shapes to mimic the content that is loading.";
+const dont1AltText = "DON’T: Do not use arbitrary shimmer shapes.";
+
+const do2AltText =
+  "DO: Use a mix of shimmer shapes to mimic the content that is loading.";
+const dont2AltText = "DON’T: Do not use arbitrary colors.";
 
 const { id, title } = topics.behavior;
 ---
@@ -10,5 +28,32 @@ const { id, title } = topics.behavior;
   <SectionHeader id={id}>
     {title}
   </SectionHeader>
-  <Description>Lorem ipsum</Description>
+  <Description>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+  </Description>
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={do1AltText}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={BehaviorImageDo1} alt={do1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dont1AltText}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={BehaviorImageDont1} alt={dont1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+    <DoAndDont.DoContainer instructions={do2AltText}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={BehaviorImageDo2} alt={do2AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dont2AltText}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={BehaviorImageDont2} alt={dont2AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
 </PageleteSection>
