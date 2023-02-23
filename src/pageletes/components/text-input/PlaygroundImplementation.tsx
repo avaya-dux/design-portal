@@ -23,7 +23,7 @@ export const PlaygroundImplementation = () => {
       `
 <div class="neo-form-control">
   <div class="neo-input-group">
-    <label htmlFor="input1">
+    <label for="input1">
       Name
     </label>
     <div class="neo-input-editable__wrapper">
