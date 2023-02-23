@@ -1,14 +1,54 @@
 ---
-import { Description, PageleteSection, SectionHeader } from "components/astro";
+import { Image } from "@avaya/neo-react";
+
+import {
+  ColumnLayout,
+  Description,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { DoAndDont } from "components/react";
 
 import { topics } from "../static";
 
 const { id, title } = topics.dynamicContentVsStaticContent;
+
+import DynamicImage from "../imgs/shimmer-dynamic-content.svg";
+import StaticImage from "../imgs/shimmer-content-dont-1.svg";
+
+const dynamicImgAltText = "Image showing dynamic content";
+const staticImgAltText = "Image showing static content";
+const staticContentInstruction = "Add text here";
 ---
 
 <PageleteSection>
   <SectionHeader id={id}>
     {title}
   </SectionHeader>
-  <Description>Lorem ipsum</Description>
+  <Description>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+  </Description>
+
+  <ColumnLayout bkgColor="white" numOfColumns={1}>
+    <Image src={DynamicImage} alt={dynamicImgAltText} />
+  </ColumnLayout>
+
+  <Description>
+    Use actual content when content doesn’t change (static content). For
+    elements of the page that won’t require loadings, such as headings, body
+    copy, buttons, and borders, include these as static elements of the design.
+    In other words, only shimmer load data values/content, not containers. This
+    avoids the need to build custom loading elements for a variety of containers
+    and minimizes jank when data/content arrives.
+  </Description>
+
+  <DoAndDont size="wide">
+    <DoAndDont.DontContainer instructions={staticContentInstruction}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={StaticImage} alt={staticImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
 </PageleteSection>
