@@ -4,10 +4,8 @@ import { Image } from "@avaya/neo-react";
 import {
   Description,
   ImageWrapper,
-  InfoTable,
-  InfoTableBody,
-  InfoTableCell,
-  InfoTableRow,
+  InfoList,
+  InfoListItem,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -28,14 +26,9 @@ const anatomyImgAltText = "Image showing an still spinner";
     <Image src={AnatomyImage} alt={anatomyImgAltText} />
   </ImageWrapper>
 
-  <InfoTable>
-    <InfoTableBody>
-      <InfoTableRow>
-        <InfoTableCell>
-          1. <strong>Spinner</strong>: Spinning circluar icon. Turning
-          clockwise.
-        </InfoTableCell>
-      </InfoTableRow>
-    </InfoTableBody>
-  </InfoTable>
+  <InfoList type="decimal">
+    <InfoListItem label="Spinner">
+      Spinning circluar icon. Turning clockwise.
+    </InfoListItem>
+  </InfoList>
 </PageleteSection>
