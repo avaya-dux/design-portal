@@ -25,7 +25,7 @@ export const PlaygroundImplementation = () => {
       withLabel === "left" && " dir='rtl'",
       isDisabled && " disabled",
       isSelected && " checked"
-    )}>${withLabel !== "none" ? "Option" : ""}</Switch$>
+    )}>${withLabel !== "none" ? "Option" : ""}</Switch>
 `
     );
 
