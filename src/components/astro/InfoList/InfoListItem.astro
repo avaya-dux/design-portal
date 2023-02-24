@@ -1,0 +1,9 @@
+---
+export interface Props {
+  label: string;
+}
+
+const { label } = Astro.props as Props;
+---
+
+<li><b>{label}</b>: <slot /></li>
