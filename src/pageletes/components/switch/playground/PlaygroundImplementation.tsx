@@ -41,8 +41,8 @@ export const PlaygroundImplementation = () => {
     <Switch ${clsx(
       withLabel === "none" && 'aria-label="Option"',
       withLabel === "left" && "dir='rtl'",
-      isDisabled && "disabled={true}",
-      isSelected && "checked={true}"
+      isDisabled && "disabled",
+      isSelected && "checked"
     )}>${withLabel !== "none" ? "Option" : ""}</Switch>
 `
     );
@@ -57,8 +57,9 @@ export const PlaygroundImplementation = () => {
       )}" for="switch">
         <input id="switch" type="checkbox" role="switch" ${clsx(
           withLabel === "none" && 'aria-label="Option"',
-          isSelected && "checked"
-        )} >
+          isSelected && "checked",
+          isDisabled && "disabled",
+        )} />
         <i class="neo-switch__icon"></i>
         ${withLabel !== "none" ? "Option" : ""}
       </label>
