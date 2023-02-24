@@ -1,22 +1,18 @@
 ---
-import { PageleteSection, RelatedContent } from "components";
+import { PageleteSection, RelatedContent } from "components/astro";
 import type { SectionWithLinks } from "components/astro/RelatedContent.astro";
 
 import { topics } from "../static";
 
-const { id, title } = topics.related;
+const { id, title } = topics.relatedContent;
 
 const sections: SectionWithLinks[] = [
   {
     title: "Components",
     links: [
       {
-        title: "Checkbox",
-        href: "/components/checkbox",
-      },
-      {
-        title: "Form",
-        href: "/components/form",
+        title: "Spinner",
+        href: "/components/spinner",
       },
     ],
   },
