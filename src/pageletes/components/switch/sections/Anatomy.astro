@@ -1,0 +1,59 @@
+---
+import {
+  Description,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableRow,
+  ImageWrapper,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+import { Image } from "@avaya/neo-react";
+
+const { id, title } = topics.anatomy;
+
+import image1 from "../imgs/switch-anatomy.svg";
+const img1AltText =
+  "Image showing a toggled switch, there are three notes pointed out and described below";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, explicabo
+    adipisci aperiam laboriosam excepturi illo sint iure vero perferendis
+    doloribus reiciendis veniam libero, ratione quia vel quas ex magnam
+    consequatur.
+  </Description>
+
+  <ImageWrapper>
+    <Image src={image1} alt={img1AltText} />
+  </ImageWrapper>
+
+  <InfoTable>
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>
+          1. <strong>Track</strong>: Description
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>
+          2. <strong>Handle with Icon</strong>: Indicates whether the switch is
+          on or off
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>
+          3. <strong>Label</strong>: Description
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
+</PageleteSection>
