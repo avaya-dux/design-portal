@@ -11,7 +11,19 @@ import { useMemo, useState } from "react";
 import { Playground } from "components/react";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
-import { defaultHtml, defaultReact, sandbox, storybook } from "../static";
+import { sandbox, storybook } from "../static";
+
+export const defaultHtml = prettyPrintHtml(
+  `<div class="neo-form-control">
+  <label class="neo-switch" for="switch">
+    <input id="switch" type="checkbox" role="switch">
+    <i class="neo-switch__icon"></i>
+    Option
+  </label>
+</div>`
+);
+
+export const defaultReact = `<Switch>Option</Switch>`;
 
 export const PlaygroundImplementation = () => {
   const [withLabel, setWithLabel] = useState<string>("right");
