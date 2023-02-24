@@ -1,29 +1,13 @@
-import {
-  Checkbox,
-  CheckboxGroup,
-  Radio,
-  RadioGroup,
-  Switch,
-} from "@avaya/neo-react";
+import { Checkbox, CheckboxGroup, Radio, RadioGroup, Switch } from "@avaya/neo-react";
 import clsx from "clsx";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components/react";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
-import { sandbox, storybook } from "../static";
-
-export const defaultHtml = prettyPrintHtml(
-  `<div class="neo-form-control">
-  <label class="neo-switch" for="switch">
-    <input id="switch" type="checkbox" role="switch">
-    <i class="neo-switch__icon"></i>
-    Option
-  </label>
-</div>`
-);
-
-export const defaultReact = `<Switch>Option</Switch>`;
+export const sandbox = "https://codesandbox.io/s/neo-react-switch-eeb2m1";
+export const storybook =
+  "https://neo-react-library-storybook.netlify.app/?path=/story/components-switch--default";
 
 export const PlaygroundImplementation = () => {
   const [withLabel, setWithLabel] = useState<string>("right");
@@ -33,17 +17,15 @@ export const PlaygroundImplementation = () => {
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
 
   const [react, html] = useMemo(() => {
-    const isDefault =
-      withLabel === "right" && isSelected === false && isDisabled === false;
 
     const react = prettyPrintReact(
       `
-    <Switch ${clsx(
-      withLabel === "none" && 'aria-label="Option"',
-      withLabel === "left" && "dir='rtl'",
-      isDisabled && "disabled",
-      isSelected && "checked"
-    )}>${withLabel !== "none" ? "Option" : ""}</Switch>
+    <Switch${clsx(
+      withLabel === "none" && ' aria-label="Option"',
+      withLabel === "left" && " dir='rtl'",
+      isDisabled && " disabled",
+      isSelected && " checked"
+    )}>${withLabel !== "none" ? "Option" : ""}</Switch$>
 `
     );
 
@@ -58,7 +40,7 @@ export const PlaygroundImplementation = () => {
         <input id="switch" type="checkbox" role="switch" ${clsx(
           withLabel === "none" && 'aria-label="Option"',
           isSelected && "checked",
-          isDisabled && "disabled",
+          isDisabled && "disabled"
         )} />
         <i class="neo-switch__icon"></i>
         ${withLabel !== "none" ? "Option" : ""}
@@ -66,7 +48,7 @@ export const PlaygroundImplementation = () => {
     </div>`
     );
 
-    return isDefault ? [defaultReact, defaultHtml] : [react, html];
+    return [react, html];
   }, [withLabel, isSelected, isDisabled]);
 
   return (

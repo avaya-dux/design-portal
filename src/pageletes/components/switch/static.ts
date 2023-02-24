@@ -1,9 +1,5 @@
 import type { TopicsDict } from "components";
 
-export const sandbox = "https://codesandbox.io/s/neo-react-switch-eeb2m1";
-export const storybook =
-  "https://neo-react-library-storybook.netlify.app/?path=/story/components-switch--default";
-
 type SwitchTopicNames =
   | "playground"
   | "anatomy"
