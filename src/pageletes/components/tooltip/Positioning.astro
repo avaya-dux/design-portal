@@ -4,10 +4,8 @@ import { Image } from "@avaya/neo-react";
 import {
   Description,
   ImageWrapper,
-  InfoTable,
-  InfoTableBody,
-  InfoTableCell,
-  InfoTableRow,
+  InfoList,
+  InfoListItem,
   PageleteSection,
   PageleteSubSection,
   SectionHeader,
@@ -49,39 +47,27 @@ const positioning2ImgAltText =
       <Image src={positioning1Img} alt={positioning1ImgAltText} />
     </ImageWrapper>
 
-    <InfoTable>
-      <InfoTableBody>
-        <InfoTableRow>
-          <InfoTableCell>
-            <strong>Left</strong>: The tooltip appears to the left of the action
-            item at about the same level. The container is vertically centered
-            around the anchor.
-          </InfoTableCell>
-        </InfoTableRow>
+    <InfoList>
+      <InfoListItem label="Left">
+        The tooltip appears to the left of the action item at about the same
+        level. The container is vertically centered around the anchor.
+      </InfoListItem>
 
-        <InfoTableRow>
-          <InfoTableCell>
-            <strong>Top</strong>: The tooltip appears above the action item and
-            is centered horizontally around the anchor.
-          </InfoTableCell>
-        </InfoTableRow>
+      <InfoListItem label="Top">
+        The tooltip appears above the action item and is centered horizontally
+        around the anchor.
+      </InfoListItem>
 
-        <InfoTableRow>
-          <InfoTableCell>
-            <strong>Bottom</strong>: The tooltip appears beneath the action item
-            and is centered horizontally around the anchor.
-          </InfoTableCell>
-        </InfoTableRow>
+      <InfoListItem label="Bottom">
+        The tooltip appears beneath the action item and is centered horizontally
+        around the anchor.
+      </InfoListItem>
 
-        <InfoTableRow>
-          <InfoTableCell>
-            <strong>Right</strong>: The tooltip appears to the right of the
-            action item at about the same level. The container is vertically
-            centered around the anchor.
-          </InfoTableCell>
-        </InfoTableRow>
-      </InfoTableBody>
-    </InfoTable>
+      <InfoListItem label="Right">
+        The tooltip appears to the right of the action item at about the same
+        level. The container is vertically centered around the anchor.
+      </InfoListItem>
+    </InfoList>
   </PageleteSubSection>
 
   <PageleteSubSection>
@@ -96,10 +82,3 @@ const positioning2ImgAltText =
     </Description>
   </PageleteSubSection>
 </PageleteSection>
-
-<style>
-  ul {
-    list-style-type: none;
-    margin: 0;
-  }
-</style>
