@@ -39,9 +39,9 @@ export const PlaygroundImplementation = () => {
       <button aria-label="clear input" class="neo-input-edit__icon neo-icon-end"></button>
     </div>
   </div>
-  <div id="text-hint" class="neo-input-hint">${helperText} ${clsx(
-        error && ' aria-live="assertive"'
-      )}</div>
+  <div id="text-hint" class="neo-input-hint" ${clsx(
+    error && ' aria-live="assertive"'
+  )}>${helperText}</div>
 </div>
 `
     );
