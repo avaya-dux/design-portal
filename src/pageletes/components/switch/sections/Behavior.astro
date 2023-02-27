@@ -1,0 +1,117 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  ColumnLayout,
+  Description,
+  DoAndDont,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  StackedLayout,
+  SubHeader,
+} from "components";
+
+import { topics } from "../static";
+
+const { id, title } = topics.behavior;
+
+import doImage1 from "../imgs/switch-behavior-do-1.svg";
+import dontImage1 from "../imgs/switch-behavior-dont-1.svg";
+import doImage2 from "../imgs/switch-behavior-do-2.svg";
+import dontImage2 from "../imgs/switch-behavior-dont-2.svg";
+import labelImage1 from "../imgs/switch-behavior-label-1.svg";
+import labelImage2 from "../imgs/switch-behavior-label-2.svg";
+
+const do1Instructions = "Use a switch for turning features on and off.";
+const doImg1AltText = "A toggled switch with the label 'Mute Audio'";
+
+const dont1Instructions =
+  "Do not use a switch for selecting items. Use the checkbox instead.";
+const dontImg1AltText =
+  "A toggled switch with the label 'I agree to the terms and conditions'";
+
+const do2Instructions =
+  "For a group of related switches, add a category label to connect them together.";
+const doImg2AltText =
+  "A group of related switches connected by the label 'Meeting defaults'";
+
+const dont2Instructions = "Do not add category labels to unrelated switches.";
+const dontImg2AltText =
+  "A group of unrelated switches connected by the label 'Features Enabled'";
+
+const labelImage1AltText =
+  "A toggled switch with the label 'Option' positioned to the right";
+const labelImage2AltText =
+  "A toggled switch with the label 'Option' positioned to the left";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+  </Description>
+
+  <PageleteSubSection>
+    <SubHeader id="switch-when-to-use">When To Use</SubHeader>
+
+    <Description>
+      If you need to represent the switching between two states or on-off state.
+      The difference between Switch and Checkbox is that Switch will trigger a
+      state change directly when you toggle it, while Checkbox is generally used
+      for state marking, which should work in conjunction with submit operation.
+    </Description>
+
+    <DoAndDont>
+      <DoAndDont.DoContainer instructions={do1Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={doImage1} alt={doImg1AltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
+
+      <DoAndDont.DontContainer instructions={dont1Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={dontImage1} alt={dontImg1AltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DontContainer>
+    </DoAndDont>
+
+    <DoAndDont>
+      <DoAndDont.DoContainer instructions={do2Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={doImage2} alt={doImg2AltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
+
+      <DoAndDont.DontContainer instructions={dont2Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={dontImage2} alt={dontImg2AltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DontContainer>
+    </DoAndDont>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="switch-label-location">Label Location</SubHeader>
+
+    <Description>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam.
+    </Description>
+
+    <ColumnLayout bkgColor="white" numOfColumns={2}>
+      <StackedLayout label="Label on the right">
+        <Image src={labelImage1} alt={labelImage1AltText} />
+      </StackedLayout>
+
+      <StackedLayout label="Label on the left">
+        <Image src={labelImage2} alt={labelImage2AltText} />
+      </StackedLayout>
+    </ColumnLayout>
+  </PageleteSubSection>
+</PageleteSection>

@@ -1,0 +1,57 @@
+---
+import {
+  Description,
+  PageleteSection,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableCellHead,
+  InfoTableHead,
+  InfoTableRow,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+const { id, title } = topics.keyboard;
+---
+
+<PageleteSection marginBottom="2rem">
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate aut quas
+    modi accusamus nam quidem eveniet iure dolores, a, officia corporis adipisci
+    id assumenda et ducimus! Corporis unde magnam laborum.
+  </Description>
+
+  <InfoTable isKeyboardInteraction>
+    <InfoTableHead>
+      <InfoTableRow>
+        <InfoTableCellHead>Keystrokes</InfoTableCellHead>
+        <InfoTableCellHead>Interaction</InfoTableCellHead>
+      </InfoTableRow>
+    </InfoTableHead>
+
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>Tab</InfoTableCell>
+        <InfoTableCell>Move forward into and out of the switch.</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Shift + Tab</InfoTableCell>
+        <InfoTableCell>
+          Move backward to the previous interactive element.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Spacebar</InfoTableCell>
+        <InfoTableCell>
+          Toggle the switch between the on and off states.
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
+</PageleteSection>
