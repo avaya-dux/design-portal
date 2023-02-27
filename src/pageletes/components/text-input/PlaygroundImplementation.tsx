@@ -41,7 +41,7 @@ export const PlaygroundImplementation = () => {
     );
 
     const reactCode = prettyPrintReact(
-      `<TextInput type="${typeOption}" label="Label" helperText="${helperText}"> </TextInput>`
+      `<TextInput type="${typeOption}" label="Label" helperText="${helperText}"/>`
     );
     return [htmlCode, reactCode];
   }, [helperText, typeOption]);
@@ -100,7 +100,7 @@ export const PlaygroundImplementation = () => {
         helperText={helperText}
         required={required}
         error={error}
-      ></TextInput>
+      />
     </Playground>
   );
 };
