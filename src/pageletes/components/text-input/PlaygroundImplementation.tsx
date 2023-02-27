@@ -6,6 +6,7 @@ import { prettyPrintHtml, prettyPrintReact } from "helpers";
 import { Playground } from "components";
 
 import { sandbox, storybook } from "./static";
+import clsx from "clsx";
 
 type TypeOption = "text" | "password";
 type LabelOption = "optional" | "required" | "none";
@@ -21,7 +22,9 @@ export const PlaygroundImplementation = () => {
   const [html, react] = useMemo(() => {
     const htmlCode = prettyPrintHtml(
       `
-<div class="neo-form-control">
+<div class="neo-form-control" ${clsx(
+        error && " neo-form-control--error  neo-form-control--required"
+      )}>
   <div class="neo-input-group">
     <label for="input1">
       Name
@@ -30,12 +33,15 @@ export const PlaygroundImplementation = () => {
       <input
         class="neo-input"
         id="input1"
+        aria-describedby="text-hint"
         type="${typeOption}"
       />
-      <button aria-label="clear input" tabindex='-1' class="neo-input-edit__icon neo-icon-end"></button>
+      <button aria-label="clear input" class="neo-input-edit__icon neo-icon-end"></button>
     </div>
   </div>
-  <div class="neo-input-hint">${helperText}</div>
+  <div id="text-hint" class="neo-input-hint">${helperText} ${clsx(
+        error && ' aria-live= "assertive"'
+      )}</div>
 </div>
 `
     );
