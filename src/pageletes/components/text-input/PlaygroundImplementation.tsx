@@ -40,15 +40,18 @@ export const PlaygroundImplementation = () => {
     </div>
   </div>
   <div id="text-hint" class="neo-input-hint">${helperText} ${clsx(
-        error && ' aria-live= "assertive"'
+        error && ' aria-live="assertive"'
       )}</div>
 </div>
 `
     );
 
     const reactCode = prettyPrintReact(
-      `<TextInput type="${typeOption}" label="Label" helperText="${helperText}" required="${required}"
-        error="${error}"/>`
+      `<TextInput
+          type="${typeOption}"
+          label="Label" helperText="${helperText}"
+          required="${required}"
+          error="${error}"/>`
     );
     return [htmlCode, reactCode];
   }, [helperText, typeOption]);
