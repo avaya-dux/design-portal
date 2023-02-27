@@ -2,15 +2,13 @@
 import { Image } from "@avaya/neo-react";
 
 import {
-  Description,
   ColumnLayout,
-  InfoTable,
+  Description,
+  InfoList,
+  InfoListItem,
   PageleteSection,
   SectionHeader,
   StackedLayout,
-  InfoTableBody,
-  InfoTableRow,
-  InfoTableCell,
 } from "components/astro";
 import { topics } from "../static";
 
@@ -65,35 +63,30 @@ import StateErrorImage from "./imgs/text-input-states-error.svg";
     </StackedLayout>
   </ColumnLayout>
 
-  <InfoTable isBulletedList={true}>
-    <InfoTableBody>
-      <InfoTableRow>
-        <InfoTableCell><strong>• Default</strong>: Description</InfoTableCell>
-      </InfoTableRow>
+  <InfoList type="disc">
+    <InfoListItem label="Default">
+      The default state is the state that the button is in when the user first
+      sees it.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>• Hover</strong>: Description
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Hover">
+      The hover state is the state that the button is in when the user moves the
+      mouse over the button.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>• Active</strong>: Description in password
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Active">
+      The active state is the state that the button is in when the user clicks
+      the button.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>• Error</strong>: Description
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Error">
+      The error state is the state that the button is in when the user has
+      entered invalid information into the button.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>• Disabled</strong>: Description
-        </InfoTableCell>
-      </InfoTableRow>
-    </InfoTableBody>
-  </InfoTable>
+    <InfoListItem label="Disabled">
+      The disabled state is the state that the button is in when the user cannot
+      interact with the button.
+    </InfoListItem>
+  </InfoList>
 </PageleteSection>

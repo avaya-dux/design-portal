@@ -2,15 +2,13 @@
 import { Image } from "@avaya/neo-react";
 
 import {
-  Description,
   ColumnLayout,
-  InfoTable,
+  Description,
+  InfoList,
+  InfoListItem,
   PageleteSection,
   SectionHeader,
   StackedLayout,
-  InfoTableBody,
-  InfoTableRow,
-  InfoTableCell,
 } from "components/astro";
 import { topics } from "../static";
 
@@ -90,59 +88,23 @@ import TypesReadOnlyImage from "./imgs/text-input-types-readonly.svg";
     </StackedLayout>
   </ColumnLayout>
 
-  <InfoTable isBulletedList={true}>
-    <InfoTableBody>
-      <InfoTableRow>
-        <InfoTableCell><strong>• Default</strong>: Description</InfoTableCell>
-      </InfoTableRow>
+  <InfoList type="disc">
+    <InfoListItem label="Default">Description</InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>• Left Icon</strong>: Description
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Left Icon">Description</InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>• Right Icon</strong>: Description in password
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Right Icon">Description</InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>• Left and Right Icons</strong>: Description
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Left and Right Icons">Description</InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>• Prefix</strong>: Description
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Prefix">Description</InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>• Suffix</strong>: Description
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Suffix">Description</InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>• Prefix and Suffix</strong>: Description
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Prefix and Suffix">Description</InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>• Left Icon and Suffix</strong>: Description
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Left Icon and Suffix">Description</InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>• Read Only</strong>: Description
-        </InfoTableCell>
-      </InfoTableRow>
-    </InfoTableBody>
-  </InfoTable>
+    <InfoListItem label="Read Only">Description</InfoListItem>
+  </InfoList>
 </PageleteSection>

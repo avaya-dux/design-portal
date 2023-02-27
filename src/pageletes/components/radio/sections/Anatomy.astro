@@ -1,11 +1,9 @@
 ---
 import {
   Description,
-  InfoTable,
-  InfoTableBody,
-  InfoTableCell,
-  InfoTableRow,
   ImageWrapper,
+  InfoList,
+  InfoListItem,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -34,31 +32,13 @@ const img1AltText =
     <Image src={image1} alt={img1AltText} />
   </ImageWrapper>
 
-  <InfoTable>
-    <InfoTableBody>
-      <InfoTableRow>
-        <InfoTableCell>
-          1. <strong>Radio Group Label</strong>: Description
-        </InfoTableCell>
-      </InfoTableRow>
+  <InfoList type="decimal">
+    <InfoListItem label="Radio Group Label">Description</InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          2. <strong>Radio Button</strong>: Description
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Radio Button">Description</InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          3. <strong>Radio Label</strong>: Description
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Radio Label">Description</InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          4. <strong>Unselected Radio Button</strong>: Description
-        </InfoTableCell>
-      </InfoTableRow>
-    </InfoTableBody>
-  </InfoTable>
+    <InfoListItem label="Unselected Radio Button">Description</InfoListItem>
+  </InfoList>
 </PageleteSection>
