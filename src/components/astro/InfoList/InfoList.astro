@@ -11,11 +11,15 @@ const marginLeft = type === "none" ? 0 : "1rem";
   <slot />
 </ul>
 
-<style define:vars={{ type, marginLeft }}>
+<style is:global define:vars={{ type, marginLeft }}>
   ul.info-list {
     list-style-type: var(--type);
     line-height: 20px;
     margin: 0 0 0 var(--marginLeft);
     font-size: 14px;
+  }
+
+  ul.info-list :not(li:last-child) {
+    padding-bottom: 4px;
   }
 </style>
