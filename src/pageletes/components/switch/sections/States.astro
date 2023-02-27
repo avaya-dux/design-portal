@@ -1,0 +1,72 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  ColumnLayout,
+  Description,
+  InfoList,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+} from "components/astro";
+
+import { topics } from "../static";
+
+const { id, title } = topics.states;
+
+import StateSelectedImage from "../imgs/switch-states-default.svg";
+import StateSelectedDisabledImage from "../imgs/switch-states-selected-disabled.svg";
+import StateUnselectedImage from "../imgs/switch-states-unselected.svg";
+import StateUnselectedDisabledImage from "../imgs/switch-states-unselected-disabled.svg";
+
+const selectedImageAltText = "Selected switch";
+const selectedDisabledImageAltText = "Selected switch with disabled state";
+const unselectedImageAltText = "Unselected switch";
+const unselectedDisabledImageAltText = "Unselected switch with disabled state";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+  </Description>
+
+  <ColumnLayout bkgColor="white" numOfColumns={4}>
+    <StackedLayout label="Unselected">
+      <Image src={StateUnselectedImage} alt={unselectedImageAltText} />
+    </StackedLayout>
+
+    <StackedLayout label="Selected">
+      <Image src={StateSelectedImage} alt={selectedImageAltText} />
+    </StackedLayout>
+
+    <StackedLayout label="Selected Disabled">
+      <Image
+        src={StateSelectedDisabledImage}
+        alt={selectedDisabledImageAltText}
+      />
+    </StackedLayout>
+
+    <StackedLayout label="Unselected Disabled">
+      <Image
+        src={StateUnselectedDisabledImage}
+        alt={unselectedDisabledImageAltText}
+      />
+    </StackedLayout>
+  </ColumnLayout>
+
+  <InfoList type="disc">
+    <InfoListItem label="Unselected">Description</InfoListItem>
+
+    <InfoListItem label="Selected">
+      Indicates whether the switch is on or off
+    </InfoListItem>
+
+    <InfoListItem label="Selected Disabled">Description</InfoListItem>
+
+    <InfoListItem label="Unselected Disabled">Description</InfoListItem>
+  </InfoList>
+</PageleteSection>

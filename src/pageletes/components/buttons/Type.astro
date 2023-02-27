@@ -2,15 +2,13 @@
 import { Button } from "@avaya/neo-react";
 
 import {
-  Description,
   ColumnLayout,
-  InfoTable,
+  Description,
+  InfoList,
+  InfoListItem,
   PageleteSection,
   SectionHeader,
   StackedLayout,
-  InfoTableBody,
-  InfoTableRow,
-  InfoTableCell,
 } from "components/astro";
 import { topics } from "./static";
 ---
@@ -37,32 +35,23 @@ import { topics } from "./static";
     </StackedLayout>
   </ColumnLayout>
 
-  <InfoTable isBulletedList>
-    <InfoTableBody>
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>• Primary Button:</strong> Use these buttons to perform the most
-          important action item on the current page. For example, Save or Continue.
-          Too many Primary buttons can be confusing for the user, so only include
-          one Primary button on each screen or region.
-        </InfoTableCell>
-      </InfoTableRow>
+  <InfoList type="disc">
+    <InfoListItem label="Primary Button">
+      Use these buttons to perform the most important action item on the current
+      page. For example, Save or Continue. Too many Primary buttons can be
+      confusing for the user, so only include one Primary button on each screen
+      or region.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>• Secondary Button:</strong> Secondaries offer alternate or opposite
-          actions to the Primary. For example, Cancel, Back, or Reset. Multiple Secondary
-          buttons can be used with each Primary.
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Secondary Button">
+      Secondaries offer alternate or opposite actions to the Primary. For
+      example, Cancel, Back, or Reset. Multiple Secondary buttons can be used
+      with each Primary.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>• Tertiary Button:</strong> Use them on their own or pair them
-          up with other buttons. Tertiary buttons contain the least important action
-          items on the page.
-        </InfoTableCell>
-      </InfoTableRow>
-    </InfoTableBody>
-  </InfoTable>
+    <InfoListItem label="Tertiary Button">
+      Use them on their own or pair them up with other buttons. Tertiary buttons
+      contain the least important action items on the page.
+    </InfoListItem>
+  </InfoList>
 </PageleteSection>
