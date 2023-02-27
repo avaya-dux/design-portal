@@ -1,8 +1,10 @@
 ---
 import { Image } from "@avaya/neo-react";
 import {
-  Description,
   ColumnLayout,
+  Description,
+  InfoList,
+  InfoListItem,
   InfoTable,
   InfoTableBody,
   InfoTableCell,
@@ -39,33 +41,19 @@ const anatomyImgAltText =
       </StackedLayout>
     </ColumnLayout>
 
-    <InfoTable>
-      <InfoTableBody>
-        <InfoTableRow>
-          <InfoTableCell>1.<strong> Label</strong>: Input label</InfoTableCell>
-        </InfoTableRow>
+    <InfoList type="decimal">
+      <InfoListItem label="Label">Input label</InfoListItem>
 
-        <InfoTableRow>
-          <InfoTableCell>
-            2.<strong> Input Text</strong>: Text input where users type in an
-            input
-          </InfoTableCell>
-        </InfoTableRow>
+      <InfoListItem label="Input Text">
+        Text input where users type in an input
+      </InfoListItem>
 
-        <InfoTableRow>
-          <InfoTableCell>
-            3.<strong> Container</strong>: Text input container
-          </InfoTableCell>
-        </InfoTableRow>
+      <InfoListItem label="Container">Text input container</InfoListItem>
 
-        <InfoTableRow>
-          <InfoTableCell>
-            4. <strong> Helper Text</strong>: Additional information to help
-            users
-          </InfoTableCell>
-        </InfoTableRow>
-      </InfoTableBody>
-    </InfoTable>
+      <InfoListItem label="Helper Text">
+        Additional information to help users
+      </InfoListItem>
+    </InfoList>
   </PageleteSubSection>
 
   <PageleteSubSection>

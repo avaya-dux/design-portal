@@ -3,17 +3,15 @@ import clsx from "clsx";
 
 export interface Props {
   isKeyboardInteraction?: boolean;
-  isBulletedList?: boolean;
 }
 
-const { isKeyboardInteraction, isBulletedList } = Astro.props as Props;
+const { isKeyboardInteraction } = Astro.props as Props;
 ---
 
 <table
   class={clsx(
     "neo-table neo-table--info",
-    isKeyboardInteraction && "neo-table--keyboard-interaction",
-    isBulletedList && "info-table--bulleted"
+    isKeyboardInteraction && "neo-table--keyboard-interaction"
   )}
 >
   <slot />
@@ -67,21 +65,6 @@ const { isKeyboardInteraction, isBulletedList } = Astro.props as Props;
       .neo-table--keyboard-interaction
     ) {
     margin-bottom: 2rem;
-  }
-
-  table.neo-table.info-table--bulleted.neo-table--info:not(
-      .neo-table--keyboard-interaction
-    ) {
-    margin-left: 0.6rem;
-  }
-
-  table.neo-table.info-table--bulleted.neo-table--info:not(
-      .neo-table--keyboard-interaction
-    )
-    tbody
-    tr
-    td {
-    text-indent: -0.7rem;
   }
 
   @media (prefers-color-scheme: dark) {
