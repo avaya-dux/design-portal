@@ -4,6 +4,8 @@ import { Image } from "@avaya/neo-react";
 import {
   ColumnLayout,
   Description,
+  InfoList,
+  InfoListItem,
   PageleteSection,
   SectionHeader,
   StackedLayout,
@@ -14,16 +16,19 @@ import { topics } from "../static";
 const { id, title } = topics.states;
 
 import image1 from "./imgs/states-1.svg";
-const img1AltText = "Image showing a radio button in the unselected state";
+const img1AltText = "Image showing the default state of a select";
 
 import image2 from "./imgs/states-2.svg";
-const img2AltText = "Image showing a radio button in the selected state";
+const img2AltText = "Image showing the active state of a select";
 
 import image3 from "./imgs/states-3.svg";
-const img3AltText = "Image showing a radio button in the disabled state";
+const img3AltText = "Image showing the hover state of a select";
 
 import image4 from "./imgs/states-4.svg";
-const img4AltText = "Image showing a radio button in the read only state";
+const img4AltText = "Image showing the disabled state of a select";
+
+import image5 from "./imgs/states-5.svg";
+const img5AltText = "Image showing the error state of a select";
 ---
 
 <PageleteSection>
@@ -36,21 +41,39 @@ const img4AltText = "Image showing a radio button in the read only state";
     consequatur.
   </Description>
 
-  <ColumnLayout bkgColor="white" numOfColumns={4}>
-    <StackedLayout label="Unselected">
+  <ColumnLayout bkgColor="white" numOfColumns={1} marginBottom="0">
+    <StackedLayout label="Default">
       <Image src={image1} alt={img1AltText} />
     </StackedLayout>
+  </ColumnLayout>
 
-    <StackedLayout label="Selected">
+  <ColumnLayout bkgColor="white" numOfColumns={2} showTopBorder={false}>
+    <StackedLayout label="Active">
       <Image src={image2} alt={img2AltText} />
     </StackedLayout>
 
-    <StackedLayout label="Disabled">
+    <StackedLayout label="Hover">
       <Image src={image3} alt={img3AltText} />
     </StackedLayout>
 
-    <StackedLayout label="Read Only">
+    <StackedLayout label="Disabled">
       <Image src={image4} alt={img4AltText} />
     </StackedLayout>
+
+    <StackedLayout label="Error">
+      <Image src={image5} alt={img5AltText} />
+    </StackedLayout>
   </ColumnLayout>
+
+  <InfoList type="disc">
+    <InfoListItem label="Default">Description</InfoListItem>
+
+    <InfoListItem label="Active">Description</InfoListItem>
+
+    <InfoListItem label="Hover">Description</InfoListItem>
+
+    <InfoListItem label="Disabled">Description</InfoListItem>
+
+    <InfoListItem label="Error">Description</InfoListItem>
+  </InfoList>
 </PageleteSection>
