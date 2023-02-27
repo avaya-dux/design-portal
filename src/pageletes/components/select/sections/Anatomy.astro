@@ -2,10 +2,8 @@
 import {
   ColumnLayout,
   Description,
-  InfoTable,
-  InfoTableBody,
-  InfoTableCell,
-  InfoTableRow,
+  InfoList,
+  InfoListItem,
   PageleteSection,
   SectionHeader,
   StackedLayout,
@@ -45,37 +43,15 @@ const img2AltText =
     </StackedLayout>
   </ColumnLayout>
 
-  <InfoTable>
-    <InfoTableBody>
-      <InfoTableRow>
-        <InfoTableCell>
-          1. <strong>Label</strong>: Description
-        </InfoTableCell>
-      </InfoTableRow>
+  <InfoList type="decimal">
+    <InfoListItem label="Label">Description</InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          2. <strong>Form</strong>: Description
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Form">Description</InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          3. <strong>Text Input Field</strong>: Description
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Text Input Field">Description</InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          4. <strong>Chevron</strong>: Description
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Chevron">Description</InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          5. <strong>Expand Trigger</strong>: Description
-        </InfoTableCell>
-      </InfoTableRow>
-    </InfoTableBody>
-  </InfoTable>
+    <InfoListItem label="Expand Trigger">Description</InfoListItem>
+  </InfoList>
 </PageleteSection>
