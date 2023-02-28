@@ -1,4 +1,10 @@
-import { Checkbox, CheckboxGroup, Radio, RadioGroup, Switch } from "@avaya/neo-react";
+import {
+  Checkbox,
+  CheckboxGroup,
+  Radio,
+  RadioGroup,
+  Switch,
+} from "@avaya/neo-react";
 import clsx from "clsx";
 import { useMemo, useState } from "react";
 
