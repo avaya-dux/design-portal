@@ -48,10 +48,10 @@ export const PlaygroundImplementation = () => {
 
     const reactCode = prettyPrintReact(
       `<TextInput
-          type="${typeOption}"
-          label="Label" helperText="${helperText}"
-          required="${required}"
-          error="${error}"/>`
+  type="${typeOption}"
+  label="Label" helperText="${helperText}"
+  required="${required}"
+  error="${error}"/>`
     );
     return [htmlCode, reactCode];
   }, [helperText, typeOption]);
