@@ -1,4 +1,10 @@
-import { Checkbox, CheckboxGroup, Radio, RadioGroup, Switch } from "@avaya/neo-react";
+import {
+  Checkbox,
+  CheckboxGroup,
+  Radio,
+  RadioGroup,
+  Switch,
+} from "@avaya/neo-react";
 import clsx from "clsx";
 import { useMemo, useState } from "react";
 
@@ -16,16 +22,17 @@ export const PlaygroundImplementation = () => {
 
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
 
-  const [react, html] = useMemo(() => {
+  const isDefault = withLabel === "right" && !isSelected && !isDisabled;
 
+  const [react, html] = useMemo(() => {
     const react = prettyPrintReact(
       `
-    <Switch${clsx(
-      withLabel === "none" && ' aria-label="Option"',
-      withLabel === "left" && " dir='rtl'",
-      isDisabled && " disabled",
-      isSelected && " checked"
-    )}>${withLabel !== "none" ? "Option" : ""}</Switch$>
+    <Switch${!isDefault ? " " : ""}${clsx(
+        withLabel === "none" && 'aria-label="Option"',
+        withLabel === "left" && "dir='rtl'",
+        isDisabled && "disabled",
+        isSelected && "checked"
+      )}>${withLabel !== "none" ? "Option" : ""}</Switch>
 `
     );
 
