@@ -25,3 +25,7 @@ export { KeyboardInteractions };
 import RelatedContent from "./RelatedContent.astro";
 
 export { RelatedContent };
+
+import SwitchPlayground from "./SwitchPlayground.astro";
+
+export { SwitchPlayground };
