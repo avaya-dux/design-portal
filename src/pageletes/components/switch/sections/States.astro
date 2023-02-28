@@ -2,15 +2,13 @@
 import { Image } from "@avaya/neo-react";
 
 import {
-  Description,
   ColumnLayout,
-  InfoTable,
+  Description,
+  InfoList,
+  InfoListItem,
   PageleteSection,
   SectionHeader,
   StackedLayout,
-  InfoTableBody,
-  InfoTableRow,
-  InfoTableCell,
 } from "components/astro";
 
 import { topics } from "../static";
@@ -60,31 +58,15 @@ const unselectedDisabledImageAltText = "Unselected switch with disabled state";
     </StackedLayout>
   </ColumnLayout>
 
-  <InfoTable isBulletedList>
-    <InfoTableBody>
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>• Unselected:</strong> Description
-        </InfoTableCell>
-      </InfoTableRow>
+  <InfoList type="disc">
+    <InfoListItem label="Unselected">Description</InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>• Selected:</strong> Indicates whether the switch is on or off
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Selected">
+      Indicates whether the switch is on or off
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>• Selected Disabled:</strong> Description
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Selected Disabled">Description</InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>• Unselected Disabled:</strong> Description
-        </InfoTableCell>
-      </InfoTableRow>
-    </InfoTableBody>
-  </InfoTable>
+    <InfoListItem label="Unselected Disabled">Description</InfoListItem>
+  </InfoList>
 </PageleteSection>
