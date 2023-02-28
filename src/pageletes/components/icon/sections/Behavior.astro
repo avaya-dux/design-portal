@@ -1,0 +1,120 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  ColumnLayout,
+  Description,
+  DoAndDont,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  StackedLayout,
+  SubHeader,
+} from "components";
+
+import { topics } from "../static";
+
+const { id, title } = topics.behavior;
+
+import doImage1 from "../imgs/icons-color-do-1.svg";
+import dontImage1 from "../imgs/icons-color-dont-1.svg";
+import doImage2 from "../imgs/icons-label-do-1.svg";
+import doImage3 from "../imgs/icons-label-do-2.svg";
+import alignmentImage1 from "../imgs/icons-alignment-1.svg";
+
+const do1Instructions = "Use a single color for the icon and its label.";
+const doImg1AltText = "An icon and label in a single color";
+
+const dont1Instructions =
+  "Do not use different colors on the icon and the label.";
+const dontImg1AltText = "An icon and label in different colors";
+
+const do2Instructions = "Add a label next to an icon whenever possible..";
+const doImg2AltText = "Icons with corresponding labels used in a Table";
+
+const do3Instructions =
+  "If there is insufficient space to add a label, put the text into a tooltip.";
+const doImg3AltText = "An icon without a label and a Tooltip being displayed";
+
+const alignmentImage1AltText =
+  "A button and two icons aligned on the same horizontal axis";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    Icons are used to visually convey the action taken when that element is
+    selected. They communicate content at a glance, provide interactivity, and
+    draw attention to important information. Icons should not be used simply for
+    decoration.
+  </Description>
+
+  <PageleteSection>
+    <SubHeader id="icons-color">Color</SubHeader>
+
+    <Description>
+      All icons can take on any color in the Neo design system, but the
+      associated text must use the same color. Stronger colors can make an
+      important icon standout among other options, but don’t use too much color
+      or the value is lost.
+    </Description>
+
+    <DoAndDont>
+      <DoAndDont.DoContainer instructions={do1Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={doImage1} alt={doImg1AltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
+
+      <DoAndDont.DontContainer instructions={dont1Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={dontImage1} alt={dontImg1AltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DontContainer>
+    </DoAndDont>
+  </PageleteSection>
+
+  <PageleteSection>
+    <SubHeader id="icons-labels">Labels</SubHeader>
+
+    <Description>
+      Whenever possible, icons should be accompanied by descriptive text since
+      this better communicates each element’s function than icons alone do. If
+      there is not enough space for an icon to have text beside it, include a
+      tooltip with the required text.
+    </Description>
+
+    <DoAndDont>
+      <DoAndDont.DoContainer instructions={do2Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={doImage2} alt={doImg2AltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
+
+      <DoAndDont.DoContainer instructions={do3Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={doImage3} alt={doImg3AltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
+    </DoAndDont>
+  </PageleteSection>
+</PageleteSection>
+
+<PageleteSubSection>
+  <SubHeader id="icons-alignment">Alignment</SubHeader>
+
+  <Description>
+    When icons are used with text, they should be aligned to the center of the
+    first (or only) line of text. An icon always appears to the left of the text
+    label.
+  </Description>
+
+  <ColumnLayout bkgColor="white" numOfColumns={1}>
+    <StackedLayout>
+      <Image src={alignmentImage1} alt={alignmentImage1AltText} />
+    </StackedLayout>
+  </ColumnLayout>
+</PageleteSubSection>
