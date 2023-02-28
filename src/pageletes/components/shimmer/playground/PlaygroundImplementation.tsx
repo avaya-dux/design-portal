@@ -80,7 +80,11 @@ export const PlaygroundImplementation = () => {
           storybook,
         }}
       >
-        <div className={clsx(shape==="rectangle" && "shimmer-playground-rectangle-wrapper")}>
+        <div
+          className={clsx(
+            shape === "rectangle" && "shimmer-playground-rectangle-wrapper"
+          )}
+        >
           <Shimmer
             loopInfinitely={loop || false}
             size={size}
