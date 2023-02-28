@@ -9,6 +9,8 @@ import { Playground } from "components/react";
 import { createHtmlString, createReactString } from "./helper";
 import { defaultHtml, defaultReact, sandbox, storybook } from "../static";
 
+import clsx from "clsx";
+
 import "./style.css";
 
 type RequiredProps = Required<ShimmerProps>;
@@ -78,7 +80,7 @@ export const PlaygroundImplementation = () => {
           storybook,
         }}
       >
-        <div className="shimmer-playground-wrapper">
+        <div className={clsx(shape==="rectangle" && "shimmer-playground-rectangle-wrapper")}>
           <Shimmer
             loopInfinitely={loop || false}
             size={size}
