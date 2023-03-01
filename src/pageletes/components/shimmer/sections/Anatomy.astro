@@ -1,12 +1,9 @@
 ---
 import { Image } from "@avaya/neo-react";
 import {
-  Description,
+  InfoList,
+  InfoListItem,
   ColumnLayout,
-  InfoTable,
-  InfoTableBody,
-  InfoTableCell,
-  InfoTableRow,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -24,25 +21,17 @@ const anatomyImgAltText =
   <SectionHeader id={id}>
     {title}
   </SectionHeader>
-  <Description>Lorem ipsum</Description>
   <ColumnLayout bkgColor="white" numOfColumns={1}>
     <Image src={AnatomyImage} alt={anatomyImgAltText} />
   </ColumnLayout>
 
-  <InfoTable>
-    <InfoTableBody>
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>1. Shape:</strong> Represents graphical elements such as avatars,
-          icons, and small Images.
-        </InfoTableCell>
-      </InfoTableRow>
+  <InfoList type="decimal">
+    <InfoListItem label="Shape">
+      Represents page elements such as text, tables, avatars, icons, and images.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>2. Animation:</strong> From Left to Right
-        </InfoTableCell>
-      </InfoTableRow>
-    </InfoTableBody>
-  </InfoTable>
+    <InfoListItem label="Animation">
+      This is a moving shaded band that travels from Left to Right.
+    </InfoListItem>
+  </InfoList>
 </PageleteSection>
