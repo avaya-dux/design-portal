@@ -21,3 +21,15 @@ export { Behavior };
 
 import TextInputBehavior from "./TextInputBehavior.astro";
 export { TextInputBehavior };
+
+import TextAreaBehavior from "./TextAreaBehavior.astro";
+export { TextAreaBehavior };
+
+import PasswordInputBehavior from "./PasswordInputBehavior.astro";
+export { PasswordInputBehavior };
+
+import AlignmentBehavior from "./AlignmentBehavior.astro";
+export { AlignmentBehavior };
+
+import Specs from "./Specs.astro";
+export { Specs };

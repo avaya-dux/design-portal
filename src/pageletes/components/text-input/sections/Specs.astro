@@ -1,0 +1,44 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ColumnLayout,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+  SubHeader,
+} from "components/astro";
+import { topics } from "../static";
+
+import SpecsImage1 from "./imgs/text-input-specs-1.svg";
+import SpecsImage2 from "./imgs/text-input-specs-2.svg";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.specs.id}>{topics.specs.title}</SectionHeader>
+
+  <Description>Specs Description.</Description>
+
+  <SubHeader id="text-input-alignment">Alignment</SubHeader>
+
+  <Description>
+    Show both default and small sizes along with its specs.
+  </Description>
+
+  <ColumnLayout bkgColor="white" numOfColumns={2} marginTop="3rem">
+    <StackedLayout label="Default Text Input">
+      <Image
+        src={SpecsImage1}
+        alt="Image showing Default Text Input dimensions"
+      />
+    </StackedLayout>
+
+    <StackedLayout label="Small Text Input">
+      <Image
+        src={SpecsImage2}
+        alt="Image showing Small Text Input dimensions"
+      />
+    </StackedLayout>
+  </ColumnLayout>
+</PageleteSection>
