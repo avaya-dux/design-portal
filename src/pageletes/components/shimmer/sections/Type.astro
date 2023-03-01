@@ -1,22 +1,32 @@
 ---
 import { Image } from "@avaya/neo-react";
 
-import { Description, PageleteSection, SectionHeader } from "components/astro";
+import {
+  Description,
+  PageleteSection,
+  SectionHeader,
+  PageleteSubSection,
+  SubHeader,
+  ColumnLayout,
+} from "components/astro";
 
 import { DoAndDont } from "components/react";
 
 import { topics } from "../static";
 
-const { id, title } = topics.type;
-
 import DynamicImage from "../imgs/shimmer-content-do-1.svg";
 import StaticImage from "../imgs/shimmer-content-dont-1.svg";
+import progressiveLoadingImage from "../imgs/shimmer-progressive-loading.svg";
+
+const { id, title } = topics.type;
 
 const dynamicImgAltText = "Image showing dynamic content";
 const staticImgAltText = "Image showing static content";
 const dynamicContentInstruction =
-  "Use actual content when content doesn’t change (static content). For elements of the page that won’t require loadings, such as headings, body copy, buttons, and borders, include these as static elements of the design. In other words, only shimmer load data values/content, not containers. This avoids the need to build custom loading elements for a variety of containers and minimizes jank when data/content arrives.";
-const staticContentInstruction = "Add text here";
+  "Use the actual content for parts of the page that do not change (static content). For elements that are quick to load, such as headings, body copy, buttons, and borders, include these as static elements of the design. Shimmer load only the variable content, not the containers.";
+const staticContentInstruction =
+  "Do not shimmer load all of the elements in the window as this will extend the time needed for the page appear.";
+const progressiveLoadingImgAltText = "Image showing progressive loading";
 ---
 
 <PageleteSection>
@@ -24,21 +34,50 @@ const staticContentInstruction = "Add text here";
     {title}
   </SectionHeader>
   <Description>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+    There are two variants for a shimmer that affect the way pages are loaded
+    and what bits appear first. The format and use of each is outlined below.
   </Description>
+  <PageleteSubSection marginTop="4rem">
+    <SubHeader id="shimmer-type-content">
+      Dynamic Content vs Static Conent
+    </SubHeader>
+    <Description>
+      Certain elements on a page never change, such as headers, titles, copy
+      text, etc. These elements will be loaded first as they can be processed
+      quickly. Page content that changes, such as table data, graphs and
+      settings, will be loaded after the static content is complete.
+    </Description>
+    <DoAndDont size="wide">
+      <DoAndDont.DoContainer instructions={dynamicContentInstruction}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={DynamicImage} alt={dynamicImgAltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
 
-  <DoAndDont size="wide">
-    <DoAndDont.DoContainer instructions={dynamicContentInstruction}>
-      <DoAndDont.ImageExampleContainer>
-        <Image src={DynamicImage} alt={dynamicImgAltText} />
-      </DoAndDont.ImageExampleContainer>
-    </DoAndDont.DoContainer>
+      <DoAndDont.DontContainer instructions={staticContentInstruction}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={StaticImage} alt={staticImgAltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DontContainer>
+    </DoAndDont>
+  </PageleteSubSection>
 
-    <DoAndDont.DontContainer instructions={staticContentInstruction}>
-      <DoAndDont.ImageExampleContainer>
-        <Image src={StaticImage} alt={staticImgAltText} />
-      </DoAndDont.ImageExampleContainer>
-    </DoAndDont.DontContainer>
-  </DoAndDont>
+  <PageleteSubSection marginTop="4rem">
+    <SubHeader id="shimmer-type-loading">Progressive Loading</SubHeader>
+    <Description>
+      Progressive loading is a technique that loads pages in batches. The
+      fastest items to load go first, followed by progressively more detailed
+      items.
+    </Description>
+    <ColumnLayout bkgColor="white" numOfColumns={1}>
+      <Image src={progressiveLoadingImage} alt={progressiveLoadingImgAltText} />
+    </ColumnLayout>
+    <Description>
+      The primary batch should show a page’s basic structure (the skeleton state
+      versions of the container-based components), data-based text (the skeleton
+      state version of text) and non-data text. Following batches can include
+      images, content outside of the viewport, interactive (action-based)
+      components, and variable text.
+    </Description>
+  </PageleteSubSection>
 </PageleteSection>
