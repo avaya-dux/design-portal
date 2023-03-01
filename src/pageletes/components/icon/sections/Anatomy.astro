@@ -1,0 +1,38 @@
+---
+import {
+  Description,
+  ImageWrapper,
+  PageleteSection,
+  SectionHeader,
+  InfoList,
+  InfoListItem,
+} from "components/astro";
+
+import { topics } from "../static";
+import { Image } from "@avaya/neo-react";
+
+const { id, title } = topics.anatomy;
+
+import image1 from "../imgs/icons-anatomy.svg";
+const img1AltText = "Icon with graphic area pointed out";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Icons have a simple format, and are best accompanied by a text label.
+    However, where there is insufficient space to include a label, the icon may
+    appear by itself with the label moved into a tooltip.
+  </Description>
+
+  <ImageWrapper>
+    <Image src={image1} alt={img1AltText} />
+  </ImageWrapper>
+
+  <InfoList type="decimal">
+    <InfoListItem label="Icon">
+      This is the graphic depiction of the associated action.
+    </InfoListItem>
+  </InfoList>
+</PageleteSection>

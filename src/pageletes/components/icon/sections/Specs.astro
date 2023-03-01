@@ -1,0 +1,46 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ColumnLayout,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+} from "components/astro";
+
+import { topics } from "../static";
+
+const { id, title } = topics.specs;
+
+import SpecsImage1 from "../imgs/icon-size-lg.svg";
+import SpecsImage2 from "../imgs/icon-size-md.svg";
+import SpecsImage3 from "../imgs/icon-size-sm.svg";
+
+const specsImage1AltText = "A large icon size 32 pixels";
+const specsImage2AltText = "A medium icon size 24 pixels";
+const specsImage3AltText = "A small icon size 216 pixels";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Icons come in 3 sizes. Use the largest size that best fits into the
+    available space for your situation.
+  </Description>
+
+  <ColumnLayout bkgColor="white" numOfColumns={3}>
+    <StackedLayout label="Large">
+      <Image src={SpecsImage1} alt={specsImage1AltText} />
+    </StackedLayout>
+
+    <StackedLayout label="Medium">
+      <Image src={SpecsImage2} alt={specsImage2AltText} />
+    </StackedLayout>
+
+    <StackedLayout label="Small">
+      <Image src={SpecsImage3} alt={specsImage3AltText} />
+    </StackedLayout>
+  </ColumnLayout>
+</PageleteSection>
