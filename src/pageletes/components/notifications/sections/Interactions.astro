@@ -1,10 +1,8 @@
 ---
 import {
   Description,
-  InfoTable,
-  InfoTableBody,
-  InfoTableCell,
-  InfoTableRow,
+  InfoList,
+  InfoListItem,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -22,35 +20,21 @@ import { topics } from "../static";
     Component.
   </Description>
 
-  <InfoTable>
-    <InfoTableBody>
-      <InfoTableRow>
-        <InfoTableCell>Tab</InfoTableCell>
-        <InfoTableCell>
-          Moves forward to the next interactive element
-        </InfoTableCell>
-      </InfoTableRow>
+  <InfoList type="decimal">
+    <InfoListItem label="Tab">
+      Moves forward to the next interactive element
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>Shift + Tab</InfoTableCell>
-        <InfoTableCell>
-          Moves backward to the previous interactive element
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Shift + Tab">
+      Moves backward to the previous interactive element
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>Enter or Spacebar</InfoTableCell>
-        <InfoTableCell>
-          Activates the notification (if applicable)
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Enter or Spacebar">
+      Activates the notification (if applicable)
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>Delete</InfoTableCell>
-        <InfoTableCell>
-          Closes the notification if possible, equivalent to the close button
-        </InfoTableCell>
-      </InfoTableRow>
-    </InfoTableBody>
-  </InfoTable>
+    <InfoListItem label="Delete">
+      Closes the notification if possible, equivalent to the close button
+    </InfoListItem>
+  </InfoList>
 </PageleteSection>

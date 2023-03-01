@@ -3,10 +3,8 @@ import { Image } from "@avaya/neo-react";
 import {
   ColumnLayout,
   Description,
-  InfoTable,
-  InfoTableBody,
-  InfoTableCell,
-  InfoTableRow,
+  InfoList,
+  InfoListItem,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -30,44 +28,29 @@ const anatomyImgAltText =
     <Image src={AnatomyImage} alt={anatomyImgAltText} />
   </ColumnLayout>
 
-  <InfoTable>
-    <InfoTableBody>
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>1. Collapsed Accordion:</strong> The default state of the accordion.
-          It occupies one line on the page.
-        </InfoTableCell>
-      </InfoTableRow>
+  <InfoList type="decimal">
+    <InfoListItem label="Collapsed Accordion">
+      The default state of the accordion. It occupies one line on the page.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>2. Header:</strong> This text field explains the content within
-          the accordion. It should be a single line of text that clearly explains
-          what is inside.
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Header">
+      This text field explains the content within the accordion. It should be a
+      single line of text that clearly explains what is inside.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>3. Chevron Icon:</strong> The icon toggles the state of the accordion
-          between Expanded and Collapsed. The icon changes to reflect the current
-          state.
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Chevron Icon">
+      The icon toggles the state of the accordion between Expanded and
+      Collapsed. The icon changes to reflect the current state.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>4. Expanded Accordion:</strong> When the chevron is activated,
-          the accordion expands to reveal its content.
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Expanded Accordion">
+      When the chevron is activated, the accordion expands to reveal its
+      content.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>5. Panel:</strong> This is the content within the accordion: instructions,
-          links, descriptions, etc.
-        </InfoTableCell>
-      </InfoTableRow>
-    </InfoTableBody>
-  </InfoTable>
+    <InfoListItem label="Panel">
+      This is the content within the accordion: instructions, links,
+      descriptions, etc.
+    </InfoListItem>
+  </InfoList>
 </PageleteSection>
