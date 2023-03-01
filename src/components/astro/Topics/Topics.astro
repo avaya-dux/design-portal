@@ -10,12 +10,6 @@ const { topics } = Astro.props as Props;
 const links: Topic[] = topicsSortedByOrder(topics) || [];
 ---
 
-<ul class="dash-list">
+<ul>
   {links.map((link) => <TopicLink topicId={link.id}>{link.title}</TopicLink>)}
 </ul>
-
-<style is:global>
-  .dash-list a:hover:not([class*="disabled"]) {
-    text-decoration: none;
-  }
-</style>
