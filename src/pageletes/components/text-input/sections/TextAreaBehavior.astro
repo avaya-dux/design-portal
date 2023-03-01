@@ -1,0 +1,62 @@
+---
+import { Image } from "@avaya/neo-react";
+import { Description, SubHeader, DoAndDont } from "components";
+
+import areaDoImage1 from "./imgs/text-area-behavior-do-1.svg";
+import areaDontImage1 from "./imgs/text-area-behavior-dont-1.svg";
+const areaDoInstructions1 =
+  "Use a text area for content that requires multiple lines.";
+const areaDontInstructions1 =
+  "Do not use single line inputs where text is likely to be cut off.";
+
+import areaDoImage2 from "./imgs/text-area-behavior-do-2.svg";
+import areaDontImage2 from "./imgs/text-area-behavior-dont-2.svg";
+const areaDoInstructions2 =
+  "Keep input fields the same width whenever possible.";
+const areaDontInstructions2 =
+  "Do not create unusually large input fields that do not match the width of other inputs being used on the same layout.";
+---
+
+<SubHeader id="text-area-behavior">Text Area</SubHeader>
+
+<Description>Text Area description.</Description>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={areaDoInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={areaDoImage1}
+        alt="Image showing Text Area with multiple lines of text."
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={areaDontInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={areaDontImage1}
+        alt="Image showing Text Input with truncated text that doesn't fit."
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>
+
+<DoAndDont size="wide">
+  <DoAndDont.DoContainer instructions={areaDoInstructions2}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={areaDoImage2}
+        alt="Image showing input fields with the same width"
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={areaDontInstructions2}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={areaDontImage2}
+        alt="Image showing input fields with different widhts"
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>

@@ -5,10 +5,6 @@ import {
   Description,
   InfoList,
   InfoListItem,
-  InfoTable,
-  InfoTableBody,
-  InfoTableCell,
-  InfoTableRow,
   PageleteSection,
   PageleteSubSection,
   SectionHeader,
@@ -67,40 +63,24 @@ const anatomyImgAltText =
       </StackedLayout>
     </ColumnLayout>
 
-    <InfoTable>
-      <InfoTableBody>
-        <InfoTableRow>
-          <InfoTableCell>1.<strong> Label</strong>: Input label</InfoTableCell>
-        </InfoTableRow>
+    <InfoList type="decimal">
+      <InfoListItem label="Label">Input label</InfoListItem>
 
-        <InfoTableRow>
-          <InfoTableCell>
-            2.<strong> Input Text</strong>: Text input where users type in an
-            input
-          </InfoTableCell>
-        </InfoTableRow>
+      <InfoListItem label="Input Text">
+        Text input where users type in an input
+      </InfoListItem>
 
-        <InfoTableRow>
-          <InfoTableCell>
-            3.<strong> Container</strong>: Text input container
-          </InfoTableCell>
-        </InfoTableRow>
+      <InfoListItem label="Container">Text input container</InfoListItem>
 
-        <InfoTableRow>
-          <InfoTableCell>
-            4. <strong> Helper Text</strong>: Additional information to help
-            users
-          </InfoTableCell>
-        </InfoTableRow>
+      <InfoListItem label="Helper Text">
+        Additional information to help users
+      </InfoListItem>
 
-        <InfoTableRow>
-          <InfoTableCell>
-            5. <strong> Character Count</strong>: Indicates the max number of
-            characters and counts number of characters used as the user types
-          </InfoTableCell>
-        </InfoTableRow>
-      </InfoTableBody>
-    </InfoTable>
+      <InfoListItem label="Character Count">
+        Indicates the max number of characters and counts number of characters
+        used as the user types
+      </InfoListItem>
+    </InfoList>
   </PageleteSubSection>
 
   <PageleteSubSection>
@@ -114,45 +94,26 @@ const anatomyImgAltText =
       </StackedLayout>
     </ColumnLayout>
 
-    <InfoTable>
-      <InfoTableBody>
-        <InfoTableRow>
-          <InfoTableCell>1.<strong>Label</strong>: Input label</InfoTableCell>
-        </InfoTableRow>
+    <InfoList type="decimal">
+      <InfoListItem label="Label">Input label</InfoListItem>
 
-        <InfoTableRow>
-          <InfoTableCell>
-            2.<strong>Required Label Icon</strong>: This icon indicates that
-            completing this input is mandatory
-          </InfoTableCell>
-        </InfoTableRow>
+      <InfoListItem label="Required Label Icon">
+        This icon indicates that completing this input is mandatory
+      </InfoListItem>
 
-        <InfoTableRow>
-          <InfoTableCell>
-            3.<strong>Password Input Text</strong>: Text input where users type
-            in password
-          </InfoTableCell>
-        </InfoTableRow>
+      <InfoListItem label="Password Input Text">
+        Text input where users type in password
+      </InfoListItem>
 
-        <InfoTableRow>
-          <InfoTableCell>
-            4.<strong>Container</strong>: Text input container
-          </InfoTableCell>
-        </InfoTableRow>
+      <InfoListItem label="Container">Text input container</InfoListItem>
 
-        <InfoTableRow>
-          <InfoTableCell>
-            5.<strong>Helper Text</strong>: Additional information to help users
-          </InfoTableCell>
-        </InfoTableRow>
+      <InfoListItem label="Helper Text">
+        Additional information to help users
+      </InfoListItem>
 
-        <InfoTableRow>
-          <InfoTableCell>
-            6.<strong>Password Icon Trigger</strong>: This icon turns the user's
-            password visible and hidden
-          </InfoTableCell>
-        </InfoTableRow>
-      </InfoTableBody>
-    </InfoTable>
+      <InfoListItem label="Password Icon Trigger">
+        This icon turns the user's password visible and hidden
+      </InfoListItem>
+    </InfoList>
   </PageleteSubSection>
 </PageleteSection>
