@@ -52,7 +52,7 @@ const alignmentImage1AltText =
     decoration.
   </Description>
 
-  <PageleteSubSection>
+  <PageleteSubSection marginBottom={"4rem"}>
     <SubHeader id="icons-color">Color</SubHeader>
 
     <Description>
@@ -101,20 +101,19 @@ const alignmentImage1AltText =
       </DoAndDont.DoContainer>
     </DoAndDont>
   </PageleteSubSection>
+  <PageleteSubSection marginBottom={"4rem"}>
+    <SubHeader id="icons-alignment">Alignment</SubHeader>
+
+    <Description>
+      When icons are used with text, they should be aligned to the center of the
+      first (or only) line of text. An icon always appears to the left of the
+      text label.
+    </Description>
+
+    <ColumnLayout bkgColor="white" numOfColumns={1}>
+      <StackedLayout>
+        <Image src={alignmentImage1} alt={alignmentImage1AltText} />
+      </StackedLayout>
+    </ColumnLayout>
+  </PageleteSubSection>
 </PageleteSection>
-
-<PageleteSubSection>
-  <SubHeader id="icons-alignment">Alignment</SubHeader>
-
-  <Description>
-    When icons are used with text, they should be aligned to the center of the
-    first (or only) line of text. An icon always appears to the left of the text
-    label.
-  </Description>
-
-  <ColumnLayout bkgColor="white" numOfColumns={1}>
-    <StackedLayout>
-      <Image src={alignmentImage1} alt={alignmentImage1AltText} />
-    </StackedLayout>
-  </ColumnLayout>
-</PageleteSubSection>
