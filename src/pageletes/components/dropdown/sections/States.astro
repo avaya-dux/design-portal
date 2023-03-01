@@ -1,12 +1,10 @@
 ---
 import { Image } from "@avaya/neo-react";
 import {
-  Description,
   ColumnLayout,
-  InfoTable,
-  InfoTableBody,
-  InfoTableCell,
-  InfoTableRow,
+  Description,
+  InfoList,
+  InfoListItem,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -30,36 +28,23 @@ const statesImgAltText =
     <Image src={StatesImage} alt={statesImgAltText} />
   </ColumnLayout>
 
-  <InfoTable>
-    <InfoTableBody>
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>1. Default:</strong> When the dropdown is opened, the action items
-          are shown.
-        </InfoTableCell>
-      </InfoTableRow>
+  <InfoList type="decimal">
+    <InfoListItem label="Default">
+      When the dropdown is opened, the action items are shown.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>2. Hover:</strong> As the focus is moved over the mneu items, they
-          are highlighted and can then be selected.
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Hover">
+      As the focus is moved over the mneu items, they are highlighted and can
+      then be selected.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>3. Disabled:</strong> Some circumstances will prevent one or more
-          items from being selectable.
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Disabled">
+      Some circumstances will prevent one or more items from being selectable.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>4. Selected:</strong> When an item is selected, it is shown with
-          a checkmark beside the item. Some lists allow more than one selection to
-          be made.
-        </InfoTableCell>
-      </InfoTableRow>
-    </InfoTableBody>
-  </InfoTable>
+    <InfoListItem label="Selected">
+      When an item is selected, it is shown with a checkmark beside the item.
+      Some lists allow more than one selection to be made.
+    </InfoListItem>
+  </InfoList>
 </PageleteSection>

@@ -1,12 +1,10 @@
 ---
 import { Image } from "@avaya/neo-react";
 import {
-  Description,
   ColumnLayout,
-  InfoTable,
-  InfoTableBody,
-  InfoTableCell,
-  InfoTableRow,
+  Description,
+  InfoList,
+  InfoListItem,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -31,41 +29,27 @@ const anatomyImgAltText =
     <Image src={AnatomyImage} alt={anatomyImgAltText} />
   </ColumnLayout>
 
-  <InfoTable>
-    <InfoTableBody>
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>1. Control:</strong> This is the Neo component that holds the dropdown
-          menu.
-        </InfoTableCell>
-      </InfoTableRow>
+  <InfoList type="decimal">
+    <InfoListItem label="Control">
+      This is the Neo component that holds the dropdown menu.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>2. Trigger:</strong> Appearing beside the Control, the trigger
-          shows that this component contains a dropdown.
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Trigger">
+      Appearing beside the Control, the trigger shows that this component
+      contains a dropdown.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>3. Container:</strong> The box that holds the list of action items.
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Container">
+      The box that holds the list of action items.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>4. List of Items:</strong> These are the action items and options
-          that users can select.
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="List of Items">
+      These are the action items and options that users can select.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>5. Expand Trigger:</strong> This trigger is shown when a menu item
-          has its own supplementary dropdown list.
-        </InfoTableCell>
-      </InfoTableRow>
-    </InfoTableBody>
-  </InfoTable>
+    <InfoListItem label="Expand Trigger">
+      This trigger is shown when a menu item has its own supplementary dropdown
+      list.
+    </InfoListItem>
+  </InfoList>
 </PageleteSection>

@@ -1,12 +1,11 @@
 ---
 import { Image } from "@avaya/neo-react";
+
 import {
-  Description,
   ColumnLayout,
-  InfoTable,
-  InfoTableBody,
-  InfoTableCell,
-  InfoTableRow,
+  Description,
+  InfoList,
+  InfoListItem,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -36,39 +35,28 @@ const DontAltText = "Do not place dividers between each item.";
     <Image src={TypesImage} alt={TypesImageAltText} />
   </ColumnLayout>
 
-  <InfoTable>
-    <InfoTableBody>
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>1. Default:</strong> The default type shows the action item list.
-          Selecting any option activates it and closes the dropdown.
-        </InfoTableCell>
-      </InfoTableRow>
+  <InfoList type="decimal">
+    <InfoListItem label="Default">
+      The default type shows the action item list. Selecting any option
+      activates it and closes the dropdown.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>2. Selected:</strong> When an action items is selected, it is tagged
-          with a checkmark and the dropdown remains open. If the dropdown is opened
-          again, the currently selected item will still be tagged.
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Selected">
+      When an action items is selected, it is tagged with a checkmark and the
+      dropdown remains open. If the dropdown is opened again, the currently
+      selected item will still be tagged.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>3. Checkbox:</strong> In situations where more than one action
-          item can be selected, use the checkbox type.
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Checkbox">
+      In situations where more than one action item can be selected, use the
+      checkbox type.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>4. Grouped with Titles:</strong> This type is used to organize
-          the action items into easily understandable sections. This makes it easier
-          to find items in longer lists.
-        </InfoTableCell>
-      </InfoTableRow>
-    </InfoTableBody>
-  </InfoTable>
+    <InfoListItem label="Grouped with Titles">
+      This type is used to organize the action items into easily understandable
+      sections. This makes it easier to find items in longer lists.
+    </InfoListItem>
+  </InfoList>
 
   <DoAndDont>
     <DoAndDont.DoContainer instructions={DoAltText}>
