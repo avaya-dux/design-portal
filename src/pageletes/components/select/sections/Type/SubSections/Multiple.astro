@@ -1,0 +1,60 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  DoAndDont,
+  ImageWrapper,
+  PageleteSubSection,
+  SubHeader,
+} from "components";
+
+import img1 from "./imgs/type-multiple-1.svg";
+const img1alt =
+  "Image showing an expanded select menu with checkboxes on the left side of each option";
+
+import doImage from "./imgs/type-do-2.svg";
+import dontImage from "./imgs/type-dont-2.svg";
+
+const doInstructions =
+  "When there is a large list of item that can be selected, use the multiple select.";
+const doImgAltText =
+  "Image showing an open select menu with checkboxes on the left side of each option";
+
+const dontInstructions =
+  "Avoid using multiple select for small lists of items. Use checkboxes instead.";
+const dontImgAltText =
+  "Image showing an open select menu with checkboxes on the left side of each option";
+---
+
+<PageleteSubSection>
+  <SubHeader id="select-type-multi">Multiple Select</SubHeader>
+
+  <Description>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+  </Description>
+
+  <ImageWrapper>
+    <Image src={img1} alt={img1alt} />
+  </ImageWrapper>
+
+  <Description>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+  </Description>
+
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={doInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage} alt={doImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dontInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage} alt={dontImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+</PageleteSubSection>

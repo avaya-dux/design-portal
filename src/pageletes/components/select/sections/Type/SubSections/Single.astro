@@ -1,0 +1,59 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  DoAndDont,
+  ImageWrapper,
+  PageleteSubSection,
+  SubHeader,
+} from "components";
+
+import img1 from "./imgs/type-single-1.svg";
+const img1alt = "Image showing an expanded select menu";
+
+import doImage from "./imgs/type-do-1.svg";
+import dontImage from "./imgs/type-dont-1.svg";
+
+const doInstructions =
+  "Use select when choosing from a large list of items, or when spacing is limited.";
+const doImgAltText =
+  "Image showing a closed select menu with a label and a preselected element";
+
+const dontInstructions =
+  "Avoid using select when there is room to use radio buttons instead.";
+const dontImgAltText =
+  "Image showing a closed select menu with a preselected element that is 'yes'";
+---
+
+<PageleteSubSection>
+  <SubHeader id="select-type-single">Single Select</SubHeader>
+
+  <Description>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+  </Description>
+
+  <ImageWrapper>
+    <Image src={img1} alt={img1alt} />
+  </ImageWrapper>
+
+  <Description>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+  </Description>
+
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={doInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage} alt={doImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dontInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage} alt={dontImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+</PageleteSubSection>
