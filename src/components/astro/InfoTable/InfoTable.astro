@@ -1,19 +1,4 @@
----
-import clsx from "clsx";
-
-export interface Props {
-  isKeyboardInteraction?: boolean;
-}
-
-const { isKeyboardInteraction } = Astro.props as Props;
----
-
-<table
-  class={clsx(
-    "neo-table neo-table--info",
-    isKeyboardInteraction && "neo-table--keyboard-interaction"
-  )}
->
+<table class="neo-table neo-table--info">
   <slot />
 </table>
 
@@ -26,59 +11,13 @@ const { isKeyboardInteraction } = Astro.props as Props;
     border-bottom: 1px solid var(--neo-color-base-200);
   }
 
-  table.neo-table.neo-table--info:not(.neo-table--keyboard-interaction) {
-    margin-left: 1.1rem;
-  }
-
-  table.neo-table.neo-table--info:not(.neo-table--keyboard-interaction)
-    tbody
-    tr,
-  table.neo-table.neo-table--info:not(.neo-table--keyboard-interaction)
-    tbody
-    tr
-    td {
-    padding: 0.1rem 0;
-    border-bottom: none;
-  }
-
-  table.neo-table.neo-table--info:not(.neo-table--keyboard-interaction)
-    tbody
-    tr
-    td {
-    text-indent: -1.1rem;
-  }
-
-  table.neo-table.neo-table--info:not(.neo-table--keyboard-interaction)
-    tbody
-    tr
-    td
-    strong {
-    font-weight: 600;
-  }
-
   table.neo-table.neo-table--info thead tr th {
     padding-left: 0;
-  }
-
-  table.neo-table.neo-table--info:not(
-      :last-child,
-      .neo-table--keyboard-interaction
-    ) {
-    margin-bottom: 2rem;
   }
 
   @media (prefers-color-scheme: dark) {
     table.neo-table.neo-table--info tbody tr td {
       border-bottom: 1px solid var(--neo-color-base-600);
-    }
-    table.neo-table.neo-table--info:not(.neo-table--keyboard-interaction)
-      tbody
-      tr,
-    table.neo-table.neo-table--info:not(.neo-table--keyboard-interaction)
-      tbody
-      tr
-      td {
-      border-bottom: none;
     }
   }
 

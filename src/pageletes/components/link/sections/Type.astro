@@ -1,17 +1,15 @@
 ---
 import { Image } from "@avaya/neo-react";
 import {
-  Description,
   ColumnLayout,
+  Description,
+  InfoList,
+  InfoListItem,
   PageleteSection,
   PageleteSubSection,
   SectionHeader,
-  SubHeader,
-  InfoTable,
-  InfoTableBody,
-  InfoTableCell,
-  InfoTableRow,
   StackedLayout,
+  SubHeader,
 } from "components/astro";
 
 import { topics } from "../static";
@@ -59,33 +57,24 @@ const { id, title } = topics.type;
       </StackedLayout>
     </ColumnLayout>
 
-    <InfoTable isBulletedList>
-      <InfoTableBody>
-        <InfoTableRow>
-          <InfoTableCell>
-            1. <strong>Default</strong>: The default state of the Standalone
-            link is blue text without any underlining.
-          </InfoTableCell>
-        </InfoTableRow>
+    <InfoList type="disc">
+      <InfoListItem label="Default">
+        The default state of the Standalone link is blue text without any
+        underlining.
+      </InfoListItem>
 
-        <InfoTableRow>
-          <InfoTableCell>
-            2. <strong>Hover</strong>: When the user moves focus onto the link,
-            it becomes underlined. Selecting the link in this state will jump
-            the user to the specified location.
-          </InfoTableCell>
-        </InfoTableRow>
+      <InfoListItem label="Hover">
+        When the user moves focus onto the link, it becomes underlined.
+        Selecting the link in this state will jump the user to the specified
+        location.
+      </InfoListItem>
 
-        <InfoTableRow>
-          <InfoTableCell>
-            3. <strong>Disabled</strong>: A link that is disabled appears on the
-            page, but is currently unavailable. For example, when something has
-            to happen (i.e. create a user name, fill in a field) before the link
-            becomes active.
-          </InfoTableCell>
-        </InfoTableRow>
-      </InfoTableBody>
-    </InfoTable>
+      <InfoListItem label="Disabled">
+        A link that is disabled appears on the page, but is currently
+        unavailable. For example, when something has to happen (i.e. create a
+        user name, fill in a field) before the link becomes active.
+      </InfoListItem>
+    </InfoList>
   </PageleteSubSection>
 
   <PageleteSubSection>
@@ -109,32 +98,23 @@ const { id, title } = topics.type;
         <Image src={InlineLinkStateDisabled} alt="Inline Disabled Link" />
       </StackedLayout>
     </ColumnLayout>
-    <InfoTable isBulletedList>
-      <InfoTableBody>
-        <InfoTableRow>
-          <InfoTableCell>
-            1. <strong>Default</strong>: The default state of an Inline link is
-            underlined blue text.
-          </InfoTableCell>
-        </InfoTableRow>
 
-        <InfoTableRow>
-          <InfoTableCell>
-            2. <strong>Hover</strong>: When the user move focus onto the link,
-            the underlining is removed. Selecting the link in this state will
-            jump the user to the specified location.
-          </InfoTableCell>
-        </InfoTableRow>
+    <InfoList type="disc">
+      <InfoListItem label="Default">
+        The default state of an Inline link is underlined blue text.
+      </InfoListItem>
 
-        <InfoTableRow>
-          <InfoTableCell>
-            3. <strong>Disabled</strong>: A link that is disabled appears on the
-            page, but is currently unavailable. For example, when something has
-            to happen (i.e. create a user name, fill in a field) before the link
-            becomes active.
-          </InfoTableCell>
-        </InfoTableRow>
-      </InfoTableBody>
-    </InfoTable>
+      <InfoListItem label="Hover">
+        When the user move focus onto the link, the underlining is removed.
+        Selecting the link in this state will jump the user to the specified
+        location.
+      </InfoListItem>
+
+      <InfoListItem label="Disabled">
+        A link that is disabled appears on the page, but is currently
+        unavailable. For example, when something has to happen (i.e. create a
+        user name, fill in a field) before the link becomes active.
+      </InfoListItem>
+    </InfoList>
   </PageleteSubSection>
 </PageleteSection>
