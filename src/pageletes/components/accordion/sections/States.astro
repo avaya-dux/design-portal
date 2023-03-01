@@ -3,10 +3,8 @@ import { Image } from "@avaya/neo-react";
 import {
   ColumnLayout,
   Description,
-  InfoTable,
-  InfoTableBody,
-  InfoTableCell,
-  InfoTableRow,
+  InfoList,
+  InfoListItem,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -29,28 +27,18 @@ const statesImgAltText = "Image showing the different states of an accordion";
     <Image src={StatesImage} alt={statesImgAltText} />
   </ColumnLayout>
 
-  <InfoTable>
-    <InfoTableBody>
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>1. Default:</strong> When the accordion does not have focus, it
-          is in the Default state.
-        </InfoTableCell>
-      </InfoTableRow>
+  <InfoList type="decimal">
+    <InfoListItem label="Default">
+      When the accordion does not have focus, it is in the Default state.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>2. Hover:</strong> Once the accordion has focus, it changes to
-          the Hover state.
-        </InfoTableCell>
-      </InfoTableRow>
+    <InfoListItem label="Hover">
+      Once the accordion has focus, it changes to the Hover state.
+    </InfoListItem>
 
-      <InfoTableRow>
-        <InfoTableCell>
-          <strong>3. Disabled:</strong> If the accordion is not available, it is
-          displayed in the Disabled state and is inactive.
-        </InfoTableCell>
-      </InfoTableRow>
-    </InfoTableBody>
-  </InfoTable>
+    <InfoListItem label="Disabled">
+      If the accordion is not available, it is displayed in the Disabled state
+      and is inactive.
+    </InfoListItem>
+  </InfoList>
 </PageleteSection>
