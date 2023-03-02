@@ -1,0 +1,36 @@
+---
+import { PageleteSection, PageleteSubSection } from "components/astro";
+
+import {
+  Chips,
+  Errors,
+  Intro,
+  Labeling,
+  LoadingIndicator,
+  RequiredVsOptional,
+} from "./SubSections";
+---
+
+<PageleteSection>
+  <Intro />
+
+  <PageleteSubSection>
+    <Labeling />
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <RequiredVsOptional />
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <Errors />
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <LoadingIndicator />
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <Chips />
+  </PageleteSubSection>
+</PageleteSection>

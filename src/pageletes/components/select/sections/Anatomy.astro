@@ -1,0 +1,57 @@
+---
+import {
+  ColumnLayout,
+  Description,
+  InfoList,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+} from "components/astro";
+
+import { topics } from "../static";
+import { Image } from "@avaya/neo-react";
+
+const { id, title } = topics.anatomy;
+
+import image1 from "./imgs/anatomy-1.svg";
+const img1AltText =
+  "Image showing a select component with its four notes pointed out and described below";
+
+import image2 from "./imgs/anatomy-2.svg";
+const img2AltText =
+  "Image showing an expanded select component with its expanded section noted as the fifth note and described below";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, explicabo
+    adipisci aperiam laboriosam excepturi illo sint iure vero perferendis
+    doloribus reiciendis veniam libero, ratione quia vel quas ex magnam
+    consequatur.
+  </Description>
+
+  <ColumnLayout bkgColor="white" numOfColumns={2}>
+    <StackedLayout label="Select">
+      <Image src={image1} alt={img1AltText} />
+    </StackedLayout>
+
+    <StackedLayout label="Select with Dropdown">
+      <Image src={image2} alt={img2AltText} />
+    </StackedLayout>
+  </ColumnLayout>
+
+  <InfoList type="decimal">
+    <InfoListItem label="Label">Description</InfoListItem>
+
+    <InfoListItem label="Form">Description</InfoListItem>
+
+    <InfoListItem label="Text Input Field">Description</InfoListItem>
+
+    <InfoListItem label="Chevron">Description</InfoListItem>
+
+    <InfoListItem label="Expand Trigger">Description</InfoListItem>
+  </InfoList>
+</PageleteSection>

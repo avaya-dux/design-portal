@@ -1,0 +1,41 @@
+---
+import {
+  ColumnLayout,
+  Description,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import image1 from "./imgs/specs-1.svg";
+const img1AltText =
+  "Image showing spacing around the radio button, 16px on the left and top, and 8px between the radio button and the label";
+
+import image2 from "./imgs/specs-2.svg";
+import { Image } from "@avaya/neo-react";
+const img2AltText =
+  "Image showing the vertical margin between the radio buttons in a vertically aligned group, 8px";
+
+const { id, title } = topics.specs;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+  </Description>
+
+  <ColumnLayout bkgColor="white" numOfColumns={2}>
+    <StackedLayout label="Default">
+      <Image height="120px" src={image1} alt={img1AltText} />
+    </StackedLayout>
+
+    <StackedLayout label="Small">
+      <Image src={image2} alt={img2AltText} />
+    </StackedLayout>
+  </ColumnLayout>
+</PageleteSection>

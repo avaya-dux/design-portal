@@ -1,0 +1,82 @@
+---
+import {
+  Description,
+  PageleteSection,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableCellHead,
+  InfoTableHead,
+  InfoTableRow,
+  SectionHeader,
+} from "components/astro";
+import { topics } from "../static";
+
+const { id, title } = topics.keyboard;
+---
+
+<PageleteSection marginBottom="2rem">
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate aut quas
+    modi accusamus nam quidem eveniet iure dolores, a, officia corporis adipisci
+    id assumenda et ducimus! Corporis unde magnam laborum.
+  </Description>
+
+  <InfoTable isKeyboardInteraction>
+    <InfoTableHead>
+      <InfoTableRow>
+        <InfoTableCellHead>Keystrokes</InfoTableCellHead>
+        <InfoTableCellHead>Interaction</InfoTableCellHead>
+      </InfoTableRow>
+    </InfoTableHead>
+
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>Tab</InfoTableCell>
+        <InfoTableCell>
+          Move forward into and out of the selectbox.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Shift + Tab</InfoTableCell>
+        <InfoTableCell>
+          Move backward to the previous interactive element.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Spacebar or &uarr; and &darr;</InfoTableCell>
+        <InfoTableCell>Open the switchbox options.</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Enter or Spacebar</InfoTableCell>
+        <InfoTableCell>
+          Select the option in focus and close the list.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>&uarr; and &darr;</InfoTableCell>
+        <InfoTableCell>Move between the previous or next option.</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Esc</InfoTableCell>
+        <InfoTableCell>
+          Close the list without changing the selected option.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>
+          For multiple select, additionally: Spacebar
+        </InfoTableCell>
+        <InfoTableCell>Move between the previous or next option.</InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
+</PageleteSection>
