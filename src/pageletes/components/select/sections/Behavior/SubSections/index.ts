@@ -4,8 +4,8 @@ export { Intro };
 import Labeling from "./Labeling.astro";
 export { Labeling };
 
-// import RequiredVsOptional from "./RequiredVsOptional.astro";
-// export { RequiredVsOptional };
+import RequiredVsOptional from "./RequiredVsOptional.astro";
+export { RequiredVsOptional };
 
 // import Errors from "./Errors.astro";
 // export { Errors };

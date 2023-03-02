@@ -1,38 +1,22 @@
 ---
 import { Image } from "@avaya/neo-react";
 
-import { Description, DoAndDont, SubHeader } from "components";
+import { Description, ImageWrapper, SubHeader } from "components";
 
-import doImage from "./imgs/behavior-5-do.svg";
-import dontImage from "./imgs/behavior-5-dont.svg";
-
-const doInstructions =
-  "For a group of related radio buttons, add a category label to connect them together.";
-const doImgAltText =
-  "Image showing a radio group with a properly descriptive label";
-
-const dontInstructions =
-  "Do not exclude the category label for radio button groups.";
-const dontImgAltText = "Image showing a radio group without a label";
+import img1 from "./imgs/behavior-required-1.svg";
+const img1Alt =
+  "Image showing a form with multiple select, most of which are shown to be required via use of the asterisk, and one shown as optional via the absense of an asterisk.";
 ---
 
-<SubHeader id="radio-category-labels">Category Labels</SubHeader>
+<SubHeader id="select-behavior-requires-vs-optional">
+  Required vs Optional
+</SubHeader>
 
 <Description>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
 </Description>
 
-<DoAndDont>
-  <DoAndDont.DoContainer instructions={doInstructions}>
-    <DoAndDont.ImageExampleContainer>
-      <Image src={doImage} alt={doImgAltText} />
-    </DoAndDont.ImageExampleContainer>
-  </DoAndDont.DoContainer>
-
-  <DoAndDont.DontContainer instructions={dontInstructions}>
-    <DoAndDont.ImageExampleContainer>
-      <Image src={dontImage} alt={dontImgAltText} />
-    </DoAndDont.ImageExampleContainer>
-  </DoAndDont.DontContainer>
-</DoAndDont>
+<ImageWrapper>
+  <Image src={img1} alt={img1Alt} />
+</ImageWrapper>
