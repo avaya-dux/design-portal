@@ -10,14 +10,8 @@ export { Anatomy };
 import Behavior from "./Behavior.astro";
 export { Behavior };
 
-import Comparison from "./Comparison.astro";
-export { Comparison };
-
-import Content from "./Content.astro";
-export { Content };
-
-import Loading from "./Loading.astro";
-export { Loading };
+import Type from "./Type.astro";
+export { Type };
 
 import Related from "./Related.astro";
 export { Related };
