@@ -1,14 +1,12 @@
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
+
 import { PlaygroundImplementation } from "./PlaygroundImplementation";
 
 const codeContent = (element?: Node) => {
   return element?.textContent?.trim().replace("Copy code to clipboard", "");
 };
 describe("PlaygroundImplementation", () => {
-  const user = userEvent.setup();
-
   it("fully renders with correct elements and code snippets", () => {
     render(<PlaygroundImplementation />);
 

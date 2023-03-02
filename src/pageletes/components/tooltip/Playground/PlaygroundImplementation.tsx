@@ -1,10 +1,5 @@
-import {
-  Button,
-  Radio,
-  RadioGroup,
-  Tooltip,
-  TooltipPosition,
-} from "@avaya/neo-react";
+import type { TooltipPosition } from "@avaya/neo-react";
+import { Button, Radio, RadioGroup, Tooltip } from "@avaya/neo-react";
 import clsx from "clsx";
 import { useMemo, useState } from "react";
 
