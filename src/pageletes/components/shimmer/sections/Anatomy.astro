@@ -1,14 +1,37 @@
 ---
-import { Description, PageleteSection, SectionHeader } from "components/astro";
+import { Image } from "@avaya/neo-react";
+import {
+  InfoList,
+  InfoListItem,
+  ColumnLayout,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
 
 import { topics } from "../static";
 
 const { id, title } = topics.anatomy;
+
+import AnatomyImage from "../imgs/shimmer-anatomy.svg";
+const anatomyImgAltText =
+  "Image showing the different parts that make up a shimmer";
 ---
 
 <PageleteSection>
   <SectionHeader id={id}>
     {title}
   </SectionHeader>
-  <Description>Lorem ipsum</Description>
+  <ColumnLayout bkgColor="white" numOfColumns={1}>
+    <Image src={AnatomyImage} alt={anatomyImgAltText} />
+  </ColumnLayout>
+
+  <InfoList type="decimal">
+    <InfoListItem label="Shape">
+      Represents page elements such as text, tables, avatars, icons, and images.
+    </InfoListItem>
+
+    <InfoListItem label="Animation">
+      This is a moving shaded band that travels from Left to Right.
+    </InfoListItem>
+  </InfoList>
 </PageleteSection>

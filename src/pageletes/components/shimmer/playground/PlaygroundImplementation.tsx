@@ -1,4 +1,4 @@
-import { Radio, RadioGroup, Shimmer, Switch } from "@avaya/neo-react";
+import { Radio, RadioGroup, Shimmer } from "@avaya/neo-react";
 
 import type { ShimmerProps } from "@avaya/neo-react";
 
@@ -9,27 +9,28 @@ import { Playground } from "components/react";
 import { createHtmlString, createReactString } from "./helper";
 import { defaultHtml, defaultReact, sandbox, storybook } from "../static";
 
+import clsx from "clsx";
+
 import "./style.css";
 
 type RequiredProps = Required<ShimmerProps>;
 
 export const PlaygroundImplementation = () => {
-  const [loop, setLoop] = useState<RequiredProps["loopInfinitely"]>(true);
   const [shape, setShape] = useState<RequiredProps["shape"]>("rectangle");
   const [size, setSize] = useState<RequiredProps["size"]>("md");
 
   const isDefault = useMemo(
-    () => loop === true && shape === "rectangle" && size === "md",
-    [loop, shape, size]
+    () => shape === "rectangle" && size === "md",
+    [shape, size]
   );
 
   const react = useMemo(() => {
-    return createReactString(loop, shape, size);
-  }, [loop, shape, size]);
+    return createReactString(true, shape, size);
+  }, [shape, size]);
 
   const html = useMemo(
-    () => createHtmlString(loop, shape, size),
-    [loop, shape, size]
+    () => createHtmlString(true, shape, size),
+    [shape, size]
   );
 
   return (
@@ -37,13 +38,6 @@ export const PlaygroundImplementation = () => {
       <Playground
         options={
           <Playground.OptionsContainer>
-            <Playground.OptionsSection title="Loop Infinitely">
-              <Switch
-                checked={loop}
-                aria-label="loop infinitely"
-                onChange={(_e, updatedChecked) => setLoop(updatedChecked)}
-              />
-            </Playground.OptionsSection>
             <Playground.OptionsSection title="Size">
               <RadioGroup
                 groupName="Size"
@@ -78,12 +72,12 @@ export const PlaygroundImplementation = () => {
           storybook,
         }}
       >
-        <div className="shimmer-playground-wrapper">
-          <Shimmer
-            loopInfinitely={loop || false}
-            size={size}
-            shape={shape || "rectangle"}
-          />
+        <div
+          className={clsx(
+            shape === "rectangle" && "shimmer-playground-rectangle-wrapper"
+          )}
+        >
+          <Shimmer loopInfinitely size={size} shape={shape || "rectangle"} />
         </div>
       </Playground>
     </div>
