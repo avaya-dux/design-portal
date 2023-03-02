@@ -1,33 +1,29 @@
 ---
-import {
-  PageleteSection,
-  PageleteSubSection,
-  SectionHeader,
-} from "components/astro";
-import Intro from "./Intro.astro";
-import ContentOverflow from "./ContentOverflow.astro";
-import TextAlignment from "./TextAlignment.astro";
-import CategoryLabels from "./CategoryLabels.astro";
+import { PageleteSection, PageleteSubSection } from "components/astro";
 
-import { topics } from "../../static";
-
-const { id, title } = topics.behavior;
+import { Intro, Labeling } from "./SubSections";
 ---
 
 <PageleteSection>
-  <SectionHeader id={id}>{title}</SectionHeader>
-
   <Intro />
 
   <PageleteSubSection>
-    <ContentOverflow />
+    <Labeling />
   </PageleteSubSection>
 
-  <PageleteSubSection>
-    <TextAlignment />
-  </PageleteSubSection>
+  <!-- <PageleteSubSection>
+    <RequiredVsOptional />
+  </PageleteSubSection> -->
 
-  <PageleteSubSection>
-    <CategoryLabels />
-  </PageleteSubSection>
+  <!-- <PageleteSubSection>
+    <Errors />
+  </PageleteSubSection> -->
+
+  <!-- <PageleteSubSection>
+    <LoadingIndicator />
+  </PageleteSubSection> -->
+
+  <!-- <PageleteSubSection>
+    <Chips />
+  </PageleteSubSection> -->
 </PageleteSection>

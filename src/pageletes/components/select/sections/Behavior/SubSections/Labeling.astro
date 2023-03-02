@@ -3,20 +3,21 @@ import { Image } from "@avaya/neo-react";
 
 import { Description, DoAndDont, SubHeader } from "components";
 
-import doImage from "./imgs/behavior-3-do.svg";
-import dontImage from "./imgs/behavior-3-dont.svg";
+import doImage from "./imgs/behavior-do-1.svg";
+import dontImage from "./imgs/behavior-dont-1.svg";
 
 const doInstructions =
-  "When the label is too long for the horizontal space available, it forms another line.";
-const doImgAltText = "Image showing radio buttons with multiline text";
+  "Use labels by default unless the input is in a tight area (such as a navigation bar).";
+const doImgAltText =
+  "Image showing a select with a short and descriptive label above it.";
 
 const dontInstructions =
-  "Do not use multiline text when other labels are not multiline and when there is enough space";
+  "Do not rely on placeholders alone as they are not visible once content is added.";
 const dontImgAltText =
-  "Image showing radio buttons with mixed multiline text and long single line text";
+  "Image showing a disabled select with placeholder text instead of a label.";
 ---
 
-<SubHeader id="radio-content-overflow">Content Overflow</SubHeader>
+<SubHeader id="select-behavior-labeling">Labeling</SubHeader>
 
 <Description>
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, explicabo
