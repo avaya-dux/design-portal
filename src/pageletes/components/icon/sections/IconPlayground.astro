@@ -1,0 +1,23 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components/astro";
+
+import { PlaygroundImplementation } from "../playground";
+
+import { topics } from "../static";
+
+const { id, title } = topics.playground;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    The Interactive Playground allows you to experiment with various icon styles
+    and features. Once you get the results you want, copy the HTML or React code
+    provided and paste it into your application.
+  </Description>
+
+  <PlaygroundImplementation client:load />
+</PageleteSection>
