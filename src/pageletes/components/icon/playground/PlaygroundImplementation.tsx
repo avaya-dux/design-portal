@@ -59,7 +59,7 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      <Icon aria-label="info-icon" icon={"info"} size={size}></Icon>
+      <Icon aria-label="info-icon" icon="info" size={size}></Icon>
     </Playground>
   );
 };
