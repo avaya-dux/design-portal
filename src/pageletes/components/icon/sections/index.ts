@@ -6,7 +6,7 @@ import Anatomy from "./Anatomy.astro";
 
 import Playground from "./IconPlayground.astro";
 
-export { Playground }
+export { Playground };
 
 export { Anatomy };
 
