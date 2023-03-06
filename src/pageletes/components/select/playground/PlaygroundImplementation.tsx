@@ -10,11 +10,11 @@ import { useMemo, useState } from "react";
 
 import { Playground } from "components/react";
 
-const sandbox = "https://codesandbox.io/";
+const sandbox = "https://codesandbox.io/s/neo-react-select-05kbd5";
 const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-select--basic-selects";
 
-export const fruitOptions = [
+const fruitOptions = [
   <SelectOption value="apple" key="apple">
     Apple
   </SelectOption>,
