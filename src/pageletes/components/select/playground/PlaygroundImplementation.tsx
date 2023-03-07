@@ -48,6 +48,7 @@ export const PlaygroundImplementation = () => {
   const [isDisabled, setIsDisabled] = useState(false);
   const [hasVisibleLabel, setHasVisibleLabel] = useState(true);
   const [hasHelperText, setHasHelperText] = useState(true);
+  const [size, setSize] = useState<SelectProps["size"]>("md");
 
   const [react, html] = useMemo(() => {
     return ["reactCode", "htmlCode"];
