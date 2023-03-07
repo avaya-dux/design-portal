@@ -1,3 +1,4 @@
+import type { SelectProps } from "@avaya/neo-react";
 import {
   Checkbox,
   CheckboxGroup,
@@ -117,11 +118,14 @@ export const PlaygroundImplementation = () => {
           <Playground.OptionsSection title="Size">
             <RadioGroup
               groupName="select-size"
-              onChange={() => null}
-              selected="medium"
+              selected={size}
+              onChange={(e) => {
+                const updatedSize = e.target.value as SelectProps["size"];
+                setSize(updatedSize);
+              }}
             >
-              <Radio value="small">Small</Radio>
-              <Radio value="medium">Medium</Radio>
+              <Radio value="sm">Small</Radio>
+              <Radio value="md">Medium</Radio>
             </RadioGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
@@ -135,12 +139,13 @@ export const PlaygroundImplementation = () => {
     >
       <div style={{ width: "100%", maxWidth: "300px" }}>
         <Select
-          multiple={multiple}
-          errorList={hasError ? ["Invalid selection"] : []}
+          aria-label={!hasVisibleLabel ? "Select a favorite food" : ""}
           disabled={isDisabled}
+          errorList={hasError ? ["Invalid selection"] : []}
           helperText={hasHelperText ? "Please select one" : undefined}
           label={hasVisibleLabel ? "Select a favorite food" : undefined}
-          aria-label={!hasVisibleLabel ? "Select a favorite food" : ""}
+          multiple={multiple}
+          size={size}
         >
           {fruitOptions}
         </Select>
