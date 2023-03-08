@@ -52,7 +52,6 @@
 .do-and-dont-example-content-image img.neo-img {
   background: var(--neo-color-base-0);
   min-height: 10rem;
-  padding: 2rem;
 }
 
 .do-and-dont-example-content-image {
