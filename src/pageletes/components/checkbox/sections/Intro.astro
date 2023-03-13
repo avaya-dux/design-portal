@@ -1,0 +1,19 @@
+---
+import {
+  Description,
+  PageleteSection,
+  PageTitle,
+  Topics,
+} from "components/astro";
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <PageTitle>Checkbox</PageTitle>
+
+  <Description>
+    Use checkboxes to allow users to select multiple options from a list.  Users can select any number of items in the list; from none to all.
+  </Description>
+
+  <Topics topics={topics} />
+</PageleteSection>
