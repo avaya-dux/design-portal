@@ -1,5 +1,5 @@
 ---
-import { PageleteSection, SectionHeader } from "components/astro";
+import { PageleteSection, SectionHeader, Description } from "components/astro";
 import { PlaygroundImplementation } from "../playground";
 import { topics } from "../static";
 ---
@@ -8,6 +8,12 @@ import { topics } from "../static";
   <SectionHeader id={topics.playground.id}>
     {topics.playground.title}
   </SectionHeader>
+
+  <Description>
+    The Interactive Playground allows you to experiment with various checkbox
+    styles and features. Once you get the results you want, copy the HTML or
+    React code provided and paste it into your application.
+  </Description>
 
   <PlaygroundImplementation client:load />
 </PageleteSection>
