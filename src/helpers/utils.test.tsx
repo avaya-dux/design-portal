@@ -18,9 +18,8 @@ describe(prettyPrintReactElementToString.name, () => {
         </Checkbox>
       </CheckboxGroup>
     );
-    expect(prettyPrintReactElementToString(element))
-      .toMatchInlineSnapshot(`
-        "<CheckboxGroup
+    expect(prettyPrintReactElementToString(element)).toMatchInlineSnapshot(`
+        "<cb
           groupName=\\"checkbox-group\\"
           label=\\"Checkbox Group\\"
         >
@@ -35,7 +34,7 @@ describe(prettyPrintReactElementToString.name, () => {
           >
             another value
           </Checkbox>
-        </CheckboxGroup>"
+        </cb>"
       `);
   });
 });
