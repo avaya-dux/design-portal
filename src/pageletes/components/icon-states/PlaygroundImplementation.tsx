@@ -10,7 +10,7 @@ import {
 import { useMemo, useState } from "react";
 
 import { Playground } from "components";
-import { prettyPrintHtml, prettyPrintReact } from "helpers";
+import { prettyPrintHtml, prettyPrintReact } from "helpers/utils";
 import clsx from "clsx";
 
 const defaultLabel = "Save Icon";

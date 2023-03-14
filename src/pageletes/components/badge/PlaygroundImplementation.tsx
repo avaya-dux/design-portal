@@ -3,7 +3,7 @@ import { Badge, Icon, Radio, RadioGroup } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components";
-import { prettyPrintHtml, prettyPrintReact } from "helpers";
+import { prettyPrintHtml, prettyPrintReact } from "helpers/utils";
 
 const sandbox = "https://codesandbox.io/s/neo-react-badge-zjf97s";
 const storybook =

@@ -9,7 +9,7 @@ import {
 import { SetStateAction, useMemo, useState } from "react";
 
 import { Playground } from "components";
-import { prettyPrintHtml, prettyPrintReact } from "helpers";
+import { prettyPrintHtml, prettyPrintReact } from "helpers/utils";
 
 import { sandbox, storybook } from "../static";
 

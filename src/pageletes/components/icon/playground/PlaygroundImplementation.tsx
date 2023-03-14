@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components/react";
-import { prettyPrintHtml, prettyPrintReact } from "helpers";
+import { prettyPrintHtml, prettyPrintReact } from "helpers/utils";
 
 export const sandbox = "https://codesandbox.io/s/neo-react-icon-tywncu";
 export const storybook =
