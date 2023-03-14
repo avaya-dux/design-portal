@@ -3,7 +3,6 @@ import * as ReactDOMServer from "react-dom/server";
 import reactElementToJSXString from "react-element-to-jsx-string";
 import toDiffableHtml from "diffable-html";
 
-
 export const prettyPrintReactElementToHtml = (element: ReactElement) => {
   return prettyPrintHtml(ReactDOMServer.renderToStaticMarkup(element));
 };
