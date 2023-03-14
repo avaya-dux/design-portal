@@ -18,25 +18,25 @@ describe(prettyPrintReactElementToString.name, () => {
         </Checkbox>
       </CheckboxGroup>
     );
-    expect(prettyPrintReactElementToString(element, "CheckboxGroup"))
+    expect(prettyPrintReactElementToString(element))
       .toMatchInlineSnapshot(`
-          "<CheckboxGroup
-            groupName=\\"checkbox-group\\"
-            label=\\"Checkbox Group\\"
+        "<CheckboxGroup
+          groupName=\\"checkbox-group\\"
+          label=\\"Checkbox Group\\"
+        >
+          <Checkbox
+            disabled
+            value=\\"1\\"
           >
-            <CheckboxGroup
-              disabled
-              value=\\"1\\"
-            >
-              example value
-            </CheckboxGroup>
-            <CheckboxGroup
-              value=\\"2\\"
-            >
-              another value
-            </CheckboxGroup>
-          </CheckboxGroup>"
-        `);
+            example value
+          </Checkbox>
+          <Checkbox
+            value=\\"2\\"
+          >
+            another value
+          </Checkbox>
+        </CheckboxGroup>"
+      `);
   });
 });
 describe(prettyPrintReactElementToHtml.name, () => {

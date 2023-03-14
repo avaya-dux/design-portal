@@ -85,7 +85,7 @@ export const PlaygroundImplementation = () => {
       }
       examples={{
         html: prettyPrintReactElementToHtml(element),
-        react: prettyPrintReactElementToString(element, "CheckboxGroup"),
+        react: prettyPrintReactElementToString(element),
         sandbox,
         storybook,
       }}
