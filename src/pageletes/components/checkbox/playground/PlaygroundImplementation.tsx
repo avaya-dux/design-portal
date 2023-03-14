@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Playground } from "components/react";
 import { Checkbox, CheckboxGroup, Radio, RadioGroup } from "@avaya/neo-react";
 import {
@@ -18,19 +18,38 @@ const storybook =
 const sandbox = "https://codesandbox.io/s/neo-react-checkbox-kb5gbt";
 
 export const PlaygroundImplementation = () => {
+  const [labelOption, setLabelOption] = useState<LabelOption>("yes");
+
   const [orientationOption, setOrientationOption] =
     useState<OrientationOption>("vertical");
-  const [labelOption, setLabelOption] = useState<LabelOption>("yes");
+
+  const createChildren = useCallback(() => {
+    if (labelOption === "yes") {
+      return (
+        <>
+          <Checkbox value="one">Checkbox Label</Checkbox>
+          <Checkbox value="two">Checkbox Label</Checkbox>
+          <Checkbox value="three">Checkbox Label</Checkbox>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <Checkbox value="one" aria-label="Checkbox Label" />
+          <Checkbox value="two" aria-label="Checkbox Label" />
+          <Checkbox value="three" aria-label="Checkbox Label" />
+        </>
+      );
+    }
+  }, [labelOption]);
 
   const element = (
     <CheckboxGroup
       groupName="example"
-      aria-labelledby="checkbox-heading"
+      label="Checkbox Heading"
       inline={orientationOption === "horizontal"}
     >
-      <Checkbox value="one">Checkbox One</Checkbox>
-      <Checkbox value="two">Checkbox Two</Checkbox>
-      <Checkbox value="three">Checkbox Three</Checkbox>
+      {createChildren().props.children}
     </CheckboxGroup>
   );
 
