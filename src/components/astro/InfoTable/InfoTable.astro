@@ -13,13 +13,15 @@
 
   table.neo-table.neo-table--info thead tr th {
     padding-left: 0;
-    border-top: 1px solid var(--neo-color-base-200);
-    border-bottom: 1px solid var(--neo-color-base-200);
+    border-color: var(--neo-color-base-200);
   }
 
   @media (prefers-color-scheme: dark) {
+    table.neo-table.neo-table--info thead tr th {
+      border-color: var(--neo-color-base-600);
+    }
     table.neo-table.neo-table--info tbody tr td {
-      border-bottom: 1px solid var(--neo-color-base-600);
+      border-bottom: 1px solid var(--neo-color-base-800);
     }
   }
 
