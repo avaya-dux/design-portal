@@ -8,7 +8,7 @@ import {
 import { useMemo, useState } from "react";
 
 import { Playground } from "components";
-import { prettyPrintHtml, prettyPrintReact } from "helpers/utils";
+import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
 const sandbox = "https://codesandbox.io/s/neo-react-image-n7xj2z";
 const storybook =

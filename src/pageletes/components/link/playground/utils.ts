@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import { prettyPrintHtml, prettyPrintReact } from "helpers/utils";
+import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
 export const reactCode = (typeOption: string, disabled: boolean) =>
   prettyPrintReact(createReactCode(typeOption, disabled));

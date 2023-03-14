@@ -12,7 +12,7 @@ import {
 import { useMemo, useState } from "react";
 
 import { Playground } from "components/react";
-import { prettyPrintHtml, prettyPrintReact } from "helpers/utils";
+import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
 import { defaultHtml, defaultReact, sandbox, storybook } from "../static";
 

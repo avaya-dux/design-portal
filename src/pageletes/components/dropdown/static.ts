@@ -1,5 +1,5 @@
 import type { TopicsDict } from "components";
-import { prettyPrintHtml, prettyPrintReact } from "helpers/utils";
+import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
 export const sandbox = "https://codesandbox.io/s/neo-react-dropdown-7rc6m9";
 export const storybook =

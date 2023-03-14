@@ -9,7 +9,7 @@ import clsx from "clsx";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components/react";
-import { prettyPrintHtml, prettyPrintReact } from "helpers/utils";
+import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
 export const sandbox = "https://codesandbox.io/s/neo-react-switch-eeb2m1";
 export const storybook =

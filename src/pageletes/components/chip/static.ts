@@ -1,5 +1,5 @@
 import type { TopicsDict } from "components";
-import { prettyPrintHtml, prettyPrintReact } from "helpers/utils";
+import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
 export const defaultHtml = prettyPrintHtml(`
 <div class="neo-chips">

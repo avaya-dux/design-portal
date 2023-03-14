@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { Playground } from "components";
 
 import { sandbox, storybook } from "../static";
-import { prettyPrintHtml, prettyPrintReact } from "helpers/utils";
+import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
 type TypeOption = "default" | "actions" | "timer";
 

@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import { prettyPrintHtml } from "helpers/utils";
+import { prettyPrintHtml } from "helpers";
 
 export const getClassName = (loop: boolean, shape: string, size: string) =>
   clsx(

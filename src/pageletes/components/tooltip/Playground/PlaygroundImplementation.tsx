@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components";
-import { prettyPrintHtml, prettyPrintReact } from "helpers/utils";
+import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
 import { upperCaseFirstLetter, translatePositionToCSSName } from "./helpers";
 

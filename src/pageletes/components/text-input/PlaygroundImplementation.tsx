@@ -1,7 +1,7 @@
 import type { TextInputProps } from "@avaya/neo-react";
 import { Radio, RadioGroup, TextInput } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
-import { prettyPrintReact } from "helpers/utils";
+import { prettyPrintReact } from "helpers";
 
 import { Playground } from "components";
 
