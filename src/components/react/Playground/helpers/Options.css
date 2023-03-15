@@ -75,7 +75,7 @@
 }
 
 label.playground-options-section-label {
-  font-size: 12px; /* TODO: use `var(--neo-web-body-small-font-size)` */
+  font-size: 12px; /* $token-input-label-font-size: 12px */
 }
 
 .playground-options-section div.neo-multiselect,
