@@ -1,26 +1,27 @@
 import Intro from "./Intro.astro";
+
 export { Intro };
 
 import ChipPlayground from "./ChipPlayground.astro";
 export { ChipPlayground };
 
-import BasicChips from "./BasicChips.astro";
-export { BasicChips };
+import Anatomy from "./Anatomy.astro";
+export { Anatomy };
 
-import DisabledChips from "./DisabledChips.astro";
-export { DisabledChips };
+import Type from "./Type.astro";
+export { Type };
 
-import IconChips from "./IconChips.astro";
-export { IconChips };
+import RelatedContent from "./RelatedContent.astro";
+export { RelatedContent };
 
-import ClosableChips from "./ClosableChips.astro";
-export { ClosableChips };
+import Specs from "./Specs.astro";
+export { Specs };
 
-import AvatarChips from "./AvatarChips.astro";
-export { AvatarChips };
+import States from "./States.astro";
+export { States };
 
-import ChipsContainer from "./ChipsContainer.astro";
-export { ChipsContainer };
+import Behavior from "./Behavior.astro";
+export { Behavior };
 
 import KeyboardInteractions from "./KeyboardInteractions.astro";
 export { KeyboardInteractions };

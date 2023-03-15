@@ -1,5 +1,6 @@
 ---
 import {
+  Description,
   InfoTable,
   InfoTableBody,
   InfoTableCell,
@@ -8,10 +9,18 @@ import {
   SectionHeader,
 } from "components/astro";
 import { topics } from "../static";
+
+const { id, title } = topics.keyboard;
 ---
 
 <PageleteSection marginBottom="2rem">
-  <SectionHeader id={topics.keyboard.id}>{topics.keyboard.title}</SectionHeader>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Accessibility requires that each item on the screen is reachable using the
+    keyboard alone. The mouse is not always an option for some users. Keyboard
+    navigation employs the following shortcuts.
+  </Description>
 
   <InfoTable>
     <InfoTableBody>
@@ -30,15 +39,8 @@ import { topics } from "../static";
       </InfoTableRow>
 
       <InfoTableRow>
-        <InfoTableCell>Enter or Spacebar</InfoTableCell>
-        <InfoTableCell>Activates the chip (if applicable)</InfoTableCell>
-      </InfoTableRow>
-
-      <InfoTableRow>
-        <InfoTableCell>Delete</InfoTableCell>
-        <InfoTableCell>
-          Removes the chip (for chips with a close buttton)
-        </InfoTableCell>
+        <InfoTableCell>Spacebar</InfoTableCell>
+        <InfoTableCell>Activate the chip</InfoTableCell>
       </InfoTableRow>
     </InfoTableBody>
   </InfoTable>
