@@ -7,7 +7,7 @@ import {
   Select,
   SelectOption,
 } from "@avaya/neo-react";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import { Playground } from "components/react";
 import {
@@ -47,26 +47,34 @@ const fruitOptions = [
 ];
 
 export const PlaygroundImplementation = () => {
-  const [multiple, setMultiple] = useState(false);
   const [hasError, setHasError] = useState(false);
-  const [isDisabled, setIsDisabled] = useState(false);
-  const [hasVisibleLabel, setHasVisibleLabel] = useState(true);
   const [hasHelperText, setHasHelperText] = useState(true);
+  const [hasVisibleLabel, setHasVisibleLabel] = useState(true);
+  const [isDisabled, setIsDisabled] = useState(false);
+  const [multiple, setMultiple] = useState(false);
   const [size, setSize] = useState<SelectProps["size"]>("md");
 
-  const component = (
-    <Select
-      aria-label={!hasVisibleLabel ? "Select a favorite food" : ""}
-      disabled={isDisabled}
-      errorList={hasError ? ["Invalid selection"] : []}
-      helperText={hasHelperText ? "Please select one" : undefined}
-      label={hasVisibleLabel ? "Select a favorite food" : undefined}
-      multiple={multiple}
-      size={size}
-    >
-      {fruitOptions}
-    </Select>
-  );
+  const [component, react, html] = useMemo(() => {
+    const element = (
+      <Select
+        aria-label={!hasVisibleLabel ? "Select a favorite food" : ""}
+        disabled={isDisabled}
+        errorList={hasError ? ["Invalid selection"] : []}
+        helperText={hasHelperText ? "Please select one" : undefined}
+        label={hasVisibleLabel ? "Select a favorite food" : undefined}
+        multiple={multiple}
+        size={size}
+      >
+        {fruitOptions}
+      </Select>
+    );
+
+    return [
+      element,
+      prettyPrintReactElementToString(element),
+      prettyPrintReactElementToHtml(element),
+    ];
+  }, [hasError, hasHelperText, hasVisibleLabel, isDisabled, multiple, size]);
 
   return (
     <Playground
@@ -146,8 +154,8 @@ export const PlaygroundImplementation = () => {
         </Playground.OptionsContainer>
       }
       examples={{
-        html: prettyPrintReactElementToHtml(component),
-        react: prettyPrintReactElementToString(component),
+        html,
+        react,
         sandbox,
         storybook,
       }}
