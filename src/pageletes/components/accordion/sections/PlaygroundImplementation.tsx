@@ -2,11 +2,11 @@ import {
   Accordion,
   Checkbox,
   CheckboxGroup,
-  CheckboxProps,
+  type CheckboxProps,
   Radio,
   RadioGroup,
 } from "@avaya/neo-react";
-import { SetStateAction, useMemo, useState } from "react";
+import { type SetStateAction, useMemo, useState } from "react";
 
 import { Playground } from "components";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
