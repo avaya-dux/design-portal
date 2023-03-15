@@ -7,9 +7,13 @@ import {
   Select,
   SelectOption,
 } from "@avaya/neo-react";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
 import { Playground } from "components/react";
+import {
+  prettyPrintReactElementToHtml,
+  prettyPrintReactElementToString,
+} from "helpers";
 
 const sandbox = "https://codesandbox.io/s/neo-react-select-05kbd5";
 const storybook =
@@ -50,9 +54,19 @@ export const PlaygroundImplementation = () => {
   const [hasHelperText, setHasHelperText] = useState(true);
   const [size, setSize] = useState<SelectProps["size"]>("md");
 
-  const [react, html] = useMemo(() => {
-    return ["reactCode", "htmlCode"];
-  }, []);
+  const component = (
+    <Select
+      aria-label={!hasVisibleLabel ? "Select a favorite food" : ""}
+      disabled={isDisabled}
+      errorList={hasError ? ["Invalid selection"] : []}
+      helperText={hasHelperText ? "Please select one" : undefined}
+      label={hasVisibleLabel ? "Select a favorite food" : undefined}
+      multiple={multiple}
+      size={size}
+    >
+      {fruitOptions}
+    </Select>
+  );
 
   return (
     <Playground
@@ -132,25 +146,13 @@ export const PlaygroundImplementation = () => {
         </Playground.OptionsContainer>
       }
       examples={{
-        html,
-        react,
+        html: prettyPrintReactElementToHtml(component),
+        react: prettyPrintReactElementToString(component),
         sandbox,
         storybook,
       }}
     >
-      <div style={{ width: "100%", maxWidth: "300px" }}>
-        <Select
-          aria-label={!hasVisibleLabel ? "Select a favorite food" : ""}
-          disabled={isDisabled}
-          errorList={hasError ? ["Invalid selection"] : []}
-          helperText={hasHelperText ? "Please select one" : undefined}
-          label={hasVisibleLabel ? "Select a favorite food" : undefined}
-          multiple={multiple}
-          size={size}
-        >
-          {fruitOptions}
-        </Select>
-      </div>
+      <div style={{ width: "100%", maxWidth: "300px" }}>{component}</div>
     </Playground>
   );
 };
