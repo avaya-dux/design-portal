@@ -1,252 +1,113 @@
-import {
-  Checkbox,
-  CheckboxGroup,
-  Chip,
-  ChipProps,
-  ChipsContainer,
-  Radio,
-  RadioGroup,
-} from "@avaya/neo-react";
-import clsx from "clsx";
+import { Checkbox, CheckboxGroup, Chip, Radio, RadioGroup, Select, SelectOption } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components";
-import { prettyPrintHtml, prettyPrintReact } from "helpers";
+import { prettyPrintReactElementToHtml, prettyPrintReactElementToString } from "helpers";
 
-import { defaultHtml, defaultReact, sandbox, storybook } from "../static";
+export const sandbox = "https://codesandbox.io/s/neo-react-chips-conoc3";
+export const storybook =
+  "https://neo-react-library-storybook.netlify.app/?path=/story/components-chips";
 
-type ChipTypeOption = "default" | "icon" | "avatar";
+type ChipTypeOption = "default" | "info" | "success" | "alert" | "warning";
+
+type ChipVariantOption = "default" | "icon" | "avatar";
+
+type ChipVariableOption = "default" | "removable" | "expandable";
 
 export const PlaygroundImplementation = () => {
   const [chipType, setChipType] = useState<ChipTypeOption>("default");
-  const [closable, setClosable] = useState(false);
-  const [dir, setDir] = useState<"ltr" | "rtl">("ltr");
+  const [chipVariant, setChipVariant] = useState<ChipVariantOption>("default");
+  const [chipVariable, setChipVariable] =
+    useState<ChipVariableOption>("default");
   const [disabled, setDisabled] = useState(false);
 
-  const [isDefault, react, html] = useMemo(() => {
-    const isDefaultResult =
-      chipType === "default" && dir === "ltr" && !closable && !disabled;
-
-    const reactCodeProps = clsx(
-      chipType === "avatar" && 'avatarInitials="EX"',
-      chipType === "icon" && 'icon="info"',
-      disabled && "disabled",
-      closable && "closable",
-      dir === "rtl" && 'dir="rtl"'
-    );
-    const reactCode = prettyPrintReact(
-      `
-<ChipsContainer>
-<Chip variant="default" ${reactCodeProps}>This</Chip>
-<Chip variant="success" ${reactCodeProps}>is</Chip>
-<Chip variant="info" ${reactCodeProps}>a</Chip>
-<Chip variant="alert" ${reactCodeProps}>placeholder</Chip>
-<Chip variant="warning" ${reactCodeProps}>example</Chip>
-</ChipsContainer>
-`
+  const [component, react, html] = useMemo(() => {
+    const element = (
+      <Chip
+        variant={chipType}
+        closable={chipVariable === "removable"}
+        disabled={disabled}
+        avatarInitials={chipVariant === "avatar" ? "EX" : ""}
+        icon={chipVariant === "icon" ? "info" : undefined}
+      >
+        Example
+      </Chip>
     );
 
-    const htmlCode = prettyPrintHtml(
-      `
-<div class="neo-chips">
-  <div class="${calculateHtmlCodeClasses(
-    "default",
-    chipType === "icon",
-    disabled,
-    closable
-  )}" ${calculateHtmlCodeDir(dir === "rtl")}>
-      ${calculateHtmlCodeAvatar(chipType === "avatar")}
-    This
-    ${calculateHtmlCodeClosable(closable)}
-  </div>
+    return [
+      element,
+      prettyPrintReactElementToString(element, {displayName: () => "Chip"}),
+      prettyPrintReactElementToHtml(element),
+    ];
+  }, [chipType, chipVariant, chipVariable, disabled]);
 
-  <div class="${calculateHtmlCodeClasses(
-    "success",
-    chipType === "icon",
-    disabled,
-    closable
-  )}" ${calculateHtmlCodeDir(dir === "rtl")}>
-      ${calculateHtmlCodeAvatar(chipType === "avatar")}
-    is
-    ${calculateHtmlCodeClosable(closable)}
-  </div>
-
-  <div class="${calculateHtmlCodeClasses(
-    "info",
-    chipType === "icon",
-    disabled,
-    closable
-  )}" ${calculateHtmlCodeDir(dir === "rtl")}>
-      ${calculateHtmlCodeAvatar(chipType === "avatar")}
-    a
-    ${calculateHtmlCodeClosable(closable)}
-  </div>
-
-  <div class="${calculateHtmlCodeClasses(
-    "alert",
-    chipType === "icon",
-    disabled,
-    closable
-  )}" ${calculateHtmlCodeDir(dir === "rtl")}>
-    ${calculateHtmlCodeAvatar(chipType === "avatar")}
-    placeholder
-    ${calculateHtmlCodeClosable(closable)}
-  </div>
-
-  <div class="${calculateHtmlCodeClasses(
-    "warning",
-    chipType === "icon",
-    disabled,
-    closable
-  )}" ${calculateHtmlCodeDir(dir === "rtl")}>
-      ${calculateHtmlCodeAvatar(chipType === "avatar")}
-    example
-    ${calculateHtmlCodeClosable(closable)}
-  </div>
-</div>
-`
-    );
-
-    return [isDefaultResult, reactCode, htmlCode];
-  }, [chipType, closable, dir, disabled]);
+  console.log(react)
 
   return (
     <Playground
       options={
         <Playground.OptionsContainer>
-          <Playground.OptionsSection title="Chip Types">
+          <Playground.OptionsSection title="Type">
+            <Select
+              aria-label="Chip Types"
+              onChange={(value) => setChipType(value as ChipTypeOption)}
+              defaultValue="default"
+            >
+              <SelectOption value="default">Default</SelectOption>
+              <SelectOption value="info">Info</SelectOption>
+              <SelectOption value="success">Success</SelectOption>
+              <SelectOption value="alert">Alert</SelectOption>
+              <SelectOption value="warning">Warning</SelectOption>
+            </Select>
+          </Playground.OptionsSection>
+
+          <Playground.OptionsSection title="State">
+            <Checkbox
+              value="disabled"
+              checked={disabled}
+              onChange={() => setDisabled(!disabled)}
+            >
+              Disable
+            </Checkbox>
+          </Playground.OptionsSection>
+
+          <Playground.OptionsSection title="Variants">
             <RadioGroup
-              groupName="options"
-              selected={chipType}
+              groupName="variants"
+              selected={chipVariant}
               onChange={(e) => {
-                setChipType(e.target.value as ChipTypeOption);
+                setChipVariant(e.target.value as ChipVariantOption);
               }}
             >
-              <Radio value="default">Default</Radio>
-              <Radio value="avatar">Avatar</Radio>
+              <Radio value="default">None</Radio>
               <Radio value="icon">Icon</Radio>
+              <Radio value="avatar">Avatar</Radio>
             </RadioGroup>
           </Playground.OptionsSection>
 
-          <Playground.OptionsSection title="Variables" id="variables">
-            <CheckboxGroup
-              groupName="Variables"
-              aria-labelledby="variables"
+          <Playground.OptionsSection title="Variables">
+            <RadioGroup
+              groupName="variables"
+              selected={chipVariable}
               onChange={(e) => {
-                const { value } = e.target as HTMLInputElement;
-                switch (value) {
-                  case "closable":
-                    setClosable(!closable);
-                    setDisabled(false);
-                    break;
-                  case "dir":
-                    setDir(dir === "ltr" ? "rtl" : "ltr");
-                    break;
-                  case "disabled":
-                    setClosable(false);
-                    setDisabled(!disabled);
-                    break;
-                }
+                setChipVariable(e.target.value as ChipVariableOption);
               }}
             >
-              <Checkbox value="closable" checked={closable}>
-                Closable
-              </Checkbox>
-              <Checkbox value="dir" checked={dir === "rtl"}>
-                RTL
-              </Checkbox>
-              <Checkbox value="disabled" checked={disabled}>
-                Disabled
-              </Checkbox>
-            </CheckboxGroup>
+              <Radio value="default">None</Radio>
+              <Radio value="removable">Removable</Radio>
+              <Radio value="expandable">Expandable</Radio>
+            </RadioGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
       }
       examples={{
-        html: isDefault ? defaultHtml : html,
-        react: isDefault ? defaultReact : react,
+        react,
+        html,
         sandbox,
         storybook,
       }}
     >
-      <ChipsContainer>
-        <Chip
-          variant="default"
-          closable={closable}
-          dir={dir}
-          disabled={disabled}
-          avatarInitials={chipType === "avatar" ? "EX" : ""}
-          icon={chipType === "icon" ? "info" : undefined}
-        >
-          This
-        </Chip>
-        <Chip
-          variant="success"
-          closable={closable}
-          dir={dir}
-          disabled={disabled}
-          avatarInitials={chipType === "avatar" ? "EX" : ""}
-          icon={chipType === "icon" ? "info" : undefined}
-        >
-          is
-        </Chip>
-        <Chip
-          variant="info"
-          closable={closable}
-          dir={dir}
-          disabled={disabled}
-          avatarInitials={chipType === "avatar" ? "EX" : ""}
-          icon={chipType === "icon" ? "info" : undefined}
-        >
-          a
-        </Chip>
-        <Chip
-          variant="alert"
-          closable={closable}
-          dir={dir}
-          disabled={disabled}
-          avatarInitials={chipType === "avatar" ? "EX" : ""}
-          icon={chipType === "icon" ? "info" : undefined}
-        >
-          placeholder
-        </Chip>
-        <Chip
-          variant="warning"
-          closable={closable}
-          dir={dir}
-          disabled={disabled}
-          avatarInitials={chipType === "avatar" ? "EX" : ""}
-          icon={chipType === "icon" ? "info" : undefined}
-        >
-          example
-        </Chip>
-      </ChipsContainer>
+      {component}
     </Playground>
   );
 };
-
-const calculateHtmlCodeClasses = (
-  variant: ChipProps["variant"],
-  icon: boolean,
-  disabled: boolean,
-  closable: boolean
-) =>
-  clsx(
-    `neo-chip neo-chip--${variant}`,
-    disabled && `neo-chip--${variant}--disabled`,
-    icon && "neo-icon-info",
-    closable && `neo-chip--close neo-chip--close--${variant}`,
-    "neo-chips__item"
-  );
-
-const calculateHtmlCodeDir = (isRtl: boolean) => (isRtl ? 'dir="rtl"' : "");
-
-const calculateHtmlCodeAvatar = (isAvatar: boolean) =>
-  isAvatar
-    ? '<figure class="neo-avatar neo-avatar--small" data-initials="EX"></figure>'
-    : "";
-
-const calculateHtmlCodeClosable = (isClosable: boolean) =>
-  isClosable
-    ? '<button class="neo-close neo-close--clear" aria-label="Close"></button>'
-    : "";
