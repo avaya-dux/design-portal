@@ -1,8 +1,19 @@
-import { Checkbox, CheckboxGroup, Chip, Radio, RadioGroup, Select, SelectOption } from "@avaya/neo-react";
+import {
+  Checkbox,
+  Chip,
+  Radio,
+  RadioGroup,
+  Select,
+  SelectOption,
+} from "@avaya/neo-react";
+import clsx from "clsx";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components";
-import { prettyPrintReactElementToHtml, prettyPrintReactElementToString } from "helpers";
+import {
+  prettyPrintReactElementToHtml,
+  prettyPrintReactElementToString,
+} from "helpers";
 
 export const sandbox = "https://codesandbox.io/s/neo-react-chips-conoc3";
 export const storybook =
@@ -12,7 +23,7 @@ type ChipTypeOption = "default" | "info" | "success" | "alert" | "warning";
 
 type ChipVariantOption = "default" | "icon" | "avatar";
 
-type ChipVariableOption = "default" | "removable" | "expandable";
+type ChipVariableOption = "default" | "removable";
 
 export const PlaygroundImplementation = () => {
   const [chipType, setChipType] = useState<ChipTypeOption>("default");
@@ -27,8 +38,8 @@ export const PlaygroundImplementation = () => {
         variant={chipType}
         closable={chipVariable === "removable"}
         disabled={disabled}
-        avatarInitials={chipVariant === "avatar" ? "EX" : ""}
-        icon={chipVariant === "icon" ? "info" : undefined}
+        avatarInitials={clsx(chipVariant === "avatar" && "EX")}
+        icon={clsx(chipVariant === "icon" && "info")}
       >
         Example
       </Chip>
@@ -36,12 +47,10 @@ export const PlaygroundImplementation = () => {
 
     return [
       element,
-      prettyPrintReactElementToString(element, {displayName: () => "Chip"}),
+      prettyPrintReactElementToString(element, { displayName: () => "Chip" }),
       prettyPrintReactElementToHtml(element),
     ];
   }, [chipType, chipVariant, chipVariable, disabled]);
-
-  console.log(react)
 
   return (
     <Playground

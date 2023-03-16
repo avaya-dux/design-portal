@@ -7,7 +7,10 @@ export const prettyPrintReactElementToHtml = (element: ReactElement) => {
   return prettyPrintHtml(ReactDOMServer.renderToStaticMarkup(element));
 };
 
-export const prettyPrintReactElementToString = (element: ReactElement, options?: Options) => {
+export const prettyPrintReactElementToString = (
+  element: ReactElement,
+  options?: Options
+) => {
   return reactElementToJSXString(element, options);
 };
 
