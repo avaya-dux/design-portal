@@ -1,0 +1,43 @@
+---
+import { Description, PageleteSubSection, SubHeader } from "components/astro";
+
+import { DoAndDont } from "components/react";
+
+import { Image } from "@avaya/neo-react";
+
+import doImage1 from "../imgs/chip-behavior-do-1.svg";
+import dontImage1 from "../imgs/chip-behavior-dont-1.svg";
+
+const do1Instructions =
+  "Use the chip state that best fits the content. For example, use the Alert chip for errors. Learn more in Neo’s color guidelines.";
+const doImg1AltText =
+  "An image of default, alert, warning, info and success chips";
+
+const dont1Instructions =
+  " Do not mix the type to achieve specific colors, or use the another state as the default.";
+const dontImg1AltText = "An image of three info chips arranged horizontally";
+---
+
+<PageleteSubSection>
+  <SubHeader id="chip-color">Color</SubHeader>
+
+  <Description>
+    The background color of the chip indicates its function. Consider the
+    intended function of the chip before selecting its color; gray, red, orange,
+    blue or green.
+  </Description>
+
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={do1Instructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage1} alt={doImg1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dont1Instructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage1} alt={dontImg1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+</PageleteSubSection>
