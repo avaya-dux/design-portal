@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 /**
- * The OptionsSection component is meant to be used in association with the Playground component
+ * The OptionsSection component is meant to the Playground component
  * and the OptionsContainer component. It is used to wrap a grouping of options in order to provide
  * a consistent styling and layout.
  *
