@@ -1,0 +1,133 @@
+---
+import {
+  Description,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  SubHeader,
+} from "components/astro";
+import { topics } from "../static";
+
+import { Image } from "@avaya/neo-react";
+
+const { id, title } = topics.behavior;
+
+import doImage1 from "../imgs/chip-behavior-do-1.svg";
+import dontImage1 from "../imgs/chip-behavior-dont-1.svg";
+import doImage2 from "../imgs/chip-behavior-do-2.svg";
+import dontImage2 from "../imgs/chip-behavior-dont-2.svg";
+import doImage3 from "../imgs/chip-behavior-do-3.svg";
+import dontImage3 from "../imgs/chip-behavior-dont-3.svg";
+import { DoAndDont } from "components";
+
+const do1Instructions =
+  "Use the chip state that best fits the content. For example, use the Alert chip for errors. Learn more in Neo’s color guidelines.";
+const doImg1AltText =
+  "An image of default, alert, warning, info and success chips";
+
+const dont1Instructions =
+  " Do not mix the type to achieve specific colors, or use the another state as the default.";
+const dontImg1AltText = "An image of three info chips arranged horizontally";
+
+const do2Instructions =
+  "Add an icon to a chip if it will help the user to understand the attached function.";
+const doImg2AltText = "An image of three chips with icons";
+
+const dont2Instructions =
+  "Do not use icons for decoration. If it has no value, leave it out.";
+const dontImg2AltText = "An image of chips with icons used for decoration";
+
+const do3Instructions =
+  "Use expandable chips to allow the user to change the value of the chip.";
+const doImg3AltText =
+  "An image of an expandable chip triggering a dropdown menu";
+
+const dont3Instructions =
+  "Do not use expandable chips in place of form fields or buttons.";
+const dontImg3AltText = "An image of a chip used in place of a form element'";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    Displayed below are some examples of proper and improper usage of the Chip
+    component.
+  </Description>
+
+  <PageleteSubSection>
+    <SubHeader id="chip-color">Color</SubHeader>
+
+    <Description>
+      The background color of the chip indicates its function. Consider the
+      intended function of the chip before selecting its color; gray, red,
+      orange, blue or green.
+    </Description>
+
+    <DoAndDont>
+      <DoAndDont.DoContainer instructions={do1Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={doImage1} alt={doImg1AltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
+
+      <DoAndDont.DontContainer instructions={dont1Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={dontImage1} alt={dontImg1AltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DontContainer>
+    </DoAndDont>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="chip-using-icon">Using an Icon</SubHeader>
+
+    <Description>
+      Icons can be placed within the chip to the left of the text to clarify its
+      function and call attention to the chip. Icons may be included to the left
+      of the text if it will help the user. They should never be used for purely
+      cosmetic purposes.
+    </Description>
+
+    <DoAndDont>
+      <DoAndDont.DoContainer instructions={do2Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={doImage2} alt={doImg2AltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
+
+      <DoAndDont.DontContainer instructions={dont2Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={dontImage2} alt={dontImg2AltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DontContainer>
+    </DoAndDont>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="chip-expandable">Expandable</SubHeader>
+
+    <Description>
+      Use an expandable chip when you need to provide additional information or
+      action items. The default state of the chip is a single line of text that
+      easily fits into restricted areas. When selected, the chip expands to
+      reveal the full range of options available to the user.
+    </Description>
+
+    <DoAndDont>
+      <DoAndDont.DoContainer instructions={do3Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={doImage3} alt={doImg3AltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
+
+      <DoAndDont.DontContainer instructions={dont3Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={dontImage3} alt={dontImg3AltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DontContainer>
+    </DoAndDont>
+  </PageleteSubSection>
+</PageleteSection>
