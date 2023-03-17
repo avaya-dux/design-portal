@@ -1,0 +1,38 @@
+---
+import { Description, PageleteSubSection, SubHeader } from "components/astro";
+
+import { DoAndDont } from "components/react";
+
+import { Image } from "@avaya/neo-react";
+
+import doImage1 from "../../imgs/checkbox-behavior-nesting-do-1.svg";
+import dontImage1 from "../../imgs/checkbox-behavior-nesting-dont-1.svg";
+
+const do1Instructions ="Use nesting to create and organize subcategories of related items.";
+const doImg1AltText ="An image showing categorized checkboxes.";
+
+const dont1Instructions ="Do not place a group of uncategorized checkboxes together in a single layer.";
+const dontImg1AltText = "An image showing a group of uncategorized checkboxes together in a single layer.";
+---
+
+<PageleteSubSection>
+  <SubHeader id="checkbox-behavior-nesting">Nesting</SubHeader>
+
+  <Description>
+    Checkboxes can have other item lists nested beneath them. Selecting the parent opens the list of child items.
+  </Description>
+
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={do1Instructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage1} alt={doImg1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dont1Instructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage1} alt={dontImg1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+</PageleteSubSection>

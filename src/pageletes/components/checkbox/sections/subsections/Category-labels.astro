@@ -5,26 +5,20 @@ import { DoAndDont } from "components/react";
 
 import { Image } from "@avaya/neo-react";
 
-import doImage1 from "../imgs/chip-behavior-do-1.svg";
-import dontImage1 from "../imgs/chip-behavior-dont-1.svg";
+import doImage1 from "../../imgs/checkbox-behavior-category-do-1.svg";
+import dontImage1 from "../../imgs/checkbox-behavior-category-dont-1.svg";
 
-const do1Instructions =
-  "Use the chip state that best fits the content. For example, use the Alert chip for errors. Learn more in Neo’s color guidelines.";
-const doImg1AltText =
-  "An image of default, alert, warning, info and success chips";
+const do1Instructions ="Add a checkbox heading to show how the list items are connected.";
+const doImg1AltText ="An image of adding checkbox heading to related checkboxes.";
 
-const dont1Instructions =
-  " Do not mix the type to achieve specific colors, or use the another state as the default.";
-const dontImg1AltText = "An image of three info chips arranged horizontally";
+const dont1Instructions ="Do not add a checkbox heading to unrelated checkbox items.";
+const dontImg1AltText = "An image of adding checkbox heading to unrelated checkeboxes.";
 ---
 
 <PageleteSubSection>
-  <SubHeader id="chip-color">Color</SubHeader>
-
+  <SubHeader id="checkbox-behavior-catogory-labels">Category Labels</SubHeader>
   <Description>
-    The background color of the chip indicates its function. Consider the
-    intended function of the chip before selecting its color; gray, red, orange,
-    blue or green.
+    Checkbox groups should always have a Category Label that provides context to the list of options.
   </Description>
 
   <DoAndDont>
