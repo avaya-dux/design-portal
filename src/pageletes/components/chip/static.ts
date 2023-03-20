@@ -25,34 +25,40 @@ export const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-chips";
 
 type ChipTopicNames =
-  | "avatar"
-  | "basic"
-  | "closable"
-  | "container"
-  | "disabled"
-  | "icon"
+  | "playground"
+  | "anatomy"
+  | "states"
+  | "type"
+  | "behavior"
+  | "specs"
   | "keyboard"
-  | "playground";
+  | "related";
+
+const component = "chip";
 
 export const topics: TopicsDict<ChipTopicNames> = {
   playground: {
     order: 0,
-    id: "chips-playground",
+    id: `${component}-playground`,
     title: "Interactive Playground",
   },
-  basic: { order: 1, id: "basic-chips", title: "Basic Chips" },
-  disabled: { order: 2, id: "disabled-chips", title: "Disabled Chips" },
-  icon: { order: 3, id: "icon-chips", title: "Chips With Icons" },
-  closable: {
+  anatomy: { order: 1, id: `${component}-anatomy`, title: "Anatomy" },
+  states: { order: 2, id: `${component}-states`, title: "States" },
+  type: { order: 3, id: `${component}-type`, title: "Type" },
+  behavior: {
     order: 4,
-    id: "closable-icon-chips",
-    title: "Chips With Close Icon",
+    id: `${component}-behavior`,
+    title: "Behavior",
   },
-  avatar: { order: 5, id: "avatar-chips", title: "Chips With Avatar" },
-  container: { order: 6, id: "chips-container", title: "Chips Container" },
+  specs: { order: 5, id: `${component}-specs`, title: "Specs" },
   keyboard: {
-    order: 7,
-    id: "chips-keyboard-interactions",
+    order: 6,
+    id: `${component}-keyboard-interactions`,
     title: "Keyboard Interactions",
+  },
+  related: {
+    order: 7,
+    id: `${component}-related-content`,
+    title: "Related Content",
   },
 };
