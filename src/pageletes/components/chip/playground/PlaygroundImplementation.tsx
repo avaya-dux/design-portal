@@ -6,6 +6,8 @@ import {
   Select,
   SelectOption,
 } from "@avaya/neo-react";
+
+import type { ChipProps } from "@avaya/neo-react";
 import clsx from "clsx";
 import { useMemo, useState } from "react";
 
@@ -19,14 +21,12 @@ export const sandbox = "https://codesandbox.io/s/neo-react-chips-conoc3";
 export const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-chips";
 
-type ChipTypeOption = "default" | "info" | "success" | "alert" | "warning";
-
 type ChipVariantOption = "default" | "icon" | "avatar";
 
 type ChipVariableOption = "default" | "removable";
 
 export const PlaygroundImplementation = () => {
-  const [chipType, setChipType] = useState<ChipTypeOption>("default");
+  const [chipType, setChipType] = useState<ChipProps["variant"]>("default");
   const [chipVariant, setChipVariant] = useState<ChipVariantOption>("default");
   const [chipVariable, setChipVariable] =
     useState<ChipVariableOption>("default");
@@ -47,7 +47,7 @@ export const PlaygroundImplementation = () => {
 
     return [
       element,
-      prettyPrintReactElementToString(element, { displayName: () => "Chip" }),
+      prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
     ];
   }, [chipType, chipVariant, chipVariable, disabled]);
@@ -59,7 +59,7 @@ export const PlaygroundImplementation = () => {
           <Playground.OptionsSection title="Type">
             <Select
               aria-label="Chip Types"
-              onChange={(value) => setChipType(value as ChipTypeOption)}
+              onChange={(value) => setChipType(value as ChipProps["variant"])}
               defaultValue="default"
             >
               <SelectOption value="default">Default</SelectOption>
@@ -104,7 +104,6 @@ export const PlaygroundImplementation = () => {
             >
               <Radio value="default">None</Radio>
               <Radio value="removable">Removable</Radio>
-              <Radio value="expandable">Expandable</Radio>
             </RadioGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
