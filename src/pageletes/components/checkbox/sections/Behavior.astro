@@ -1,0 +1,33 @@
+---
+import { PageleteSection, SectionHeader } from "components/astro";
+import { topics } from "../static";
+
+import {
+  WhenToUse,
+  CategoryLabels,
+  ContentOverflow,
+  TextAlignment,
+  Indeterminate,
+  Nesting,
+} from "./subsections";
+
+const { id, title } = topics.behavior;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <WhenToUse />
+
+  <CategoryLabels />
+
+  <ContentOverflow />
+
+  <TextAlignment />
+
+  <Indeterminate />
+
+  <Nesting />
+</PageleteSection>
