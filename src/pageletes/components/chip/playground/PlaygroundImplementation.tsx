@@ -1,11 +1,4 @@
-import {
-  Checkbox,
-  Chip,
-  Radio,
-  RadioGroup,
-  Select,
-  SelectOption,
-} from "@avaya/neo-react";
+import { Checkbox, Chip, Radio, RadioGroup, Select, SelectOption } from "@avaya/neo-react";
 
 import type { ChipProps } from "@avaya/neo-react";
 import clsx from "clsx";
@@ -57,7 +50,7 @@ export const PlaygroundImplementation = () => {
 
   useEffect(() => {
     setElementToRender(component);
-  }, [chipType, chipVariant, chipVariable, disabled]);
+  }, [chipType, chipVariant, chipVariable, disabled, component]);
 
   return (
     <Playground
