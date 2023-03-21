@@ -9,7 +9,7 @@ import {
 
 import type { ChipProps } from "@avaya/neo-react";
 import clsx from "clsx";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { Playground } from "components";
 import {
@@ -37,6 +37,7 @@ export const PlaygroundImplementation = () => {
       <Chip
         variant={chipType}
         closable={chipVariable === "removable"}
+        onClose={() => setElementToRender(<></>)}
         disabled={disabled}
         avatarInitials={clsx(chipVariant === "avatar" && "EX")}
         icon={clsx(chipVariant === "icon" && "info")}
@@ -50,6 +51,12 @@ export const PlaygroundImplementation = () => {
       prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
     ];
+  }, [chipType, chipVariant, chipVariable, disabled]);
+
+  const [elementToRender, setElementToRender] = useState(component);
+
+  useEffect(() => {
+    setElementToRender(component);
   }, [chipType, chipVariant, chipVariable, disabled]);
 
   return (
@@ -115,7 +122,7 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      {component}
+      {elementToRender}
     </Playground>
   );
 };
