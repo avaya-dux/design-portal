@@ -6,6 +6,8 @@ import {
   prettyPrintReactElementToString,
 } from "helpers";
 
+import "./PlaygroundImplementation.css";
+
 type LabelOption = "yes" | "no";
 
 const storybook =

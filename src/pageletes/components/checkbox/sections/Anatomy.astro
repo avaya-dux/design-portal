@@ -1,0 +1,48 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Description,
+  ImageWrapper,
+  InfoList,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+import { topics } from "../static";
+
+const { id, title } = topics.anatomy;
+
+import image1 from "../imgs/checkbox-anatomy.svg";
+const img1AltText =
+  "Image showing three checkboxes, there are three notes pointed out and described below";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    A checkbox contains 3 elements which can be arranged vertically or
+    horizontally as needed.
+  </Description>
+
+  <ImageWrapper>
+    <Image src={image1} alt={img1AltText} />
+  </ImageWrapper>
+
+  <InfoList type="decimal">
+    <InfoListItem label="Checkbox Heading">
+      This is the title of the list of options. It identifies what the list
+      items control and how they are related.
+    </InfoListItem>
+
+    <InfoListItem label="Checkbox">
+      Enabling the checkbox selects the associated option. More than one
+      checkbox can be enabled at one time.
+    </InfoListItem>
+
+    <InfoListItem label="Label">
+      The label identifies the function attached to each checkbox. Selecting a
+      checkbox activates the connected option.
+    </InfoListItem>
+  </InfoList>
+</PageleteSection>
