@@ -41,7 +41,7 @@ export const PlaygroundImplementation = () => {
 
     return [
       element,
-      prettyPrintReactElementToString(element),
+      prettyPrintReactElementToString(element, {filterProps: ["onClose"]}),
       prettyPrintReactElementToHtml(element),
     ];
   }, [chipType, chipVariant, chipVariable, disabled]);
