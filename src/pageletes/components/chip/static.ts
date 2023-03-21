@@ -1,28 +1,4 @@
 import type { TopicsDict } from "components";
-import { prettyPrintHtml, prettyPrintReact } from "helpers";
-
-export const defaultHtml = prettyPrintHtml(`
-<div class="neo-chips">
-  <div class="neo-chip neo-chip--default neo-chips__item">This</div>
-  <div class="neo-chip neo-chip--success neo-chips__item">is</div>
-  <div class="neo-chip neo-chip--info neo-chips__item">a</div>
-  <div class="neo-chip neo-chip--alert neo-chips__item">placeholder</div>
-  <div class="neo-chip neo-chip--warning neo-chips__item">example</div>
-</div>
-`);
-export const defaultReact = prettyPrintReact(`
-<ChipsContainer>
-  <Chip variant="default">This</Chip>
-  <Chip variant="success">is</Chip>
-  <Chip variant="info">a</Chip>
-  <Chip variant="alert">placeholder</Chip>
-  <Chip variant="warning">example</Chip>
-</ChipsContainer>
-`);
-
-export const sandbox = "https://codesandbox.io/s/neo-react-chips-conoc3";
-export const storybook =
-  "https://neo-react-library-storybook.netlify.app/?path=/story/components-chips";
 
 type ChipTopicNames =
   | "playground"
