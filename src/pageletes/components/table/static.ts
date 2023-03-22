@@ -16,14 +16,14 @@ export const topics: TopicsDict<DropdownTopicNames> = {
     id: "table-playground",
     title: "Interactive Playground",
   },
-  anatomy: { order: 1, id: "table-anatomy", title: "Anatomy" },
-  states: { order: 2, id: "table-states", title: "States" },
-  positioning: {
-    order: 3,
-    id: "table-positioning",
-    title: "Positioning",
-  },
-  behavior: { order: 4, id: "table-behavior", title: "Behavior" },
+  // anatomy: { order: 1, id: "table-anatomy", title: "Anatomy" },
+  // states: { order: 2, id: "table-states", title: "States" },
+  // positioning: {
+  //   order: 3,
+  //   id: "table-positioning",
+  //   title: "Positioning",
+  // },
+  // behavior: { order: 4, id: "table-behavior", title: "Behavior" },
   specs: { order: 5, id: "table-specs", title: "Specs" },
   keyboard: {
     order: 6,
