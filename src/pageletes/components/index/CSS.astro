@@ -12,15 +12,27 @@ import {
     Install The CSS Library, <code>neo-css</code>
   </SectionHeader>
 
-  <div id="code-highlight-container">
-    <CodeHighlight code="npm install @avaya/neo" active client:load />
-  </div>
-  <div id="code-highlight-container">
-    <CodeHighlight code="yarn add @avaya/neo" active client:load />
-  </div>
-  <div id="code-highlight-container">
-    <CodeHighlight code="pnpm add @avaya/neo" active client:load />
-  </div>
+  <Description>
+    With NPM:
+    <div id="code-highlight-container">
+      <CodeHighlight code="npm install @avaya/neo" active client:load />
+    </div>
+  </Description>
+
+  <Description>
+    With Yarn:
+    <div id="code-highlight-container">
+      <CodeHighlight code="yarn add @avaya/neo" active client:load />
+    </div>
+  </Description>
+
+  <Description>
+    With PNPM:
+    <div id="code-highlight-container">
+      <CodeHighlight code="pnpm add @avaya/neo" active client:load />
+    </div>
+  </Description>
+
   <Description>
     The package contains both compiled and minified versions of the Neo .css
     file, as well as separate stylesheets for both icons and multilingual font
@@ -30,14 +42,15 @@ import {
   <Description>
     After installing <code>neo-css</code> to your project, add the compiled or minified
     CSS to the head element of your HTML5 document.
+
+    <div id="code-highlight-container">
+      <CodeHighlight
+        code={`<link rel="stylesheet" type="text/css" href="dist/css/neo/neo.min.css" />`}
+        active
+        client:load
+      />
+    </div>
   </Description>
-  <div id="code-highlight-container">
-    <CodeHighlight
-      code={`<link rel="stylesheet" type="text/css" href="dist/css/neo/neo.min.css" />`}
-      active
-      client:load
-    />
-  </div>
 </PageleteSection>
 
 <!--
