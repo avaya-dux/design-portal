@@ -1,10 +1,7 @@
 ---
-import {
-  CodeHighlight,
-  Description,
-  PageleteSection,
-  SectionHeader,
-} from "components";
+import { Description, PageleteSection, SectionHeader } from "components";
+
+import CodeHighlightAlt from "./CodeHighlightAlt.astro";
 ---
 
 <PageleteSection>
@@ -14,35 +11,27 @@ import {
 
   <Description>
     With NPM:
-    <div id="code-highlight-container">
-      <CodeHighlight code="npm install @avaya/neo-react" active client:load />
-    </div>
+    <CodeHighlightAlt code="npm install @avaya/neo-react" active client:load />
   </Description>
 
   <Description>
     With Yarn:
-    <div id="code-highlight-container">
-      <CodeHighlight code="yarn add @avaya/neo-react" active client:load />
-    </div>
+    <CodeHighlightAlt code="yarn add @avaya/neo-react" active client:load />
   </Description>
 
   <Description>
     With PNPM:
-    <div id="code-highlight-container">
-      <CodeHighlight code="pnpm add @avaya/neo-react" active client:load />
-    </div>
+    <CodeHighlightAlt code="pnpm add @avaya/neo-react" active client:load />
   </Description>
 
   <Description>
     Import the CSS styles at the root of your project via:
 
-    <div id="code-highlight-container">
-      <CodeHighlight
-        code={`import "@avaya/neo-react/avaya-neo-react.css";`}
-        active
-        client:load
-      />
-    </div>
+    <CodeHighlightAlt
+      code={`import "@avaya/neo-react/avaya-neo-react.css";`}
+      active
+      client:load
+    />
   </Description>
 
   <Description>

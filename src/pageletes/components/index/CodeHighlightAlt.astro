@@ -1,0 +1,17 @@
+---
+import { CodeHighlight } from "components";
+---
+
+<div class="code-highlight-container">
+  <CodeHighlight code="npm install @avaya/neo" active client:load />
+</div>
+
+<style is:global>
+  .code-highlight-container {
+    transform: translateZ(0);
+  }
+
+  .code-highlight-container div.neo-tooltip {
+    top: 1rem;
+  }
+</style>
