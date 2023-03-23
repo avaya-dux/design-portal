@@ -3,9 +3,8 @@ import type { TopicsDict } from "components";
 type DropdownTopicNames =
   | "playground"
   | "anatomy"
-  | "states"
-  | "positioning"
-  | "behavior"
+  // | "states"
+  // | "behavior"
   | "specs"
   | "keyboard"
   | "related";
@@ -16,22 +15,17 @@ export const topics: TopicsDict<DropdownTopicNames> = {
     id: "table-playground",
     title: "Interactive Playground",
   },
-  // anatomy: { order: 1, id: "table-anatomy", title: "Anatomy" },
+  anatomy: { order: 1, id: "table-anatomy", title: "Anatomy" },
   // states: { order: 2, id: "table-states", title: "States" },
-  // positioning: {
-  //   order: 3,
-  //   id: "table-positioning",
-  //   title: "Positioning",
-  // },
-  // behavior: { order: 4, id: "table-behavior", title: "Behavior" },
-  specs: { order: 5, id: "table-specs", title: "Specs" },
+  // behavior: { order: 3, id: "table-behavior", title: "Behavior" },
+  specs: { order: 4, id: "table-specs", title: "Specs" },
   keyboard: {
-    order: 6,
+    order: 5,
     id: "table-keyboard-interactions",
     title: "Keyboard Interactions",
   },
   related: {
-    order: 7,
+    order: 6,
     id: "table-related-content",
     title: "Related Content",
   },
