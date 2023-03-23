@@ -3,7 +3,7 @@ import type { TopicsDict } from "components";
 type DropdownTopicNames =
   | "playground"
   | "anatomy"
-  // | "states"
+  | "states"
   // | "behavior"
   | "specs"
   | "keyboard"
@@ -16,7 +16,7 @@ export const topics: TopicsDict<DropdownTopicNames> = {
     title: "Interactive Playground",
   },
   anatomy: { order: 1, id: "table-anatomy", title: "Anatomy" },
-  // states: { order: 2, id: "table-states", title: "States" },
+  states: { order: 2, id: "table-states", title: "States" },
   // behavior: { order: 3, id: "table-behavior", title: "Behavior" },
   specs: { order: 4, id: "table-specs", title: "Specs" },
   keyboard: {
