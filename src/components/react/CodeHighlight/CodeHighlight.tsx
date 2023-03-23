@@ -1,5 +1,5 @@
 import { IconButton, Tooltip } from "@avaya/neo-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 import type { Language } from "prism-react-renderer";
 import Highlight, { defaultProps } from "prism-react-renderer";
@@ -19,17 +19,17 @@ import styles from "./CodeHighlight.module.css";
  * <CodeHighlight code="npm install @avaya/neo" client:load />
  */
 export const CodeHighlight = ({
+  active,
   code,
   language = "markdown",
-  active,
+  tooltipId,
 }: {
-  code: string;
   active: boolean;
+  code: string;
   language?: Language;
+  tooltipId?: string;
 }) => {
   const [isCopied, setIsCopied] = useState(false);
-
-  const buttonRef = useRef(null);
 
   useEffect(() => {
     if (!active) {
@@ -48,6 +48,7 @@ export const CodeHighlight = ({
     <div className={styles["code-container"]}>
       <Highlighter code={code} language={language} />
       <Tooltip
+        tooltipDivProps={{ id: tooltipId }}
         className={styles["copy-button"]}
         label={isCopied ? "Copied" : "Copy code to clipboard"}
         position="left"
@@ -56,7 +57,6 @@ export const CodeHighlight = ({
           aria-label="copy content to clipboard"
           icon="copy"
           shape="circle"
-          ref={buttonRef}
           onClick={(e) => {
             copyTextToClipboard(code);
             e.currentTarget.blur();

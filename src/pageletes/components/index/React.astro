@@ -1,37 +1,50 @@
 ---
+import { Link } from "@avaya/neo-react";
 import { Description, PageleteSection, SectionHeader } from "components";
 
 import DescriptionWithCode from "./DescriptionWithCode.astro";
 ---
 
 <PageleteSection>
-  <SectionHeader id="compiled-css">
+  <SectionHeader id="compiled-react">
     Install The React Library, <code>neo-react</code>
   </SectionHeader>
 
   <div class="setup-react-install-grid">
-    <DescriptionWithCode code="npm install @avaya/neo-react">
+    <DescriptionWithCode
+      tooltipId="npm-install-neo-react"
+      code="npm install @avaya/neo-react"
+    >
       With NPM
     </DescriptionWithCode>
 
-    <DescriptionWithCode code="yarn add @avaya/neo-react">
+    <DescriptionWithCode
+      tooltipId="yarn-add-neo-react"
+      code="yarn add @avaya/neo-react"
+    >
       With Yarn
     </DescriptionWithCode>
 
-    <DescriptionWithCode code="pnpm add @avaya/neo-react">
+    <DescriptionWithCode
+      tooltipId="pnpm-add-neo-react"
+      code="pnpm add @avaya/neo-react"
+    >
       With PNPM
     </DescriptionWithCode>
   </div>
 
-  <DescriptionWithCode code={`import "@avaya/neo-react/avaya-neo-react.css";`}>
+  <DescriptionWithCode
+    tooltipId="neo-react-css-import"
+    code={`import "@avaya/neo-react/avaya-neo-react.css";`}
+  >
     Import the CSS styles at the root of your project via:
   </DescriptionWithCode>
 
   <Description>
     Then, simply import the component(s) that you'd like to use. See component
-    pages for examples. <a href="/components/buttons">
+    pages for examples. <Link inline href="/components/buttons">
       Link to Button Component Page
-    </a>
+    </Link>
   </Description>
 
   <Description>
@@ -42,11 +55,12 @@ import DescriptionWithCode from "./DescriptionWithCode.astro";
 
   <Description>
     To see more examples and recommendations, please visit our
-    <a href="https://github.com/avaya-dux/neo-react-library/"> GitHub page</a> or
-    our
-    <a href="http://localhost:6006/?path=/story/introduction--page">
+    <Link inline href="https://github.com/avaya-dux/neo-react-library/">
+      GitHub page
+    </Link> or our
+    <Link inline href="http://localhost:6006/?path=/story/introduction--page">
       Storybook
-    </a>.
+    </Link>.
   </Description>
 </PageleteSection>
 

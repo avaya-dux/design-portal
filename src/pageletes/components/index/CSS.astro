@@ -10,15 +10,24 @@ import DescriptionWithCode from "./DescriptionWithCode.astro";
   </SectionHeader>
 
   <div class="setup-css-install-grid">
-    <DescriptionWithCode code="npm install @avaya/neo">
+    <DescriptionWithCode
+      tooltipId="npm-install-neo-css"
+      code="npm install @avaya/neo"
+    >
       With NPM
     </DescriptionWithCode>
 
-    <DescriptionWithCode code="yarn add @avaya/neo">
+    <DescriptionWithCode
+      tooltipId="yarn-add-neo-css"
+      code="yarn add @avaya/neo"
+    >
       With Yarn
     </DescriptionWithCode>
 
-    <DescriptionWithCode code="pnpm add @avaya/neo">
+    <DescriptionWithCode
+      tooltipId="pnpm-add-neo-css"
+      code="pnpm add @avaya/neo"
+    >
       With PNPM
     </DescriptionWithCode>
   </div>
@@ -30,6 +39,7 @@ import DescriptionWithCode from "./DescriptionWithCode.astro";
   </Description>
 
   <DescriptionWithCode
+    tooltipId="add-neo-css-to-head"
     code={`<link rel="stylesheet" type="text/css" href="dist/css/neo/neo.min.css" />`}
   >
     After installing <code>neo-css</code> to your project, add the compiled or minified

@@ -3,15 +3,16 @@ import { CodeHighlight } from "components";
 
 export interface Props {
   code: string;
+  tooltipId: string;
 }
-const { code } = Astro.props as Props;
+const { code, tooltipId } = Astro.props as Props;
 ---
 
 <div>
   <p><slot /></p>
 
   <div class="code-highlight-container">
-    <CodeHighlight code={code} active client:load />
+    <CodeHighlight code={code} tooltipId={tooltipId} active client:load />
   </div>
 </div>
 
