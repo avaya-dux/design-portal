@@ -9,17 +9,19 @@ import DescriptionWithCode from "./DescriptionWithCode.astro";
     Install The CSS Library, <code>neo-css</code>
   </SectionHeader>
 
-  <DescriptionWithCode code="npm install @avaya/neo">
-    With NPM
-  </DescriptionWithCode>
+  <div class="grid">
+    <DescriptionWithCode code="npm install @avaya/neo">
+      With NPM
+    </DescriptionWithCode>
 
-  <DescriptionWithCode code="yarn add @avaya/neo">
-    With Yarn
-  </DescriptionWithCode>
+    <DescriptionWithCode code="yarn add @avaya/neo">
+      With Yarn
+    </DescriptionWithCode>
 
-  <DescriptionWithCode code="pnpm add @avaya/neo">
-    With PNPM
-  </DescriptionWithCode>
+    <DescriptionWithCode code="pnpm add @avaya/neo">
+      With PNPM
+    </DescriptionWithCode>
+  </div>
 
   <Description>
     The package contains both compiled and minified versions of the Neo .css
@@ -34,3 +36,11 @@ import DescriptionWithCode from "./DescriptionWithCode.astro";
     CSS to the head element of your HTML5 document.
   </DescriptionWithCode>
 </PageleteSection>
+
+<style>
+  div.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+  }
+</style>
