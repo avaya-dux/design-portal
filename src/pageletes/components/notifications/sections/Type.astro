@@ -1,0 +1,64 @@
+---
+import {
+  Description,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  SubHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+const { id, title } = topics.type;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+  </Description>
+
+  <PageleteSubSection>
+    <SubHeader id="notifications-general-notifications">
+      General Notifications
+    </SubHeader>
+
+    <Description>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam.
+    </Description>
+
+    <Description>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam.
+    </Description>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="notifications-inline-notifications">
+      Inline notifications
+    </SubHeader>
+
+    <Description>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam.
+    </Description>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="notifications-notifications-list">
+      Notifications List
+    </SubHeader>
+
+    <Description>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam.
+    </Description>
+  </PageleteSubSection>
+</PageleteSection>

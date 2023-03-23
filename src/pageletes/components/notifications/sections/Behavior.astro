@@ -1,0 +1,125 @@
+---
+import {
+  Description,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableCellHead,
+  InfoTableHead,
+  InfoTableRow,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  SubHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+const { id, title } = topics.behavior;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+  </Description>
+
+  <InfoTable>
+    <InfoTableHead>
+      <InfoTableRow>
+        <InfoTableCellHead>Component</InfoTableCellHead>
+        <InfoTableCellHead>Priority</InfoTableCellHead>
+        <InfoTableCellHead>User Action</InfoTableCellHead>
+      </InfoTableRow>
+    </InfoTableHead>
+
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>Toast</InfoTableCell>
+        <InfoTableCell>Low priority</InfoTableCell>
+        <InfoTableCell>
+          Feedback (Alert) that do not need to interrupt the user flow. They
+          should be used for confirmation in response to an action. Toasts
+          dissapear automatically
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Notification</InfoTableCell>
+        <InfoTableCell>Prominent priority</InfoTableCell>
+        <InfoTableCell>
+          Items that require immediate attention. They can be persistent or
+          dismissable depending on the context. Remain until dismissed by the
+          user, or if the state that cause the notification is resolved.
+          (Notification inline)
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Modal</InfoTableCell>
+        <InfoTableCell>Highest priority</InfoTableCell>
+        <InfoTableCell>
+          Modal block app usage until the user a modal action or exits the
+          dialog (If available)
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
+
+  <PageleteSubSection>
+    <SubHeader id="notifications-color">Color</SubHeader>
+
+    <Description>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam.
+    </Description>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="notifications-overflow">Overflow</SubHeader>
+
+    <Description>
+      Notifications provide limited space for content, and therefore the content
+      must be short and concise. A user should be able to quickly scan the
+      notification, be apprised of the situation, and know what to do next.
+    </Description>
+    <Description>
+      If General Notification requires a message longer than two lines, use an
+      actionable notification and include a short message with a “Show more”
+      link that takes the user to a view of the full notification message. This
+      can be either a full page with more details or a Sheet.
+    </Description>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="notifications-dismissal">Dismissal</SubHeader>
+
+    <Description>
+      Notifications do not dismiss automatically. They persist on the page until
+      the user dismisses them or takes action that resolves the notification.
+    </Description>
+
+    <Description>
+      A small “x” is used to dismiss notifications. Including the close button
+      is optional and should not be included if it is critical for a user to
+      read or interact with the notification.
+    </Description>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="notifications-multiple-notification">
+      Multiple Notification
+    </SubHeader>
+
+    <Description>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam.
+    </Description>
+  </PageleteSubSection>
+</PageleteSection>
