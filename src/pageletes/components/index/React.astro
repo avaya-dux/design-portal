@@ -9,7 +9,7 @@ import DescriptionWithCode from "./DescriptionWithCode.astro";
     Install The React Library, <code>neo-react</code>
   </SectionHeader>
 
-  <div class="grid">
+  <div class="setup-react-install-grid">
     <DescriptionWithCode code="npm install @avaya/neo-react">
       With NPM
     </DescriptionWithCode>
@@ -51,9 +51,11 @@ import DescriptionWithCode from "./DescriptionWithCode.astro";
 </PageleteSection>
 
 <style>
-  div.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
+  @media (min-width: 1080px) {
+    div.setup-react-install-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1rem;
+    }
   }
 </style>

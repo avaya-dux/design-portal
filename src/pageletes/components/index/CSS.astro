@@ -9,7 +9,7 @@ import DescriptionWithCode from "./DescriptionWithCode.astro";
     Install The CSS Library, <code>neo-css</code>
   </SectionHeader>
 
-  <div class="grid">
+  <div class="setup-css-install-grid">
     <DescriptionWithCode code="npm install @avaya/neo">
       With NPM
     </DescriptionWithCode>
@@ -38,9 +38,11 @@ import DescriptionWithCode from "./DescriptionWithCode.astro";
 </PageleteSection>
 
 <style>
-  div.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
+  @media (min-width: 1080px) {
+    div.setup-css-install-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 1rem;
+    }
   }
 </style>
