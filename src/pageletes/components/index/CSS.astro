@@ -1,0 +1,55 @@
+---
+import {
+  CodeHighlight,
+  Description,
+  PageleteSection,
+  SectionHeader,
+} from "components";
+---
+
+<PageleteSection>
+  <SectionHeader id="compiled-css">
+    Install The CSS Library, <code>neo-css</code>
+  </SectionHeader>
+
+  <div id="code-highlight-container">
+    <CodeHighlight code="npm install @avaya/neo" active client:load />
+  </div>
+  <div id="code-highlight-container">
+    <CodeHighlight code="yarn add @avaya/neo" active client:load />
+  </div>
+  <div id="code-highlight-container">
+    <CodeHighlight code="pnpm add @avaya/neo" active client:load />
+  </div>
+  <Description>
+    The package contains both compiled and minified versions of the Neo .css
+    file, as well as separate stylesheets for both icons and multilingual font
+    support.
+  </Description>
+
+  <Description>
+    After installing <code>neo-css</code> to your project, add the compiled or minified
+    CSS to the head element of your HTML5 document.
+  </Description>
+  <div id="code-highlight-container">
+    <CodeHighlight
+      code={`<link rel="stylesheet" type="text/css" href="dist/css/neo/neo.min.css" />`}
+      active
+      client:load
+    />
+  </div>
+</PageleteSection>
+
+<!--
+  TODO: should fix this in the code highlight component.
+  Use of `is:global` in a component is a red-flag
+-->
+<style is:global>
+  #code-highlight-container {
+    transform: translateZ(0);
+  }
+
+  #code-highlight-container div.neo-tooltip {
+    top: 1rem;
+  }
+</style>

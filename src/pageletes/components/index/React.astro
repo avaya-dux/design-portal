@@ -1,0 +1,58 @@
+---
+import {
+  CodeHighlight,
+  Description,
+  PageleteSection,
+  SectionHeader,
+} from "components";
+---
+
+<PageleteSection>
+  <SectionHeader id="compiled-css">
+    Install The React Library, <code>neo-react</code>
+  </SectionHeader>
+
+  <div id="code-highlight-container">
+    <CodeHighlight code="npm install @avaya/neo-react" active client:load />
+  </div>
+  <div id="code-highlight-container">
+    <CodeHighlight code="yarn add @avaya/neo-react" active client:load />
+  </div>
+  <div id="code-highlight-container">
+    <CodeHighlight code="pnpm add @avaya/neo-react" active client:load />
+  </div>
+
+  <Description>
+    Import the CSS styles at the root of your project via:
+  </Description>
+
+  <div id="code-highlight-container">
+    <CodeHighlight
+      code={`import "@avaya/neo-react/avaya-neo-react.css";`}
+      active
+      client:load
+    />
+  </div>
+
+  <Description>
+    Then, simply import the component(s) that you'd like to use. See component
+    pages for examples. <a href="/components/buttons">
+      Link to Button Component Page
+    </a>
+  </Description>
+
+  <Description>
+    <b>NOTE</b>: The Neo CSS Library is included with the Neo React Library. If
+    you install the Neo React Library, you <i>do not</i> need to install or import
+    from the CSS Library.
+  </Description>
+
+  <Description>
+    To see more examples and recommendations, please visit our
+    <a href="https://github.com/avaya-dux/neo-react-library/"> GitHub page</a> or
+    our
+    <a href="http://localhost:6006/?path=/story/introduction--page">
+      Storybook
+    </a>.
+  </Description>
+</PageleteSection>
