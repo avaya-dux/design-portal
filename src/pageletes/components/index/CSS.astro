@@ -1,7 +1,7 @@
 ---
 import { Description, PageleteSection, SectionHeader } from "components";
 
-import CodeHighlightAlt from "./CodeHighlightAlt.astro";
+import DescriptionWithCode from "./DescriptionWithCode.astro";
 ---
 
 <PageleteSection>
@@ -9,20 +9,17 @@ import CodeHighlightAlt from "./CodeHighlightAlt.astro";
     Install The CSS Library, <code>neo-css</code>
   </SectionHeader>
 
-  <Description>
-    With NPM:
-    <CodeHighlightAlt code="npm install @avaya/neo" active client:load />
-  </Description>
+  <DescriptionWithCode code="npm install @avaya/neo">
+    With NPM
+  </DescriptionWithCode>
 
-  <Description>
-    With Yarn:
-    <CodeHighlightAlt code="yarn add @avaya/neo" active client:load />
-  </Description>
+  <DescriptionWithCode code="yarn add @avaya/neo">
+    With Yarn
+  </DescriptionWithCode>
 
-  <Description>
-    With PNPM:
-    <CodeHighlightAlt code="pnpm add @avaya/neo" active client:load />
-  </Description>
+  <DescriptionWithCode code="pnpm add @avaya/neo">
+    With PNPM
+  </DescriptionWithCode>
 
   <Description>
     The package contains both compiled and minified versions of the Neo .css
@@ -30,14 +27,10 @@ import CodeHighlightAlt from "./CodeHighlightAlt.astro";
     support.
   </Description>
 
-  <Description>
+  <DescriptionWithCode
+    code={`<link rel="stylesheet" type="text/css" href="dist/css/neo/neo.min.css" />`}
+  >
     After installing <code>neo-css</code> to your project, add the compiled or minified
     CSS to the head element of your HTML5 document.
-
-    <CodeHighlightAlt
-      code={`<link rel="stylesheet" type="text/css" href="dist/css/neo/neo.min.css" />`}
-      active
-      client:load
-    />
-  </Description>
+  </DescriptionWithCode>
 </PageleteSection>

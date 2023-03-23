@@ -1,9 +1,16 @@
 ---
 import { CodeHighlight } from "components";
+
+export interface Props {
+  code: string;
+}
+const { code } = Astro.props as Props;
 ---
 
+<p><slot /></p>
+
 <div class="code-highlight-container">
-  <CodeHighlight code="npm install @avaya/neo" active client:load />
+  <CodeHighlight code={code} active client:load />
 </div>
 
 <style is:global>
