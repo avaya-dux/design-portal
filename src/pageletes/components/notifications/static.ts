@@ -1,41 +1,52 @@
 import type { TopicsDict } from "components";
 
-export const sandbox =
-  "https://codesandbox.io/s/neo-react-notifications-dcplsu?file=/src/App.js";
-export const storybook =
-  "https://neo-react-library-storybook.netlify.app/?path=/story/components-notification";
-
 type NotificationsTopicNames =
   | "playground"
-  | "stateful"
-  | "properties"
-  | "elevation"
-  | "interactions";
+  | "anatomy"
+  | "states"
+  | "type"
+  | "behavior"
+  | "specs"
+  | "keyboard"
+  | "related";
+
+const component = "notifications";
 
 export const topics: TopicsDict<NotificationsTopicNames> = {
   playground: {
     order: 0,
-    id: "notifications-playground",
+    id: `${component}-playground`,
     title: "Interactive Playground",
   },
-  stateful: {
+  anatomy: {
     order: 1,
-    id: "notifications-stateful",
-    title: "Stateful Notifications",
+    id: `${component}-anatomy`,
+    title: "Anatomy",
   },
-  properties: {
+  states: {
     order: 2,
-    id: "notifications-properties",
-    title: "Notification Properties",
+    id: `${component}-states`,
+    title: "States",
   },
-  elevation: {
+  type: {
     order: 3,
-    id: "notifications-elevation",
-    title: "Notification Elevation",
+    id: `${component}-type`,
+    title: "Type",
   },
-  interactions: {
+  behavior: {
     order: 4,
-    id: "notifications-interactions",
+    id: `${component}-behavior`,
+    title: "Behavior",
+  },
+  specs: { order: 5, id: `${component}-specs`, title: "Specs" },
+  keyboard: {
+    order: 6,
+    id: `${component}-keyboard-interactions`,
     title: "Keyboard Interactions",
+  },
+  related: {
+    order: 7,
+    id: `${component}-related-content`,
+    title: "Related Content",
   },
 };
