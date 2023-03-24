@@ -1,0 +1,21 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { Description, ShadedStackedLayout, SubHeader } from "components";
+
+import img1 from "./imgs/table-behavior-inset.svg";
+const img1Alt = "Image showing a table with one row expended to another table";
+---
+
+<SubHeader id="table-behavior-inset-table">Inset Table</SubHeader>
+
+<Description>
+  An inset table is a type of table that is embedded within another element,
+  such as a cell or a container div. This can be useful for displaying tabular
+  data in a more compact or organized format, as well as for creating more
+  complex layouts that combine multiple elements.
+</Description>
+
+<ShadedStackedLayout>
+  <Image src={img1} alt={img1Alt} />
+</ShadedStackedLayout>
