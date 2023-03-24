@@ -21,3 +21,6 @@ export { FilterTable };
 
 import FilterTableColumn from "./FilterTableColumn.astro";
 export { FilterTableColumn };
+
+import ClickAndDrag from "./ClickAndDrag.astro";
+export { ClickAndDrag };
