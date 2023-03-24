@@ -4,14 +4,23 @@ export { Intro };
 import NotificationsPlayground from "./NotificationsPlayground.astro";
 export { NotificationsPlayground };
 
-import Stateful from "./Stateful.astro";
-export { Stateful };
+import Anatomy from "./Anatomy.astro";
+export { Anatomy };
 
-import Properties from "./Properties.astro";
-export { Properties };
+import Behavior from "./Behavior.astro";
+export { Behavior };
 
-import Elevation from "./Elevation.astro";
-export { Elevation };
+import States from "./States.astro";
+export { States };
 
-import Interactions from "./Interactions.astro";
-export { Interactions };
+import Specs from "./Specs.astro";
+export { Specs };
+
+import Type from "./Type.astro";
+export { Type };
+
+import RelatedContent from "./RelatedContent.astro";
+export { RelatedContent };
+
+import KeyboardInteractions from "./KeyboardInteractions.astro";
+export { KeyboardInteractions };

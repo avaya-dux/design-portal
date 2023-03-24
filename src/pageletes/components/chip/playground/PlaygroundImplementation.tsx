@@ -1,4 +1,11 @@
-import { Checkbox, Chip, Radio, RadioGroup, Select, SelectOption } from "@avaya/neo-react";
+import {
+  Checkbox,
+  Chip,
+  Radio,
+  RadioGroup,
+  Select,
+  SelectOption,
+} from "@avaya/neo-react";
 
 import type { ChipProps } from "@avaya/neo-react";
 import clsx from "clsx";
@@ -41,7 +48,7 @@ export const PlaygroundImplementation = () => {
 
     return [
       element,
-      prettyPrintReactElementToString(element, {filterProps: ["onClose"]}),
+      prettyPrintReactElementToString(element, { filterProps: ["onClose"] }),
       prettyPrintReactElementToHtml(element),
     ];
   }, [chipType, chipVariant, chipVariable, disabled]);

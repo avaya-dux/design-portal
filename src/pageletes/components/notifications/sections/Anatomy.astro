@@ -1,0 +1,52 @@
+---
+import {
+  Description,
+  InfoList,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+const { id, title } = topics.anatomy;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+  </Description>
+
+  <InfoList type="decimal">
+    <InfoListItem label="Line Details">Description</InfoListItem>
+
+    <InfoListItem label="Icon">Description</InfoListItem>
+
+    <InfoListItem label="Title notification (Optional)">
+      Description
+    </InfoListItem>
+
+    <InfoListItem label="Description of message">Description</InfoListItem>
+
+    <InfoListItem label="Buttons (Optional)">Description</InfoListItem>
+
+    <InfoListItem label="Close Icon">Description</InfoListItem>
+
+    <InfoListItem label="Shadow (Only on General Notification)">
+      Description
+    </InfoListItem>
+
+    <InfoListItem label="Expand Chevron (Optional)">Description</InfoListItem>
+
+    <InfoListItem label="Multiple">Description (Read Only)</InfoListItem>
+
+    <InfoListItem label="Time (Only on List Notifications)">
+      Description
+    </InfoListItem>
+  </InfoList>
+</PageleteSection>

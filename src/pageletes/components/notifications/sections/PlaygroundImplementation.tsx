@@ -2,9 +2,12 @@ import { Notification, Radio, RadioGroup } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components";
-
-import { sandbox, storybook } from "../static";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
+
+export const sandbox =
+  "https://codesandbox.io/s/neo-react-notifications-dcplsu?file=/src/App.js";
+export const storybook =
+  "https://neo-react-library-storybook.netlify.app/?path=/story/components-notification";
 
 type TypeOption = "default" | "actions" | "timer";
 
