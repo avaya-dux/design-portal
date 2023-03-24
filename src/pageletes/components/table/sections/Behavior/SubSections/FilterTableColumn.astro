@@ -1,0 +1,66 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  DoAndDont,
+  InfoList,
+  InfoListItem,
+  PageleteSubSection,
+  ShadedStackedLayout,
+  SubHeader,
+} from "components";
+
+import img1 from "./imgs/table-behavior-filter-column-1.svg";
+const img1Alt =
+  "Image showing a table with the first column highlighted, and it's filter and dropdown icon buttons highlighted";
+
+import doImg1 from "./imgs/table-behavior-filter-column-do-1.svg";
+import dontImg1 from "./imgs/table-behavior-filter-column-dont-1.svg";
+const doInstructions1 =
+  "Include a filter icon next to the column header to indicate a filter has been applied and make the entire cell a single click.";
+const doImgAltText1 =
+  "Image showing a table with the first column header highlighted";
+const dontInstructions1 =
+  "Do not make the filter and chevron icons to be two separate actions.";
+const dontImgAltText1 =
+  "Image showing a table with the first column header filter icon highlighted";
+---
+
+<SubHeader id="table-behavior-filter-table-column">
+  Fitler Table Column
+</SubHeader>
+
+<Description>
+  Table columns can be filtered. When a filter has been applied, a filter icon
+  appears next to the header name. It visualizes to the user that this column
+  has a filter applied to it.
+</Description>
+
+<PageleteSubSection>
+  <ShadedStackedLayout>
+    <Image src={img1} alt={img1Alt} />
+  </ShadedStackedLayout>
+
+  <InfoList type="decimal">
+    <InfoListItem label="Clickable Column">Description</InfoListItem>
+
+    <InfoListItem label="Filter Applied Visual Icon">Description</InfoListItem>
+
+    <InfoListItem label="Expand Column Dropdown">Description</InfoListItem>
+  </InfoList>
+</PageleteSubSection>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={doInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={doImg1} alt={doImgAltText1} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={dontInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={dontImg1} alt={dontImgAltText1} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>

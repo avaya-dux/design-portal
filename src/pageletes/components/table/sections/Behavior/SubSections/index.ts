@@ -18,3 +18,6 @@ export { Text };
 
 import FilterTable from "./FilterTable.astro";
 export { FilterTable };
+
+import FilterTableColumn from "./FilterTableColumn.astro";
+export { FilterTableColumn };
