@@ -15,7 +15,7 @@ import { topics } from "../static";
 const { id, title } = topics.keyboard;
 ---
 
-<PageleteSection marginBottom="2rem">
+<PageleteSection>
   <SectionHeader id={id}>{title}</SectionHeader>
 
   <Description>
@@ -36,7 +36,7 @@ const { id, title } = topics.keyboard;
       <InfoTableRow>
         <InfoTableCell>Tab</InfoTableCell>
         <InfoTableCell>
-          Move forward into and out of the selectbox.
+          Move forward to the next interactive element.
         </InfoTableCell>
       </InfoTableRow>
 
@@ -45,37 +45,6 @@ const { id, title } = topics.keyboard;
         <InfoTableCell>
           Move backward to the previous interactive element.
         </InfoTableCell>
-      </InfoTableRow>
-
-      <InfoTableRow>
-        <InfoTableCell>Spacebar or &uarr; and &darr;</InfoTableCell>
-        <InfoTableCell>Open the switchbox options.</InfoTableCell>
-      </InfoTableRow>
-
-      <InfoTableRow>
-        <InfoTableCell>Enter or Spacebar</InfoTableCell>
-        <InfoTableCell>
-          Select the option in focus and close the list.
-        </InfoTableCell>
-      </InfoTableRow>
-
-      <InfoTableRow>
-        <InfoTableCell>&uarr; and &darr;</InfoTableCell>
-        <InfoTableCell>Move between the previous or next option.</InfoTableCell>
-      </InfoTableRow>
-
-      <InfoTableRow>
-        <InfoTableCell>Esc</InfoTableCell>
-        <InfoTableCell>
-          Close the list without changing the selected option.
-        </InfoTableCell>
-      </InfoTableRow>
-
-      <InfoTableRow>
-        <InfoTableCell>
-          For multiple select, additionally: Spacebar
-        </InfoTableCell>
-        <InfoTableCell>Move between the previous or next option.</InfoTableCell>
       </InfoTableRow>
     </InfoTableBody>
   </InfoTable>

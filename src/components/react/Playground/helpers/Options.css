@@ -77,10 +77,21 @@
 label.playground-options-section-label {
   font-size: 12px; /* $token-input-label-font-size: 12px */
 }
+label.playground-options-section-label:has(
+    + div.neo-form-control input.neo-check + label
+  ) {
+  padding-bottom: 8px;
+}
 
-.playground-options-section div.neo-multiselect,
-.playground-options-section div.neo-form-control input.neo-check + label {
-  padding: 0.75rem 0 0 0;
+.playground-options-section div.neo-multiselect {
+  padding: 12px 0 0 0;
+}
+
+.playground-options-section
+  div.neo-form-control
+  input.neo-check
+  + label:not(:last-child) {
+  padding: 4px 0 8px 0;
 }
 
 .playground-options-section div.neo-input-editable__wrapper {
