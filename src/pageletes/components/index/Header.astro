@@ -1,60 +1,26 @@
 ---
-import { Description, PageTitle, SectionHeader } from "components/astro";
-import { CodeHighlight } from "components/react";
+import { Link } from "@avaya/neo-react";
+import { Description, PageTitle, PageleteSection } from "components/astro";
 ---
 
-<PageTitle>Setup Web Components</PageTitle>
+<PageleteSection>
+  <PageTitle>Setup Neo Libraries</PageTitle>
 
-<Description>
-  Neo is a CSS framework built with reusable user interface components, guided
-  by clear user experience standards, that are assembled to create a true
-  cohesive experience for all Avaya products. Neo is set to support the latest 2
-  versions of modern browsers.
-</Description>
-<Description>
-  Can't find what you're looking for? Make a request for an icon, component or
-  guideline here.
-</Description>
+  <Description>
+    Neo is Avaya's Design System, a set of guidelines, components, and resources
+    that help designers and developers create consistent, accessible, and
+    delightful experiences for Avaya products. The Neo Libraries (<code
+      >neo-css</code
+    > and <code>neo-react</code>) are a set of reusable components and styles
+    that can be used to build Avaya products. The Neo Libraries are set to
+    support the latest 2 versions of modern browsers.
+  </Description>
 
-<SectionHeader id="compiled-css">Compiled CSS</SectionHeader>
-<Description>
-  Download ready-to-use compiled .css files for Neo to easily drop into your
-  project. This includes a separate stylesheet for icons.
-</Description>
-<Description>
-  A word on fonts: Neo comes bundled with font family support for Latin, Greek
-  and Cyrillic-based languages. However, support for text in Arabic, Hebrew,
-  Chinese, Japanese and Korean at various font weights is available via separate
-  stylesheets for each.
-</Description>
-
-<SectionHeader id="install-instructions">
-  Install CSS via Node Package Manager
-</SectionHeader>
-<Description>
-  To add the latest version of Neo to your project via Node Package Manager
-  (npm), simply run the following command:
-</Description>
-<div id="code-highlight-container">
-  <CodeHighlight code="npm install @avaya/neo" active client:load />
-</div>
-<Description>
-  The package contains both compiled and minified versions of the Neo .css file,
-  as well as separate stylesheets for both icons and multilingual font support.
-</Description>
-<Description>
-  The package contains both compiled and minified versions of the Neo .css file,
-  as well as separate stylesheets for both icons and multilingual font support.
-</Description>
-
-<style is:global>
-  #code-highlight-container {
-    transform: translateZ(0);
-  }
-
-  #code-highlight-container div.neo-tooltip {
-    position: fixed;
-    right: 2rem;
-    top: 1rem;
-  }
-</style>
+  <Description>
+    Can't find what you're looking for? Make a request for an icon, component or
+    guideline here:
+    <Link inline href="https://spaces.avayacloud.com/spaces/63d91605385d4693560107ca">
+      link to Neo Design System Feedback Space
+    </Link>
+  </Description>
+</PageleteSection>
