@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+import { useCallback, useState } from "react";
 import {
   Tab,
   TabLink,
@@ -7,7 +9,6 @@ import {
   Tabs,
 } from "@avaya/neo-react";
 
-import { ReactNode, useCallback, useState } from "react";
 import { CodeHighlight } from "components/react";
 import { OptionsSection, OptionsContainer } from "./helpers";
 
