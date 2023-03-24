@@ -12,3 +12,6 @@ export { Sorting };
 
 import Actions from "./Actions.astro";
 export { Actions };
+
+import Text from "./Text.astro";
+export { Text };
