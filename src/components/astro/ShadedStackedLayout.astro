@@ -1,13 +1,13 @@
 ---
 export interface Props {
-  label: string;
+  label?: string;
 }
 
 const { label } = Astro.props as Props;
 ---
 
 <div class="stack-container">
-  <div class="label-text">{label}</div>
+  {label && <div class="label-text">{label}</div>}
 
   <slot />
 </div>

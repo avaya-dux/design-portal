@@ -1,0 +1,56 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  ColumnLayout,
+  Description,
+  InfoList,
+  InfoListItem,
+  ShadedStackedLayout,
+  StackedLayout,
+  SubHeader,
+} from "components";
+
+import img1 from "./imgs/table-behavior-sorting-1.svg";
+const img1Alt = "Image showing a table";
+
+import img2 from "./imgs/table-behavior-sorting-2.svg";
+const img2Alt = "Image showing a table";
+
+import img3 from "./imgs/table-behavior-sorting-3.svg";
+const img3Alt = "Image showing a table";
+---
+
+<SubHeader id="table-behavior-sorting">Sorting</SubHeader>
+
+<Description>
+  Sorting allows users to arrange the data in ascending or descending order
+  based on a selected column.
+</Description>
+
+<ColumnLayout bkgColor="white" numOfColumns={2}>
+  <StackedLayout label="Alphabetical Order">
+    <Image src={img1} alt={img1Alt} />
+  </StackedLayout>
+
+  <StackedLayout label="Specified Order">
+    <Image src={img2} alt={img2Alt} />
+  </StackedLayout>
+</ColumnLayout>
+
+<Description>
+  A column can be sorted in an ascending or descending order. An arrow icon next
+  to the column header lets the user know the defined sorting order.
+</Description>
+
+<ShadedStackedLayout>
+  <Image src={img3} alt={img3Alt} />
+</ShadedStackedLayout>
+
+<InfoList type="decimal">
+  <InfoListItem label="Clickable Column">Description</InfoListItem>
+
+  <InfoListItem label="Sortable Visual Icon">Description</InfoListItem>
+
+  <InfoListItem label="Expand Column Dropdown">Description</InfoListItem>
+</InfoList>
