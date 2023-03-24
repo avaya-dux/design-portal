@@ -15,3 +15,6 @@ export { Actions };
 
 import Text from "./Text.astro";
 export { Text };
+
+import FilterTable from "./FilterTable.astro";
+export { FilterTable };
