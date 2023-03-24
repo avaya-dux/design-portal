@@ -1,0 +1,46 @@
+---
+import {
+  Description,
+  ImageWrapper,
+  InfoList,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+import { Image } from "@avaya/neo-react";
+
+const { id, title } = topics.anatomy;
+
+import image1 from "./imgs/anatomy-1.svg";
+const img1AltText =
+  "Image showing a table component with its six notes pointed out and described below";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Table components can be customized with various options such as sorting,
+    filtering, pagination, and styling.
+  </Description>
+
+  <ImageWrapper>
+    <Image src={image1} alt={img1AltText} />
+  </ImageWrapper>
+
+  <InfoList type="decimal">
+    <InfoListItem label="Toolbar">Description</InfoListItem>
+
+    <InfoListItem label="Column Header">Description</InfoListItem>
+
+    <InfoListItem label="Row">Description</InfoListItem>
+
+    <InfoListItem label="Pagination">Description</InfoListItem>
+
+    <InfoListItem label="Search Table">Description</InfoListItem>
+
+    <InfoListItem label="Sort and Filter">Description</InfoListItem>
+  </InfoList>
+</PageleteSection>
