@@ -1,9 +1,15 @@
 ---
 export interface Props {
   label?: string;
+  marginTop?: string;
+  marginBottom?: string;
 }
 
-const { label } = Astro.props as Props;
+const {
+  marginTop = "1.5rem",
+  marginBottom = "1.5rem",
+  label,
+} = Astro.props as Props;
 ---
 
 <div class="stack-container">
@@ -12,7 +18,7 @@ const { label } = Astro.props as Props;
   <slot />
 </div>
 
-<style>
+<style define:vars={{ marginTop, marginBottom }}>
   div.stack-container {
     display: flex;
     flex-direction: column;
@@ -21,6 +27,8 @@ const { label } = Astro.props as Props;
     padding-top: 3rem;
     padding-bottom: 3rem;
     background-color: var(--neo-color-base-200);
+    margin-top: var(--marginTop);
+    margin-bottom: var(--marginBottom);
   }
 
   div.stack-container > * {
