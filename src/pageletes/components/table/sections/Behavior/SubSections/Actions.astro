@@ -1,0 +1,64 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  DoAndDont,
+  ShadedStackedLayout,
+  SubHeader,
+} from "components";
+
+import img1 from "./imgs/table-behavior-height-1.svg";
+const img1Alt =
+  "Image showing a table with a large row height, which is the default";
+
+import img2 from "./imgs/table-behavior-height-2.svg";
+const img2Alt = "Image showing a table with a medium row height";
+
+import img3 from "./imgs/table-behavior-height-3.svg";
+const img3Alt = "Image showing a table with a small row height";
+
+import doImg1 from "./imgs/table-behavior-height-do-1.svg";
+import dontImg1 from "./imgs/table-behavior-height-dont-1.svg";
+const doInstructions1 =
+  "The row height on the table column header should be the same as the content row height.";
+const doImgAltText1 =
+  "Image showing a selectable table with the middle row highlighted via mouse hover. All rows are the same height.";
+const dontInstructions1 =
+  "Do not mismatch height preferences as this creates an uneven balance. ";
+const dontImgAltText1 =
+  "Image showing a selectable table with the middle row highlighted via mouse hover. The highlighted row is a different height than the other rows.";
+---
+
+<SubHeader id="table-behavior-actions">Actions</SubHeader>
+
+<Description>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+</Description>
+
+<ShadedStackedLayout label="Large (Default) Table Height">
+  <Image src={img1} alt={img1Alt} />
+</ShadedStackedLayout>
+
+<ShadedStackedLayout label="Medium Table Height">
+  <Image src={img2} alt={img2Alt} />
+</ShadedStackedLayout>
+
+<ShadedStackedLayout label="Small Table Height">
+  <Image src={img3} alt={img3Alt} />
+</ShadedStackedLayout>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={doInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={doImg1} alt={doImgAltText1} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={dontInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={dontImg1} alt={dontImgAltText1} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>

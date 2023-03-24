@@ -1,7 +1,13 @@
 ---
 import { PageleteSection, PageleteSubSection } from "components/astro";
 
-import { Intro, RowHeight, Selection, Sorting } from "./SubSections";
+import {
+  Actions,
+  Intro,
+  RowHeight,
+  Selection,
+  Sorting,
+} from "./SubSections";
 ---
 
 <PageleteSection>
@@ -17,5 +23,9 @@ import { Intro, RowHeight, Selection, Sorting } from "./SubSections";
 
   <PageleteSubSection>
     <Selection />
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <Actions />
   </PageleteSubSection>
 </PageleteSection>

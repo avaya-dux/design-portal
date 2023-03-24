@@ -9,3 +9,6 @@ export { Selection };
 
 import Sorting from "./Sorting.astro";
 export { Sorting };
+
+import Actions from "./Actions.astro";
+export { Actions };
