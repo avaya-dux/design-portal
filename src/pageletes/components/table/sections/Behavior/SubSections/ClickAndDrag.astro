@@ -1,7 +1,7 @@
 ---
 import { Image } from "@avaya/neo-react";
 
-import { Description, ShadedStackedLayout, SubHeader } from "components";
+import { Description, StackedLayout, SubHeader } from "components";
 
 import img1 from "./imgs/table-behavior-click-1.svg";
 const img1Alt =
@@ -24,24 +24,24 @@ const img3Alt =
   pointer.
 </Description>
 
-<ShadedStackedLayout>
+<StackedLayout backgroundColorBase200 vMargin="1.5rem">
   <Image src={img1} alt={img1Alt} />
-</ShadedStackedLayout>
+</StackedLayout>
 
 <Description>
   When a user clicks and drags over the cells or rows, they become highlighted
   or selected, indicating that they are ready for the next action.
 </Description>
 
-<ShadedStackedLayout>
+<StackedLayout backgroundColorBase200 vMargin="1.5rem">
   <Image src={img2} alt={img2Alt} />
-</ShadedStackedLayout>
+</StackedLayout>
 
 <Description>
   Depending on the implementation, the user may be able to click and drag in a
   horizontal or vertical direction to select cells or rows within the table.
 </Description>
 
-<ShadedStackedLayout>
+<StackedLayout backgroundColorBase200 vMargin="1.5rem">
   <Image src={img3} alt={img3Alt} />
-</ShadedStackedLayout>
+</StackedLayout>

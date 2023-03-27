@@ -26,9 +26,6 @@ export { SectionHeader };
 import SiteFooter from "./SiteFooter.astro";
 export { SiteFooter };
 
-import ShadedStackedLayout from "./ShadedStackedLayout.astro";
-export { ShadedStackedLayout };
-
 import StackedLayout from "./StackedLayout.astro";
 export { StackedLayout };
 
