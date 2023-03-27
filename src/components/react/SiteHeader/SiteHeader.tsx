@@ -75,8 +75,8 @@ export const SiteHeader = ({
       sticky
     >
       <TopNav.LinkButton
-        href="/whats-new"
-        active={isActiveLink("/whats-new")}
+        href="/docs/setup"
+        active={isActiveLink("/docs")}
         rel="prefetch"
       >
         Docs
@@ -91,7 +91,7 @@ export const SiteHeader = ({
       </TopNav.LinkButton>
 
       <TopNav.LinkButton
-        href="/components"
+        href="/components/accordion"
         active={isActiveLink("/components")}
         rel="prefetch"
       >
