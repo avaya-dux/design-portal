@@ -1,0 +1,57 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { Description, ImageWrapper, SubHeader } from "components";
+
+import img1 from "./imgs/table-behavior-selection-1.svg";
+const img1Alt = "Image showing a selectable table with three rows selected";
+
+import img2 from "./imgs/table-behavior-selection-2.svg";
+const img2Alt =
+  "Image showing a selectable table, the selection dropdown is opened and the user is able to select all the items in the table, all the shown items, or clear the selection";
+
+import img3 from "./imgs/table-behavior-selection-3.svg";
+const img3Alt =
+  "Image showing a selectable table with all items shown selected, and a clickable 'select all items' message shown";
+
+import img4 from "./imgs/table-behavior-selection-4.svg";
+const img4Alt =
+  "Image showing a selectable table with all items selected, and a 'clear all selections' button shown";
+---
+
+<SubHeader id="table-behavior-selection">Selection</SubHeader>
+
+<Description>
+  Individual or multiple rows can be selected to set an action.
+</Description>
+
+<ImageWrapper>
+  <Image src={img1} alt={img1Alt} />
+</ImageWrapper>
+
+<Description>
+  The checkbox on the header column can automatically select all the viewable
+  items on the current page, or the entire items in the data base.
+</Description>
+
+<ImageWrapper>
+  <Image src={img2} alt={img2Alt} />
+</ImageWrapper>
+
+<Description>
+  If all the items on the page are selected, an inline message appears that
+  allow the user to select all the items on the table data base.
+</Description>
+
+<ImageWrapper>
+  <Image src={img3} alt={img3Alt} />
+</ImageWrapper>
+
+<Description>
+  If the user decides to select all the items, the user is able to clear all the
+  selections without having to visit every page for the table.
+</Description>
+
+<ImageWrapper>
+  <Image src={img4} alt={img4Alt} />
+</ImageWrapper>

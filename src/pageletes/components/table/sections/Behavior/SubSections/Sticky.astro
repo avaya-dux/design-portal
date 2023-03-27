@@ -1,0 +1,39 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { Description, ShadedStackedLayout, SubHeader } from "components";
+
+import img1 from "./imgs/table-behavior-sticky-1.svg";
+const img1Alt =
+  "Image showing a table with a sticky column and the other columns scrolling";
+
+import img2 from "./imgs/table-behavior-sticky-2.svg";
+const img2Alt =
+  "Image showing a table with a sticky header and the other rows scrolling";
+---
+
+<SubHeader id="table-behavior-sticky">Sticky</SubHeader>
+
+<Description>
+  Table sticky column is a feature that allows a specific column within a table
+  to remain visible as the user scrolls horizontally through the table. This can
+  be especially useful when working with large tables that have many columns, as
+  it allows the user to always see the important columns without having to
+  manually scroll back and forth.
+</Description>
+
+<ShadedStackedLayout>
+  <Image src={img1} alt={img1Alt} />
+</ShadedStackedLayout>
+
+<Description>
+  Horizontal table row sticky is a feature that allows a specific row within a
+  table to remain visible as the user scrolls vertically through the table. This
+  can be especially useful when working with tables that have a large number of
+  rows, as it allows the user to always see important information without having
+  to manually scroll back and forth.
+</Description>
+
+<ShadedStackedLayout>
+  <Image src={img2} alt={img2Alt} />
+</ShadedStackedLayout>

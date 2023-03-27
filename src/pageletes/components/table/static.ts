@@ -4,7 +4,7 @@ type DropdownTopicNames =
   | "playground"
   | "anatomy"
   | "states"
-  // | "behavior"
+  | "behavior"
   | "specs"
   | "keyboard"
   | "related";
@@ -17,7 +17,7 @@ export const topics: TopicsDict<DropdownTopicNames> = {
   },
   anatomy: { order: 1, id: "table-anatomy", title: "Anatomy" },
   states: { order: 2, id: "table-states", title: "States" },
-  // behavior: { order: 3, id: "table-behavior", title: "Behavior" },
+  behavior: { order: 3, id: "table-behavior", title: "Behavior" },
   specs: { order: 4, id: "table-specs", title: "Specs" },
   keyboard: {
     order: 5,

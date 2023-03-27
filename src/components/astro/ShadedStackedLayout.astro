@@ -1,26 +1,34 @@
 ---
 export interface Props {
-  gap?: string;
   label?: string;
-  vPadding?: string;
+  marginTop?: string;
+  marginBottom?: string;
 }
 
-const { gap = "3rem", vPadding = "3rem", label = "" } = Astro.props as Props;
+const {
+  marginTop = "1.5rem",
+  marginBottom = "1.5rem",
+  label,
+} = Astro.props as Props;
 ---
 
 <div class="stack-container">
   {label && <div class="label-text">{label}</div>}
+
   <slot />
 </div>
 
-<style define:vars={{ gap, vPadding }}>
+<style define:vars={{ marginTop, marginBottom }}>
   div.stack-container {
     display: flex;
     flex-direction: column;
-    gap: var(--gap);
+    gap: 3rem;
     align-items: center;
-    padding-top: var(--vPadding);
-    padding-bottom: var(--vPadding);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: var(--neo-color-base-200);
+    margin-top: var(--marginTop);
+    margin-bottom: var(--marginBottom);
   }
 
   div.stack-container > * {
