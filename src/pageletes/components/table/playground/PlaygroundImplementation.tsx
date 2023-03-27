@@ -1,8 +1,8 @@
+import { Checkbox, CheckboxGroup, Table } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components/react";
 import { prettyPrintReact, prettyPrintReactElementToHtml } from "helpers";
-import { Checkbox, CheckboxGroup, Table } from "@avaya/neo-react";
 
 import styles from "./PlaygroundImplementation.module.css";
 
