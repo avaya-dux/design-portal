@@ -1,5 +1,5 @@
 ---
-import { Button } from "@avaya/neo-react";
+import { Link } from "@avaya/neo-react";
 import { Description, PageTitle } from "components/astro";
 ---
 
@@ -13,7 +13,12 @@ import { Description, PageTitle } from "components/astro";
 </Description>
 
 <Description>
-  See our <a href="https://linktr.ee/avaya_dux">LinkTree site</a> for more information.
+  Ready to jump right in? Visit our <Link inline href="/docs/setup">
+    Setup Neo
+  </Link> page to get started.
 </Description>
 
-<Button>Getting Started</Button>
+<Description>
+  See our <Link inline href="https://linktr.ee/avaya_dux">LinkTree site</Link> for
+  more information.
+</Description>
