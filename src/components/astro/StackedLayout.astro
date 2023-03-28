@@ -1,19 +1,29 @@
 ---
+import clsx from "clsx";
+
 export interface Props {
   gap?: string;
+  isShaded?: boolean;
   label?: string;
+  vMargin?: string;
   vPadding?: string;
 }
 
-const { gap = "3rem", vPadding = "3rem", label = "" } = Astro.props as Props;
+const {
+  gap = "3rem",
+  isShaded = false,
+  label = "",
+  vMargin = "0",
+  vPadding = "3rem",
+} = Astro.props as Props;
 ---
 
-<div class="stack-container">
+<div class={clsx("stack-container", isShaded && "stack-container--shaded")}>
   {label && <div class="label-text">{label}</div>}
   <slot />
 </div>
 
-<style define:vars={{ gap, vPadding }}>
+<style define:vars={{ gap, vMargin, vPadding }}>
   div.stack-container {
     display: flex;
     flex-direction: column;
@@ -21,6 +31,11 @@ const { gap = "3rem", vPadding = "3rem", label = "" } = Astro.props as Props;
     align-items: center;
     padding-top: var(--vPadding);
     padding-bottom: var(--vPadding);
+    margin-top: var(--vMargin);
+    margin-bottom: var(--vMargin);
+  }
+  div.stack-container.stack-container--shaded {
+    background-color: var(--neo-color-base-200);
   }
 
   div.stack-container > * {
