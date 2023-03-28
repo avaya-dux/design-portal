@@ -2,28 +2,23 @@
 import clsx from "clsx";
 
 export interface Props {
-  backgroundColorBase200?: boolean;
   gap?: string;
+  isShaded?: boolean;
   label?: string;
   vMargin?: string;
   vPadding?: string;
 }
 
 const {
-  backgroundColorBase200 = false,
   gap = "3rem",
+  isShaded = false,
   label = "",
   vMargin = "0",
   vPadding = "3rem",
 } = Astro.props as Props;
 ---
 
-<div
-  class={clsx(
-    "stack-container",
-    backgroundColorBase200 && "background-color-base-200"
-  )}
->
+<div class={clsx("stack-container", isShaded && "stack-container--shaded")}>
   {label && <div class="label-text">{label}</div>}
   <slot />
 </div>
@@ -39,7 +34,7 @@ const {
     margin-top: var(--vMargin);
     margin-bottom: var(--vMargin);
   }
-  div.stack-container.background-color-base-200 {
+  div.stack-container.stack-container--shaded {
     background-color: var(--neo-color-base-200);
   }
 
