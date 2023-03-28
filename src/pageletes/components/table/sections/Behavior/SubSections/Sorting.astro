@@ -6,7 +6,6 @@ import {
   Description,
   InfoList,
   InfoListItem,
-  ShadedStackedLayout,
   StackedLayout,
   SubHeader,
 } from "components";
@@ -43,9 +42,9 @@ const img3Alt = "Image showing a table";
   to the column header lets the user know the defined sorting order.
 </Description>
 
-<ShadedStackedLayout>
+<StackedLayout isShaded vMargin="1.5rem">
   <Image src={img3} alt={img3Alt} />
-</ShadedStackedLayout>
+</StackedLayout>
 
 <InfoList type="decimal">
   <InfoListItem label="Clickable Column">Description</InfoListItem>

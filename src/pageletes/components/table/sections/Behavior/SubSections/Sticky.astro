@@ -1,7 +1,7 @@
 ---
 import { Image } from "@avaya/neo-react";
 
-import { Description, ShadedStackedLayout, SubHeader } from "components";
+import { Description, StackedLayout, SubHeader } from "components";
 
 import img1 from "./imgs/table-behavior-sticky-1.svg";
 const img1Alt =
@@ -22,9 +22,9 @@ const img2Alt =
   manually scroll back and forth.
 </Description>
 
-<ShadedStackedLayout>
+<StackedLayout isShaded vMargin="1.5rem">
   <Image src={img1} alt={img1Alt} />
-</ShadedStackedLayout>
+</StackedLayout>
 
 <Description>
   Horizontal table row sticky is a feature that allows a specific row within a
@@ -34,6 +34,6 @@ const img2Alt =
   to manually scroll back and forth.
 </Description>
 
-<ShadedStackedLayout>
+<StackedLayout isShaded vMargin="1.5rem">
   <Image src={img2} alt={img2Alt} />
-</ShadedStackedLayout>
+</StackedLayout>

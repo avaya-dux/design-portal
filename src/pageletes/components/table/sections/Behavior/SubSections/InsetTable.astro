@@ -1,7 +1,7 @@
 ---
 import { Image } from "@avaya/neo-react";
 
-import { Description, ShadedStackedLayout, SubHeader } from "components";
+import { Description, StackedLayout, SubHeader } from "components";
 
 import img1 from "./imgs/table-behavior-inset.svg";
 const img1Alt = "Image showing a table with one row expended to another table";
@@ -16,6 +16,6 @@ const img1Alt = "Image showing a table with one row expended to another table";
   complex layouts that combine multiple elements.
 </Description>
 
-<ShadedStackedLayout>
+<StackedLayout isShaded vMargin="1.5rem">
   <Image src={img1} alt={img1Alt} />
-</ShadedStackedLayout>
+</StackedLayout>
