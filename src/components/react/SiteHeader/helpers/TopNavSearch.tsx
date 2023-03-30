@@ -1,19 +1,19 @@
 import { Button, TextInput } from "@avaya/neo-react";
 import { useEffect, useRef, useState } from "react";
 
-import { TopNavSearchPanel } from "./TopNavSearchPanel";
-
-import "./TopNavSearch.css";
-
 import type { PageAstroInstance } from "helpers/types";
+
+import { TopNavSearchPanel } from "./TopNavSearchPanel";
+import type { ModalShortcutKeysType } from "./TopNavSearchKeyboardHandlers";
 import {
   closeSearchModal,
-  ModalShortcutKeysType,
   openSearchModal,
   topNavSearchOnKeyDown,
   topNavSearchOnKeyUp,
 } from "./TopNavSearchKeyboardHandlers";
 import { closeSearchModalOnClick } from "./TopNavSearchMouseHandlers";
+
+import "./TopNavSearch.css";
 
 export const TopNavSearch = ({
   pages,
