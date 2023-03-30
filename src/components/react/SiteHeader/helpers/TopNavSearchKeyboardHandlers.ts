@@ -15,7 +15,7 @@ export const topNavSearchOnKeyDown = (
   if (event.key === "k") {
     setKeysPressed((shortcutKeys) => ({ ...shortcutKeys, k: true }));
     event.preventDefault();
-    event.stopPropagation();
+    // event.stopPropagation();
   }
 
   if (event.key === "Control") {
