@@ -37,6 +37,10 @@ switch (pathname.split("/")[1]) {
     leftNavPages = pages.filter((page) => page.url?.includes("components"));
     break;
 
+  case "docs":
+    leftNavPages = pages.filter((page) => page.url?.includes("docs"));
+    break;
+
   default:
     break;
 }

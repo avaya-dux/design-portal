@@ -1,0 +1,41 @@
+---
+import { CodeHighlight } from "components";
+
+export interface Props {
+  code: string;
+  tooltipId: string;
+}
+const { code, tooltipId } = Astro.props as Props;
+---
+
+<div>
+  <p><slot /></p>
+
+  <div class="code-highlight-container">
+    <CodeHighlight code={code} tooltipId={tooltipId} active client:load />
+  </div>
+</div>
+
+<style is:global>
+  .code-highlight-container {
+    /*
+      the original CodeHighlight is written specifically for
+      the Playground, so we need to make a few minor adjustments
+      to make it work outside of that
+    */
+    transform: translateZ(0);
+  }
+
+  .code-highlight-container div.neo-tooltip {
+    top: 1.5rem; /* HACK: couldn't figure out a cleaner solution */
+  }
+
+  /*
+    Center the code in the container. Our usecases are always single lines,
+    and this makes it look better.
+  */
+  .code-highlight-container pre {
+    display: flex;
+    align-items: center;
+  }
+</style>

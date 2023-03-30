@@ -1,3 +1,5 @@
+import type { RefObject } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { LeftNav } from "@avaya/neo-react";
 import { useStore } from "@nanostores/react";
 import clsx from "clsx";
@@ -6,13 +8,11 @@ import {
   isLeftNavigationOpen,
   leftNavToggleButtonRef,
 } from "components/react/utils/layoutState";
-
 import type { PageAstroInstance } from "helpers/types";
 
-import "./LeftNavigationStyleOverride.css";
-import { RefObject, useCallback, useEffect, useRef } from "react";
-
 import { trapFocus, useWindowSize } from "../utils";
+
+import "./LeftNavigationStyleOverride.css";
 
 export const LeftNavigation = ({
   pages,
