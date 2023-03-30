@@ -4,15 +4,6 @@
   padding-top: 1.5rem;
 }
 
-@media (min-width: 1280px) {
-  .left-navigation {
-    position: sticky;
-    left: 0;
-    top: var(--header-height);
-    height: 100%;
-  }
-}
-
 [dir="rtl"] .left-navigation {
   border-right: none;
   border-left: 1px solid var(--navbar-border-bottom-color);
