@@ -13,7 +13,14 @@ export const topNavSearchOnKeyDown = (
   }
 
   if (event.key === "k") {
-    setKeysPressed((shortcutKeys) => ({ ...shortcutKeys, k: true }));
+    setKeysPressed((shortcutKeys) => {
+      if (shortcutKeys.Control) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      return { ...shortcutKeys, k: true };
+    });
   }
 
   if (event.key === "Control") {
