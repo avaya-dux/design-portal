@@ -581,7 +581,6 @@ export const icons: Icon[] = [
     category: "communication",
     animated: false,
   },
-  { name: "table", bidirectional: false, category: "content", animated: false },
   { name: "search", bidirectional: false, category: "action", animated: false },
   {
     name: "dialpad",
