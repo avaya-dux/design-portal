@@ -116,7 +116,10 @@ const Logo = () => (
         media="(max-width: 320px) and (prefers-color-scheme: dark)"
         srcSet="/imgs/logo-condensed-dark.svg"
       />
-      <source media="(max-width: 320px)" srcSet="/imgs/logo-condensed-light.svg" />
+      <source
+        media="(max-width: 320px)"
+        srcSet="/imgs/logo-condensed-light.svg"
+      />
 
       <source
         media="(max-width: 799px) and (prefers-color-scheme: dark)"
