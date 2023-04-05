@@ -1,4 +1,42 @@
-export const icons = [
+// IMPORTANT: copy-pasted from: neo-css-library/staging/src/components/Icons/iconInfo.tsx
+
+type IconCategory =
+  | "navigation"
+  | "action"
+  | "account"
+  | "status"
+  | "communication"
+  | "alert"
+  | "content"
+  | "other"
+  | "editor"
+  | "file"
+  | "weather"
+  | "social";
+
+export interface Icon {
+  name: string;
+  bidirectional: boolean;
+  category: IconCategory;
+  animated: boolean;
+}
+
+export const iconCategories: IconCategory[] = [
+  "navigation",
+  "action",
+  "account",
+  "status",
+  "communication",
+  "alert",
+  "content",
+  "other",
+  "editor",
+  "file",
+  "weather",
+  "social",
+];
+
+export const icons: Icon[] = [
   {
     name: "chevron-right",
     bidirectional: true,
@@ -565,6 +603,7 @@ export const icons = [
     animated: false,
   },
   { name: "undo", bidirectional: true, category: "content", animated: false },
+  { name: "unlock", bidirectional: false, category: "action", animated: false },
   {
     name: "export-logs",
     bidirectional: false,
@@ -791,6 +830,12 @@ export const icons = [
     category: "status",
     animated: false,
   },
+  {
+    name: "social-media",
+    bidirectional: false,
+    category: "social",
+    animated: false,
+  },
   { name: "bold", bidirectional: false, category: "editor", animated: false },
   {
     name: "noise-off",
@@ -996,19 +1041,19 @@ export const icons = [
     animated: false,
   },
   {
+    name: "social",
+    bidirectional: false,
+    category: "communication",
+    animated: false,
+  },
+  {
+    name: "social-ready",
+    bidirectional: false,
+    category: "communication",
+    animated: false,
+  },
+  {
     name: "social-not-ready",
-    bidirectional: false,
-    category: "communication",
-    animated: false,
-  },
-  {
-    name: "social-outbound",
-    bidirectional: false,
-    category: "communication",
-    animated: false,
-  },
-  {
-    name: "social-missed",
     bidirectional: false,
     category: "communication",
     animated: false,
@@ -1020,7 +1065,25 @@ export const icons = [
     animated: false,
   },
   {
+    name: "social-outbound",
+    bidirectional: false,
+    category: "communication",
+    animated: false,
+  },
+  {
     name: "social-alerting",
+    bidirectional: false,
+    category: "communication",
+    animated: false,
+  },
+  {
+    name: "social-connected",
+    bidirectional: false,
+    category: "communication",
+    animated: false,
+  },
+  {
+    name: "social-missed",
     bidirectional: false,
     category: "communication",
     animated: false,
@@ -1095,12 +1158,6 @@ export const icons = [
     name: "reason-codes",
     bidirectional: false,
     category: "content",
-    animated: false,
-  },
-  {
-    name: "social",
-    bidirectional: false,
-    category: "communication",
     animated: false,
   },
   { name: "file-rtl", bidirectional: false, category: "file", animated: false },
@@ -2118,12 +2175,6 @@ export const icons = [
     animated: false,
   },
   {
-    name: "social-ready",
-    bidirectional: false,
-    category: "communication",
-    animated: false,
-  },
-  {
     name: "messaging-missed",
     bidirectional: false,
     category: "communication",
@@ -2141,12 +2192,7 @@ export const icons = [
     category: "communication",
     animated: false,
   },
-  {
-    name: "social-connected",
-    bidirectional: false,
-    category: "communication",
-    animated: false,
-  },
+
   {
     name: "messaging-ready",
     bidirectional: false,
@@ -2687,26 +2733,143 @@ export const icons = [
     category: "communication",
     animated: false,
   },
+  {
+    name: "audio-incoming",
+    bidirectional: false,
+    category: "communication",
+    animated: false,
+  },
+  {
+    name: "audio-outgoing",
+    bidirectional: false,
+    category: "communication",
+    animated: false,
+  },
+  {
+    name: "call-incoming",
+    bidirectional: false,
+    category: "communication",
+    animated: false,
+  },
+  {
+    name: "call-outgoing",
+    bidirectional: false,
+    category: "communication",
+    animated: false,
+  },
+  {
+    name: "chat-incoming",
+    bidirectional: false,
+    category: "communication",
+    animated: false,
+  },
+  {
+    name: "chat-outgoing",
+    bidirectional: false,
+    category: "communication",
+    animated: false,
+  },
+  {
+    name: "email-incoming",
+    bidirectional: false,
+    category: "communication",
+    animated: false,
+  },
+  {
+    name: "email-outgoing",
+    bidirectional: false,
+    category: "communication",
+    animated: false,
+  },
+  {
+    name: "messaging-incoming",
+    bidirectional: false,
+    category: "communication",
+    animated: false,
+  },
+  {
+    name: "messaging-outgoing",
+    bidirectional: false,
+    category: "communication",
+    animated: false,
+  },
+  {
+    name: "sms-incoming",
+    bidirectional: false,
+    category: "communication",
+    animated: false,
+  },
+  {
+    name: "sms-outgoing",
+    bidirectional: false,
+    category: "communication",
+    animated: false,
+  },
+  {
+    name: "social-incoming",
+    bidirectional: false,
+    category: "communication",
+    animated: false,
+  },
+  {
+    name: "social-outgoing",
+    bidirectional: false,
+    category: "communication",
+    animated: false,
+  },
+  {
+    name: "video-incoming",
+    bidirectional: false,
+    category: "communication",
+    animated: false,
+  },
+  {
+    name: "video-outgoing",
+    bidirectional: false,
+    category: "communication",
+    animated: false,
+  },
   { name: "user", bidirectional: false, category: "account", animated: false },
+  {
+    name: "analytics-filled",
+    bidirectional: false,
+    category: "action",
+    animated: false,
+  },
   {
     name: "after-call-work",
     bidirectional: false,
     category: "status",
     animated: false,
   },
-];
-
-export const iconCategories = [
-  "navigation",
-  "action",
-  "account",
-  "status",
-  "communication",
-  "alert",
-  "content",
-  "other",
-  "editor",
-  "file",
-  "weather",
-  "social",
+  {
+    name: "cell",
+    bidirectional: true,
+    category: "content",
+    animated: false,
+  },
+  {
+    name: "row",
+    bidirectional: true,
+    category: "content",
+    animated: false,
+  },
+  {
+    name: "column",
+    bidirectional: true,
+    category: "content",
+    animated: false,
+  },
+  {
+    name: "table",
+    bidirectional: true,
+    category: "content",
+    animated: false,
+  },
+  {
+    name: "cut",
+    bidirectional: false,
+    category: "content",
+    animated: false,
+  },
 ];
