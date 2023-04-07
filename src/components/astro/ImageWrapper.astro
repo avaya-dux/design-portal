@@ -2,12 +2,19 @@
 import clsx from "clsx";
 export interface Props {
   showBorders?: boolean;
+  isShaded?: boolean;
 }
 
-const { showBorders = true } = Astro.props as Props;
+const { isShaded = false, showBorders = true } = Astro.props as Props;
 ---
 
-<div class={clsx("image-centered", showBorders && "show-borders")}>
+<div
+  class={clsx(
+    "image-centered",
+    showBorders && "show-borders",
+    isShaded && "image-wrapper--shaded"
+  )}
+>
   <slot />
 </div>
 
@@ -26,5 +33,9 @@ const { showBorders = true } = Astro.props as Props;
 
   .show-borders {
     border: 1px solid var(--neo-color-base-200);
+  }
+
+  div.image-wrapper--shaded {
+    background-color: var(--neo-color-base-200);
   }
 </style>
