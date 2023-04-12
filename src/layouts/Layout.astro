@@ -167,8 +167,23 @@ switch (pathname.split("/")[1]) {
         display: flex;
       }
 
+      @media screen and (max-width: 1279px) {
+        body main {
+          /*
+            `LeftNavigationStyleOverride.css` adds `margin-bottom: 3rem;` at `@media (max-width: 1279px)`
+          */
+          --body-main-height: calc(
+            100vh - var(--header-height) - var(--footer-height) -
+              var(--body-main-margin-top) - 3rem - 1px
+          );
+        }
+      }
       @media screen and (max-width: 799px) {
         body main {
+          /*
+            NOTE: the footer and header both expand into a grid format, so we _do_ want the `var`s
+            to remain as they are, thus why we need this "special/tribal knowledge" implementation
+          */
           --body-main-height: calc(
             100vh - var(--header-height) - (var(--footer-height) * 3) -
               (var(--body-main-margin-top) * 2) - 1px
