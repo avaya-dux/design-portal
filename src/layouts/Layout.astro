@@ -150,25 +150,43 @@ switch (pathname.split("/")[1]) {
 
       body main {
         /* plus `1px` for border */
+        --body-main-margin-top: 3rem;
         --body-main-height: calc(
-          100vh - var(--header-height) - var(--footer-height) - 1px
+          100vh - var(--header-height) - var(--footer-height) -
+            var(--body-main-margin-top) - 1px
         );
 
         min-height: var(--body-main-height);
         max-width: 60rem;
         padding: 0 1rem 2rem 1rem;
         margin: auto;
-        margin-top: 3rem;
+        margin-top: var(--body-main-margin-top);
       }
 
       .main__wrapper {
         display: flex;
       }
 
+      @media screen and (max-width: 1279px) {
+        body main {
+          /*
+            `LeftNavigationStyleOverride.css` adds `margin-bottom: 3rem;` at `@media (max-width: 1279px)`
+          */
+          --body-main-height: calc(
+            100vh - var(--header-height) - var(--footer-height) -
+              var(--body-main-margin-top) - 3rem - 1px
+          );
+        }
+      }
       @media screen and (max-width: 799px) {
         body main {
+          /*
+            NOTE: the footer and header both expand into a grid format, so we _do_ want the `var`s
+            to remain as they are, thus why we need this "special/tribal knowledge" implementation
+          */
           --body-main-height: calc(
-            100vh - var(--header-height) - (var(--footer-height) * 3) - 1px
+            100vh - var(--header-height) - (var(--footer-height) * 3) -
+              (var(--body-main-margin-top) * 2) - 1px
           );
         }
 
