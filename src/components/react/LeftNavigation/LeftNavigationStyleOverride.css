@@ -29,6 +29,12 @@
 }
 
 @media (max-width: 1279px) {
+  .left-navigation .neo-leftnav--wrapper {
+    height: -webkit-fill-available;
+    overflow-y: scroll;
+    margin-bottom: var(--footer-height);
+  }
+
   nav.neo-navbar {
     overflow: visible;
     margin-bottom: 3rem;
