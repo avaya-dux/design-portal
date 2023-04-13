@@ -78,7 +78,7 @@
   margin-right: 4px;
 }
 
-.search-panel__results {
+.search-panel .search-panel__results {
   padding: 8px;
   display: flex;
   flex-direction: column;
