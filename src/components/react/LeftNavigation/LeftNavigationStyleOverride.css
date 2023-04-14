@@ -30,11 +30,8 @@
 
 @media (max-width: 1279px) {
   .left-navigation .neo-leftnav--wrapper {
-    height: -webkit-fill-available;
-    height: -moz-available;
-    height: fill-available;
+    height: calc(100vh - var(--footer-height));
     overflow-y: scroll;
-    margin-bottom: var(--footer-height);
   }
 
   nav.neo-navbar {
@@ -134,5 +131,10 @@
 
   .left-navigation .neo-nav--left {
     display: none;
+  }
+
+  .left-navigation .neo-leftnav--wrapper {
+    height: calc(100vh - (var(--footer-height) * 2));
+    overflow-y: scroll;
   }
 }
