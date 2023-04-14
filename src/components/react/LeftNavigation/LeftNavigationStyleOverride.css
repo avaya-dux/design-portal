@@ -31,6 +31,8 @@
 @media (max-width: 1279px) {
   .left-navigation .neo-leftnav--wrapper {
     height: -webkit-fill-available;
+    height: -moz-available;
+    height: fill-available;
     overflow-y: scroll;
     margin-bottom: var(--footer-height);
   }
