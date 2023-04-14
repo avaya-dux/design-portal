@@ -45,7 +45,6 @@
     padding-top: 0;
     top: 0;
     bottom: 0;
-    background-color: var(--leftnav-background-color);
     z-index: 100;
   }
 
@@ -80,7 +79,6 @@
     height: var(--header-height);
     min-height: var(--header-height);
     border-bottom: 1px solid var(--navbar-border-bottom-color);
-    background: linear-gradient(to right, #da291c 30%, transparent 0%);
   }
   .left-navigation .neo-nav--left .neo-badge__navbutton {
     margin-top: 0px;
@@ -125,7 +123,6 @@
     padding-top: 0;
     top: calc(var(--header-height) * 2);
     bottom: 0;
-    background-color: var(--leftnav-background-color);
     z-index: 100;
   }
 
