@@ -1,5 +1,6 @@
 .playground-container {
   --playground-options-height: 35rem;
+  margin-top: 3rem;
 }
 
 .playground-container .playground-title {
