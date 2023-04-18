@@ -4,6 +4,7 @@ import {
   Description,
   ColumnLayout,
   PageleteSection,
+  PageleteSubSection,
   SectionHeader,
   SubHeader,
 } from "components/astro";
@@ -22,10 +23,11 @@ const specsImgAltText =
     Each dropdown includes several default design elements.
   </Description>
 
-  <ColumnLayout bkgColor="white" numOfColumns={1}>
+  <ColumnLayout bkgColor="white" numOfColumns={1} marginTop={"3rem"}>
     <Image src={SpecsImage} alt={specsImgAltText} />
   </ColumnLayout>
 
+  <PageleteSubSection>
   <SubHeader id="tooltip-specs-elevation">Elevation</SubHeader>
 
   <Description>
@@ -34,6 +36,9 @@ const specsImgAltText =
       href="/components/dropdown#dropdown-specs">Elevation</a
     > design token will apply a dropshadow to the container.
   </Description>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
 
   <SubHeader id="tooltip-specs-border-style">Border Style</SubHeader>
 
@@ -43,4 +48,6 @@ const specsImgAltText =
       href="/components/dropdown#dropdown-specs">Border/Elevation</a
     > design token to apply borders/strokes to components.
   </Description>
+  </PageleteSubSection>
+
 </PageleteSection>
