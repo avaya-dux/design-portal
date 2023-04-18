@@ -3,9 +3,10 @@ import clsx from "clsx";
 export interface Props {
   showBorders?: boolean;
   isShaded?: boolean;
+  marginTop?: string;
+  marginBottom?: string;
 }
-
-const { isShaded = false, showBorders = true } = Astro.props as Props;
+const { isShaded = false, showBorders = true, marginTop = "3rem", marginBottom = "1.5rem" } = Astro.props as Props;
 ---
 
 <div
@@ -18,13 +19,14 @@ const { isShaded = false, showBorders = true } = Astro.props as Props;
   <slot />
 </div>
 
-<style>
+<style define:vars={{ marginTop, marginBottom }}>
   .image-centered {
     background-color: var(--neo-color-base-0);
 
     padding: 8rem 2rem;
-    margin-bottom: 1.5rem;
-
+    margin-top: var(--marginTop);
+    margin-bottom: var(--marginBottom);
+    
     display: flex;
     justify-content: center;
     align-content: center;
