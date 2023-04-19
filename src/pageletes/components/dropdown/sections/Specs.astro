@@ -4,6 +4,7 @@ import {
   Description,
   ColumnLayout,
   PageleteSection,
+  PageleteSubSection,
   SectionHeader,
   SubHeader,
 } from "components/astro";
@@ -22,25 +23,29 @@ const specsImgAltText =
     Each dropdown includes several default design elements.
   </Description>
 
-  <ColumnLayout bkgColor="white" numOfColumns={1}>
+  <ColumnLayout bkgColor="white" numOfColumns={1} marginTop={"3rem"}>
     <Image src={SpecsImage} alt={specsImgAltText} />
   </ColumnLayout>
 
-  <SubHeader id="tooltip-specs-elevation">Elevation</SubHeader>
+  <PageleteSubSection>
+    <SubHeader id="tooltip-specs-elevation">Elevation</SubHeader>
 
-  <Description>
-    <!-- TO-DO: add URL for Design Token page once it's added to site -->
-    The dropdown component uses Elevation-100. The <a
-      href="/components/dropdown#dropdown-specs">Elevation</a
-    > design token will apply a dropshadow to the container.
-  </Description>
+    <Description>
+      <!-- TO-DO: add URL for Design Token page once it's added to site -->
+      The dropdown component uses Elevation-100. The <a
+        href="/components/dropdown#dropdown-specs">Elevation</a
+      > design token will apply a dropshadow to the container.
+    </Description>
+  </PageleteSubSection>
 
-  <SubHeader id="tooltip-specs-border-style">Border Style</SubHeader>
+  <PageleteSubSection>
+    <SubHeader id="tooltip-specs-border-style">Border Style</SubHeader>
 
-  <Description>
-    <!-- TO-DO: add URL for Design Token page once it's added to site -->
-    The dropdown component uses the <a
-      href="/components/dropdown#dropdown-specs">Border/Elevation</a
-    > design token to apply borders/strokes to components.
-  </Description>
+    <Description>
+      <!-- TO-DO: add URL for Design Token page once it's added to site -->
+      The dropdown component uses the <a
+        href="/components/dropdown#dropdown-specs">Border/Elevation</a
+      > design token to apply borders/strokes to components.
+    </Description>
+  </PageleteSubSection>
 </PageleteSection>
