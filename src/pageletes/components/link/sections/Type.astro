@@ -30,7 +30,7 @@ const { id, title } = topics.type;
     {title}
   </SectionHeader>
   <Description>Lorem ipsum</Description>
-  <PageleteSubSection marginTop="4rem">
+  <PageleteSubSection>
     <SubHeader id="type-standalone">Standalone</SubHeader>
     <Description>
       A Standalone Link can appear anywhere on the page that is not embedded
@@ -43,7 +43,7 @@ const { id, title } = topics.type;
       cannot be attached to a Standalone link.
     </Description>
 
-    <ColumnLayout bkgColor="white" numOfColumns={3}>
+    <ColumnLayout bkgColor="white" numOfColumns={3} marginTop={"3rem"}>
       <StackedLayout label="Default" vPadding="2.8rem" gap="2.8rem">
         <Image src={StandaloneStateDefault} alt="Standalone Default Link" />
       </StackedLayout>
@@ -85,7 +85,7 @@ const { id, title } = topics.type;
       make them easily visible among the other text.
     </Description>
 
-    <ColumnLayout bkgColor="white" numOfColumns={3}>
+    <ColumnLayout bkgColor="white" numOfColumns={3} marginTop={"3rem"}>
       <StackedLayout label="Default" vPadding="2.8rem" gap="2.8rem">
         <Image src={InlineLinkStateDefault} alt="Inline Default Link" />
       </StackedLayout>
