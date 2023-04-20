@@ -37,7 +37,7 @@ const progressiveLoadingImgAltText = "Image showing progressive loading";
     There are two variants for a shimmer that affect the way pages are loaded
     and what bits appear first. The format and use of each is outlined below.
   </Description>
-  <PageleteSubSection marginTop="4rem">
+  <PageleteSubSection>
     <SubHeader id="shimmer-type-content">
       Dynamic Content vs Static Content
     </SubHeader>
@@ -62,14 +62,14 @@ const progressiveLoadingImgAltText = "Image showing progressive loading";
     </DoAndDont>
   </PageleteSubSection>
 
-  <PageleteSubSection marginTop="4rem">
+  <PageleteSubSection>
     <SubHeader id="shimmer-type-loading">Progressive Loading</SubHeader>
     <Description>
       Progressive loading is a technique that loads pages in batches. The
       fastest items to load go first, followed by progressively more detailed
       items.
     </Description>
-    <ColumnLayout bkgColor="white" numOfColumns={1}>
+    <ColumnLayout bkgColor="white" numOfColumns={1} marginTop={"3rem"}>
       <Image src={progressiveLoadingImage} alt={progressiveLoadingImgAltText} />
     </ColumnLayout>
     <Description>
