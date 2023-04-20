@@ -27,7 +27,12 @@ const img3Alt = "Image showing a table";
   based on a selected column.
 </Description>
 
-<ColumnLayout bkgColor="white" numOfColumns={2}>
+<ColumnLayout
+  bkgColor="white"
+  numOfColumns={2}
+  marginTop={"3rem"}
+  marginBottom={"3rem"}
+>
   <StackedLayout label="Alphabetical Order">
     <Image src={img1} alt={img1Alt} />
   </StackedLayout>
@@ -42,9 +47,11 @@ const img3Alt = "Image showing a table";
   to the column header lets the user know the defined sorting order.
 </Description>
 
-<StackedLayout isShaded vMargin="1.5rem">
-  <Image src={img3} alt={img3Alt} />
-</StackedLayout>
+<ColumnLayout bkgColor="white" numOfColumns={1} marginTop={"3rem"}>
+  <StackedLayout isShaded vMargin="0rem">
+    <Image src={img3} alt={img3Alt} />
+  </StackedLayout>
+</ColumnLayout>
 
 <InfoList type="decimal">
   <InfoListItem label="Clickable Column">Description</InfoListItem>
