@@ -3,6 +3,8 @@ import {
   InfoTable,
   InfoTableBody,
   InfoTableCell,
+  InfoTableCellHead,
+  InfoTableHead,
   InfoTableRow,
   PageleteSection,
   SectionHeader,
@@ -14,6 +16,13 @@ import { topics } from "./static";
   <SectionHeader id={topics.keyboard.id}>{topics.keyboard.title}</SectionHeader>
 
   <InfoTable>
+    <InfoTableHead>
+      <InfoTableRow>
+        <InfoTableCellHead>Keystrokes</InfoTableCellHead>
+        <InfoTableCellHead>Interaction</InfoTableCellHead>
+      </InfoTableRow>
+    </InfoTableHead>
+
     <InfoTableBody>
       <InfoTableRow>
         <InfoTableCell>Tab</InfoTableCell>
