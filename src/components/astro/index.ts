@@ -11,6 +11,9 @@ export { ImageWrapper };
 import PageleteSection from "./PageleteSection.astro";
 export { PageleteSection };
 
+import IntroPageleteSection from "./IntroPageleteSection.astro";
+export { IntroPageleteSection };
+
 import PageleteSubSection from "./PageleteSubSection.astro";
 export { PageleteSubSection };
 

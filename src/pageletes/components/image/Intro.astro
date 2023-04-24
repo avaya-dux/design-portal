@@ -1,10 +1,15 @@
 ---
-import { Description, PageleteSection, PageTitle, Topics } from "components";
+import {
+  Description,
+  IntroPageleteSection,
+  PageTitle,
+  Topics,
+} from "components";
 
 import { topics } from "./static";
 ---
 
-<PageleteSection marginTop="0rem">
+<IntroPageleteSection>
   <PageTitle>Image or Thumbnail</PageTitle>
 
   <Description>
@@ -18,4 +23,4 @@ import { topics } from "./static";
   </Description>
 
   <Topics topics={topics} />
-</PageleteSection>
+</IntroPageleteSection>
