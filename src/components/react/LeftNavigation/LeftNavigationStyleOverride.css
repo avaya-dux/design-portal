@@ -1,6 +1,12 @@
+:root {
+  --left-navigation-width: 15rem;
+  --left-navigation-border-width: 1px;
+}
+
 .left-navigation {
-  min-width: 15rem;
-  border-right: 1px solid var(--navbar-border-bottom-color);
+  min-width: var(--left-navigation-width);
+  border-right: var(--left-navigation-border-width) solid
+    var(--navbar-border-bottom-color);
 }
 
 [dir="rtl"] .left-navigation {
@@ -30,7 +36,11 @@
     height: calc(100vh - var(--header-height));
     overflow: auto;
     padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: var(--footer-height);
+    position: fixed;
+    width: calc(
+      var(--left-navigation-width) - var(--left-navigation-border-width)
+    );
   }
 }
 
