@@ -2,7 +2,9 @@
 import {
   Description,
   InfoTable,
+  InfoTableHead,
   InfoTableBody,
+  InfoTableCellHead,
   InfoTableCell,
   InfoTableRow,
   PageleteSection,
@@ -13,7 +15,7 @@ import { topics } from "../static";
 const { id, title } = topics.keyboard;
 ---
 
-<PageleteSection marginBottom="2rem">
+<PageleteSection>
   <SectionHeader id={id}>{title}</SectionHeader>
 
   <Description>
@@ -23,6 +25,13 @@ const { id, title } = topics.keyboard;
   </Description>
 
   <InfoTable>
+    <InfoTableHead>
+      <InfoTableRow>
+        <InfoTableCellHead>Keystrokes</InfoTableCellHead>
+        <InfoTableCellHead>Interaction</InfoTableCellHead>
+      </InfoTableRow>
+    </InfoTableHead>
+
     <InfoTableBody>
       <InfoTableRow>
         <InfoTableCell>Tab</InfoTableCell>

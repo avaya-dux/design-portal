@@ -76,7 +76,7 @@ export const topics: TopicsDict<DropdownTopicNames> = {
     title: "Keyboard Interactions",
   },
   related: {
-    order: 7,
+    order: 8,
     id: "dropdown-related-content",
     title: "Related Content",
   },
