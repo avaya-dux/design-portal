@@ -1,10 +1,10 @@
-import PositioningImage1 from "./positioning-1.svg";
+import PositioningImage1 from "./behavior-placement-11.svg";
 
-import PositioningImage2 from "./positioning-2.svg";
+import PositioningImage2 from "./behavior-placement-2.svg";
 
-import PositioningImage3 from "./positioning-3.svg";
+import PositioningImage3 from "./behavior-onscreen-1.svg";
 
-import PositioningImage4 from "./positioning-4.svg";
+import PositioningImage4 from "./behavior-onscreen-2.svg";
 
 import WidthDoImage1 from "./width-do-1.svg";
 import WidthDontImage1 from "./width-dont-1.svg";
@@ -14,20 +14,24 @@ import WidthDontImage2 from "./width-dont-2.svg";
 import TypesDoImage from "./types-do-1.svg";
 import TypesDontImage from "./types-dont-1.svg";
 
-import StatesImage from "./states.svg";
+import StatesDefaultImage from "./states-default.svg";
+import StatesHoverImage from "./states-hover.svg";
+import StatesDisabledImage from "./states-disabled.svg";
+import StatesSelectedImage from "./states-default.svg";
 
-import AnatomyImage from "./anatomy.svg";
+import AnatomyImage from "./anatomy-1.svg";
 
 import TypesImage from "./types-1.svg";
 
-import BehaviorDoImage1 from "./behavior-do-1.svg";
-import BehaviorDontImage1 from "./behavior-dont-1.svg";
+import BehaviorDoImage1 from "./behavior-icons-do-1.svg";
+import BehaviorDontImage1 from "./behavior-icons-dont-1.svg";
 import BehaviorDoImage2 from "./behavior-do-2.svg";
 import BehaviorDontImage2 from "./behavior-dont-2.svg";
 import BehaviorDoImage3 from "./behavior-do-3.svg";
 import BehaviorDontImage3 from "./behavior-dont-3.svg";
 
-import SpecsImage from "./specs.svg";
+import SpecsImage1 from "./specs-1.svg";
+import SpecsImage2 from "./specs-2.svg";
 
 export {
   PositioningImage1,
@@ -40,7 +44,10 @@ export {
   WidthDontImage2,
   TypesDoImage,
   TypesDontImage,
-  StatesImage,
+  StatesDefaultImage,
+  StatesHoverImage,
+  StatesDisabledImage,
+  StatesSelectedImage,
   AnatomyImage,
   TypesImage,
   BehaviorDoImage1,
@@ -49,5 +56,6 @@ export {
   BehaviorDontImage2,
   BehaviorDoImage3,
   BehaviorDontImage3,
-  SpecsImage,
+  SpecsImage1,
+  SpecsImage2
 };

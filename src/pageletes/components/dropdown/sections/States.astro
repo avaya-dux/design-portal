@@ -7,11 +7,12 @@ import {
   InfoListItem,
   PageleteSection,
   SectionHeader,
+  StackedLayout,
 } from "components/astro";
 
 import { topics } from "../static";
 
-import { StatesImage } from "../imgs";
+import { StatesDefaultImage, StatesHoverImage, StatesDisabledImage, StatesSelectedImage } from "../imgs";
 const statesImgAltText =
   "Image showing the different parts that make up a dropdown";
 ---
@@ -24,8 +25,19 @@ const statesImgAltText =
     interacts with the action items.
   </Description>
 
-  <ColumnLayout bkgColor="white" numOfColumns={1}>
-    <Image src={StatesImage} alt={statesImgAltText} />
+  <ColumnLayout showGridlines={true} bkgColor="white" numOfColumns={2}>
+    <StackedLayout label="Default">
+      <Image src={StatesDefaultImage} alt={statesImgAltText} />
+    </StackedLayout>
+    <StackedLayout label="Hover">
+      <Image src={StatesHoverImage} alt={statesImgAltText} />
+    </StackedLayout>
+    <StackedLayout label="Disabled">
+      <Image src={StatesDisabledImage} alt={statesImgAltText} />
+    </StackedLayout>
+    <StackedLayout label="Selected">
+      <Image src={StatesSelectedImage} alt={statesImgAltText} />
+    </StackedLayout>
   </ColumnLayout>
 
   <InfoList type="decimal">

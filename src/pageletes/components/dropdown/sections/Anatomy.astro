@@ -7,6 +7,7 @@ import {
   InfoListItem,
   PageleteSection,
   SectionHeader,
+StackedLayout,
 } from "components/astro";
 
 import { topics } from "../static";
@@ -25,8 +26,10 @@ const anatomyImgAltText =
     the items may also have their own sub-selection available.
   </Description>
 
-  <ColumnLayout bkgColor="white" numOfColumns={1}>
-    <Image src={AnatomyImage} alt={anatomyImgAltText} />
+  <ColumnLayout showGridlines={true} bkgColor="white" numOfColumns={1}>
+    <StackedLayout>
+      <Image src={AnatomyImage} alt={anatomyImgAltText} />
+    </StackedLayout>
   </ColumnLayout>
 
   <InfoList type="decimal">

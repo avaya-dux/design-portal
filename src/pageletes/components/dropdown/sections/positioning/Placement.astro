@@ -1,5 +1,5 @@
 ---
-import { ColumnLayout, Description, SubHeader } from "components";
+import { ColumnLayout, Description, StackedLayout, SubHeader } from "components";
 
 import { Image } from "@avaya/neo-react";
 
@@ -22,19 +22,23 @@ const positioningImg2AltText =
 </Description>
 
 <ColumnLayout
-  bkgColor="white"
   numOfColumns={1}
   marginTop={"3rem"}
   marginBottom={"3rem"}
+  showGridlines={true}
 >
-  <Image src={PositioningImage1} alt={positioningImg1AltText} />
+  <StackedLayout vPadding="0px">
+    <Image src={PositioningImage1} alt={positioningImg1AltText} />
+  </StackedLayout>
 </ColumnLayout>
 
 <Description>
-  Whenever space is limited, the container can appear beside the control and
+  Whenever space is limited, the container can appear beside the control anf d
   expand either up or down as required.
 </Description>
 
-<ColumnLayout bkgColor="white" numOfColumns={1}>
-  <Image src={PositioningImage2} alt={positioningImg2AltText} />
+<ColumnLayout showGridlines={true} numOfColumns={1}>
+  <StackedLayout>
+    <Image src={PositioningImage2} alt={positioningImg2AltText} />
+  </StackedLayout>
 </ColumnLayout>
