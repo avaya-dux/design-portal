@@ -1,5 +1,5 @@
 import {
-  ToastProps,
+  type ToastProps,
   Checkbox,
   Button,
   Radio,
@@ -10,9 +10,12 @@ import { useMemo, useState, useEffect } from "react";
 
 import { Playground } from "components";
 
-import { defaultReact, sandbox, storybook } from "./static";
-
 import "./ToastPlayground.css";
+
+const defaultReact = `<Toast position={"top"} duration={2000}>This is a toast</Toast>`;
+const sandbox = "https://codesandbox.io/s/neo-react-toast-hdlfn9";
+const storybook =
+  "https://neo-react-library-storybook.netlify.app/?path=/story/components-toast--default";
 
 export const PlaygroundImplementation = () => {
   const [position, setPosition] = useState<ToastProps["position"]>("top");
