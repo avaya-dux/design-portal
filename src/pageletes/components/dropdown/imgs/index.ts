@@ -57,5 +57,5 @@ export {
   BehaviorDoImage3,
   BehaviorDontImage3,
   SpecsImage1,
-  SpecsImage2
+  SpecsImage2,
 };
