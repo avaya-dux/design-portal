@@ -6,6 +6,7 @@ import {
   Description,
   InfoList,
   InfoListItem,
+  StackedLayout,
   SubHeader,
 } from "components";
 
@@ -29,11 +30,15 @@ const positioningImg4AltText =
 </Description>
 
 <ColumnLayout bkgColor="white" numOfColumns={1}>
-  <Image src={PositioningImage3} alt={positioningImg3AltText} />
+  <StackedLayout>
+    <Image src={PositioningImage3} alt={positioningImg3AltText} />
+  </StackedLayout>
 </ColumnLayout>
 
 <ColumnLayout bkgColor="white" numOfColumns={1} marginTop={"1.5rem"}>
-  <Image src={PositioningImage4} alt={positioningImg4AltText} />
+  <StackedLayout>
+    <Image src={PositioningImage4} alt={positioningImg4AltText} />
+  </StackedLayout>
 </ColumnLayout>
 
 <InfoList>
