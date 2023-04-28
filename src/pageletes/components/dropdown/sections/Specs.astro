@@ -7,13 +7,16 @@ import {
   PageleteSubSection,
   SectionHeader,
   SubHeader,
+  StackedLayout,
 } from "components/astro";
 
 import { topics } from "../static";
 
-import { SpecsImage } from "../imgs/";
-const specsImgAltText =
+import { SpecsImage1, SpecsImage2 } from "../imgs/";
+const specsImgAltText1 =
   "Image showing the default height of 36px for a dropdown element";
+const specsImgAltText2 =
+  "Image showing the default height of a dropdown while it is expanded";
 ---
 
 <PageleteSection>
@@ -23,8 +26,13 @@ const specsImgAltText =
     Each dropdown includes several default design elements.
   </Description>
 
-  <ColumnLayout bkgColor="white" numOfColumns={1}>
-    <Image src={SpecsImage} alt={specsImgAltText} />
+  <ColumnLayout bkgColor="white" numOfColumns={2}>
+    <StackedLayout label="Dropdown Collapsed">
+      <Image src={SpecsImage1} alt={specsImgAltText1} />
+    </StackedLayout>
+    <StackedLayout label="Dropdown Expanded">
+      <Image src={SpecsImage2} alt={specsImgAltText2} />
+    </StackedLayout>
   </ColumnLayout>
 
   <PageleteSubSection>
