@@ -1,0 +1,29 @@
+---
+import {
+  Description,
+  InfoList,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+import { topics } from "../static";
+
+const { id, title } = topics.anatomy;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    When you want to give feedback to your users about a action they take. Often
+    this is in the form of creation or deletion.
+  </Description>
+
+  <InfoList type="decimal">
+    <InfoListItem label="Container">Description</InfoListItem>
+
+    <InfoListItem label="Icon (optional)">Description</InfoListItem>
+
+    <InfoListItem label="Label">Description</InfoListItem>
+  </InfoList>
+</PageleteSection>
