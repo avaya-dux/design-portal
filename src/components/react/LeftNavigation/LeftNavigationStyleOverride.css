@@ -5,8 +5,6 @@
 
 .left-navigation {
   min-width: var(--left-navigation-width);
-  border-right: var(--left-navigation-border-width) solid
-    var(--navbar-border-bottom-color);
 }
 
 [dir="rtl"] .left-navigation {
@@ -38,6 +36,8 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     position: fixed;
+    border-right: var(--left-navigation-border-width) solid
+      var(--navbar-border-bottom-color);
     width: calc(
       var(--left-navigation-width) - var(--left-navigation-border-width)
     );
