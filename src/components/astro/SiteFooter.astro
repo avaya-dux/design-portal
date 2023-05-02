@@ -55,7 +55,7 @@ import { Image } from "@avaya/neo-react";
     padding: 0 1rem;
   }
   @media (min-width: 1280px) {
-    .footer--wrapper {
+    :global(.main__wrapper:has(.left-navigation) + .footer--wrapper) {
       margin-left: var(--left-navigation-width);
     }
   }
