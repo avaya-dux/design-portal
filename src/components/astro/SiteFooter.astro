@@ -54,6 +54,11 @@ import { Image } from "@avaya/neo-react";
     grid-template-areas: "a . b . c";
     padding: 0 1rem;
   }
+  @media (min-width: 1280px) {
+    :global(.main__wrapper:has(.left-navigation) + .footer--wrapper) {
+      margin-left: var(--left-navigation-width);
+    }
+  }
 
   .footer-logo {
     grid-area: a;
