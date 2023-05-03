@@ -1,0 +1,135 @@
+---
+import {
+  Description,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableCellHead,
+  InfoTableHead,
+  InfoTableRow,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  SubHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+import { DoAndDont } from "components";
+
+const { id, title } = topics.behavior;
+
+const doInstructions =
+  "Use a toast to provide feedback for commonly performed actions.";
+
+const dontInstructions =
+  "Do not use a toast to display error message, use notification component instead.";
+
+const doInstructionsTwo = "Add text here.";
+
+const dontInstructionsTwo = "Add text here.";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    When you want to give feedback to your users about a action they take. Often
+    this is in the form of creation or deletion.
+  </Description>
+
+  <InfoTable>
+    <InfoTableHead>
+      <InfoTableRow>
+        <InfoTableCellHead>Component</InfoTableCellHead>
+        <InfoTableCellHead>Priority</InfoTableCellHead>
+        <InfoTableCellHead>User Action</InfoTableCellHead>
+      </InfoTableRow>
+    </InfoTableHead>
+
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>Toast</InfoTableCell>
+        <InfoTableCell>Low priority</InfoTableCell>
+        <InfoTableCell>
+          Feedback (Alert) that do not need to interrupt the user flow. They
+          should be used for confirmation in response to an action. Toasts
+          disappear automatically
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Notification</InfoTableCell>
+        <InfoTableCell>Prominent priority</InfoTableCell>
+        <InfoTableCell>
+          Items that require immediate attention. They can be persistent or
+          dismissable depending on the context. Remain until dismissed by the
+          user, or if the state that cause the notification is resolved.
+          (Notification inline)
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Modal</InfoTableCell>
+        <InfoTableCell>Highest priority</InfoTableCell>
+        <InfoTableCell>
+          Modal block app usage until the user a modal action or exits the
+          dialog (If available)
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
+
+  <PageleteSubSection>
+    <SubHeader id="toast-behavior-placement">Placement</SubHeader>
+
+    <Description>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam. Add sentence about Interaction
+    </Description>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="toast-behavior-usage">Usage</SubHeader>
+
+    <Description>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam.
+    </Description>
+
+    <DoAndDont>
+      <DoAndDont.DoContainer instructions={doInstructions} />
+
+      <DoAndDont.DontContainer instructions={dontInstructions} />
+    </DoAndDont>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="toast-behavior-dismissal">Dismissal</SubHeader>
+
+    <Description>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam. talk about duration in the copy (5 seconds)
+    </Description>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="toast-behavior-text-length">Text Length</SubHeader>
+
+    <Description>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam.
+    </Description>
+
+    <DoAndDont>
+      <DoAndDont.DoContainer instructions={doInstructionsTwo} />
+
+      <DoAndDont.DontContainer instructions={dontInstructionsTwo} />
+    </DoAndDont>
+  </PageleteSubSection>
+</PageleteSection>

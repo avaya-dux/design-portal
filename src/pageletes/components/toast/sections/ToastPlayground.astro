@@ -1,14 +1,14 @@
 ---
 import { Description, PageleteSection, SectionHeader } from "components/astro";
+import { PlaygroundImplementation } from "../playground";
+import { topics } from "../static";
 
-import { PlaygroundImplementation } from "./PlaygroundImplementation";
-
-import { topics } from "./static";
+const { id, title } = topics.playground;
 ---
 
 <PageleteSection>
-  <SectionHeader id={topics.playground.id}>
-    {topics.playground.title}
+  <SectionHeader id={id}>
+    {title}
   </SectionHeader>
 
   <Description>

@@ -1,16 +1,38 @@
 import type { TopicsDict } from "components";
 
-export const defaultReact = `<Toast position={"top"} duration={2000}>This is a toast</Toast>`;
-export const sandbox = "https://codesandbox.io/s/neo-react-toast-hdlfn9";
-export const storybook =
-  "https://neo-react-library-storybook.netlify.app/?path=/story/components-toast--default";
+type ToastTopicNames =
+  | "playground"
+  | "anatomy"
+  | "behavior"
+  | "specs"
+  | "related";
 
-type ToastTopicNames = "playground";
+const component = "toast";
 
 export const topics: TopicsDict<ToastTopicNames> = {
   playground: {
     order: 0,
-    id: "toast-playground",
+    id: `${component}-playground`,
     title: "Interactive Playground",
+  },
+  anatomy: {
+    order: 1,
+    id: `${component}-anatomy`,
+    title: "Anatomy",
+  },
+  behavior: {
+    order: 2,
+    id: `${component}-behavior`,
+    title: "Behavior",
+  },
+  specs: {
+    order: 3,
+    id: `${component}-specs`,
+    title: "Specs",
+  },
+  related: {
+    order: 4,
+    id: `${component}-related`,
+    title: "Related Content",
   },
 };
