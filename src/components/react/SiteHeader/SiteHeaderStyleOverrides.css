@@ -57,6 +57,7 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
 
   nav.neo-navbar {
     overflow: visible;
+    margin-bottom: 3rem;
     border: none;
   }
   nav.neo-navbar .neo-nav {
