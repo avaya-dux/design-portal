@@ -33,8 +33,9 @@
     background-color: var(--leftnav-background-color);
     z-index: 100;
     transition: min-width 0.35s;
-    min-width: 3.5rem;
-    max-width: 3.5rem;
+    min-width: 5rem;
+    max-width: 5rem;
+    overflow-x: hidden;
   }
 
   .icon-filters__toggle {
@@ -70,7 +71,6 @@
 
   .icon-filters.icon-filters--hidden {
     transition: min-width 0.35s;
-    min-width: 3.5rem;
   }
 
   .icon-filters.icon-filters--active + .icon-filters__scrim {
