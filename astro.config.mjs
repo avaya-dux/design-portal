@@ -13,11 +13,12 @@ export default defineConfig({
   output: "server",
   integrations: [react(), svelte(), vue(), prefetch()],
   vite: {
-    server: {
-      open: true,
-    },
     ssr: {
-      noExternal: ["avaya-neo-react", "prism-react-renderer", "react-element-to-jsx-string"],
+      noExternal: [
+        "avaya-neo-react",
+        "prism-react-renderer",
+        "react-element-to-jsx-string",
+      ],
     },
   },
 });
