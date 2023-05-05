@@ -1,12 +1,10 @@
 import { IconButton, Tooltip } from "@avaya/neo-react";
+import { Highlight } from "prism-react-renderer";
 import { useEffect, useState } from "react";
-
-import type { Language } from "prism-react-renderer";
-import Highlight, { defaultProps } from "prism-react-renderer";
-import theme from "prism-react-renderer/themes/vsDark";
 
 import { copyTextToClipboard } from "../utils";
 import styles from "./CodeHighlight.module.css";
+
 /**
  * The CodeHighlight component shows a code example and provides a "copy" (to clipboard) button.
  *
@@ -68,6 +66,22 @@ export const CodeHighlight = ({
   );
 };
 
+// copy-pasted from: https://github.com/FormidableLabs/prism-react-renderer/blob/c914fdea48625ba59c8022174bb3df1ed802ce4d/packages/generate-prism-languages/index.ts#L9-L23
+type Language =
+  | "jsx"
+  | "tsx"
+  | "swift"
+  | "kotlin"
+  | "objectivec"
+  | "js-extras"
+  | "reason"
+  | "rust"
+  | "graphql"
+  | "yaml"
+  | "go"
+  | "cpp"
+  | "markdown";
+
 export const Highlighter = ({
   code,
   language = "markdown",
@@ -76,7 +90,7 @@ export const Highlighter = ({
   language?: Language;
 }) => {
   return (
-    <Highlight {...defaultProps} code={code} language={language} theme={theme}>
+    <Highlight code={code} language={language}>
       {({ tokens, getLineProps, getTokenProps }) => (
         <pre>
           {tokens.map((line, i) => (
