@@ -75,11 +75,6 @@
 
   .icon-filters.icon-filters--hidden {
     transition: min-width 0.35s;
-
-    /* HACK: this isn't the most elegant solution, but this keeps things looking pretty */
-    height: 3rem;
-    overflow-y: hidden;
-    border-right: none;
   }
 
   .icon-filters.icon-filters--active + .icon-filters__scrim {
@@ -91,6 +86,12 @@
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 99;
+  }
+
+  /* NOTE: this handles the situation for when the user opens
+  the filter menu, then scrolls, then closes the filter menu */
+  .icon-filters.icon-filters--hidden .icon-filters__section {
+    display: none;
   }
 }
 
