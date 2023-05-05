@@ -147,17 +147,17 @@
   resolved "https://registry.yarnpkg.com/@avaya/neo-icons/-/neo-icons-1.0.5.tgz#3310999f74c796bb332d2f5b8c0b3d2c026f24af"
   integrity sha512-m0whlwxzt+enM1HPy9gO3DfyXiwOsZ4wuimSa5sY/1nVoaPMqdZQVkBQreDcj8youkC3C0AjA9X9LBSjZzF29Q==
 
-"@avaya/neo-react@0.8.6":
-  version "0.8.6"
-  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-0.8.6.tgz#5a68e6210ece6ccb6079d1b8266f7b376aacd54f"
-  integrity sha512-8Bpzsga7mJFrD+PPV4mhs0ObkJ85REVwBY4WSdnZ9Tt5e1+S/vRRRQUcgej0ljR9WnsWMwre7Q0jW5a9XAmFuA==
+"@avaya/neo-react@0.8.7":
+  version "0.8.7"
+  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-0.8.7.tgz#de13cf9b8b0fccb45e4b5d58d059395ec21579c0"
+  integrity sha512-YYorxJCR87juDXxP07ieFX4Tu3liVdw5PqjcfIGqbyKeTflEH6BDYfs8QEKf1RH6MfBtj2GNfNufptT/nH/Z7Q==
   dependencies:
     atomic-layout "0.16.2"
     loglevel "1.8.1"
     react-click-away-listener "2.2.3"
     react-focus-lock "2.9.4"
     react-input-autosize "3.0.0"
-    styled-components "5.3.9"
+    styled-components "5.3.10"
 
 "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.18.6":
   version "7.18.6"
@@ -5979,10 +5979,10 @@ strip-literal@^1.0.1:
   dependencies:
     acorn "^8.8.2"
 
-styled-components@5.3.9:
-  version "5.3.9"
-  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-5.3.9.tgz#641af2a8bb89904de708c71b439caa9633e8f0ba"
-  integrity sha512-Aj3kb13B75DQBo2oRwRa/APdB5rSmwUfN5exyarpX+x/tlM/rwZA2vVk2vQgVSP6WKaZJHWwiFrzgHt+CLtB4A==
+styled-components@5.3.10:
+  version "5.3.10"
+  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-5.3.10.tgz#42f7245f58fe960362a63f543dda23c0ac107c0f"
+  integrity sha512-3kSzSBN0TiCnGJM04UwO1HklIQQSXW7rCARUk+VyMR7clz8XVlA3jijtf5ypqoDIdNMKx3la4VvaPFR855SFcg==
   dependencies:
     "@babel/helper-module-imports" "^7.0.0"
     "@babel/traverse" "^7.4.5"
