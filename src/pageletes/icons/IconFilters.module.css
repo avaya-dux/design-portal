@@ -14,6 +14,10 @@
   overflow: auto;
 }
 
+.icon-filters .icon-filters__toggle p {
+  padding-left: 0.5rem;
+}
+
 .licon-filters + .icon-filters__scrim {
   display: none;
 }
@@ -71,6 +75,11 @@
 
   .icon-filters.icon-filters--hidden {
     transition: min-width 0.35s;
+
+    /* HACK: this isn't the most elegant solution, but this keeps things looking pretty */
+    height: 3rem;
+    overflow-y: hidden;
+    border-right: none;
   }
 
   .icon-filters.icon-filters--active + .icon-filters__scrim {
