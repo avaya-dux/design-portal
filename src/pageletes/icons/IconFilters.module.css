@@ -10,22 +10,12 @@
   position: sticky;
   left: 0;
   top: var(--header-height);
-  height: 100vh;
+  height: calc(100vh - var(--header-height));
   overflow: auto;
 }
 
-.icon-filters__toggle {
-  pointer-events: none;
-  position: relative;
-}
-
-.icon-filters__toggle button {
-  position: absolute;
-  left: 0.6rem;
-}
-
 .icon-filters .icon-filters__toggle p {
-  margin-left: 3.5rem;
+  padding-left: 0.5rem;
 }
 
 .licon-filters + .icon-filters__scrim {
@@ -47,8 +37,9 @@
     background-color: var(--leftnav-background-color);
     z-index: 100;
     transition: min-width 0.35s;
-    min-width: 3.5rem;
-    max-width: 3.5rem;
+    min-width: 4rem;
+    max-width: 4rem;
+    overflow-x: hidden;
   }
 
   .icon-filters__toggle {
@@ -61,11 +52,6 @@
 
   .icon-filters .icon-filters__toggle p {
     display: none;
-  }
-
-  .icon-filters .icon-filters__toggle,
-  .icon-filters.icon-filters--hidden .icon-filters__toggle {
-    justify-content: center;
   }
 
   .icon-filters.icon-filters--active {
@@ -89,7 +75,6 @@
 
   .icon-filters.icon-filters--hidden {
     transition: min-width 0.35s;
-    min-width: 3.5rem;
   }
 
   .icon-filters.icon-filters--active + .icon-filters__scrim {
@@ -102,11 +87,18 @@
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 99;
   }
+
+  /* NOTE: this handles the situation for when the user opens
+  the filter menu, then scrolls, then closes the filter menu */
+  .icon-filters.icon-filters--hidden .icon-filters__section {
+    display: none;
+  }
 }
 
 @media (max-width: 799px) {
   .icon-filters {
     top: calc(var(--header-height) * 2);
+    height: calc(100vh - var(--header-height) * 2);
   }
 }
 
@@ -114,8 +106,8 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  padding: 6px 0px 7px 12px;
   border-bottom: 1px solid var(--navbar-border-bottom-color);
-  height: 3rem;
 }
 
 .icon-filters__section {
