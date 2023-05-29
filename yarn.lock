@@ -151,10 +151,10 @@
   resolved "https://registry.yarnpkg.com/@avaya/neo-icons/-/neo-icons-1.0.5.tgz#3310999f74c796bb332d2f5b8c0b3d2c026f24af"
   integrity sha512-m0whlwxzt+enM1HPy9gO3DfyXiwOsZ4wuimSa5sY/1nVoaPMqdZQVkBQreDcj8youkC3C0AjA9X9LBSjZzF29Q==
 
-"@avaya/neo-react@0.8.7":
-  version "0.8.7"
-  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-0.8.7.tgz#de13cf9b8b0fccb45e4b5d58d059395ec21579c0"
-  integrity sha512-YYorxJCR87juDXxP07ieFX4Tu3liVdw5PqjcfIGqbyKeTflEH6BDYfs8QEKf1RH6MfBtj2GNfNufptT/nH/Z7Q==
+"@avaya/neo-react@0.8.8":
+  version "0.8.8"
+  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-0.8.8.tgz#dc35e742432eadbbbbed616f7dd68af85bc083c3"
+  integrity sha512-2oMdkE4q1yWOstfiwkqbZqwoXEGAqgXxaR0vW6KRp3YR52XRwQiDh7/5syBnZRXRiCexmC5tOlcyTlC5V3HnQw==
   dependencies:
     atomic-layout "0.16.2"
     loglevel "1.8.1"
@@ -1082,10 +1082,10 @@
   resolved "https://registry.yarnpkg.com/@ljharb/has-package-exports-patterns/-/has-package-exports-patterns-0.0.2.tgz#c1718939b65efa1f45f53686c2fcfa992b9fb68f"
   integrity sha512-4/RWEeXDO6bocPONheFe6gX/oQdP/bEpv0oL4HqjPP5DCenBSt0mHgahppY49N0CpsaqffdwPq+TlX9CYOq2Dw==
 
-"@nanostores/react@0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@nanostores/react/-/react-0.6.0.tgz#5f1c0ece7d71b054bff994723111ef4346cd869f"
-  integrity sha512-kDHf4Wm+J82RMXg1ZUbeod8D3yJsf+/cSf7MogTH8kwo2qs7IKKBfVmHHf+fHKQzb0DWR0mpErNs3QCT6OWdOA==
+"@nanostores/react@0.7.1":
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/@nanostores/react/-/react-0.7.1.tgz#e0446f5cacc9fa53448c454f5d00ddb0f906a37a"
+  integrity sha512-EXQg9N4MdI4eJQz/AZLIx3hxQ6BuBmV4Q55bCd5YCSgEOAW7tGTsIZxpRXxvxLXzflNvHTBvfrDNY38TlSVBkQ==
 
 "@netlify/functions@^1.0.0":
   version "1.4.0"
@@ -1378,10 +1378,10 @@
     "@types/scheduler" "*"
     csstype "^3.0.2"
 
-"@types/react@18.2.6":
-  version "18.2.6"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.6.tgz#5cd53ee0d30ffc193b159d3516c8c8ad2f19d571"
-  integrity sha512-wRZClXn//zxCFW+ye/D2qY65UsYP1Fpex2YXorHc8awoNamkMZSvBxwxdYVInsHOZZd2Ppq8isnSzJL5Mpf8OA==
+"@types/react@18.2.7":
+  version "18.2.7"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.7.tgz#dfb4518042a3117a045b8c222316f83414a783b3"
+  integrity sha512-ojrXpSH2XFCmHm7Jy3q44nXDyN54+EYKP2lBhJ2bqfyPj6cIUW/FZW/Csdia34NQgq7KYcAlHi5184m4X88+yw==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -3096,10 +3096,10 @@ escape-string-regexp@^5.0.0:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-5.0.0.tgz#4683126b500b61762f2dbebace1806e8be31b1c8"
   integrity sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==
 
-eslint-plugin-astro@0.27.0:
-  version "0.27.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-astro/-/eslint-plugin-astro-0.27.0.tgz#fb9fd4769caa4d74052f8ec9183a9942da7e7799"
-  integrity sha512-r3PizFY+xwQMRWcEvRKCWQkfHNl2Q+7ANN1ZIpnvJZP97KUX8F2WUnTvPuk2jJGqnRa+zQ5NgoJ9aenFKcGP9A==
+eslint-plugin-astro@0.27.1:
+  version "0.27.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-astro/-/eslint-plugin-astro-0.27.1.tgz#a3800c4a8c3bc332c1c2c5e4238b85725936ebb5"
+  integrity sha512-xt02HVlj5lBoAPzYOKDfVa3swjFr2Vh0Rj6TsInWmfcmQcjEkDMnu9olUAF8Q+LqHr0wQr5z6GmcxJskSqOmjQ==
   dependencies:
     "@eslint-community/eslint-utils" "^4.2.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
@@ -4268,10 +4268,10 @@ js-yaml@^4.1.0:
   dependencies:
     argparse "^2.0.1"
 
-jsdom@22.0.0:
-  version "22.0.0"
-  resolved "https://registry.yarnpkg.com/jsdom/-/jsdom-22.0.0.tgz#3295c6992c70089c4b8f5cf060489fddf7ee9816"
-  integrity sha512-p5ZTEb5h+O+iU02t0GfEjAnkdYPrQSkfuTSMkMYyIoMvUNEHsbG0bHHbfXIcfTqD2UfvjQX7mmgiFsyRwGscVw==
+jsdom@22.1.0:
+  version "22.1.0"
+  resolved "https://registry.yarnpkg.com/jsdom/-/jsdom-22.1.0.tgz#0fca6d1a37fbeb7f4aac93d1090d782c56b611c8"
+  integrity sha512-/9AVW7xNbsBv6GfWho4TTNjEo9fe6Zhf9O7s0Fhhr3u+awPwAJMKwAMXnkk5vBxflqLW9hTHX/0cs+P3gW+cQw==
   dependencies:
     abab "^2.0.6"
     cssstyle "^3.0.0"
@@ -5024,10 +5024,10 @@ nanoid@^3.3.6:
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.6.tgz#443380c856d6e9f9824267d960b4236ad583ea4c"
   integrity sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==
 
-nanostores@0.8.1:
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/nanostores/-/nanostores-0.8.1.tgz#963577028ac10eeb50bec376535f4762ab5af9be"
-  integrity sha512-1ZCfQtII2XeFDrtqXL2cdQ/diGrLxzRB3YMyQjn8m7GSGQrJfGST2iuqMpWnS/ZlifhtjgR/SX0Jy6Uij6lRLA==
+nanostores@0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/nanostores/-/nanostores-0.9.1.tgz#70cc1672b5f7ca7016ab93a72037759c98b65a0a"
+  integrity sha512-DmAL3oTieICqnl2XVq5wegFE7EXIoPnIv1CNWNGEhXpwrHk7Prctch4/nX5x95i95WHdesI5sPeoNAUFpFsGtg==
 
 natural-compare-lite@^1.4.0:
   version "1.4.0"
@@ -5399,10 +5399,10 @@ prelude-ls@^1.2.1:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
-prettier-plugin-astro@0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-astro/-/prettier-plugin-astro-0.9.0.tgz#7ea3c75a7e885c0f9cdce63c1076932d0f3c7c8a"
-  integrity sha512-LZ47EzCz0RvJBzC2GhtP5MI4ygEci/N5z73MMWAZFIOfSrn53sWCz0pN2HDwDGI7tvGg5Q5dnaX4EBrzkdb2Hg==
+prettier-plugin-astro@0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-astro/-/prettier-plugin-astro-0.9.1.tgz#237d2f536d66501c3a351614c43c2372baca7411"
+  integrity sha512-pYZXSbdq0eElvzoIMArzv1SBn1NUXzopjlcnt6Ql8VW32PjC12NovwBjXJ6rh8qQLi7vF8jNqAbraKW03UPfag==
   dependencies:
     "@astrojs/compiler" "^1.0.1"
     prettier "^2.8.3"
