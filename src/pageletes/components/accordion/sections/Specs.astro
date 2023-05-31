@@ -5,6 +5,7 @@ import {
   ColumnLayout,
   PageleteSection,
   SectionHeader,
+  StackedLayout,
 } from "components/astro";
 
 import { topics } from "../static";
@@ -37,6 +38,8 @@ const specsImgAltText =
   </Description>
 
   <ColumnLayout numOfColumns={1} marginTop={"3rem"}>
-    <Image src={SpecsImage} alt={specsImgAltText} />
+    <StackedLayout>
+      <Image src={SpecsImage} alt={specsImgAltText} />
+    </StackedLayout>
   </ColumnLayout>
 </PageleteSection>
