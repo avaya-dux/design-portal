@@ -9,7 +9,7 @@ type AccordionTopicNames =
   | "playground"
   | "anatomy"
   | "states"
-  | "usage"
+  | "behavior"
   | "specs"
   | "keyboard"
   | "related";
@@ -26,7 +26,7 @@ export const topics: TopicsDict<AccordionTopicNames> = {
     id: "accordion-states",
     title: "States",
   },
-  usage: { order: 3, id: "accordion-usage", title: "Usages" },
+  behavior: { order: 3, id: "accordion-behavior", title: "Behavior" },
   specs: {
     order: 4,
     id: "accordion-specs",

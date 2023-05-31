@@ -6,8 +6,8 @@ import { DoAndDont } from "components/react";
 
 import { topics } from "../static";
 
-import UsageImageDo from "../imgs/do-usage1.svg";
-import UsageImageDont from "../imgs/dont-usage1.svg";
+import BehaviorImageDo from "../imgs/behavior-do-1.svg";
+import BehaviorImageDont from "../imgs/behavior-dont-1.svg";
 
 const usageImgDoAltText =
   "Use accordions to group content together in tight spaces.";
@@ -16,7 +16,7 @@ const usageImgDontAltText =
 ---
 
 <PageleteSection>
-  <SectionHeader id={topics.usage.id}>{topics.usage.title}</SectionHeader>
+  <SectionHeader id={topics.behavior.id}>{topics.behavior.title}</SectionHeader>
 
   <Description>
     Use an accordion when you need to provide additional information or action
@@ -29,13 +29,13 @@ const usageImgDontAltText =
   <DoAndDont>
     <DoAndDont.DoContainer instructions={usageImgDoAltText}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={UsageImageDo} alt={usageImgDoAltText} />
+        <Image src={BehaviorImageDo} alt={usageImgDoAltText} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DoContainer>
 
     <DoAndDont.DontContainer instructions={usageImgDontAltText}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={UsageImageDont} alt={usageImgDontAltText} />
+        <Image src={BehaviorImageDont} alt={usageImgDontAltText} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DontContainer>
   </DoAndDont>
