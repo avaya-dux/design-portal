@@ -7,11 +7,14 @@ import {
   InfoListItem,
   PageleteSection,
   SectionHeader,
+  StackedLayout,
 } from "components/astro";
 
 import { topics } from "../static";
 
-import StatesImage from "../imgs/states.svg";
+import StatesImage1 from "../imgs/states-1.svg";
+import StatesImage2 from "../imgs/states-2.svg";
+import StatesImage3 from "../imgs/states-3.svg";
 const statesImgAltText = "Image showing the different states of an accordion";
 ---
 
@@ -24,7 +27,15 @@ const statesImgAltText = "Image showing the different states of an accordion";
   </Description>
 
   <ColumnLayout numOfColumns={1} marginTop={"3rem"}>
-    <Image src={StatesImage} alt={statesImgAltText} />
+    <StackedLayout label="Default">
+      <Image src={StatesImage1} alt={statesImgAltText} />
+    </StackedLayout>
+    <StackedLayout label="Hover">
+      <Image src={StatesImage2} alt={statesImgAltText} />
+    </StackedLayout>
+    <StackedLayout label="Disabled">
+      <Image src={StatesImage3} alt={statesImgAltText} />
+    </StackedLayout>
   </ColumnLayout>
 
   <InfoList type="decimal">
