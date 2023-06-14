@@ -57,6 +57,6 @@ yarn lint --fix
 
 ## before commiting to this repo, please read
 
-- our [accessibility guidelines](./accessibility-guidelines.md)
-- our [coding guidelines](./coding-guidelines.md)
-- and the team's [PR best practices](./pr-best-practices.md)
+- our [accessibility guidelines](https://github.com/avaya-dux/neo-react-library/blob/main/readmes/accessibility-guidelines.md)
+- our [coding guidelines](https://github.com/avaya-dux/neo-react-library/blob/main/readmes/coding-guidelines.md)
+- and the team's [PR best practices](https://github.com/avaya-dux/neo-react-library/blob/main/readmes/pr-best-practices.md)
