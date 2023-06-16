@@ -5,12 +5,14 @@ export interface Props {
   isShaded?: boolean;
   marginTop?: string;
   marginBottom?: string;
+  padding?: string;
 }
 const {
   isShaded = false,
   showBorders = true,
   marginTop = "3rem",
   marginBottom = "1.5rem",
+  padding = "8rem 2rem",
 } = Astro.props as Props;
 ---
 
@@ -24,11 +26,11 @@ const {
   <slot />
 </div>
 
-<style define:vars={{ marginTop, marginBottom }}>
+<style define:vars={{ marginTop, marginBottom, padding }}>
   .image-centered {
     background-color: var(--neo-color-base-0);
 
-    padding: 8rem 2rem;
+    padding: var(--padding);
     margin-top: var(--marginTop);
     margin-bottom: var(--marginBottom);
 
