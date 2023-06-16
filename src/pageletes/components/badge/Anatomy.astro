@@ -2,8 +2,8 @@
 import { Image } from "@avaya/neo-react";
 
 import {
-  ColumnLayout,
   Description,
+  ImageWrapper,
   InfoList,
   InfoListItem,
   PageleteSection,
@@ -25,9 +25,11 @@ const anatomyImgAltText =
     vary.
   </Description>
 
-  <ColumnLayout bkgColor="white" numOfColumns={1}>
+  <!-- <ColumnLayout bkgColor="white" numOfColumns={1}> -->
+  <ImageWrapper padding="2.5rem 1.5rem">
     <Image src={AnatomyImage} alt={anatomyImgAltText} />
-  </ColumnLayout>
+  </ImageWrapper>
+  <!-- </ColumnLayout> -->
 
   <InfoList type="decimal">
     <InfoListItem label="Container">

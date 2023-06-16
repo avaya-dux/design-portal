@@ -36,16 +36,6 @@ const doImgAltText3 = "image showing an icon with badge with a white dot";
 const dontInstructions3 =
   "Do not hide the badge when the count cannot be determined.";
 const dontImgAltText3 = "image showing icon with no badge";
-
-import doImg4 from "./badge-imgs/do-usage4.svg";
-import dontImg4 from "./badge-imgs/dont-usage4.svg";
-const doInstructions4 =
-  "Show the total count of all notifications at the parent level.";
-const doImgAltText4 =
-  "image showing expandable category with badge showing total notification count of its children.";
-const dontInstructions4 = "Do not show one count per item at the parent level.";
-const dontImgAltText4 =
-  "image showing expandable category with badge with the wrong total count of its children.";
 ---
 
 <PageleteSection>
@@ -95,20 +85,6 @@ const dontImgAltText4 =
     <DoAndDont.DontContainer instructions={dontInstructions3}>
       <DoAndDont.ImageExampleContainer>
         <Image src={dontImg3} alt={dontImgAltText3} />
-      </DoAndDont.ImageExampleContainer>
-    </DoAndDont.DontContainer>
-  </DoAndDont>
-
-  <DoAndDont>
-    <DoAndDont.DoContainer instructions={doInstructions4}>
-      <DoAndDont.ImageExampleContainer>
-        <Image src={doImg4} alt={doImgAltText4} />
-      </DoAndDont.ImageExampleContainer>
-    </DoAndDont.DoContainer>
-
-    <DoAndDont.DontContainer instructions={dontInstructions4}>
-      <DoAndDont.ImageExampleContainer>
-        <Image src={dontImg4} alt={dontImgAltText4} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DontContainer>
   </DoAndDont>
