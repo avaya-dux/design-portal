@@ -1,6 +1,6 @@
 ---
 import { Image } from "@avaya/neo-react";
-import { Description, PageleteSection, SectionHeader } from "components/astro";
+import { Description, PageleteSection, PageleteSubSection, SectionHeader } from "components/astro";
 
 import { topics } from "../static";
 
@@ -12,6 +12,8 @@ import {
   BehaviorDoImage3,
   BehaviorDontImage3,
 } from "../imgs";
+
+import { Placement, OnScreenPlacement, Width } from "./positioning";
 import { DoAndDont } from "components";
 
 const BehaviorDoImage1AltText =
@@ -41,6 +43,18 @@ const BehaviorDontImage3AltText =
     usability. Do not mix and match elements, but pick a style and stick with it
     throughout that container.
   </Description>
+
+  <PageleteSubSection>
+    <Placement />
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <OnScreenPlacement />
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <Width />
+  </PageleteSubSection>
 
   <DoAndDont>
     <DoAndDont.DoContainer instructions={BehaviorDoImage1AltText}>
