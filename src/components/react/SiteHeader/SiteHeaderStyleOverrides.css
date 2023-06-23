@@ -101,3 +101,15 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
     display: block;
   }
 }
+
+.neo-nav--left .neo-skipnav {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.neo-nav--left .neo-skipnav:focus {
+  top: 7px;
+}
