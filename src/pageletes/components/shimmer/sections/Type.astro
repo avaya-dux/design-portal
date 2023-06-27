@@ -7,7 +7,7 @@ import {
   SectionHeader,
   PageleteSubSection,
   SubHeader,
-  ColumnLayout,
+  ImageWrapper,
 } from "components/astro";
 
 import { DoAndDont } from "components/react";
@@ -69,9 +69,9 @@ const progressiveLoadingImgAltText = "Image showing progressive loading";
       fastest items to load go first, followed by progressively more detailed
       items.
     </Description>
-    <ColumnLayout bkgColor="white" numOfColumns={1} marginBottom={"3rem"}>
+    <ImageWrapper>
       <Image src={progressiveLoadingImage} alt={progressiveLoadingImgAltText} />
-    </ColumnLayout>
+    </ImageWrapper>
     <Description>
       The primary batch should show a page’s basic structure (the skeleton state
       versions of the container-based components), data-based text (the skeleton
