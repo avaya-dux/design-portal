@@ -114,8 +114,3 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
 .neo-nav--left .neo-skipnav:focus {
   top: 7px;
 }
-
-nav.neo-navbar a.neo-nav-link-btn {
-  width: 7.5rem;
-  justify-content: center;
-}
