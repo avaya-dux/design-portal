@@ -7,16 +7,16 @@ import {
   SectionHeader,
   PageleteSubSection,
   SubHeader,
-  ColumnLayout,
+  ImageWrapper,
 } from "components/astro";
 
 import { DoAndDont } from "components/react";
 
 import { topics } from "../static";
 
-import DynamicImage from "../imgs/shimmer-content-do-1.svg";
-import StaticImage from "../imgs/shimmer-content-dont-1.svg";
-import progressiveLoadingImage from "../imgs/shimmer-progressive-loading.svg";
+import DynamicImage from "../imgs/shimmer-type-content-do-1.svg";
+import StaticImage from "../imgs/shimmer-type-content-dont-1.svg";
+import progressiveLoadingImage from "../imgs/shimmer-type-progressive-1.svg";
 
 const { id, title } = topics.type;
 
@@ -69,9 +69,9 @@ const progressiveLoadingImgAltText = "Image showing progressive loading";
       fastest items to load go first, followed by progressively more detailed
       items.
     </Description>
-    <ColumnLayout bkgColor="white" numOfColumns={1} marginBottom={"3rem"}>
+    <ImageWrapper>
       <Image src={progressiveLoadingImage} alt={progressiveLoadingImgAltText} />
-    </ColumnLayout>
+    </ImageWrapper>
     <Description>
       The primary batch should show a page’s basic structure (the skeleton state
       versions of the container-based components), data-based text (the skeleton
