@@ -8,11 +8,12 @@ import {
   InfoListItem,
   PageleteSection,
   SectionHeader,
+  StackedLayout,
 } from "components/astro";
 
 import { topics } from "../static";
 
-import { TypesImage, TypesDoImage, TypesDontImage } from "../imgs";
+import { TypesCheckboxImage, TypesDefaultImage, TypesGroupImage, TypesSelectedImage, TypesDoImage, TypesDontImage } from "../imgs";
 import { DoAndDont } from "components";
 
 const TypesImageAltText =
@@ -31,8 +32,19 @@ const DontAltText = "Do not place dividers between each item.";
     and formatting requirements of the action items.
   </Description>
 
-  <ColumnLayout bkgColor="white" numOfColumns={1}>
-    <Image src={TypesImage} alt={TypesImageAltText} />
+  <ColumnLayout showGridlines={true} bkgColor="white" numOfColumns={2}>
+    <StackedLayout label="Default">
+      <Image src={TypesDefaultImage} alt="Image showing default dropdown state" />
+    </StackedLayout>
+    <StackedLayout label="Selected">
+      <Image src={TypesSelectedImage} alt="Image showing selected dropdown state" />
+    </StackedLayout>
+    <StackedLayout label="Checkbox">
+      <Image src={TypesCheckboxImage} alt="Image showing dropdown with checkboxes" />
+    </StackedLayout>
+    <StackedLayout label="Grouped">
+      <Image src={TypesGroupImage} alt="Image showing dropdown with grouped sections" />
+    </StackedLayout>
   </ColumnLayout>
 
   <InfoList type="decimal">

@@ -21,7 +21,10 @@ import StatesSelectedImage from "./states-selected.svg";
 
 import AnatomyImage from "./anatomy-1.svg";
 
-import TypesImage from "./types-1.svg";
+import TypesDefaultImage from "./types-default.svg";
+import TypesSelectedImage from "./types-selected.svg";
+import TypesCheckboxImage from "./types-checkbox.svg";
+import TypesGroupImage from "./types-group.svg";
 
 import BehaviorDoImage1 from "./behavior-icons-do-1.svg";
 import BehaviorDontImage1 from "./behavior-icons-dont-1.svg";
@@ -49,7 +52,10 @@ export {
   StatesDisabledImage,
   StatesSelectedImage,
   AnatomyImage,
-  TypesImage,
+  TypesCheckboxImage,
+  TypesDefaultImage,
+  TypesGroupImage,
+  TypesSelectedImage,
   BehaviorDoImage1,
   BehaviorDontImage1,
   BehaviorDoImage2,
