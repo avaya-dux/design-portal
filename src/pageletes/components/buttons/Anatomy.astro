@@ -3,14 +3,25 @@ import { Image } from "@avaya/neo-react";
 import {
   Description,
   ColumnLayout,
+  ImageWrapper,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
 
 import { topics } from "./static";
 
-import AnatomyImage from "./button-imgs/illustration-anatomy.svg";
-const anatomyImgAltText =
+import image1 from "./button-imgs/button-anatomy-1.svg";
+import image2 from "./button-imgs/button-anatomy-2.svg";
+import image3 from "./button-imgs/button-anatomy-3.svg";
+import image4 from "./button-imgs/button-anatomy-4.svg";
+
+const image1Alt =
+  "Image showing the different parts that make up a button";
+const image2Alt =
+  "Image showing the different parts that make up a button";
+const image3Alt =
+  "Image showing the different parts that make up a button";
+const image4Alt =
   "Image showing the different parts that make up a button";
 ---
 
@@ -23,8 +34,20 @@ const anatomyImgAltText =
     as desired.
   </Description>
 
-  <ColumnLayout bkgColor="white" numOfColumns={1}>
-    <Image src={AnatomyImage} alt={anatomyImgAltText} />
+
+  <ColumnLayout numOfColumns={2}>
+    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image1} alt={image1Alt} />
+    </ImageWrapper>
+    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image2} alt={image2Alt} />
+    </ImageWrapper>
+    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image3} alt={image3Alt} />
+    </ImageWrapper>
+    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image4} alt={image4Alt} />
+    </ImageWrapper>
   </ColumnLayout>
 
   <ColumnLayout numOfColumns={4} marginTop={"1.5rem"}>
