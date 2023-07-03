@@ -1,16 +1,23 @@
 ---
-import { Button } from "@avaya/neo-react";
+import { Image } from "@avaya/neo-react";
 
 import {
   ColumnLayout,
   Description,
+  ImageWrapper,
   InfoList,
   InfoListItem,
   PageleteSection,
   SectionHeader,
-  StackedLayout,
 } from "components/astro";
+import image1 from "./button-imgs/button-type-1.svg";
+import image2 from "./button-imgs/button-type-2.svg";
+import image3 from "./button-imgs/button-type-3.svg";
 import { topics } from "./static";
+
+const image1Alt = "Image showing a primary button";
+const image2Alt = "Image showing a secondary button";
+const image3Alt = "Image showing a tertiary button";
 ---
 
 <PageleteSection>
@@ -21,18 +28,16 @@ import { topics } from "./static";
     outlined below.
   </Description>
 
-  <ColumnLayout numOfColumns={3} marginTop={"3rem"}>
-    <StackedLayout>
-      <Button>Primary Button</Button>
-    </StackedLayout>
-
-    <StackedLayout>
-      <Button variant="secondary">Secondary Button</Button>
-    </StackedLayout>
-
-    <StackedLayout>
-      <Button variant="tertiary">Tertiary Button</Button>
-    </StackedLayout>
+  <ColumnLayout numOfColumns={3}>
+    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image1} alt={image1Alt} />
+    </ImageWrapper>
+    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image2} alt={image2Alt} />
+    </ImageWrapper>
+    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image3} alt={image3Alt} />
+    </ImageWrapper>
   </ColumnLayout>
 
   <InfoList type="disc">
