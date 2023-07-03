@@ -17,7 +17,7 @@ import TypesDontImage from "./types-dont-1.svg";
 import StatesDefaultImage from "./states-default.svg";
 import StatesHoverImage from "./states-hover.svg";
 import StatesDisabledImage from "./states-disabled.svg";
-import StatesSelectedImage from "./states-default.svg";
+import StatesSelectedImage from "./states-selected.svg";
 
 import AnatomyImage from "./anatomy-1.svg";
 
