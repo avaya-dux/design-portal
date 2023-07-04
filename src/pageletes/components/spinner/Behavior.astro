@@ -12,7 +12,7 @@ import doImage from "./imgs/usage-do.svg";
 import dontImage from "./imgs/usage-dont.svg";
 
 import { topics } from "./static";
-const { id, title } = topics.usage;
+const { id, title } = topics.behavior;
 
 const doInstructions =
   "Use a spinner to indicate loading states within components or actions.";
@@ -29,8 +29,10 @@ const dontImgAltText =
   <SectionHeader id={id}>{title}</SectionHeader>
 
   <Description>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+    A spinner may be used on an entire page, on a region, or on a component to
+    show that it is busy processing or loading data. Multiple spinners may
+    appear on a page at the same time if multiple regions are busy. As it is an
+    icon, it can be combined with other components for added visibility.
   </Description>
 
   <DoAndDont>
