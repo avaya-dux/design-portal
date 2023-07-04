@@ -1,0 +1,37 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { Description, DoAndDont, SubHeader, } from "components";
+
+import {
+  IconsDoImage2,
+  IconsDontImage2,
+} from "../../imgs";
+
+const IconsDoImage2AltText =
+  "Group related items together making it easier to move through the various menus.";
+
+const IconsDontImage2AltText =
+  "Do not have too many levels as it quickly becomes difficult to follow.";
+
+---
+<SubHeader id="tooltip-positioning-grouping">Grouping</SubHeader>
+
+<Description>
+  To help users find what they need in a long list, group related items together.
+   Optionally you can add a label to identify each group’s purpose.
+</Description>
+
+<DoAndDont size="wide">
+  <DoAndDont.DoContainer instructions={IconsDoImage2AltText}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={IconsDoImage2} alt={IconsDoImage2AltText} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={IconsDontImage2AltText}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={IconsDontImage2} alt={IconsDontImage2AltText} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>

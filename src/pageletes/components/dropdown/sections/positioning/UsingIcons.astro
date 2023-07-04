@@ -1,0 +1,40 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { Description, DoAndDont, SubHeader, } from "components";
+
+import {
+  IconsDoImage1,
+  IconsDontImage1,
+} from "../../imgs";
+
+const IconsDoImage1AltText =
+  "Use a consistent design within a list. Only use icons when they add essential value and have a strong association with the list item.";
+
+const IconsDontImage1AltText =
+  "Do not add icons to some items but not others. Do not use them for decoration.";
+
+---
+
+<SubHeader id="tooltip-positioning-icons">Using Icons</SubHeader>
+
+<Description>
+  Icons can be included into dropdowns if the icon adds something important to the list.
+  They should never be added without purpose or as decorative items.
+</Description>
+
+
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={IconsDoImage1AltText}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={IconsDoImage1} alt={IconsDoImage1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={IconsDontImage1AltText}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={IconsDontImage1} alt={IconsDontImage1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+

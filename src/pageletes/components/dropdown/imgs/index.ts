@@ -26,10 +26,10 @@ import TypesSelectedImage from "./types-selected.svg";
 import TypesCheckboxImage from "./types-checkbox.svg";
 import TypesGroupImage from "./types-group.svg";
 
-import BehaviorDoImage1 from "./behavior-icons-do-1.svg";
-import BehaviorDontImage1 from "./behavior-icons-dont-1.svg";
-import BehaviorDoImage2 from "./behavior-do-2.svg";
-import BehaviorDontImage2 from "./behavior-dont-2.svg";
+import IconsDoImage1 from "./behavior-icons-do-1.svg";
+import IconsDontImage1 from "./behavior-icons-dont-1.svg";
+import IconsDoImage2 from "./behavior-do-2.svg";
+import IconsDontImage2 from "./behavior-dont-2.svg";
 import BehaviorDoImage3 from "./behavior-do-3.svg";
 import BehaviorDontImage3 from "./behavior-dont-3.svg";
 
@@ -56,10 +56,10 @@ export {
   TypesDefaultImage,
   TypesGroupImage,
   TypesSelectedImage,
-  BehaviorDoImage1,
-  BehaviorDontImage1,
-  BehaviorDoImage2,
-  BehaviorDontImage2,
+  IconsDoImage1,
+  IconsDontImage1,
+  IconsDoImage2,
+  IconsDontImage2,
   BehaviorDoImage3,
   BehaviorDontImage3,
   SpecsImage1,
