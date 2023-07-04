@@ -46,7 +46,6 @@ export const defaultReact = prettyPrintReact(`
 type DropdownTopicNames =
   | "anatomy"
   | "states"
-  | "positioning"
   | "types"
   | "behavior"
   | "specs"
@@ -62,11 +61,10 @@ export const topics: TopicsDict<DropdownTopicNames> = {
   },
   anatomy: { order: 1, id: "dropdown-anatomy", title: "Anatomy" },
   states: { order: 2, id: "dropdown-states", title: "States" },
-  positioning: { order: 3, id: "dropdown-positioning", title: "Positioning" },
   types: {
     order: 4,
     id: "dropdown-types",
-    title: "Types",
+    title: "Type",
   },
   behavior: { order: 5, id: "dropdown-behavior", title: "Behavior" },
   specs: { order: 6, id: "dropdown-specs", title: "Specs" },
