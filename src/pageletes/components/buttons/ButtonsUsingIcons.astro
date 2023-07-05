@@ -1,9 +1,9 @@
 ---
 import { Image } from "@avaya/neo-react";
 import {
-  ColumnLayout,
   Description,
   DoAndDont,
+  ImageWrapper,
   PageleteSection,
   PageleteSubSection,
   SectionHeader,
@@ -72,11 +72,11 @@ const dontImgAltText =
       expandable menus.
     </Description>
 
-    <ColumnLayout numOfColumns={1} marginTop={"3rem"}>
+    <ImageWrapper marginBottom="0" marginTop="0" padding="0">
       <Image
         src={iconButtons}
         alt="image showing different uses for icon buttons"
       />
-    </ColumnLayout>
+    </ImageWrapper>
   </PageleteSubSection>
 </PageleteSection>
