@@ -1,0 +1,63 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { Description, DoAndDont, SubHeader } from "components";
+
+import {
+  GroupingDoImage1,
+  GroupingDontImage1,
+  GroupingDoImage2,
+  GroupingDontImage2,
+} from "../../imgs";
+
+const IconsDoImage2AltText =
+  "Group related items together making it easier to move through the various menus.";
+
+const IconsDontImage2AltText =
+  "Do not have too many levels as it quickly becomes difficult to follow.";
+---
+
+<SubHeader id="tooltip-positioning-grouping">Grouping</SubHeader>
+
+<Description>
+  To help users find what they need in a long list, group related items
+  together. Optionally you can add a label to identify each group’s purpose.
+</Description>
+
+<DoAndDont>
+  <DoAndDont.DoContainer
+    instructions="DO: Use dividers to group related items."
+  >
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={GroupingDoImage1}
+        alt="Image showing dividers to group list items"
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer
+    instructions="Do not have too many levels as it quickly becomes difficult to follow."
+  >
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={GroupingDontImage1}
+        alt="Image showing too many divider lines"
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>
+
+<DoAndDont size="wide">
+  <DoAndDont.DoContainer instructions={IconsDoImage2AltText}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={GroupingDoImage2} alt={IconsDoImage2AltText} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={IconsDontImage2AltText}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={GroupingDontImage2} alt={IconsDontImage2AltText} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>
