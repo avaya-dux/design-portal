@@ -1,0 +1,35 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { Description, DoAndDont, SubHeader } from "components";
+
+import { ScrollingDoImage, ScrollingDontImage } from "../../imgs";
+
+const BehaviorDoImage3AltText =
+  "Use a scrollbar when Action items exceed 10 items.";
+
+const BehaviorDontImage3AltText =
+  "Do not create dropdowns with more than 10 Action items.";
+---
+
+<SubHeader id="tooltip-positioning-scrolling">Scrolling</SubHeader>
+
+<Description>
+  Add a scroll bar to very long lists to provide access to all of the options.
+  Any dropdown that contains more than 10 items should use a scroll bar to
+  provide access to the remaining items.
+</Description>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={BehaviorDoImage3AltText}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={ScrollingDoImage} alt={BehaviorDoImage3AltText} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={BehaviorDontImage3AltText}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={ScrollingDontImage} alt={BehaviorDontImage3AltText} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>
