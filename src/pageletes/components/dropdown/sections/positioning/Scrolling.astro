@@ -4,8 +4,8 @@ import { Image } from "@avaya/neo-react";
 import { Description, DoAndDont, SubHeader, } from "components";
 
 import {
-  BehaviorDoImage3,
-  BehaviorDontImage3,
+  ScrollingDoImage,
+  ScrollingDontImage,
 } from "../../imgs";
 
 const BehaviorDoImage3AltText =
@@ -26,13 +26,13 @@ const BehaviorDontImage3AltText =
 <DoAndDont>
   <DoAndDont.DoContainer instructions={BehaviorDoImage3AltText}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={BehaviorDoImage3} alt={BehaviorDoImage3AltText} />
+      <Image src={ScrollingDoImage} alt={BehaviorDoImage3AltText} />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DoContainer>
 
   <DoAndDont.DontContainer instructions={BehaviorDontImage3AltText}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={BehaviorDontImage3} alt={BehaviorDontImage3AltText} />
+      <Image src={ScrollingDontImage} alt={BehaviorDontImage3AltText} />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DontContainer>
 </DoAndDont>

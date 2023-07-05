@@ -32,8 +32,8 @@ import GroupingDoImage1 from "./grouping-do-1.svg";
 import GroupingDontImage1 from "./grouping-dont-1.svg";
 import GroupingDoImage2 from "./grouping-do-2.svg";
 import GroupingDontImage2 from "./grouping-dont-2.svg";
-import BehaviorDoImage3 from "./behavior-do-3.svg";
-import BehaviorDontImage3 from "./behavior-dont-3.svg";
+import ScrollingDoImage from "./scrolling-do-1.svg";
+import ScrollingDontImage from "./scrolling-dont-1.svg";
 
 import SpecsImage1 from "./specs-1.svg";
 import SpecsImage2 from "./specs-2.svg";
@@ -64,8 +64,8 @@ export {
   GroupingDontImage1,
   GroupingDoImage2,
   GroupingDontImage2,
-  BehaviorDoImage3,
-  BehaviorDontImage3,
+  ScrollingDoImage,
+  ScrollingDontImage,
   SpecsImage1,
   SpecsImage2,
 };
