@@ -28,8 +28,10 @@ import TypesGroupImage from "./types-group.svg";
 
 import IconsDoImage1 from "./behavior-icons-do-1.svg";
 import IconsDontImage1 from "./behavior-icons-dont-1.svg";
-import IconsDoImage2 from "./behavior-do-2.svg";
-import IconsDontImage2 from "./behavior-dont-2.svg";
+import GroupingDoImage1 from "./grouping-do-1.svg";
+import GroupingDontImage1 from "./grouping-dont-1.svg";
+import GroupingDoImage2 from "./behavior-do-2.svg";
+import GroupingDontImage2 from "./behavior-dont-2.svg";
 import BehaviorDoImage3 from "./behavior-do-3.svg";
 import BehaviorDontImage3 from "./behavior-dont-3.svg";
 
@@ -58,8 +60,10 @@ export {
   TypesSelectedImage,
   IconsDoImage1,
   IconsDontImage1,
-  IconsDoImage2,
-  IconsDontImage2,
+  GroupingDoImage1,
+  GroupingDontImage1,
+  GroupingDoImage2,
+  GroupingDontImage2,
   BehaviorDoImage3,
   BehaviorDontImage3,
   SpecsImage1,
