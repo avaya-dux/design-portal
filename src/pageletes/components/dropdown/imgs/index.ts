@@ -30,8 +30,8 @@ import IconsDoImage1 from "./behavior-icons-do-1.svg";
 import IconsDontImage1 from "./behavior-icons-dont-1.svg";
 import GroupingDoImage1 from "./grouping-do-1.svg";
 import GroupingDontImage1 from "./grouping-dont-1.svg";
-import GroupingDoImage2 from "./behavior-do-2.svg";
-import GroupingDontImage2 from "./behavior-dont-2.svg";
+import GroupingDoImage2 from "./grouping-do-2.svg";
+import GroupingDontImage2 from "./grouping-dont-2.svg";
 import BehaviorDoImage3 from "./behavior-do-3.svg";
 import BehaviorDontImage3 from "./behavior-dont-3.svg";
 
