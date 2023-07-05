@@ -12,6 +12,9 @@
 }
 .do-and-dont-container-wide
   .do-and-dont-example-item
+  .do-and-dont-example-content,
+.do-and-dont-container-no-ratio
+  .do-and-dont-example-item
   .do-and-dont-example-content {
   aspect-ratio: unset;
 }
@@ -19,9 +22,9 @@
 .do-and-dont-example-content {
   background-color: var(--neo-color-base-100);
   display: flex;
+  aspect-ratio: 1 / 0.7;
   flex-direction: column;
   justify-content: space-between;
-  aspect-ratio: 1 / 0.7;
   padding: 1rem 1.5rem 2rem 1.5rem;
   margin-bottom: 1rem;
 }

@@ -10,7 +10,7 @@ export interface InstructionProps {
 
 export interface DoAndDontProps {
   children: React.ReactElement<InstructionProps>[];
-  size?: "normal" | "wide";
+  size?: "normal" | "no-ratio" | "wide";
 }
 
 /**
@@ -48,7 +48,8 @@ export const DoAndDont = ({ children, size = "normal" }: DoAndDontProps) => (
   <div
     className={clsx(
       "do-and-dont-container",
-      size === "wide" && "do-and-dont-container-wide"
+      size === "wide" && "do-and-dont-container-wide",
+      size == "no-ratio" && "do-and-dont-container-no-ratio"
     )}
   >
     {children}

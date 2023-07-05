@@ -4,4 +4,10 @@ import OnScreenPlacement from "./OnScreenPlacement.astro";
 
 import Width from "./Width.astro";
 
-export { Placement, OnScreenPlacement, Width };
+import UsingIcons from "./UsingIcons.astro";
+
+import Grouping from "./Grouping.astro";
+
+import Scrolling from "./Scrolling.astro";
+
+export { Grouping, Placement, OnScreenPlacement, Scrolling, UsingIcons, Width };
