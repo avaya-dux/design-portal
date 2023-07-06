@@ -9,11 +9,11 @@ import tooltipDoImage2 from "./button-imgs/button-behavior-tooltip-do-2.svg";
 import tooltipDoImage3 from "./button-imgs/button-behavior-tooltip-dont-2.svg";
 
 const tooltipDoInstructions =
-  "Use tooltips on icon buttons to provide additional context on the button’s function. Text buttons should seldom have a tooltip unless the text alone is not enough to explain the action.";
+  "Use tooltips on icon buttons to provide additional context on the button’s function.";
 const tooltipDoImgAltText = "image showing tooltip on top of icon button.";
 
 const tooltipDontInstructions =
-  "Use tooltips on regular buttons, unless they are in a disabled state. Disabled items should have tooltips that say why the object is not available.";
+  "Use tooltips on regular buttons, unless they are in a disabled state.";
 const tooltipDontImgAltText =
   "image showing tooltip on top of button with text.";
 
@@ -23,7 +23,7 @@ const tooltipDoInstructions2 =
 const tooltipDoImgAltText2 = "image showing tooltip on top of disabled button.";
 
 const tooltipDontInstructions2 =
-  "Use tooltips on icon buttons to provide additional context on the button’s function.";
+  "Do not have a disabled button without having a tooltip that informs the user why it’s inactive.";
 
 const tooltipDontImgAltText2 =
   "image showing explanatory tooltip on top of button.";
@@ -40,7 +40,10 @@ const tooltipDontImgAltText2 =
   Icon buttons should always have a Tooltip to explain the button’s action. The
   Tooltip replaces the button text.
 </Description>
-
+<Description>
+  Text buttons should seldom have a tooltip unless the text alone is not enough
+  to explain the action.
+</Description>
 <DoAndDont>
   <DoAndDont.DoContainer instructions={tooltipDoInstructions}>
     <DoAndDont.ImageExampleContainer>
@@ -59,11 +62,6 @@ const tooltipDontImgAltText2 =
 
 <Description>
   Disabled items should have tooltips that say why the object is not available.
-</Description>
-
-<Description>
-  Explanatory and Alert Tooltips should use sentence case, with only the first
-  letter capitalized and a period at the end.
 </Description>
 
 <DoAndDont>
