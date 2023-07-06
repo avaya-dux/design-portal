@@ -4,11 +4,11 @@ import { Image } from "@avaya/neo-react";
 import {
   ColumnLayout,
   Description,
-  ImageWrapper,
   InfoList,
   InfoListItem,
   PageleteSection,
   SectionHeader,
+  StackedLayout
 } from "components/astro";
 import image1 from "./button-imgs/button-type-1.svg";
 import image2 from "./button-imgs/button-type-2.svg";
@@ -29,32 +29,33 @@ const image3Alt = "Image showing a tertiary button";
   </Description>
 
   <ColumnLayout numOfColumns={3}>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+    <StackedLayout label="Primary">
       <Image src={image1} alt={image1Alt} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+    </StackedLayout>
+    <StackedLayout label="Secondary">
       <Image src={image2} alt={image2Alt} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+    </StackedLayout>
+    <StackedLayout label="Tertiary">
       <Image src={image3} alt={image3Alt} />
-    </ImageWrapper>
+    </StackedLayout>
+
   </ColumnLayout>
 
   <InfoList type="disc">
-    <InfoListItem label="Primary Button">
+    <InfoListItem label="Primary">
       Use these buttons to perform the most important action item on the current
       page. For example, Save or Continue. Too many Primary buttons can be
       confusing for the user, so only include one Primary button on each screen
       or region.
     </InfoListItem>
 
-    <InfoListItem label="Secondary Button">
+    <InfoListItem label="Secondary">
       Secondaries offer alternate or opposite actions to the Primary. For
       example, Cancel, Back, or Reset. Multiple Secondary buttons can be used
       with each Primary.
     </InfoListItem>
 
-    <InfoListItem label="Tertiary Button">
+    <InfoListItem label="Tertiary">
       Use them on their own or pair them up with other buttons. Tertiary buttons
       contain the least important action items on the page.
     </InfoListItem>
