@@ -17,8 +17,7 @@ export const storybook =
 type ShimmerTopicNames =
   | "playground"
   | "anatomy"
-  | "dynamicStatic"
-  | "progressiveLoading"
+  | "type"
   | "behavior"
   | "relatedContent";
 
@@ -35,15 +34,10 @@ export const topics: TopicsDict<ShimmerTopicNames> = {
     id: `${component}-anatomy`,
     title: "Anatomy",
   },
-  dynamicStatic: {
+  type: {
     order: 2,
-    id: `${component}-dynamic-static`,
-    title: "Dynamic Content vs Static Content",
-  },
-  progressiveLoading: {
-    order: 3,
-    id: `${component}-progressive-loading`,
-    title: "Progressive Loading",
+    id: `${component}-type`,
+    title: "Type",
   },
   behavior: {
     order: 4,
