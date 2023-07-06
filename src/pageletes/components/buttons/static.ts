@@ -12,13 +12,12 @@ export const storybook =
 type ButtonsTopicNames =
   | "playground"
   | "anatomy"
-  | "textLabel"
   | "states"
+  | "type"
   | "behavior"
   | "usingIcons"
   | "specs"
-  | "keyboard"
-  | "type";
+  | "keyboard";
 
 export const topics: TopicsDict<ButtonsTopicNames> = {
   playground: {
@@ -31,20 +30,15 @@ export const topics: TopicsDict<ButtonsTopicNames> = {
     id: "anatomy-playground",
     title: "Anatomy",
   },
-  type: {
-    order: 2,
-    id: "button-type",
-    title: "Type",
-  },
-  textLabel: {
-    order: 3,
-    id: "text-label-playground",
-    title: "Text Label",
-  },
   states: {
-    order: 4,
+    order: 2,
     id: "button-states",
     title: "States",
+  },
+  type: {
+    order: 3,
+    id: "button-type",
+    title: "Type",
   },
   behavior: {
     order: 5,
