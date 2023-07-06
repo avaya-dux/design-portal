@@ -17,7 +17,8 @@ type ButtonsTopicNames =
   | "behavior"
   | "usingIcons"
   | "specs"
-  | "keyboard";
+  | "keyboard"
+  | "related";
 
 export const topics: TopicsDict<ButtonsTopicNames> = {
   playground: {
@@ -41,23 +42,28 @@ export const topics: TopicsDict<ButtonsTopicNames> = {
     title: "Type",
   },
   behavior: {
-    order: 5,
+    order: 4,
     id: "button-behavior",
     title: "Behavior",
   },
   usingIcons: {
-    order: 6,
+    order: 5,
     id: "button-using-icons",
     title: "Buttons Using Icons",
   },
   specs: {
-    order: 7,
+    order: 6,
     id: "button-specs",
     title: "Specs",
   },
   keyboard: {
-    order: 8,
+    order: 7,
     id: "button-keyboard-interactions",
     title: "Keyboard Interactions",
+  },
+  related: {
+    order: 8,
+    id: "button-related-content",
+    title: "Related Content",
   },
 };

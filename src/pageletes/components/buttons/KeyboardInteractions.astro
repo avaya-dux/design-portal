@@ -1,5 +1,6 @@
 ---
 import {
+  Description,
   InfoTable,
   InfoTableBody,
   InfoTableCell,
@@ -15,6 +16,13 @@ import { topics } from "./static";
 <PageleteSection>
   <SectionHeader id={topics.keyboard.id}>{topics.keyboard.title}</SectionHeader>
 
+  <Description>
+    Accessibility requires that each item on the screen is reachable using the
+    keyboard alone. The mouse is not always an option for some users.
+  </Description>
+  <Description>
+    Keyboard navigation employs the following shortcuts.
+  </Description>
   <InfoTable>
     <InfoTableHead>
       <InfoTableRow>

@@ -42,3 +42,6 @@ export { KeyboardInteractions };
 
 import States from "./States.astro";
 export { States };
+
+import Related from "./Related.astro";
+export { Related };
