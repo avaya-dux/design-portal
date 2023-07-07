@@ -1,5 +1,5 @@
 ---
-import { Button } from "@avaya/neo-react";
+import { Image } from "@avaya/neo-react";
 
 import {
   ColumnLayout,
@@ -10,7 +10,14 @@ import {
   SectionHeader,
   StackedLayout,
 } from "components/astro";
+import image1 from "./button-imgs/button-type-1.svg";
+import image2 from "./button-imgs/button-type-2.svg";
+import image3 from "./button-imgs/button-type-3.svg";
 import { topics } from "./static";
+
+const image1Alt = "Image showing a primary button";
+const image2Alt = "Image showing a secondary button";
+const image3Alt = "Image showing a tertiary button";
 ---
 
 <PageleteSection>
@@ -21,35 +28,33 @@ import { topics } from "./static";
     outlined below.
   </Description>
 
-  <ColumnLayout numOfColumns={3} marginTop={"3rem"}>
-    <StackedLayout>
-      <Button>Primary Button</Button>
+  <ColumnLayout numOfColumns={3}>
+    <StackedLayout label="Primary">
+      <Image src={image1} alt={image1Alt} />
     </StackedLayout>
-
-    <StackedLayout>
-      <Button variant="secondary">Secondary Button</Button>
+    <StackedLayout label="Secondary">
+      <Image src={image2} alt={image2Alt} />
     </StackedLayout>
-
-    <StackedLayout>
-      <Button variant="tertiary">Tertiary Button</Button>
+    <StackedLayout label="Tertiary">
+      <Image src={image3} alt={image3Alt} />
     </StackedLayout>
   </ColumnLayout>
 
   <InfoList type="disc">
-    <InfoListItem label="Primary Button">
+    <InfoListItem label="Primary">
       Use these buttons to perform the most important action item on the current
       page. For example, Save or Continue. Too many Primary buttons can be
       confusing for the user, so only include one Primary button on each screen
       or region.
     </InfoListItem>
 
-    <InfoListItem label="Secondary Button">
+    <InfoListItem label="Secondary">
       Secondaries offer alternate or opposite actions to the Primary. For
       example, Cancel, Back, or Reset. Multiple Secondary buttons can be used
       with each Primary.
     </InfoListItem>
 
-    <InfoListItem label="Tertiary Button">
+    <InfoListItem label="Tertiary">
       Use them on their own or pair them up with other buttons. Tertiary buttons
       contain the least important action items on the page.
     </InfoListItem>

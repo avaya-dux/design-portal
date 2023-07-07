@@ -10,12 +10,12 @@ import {
 
 import { topics } from "./static";
 
-import buttonSpecs1 from "./button-imgs/buttons-specs1.png";
-import buttonSpecs2 from "./button-imgs/buttons-specs2.png";
-import buttonSpecs3 from "./button-imgs/buttons-specs3.png";
-import buttonSpecs4 from "./button-imgs/buttons-specs4.png";
-import buttonSpecs5 from "./button-imgs/buttons-specs5.png";
-import buttonSpecs6 from "./button-imgs/buttons-specs6.png";
+import buttonSpecs1 from "./button-imgs/button-specs-1.svg";
+import buttonSpecs2 from "./button-imgs/button-specs-2.svg";
+import buttonSpecs3 from "./button-imgs/button-specs-3.svg";
+import buttonSpecs4 from "./button-imgs/button-specs-4.svg";
+import buttonSpecs5 from "./button-imgs/button-specs-5.svg";
+import buttonSpecs6 from "./button-imgs/button-specs-6.svg";
 ---
 
 <PageleteSection>
@@ -35,25 +35,25 @@ import buttonSpecs6 from "./button-imgs/buttons-specs6.png";
   </Description>
 
   <ColumnLayout numOfColumns={4} marginTop={"3rem"} marginBottom={"3rem"}>
-    <StackedLayout vPadding="0">
+    <StackedLayout label="Primary">
       <Image
         src={buttonSpecs1}
         alt="image showing vertical dimensions of primary button."
       />
     </StackedLayout>
-    <StackedLayout vPadding="0">
+    <StackedLayout label="Secondary">
       <Image
         src={buttonSpecs2}
         alt="image showing vertical dimensions of secondary button."
       />
     </StackedLayout>
-    <StackedLayout vPadding="0">
+    <StackedLayout label="Tertiary">
       <Image
         src={buttonSpecs3}
         alt="image showing vertical dimensions of tertiary button."
       />
     </StackedLayout>
-    <StackedLayout vPadding="0">
+    <StackedLayout label="Icon">
       <Image
         src={buttonSpecs4}
         alt="image showing vertical dimensions of icon button."
@@ -67,13 +67,13 @@ import buttonSpecs6 from "./button-imgs/buttons-specs6.png";
   </Description>
 
   <ColumnLayout numOfColumns={2} marginTop={"3rem"}>
-    <StackedLayout vPadding="0">
+    <StackedLayout label="Default">
       <Image
         src={buttonSpecs5}
         alt="image showing vertical dimensions of primary button."
       />
     </StackedLayout>
-    <StackedLayout vPadding="0">
+    <StackedLayout label="Small">
       <Image
         src={buttonSpecs6}
         alt="image showing vertical dimensions of secondary button."
