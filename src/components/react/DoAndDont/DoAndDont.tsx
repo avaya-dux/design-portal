@@ -44,7 +44,7 @@ export interface DoAndDontProps {
  *
  * @see `DoAndDont/DoAndDont.stories.tsx` for more details and examples.
  */
-export const DoAndDont = ({ children, size = "normal" }: DoAndDontProps) => (
+export const DoAndDont = ({ children, size = "no-ratio" }: DoAndDontProps) => (
   <div
     className={clsx(
       "do-and-dont-container",
