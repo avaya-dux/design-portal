@@ -32,7 +32,7 @@ const dontImg1AltText =
   "A toggled switch with the label 'I agree to the terms and conditions'";
 
 const do2Instructions =
-  "For a group of related switches, add a category label to connect them together.";
+  "Add a category label to a group of related switches to connect them together.";
 const doImg2AltText =
   "A group of related switches connected by the label 'Meeting defaults'";
 
@@ -52,18 +52,20 @@ const labelImage2AltText =
   </SectionHeader>
 
   <Description>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+    Switches are used to visually convey the state of a function and allow the
+    user to change the state of that function. This will change the way the
+    program operates, such as turning on dark mode or disabling notifications.
   </Description>
 
   <PageleteSubSection>
     <SubHeader id="switch-when-to-use">When To Use</SubHeader>
 
     <Description>
-      If you need to represent the switching between two states or on-off state.
-      The difference between Switch and Checkbox is that Switch will trigger a
-      state change directly when you toggle it, while Checkbox is generally used
-      for state marking, which should work in conjunction with submit operation.
+      Use a switch to toggle a function between two opposing states (e.g.
+      on/off). The difference between a Switch and a Checkbox is that a Switch
+      will trigger the change immediately when toggled. A Checkbox is part of a
+      two-step process where the operator sets the checkbox state, then selects
+      a submit function before the item becomes active.
     </Description>
 
     <DoAndDont>
@@ -99,17 +101,15 @@ const labelImage2AltText =
     <SubHeader id="switch-label-location">Label Location</SubHeader>
 
     <Description>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam.
+      The switch should have a label that describes the function it controls. The label can appear to the left or to the right of the track.
     </Description>
 
     <ColumnLayout bkgColor="white" numOfColumns={2}>
-      <StackedLayout label="Label on the right">
+      <StackedLayout label="Right Label">
         <Image src={labelImage1} alt={labelImage1AltText} />
       </StackedLayout>
 
-      <StackedLayout label="Label on the left">
+      <StackedLayout label="left Label">
         <Image src={labelImage2} alt={labelImage2AltText} />
       </StackedLayout>
     </ColumnLayout>

@@ -14,38 +14,38 @@ import { DoAndDont } from "components/react";
 
 import { topics } from "../static";
 
+const { id, title } = topics.relatedContent;
+
 import DynamicImage from "../imgs/shimmer-type-content-do-1.svg";
 import StaticImage from "../imgs/shimmer-type-content-dont-1.svg";
 import progressiveLoadingImage from "../imgs/shimmer-type-progressive-1.svg";
 
-const { id, title } = topics.type;
-
 const dynamicImgAltText = "Image showing dynamic content";
 const staticImgAltText = "Image showing static content";
 const dynamicContentInstruction =
-  "Use the actual content for parts of the page that do not change (static content). For elements that are quick to load, such as headings, body copy, buttons, and borders, include these as static elements of the design. Shimmer load only the variable content, not the containers.";
+  "Use the actual content for parts of the page that do not change (static content). For elements that are quick to load, such as headings, body copy, buttons, and borders, include these as static elements of the design. Use a shimmer when loading the variable content, not the containers.";
 const staticContentInstruction =
-  "Do not shimmer load all of the elements in the window as this will extend the time needed for the page appear.";
+  "Do not use a shimmer to load all of the elements on the page as this will extend the time needed for the page to appear.";
 const progressiveLoadingImgAltText = "Image showing progressive loading";
 ---
 
 <PageleteSection>
-  <SectionHeader id={id}>
-    {title}
-  </SectionHeader>
+  <SectionHeader id={id}>{title}</SectionHeader>
   <Description>
     There are two variants for a shimmer that affect the way pages are loaded
-    and what bits appear first. The format and use of each is outlined below.
+    and what elements appear first. The format and use of each is outlined
+    below.
   </Description>
   <PageleteSubSection>
-    <SubHeader id="shimmer-type-content">
+    <SubHeader id="shimmer-dynamic-vs-static">
       Dynamic Content vs Static Content
     </SubHeader>
     <Description>
       Certain elements on a page never change, such as headers, titles, copy
-      text, etc. These elements will be loaded first as they can be processed
-      quickly. Page content that changes, such as table data, graphs and
-      settings, will be loaded after the static content is complete.
+      text, etc. Using this type, these elements are loaded first as they can be
+      processed quickly. Page content that can change, such as table data and
+      variables, graphs and settings, will be loaded after the static content is
+      complete.
     </Description>
     <DoAndDont size="wide">
       <DoAndDont.DoContainer instructions={dynamicContentInstruction}>
@@ -63,21 +63,19 @@ const progressiveLoadingImgAltText = "Image showing progressive loading";
   </PageleteSubSection>
 
   <PageleteSubSection>
-    <SubHeader id="shimmer-type-loading">Progressive Loading</SubHeader>
+    <SubHeader id="shimmer-progressive-loading">Progressive Loading</SubHeader>
     <Description>
       Progressive loading is a technique that loads pages in batches. The
-      fastest items to load go first, followed by progressively more detailed
-      items.
+      fastest items to load are prioritized, followed by progressively more
+      complex items that take longer.
+    </Description>
+    <Description>
+      The first batch to load should be the page’s basic structural elements,
+      fixed and non-data text. Following batches include images, content outside
+      of the viewport, interactive components, and variable text.
     </Description>
     <ImageWrapper>
       <Image src={progressiveLoadingImage} alt={progressiveLoadingImgAltText} />
     </ImageWrapper>
-    <Description>
-      The primary batch should show a page’s basic structure (the skeleton state
-      versions of the container-based components), data-based text (the skeleton
-      state version of text) and non-data text. Following batches can include
-      images, content outside of the viewport, interactive (action-based)
-      components, and variable text.
-    </Description>
   </PageleteSubSection>
 </PageleteSection>

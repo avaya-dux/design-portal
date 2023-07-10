@@ -30,27 +30,26 @@ const unselectedDisabledImageAltText = "Unselected switch with disabled state";
   <SectionHeader id={id}>{title}</SectionHeader>
 
   <Description>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+    A switch can exist in one of four states.
   </Description>
 
   <ColumnLayout bkgColor="white" numOfColumns={4}>
-    <StackedLayout label="Unselected">
+    <StackedLayout label="Off">
       <Image src={StateUnselectedImage} alt={unselectedImageAltText} />
     </StackedLayout>
 
-    <StackedLayout label="Selected">
+    <StackedLayout label="On">
       <Image src={StateSelectedImage} alt={selectedImageAltText} />
     </StackedLayout>
 
-    <StackedLayout label="Selected Disabled">
+    <StackedLayout label="Off - Disabled">
       <Image
         src={StateSelectedDisabledImage}
         alt={selectedDisabledImageAltText}
       />
     </StackedLayout>
 
-    <StackedLayout label="Unselected Disabled">
+    <StackedLayout label="On - Disabled">
       <Image
         src={StateUnselectedDisabledImage}
         alt={unselectedDisabledImageAltText}
@@ -59,14 +58,14 @@ const unselectedDisabledImageAltText = "Unselected switch with disabled state";
   </ColumnLayout>
 
   <InfoList type="disc">
-    <InfoListItem label="Unselected">Description</InfoListItem>
+    <InfoListItem label="Off">With the switch in this position (left) the function is disabled/inactive.</InfoListItem>
 
-    <InfoListItem label="Selected">
-      Indicates whether the switch is on or off
+    <InfoListItem label="On">
+      In this position (right), the function is enabled/active.
     </InfoListItem>
 
-    <InfoListItem label="Selected Disabled">Description</InfoListItem>
+    <InfoListItem label="On Disabled">This switch is unavailable (greyed out) and the function is currently enabled/active.</InfoListItem>
 
-    <InfoListItem label="Unselected Disabled">Description</InfoListItem>
+    <InfoListItem label="Off Disabled">This switch is unavailable and the function is currently disabled/inactive.</InfoListItem>
   </InfoList>
 </PageleteSection>
