@@ -18,14 +18,7 @@ import {
   TypesDefaultImage,
   TypesGroupImage,
   TypesSelectedImage,
-  TypesDoImage,
-  TypesDontImage,
 } from "../imgs";
-import { DoAndDont } from "components";
-
-const DoAltText = "Use dividers to group related items.";
-
-const DontAltText = "Do not place dividers between each item.";
 ---
 
 <PageleteSection>
@@ -85,18 +78,4 @@ const DontAltText = "Do not place dividers between each item.";
       sections. This makes it easier to find items in longer lists.
     </InfoListItem>
   </InfoList>
-
-  <DoAndDont>
-    <DoAndDont.DoContainer instructions={DoAltText}>
-      <DoAndDont.ImageExampleContainer>
-        <Image src={TypesDoImage} alt={DoAltText} />
-      </DoAndDont.ImageExampleContainer>
-    </DoAndDont.DoContainer>
-
-    <DoAndDont.DontContainer instructions={DontAltText}>
-      <DoAndDont.ImageExampleContainer>
-        <Image src={TypesDontImage} alt={DontAltText} />
-      </DoAndDont.ImageExampleContainer>
-    </DoAndDont.DontContainer>
-  </DoAndDont>
 </PageleteSection>

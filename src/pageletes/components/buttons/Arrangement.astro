@@ -2,11 +2,12 @@
 import { Image } from "@avaya/neo-react";
 import { Description, SubHeader, DoAndDont } from "components";
 
-import ArrangementDo from "./button-imgs/do-arrangement1.svg";
-import ArrangementDont from "./button-imgs/dont-arrangement1.svg";
+import ArrangementDo from "./button-imgs/button-behavior-text-arrangement-do-1.svg";
+import ArrangementDont from "./button-imgs/button-behavior-text-arrangement-dont-1.svg";
 
 const arrangementDoInstructions =
-  "Prioritize the calls to actions by using one primary button per page. Multiple secondary and tertiary actions can be used.";
+  "Use colors to help convey the state where appropiate. Refer to the Colors guideline for additional information.";
+
 const arrangementDoImgAltText =
   "image showing a confimation dialog with three buttons, two secondary and then one primary";
 
@@ -29,7 +30,7 @@ const arrangementDontImgAltText =
   attention properly focused.
 </Description>
 
-<DoAndDont size="wide">
+<DoAndDont>
   <DoAndDont.DoContainer instructions={arrangementDoInstructions}>
     <DoAndDont.ImageExampleContainer>
       <Image src={ArrangementDo} alt={arrangementDoImgAltText} />

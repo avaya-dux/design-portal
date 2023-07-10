@@ -11,9 +11,6 @@ import WidthDontImage1 from "./width-dont-1.svg";
 import WidthDoImage2 from "./width-do-2.svg";
 import WidthDontImage2 from "./width-dont-2.svg";
 
-import TypesDoImage from "./types-do-1.svg";
-import TypesDontImage from "./types-dont-1.svg";
-
 import StatesDefaultImage from "./states-default.svg";
 import StatesHoverImage from "./states-hover.svg";
 import StatesDisabledImage from "./states-disabled.svg";
@@ -47,8 +44,6 @@ export {
   WidthDontImage1,
   WidthDoImage2,
   WidthDontImage2,
-  TypesDoImage,
-  TypesDontImage,
   StatesDefaultImage,
   StatesHoverImage,
   StatesDisabledImage,

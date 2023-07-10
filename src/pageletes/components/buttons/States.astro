@@ -12,10 +12,10 @@ import {
 } from "components/astro";
 import { topics } from "./static";
 
-import StateDefaultImage from "./button-imgs/states-default.svg";
-import StateDisabledImage from "./button-imgs/states-disabled.svg";
-import StateHoverImage from "./button-imgs/states-hover.svg";
-import StatePressedImage from "./button-imgs/states-pressed.svg";
+import StateDefaultImage from "./button-imgs/button-states-1.svg";
+import StateHoverImage from "./button-imgs/button-states-2.svg";
+import StatePressedImage from "./button-imgs/button-states-3.svg";
+import StateDisabledImage from "./button-imgs/button-states-4.svg";
 
 const defaultImageText = "Buttons with default state look like this";
 ---
@@ -29,25 +29,25 @@ const defaultImageText = "Buttons with default state look like this";
   </Description>
 
   <ColumnLayout bkgColor="white" numOfColumns={4}>
-    <StackedLayout>
+    <StackedLayout label="Default">
       <Image src={StateDefaultImage} alt={defaultImageText} />
     </StackedLayout>
 
-    <StackedLayout>
+    <StackedLayout label="Hover">
       <Image
         src={StateHoverImage}
         alt="Buttons with hover state look like this"
       />
     </StackedLayout>
 
-    <StackedLayout>
+    <StackedLayout label="Pressed">
       <Image
         src={StatePressedImage}
         alt="Buttons with pressed state look like this"
       />
     </StackedLayout>
 
-    <StackedLayout>
+    <StackedLayout label="Disabled">
       <Image
         src={StateDisabledImage}
         alt="Buttons with disabled state look like this"
@@ -56,7 +56,7 @@ const defaultImageText = "Buttons with default state look like this";
   </ColumnLayout>
 
   <InfoList type="disc">
-    <InfoListItem label="Normal">
+    <InfoListItem label="Default">
       This is the default state for the button. When nothing else is happening,
       it adopts the Normal state (sometimes called “Up”).
     </InfoListItem>
