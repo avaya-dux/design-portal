@@ -48,24 +48,24 @@ const getHeader = (type: TypeOption) => {
 };
 const getDescription = (type: TypeOption, rightSideOption: RightSideOption) => {
   if (rightSideOption == "timer") {
-    return "You can pass a 'count' action to display a timer.";
+    return "A timer display";
   }
 
   if (rightSideOption == "button") {
-    return "You can override the default action with your own";
+    return "Two custom actions";
   }
 
   switch (type) {
     case "info":
-      return "This is some info";
+      return "An info with close action";
     case "success":
-      return "Successful action completed";
+      return "A success with close action";
     case "warning":
-      return "This is a warning";
+      return "A warning with close action";
     case "alert":
-      return "This is an alert";
+      return "An alert with close action";
     case "event":
-      return "This is an event";
+      return "An event with close action";
     default:
       return "";
   }
@@ -101,11 +101,6 @@ export const PlaygroundImplementation = () => {
   const [rightSideOption, setRightSideOption] =
     useState<RightSideOption>("close");
   const [closed, setClosed] = useState(false);
-  useEffect(() => {
-    if (type !== "alert" && type !== "event" && rightSideOption === "button") {
-      setRightSideOption("close");
-    }
-  }, [type, rightSideOption]);
 
   const [element, react, html] = useMemo(() => {
     const icon = getIcon(type);
@@ -123,25 +118,6 @@ export const PlaygroundImplementation = () => {
       prettyPrintReactElementToHtml(element),
     ];
   }, [type, lineOption, rightSideOption, setClosed]);
-
-  const createRadios = useCallback(() => {
-    if (type === "alert" || type === "event") {
-      return (
-        <>
-          <Radio value="button">Button</Radio>
-          <Radio value="timer">Timer</Radio>
-          <Radio value="close">Close</Radio>
-        </>
-      );
-    } else {
-      return (
-        <>
-          <Radio value="timer">Timer</Radio>
-          <Radio value="close">Close</Radio>
-        </>
-      );
-    }
-  }, [type]);
 
   return (
     <Playground
@@ -187,7 +163,9 @@ export const PlaygroundImplementation = () => {
                 setClosed(false);
               }}
             >
-              {createRadios().props.children}
+              <Radio value="button">Button</Radio>
+              <Radio value="timer">Timer</Radio>
+              <Radio value="close">Close</Radio>
             </RadioGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
