@@ -48,7 +48,7 @@ const getHeader = (type: TypeOption) => {
 };
 const getDescription = (type: TypeOption, rightSideOption: RightSideOption) => {
   if (rightSideOption == "timer") {
-    return "You can pass a 'count' action to display a timer, but you must increment the timer yourself";
+    return "You can pass a 'count' action to display a timer.";
   }
 
   if (rightSideOption == "button") {
