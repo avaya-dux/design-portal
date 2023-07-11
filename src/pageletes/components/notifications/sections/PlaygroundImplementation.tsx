@@ -78,10 +78,8 @@ const getAction = (
   switch (rightSideOption) {
     case "close":
       return {
-        onClick: (e) => {
+        onClick: () => {
           alert("Close Clicked");
-          e.preventDefault();
-          e.stopPropagation();
           setClosed(true);
         },
       };
