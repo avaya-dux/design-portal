@@ -21,29 +21,31 @@ type ShimmerTopicNames =
   | "behavior"
   | "relatedContent";
 
+const component = "shimmer";
+
 export const topics: TopicsDict<ShimmerTopicNames> = {
   playground: {
     order: 0,
-    id: "shimmer-playground",
+    id: `${component}-playground`,
     title: "Interactive Playground",
   },
   anatomy: {
     order: 1,
-    id: "shimmer-anatomy",
+    id: `${component}-anatomy`,
     title: "Anatomy",
   },
   type: {
     order: 2,
-    id: "shimmer-type",
+    id: `${component}-type`,
     title: "Type",
   },
   behavior: {
-    order: 3,
-    id: "shimmer-behavior",
+    order: 4,
+    id: `${component}-behavior`,
     title: "Behavior",
   },
   relatedContent: {
-    order: 4,
+    order: 5,
     id: "shimmer-related-content",
     title: "Related Content",
   },

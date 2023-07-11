@@ -1,5 +1,5 @@
 ---
-import { PageleteSection, SectionHeader } from "components/astro";
+import { Description, PageleteSection, SectionHeader } from "components/astro";
 import { topics } from "../static";
 
 import {
@@ -18,6 +18,19 @@ const { id, title } = topics.behavior;
   <SectionHeader id={id}>
     {title}
   </SectionHeader>
+
+  <Description>
+    A checkbox is used to allow the user to select one or more options from a
+    list. The icon varies in appearance according to the current state of the
+    item or list.
+  </Description>
+
+  <Description>
+    Checkbox items can be stacked in an hierarchical structure. Higher level
+    items can have multiple items within it. These sub-items can also have other
+    stacked list items within them. If only a single item can ever be selected
+    at one time, use a Radio instead.
+  </Description>
 
   <WhenToUse />
 
