@@ -6,3 +6,6 @@ export { Anatomy };
 
 import Type from "./Type.astro";
 export { Type };
+
+import Behavior from "./Behavior.astro";
+export { Behavior };

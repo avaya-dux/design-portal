@@ -1,0 +1,24 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components/astro";
+import { topics } from "../static";
+
+import {
+  UserTypes,
+} from "./subsections";
+
+const { id, title } = topics.behavior;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    Use an avatar to better identify contacts in a directory or another environment,
+     such as during a chat session. Each contact has their own avatar to help recognize who is speaking, or which person you want to connect with.
+  </Description>
+
+  <UserTypes />
+
+</PageleteSection>
