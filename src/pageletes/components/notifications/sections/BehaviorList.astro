@@ -1,0 +1,45 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { Description, PageleteSubSection, SubHeader } from "components/astro";
+
+import { DoAndDont } from "components/react";
+
+import behaviorDo from "../imgs/notification-behavior-do-1.svg";
+import behaviorDont from "../imgs/notification-behavior-dont-1.svg";
+
+const behaviorDoAltText =
+    "Use notifications for priority items that need immediate attention.";
+const behaviorDontAltText =
+    "Do not use notifications for frequent actions. Use a toast instead.";
+---
+
+<PageleteSubSection>
+    <SubHeader id="notifications-behavior-list">Notification List</SubHeader>
+
+    <Description>
+      Notifications provide limited space for content, and therefore the content
+      must be short and concise. A user should be able to quickly scan the
+      notification, be apprised of the situation, and know what to do next.
+    </Description>
+    <Description>
+      If General Notification requires a message longer than two lines, use an
+      actionable notification and include a short message with a “Show more”
+      link that takes the user to a view of the full notification message. This
+      can be either a full page with more details or a Sheet.
+    </Description>
+
+    <DoAndDont>
+        <DoAndDont.DoContainer instructions={behaviorDoAltText}>
+            <DoAndDont.ImageExampleContainer>
+                <Image src={behaviorDo} alt={behaviorDoAltText} />
+            </DoAndDont.ImageExampleContainer>
+        </DoAndDont.DoContainer>
+
+        <DoAndDont.DontContainer instructions={behaviorDontAltText}>
+            <DoAndDont.ImageExampleContainer>
+                <Image src={behaviorDont} alt={behaviorDontAltText} />
+            </DoAndDont.ImageExampleContainer>
+        </DoAndDont.DontContainer>
+    </DoAndDont>
+</PageleteSubSection>

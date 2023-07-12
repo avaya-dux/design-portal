@@ -1,0 +1,38 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { Description, PageleteSubSection, SubHeader } from "components/astro";
+
+import { DoAndDont } from "components/react";
+
+import behaviorDo from "../imgs/notification-behavior-do-1.svg";
+import behaviorDont from "../imgs/notification-behavior-dont-1.svg";
+
+const behaviorDoAltText =
+    "Use notifications for priority items that need immediate attention.";
+const behaviorDontAltText =
+    "Do not use notifications for frequent actions. Use a toast instead.";
+---
+
+<PageleteSubSection>
+    <SubHeader id="notifications-behavior-elevation">Elevation</SubHeader>
+
+    <Description>
+        Each type of notification is matched with a specific color to further
+        enhance its meaning.
+    </Description>
+
+    <DoAndDont>
+        <DoAndDont.DoContainer instructions={behaviorDoAltText}>
+            <DoAndDont.ImageExampleContainer>
+                <Image src={behaviorDo} alt={behaviorDoAltText} />
+            </DoAndDont.ImageExampleContainer>
+        </DoAndDont.DoContainer>
+
+        <DoAndDont.DontContainer instructions={behaviorDontAltText}>
+            <DoAndDont.ImageExampleContainer>
+                <Image src={behaviorDont} alt={behaviorDontAltText} />
+            </DoAndDont.ImageExampleContainer>
+        </DoAndDont.DontContainer>
+    </DoAndDont>
+</PageleteSubSection>

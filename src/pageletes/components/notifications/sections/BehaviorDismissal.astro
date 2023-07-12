@@ -1,0 +1,44 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { Description, PageleteSubSection, SubHeader } from "components/astro";
+
+import { DoAndDont } from "components/react";
+
+import behaviorDo from "../imgs/notification-behavior-do-1.svg";
+import behaviorDont from "../imgs/notification-behavior-dont-1.svg";
+
+const behaviorDoAltText =
+    "Use notifications for priority items that need immediate attention.";
+const behaviorDontAltText =
+    "Do not use notifications for frequent actions. Use a toast instead.";
+---
+
+<PageleteSubSection>
+    <SubHeader id="notifications-behavior-dismissal">Dismissal</SubHeader>
+
+    <Description>
+      Notifications do not dismiss automatically. They persist on the page until
+      the user dismisses them or takes action that resolves the notification.
+    </Description>
+
+    <Description>
+      A small “x” is used to dismiss notifications. Including the close button
+      is optional and should not be included if it is critical for a user to
+      read or interact with the notification.
+    </Description>
+    
+    <DoAndDont>
+        <DoAndDont.DoContainer instructions={behaviorDoAltText}>
+            <DoAndDont.ImageExampleContainer>
+                <Image src={behaviorDo} alt={behaviorDoAltText} />
+            </DoAndDont.ImageExampleContainer>
+        </DoAndDont.DoContainer>
+
+        <DoAndDont.DontContainer instructions={behaviorDontAltText}>
+            <DoAndDont.ImageExampleContainer>
+                <Image src={behaviorDont} alt={behaviorDontAltText} />
+            </DoAndDont.ImageExampleContainer>
+        </DoAndDont.DontContainer>
+    </DoAndDont>
+</PageleteSubSection>
