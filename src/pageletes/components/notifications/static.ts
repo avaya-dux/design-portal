@@ -3,7 +3,6 @@ import type { TopicsDict } from "components";
 type NotificationsTopicNames =
   | "playground"
   | "anatomy"
-  | "states"
   | "type"
   | "behavior"
   | "specs"
