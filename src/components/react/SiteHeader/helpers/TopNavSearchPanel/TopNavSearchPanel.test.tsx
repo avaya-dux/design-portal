@@ -10,7 +10,7 @@ describe("TopNavSearchPanel", () => {
     render(
       <TopNavSearchPanel open options={pagesMockData}>
         <TextInput aria-label="test text input" />
-      </TopNavSearchPanel>
+      </TopNavSearchPanel>,
     );
 
     const rootElement = screen.getByRole("dialog");
@@ -28,7 +28,7 @@ describe("TopNavSearchPanel", () => {
     render(
       <TopNavSearchPanel open options={pagesMockData}>
         <TextInput aria-label="test text input" />
-      </TopNavSearchPanel>
+      </TopNavSearchPanel>,
     );
 
     const keyboardNavInstructions = screen.getAllByRole("img");
@@ -52,7 +52,7 @@ describe("TopNavSearchPanel", () => {
     const { container } = render(
       <TopNavSearchPanel open options={pagesMockData}>
         <TextInput aria-label="test text input" />
-      </TopNavSearchPanel>
+      </TopNavSearchPanel>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

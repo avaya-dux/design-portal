@@ -51,7 +51,7 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
         isLeftNavigationOpen.set(false);
       }
     },
-    [isOpen]
+    [isOpen],
   );
 
   useEffect(() => {
@@ -91,7 +91,7 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
           styles["icon-filters"],
           isOpen
             ? styles["icon-filters--active"]
-            : styles["icon-filters--hidden"]
+            : styles["icon-filters--hidden"],
         )}
       >
         <div className={styles["icon-filters__toggle"]}>
@@ -133,7 +133,7 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
 
               const tempFilteredCategories = updateFilteredArray(
                 filteredCategories,
-                category
+                category,
               );
 
               categoriesToFilterFor.set([...tempFilteredCategories]);
@@ -168,7 +168,7 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
 
               const tempFilteredVariations = updateFilteredArray(
                 filteredVariations,
-                variation
+                variation,
               );
 
               variationsToFilterFor.set([...tempFilteredVariations]);

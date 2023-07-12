@@ -93,7 +93,7 @@ export const Playground = ({
     (panel: number) => {
       setActivePanel(panel);
     },
-    [setActivePanel]
+    [setActivePanel],
   );
 
   return (

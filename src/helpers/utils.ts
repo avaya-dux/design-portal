@@ -10,7 +10,7 @@ export const prettyPrintReactElementToHtml = (element: ReactElement) => {
 
 export const prettyPrintReactElementToString = (
   element: ReactElement,
-  options?: Options
+  options?: Options,
 ) => {
   return reactElementToJSXString(element, options);
 };

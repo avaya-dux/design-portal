@@ -39,7 +39,7 @@ export const LeftNavigation = ({
     (
       event: KeyboardEvent,
       firstFocusableElement: HTMLElement,
-      lastFocusableElement: HTMLElement
+      lastFocusableElement: HTMLElement,
     ) => {
       if (isOpen && event.key === "Escape") {
         isLeftNavigationOpen.set(false);
@@ -47,7 +47,7 @@ export const LeftNavigation = ({
 
       trapFocus(event, firstFocusableElement, lastFocusableElement);
     },
-    [isOpen]
+    [isOpen],
   );
 
   useEffect(() => {
@@ -59,7 +59,7 @@ export const LeftNavigation = ({
     const lastFocusableElement = document
       .querySelector(".left-navigation")
       ?.querySelectorAll(
-        `[href="${pages[pages.length - 1]?.url}"]`
+        `[href="${pages[pages.length - 1]?.url}"]`,
       )[0] as HTMLElement;
 
     const firstFocusableElement =
@@ -69,12 +69,12 @@ export const LeftNavigation = ({
             .current as HTMLElement);
 
     document.addEventListener("keydown", (event) =>
-      handleKeyDown(event, firstFocusableElement, lastFocusableElement)
+      handleKeyDown(event, firstFocusableElement, lastFocusableElement),
     );
 
     return () => {
       document.removeEventListener("keydown", (event) =>
-        handleKeyDown(event, firstFocusableElement, lastFocusableElement)
+        handleKeyDown(event, firstFocusableElement, lastFocusableElement),
       );
     };
   }, [handleKeyDown, isOpen, pages, toggleButtonRef, width]);
@@ -84,7 +84,7 @@ export const LeftNavigation = ({
       <div
         className={clsx(
           "left-navigation",
-          isOpen ? "left-navigation--active" : "left-navigation--hidden"
+          isOpen ? "left-navigation--active" : "left-navigation--hidden",
         )}
         id="left-navigation"
       >
@@ -106,7 +106,7 @@ export const LeftNavigation = ({
               label={page.title}
               href={page.url as string}
               className={clsx(
-                currentUrl === page.url && "neo-leftnav__main--active"
+                currentUrl === page.url && "neo-leftnav__main--active",
               )}
             />
           ))}

@@ -27,7 +27,7 @@ describe("Left Navigation", () => {
     keepMount(isLeftNavigationOpen);
 
     const { rerender } = render(
-      <LeftNavigation pages={pagesMockData} currentUrl="/" />
+      <LeftNavigation pages={pagesMockData} currentUrl="/" />,
     );
 
     const navElement = screen.getByRole("navigation");
@@ -86,7 +86,7 @@ describe("Left Navigation", () => {
 
   it("passes basic axe compliance", async () => {
     const { container } = render(
-      <LeftNavigation pages={pagesMockData} currentUrl="/" />
+      <LeftNavigation pages={pagesMockData} currentUrl="/" />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
