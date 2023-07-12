@@ -1,128 +1,171 @@
-import { Notification, Radio, RadioGroup } from "@avaya/neo-react";
-import { useMemo, useState } from "react";
+import {
+  Notification,
+  Radio,
+  RadioGroup,
+  Select,
+  NotificationProps,
+  SelectOption,
+} from "@avaya/neo-react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+  type Dispatch,
+  type SetStateAction,
+} from "react";
 
 import { Playground } from "components";
-import { prettyPrintHtml, prettyPrintReact } from "helpers";
+
+import {
+  prettyPrintReactElementToHtml,
+  prettyPrintReactElementToString,
+} from "helpers";
 
 export const sandbox =
   "https://codesandbox.io/s/neo-react-notifications-dcplsu?file=/src/App.js";
 export const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-notification";
 
-type TypeOption = "default" | "actions" | "timer";
+type TypeOption = "info" | "success" | "warning" | "alert" | "event";
+type LineOption = "one" | "two";
+type RightSideOption = "close" | "timer" | "button";
+
+const getIcon = (type: TypeOption) => {
+  switch (type) {
+    case "event":
+      return "copy";
+    case "success":
+      return "check";
+    default:
+      return type;
+  }
+};
+
+const getHeader = (type: TypeOption) => {
+  const s = type as string;
+  return s.charAt(0).toUpperCase() + s.slice(1);
+};
+const getDescription = (type: TypeOption, rightSideOption: RightSideOption) => {
+  if (rightSideOption == "timer") {
+    return "A timer display";
+  }
+
+  if (rightSideOption == "button") {
+    return "Two custom actions";
+  }
+
+  switch (type) {
+    case "info":
+      return "An info with close action";
+    case "success":
+      return "A success with close action";
+    case "warning":
+      return "A warning with close action";
+    case "alert":
+      return "An alert with close action";
+    case "event":
+      return "An event with close action";
+    default:
+      return "";
+  }
+};
+
+const getAction = (
+  rightSideOption: RightSideOption,
+  setClosed: Dispatch<SetStateAction<boolean>>
+) => {
+  switch (rightSideOption) {
+    case "close":
+      return {
+        onClick: () => {
+          alert("Close Clicked");
+          setClosed(true);
+        },
+      };
+    case "timer":
+      return { count: "12:34:56" };
+    default:
+      return {
+        buttons: [
+          { children: "Edit", onClick: () => alert("Edit Clicked") },
+          { children: "Alert", onClick: () => alert("Alert Clicked") },
+        ],
+      };
+  }
+};
 
 export const PlaygroundImplementation = () => {
-  const [typeOption, setTypeOption] = useState<TypeOption>("default");
+  const [type, setType] = useState<TypeOption>("info");
+  const [lineOption, setLineOption] = useState<LineOption>("one");
+  const [rightSideOption, setRightSideOption] =
+    useState<RightSideOption>("close");
+  const [closed, setClosed] = useState(false);
 
-  const [react, html] = useMemo(() => {
-    let reactCode = "";
-    let htmlCode = "";
-
-    switch (typeOption) {
-      case "actions":
-        reactCode = prettyPrintReact(`
-<Notification
-  type="event"
-  icon="info"
-  header="Alternate Options"
-  description="You can override the default action with your own"
-  action={{
-    buttons: [
-      { children: "Edit", onClick: () => alert("Edit Clicked") },
-      { children: "Alert", onClick: () => alert("Alert Clicked") },
-    ],
-  }}
-/>
-<Notification
-  type="event"
-  icon="info"
-  header="Additional Click Handler"
-  description="You can also add a click handler to the notification close event"
-  action={{
-    onClick: () => alert("Close Clicked"),
-  }}
-/>
-        `);
-
-        htmlCode = prettyPrintHtml(
-          `<div class="neo-notification neo-notification--event" role="alert" aria-live="polite"><div role="img" class="neo-notification__icon neo-icon-info" aria-label="icon info"></div><div class="neo-notification__message"><div class="neo-notification__title">Alternate Options</div><div class="neo-notification__description">You can override the default action with your own</div></div><div class="neo-notification__options"><button class="neo-btn neo-btn--default neo-btn-secondary neo-btn-secondary--default">Edit</button><button class="neo-btn neo-btn--default neo-btn-secondary neo-btn-secondary--default">Alert</button></div></div><div class="neo-notification neo-notification--event" role="alert" aria-live="polite"><div role="img" class="neo-notification__icon neo-icon-info" aria-label="icon info"></div><div class="neo-notification__message"><div class="neo-notification__title">Additional Click Handler</div><div class="neo-notification__description">You can also add a click handler to the notification close event</div></div><button aria-label="close notification" class="neo-icon-end"></button></div>`
-        );
-        break;
-
-      case "timer":
-        reactCode = prettyPrintReact(`
-<Notification
-  type="info"
-  icon="info"
-  header="Timer Notification"
-  description="You can pass a 'count' action to display a timer, but you must increment the timer yourself"
-  action={{ count: "12:34:56" }}
-/>
-        `);
-
-        htmlCode = prettyPrintHtml(
-          `<div class="neo-notification neo-notification--info" role="alert" aria-live="polite"><div role="img" class="neo-notification__icon neo-icon-info" aria-label="icon info"></div><div class="neo-notification__message"><div class="neo-notification__title">Timer Notification</div><div class="neo-notification__description">You can pass a 'count' action to display a timer, but you must increment the timer yourself</div></div><div class="neo-notification__counter">12:34:56</div></div>`
-        );
-        break;
-
-      default:
-        reactCode = prettyPrintReact(`
-<Notification
-  icon="check"
-  type="success"
-  header="Success"
-  description="Successful action completed"
-/>
-<Notification
-  icon="warning"
-  type="warning"
-  header="Warning"
-  description="This is a warning"
-/>
-<Notification
-  icon="alert"
-  type="alert"
-  header="Alert"
-  description="This is an alert"
-/>
-<Notification
-  icon="info"
-  type="info"
-  header="Info"
-  description="This is some info"
-/>
-<Notification
-  icon="copy"
-  type="event"
-  header="Event"
-  description="This is an event"
-/>
-        `);
-
-        htmlCode = prettyPrintHtml(
-          `<div class="neo-notification neo-notification--success" role="alert" aria-live="polite"><div role="img" class="neo-notification__icon neo-icon-check" aria-label="icon check"></div><div class="neo-notification__message"><div class="neo-notification__title">Success</div><div class="neo-notification__description">Successful action completed</div></div><button aria-label="close notification" class="neo-icon-end"></button></div><div class="neo-notification neo-notification--warning" role="alert" aria-live="polite"><div role="img" class="neo-notification__icon neo-icon-warning" aria-label="icon warning"></div><div class="neo-notification__message"><div class="neo-notification__title">Warning</div><div class="neo-notification__description">This is a warning</div></div><button aria-label="close notification" class="neo-icon-end"></button></div><div class="neo-notification neo-notification--alert" role="alert" aria-live="polite"><div role="img" class="neo-notification__icon neo-icon-alert" aria-label="icon alert"></div><div class="neo-notification__message"><div class="neo-notification__title">Alert</div><div class="neo-notification__description">This is an alert</div></div><button aria-label="close notification" class="neo-icon-end"></button></div><div class="neo-notification neo-notification--info" role="alert" aria-live="polite"><div role="img" class="neo-notification__icon neo-icon-info" aria-label="icon info"></div><div class="neo-notification__message"><div class="neo-notification__title">Info</div><div class="neo-notification__description">This is some info</div></div><button aria-label="close notification" class="neo-icon-end"></button></div><div class="neo-notification neo-notification--event" role="alert" aria-live="polite"><div role="img" class="neo-notification__icon neo-icon-copy" aria-label="icon copy"></div><div class="neo-notification__message"><div class="neo-notification__title">Event</div><div class="neo-notification__description">This is an event</div></div><button aria-label="close notification" class="neo-icon-end"></button></div>`
-        );
-        break;
+  const [element, react, html] = useMemo(() => {
+    const icon = getIcon(type);
+    const action = getAction(rightSideOption, setClosed);
+    const description = getDescription(type, rightSideOption);
+    let props: NotificationProps = { type, icon, description, action };
+    const header = getHeader(type);
+    if (lineOption == "two") {
+      props = { ...props, header };
     }
-
-    return [reactCode, htmlCode];
-  }, [typeOption]);
+    const element = <Notification {...props} />;
+    return [
+      element,
+      prettyPrintReactElementToString(element),
+      prettyPrintReactElementToHtml(element),
+    ];
+  }, [type, lineOption, rightSideOption, setClosed]);
 
   return (
     <Playground
       options={
         <Playground.OptionsContainer>
           <Playground.OptionsSection title="Type">
-            <RadioGroup
-              groupName="type-options"
-              selected={typeOption}
-              onChange={(e) => {
-                setTypeOption(e.target.value as TypeOption);
+            <Select
+              aria-label="Notification Type"
+              value={type}
+              onChange={(value: string) => {
+                setType(value as TypeOption);
+                setClosed(false);
               }}
             >
-              <Radio value="default">Default</Radio>
-              <Radio value="actions">Actions</Radio>
+              <SelectOption value="info">Info</SelectOption>
+              <SelectOption value="success">Success</SelectOption>
+              <SelectOption value="warning">Warning</SelectOption>
+              <SelectOption value="alert">Alert</SelectOption>
+              <SelectOption value="event">Event</SelectOption>
+            </Select>
+          </Playground.OptionsSection>
+          <Playground.OptionsSection title="Line of texts">
+            <RadioGroup
+              groupName="line-of-texts"
+              selected={lineOption}
+              onChange={(e: { target: { value: string } }) => {
+                setLineOption(e.target.value as LineOption);
+                setClosed(false);
+              }}
+            >
+              <Radio value="one">1</Radio>
+              <Radio value="two">2</Radio>
+            </RadioGroup>
+          </Playground.OptionsSection>
+
+          <Playground.OptionsSection title="Right Side">
+            <RadioGroup
+              groupName="right-side-options"
+              selected={rightSideOption}
+              onChange={(e: { target: { value: string } }) => {
+                console.log(e.target.value);
+                setRightSideOption(e.target.value as RightSideOption);
+                setClosed(false);
+              }}
+            >
+              <Radio value="button">Button</Radio>
               <Radio value="timer">Timer</Radio>
+              <Radio value="close">Close</Radio>
             </RadioGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
@@ -134,78 +177,7 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      <div style={{ width: "100%" }}>
-        {typeOption === "default" && (
-          <>
-            <Notification
-              icon="check"
-              type="success"
-              header="Success"
-              description="Successful action completed"
-            />
-            <Notification
-              icon="warning"
-              type="warning"
-              header="Warning"
-              description="This is a warning"
-            />
-            <Notification
-              icon="alert"
-              type="alert"
-              header="Alert"
-              description="This is an alert"
-            />
-            <Notification
-              icon="info"
-              type="info"
-              header="Info"
-              description="This is some info"
-            />
-            <Notification
-              icon="copy"
-              type="event"
-              header="Event"
-              description="This is an event"
-            />
-          </>
-        )}
-
-        {typeOption === "actions" && (
-          <>
-            <Notification
-              type="event"
-              icon="info"
-              header="Alternate Options"
-              description="You can override the default action with your own"
-              action={{
-                buttons: [
-                  { children: "Edit", onClick: () => alert("Edit Clicked") },
-                  { children: "Alert", onClick: () => alert("Alert Clicked") },
-                ],
-              }}
-            />
-            <Notification
-              type="event"
-              icon="info"
-              header="Additional Click Handler"
-              description="You can also add a click handler to the notification close event"
-              action={{
-                onClick: () => alert("Close Clicked"),
-              }}
-            />
-          </>
-        )}
-
-        {typeOption === "timer" && (
-          <Notification
-            type="info"
-            icon="info"
-            header="Timer Notification"
-            description="You can pass a 'count' action to display a timer, but you must increment the timer yourself"
-            action={{ count: "12:34:56" }}
-          />
-        )}
-      </div>
+      <div style={{ width: "100%" }}>{closed ? null : element}</div>
     </Playground>
   );
 };
