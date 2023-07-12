@@ -23,11 +23,6 @@ export const topics: TopicsDict<NotificationsTopicNames> = {
     id: `${component}-anatomy`,
     title: "Anatomy",
   },
-  states: {
-    order: 2,
-    id: `${component}-states`,
-    title: "States",
-  },
   type: {
     order: 3,
     id: `${component}-type`,
