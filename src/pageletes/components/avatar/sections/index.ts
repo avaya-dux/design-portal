@@ -9,3 +9,6 @@ export { Type };
 
 import Behavior from "./Behavior.astro";
 export { Behavior };
+
+import Specs from "./Specs.astro";
+export { Specs }
