@@ -1,7 +1,6 @@
 import type { TopicsDict } from "components";
 
-export const sandbox =
-  "https://codesandbox.io/";
+export const sandbox = "https://codesandbox.io/";
 export const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/";
 
