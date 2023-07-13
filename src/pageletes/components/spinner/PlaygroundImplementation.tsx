@@ -20,10 +20,10 @@ export const PlaygroundImplementation = () => {
   class="${clsx(
     "neo-spinner",
     size === "lg" && "neo-spinner--large",
-    size === "xl" && "neo-spinner--x-large"
+    size === "xl" && "neo-spinner--x-large",
   )}"
 ></div>`,
-    [size]
+    [size],
   );
 
   return (

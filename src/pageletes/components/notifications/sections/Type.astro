@@ -1,6 +1,9 @@
 ---
+import { Image } from "@avaya/neo-react";
+
 import {
   Description,
+  ImageWrapper,
   PageleteSection,
   PageleteSubSection,
   SectionHeader,
@@ -10,32 +13,38 @@ import {
 import { topics } from "../static";
 
 const { id, title } = topics.type;
+
+import generalImage from "../imgs/notification-type-general-1.svg";
+const generalImgAltText =
+  "Image showing a general notification";
+
+import inlineImage from "../imgs/notification-type-inline-1.svg";
+const inlineImgAltText =
+  "Image showing an inline notification";
 ---
 
 <PageleteSection>
   <SectionHeader id={id}>{title}</SectionHeader>
 
   <Description>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+    There are two variations of a notification: general and inline.
   </Description>
 
-  <PageleteSubSection marginTop="4rem">
+  <PageleteSubSection>
     <SubHeader id="notifications-general-notifications">
       General Notifications
     </SubHeader>
 
     <Description>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam.
+      Notifications appear at the bottom left corner of a dashboard. As this may
+      appear over existing content, a faint drop shadow is used to separate
+      itself from the background elements. If multiple notifications appear at
+      the same time, they stack on top of each other.
     </Description>
 
-    <Description>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam.
-    </Description>
+    <ImageWrapper padding="0">
+      <Image src={generalImage} alt={generalImgAltText} />
+    </ImageWrapper>
   </PageleteSubSection>
 
   <PageleteSubSection>
@@ -44,21 +53,13 @@ const { id, title } = topics.type;
     </SubHeader>
 
     <Description>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam.
+      Inline notifications are embedded into the page such as in a form. As the
+      inline notification is part of the form, it does not need the drop shadow
+      effect.
     </Description>
-  </PageleteSubSection>
 
-  <PageleteSubSection>
-    <SubHeader id="notifications-notifications-list">
-      Notifications List
-    </SubHeader>
-
-    <Description>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam.
-    </Description>
+    <ImageWrapper padding="0">
+      <Image src={inlineImage} alt={inlineImgAltText} />
+    </ImageWrapper>
   </PageleteSubSection>
 </PageleteSection>

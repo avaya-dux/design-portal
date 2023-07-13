@@ -3,7 +3,7 @@ import type { IconProps } from "./iconType";
 
 export const findIcons = (
   icons: IconProps[],
-  searchFor: string
+  searchFor: string,
 ): IconProps[] => {
   let iconSearchResults = icons;
   if (searchFor.length > 0) {
@@ -24,7 +24,7 @@ export const findIcons = (
 
 export const filterIconsWithVariations = (
   icons: IconProps[],
-  filteredVariations: string[]
+  filteredVariations: string[],
 ): IconProps[] => {
   let iconsWithVariations = icons;
   if (filteredVariations.length) {
@@ -33,7 +33,7 @@ export const filterIconsWithVariations = (
       filteredVariations.includes("animated")
     ) {
       iconsWithVariations = icons.filter(
-        (icon) => icon.bidirectional && icon.animated
+        (icon) => icon.bidirectional && icon.animated,
       );
     } else {
       if (filteredVariations.includes("animated")) {

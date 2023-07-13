@@ -30,7 +30,7 @@ export const PlaygroundImplementation = () => {
   data="27"
 >
   <Icon icon="customer" aria-label="customer icon" />
-</Badge>`
+</Badge>`,
       );
 
       const reactWithText = prettyPrintReact(
@@ -39,7 +39,7 @@ export const PlaygroundImplementation = () => {
   data="27"
 >
   Badge with Text
-</Badge>`
+</Badge>`,
       );
 
       const htmlWithIcon = `<div>
@@ -61,7 +61,7 @@ export const PlaygroundImplementation = () => {
             >
             Badge with Text
             </span>
-            </div>`
+            </div>`,
       );
       return [
         isWithIcon,

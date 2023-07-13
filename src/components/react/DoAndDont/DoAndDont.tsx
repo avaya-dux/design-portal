@@ -49,7 +49,7 @@ export const DoAndDont = ({ children, size = "no-ratio" }: DoAndDontProps) => (
     className={clsx(
       "do-and-dont-container",
       size === "wide" && "do-and-dont-container-wide",
-      size == "no-ratio" && "do-and-dont-container-no-ratio"
+      size == "no-ratio" && "do-and-dont-container-no-ratio",
     )}
   >
     {children}

@@ -10,9 +10,6 @@ export { Anatomy };
 import Behavior from "./Behavior.astro";
 export { Behavior };
 
-import States from "./States.astro";
-export { States };
-
 import Specs from "./Specs.astro";
 export { Specs };
 

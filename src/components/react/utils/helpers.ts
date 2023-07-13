@@ -12,7 +12,7 @@ export const copyTextToClipboard = async (text: string) =>
 export const disableScrollOnMobile = (
   isOpen: boolean,
   currentWidth: number,
-  mobileMaxWidth: number
+  mobileMaxWidth: number,
 ) => {
   if (isOpen && currentWidth < mobileMaxWidth) {
     window.scroll(0, 0);
@@ -22,7 +22,7 @@ export const disableScrollOnMobile = (
 export const trapFocus = (
   event: KeyboardEvent,
   firstFocusableItem: HTMLElement,
-  lastFocusableItem: HTMLElement
+  lastFocusableItem: HTMLElement,
 ) => {
   if (event.key !== "Tab") {
     return;

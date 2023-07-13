@@ -12,7 +12,7 @@ export const createHtmlCode = (typeOption: string, disabled: boolean) => {
   return clsx(
     "<a",
     `class="${createHtmlClasses(typeOption, disabled)}"`,
-    'href="#main">Link</a>'
+    'href="#main">Link</a>',
   );
 };
 
@@ -20,7 +20,7 @@ const createHtmlClasses = (typeOption: string, disabled: boolean) => {
   return clsx(
     "neo-link",
     disabled && "neo-link__disabled",
-    typeOption === "inline" && "neo-link__inline"
+    typeOption === "inline" && "neo-link__inline",
   );
 };
 export const createReactCode = (typeOption: string, disabled: boolean) => {

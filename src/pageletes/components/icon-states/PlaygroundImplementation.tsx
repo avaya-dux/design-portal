@@ -28,9 +28,9 @@ export const PlaygroundImplementation = () => {
   const react = useMemo(
     () =>
       prettyPrintReact(
-        `<Icon aria-label="${label}" icon="${icon}" size="${size}" status="${status}" />`
+        `<Icon aria-label="${label}" icon="${icon}" size="${size}" status="${status}" />`,
       ),
-    [icon, label, size, status]
+    [icon, label, size, status],
   );
 
   const html = useMemo(
@@ -43,11 +43,11 @@ export const PlaygroundImplementation = () => {
           "neo-icon-state",
           size === "lg" && "neo-icon-state--large",
           `neo-icon-state--${status}`,
-          `neo-icon-${icon}`
+          `neo-icon-${icon}`,
         )}"
-        ></span>`
+        ></span>`,
       ),
-    [icon, label, size, status]
+    [icon, label, size, status],
   );
 
   return (

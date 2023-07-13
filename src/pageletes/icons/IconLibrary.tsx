@@ -41,7 +41,7 @@ export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
     }
 
     const newCategories = [...filteredCategories].sort((a, b) =>
-      a > b ? 1 : -1
+      a > b ? 1 : -1,
     );
 
     setIconCategoriesToDisplay([...newCategories]);
@@ -50,7 +50,7 @@ export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
   useEffect(() => {
     const iconsWithVariations = filterIconsWithVariations(
       icons,
-      filteredVariations
+      filteredVariations,
     );
 
     const iconSearchResults = findIcons(iconsWithVariations, searchIconNameFor);
@@ -58,8 +58,8 @@ export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
     if (filteredCategories.length) {
       setTotalNumberOfIconsDisplayed(
         iconSearchResults.filter((icon) =>
-          filteredCategories.includes(icon.category)
-        ).length
+          filteredCategories.includes(icon.category),
+        ).length,
       );
     } else {
       setTotalNumberOfIconsDisplayed(iconSearchResults.length);

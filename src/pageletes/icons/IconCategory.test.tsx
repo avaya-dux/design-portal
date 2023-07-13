@@ -23,15 +23,15 @@ describe("IconCategory", () => {
     render(<IconCategory category={exampleCategory} />);
 
     const allIconsInCategory = icons.filter(
-      (icon) => icon.category === exampleCategory
+      (icon) => icon.category === exampleCategory,
     );
 
     const bidirectionalIconsInCategory = allIconsInCategory.filter(
-      (icon) => icon.bidirectional
+      (icon) => icon.bidirectional,
     );
 
     const nonBidirectionalIconsInCategory = allIconsInCategory.filter(
-      (icon) => !icon.bidirectional
+      (icon) => !icon.bidirectional,
     );
 
     allIconsInCategory.forEach((icon) => {

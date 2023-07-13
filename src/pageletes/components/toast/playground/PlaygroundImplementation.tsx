@@ -26,7 +26,7 @@ export const PlaygroundImplementation = () => {
 
   const isDefault = useMemo(
     () => position === "top" && !icon && duration === 2000,
-    [position, icon, duration]
+    [position, icon, duration],
   );
 
   const react = useMemo(
@@ -36,7 +36,7 @@ export const PlaygroundImplementation = () => {
       }duration={${duration}}>${
         icon ? "This is a toast with an icon" : "This is a Toast"
       }</Toast>`,
-    [position, icon, duration]
+    [position, icon, duration],
   );
 
   const html = useMemo(
@@ -49,7 +49,7 @@ export const PlaygroundImplementation = () => {
      : `<div class="neo-toast__message">This is a toast</div>`
  }
 </div>`,
-    [icon]
+    [icon],
   );
 
   useEffect(() => {
@@ -122,7 +122,7 @@ export const PlaygroundImplementation = () => {
             <div
               className={clsx(
                 "neo-toast",
-                `toast-playground__position--${position}`
+                `toast-playground__position--${position}`,
               )}
               role="alert"
               aria-live="polite"

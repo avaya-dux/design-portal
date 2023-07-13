@@ -87,7 +87,7 @@ describe(prettyPrintReactElementToHtml.name, () => {
           </label>
         </div>
       </div>"
-    `
+    `,
     );
   });
 });
