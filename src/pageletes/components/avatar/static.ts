@@ -12,7 +12,6 @@ type AvatarTopicNames =
   | "type"
   | "behavior"
   | "specs"
-  | "keyboard"
   | "related";
 
 export const topics: TopicsDict<AvatarTopicNames> = {
@@ -34,13 +33,8 @@ export const topics: TopicsDict<AvatarTopicNames> = {
     id: "avatar-specs",
     title: "Specs",
   },
-  keyboard: {
-    order: 6,
-    id: "avatar-keyboard-interactions",
-    title: "Keyboard Interactions",
-  },
   related: {
-    order: 7,
+    order: 6,
     id: "avatar-related-content",
     title: "Related Content",
   },
