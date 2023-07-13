@@ -7,7 +7,6 @@ export const storybook =
 type AvatarTopicNames =
   | "playground"
   | "anatomy"
-  | "states"
   | "type"
   | "behavior"
   | "specs"
@@ -20,11 +19,6 @@ export const topics: TopicsDict<AvatarTopicNames> = {
     title: "Interactive Playground",
   },
   anatomy: { order: 1, id: "avatar-anatomy", title: "Anatomy" },
-  states: {
-    order: 2,
-    id: "avatar-states",
-    title: "States",
-  },
   type: { order: 3, id: "avatar-type", title: "Type" },
   behavior: { order: 4, id: "avatar-behavior", title: "Behavior" },
   specs: {
