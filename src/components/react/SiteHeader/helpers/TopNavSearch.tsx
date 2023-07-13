@@ -41,7 +41,7 @@ export const TopNavSearch = ({
       const filteredPages = pages.filter(
         (page) =>
           page.title.toLowerCase().includes(lowerCaseSearch) ||
-          page.keywords.toLowerCase().includes(lowerCaseSearch)
+          page.keywords.toLowerCase().includes(lowerCaseSearch),
       );
 
       setOptions(filteredPages.length ? filteredPages : []);
@@ -52,18 +52,18 @@ export const TopNavSearch = ({
 
   useEffect(() => {
     window.addEventListener("keydown", (event) =>
-      topNavSearchOnKeyDown(event, setShortcutKeysPressed)
+      topNavSearchOnKeyDown(event, setShortcutKeysPressed),
     );
     window.addEventListener("keyup", (event) =>
-      topNavSearchOnKeyUp(event, setShortcutKeysPressed)
+      topNavSearchOnKeyUp(event, setShortcutKeysPressed),
     );
 
     return () => {
       window.removeEventListener("keydown", (event) =>
-        topNavSearchOnKeyDown(event, setShortcutKeysPressed)
+        topNavSearchOnKeyDown(event, setShortcutKeysPressed),
       );
       window.removeEventListener("keyup", (event) =>
-        topNavSearchOnKeyUp(event, setShortcutKeysPressed)
+        topNavSearchOnKeyUp(event, setShortcutKeysPressed),
       );
     };
   }, []);
@@ -77,17 +77,17 @@ export const TopNavSearch = ({
       setSearch("");
     }
     window.addEventListener("keydown", (event) =>
-      closeSearchModal(event, isOpen, setIsOpen)
+      closeSearchModal(event, isOpen, setIsOpen),
     );
     window.addEventListener("mousedown", (event) =>
-      closeSearchModalOnClick(event, isOpen, setIsOpen, searchModalRef)
+      closeSearchModalOnClick(event, isOpen, setIsOpen, searchModalRef),
     );
     return () => {
       window.removeEventListener("keydown", (event) =>
-        closeSearchModal(event, isOpen, setIsOpen)
+        closeSearchModal(event, isOpen, setIsOpen),
       );
       window.removeEventListener("mousedown", (event) =>
-        closeSearchModalOnClick(event, isOpen, setIsOpen, searchModalRef)
+        closeSearchModalOnClick(event, isOpen, setIsOpen, searchModalRef),
       );
     };
   }, [isOpen]);

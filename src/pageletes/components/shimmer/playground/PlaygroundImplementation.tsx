@@ -21,7 +21,7 @@ export const PlaygroundImplementation = () => {
 
   const isDefault = useMemo(
     () => shape === "rectangle" && size === "md",
-    [shape, size]
+    [shape, size],
   );
 
   const react = useMemo(() => {
@@ -30,7 +30,7 @@ export const PlaygroundImplementation = () => {
 
   const html = useMemo(
     () => createHtmlString(true, shape, size),
-    [shape, size]
+    [shape, size],
   );
 
   return (
@@ -74,7 +74,7 @@ export const PlaygroundImplementation = () => {
       >
         <div
           className={clsx(
-            shape === "rectangle" && "shimmer-playground-rectangle-wrapper"
+            shape === "rectangle" && "shimmer-playground-rectangle-wrapper",
           )}
         >
           <Shimmer loopInfinitely size={size} shape={shape || "rectangle"} />

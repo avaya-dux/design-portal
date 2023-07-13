@@ -9,7 +9,7 @@ export type TopicsDict<T extends string> = {
 };
 
 export const topicsSortedByOrder = (
-  topics: TopicsDict<string> = {} // TODO: should be able to use generic type: `TopicsDict<T>`
+  topics: TopicsDict<string> = {}, // TODO: should be able to use generic type: `TopicsDict<T>`
 ): Topic[] => {
   const links: Topic[] = Array(Object.keys(topics).length);
   Object.keys(topics).forEach((key) => {

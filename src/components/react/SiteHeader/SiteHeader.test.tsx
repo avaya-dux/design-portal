@@ -16,7 +16,7 @@ describe("SiteHeader", () => {
       "matchMedia",
       vi.fn(() => ({
         matches: false,
-      }))
+      })),
     );
 
     return () => {
@@ -41,7 +41,7 @@ describe("SiteHeader", () => {
         pages={pagesMockData}
         userAgent=""
         showToggleBtn
-      />
+      />,
     );
 
     expect(isLeftNavigationOpen.get()).toEqual(undefined);
@@ -61,7 +61,7 @@ describe("SiteHeader", () => {
 
   it("passes basic axe compliance", async () => {
     const { container } = render(
-      <SiteHeader pathname="/" pages={pagesMockData} userAgent="" />
+      <SiteHeader pathname="/" pages={pagesMockData} userAgent="" />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

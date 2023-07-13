@@ -14,15 +14,15 @@ export const TopNavSearchResults = ({ options }: TopNavSearchResultsProps) => {
   const [indexToFocus, setIndexToFocus] = useState<number | undefined>();
 
   const [anchorRefs, setAnchorRefs] = useState<RefObject<HTMLAnchorElement>[]>(
-    []
+    [],
   );
 
   useEffect(() => {
     setAnchorRefs((anchorRefs) =>
       Array.from(
         { length: options.length },
-        (_, i) => anchorRefs[i] || createRef()
-      )
+        (_, i) => anchorRefs[i] || createRef(),
+      ),
     );
   }, [options]);
 
@@ -38,7 +38,7 @@ export const TopNavSearchResults = ({ options }: TopNavSearchResultsProps) => {
         event,
         options.length,
         indexToFocus,
-        setIndexToFocus
+        setIndexToFocus,
       );
     };
 

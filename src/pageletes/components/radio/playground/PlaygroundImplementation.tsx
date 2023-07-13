@@ -96,7 +96,7 @@ export const PlaygroundImplementation = () => {
     <Radio value="Notes">Notes</Radio>
   </RadioGroup>
 </Form>
-`
+`,
     );
 
     const htmlCode = prettyPrintHtml(
@@ -144,7 +144,7 @@ export const PlaygroundImplementation = () => {
       </div>
   </div>
 </form>
-`
+`,
     );
 
     return isDefault ? [defaultReact, defaultHtml] : [reactCode, htmlCode];

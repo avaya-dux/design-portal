@@ -23,7 +23,7 @@ export const PlaygroundImplementation = () => {
   const [html, react] = useMemo(() => {
     const htmlCode = `
 <div class="neo-form-control" ${clsx(
-      error && " neo-form-control--error  neo-form-control--required"
+      error && " neo-form-control--error  neo-form-control--required",
     )}>
   <div class="neo-input-group">
     <label for="input1">
@@ -39,12 +39,12 @@ export const PlaygroundImplementation = () => {
       <button aria-label="clear input" class="neo-input-edit__icon neo-icon-end"></button>
       ${clsx(
         typeOption === "password" &&
-          '<button aria-label="Show Password" aria-pressed="false" class="neo-icon-view-on" type="button"></button>'
+          '<button aria-label="Show Password" aria-pressed="false" class="neo-icon-view-on" type="button"></button>',
       )}
     </div>
   </div>
   <div id="text-hint" class="neo-input-hint" ${clsx(
-    error && ' aria-live="assertive"'
+    error && ' aria-live="assertive"',
   )}>${helperText}</div>
 </div>
 `;
@@ -56,7 +56,7 @@ export const PlaygroundImplementation = () => {
   helperText="${helperText}"
   required="${required}"
   error="${error}"
-/>`
+/>`,
     );
     return [htmlCode, reactCode];
   }, [error, helperText, required, typeOption]);

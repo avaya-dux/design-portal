@@ -2,7 +2,7 @@ export const closeSearchModalOnClick = (
   event: MouseEvent,
   isOpen: boolean,
   openModal: React.Dispatch<React.SetStateAction<boolean>>,
-  modalRef: React.RefObject<HTMLDivElement>
+  modalRef: React.RefObject<HTMLDivElement>,
 ) => {
   if (isOpen && modalRef.current && event.target instanceof HTMLElement) {
     if (

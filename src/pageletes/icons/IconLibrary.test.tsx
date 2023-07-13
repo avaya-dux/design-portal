@@ -27,7 +27,7 @@ describe("IconLibrary", () => {
     const iconLibraryChipElement = screen.getByRole("alert");
 
     expect(iconLibraryChipElement).toHaveTextContent(
-      `${allIconsLength} icons displayed`
+      `${allIconsLength} icons displayed`,
     );
 
     act(() => {
@@ -35,11 +35,11 @@ describe("IconLibrary", () => {
     });
 
     const iconsInCategoryLength = icons.filter(
-      (icon) => icon.category === "navigation"
+      (icon) => icon.category === "navigation",
     ).length;
 
     expect(iconLibraryChipElement).toHaveTextContent(
-      `${iconsInCategoryLength} icons displayed`
+      `${iconsInCategoryLength} icons displayed`,
     );
 
     cleanStores(categoriesToFilterFor);
@@ -59,7 +59,7 @@ describe("IconLibrary", () => {
     const searchIconsLength = findIcons(icons, "chevron").length;
 
     expect(iconLibraryChipElement).toHaveTextContent(
-      `${searchIconsLength} icons displayed`
+      `${searchIconsLength} icons displayed`,
     );
 
     cleanStores(searchFor);
@@ -75,7 +75,7 @@ describe("IconLibrary", () => {
 
   it("passes basic axe compliance", async () => {
     const { container } = render(
-      <IconLibrary allCategories={iconCategories} />
+      <IconLibrary allCategories={iconCategories} />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

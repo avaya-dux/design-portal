@@ -3,7 +3,6 @@ import type { TopicsDict } from "components";
 type NotificationsTopicNames =
   | "playground"
   | "anatomy"
-  | "states"
   | "type"
   | "behavior"
   | "specs"
@@ -22,11 +21,6 @@ export const topics: TopicsDict<NotificationsTopicNames> = {
     order: 1,
     id: `${component}-anatomy`,
     title: "Anatomy",
-  },
-  states: {
-    order: 2,
-    id: `${component}-states`,
-    title: "States",
   },
   type: {
     order: 3,
