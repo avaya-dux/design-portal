@@ -3,23 +3,24 @@ import { Image } from "@avaya/neo-react";
 
 import { Description, DoAndDont, SubHeader } from "components";
 
-import doImage from "./imgs/behavior-5-do.svg";
-import dontImage from "./imgs/behavior-5-dont.svg";
+import doImage from "./imgs/behavior-6-do.svg";
+import dontImage from "./imgs/behavior-6-dont.svg";
 
 const doInstructions =
-  "For a group of related radio buttons, add a category label to connect them together.";
+  "Use helper text to inform the user that and error has occurred, to explain what the problem is and how to fix it.";
 const doImgAltText =
-  "Image showing a radio group with a properly descriptive label";
+  "Image showing a radio group with correctly-used helper text in error state";
 
 const dontInstructions =
-  "Do not exclude the category label for connected radio button groups.";
-const dontImgAltText = "Image showing a radio group without a label";
+  "Do not use colored radio buttons to indicate that a selection is required.";
+const dontImgAltText = "Image showing a radio group using colored buttons to indicate error state";
+
 ---
 
-<SubHeader id="radio-category-labels">Category Labels</SubHeader>
+<SubHeader id="radio-error">Error</SubHeader>
 
 <Description>
-  Category labels are used to collect groups of related radio items.
+  An error message must be displayed when the user tries to exit before making a required selection.
 </Description>
 
 <DoAndDont>

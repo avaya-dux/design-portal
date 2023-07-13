@@ -8,6 +8,7 @@ import Intro from "./Intro.astro";
 import ContentOverflow from "./ContentOverflow.astro";
 import TextAlignment from "./TextAlignment.astro";
 import CategoryLabels from "./CategoryLabels.astro";
+import Error from "./Error.astro";
 
 import { topics } from "../../static";
 
@@ -29,5 +30,9 @@ const { id, title } = topics.behavior;
 
   <PageleteSubSection>
     <CategoryLabels />
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <Error />
   </PageleteSubSection>
 </PageleteSection>

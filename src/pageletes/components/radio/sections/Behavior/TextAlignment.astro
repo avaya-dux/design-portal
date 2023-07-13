@@ -7,12 +7,12 @@ import doImage from "./imgs/behavior-4-do.svg";
 import dontImage from "./imgs/behavior-4-dont.svg";
 
 const doInstructions =
-  "When the label is too long for the horizontal space available, it forms another line.";
+  "Align the top of the button label text with the top of each radio button icon.";
 const doImgAltText =
   "Image showing radio buttons with labels that wrap to a second line with their top aligned with the top of the radio button.";
 
 const dontInstructions =
-  "Do not place the checkmark in the center of multi-line text for checkbox labels.";
+  "Do not center justify the button icon with multiline text.";
 const dontImgAltText =
   "Image showing radio buttons with labels that wrap to a second line with their top aligned with the top above the radio button.";
 ---
@@ -20,11 +20,10 @@ const dontImgAltText =
 <SubHeader id="radio-text-alignment">Text Alignment</SubHeader>
 
 <Description>
-  The Radio Button should always align to the first line of Labels with
-  multiline text content.
+  The text field for a Radio button should always align to the top of the button icon. This applies to both single and multiline content.
 </Description>
 
-<DoAndDont>
+<DoAndDont size="normal">
   <DoAndDont.DoContainer instructions={doInstructions}>
     <DoAndDont.ImageExampleContainer>
       <Image src={doImage} alt={doImgAltText} />
