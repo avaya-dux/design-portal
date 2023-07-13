@@ -34,7 +34,7 @@ export const IconCategory = ({ category }: { category: string }) => {
 
     const filteredIcons: IconProps[] = filterIconsWithVariations(
       allIconsInCategory,
-      filteredVariations
+      filteredVariations,
     );
 
     setIconsToDisplay([...filteredIcons]);

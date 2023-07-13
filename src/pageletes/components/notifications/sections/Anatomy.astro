@@ -1,6 +1,9 @@
 ---
+import { Image } from "@avaya/neo-react";
+
 import {
   Description,
+  ImageWrapper,
   InfoList,
   InfoListItem,
   PageleteSection,
@@ -10,6 +13,12 @@ import {
 import { topics } from "../static";
 
 const { id, title } = topics.anatomy;
+
+
+import AnatomyImage from "../imgs/notification-anatomy-1.svg";
+const anatomyImgAltText =
+  "Image showing the different parts that make up a notification";
+
 ---
 
 <PageleteSection>
@@ -18,35 +27,36 @@ const { id, title } = topics.anatomy;
   </SectionHeader>
 
   <Description>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+    Here are the common components of a notification.
   </Description>
 
+  <ImageWrapper>
+    <Image src={AnatomyImage} alt={anatomyImgAltText} />
+  </ImageWrapper>
+
   <InfoList type="decimal">
-    <InfoListItem label="Line Details">Description</InfoListItem>
-
-    <InfoListItem label="Icon">Description</InfoListItem>
-
-    <InfoListItem label="Title notification (Optional)">
+    <InfoListItem label="Container">
+      Description
+    </InfoListItem>
+    <InfoListItem label="Icon">
+      Description
+    </InfoListItem>
+    <InfoListItem label="Header">
+      Description
+    </InfoListItem>
+    <InfoListItem label="Message Description">
+      Description
+    </InfoListItem>
+    <InfoListItem label="Buttons 1 (Optional)">
+      Description
+    </InfoListItem>
+    <InfoListItem label="Buttons 2 (Optional)">
+      Description
+    </InfoListItem>
+    <InfoListItem label="Container Background">
       Description
     </InfoListItem>
 
-    <InfoListItem label="Description of message">Description</InfoListItem>
 
-    <InfoListItem label="Buttons (Optional)">Description</InfoListItem>
-
-    <InfoListItem label="Close Icon">Description</InfoListItem>
-
-    <InfoListItem label="Shadow (Only on General Notification)">
-      Description
-    </InfoListItem>
-
-    <InfoListItem label="Expand Chevron (Optional)">Description</InfoListItem>
-
-    <InfoListItem label="Multiple">Description (Read Only)</InfoListItem>
-
-    <InfoListItem label="Time (Only on List Notifications)">
-      Description
-    </InfoListItem>
   </InfoList>
 </PageleteSection>

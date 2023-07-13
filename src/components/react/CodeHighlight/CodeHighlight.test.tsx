@@ -22,7 +22,7 @@ describe("CodeHighlight", () => {
     render(<CodeHighlight code={code} active />);
 
     expect(screen.queryByRole("tooltip")?.textContent).toEqual(
-      "Copy code to clipboard"
+      "Copy code to clipboard",
     );
 
     await user.click(screen.getByRole("button"));

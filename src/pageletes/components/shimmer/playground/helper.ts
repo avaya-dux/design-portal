@@ -11,13 +11,13 @@ export const getClassName = (loop: boolean, shape: string, size: string) =>
     shape === "circle" && size === "sm" && "neo-shimmer__circle--small",
     shape === "circle" && size === "md" && "neo-shimmer__circle--medium",
     shape === "circle" && size === "lg" && "neo-shimmer__circle--large",
-    loop === false && "neo-shimmer--3-count"
+    loop === false && "neo-shimmer--3-count",
   );
 
 export const createReactString = (
   loop: boolean,
   shape: string,
-  size: string
+  size: string,
 ) => {
   const loopAttr = loop ? "loopInfinitely" : undefined;
   const sizeAttr = size === "md" ? undefined : `size="${size}"`;
@@ -28,7 +28,7 @@ export const createReactString = (
 export const createHtmlString = (
   loop: boolean,
   shape: string,
-  size: string
+  size: string,
 ) => {
   return prettyPrintHtml(`<div
   aria-busy="true"

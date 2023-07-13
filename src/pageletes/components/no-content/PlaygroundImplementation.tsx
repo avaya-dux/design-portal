@@ -19,12 +19,12 @@ export const PlaygroundImplementation = () => {
 
   const isDefault = useMemo(
     () => icon === "info" && text === "No Content",
-    [icon, text]
+    [icon, text],
   );
 
   const react = useMemo(
     () => `<NoContent icon="${icon}" text="${text}" />`,
-    [icon, text]
+    [icon, text],
   );
 
   const html = useMemo(
@@ -32,7 +32,7 @@ export const PlaygroundImplementation = () => {
       `<div class="neo-empty-state">
   <p class="neo-icon-${icon}">${text}</p>
 </div>`,
-    [icon, text]
+    [icon, text],
   );
 
   return (

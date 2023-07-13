@@ -13,7 +13,7 @@ type SpinnerTopicNames =
   | "specs"
   | "related";
 
-  const component = "spinner";
+const component = "spinner";
 
 export const topics: TopicsDict<SpinnerTopicNames> = {
   playground: {

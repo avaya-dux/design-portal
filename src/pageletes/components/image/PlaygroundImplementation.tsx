@@ -44,7 +44,7 @@ ${
     : ""
 }
   `),
-    [isBroken, isThumbnail, src]
+    [isBroken, isThumbnail, src],
   );
 
   const html = useMemo(
@@ -67,7 +67,7 @@ ${
       : ""
   }
   `),
-    [isBroken, isThumbnail, src]
+    [isBroken, isThumbnail, src],
   );
 
   return (

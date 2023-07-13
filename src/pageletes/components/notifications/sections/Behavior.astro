@@ -1,4 +1,6 @@
 ---
+import { Image } from "@avaya/neo-react";
+
 import {
   Description,
   InfoTable,
@@ -8,12 +10,26 @@ import {
   InfoTableHead,
   InfoTableRow,
   PageleteSection,
-  PageleteSubSection,
   SectionHeader,
-  SubHeader,
 } from "components/astro";
 
+import { DoAndDont } from "components/react";
+
+import Color from "./BehaviorColor.astro";
+import Dismissal from "./BehaviorDismissal.astro";
+import List from "./BehaviorList.astro";
+import Elevation from "./BehaviorElevation.astro";
+
+
 import { topics } from "../static";
+
+import behaviorDo from "../imgs/notification-behavior-do-1.svg";
+import behaviorDont from "../imgs/notification-behavior-dont-1.svg";
+
+const behaviorDoAltText =
+  "Use notifications for priority items that need immediate attention.";
+const behaviorDontAltText =
+  "Do not use notifications for frequent actions. Use a toast instead.";
 
 const { id, title } = topics.behavior;
 ---
@@ -24,8 +40,7 @@ const { id, title } = topics.behavior;
   </SectionHeader>
 
   <Description>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+    Specific behaviors of a notification.
   </Description>
 
   <InfoTable>
@@ -39,7 +54,7 @@ const { id, title } = topics.behavior;
 
     <InfoTableBody>
       <InfoTableRow>
-        <InfoTableCell>Toast</InfoTableCell>
+        <InfoTableCell><a href="/components/toast">Toast</a></InfoTableCell>
         <InfoTableCell>Low priority</InfoTableCell>
         <InfoTableCell>
           Feedback (Alert) that do not need to interrupt the user flow. They
@@ -49,7 +64,7 @@ const { id, title } = topics.behavior;
       </InfoTableRow>
 
       <InfoTableRow>
-        <InfoTableCell>Notification</InfoTableCell>
+        <InfoTableCell><a href="/components/notifications">Notification</a></InfoTableCell>
         <InfoTableCell>Prominent priority</InfoTableCell>
         <InfoTableCell>
           Items that require immediate attention. They can be persistent or
@@ -60,7 +75,7 @@ const { id, title } = topics.behavior;
       </InfoTableRow>
 
       <InfoTableRow>
-        <InfoTableCell>Modal</InfoTableCell>
+        <InfoTableCell><a href="/components/modal">Modal</a></InfoTableCell>
         <InfoTableCell>Highest priority</InfoTableCell>
         <InfoTableCell>
           Modal block app usage until the user a modal action or exits the
@@ -70,56 +85,27 @@ const { id, title } = topics.behavior;
     </InfoTableBody>
   </InfoTable>
 
-  <PageleteSubSection marginTop={"4rem"}>
-    <SubHeader id="notifications-color">Color</SubHeader>
 
-    <Description>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam.
-    </Description>
-  </PageleteSubSection>
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={behaviorDoAltText}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={behaviorDo} alt={behaviorDoAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
 
-  <PageleteSubSection>
-    <SubHeader id="notifications-overflow">Overflow</SubHeader>
+    <DoAndDont.DontContainer instructions={behaviorDontAltText}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={behaviorDont} alt={behaviorDontAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
 
-    <Description>
-      Notifications provide limited space for content, and therefore the content
-      must be short and concise. A user should be able to quickly scan the
-      notification, be apprised of the situation, and know what to do next.
-    </Description>
-    <Description>
-      If General Notification requires a message longer than two lines, use an
-      actionable notification and include a short message with a “Show more”
-      link that takes the user to a view of the full notification message. This
-      can be either a full page with more details or a Sheet.
-    </Description>
-  </PageleteSubSection>
+  <Color />
 
-  <PageleteSubSection>
-    <SubHeader id="notifications-dismissal">Dismissal</SubHeader>
+  <Dismissal />
 
-    <Description>
-      Notifications do not dismiss automatically. They persist on the page until
-      the user dismisses them or takes action that resolves the notification.
-    </Description>
+  <List />
 
-    <Description>
-      A small “x” is used to dismiss notifications. Including the close button
-      is optional and should not be included if it is critical for a user to
-      read or interact with the notification.
-    </Description>
-  </PageleteSubSection>
+  <Elevation />
 
-  <PageleteSubSection>
-    <SubHeader id="notifications-multiple-notification">
-      Multiple Notification
-    </SubHeader>
-
-    <Description>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam.
-    </Description>
-  </PageleteSubSection>
 </PageleteSection>

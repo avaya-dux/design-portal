@@ -113,7 +113,7 @@ describe("Search Modal Results Keyboard Navigation", () => {
         downArrowKeypress as unknown as KeyboardEvent,
         searchResultsLength,
         undefined,
-        setIndexToFocus
+        setIndexToFocus,
       );
 
       expect(downArrowKeypress.preventDefault).toHaveBeenCalled();
@@ -125,7 +125,7 @@ describe("Search Modal Results Keyboard Navigation", () => {
         downArrowKeypress as unknown as KeyboardEvent,
         searchResultsLength,
         11,
-        setIndexToFocus
+        setIndexToFocus,
       );
 
       expect(downArrowKeypress.preventDefault).toHaveBeenCalled();
@@ -137,7 +137,7 @@ describe("Search Modal Results Keyboard Navigation", () => {
         downArrowKeypress as unknown as KeyboardEvent,
         searchResultsLength,
         8,
-        setIndexToFocus
+        setIndexToFocus,
       );
 
       expect(downArrowKeypress.preventDefault).toHaveBeenCalled();
@@ -151,13 +151,13 @@ describe("Search Modal Results Keyboard Navigation", () => {
         upArrowKeypress as unknown as KeyboardEvent,
         searchResultsLength,
         0,
-        setIndexToFocus
+        setIndexToFocus,
       );
 
       expect(downArrowKeypress.preventDefault).toHaveBeenCalled();
       expect(setIndexToFocus).toHaveBeenNthCalledWith(
         4,
-        searchResultsLength - 1
+        searchResultsLength - 1,
       );
     });
 
@@ -166,7 +166,7 @@ describe("Search Modal Results Keyboard Navigation", () => {
         upArrowKeypress as unknown as KeyboardEvent,
         searchResultsLength,
         1,
-        setIndexToFocus
+        setIndexToFocus,
       );
 
       expect(downArrowKeypress.preventDefault).toHaveBeenCalled();
