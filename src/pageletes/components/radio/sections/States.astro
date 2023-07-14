@@ -4,6 +4,8 @@ import { Image } from "@avaya/neo-react";
 import {
   ColumnLayout,
   Description,
+  InfoList,
+  InfoListItem,
   PageleteSection,
   SectionHeader,
   StackedLayout,
@@ -30,10 +32,11 @@ const img4AltText = "Image showing a radio button in the read only state";
   <SectionHeader id={id}>{title}</SectionHeader>
 
   <Description>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, explicabo
-    adipisci aperiam laboriosam excepturi illo sint iure vero perferendis
-    doloribus reiciendis veniam libero, ratione quia vel quas ex magnam
-    consequatur.
+    A radio button can exist in several states. When unselected, the associated
+    function is turned off. The function is turned on when the button is
+    selected. A disabled radio button’s state cannot be changed until some other
+    action has occurred (e.g. configuring another field on the page). Read-only
+    shows that the option has already been set and cannot be changed.
   </Description>
 
   <ColumnLayout bkgColor="white" numOfColumns={4}>
@@ -49,8 +52,18 @@ const img4AltText = "Image showing a radio button in the read only state";
       <Image src={image3} alt={img3AltText} />
     </StackedLayout>
 
-    <StackedLayout label="Read Only">
+    <StackedLayout label="Read-only">
       <Image src={image4} alt={img4AltText} />
     </StackedLayout>
   </ColumnLayout>
+
+  <InfoList type="decimal">
+    <InfoListItem label="Unselected">This shows that the option is not active.</InfoListItem>
+
+    <InfoListItem label="Selected">This radio button’s controlled function is active.</InfoListItem>
+
+    <InfoListItem label="Disabled">The function of this button is not available for selection. Some other action may be required to enable it.</InfoListItem>
+
+    <InfoListItem label="Read-only">This option has been selected, usually on another screen, and cannot be changed from here. It is shown for information only.</InfoListItem>
+  </InfoList>
 </PageleteSection>
