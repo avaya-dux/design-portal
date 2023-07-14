@@ -1,4 +1,6 @@
 ---
+import { Image } from "@avaya/neo-react";
+
 import {
   ColumnLayout,
   Description,
@@ -10,15 +12,14 @@ import {
 } from "components/astro";
 
 import { topics } from "../static";
-import { Image } from "@avaya/neo-react";
 
 const { id, title } = topics.anatomy;
 
-import image1 from "./imgs/anatomy-1.svg";
+import image1 from "./imgs/select-anatomy-1.svg";
 const img1AltText =
   "Image showing a select component with its four notes pointed out and described below";
 
-import image2 from "./imgs/anatomy-2.svg";
+import image2 from "./imgs/select-anatomy-2.svg";
 const img2AltText =
   "Image showing an expanded select component with its expanded section noted as the fifth note and described below";
 ---
