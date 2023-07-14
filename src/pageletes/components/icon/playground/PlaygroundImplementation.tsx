@@ -16,7 +16,7 @@ export const PlaygroundImplementation = () => {
     const react = prettyPrintReact(
       `
     <Icon aria-label="info icon" icon="info" size="${size}"/>
-`
+`,
     );
 
     const html = prettyPrintHtml(
@@ -25,9 +25,9 @@ export const PlaygroundImplementation = () => {
         "neo-icon-info",
         size === "sm" && "neo-icon--small",
         size === "md" && "neo-icon--medium",
-        size === "lg" && "neo-icon--large"
+        size === "lg" && "neo-icon--large",
       )}"></span>
-      `
+      `,
     );
 
     return [react, html];

@@ -41,7 +41,7 @@ export const PlaygroundImplementation = () => {
 >
   <Button>Hover me to see a tooltip</Button>
 </Tooltip>`),
-    [position, typeOption]
+    [position, typeOption],
   );
 
   const html = useMemo(() => {
@@ -61,7 +61,7 @@ export const PlaygroundImplementation = () => {
     role="tooltip"
     class="${clsx(
       "neo-tooltip__content",
-      typeOption === "multiline" && "neo-tooltip__content--multiline"
+      typeOption === "multiline" && "neo-tooltip__content--multiline",
     )}"
   >
     <div class="neo-arrow"></div>

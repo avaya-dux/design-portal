@@ -36,7 +36,7 @@ describe("trapFocus", () => {
     trapFocus(
       { key: "Tab", preventDefault: vi.fn() } as unknown as KeyboardEvent,
       firstFocusableItem as unknown as HTMLElement,
-      lastFocusableItem as unknown as HTMLElement
+      lastFocusableItem as unknown as HTMLElement,
     );
 
     expect(firstFocusableItem.focus).toHaveBeenCalled();
@@ -54,7 +54,7 @@ describe("trapFocus", () => {
         preventDefault: vi.fn(),
       } as unknown as KeyboardEvent,
       firstFocusableItem as unknown as HTMLElement,
-      lastFocusableItem as unknown as HTMLElement
+      lastFocusableItem as unknown as HTMLElement,
     );
 
     expect(lastFocusableItem.focus).toHaveBeenCalled();
@@ -64,7 +64,7 @@ describe("trapFocus", () => {
     trapFocus(
       { key: "Enter" } as KeyboardEvent,
       firstFocusableItem as unknown as HTMLElement,
-      lastFocusableItem as unknown as HTMLElement
+      lastFocusableItem as unknown as HTMLElement,
     );
 
     expect(firstFocusableItem.focus).not.toHaveBeenCalled();

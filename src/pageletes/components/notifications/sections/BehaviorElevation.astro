@@ -1,0 +1,40 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { Description, PageleteSubSection, SubHeader } from "components/astro";
+
+import { DoAndDont } from "components/react";
+
+import behaviorDo from "../imgs/notification-behavior-elevation-do-1.svg";
+import behaviorDont from "../imgs/notification-behavior-elevation-dont-1.svg";
+
+const behaviorDoAltText =
+    "Use elevation when the notification appears above the page content.";
+const behaviorDontAltText =
+    "Do not use the inline style when notification appears above the page content.";
+---
+
+<PageleteSubSection>
+    <SubHeader id="notifications-behavior-elevation">Elevation</SubHeader>
+
+    <Description>
+        General notifications appear on top of existing content. To separate
+        itself from the background and to stand out further, a drop shadow
+        effect is applied to the notification using the design token
+        Elevation-200.
+    </Description>
+
+    <DoAndDont>
+        <DoAndDont.DoContainer instructions={behaviorDoAltText}>
+            <DoAndDont.ImageExampleContainer>
+                <Image src={behaviorDo} alt={behaviorDoAltText} />
+            </DoAndDont.ImageExampleContainer>
+        </DoAndDont.DoContainer>
+
+        <DoAndDont.DontContainer instructions={behaviorDontAltText}>
+            <DoAndDont.ImageExampleContainer>
+                <Image src={behaviorDont} alt={behaviorDontAltText} />
+            </DoAndDont.ImageExampleContainer>
+        </DoAndDont.DontContainer>
+    </DoAndDont>
+</PageleteSubSection>

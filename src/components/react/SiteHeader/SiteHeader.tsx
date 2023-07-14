@@ -36,7 +36,7 @@ export const SiteHeader = ({
 }) => {
   const isActiveLink = useCallback(
     (link: string) => pathname.startsWith(link),
-    [pathname]
+    [pathname],
   );
 
   const isOpen = useStore(isLeftNavigationOpen);

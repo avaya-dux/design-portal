@@ -7,8 +7,6 @@ import {
   SelectOption,
 } from "@avaya/neo-react";
 import {
-  useCallback,
-  useEffect,
   useMemo,
   useState,
   type Dispatch,
@@ -73,7 +71,7 @@ const getDescription = (type: TypeOption, rightSideOption: RightSideOption) => {
 
 const getAction = (
   rightSideOption: RightSideOption,
-  setClosed: Dispatch<SetStateAction<boolean>>
+  setClosed: Dispatch<SetStateAction<boolean>>,
 ) => {
   switch (rightSideOption) {
     case "close":

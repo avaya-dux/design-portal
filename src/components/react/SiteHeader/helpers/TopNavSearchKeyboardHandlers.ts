@@ -6,7 +6,7 @@ export type ModalShortcutKeysType = {
 
 export const topNavSearchOnKeyDown = (
   event: KeyboardEvent,
-  setKeysPressed: React.Dispatch<React.SetStateAction<ModalShortcutKeysType>>
+  setKeysPressed: React.Dispatch<React.SetStateAction<ModalShortcutKeysType>>,
 ) => {
   if (event.key === "Meta") {
     setKeysPressed((shortcutKeys) => ({ ...shortcutKeys, Meta: true }));
@@ -30,7 +30,7 @@ export const topNavSearchOnKeyDown = (
 
 export const topNavSearchOnKeyUp = (
   event: KeyboardEvent,
-  setKeysPressed: React.Dispatch<React.SetStateAction<ModalShortcutKeysType>>
+  setKeysPressed: React.Dispatch<React.SetStateAction<ModalShortcutKeysType>>,
 ) => {
   if (event.key === "Meta") {
     setKeysPressed((shortcutKeys) => ({ ...shortcutKeys, Meta: false }));
@@ -48,7 +48,7 @@ export const topNavSearchOnKeyUp = (
 export const openSearchModal = (
   shortcutKeys: ModalShortcutKeysType,
   openModal: React.Dispatch<React.SetStateAction<boolean>>,
-  setKeysPressed: React.Dispatch<React.SetStateAction<ModalShortcutKeysType>>
+  setKeysPressed: React.Dispatch<React.SetStateAction<ModalShortcutKeysType>>,
 ) => {
   if (shortcutKeys.k && (shortcutKeys.Control || shortcutKeys.Meta)) {
     openModal(true);
@@ -63,7 +63,7 @@ export const openSearchModal = (
 export const closeSearchModal = (
   event: KeyboardEvent,
   isOpen: boolean,
-  openModal: React.Dispatch<React.SetStateAction<boolean>>
+  openModal: React.Dispatch<React.SetStateAction<boolean>>,
 ) => {
   if (isOpen && event.key === "Escape") {
     openModal(false);
@@ -74,7 +74,7 @@ export const searchResultsArrowNavigation = (
   event: KeyboardEvent,
   searchResultsLength: number,
   indexToFocus: number | undefined,
-  setIndexToFocus: React.Dispatch<React.SetStateAction<number | undefined>>
+  setIndexToFocus: React.Dispatch<React.SetStateAction<number | undefined>>,
 ) => {
   if (event.key === "ArrowDown") {
     event.preventDefault();
