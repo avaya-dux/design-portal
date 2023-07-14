@@ -6,12 +6,7 @@ import {
   NotificationProps,
   SelectOption,
 } from "@avaya/neo-react";
-import {
-  useMemo,
-  useState,
-  type Dispatch,
-  type SetStateAction,
-} from "react";
+import { useMemo, useState, type Dispatch, type SetStateAction } from "react";
 
 import { Playground } from "components";
 

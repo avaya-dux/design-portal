@@ -1,0 +1,105 @@
+---
+import { ColumnLayout, Description, InfoList, InfoListItem, PageleteSubSection, StackedLayout, SubHeader } from "components/astro";
+
+import { DoAndDont } from "components/react";
+
+import { Image } from "@avaya/neo-react";
+
+import statusAvailableImage from "../../imgs/avatar-behavior-status-1.svg";
+import statusAwayImage from "../../imgs/avatar-behavior-status-2.svg";
+import statusBusyImage from "../../imgs/avatar-behavior-status-3.svg";
+import statusDNDImage from "../../imgs/avatar-behavior-status-4.svg";
+import statusOfflineImage from "../../imgs/avatar-behavior-status-5.svg";
+
+
+import doImage1 from "../../imgs/avatar-behavior-status-do-1.svg";
+import dontImage1 from "../../imgs/avatar-behavior-status-dont-1.svg";
+
+const do1Instructions =
+  "Use status to convey a user's current availability.";
+const doImg1AltText =
+  "An image showing each of the 5 possible avatar states.";
+
+const dont1Instructions =
+  "Do not use color alone to display the state as users who are color blind may be unable to distinguish between states.";
+const dontImg1AltText =
+  "An image showing avatars that incorrectly use color to convey state.";
+
+---
+
+<PageleteSubSection>
+  <SubHeader id="avatar-behavior-user-types">Status Indicator</SubHeader>
+
+  <Description>
+    An avatar can be matched with a status indicator to provide the user’s current availability. The use of a status indicator is optional.
+  </Description>
+
+  <ColumnLayout
+    bkgColor="white"
+    numOfColumns={3}
+    marginBottom={"0"}
+  >
+    <StackedLayout label="Available">
+      <Image src={statusAvailableImage} alt="Image showing avatar with available state" />
+    </StackedLayout>
+
+    <StackedLayout label="Away">
+      <Image src={statusAwayImage} alt="Image showing avatar with away state" />
+    </StackedLayout>
+
+    <StackedLayout label="Busy">
+      <Image src={statusBusyImage} alt="Image showing avatar with busy state" />
+    </StackedLayout>
+  </ColumnLayout>
+  <ColumnLayout
+    bkgColor="white"
+    numOfColumns={2}
+    marginTop={"0rem"}
+    showTopBorder={false}
+  >
+    <StackedLayout label="Do Not Disturb">
+      <Image src={statusDNDImage} alt="Image showing avatar with do not disturb state"/>
+    </StackedLayout>
+
+    <StackedLayout label="Offline">
+      <Image src={statusOfflineImage} alt="Image showing avatar with offline state" />
+    </StackedLayout>
+  </ColumnLayout>
+
+  <InfoList type="disc">
+    <InfoListItem label="Available">
+      Shows that the agent is online, ready and available to connect.
+    </InfoListItem>
+
+    <InfoListItem label="Away">
+      The agent is away from their desk and is not available at the moment. Any messages sent will not be received until the agent is available.
+    </InfoListItem>
+
+    <InfoListItem label="Busy">
+      The agent is online but is on another call and cannot respond at the moment.
+    </InfoListItem>
+
+    <InfoListItem label="Do Not Disturb">
+      When this is shown, the agent is online but is busy with other tasks.
+    </InfoListItem>
+
+    <InfoListItem label="Offline">
+      If the agent appears offline, they are not logged into their system and will not respond until they return.
+    </InfoListItem>
+  </InfoList>
+
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={do1Instructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage1} alt={doImg1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dont1Instructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage1} alt={dontImg1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+
+</PageleteSubSection>
