@@ -3,44 +3,38 @@ import type { TopicsDict } from "components";
 type LinkTopicNames =
   | "playground"
   | "anatomy"
-  | "states"
-  | "type"
   | "behavior"
   | "specs"
   | "keyboard"
   | "related";
 
+const component = "list";
+
 export const topics: TopicsDict<LinkTopicNames> = {
   playground: {
     order: 0,
-    id: "list-playground",
+    id: `${component}-playground`,
     title: "Interactive Playground",
   },
   anatomy: {
     order: 1,
-    id: "list-anatomy",
+    id: `${component}-anatomy`,
     title: "Anatomy",
   },
-  states: {
-    order: 2,
-    id: "list-states",
-    title: "States",
-  },
-  type: { order: 3, id: "list-type", title: "Type" },
-  behavior: { order: 4, id: "list-behavior", title: "Behavior" },
+  behavior: { order: 2, id: `${component}-anatomy`, title: "Behavior" },
   specs: {
-    order: 5,
-    id: "list-specs",
+    order: 3,
+    id: `${component}-specs`,
     title: "Specs",
   },
   keyboard: {
-    order: 6,
-    id: "list-keyboard-interactions",
+    order: 4,
+    id: `${component}-keyboard-interactions`,
     title: "Keyboard Interactions",
   },
   related: {
-    order: 7,
-    id: "list-related-content",
+    order: 5,
+    id: `${component}-related-content`,
     title: "Related Content",
   },
 };

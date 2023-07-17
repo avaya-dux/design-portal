@@ -1,48 +1,56 @@
 ---
 import { Image } from "@avaya/neo-react";
 import {
-  ColumnLayout,
   Description,
+  ImageWrapper,
   InfoList,
   InfoListItem,
-  PageleteSubSection,
-  SectionHeader,
-  StackedLayout,
-} from "components/astro";
-
+  SubHeader,
+} from "components";
 import { topics } from "../../static";
 
-import AnatomyImage from "../imgs/avatar-anatomy-1.svg";
-const anatomyImgAltText =
-  "Image showing the different parts that make up an avatar";
+const { id } = topics.anatomy;
+
+import image1 from "../../imgs/list-items-anatomy-1.svg";
+const img1AltText =
+  "Image showing the anatomy of a list item, there are 5 points of interest corresponding to the different elements within the list item.";
 ---
 
-<PageleteSubSection>
-  <SectionHeader id="list-anatomy-list-items">List Items</SectionHeader>
+<SubHeader id={`${id}-list-items`}>List Items</SubHeader>
 
-  <Description>
-    List Items provide users with a groups of related options. They can be navigation items allowing the user to jump to other sections of the application, lists of contacts showing their current status and providing an easy means to connect, or any other collection of similar elements.
-  </Description>
+<Description>
+  List Items provide users with a groups of related options. They can be
+  navigation items allowing the user to jump to other sections of the
+  application, lists of contacts showing their current status and providing an
+  easy means to connect, or any other collection of similar elements.
+</Description>
 
-  <ColumnLayout numOfColumns={1}>
-    <StackedLayout>
-      <Image src={AnatomyImage} alt={anatomyImgAltText} />
-    </StackedLayout>
-  </ColumnLayout>
+<ImageWrapper>
+  <Image src={image1} alt={img1AltText} />
+</ImageWrapper>
 
-  <InfoList type="decimal">
-    <InfoListItem label="Avatar Content">
-      The avatar can be an image, initials, a silhouette icon, or a bot icon.
-    </InfoListItem>
+<InfoList type="decimal">
+  <InfoListItem label="Container">
+    The box that defines the extent of the list. All components for this item
+    appear inside the container.
+  </InfoListItem>
 
-    <InfoListItem label="Container">
-      The avatar is shown within a circle with  constrasting background color.
-    </InfoListItem>
+  <InfoListItem label="Avatar">
+    When a person is part of the list, this is a picture of the individual or
+    their initials.
+  </InfoListItem>
 
-    <InfoListItem label="Status Icon">
-      An icon can be included to show the current presence status of the individual.
-      The contact can be shown to be online or available, or offline or unavailable.
-      This indicator is optional.
-    </InfoListItem>
-  </InfoList>
-</PageleteSubSection>
+  <InfoListItem label="Text Label">
+    A description of the list item. The label should be as short as possible
+    while providing complete details.
+  </InfoListItem>
+
+  <InfoListItem label="Support Body Copy">
+    This is additional information that helps to further define the list item.
+  </InfoListItem>
+
+  <InfoListItem label="Icon">
+    These represent one or more action items related to the list item, such as
+    “place a call to the person” or “edit the item’s settings.”
+  </InfoListItem>
+</InfoList>

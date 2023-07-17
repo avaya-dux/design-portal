@@ -1,0 +1,83 @@
+---
+import {
+  Description,
+  InfoTable,
+  InfoTableHead,
+  InfoTableBody,
+  InfoTableCellHead,
+  InfoTableCell,
+  InfoTableRow,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+import { topics } from "../static";
+
+const { id, title } = topics.keyboard;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Accessibility requires that each item on the screen is reachable using the
+    keyboard alone. The mouse is not always an option for some users. Keyboard
+    navigation employs the following shortcuts.
+  </Description>
+
+  <InfoTable>
+    <InfoTableHead>
+      <InfoTableRow>
+        <InfoTableCellHead>Keystrokes</InfoTableCellHead>
+        <InfoTableCellHead>Interaction</InfoTableCellHead>
+      </InfoTableRow>
+    </InfoTableHead>
+
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>Tab</InfoTableCell>
+        <InfoTableCell>
+          Move forward into and out of the list group.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Shift + Tab</InfoTableCell>
+        <InfoTableCell>
+          Move backward to the previous interactive element.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>↑ and ↓</InfoTableCell>
+        <InfoTableCell>
+          Move between the previous or next list item. Move directly to the
+          actions if the item is not interactive
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>← and →</InfoTableCell>
+        <InfoTableCell>
+          Move between the buttons in the item (if more than one is available).
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Enter or Spacebar</InfoTableCell>
+        <InfoTableCell>Activate the button (if applicable).</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Spacebar</InfoTableCell>
+        <InfoTableCell>Activate the list item (if applicable).</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Spacebar</InfoTableCell>
+        <InfoTableCell>
+          Toggle the switch between on and off states.
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
+</PageleteSection>

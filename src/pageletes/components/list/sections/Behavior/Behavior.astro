@@ -1,0 +1,34 @@
+---
+import {
+  Description,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+} from "components";
+
+import { topics } from "../../static";
+
+import GroupedContent from "./GroupedContent.astro";
+import Alignment from "./Alignment.astro";
+
+const { title, id } = topics.behavior;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    Use a list when you need to offer multiple options and actions to the user,
+    such as for a table of contents or an address book.
+  </Description>
+
+  <PageleteSubSection />
+  <GroupedContent />
+  <PageleteSubSection />
+
+  <PageleteSubSection />
+  <Alignment />
+  <PageleteSubSection />
+</PageleteSection>
