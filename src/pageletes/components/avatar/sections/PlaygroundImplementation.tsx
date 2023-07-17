@@ -24,19 +24,26 @@ type TypeOption = "generic" | "image" | "bot" | "initials";
 type SizeOption = "sm" | "md" | "lg";
 type StatusOption = "none" | "available" | "away" | "busy" | "offline" | "dnd";
 
-const getVariant = (type: TypeOption) => {
-  const strType = type as string;
-  if (strType === "image") {
-    return "basic";
-  }
-
-  return strType;
-};
-
 export const PlaygroundImplementation = () => {
   const [type, setType] = useState<TypeOption>("generic");
   const [sizeOption, setSizeOption] = useState<SizeOption>("md");
   const [statusOption, setStatusOption] = useState<StatusOption>("none");
+  const [initialsValue, setInitialsValue] = useState<initialsValue>("");
+
+  const getVariant = (type: TypeOption) => {
+    const strType = type as string;
+    if (strType === "image") {
+      return "basic";
+    }
+
+    if (strType === "initials") {
+      setInitialsValue("TC"); // Setting to arbitrary "TC" value
+    } else {
+      setInitialsValue("");
+    }
+
+    return strType;
+  };
 
   const [element, react, html] = useMemo(() => {
     const variant = getVariant(type);
@@ -44,6 +51,7 @@ export const PlaygroundImplementation = () => {
       variant: variant,
       size: sizeOption,
       status: statusOption,
+      initials: initialsValue,
     };
 
     const element = <Avatar {...props} />;
@@ -112,7 +120,7 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      <div style={{ width: "100%" }}>{element}</div>
+      {element}
     </Playground>
   );
 };
