@@ -1,3 +1,3 @@
-import Behavior from './Behavior.astro';
+import Behavior from "./Behavior.astro";
 
 export { Behavior };

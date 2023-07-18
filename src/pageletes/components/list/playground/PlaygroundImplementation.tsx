@@ -1,9 +1,23 @@
-import { Icon, IconButton, List, ListItem, ListSection, Radio, RadioGroup, Select, SelectOption } from "@avaya/neo-react";
+import {
+  Icon,
+  IconButton,
+  List,
+  ListItem,
+  ListSection,
+  Radio,
+  RadioGroup,
+  Select,
+  SelectOption,
+  Switch,
+} from "@avaya/neo-react";
 import { clsx } from "clsx";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 import { Playground } from "components";
-import { prettyPrintReactElementToHtml, prettyPrintReactElementToString } from "helpers";
+import {
+  prettyPrintReactElementToHtml,
+  prettyPrintReactElementToString,
+} from "helpers";
 
 export const sandbox = "https://codesandbox.io/s/neo-react-chips-conoc3";
 export const storybook =
@@ -13,7 +27,31 @@ type ListTypeOption = "item" | "section";
 
 type ListLeftOption = "icon" | "no-icon";
 
-type ListRightOption = "button" | "no-button";
+type ListRightOption = "button" | "empty" | "switch";
+
+const iconButton = [
+  <IconButton
+    aria-label="add call"
+    icon="call-add"
+    shape="circle"
+    variant="tertiary"
+  />,
+];
+
+const basicSwitch = [<Switch aria-label="Activate" defaultChecked />];
+
+const getAction = (option: ListRightOption) => {
+  switch (option) {
+    case "button":
+      return iconButton;
+    case "switch":
+      return basicSwitch;
+    case "empty":
+      return [];
+    default:
+      return [];
+  }
+};
 
 export const PlaygroundImplementation = () => {
   const [listType, setListType] = useState<ListTypeOption>("item");
@@ -26,33 +64,21 @@ export const PlaygroundImplementation = () => {
     const listNames = ["John Smith", "Lucille Ball", "Spinella Manch"];
 
     const icon =
-      leftOptions === "icon" ? (
-        <Icon aria-label="star-icon" icon="star" />
-      ) : (
-        ""
-      );
+      leftOptions === "icon" ? <Icon aria-label="star-icon" icon="star" /> : "";
 
-    const iconButton =
-      rightOptions == "button"
-        ? [
-            <IconButton
-              aria-label="add call"
-              data-testid="neo-button-add-call"
-              icon="call-add"
-              id="btn-add-call"
-              shape="circle"
-              variant="tertiary"
-            />,
-          ]
-        : [];
+    const actions = getAction(rightOptions);
+
+    const listChildProps = { icon, actions };
 
     const listChildren = listNames.map((name, index) => {
+      const uniqueIndex = index + name + listType;
+
       return listType === "item" ? (
-        <ListItem icon={icon} key={index}>
+        <ListItem {...listChildProps} key={uniqueIndex}>
           {name}
         </ListItem>
       ) : (
-        <ListSection icon={icon} key={index}>
+        <ListSection {...listChildProps} key={uniqueIndex}>
           {name}
           <ListSection />
         </ListSection>
@@ -60,7 +86,9 @@ export const PlaygroundImplementation = () => {
     });
 
     const element = (
-      <List itemType={clsx(listType === "section" ? "listSection" : "listItem")}>
+      <List
+        itemType={clsx(listType === "section" ? "listSection" : "listItem")}
+      >
         {listChildren}
       </List>
     );
@@ -111,8 +139,8 @@ export const PlaygroundImplementation = () => {
                 setRightOptions(e.target.value as ListRightOption);
               }}
             >
-              <Radio value="icon">Icon</Radio>
               <Radio value="empty">Empty</Radio>
+              <Radio value="switch">Switch</Radio>
               <Radio value="button">Button</Radio>
             </RadioGroup>
           </Playground.OptionsSection>
