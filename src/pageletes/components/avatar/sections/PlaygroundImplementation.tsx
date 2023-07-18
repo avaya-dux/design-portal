@@ -54,13 +54,19 @@ export const PlaygroundImplementation = () => {
 
   const [element, react, html] = useMemo(() => {
     const variant = getVariant(type);
-    const props: AvatarProps = {
+    let props: AvatarProps = {
       variant: variant,
       size: sizeOption,
       status: statusOption,
-      initials: initialsValue,
-      image: image,
     };
+
+    if (initialsValue) {
+      props = { ...props, initials: initialsValue }
+    }
+
+    if (image) {
+      props = { ...props, image }
+    }
 
     const element = <Avatar {...props} />;
     return [
