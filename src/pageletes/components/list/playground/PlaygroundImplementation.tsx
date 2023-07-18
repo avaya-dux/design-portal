@@ -1,4 +1,5 @@
 import { Icon, IconButton, List, ListItem, ListSection, Radio, RadioGroup, Select, SelectOption } from "@avaya/neo-react";
+import { clsx } from "clsx";
 import { useEffect, useMemo, useState } from "react";
 
 import { Playground } from "components";
@@ -21,52 +22,46 @@ export const PlaygroundImplementation = () => {
 
   const [rightOptions, setRightOptions] = useState<ListRightOption>("button");
 
-  const [listItemComponent, listItemReact, listItemHTML] = useMemo(() => {
-    const element = (
-      <List itemType="ListItem">
-        <ListItem
-          actions={
-            rightOptions === "button" && [
-              <IconButton
-                aria-label="add call"
-                data-testid="neo-button-add-call"
-                icon="call-add"
-                id="btn-add-call"
-                shape="circle"
-                variant="tertiary"
-              />,
-            ]
-          }
-          icon={
-            leftOptions === "icon" && (
-              <Icon aria-label="star-icon" icon="star" />
-            )
-          }
-        >
-          Aman Kharti
-        </ListItem>
+  const [component, react, html] = useMemo(() => {
+    const listNames = ["John Smith", "Lucille Ball", "Spinella Manch"];
 
-        <ListItem
-          actions={
-            rightOptions === "button" && [
-              <IconButton
-                aria-label="add call"
-                data-testid="neo-button-add-call"
-                icon="call-add"
-                id="btn-add-call"
-                shape="circle"
-                variant="tertiary"
-              />,
-            ]
-          }
-          icon={
-            leftOptions === "icon" && (
-              <Icon aria-label="star-icon" icon="star" />
-            )
-          }
-        >
-          Aman Kharti
+    const icon =
+      leftOptions === "icon" ? (
+        <Icon aria-label="star-icon" icon="star" />
+      ) : (
+        <></>
+      );
+
+    const iconButton =
+      rightOptions == "button"
+        ? [
+            <IconButton
+              aria-label="add call"
+              data-testid="neo-button-add-call"
+              icon="call-add"
+              id="btn-add-call"
+              shape="circle"
+              variant="tertiary"
+            />,
+          ]
+        : [];
+
+    const listChildren = listNames.map((name, index) => {
+      return listType === "item" ? (
+        <ListItem icon={icon} key={index}>
+          {name}
         </ListItem>
+      ) : (
+        <ListSection icon={icon} key={index}>
+          {name}
+          <ListSection />
+        </ListSection>
+      );
+    });
+
+    const element = (
+      <List itemType={clsx(listType === "section" ? "listSection" : "listItem")}>
+        {listChildren}
       </List>
     );
 
@@ -75,92 +70,6 @@ export const PlaygroundImplementation = () => {
       prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
     ];
-  }, [rightOptions, leftOptions]);
-
-  const [listSectionComponent, listSectionReact, listSectionHTML] =
-    useMemo(() => {
-      const element = (
-        <List itemType="ListSection">
-          <ListSection
-            actions={
-              rightOptions === "button" && [
-                <IconButton
-                  aria-label="add call"
-                  data-testid="neo-button-add-call"
-                  icon="call-add"
-                  id="btn-add-call"
-                  shape="circle"
-                  variant="tertiary"
-                />,
-              ]
-            }
-            icon={
-              leftOptions === "icon" && (
-                <Icon aria-label="star-icon" icon="star" />
-              )
-            }
-          >
-            Aman Kharti
-          </ListSection>
-
-          <ListSection
-            actions={
-              rightOptions === "button" && [
-                <IconButton
-                  aria-label="add call"
-                  data-testid="neo-button-add-call"
-                  icon="call-add"
-                  id="btn-add-call"
-                  shape="circle"
-                  variant="tertiary"
-                />,
-              ]
-            }
-            icon={
-              leftOptions === "icon" && (
-                <Icon aria-label="star-icon" icon="star" />
-              )
-            }
-          >
-            Aman Kharti
-          </ListSection>
-        </List>
-      );
-
-      return [
-        element,
-        // "one",
-        // "two"
-        prettyPrintReactElementToString(element),
-        prettyPrintReactElementToHtml(element),
-      ];
-    }, [rightOptions, leftOptions]);
-
-  const [elementToRender, setElementToRender] = useState(
-    listType === "item" ? listItemComponent : listSectionComponent,
-  );
-
-  const [react, setReact] = useState(
-    listType === "item" ? listItemReact : listSectionReact,
-  );
-
-  const [html, setHTML] = useState(
-    listType === "item" ? listItemHTML : listSectionHTML,
-  );
-
-  useEffect(() => {
-
-    const component =
-      listType === "item" ? listItemComponent : listSectionComponent;
-
-    const reactToRender =
-      listType === "item" ? listItemReact : listSectionReact;
-
-    const htmlToRender = listType === "item" ? listItemHTML : listSectionHTML;
-
-    setElementToRender(component);
-    setReact(reactToRender);
-    setHTML(htmlToRender);
   }, [listType, rightOptions, leftOptions]);
 
   return (
@@ -170,8 +79,10 @@ export const PlaygroundImplementation = () => {
           <Playground.OptionsSection title="Type">
             <Select
               aria-label="List Types"
-              onChange={(value) => setListType(value as ListTypeOption)}
-              defaultValue="item"
+              onChange={(value: string) => {
+                setListType(value as ListTypeOption);
+              }}
+              value={listType}
             >
               <SelectOption value="item">List Item Group</SelectOption>
               <SelectOption value="section">List Section Group</SelectOption>
@@ -180,11 +91,11 @@ export const PlaygroundImplementation = () => {
 
           <Playground.OptionsSection title="Left Options">
             <RadioGroup
-              groupName="left options"
+              groupName="left-options"
               selected={leftOptions}
-              onChange={(e) => {
-                console.log(e.target.value)
-                setLeftOptions(e.target.value);
+              onChange={(e: { target: { value: string } }) => {
+                console.log(e.target.value);
+                setLeftOptions(e.target.value as ListLeftOption);
               }}
             >
               <Radio value="icon">With Icon</Radio>
@@ -194,9 +105,9 @@ export const PlaygroundImplementation = () => {
 
           <Playground.OptionsSection title="Right Options">
             <RadioGroup
-              groupName="right options"
+              groupName="right-options"
               selected={rightOptions}
-              onChange={(e) => {
+              onChange={(e: { target: { value: string } }) => {
                 setRightOptions(e.target.value as ListRightOption);
               }}
             >
@@ -208,13 +119,13 @@ export const PlaygroundImplementation = () => {
         </Playground.OptionsContainer>
       }
       examples={{
-        react,
-        html,
+        react: "one",
+        html: "two",
         sandbox,
         storybook,
       }}
     >
-      {elementToRender}
+      {component}
     </Playground>
   );
 };
