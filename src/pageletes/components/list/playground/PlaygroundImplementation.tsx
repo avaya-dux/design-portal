@@ -1,27 +1,13 @@
-import {
-  Icon,
-  IconButton,
-  List,
-  ListItem,
-  ListSection,
-  Radio,
-  RadioGroup,
-  Select,
-  SelectOption,
-  Switch,
-} from "@avaya/neo-react";
+import { Icon, IconButton, List, ListItem, ListSection, Radio, RadioGroup, Select, SelectOption, Switch } from "@avaya/neo-react";
 import { clsx } from "clsx";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components";
-import {
-  prettyPrintReactElementToHtml,
-  prettyPrintReactElementToString,
-} from "helpers";
+import { prettyPrintReactElementToHtml, prettyPrintReactElementToString } from "helpers";
 
-export const sandbox = "https://codesandbox.io/s/neo-react-chips-conoc3";
+export const sandbox = "https://codesandbox.io/s/neo-react-list-hvxfzq";
 export const storybook =
-  "https://neo-react-library-storybook.netlify.app/?path=/story/components-chips";
+  "https://neo-react-library-storybook.netlify.app/?path=/docs/components-list--docs";
 
 type ListTypeOption = "item" | "section";
 
