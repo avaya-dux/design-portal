@@ -4,10 +4,10 @@ import {
   prettyPrintReactElementToString,
 } from "./utils";
 
-import { Checkbox, CheckboxGroup } from "@avaya/neo-react";
+import { Checkbox, CheckboxGroup, List, ListItem, IconButton, Icon } from "@avaya/neo-react";
 
 describe(prettyPrintReactElementToString.name, () => {
-  it("pretty react", () => {
+  it("prettyPrint CheckboxGroup to react ", () => {
     const element = (
       <CheckboxGroup groupName="checkbox-group" label="Checkbox Group">
         <Checkbox value="1" disabled={true}>
@@ -37,9 +37,66 @@ describe(prettyPrintReactElementToString.name, () => {
       </CheckboxGroup>"
     `);
   });
+  it("prettyPrint List to react ", () => {
+    const element = (
+      <List itemType="ListItem">
+        <ListItem
+          actions={[
+            <IconButton
+              aria-label="add call"
+              data-testid="neo-button-add-call"
+              icon="call-add"
+              id="btn-add-call"
+              shape="circle"
+              variant="tertiary"
+            />,
+          ]}
+          icon={<Icon aria-label="star-icon" icon="star" />}
+        >
+          Aman Kharti
+        </ListItem>
+
+        <ListItem
+          actions={[
+            <IconButton
+              aria-label="add call"
+              data-testid="neo-button-add-call"
+              icon="call-add"
+              id="btn-add-call"
+              shape="circle"
+              variant="tertiary"
+            />,
+          ]}
+          icon={<Icon aria-label="star-icon" icon="star" />}
+        >
+          Aman Kharti
+        </ListItem>
+      </List>
+    );
+    expect(prettyPrintReactElementToString(element)).toMatchInlineSnapshot(`
+      "<List itemType=\\"ListItem\\">
+        <ListItem
+          actions={[
+            <IconButton aria-label=\\"add call\\" data-testid=\\"neo-button-add-call\\" icon=\\"call-add\\" id=\\"btn-add-call\\" shape=\\"circle\\" variant=\\"tertiary\\"/>
+          ]}
+          icon={<Icon aria-label=\\"star-icon\\" icon=\\"star\\"/>}
+        >
+          Aman Kharti
+        </ListItem>
+        <ListItem
+          actions={[
+            <IconButton aria-label=\\"add call\\" data-testid=\\"neo-button-add-call\\" icon=\\"call-add\\" id=\\"btn-add-call\\" shape=\\"circle\\" variant=\\"tertiary\\"/>
+          ]}
+          icon={<Icon aria-label=\\"star-icon\\" icon=\\"star\\"/>}
+        >
+          Aman Kharti
+        </ListItem>
+      </List>"
+    `);
+  });
 });
 describe(prettyPrintReactElementToHtml.name, () => {
-  it("convert to html correctly", () => {
+  it("pretty print CheckboxGroup to html", () => {
     const element = (
       <CheckboxGroup groupName="checkbox-group" label="Checkbox Group">
         <Checkbox value="1">example value</Checkbox>
@@ -87,6 +144,106 @@ describe(prettyPrintReactElementToHtml.name, () => {
           </label>
         </div>
       </div>"
+    `,
+    );
+  });
+
+  it("pretty print List to html", () => {
+    const element = (
+      <List itemType="ListItem">
+        <ListItem
+          actions={[
+            <IconButton
+              aria-label="add call"
+              data-testid="neo-button-add-call"
+              icon="call-add"
+              id="btn-add-call"
+              shape="circle"
+              variant="tertiary"
+            />,
+          ]}
+          icon={<Icon aria-label="star-icon" icon="star" />}
+        >
+          Aman Kharti
+        </ListItem>
+
+        <ListItem
+          actions={[
+            <IconButton
+              aria-label="add call"
+              data-testid="neo-button-add-call"
+              icon="call-add"
+              id="btn-add-call"
+              shape="circle"
+              variant="tertiary"
+            />,
+          ]}
+          icon={<Icon aria-label="star-icon" icon="star" />}
+        >
+          Aman Kharti
+        </ListItem>
+      </List>
+    );
+    expect(prettyPrintReactElementToHtml(element)).toMatchInlineSnapshot(
+   `
+      "<ul class=\\"neo-group-list neo-group-list--hover\\">
+        <li class=\\"neo-group-list__wrapper\\">
+          <div class=\\"neo-group-list__item\\">
+            <span
+              role=\\"img\\"
+              aria-label=\\"star-icon\\"
+              class=\\"neo-icon-star\\"
+            >
+            </span>
+          </div>
+          <div class=\\"neo-group-list__item neo-group-list__item--middle\\">
+            Aman Kharti
+          </div>
+          <div class=\\"neo-group-list__item\\">
+            <button
+              aria-label=\\"add call\\"
+              class=\\"neo-btn neo-btn-circle neo-btn--default neo-btn-tertiary neo-btn-tertiary--default neo-btn-circle-tertiary--default\\"
+              data-badge
+              data-testid=\\"neo-button-add-call\\"
+              id=\\"btn-add-call\\"
+            >
+              <span
+                class=\\"neo-icon-call-add\\"
+                style=\\"font-size:20px\\"
+              >
+              </span>
+            </button>
+          </div>
+        </li>
+        <li class=\\"neo-group-list__wrapper\\">
+          <div class=\\"neo-group-list__item\\">
+            <span
+              role=\\"img\\"
+              aria-label=\\"star-icon\\"
+              class=\\"neo-icon-star\\"
+            >
+            </span>
+          </div>
+          <div class=\\"neo-group-list__item neo-group-list__item--middle\\">
+            Aman Kharti
+          </div>
+          <div class=\\"neo-group-list__item\\">
+            <button
+              aria-label=\\"add call\\"
+              class=\\"neo-btn neo-btn-circle neo-btn--default neo-btn-tertiary neo-btn-tertiary--default neo-btn-circle-tertiary--default\\"
+              data-badge
+              data-testid=\\"neo-button-add-call\\"
+              id=\\"btn-add-call\\"
+            >
+              <span
+                class=\\"neo-icon-call-add\\"
+                style=\\"font-size:20px\\"
+              >
+              </span>
+            </button>
+          </div>
+        </li>
+      </ul>"
     `,
     );
   });
