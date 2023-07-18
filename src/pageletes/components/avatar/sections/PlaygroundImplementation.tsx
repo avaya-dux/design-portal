@@ -16,15 +16,15 @@ import {
 } from "helpers";
 
 export const sandbox =
-  "https://codesandbox.io/s/neo-react-notifications-dcplsu?file=/src/App.js";
+  "https://codesandbox.io/s/neo-react-avatar-forked-ktyvjv?file=/src/App.js";
 export const storybook =
-  "https://neo-react-library-storybook.netlify.app/?path=/story/components-notification";
+  "https://neo-react-library-storybook.netlify.app/?path=/story/components-avatar--avatar-with-status-indicator";
 
-import avatarImg from "../imgs/avatar128.png";
+import avatarImg from "../imgs/avatarImg.png";
 
 type TypeOption = "generic" | "image" | "bot" | "initials";
 type SizeOption = "sm" | "md" | "lg";
-type StatusOption = "none" | "available" | "away" | "busy" | "offline" | "dnd";
+type StatusOption = "none" | "available" | "away" | "busy" | "offline" | "do-not-disturb";
 
 export const PlaygroundImplementation = () => {
   const [type, setType] = useState<TypeOption>("generic");
@@ -122,7 +122,7 @@ export const PlaygroundImplementation = () => {
               <Radio value="away">Away</Radio>
               <Radio value="busy">Busy</Radio>
               <Radio value="offline">Offline</Radio>
-              <Radio value="dnd">Do Not Disturb</Radio>
+              <Radio value="do-not-disturb">Do Not Disturb</Radio>
             </RadioGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
