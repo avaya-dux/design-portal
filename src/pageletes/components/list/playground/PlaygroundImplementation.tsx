@@ -10,7 +10,6 @@ import {
   SelectOption,
 } from "@avaya/neo-react";
 
-import clsx from "clsx";
 import { useEffect, useMemo, useState } from "react";
 
 import { Playground } from "components";
@@ -27,73 +26,156 @@ type ListTypeOption = "item" | "section";
 
 type ListLeftOption = "icon" | "no-icon";
 
-type ListRightOption = "icon" | "empty" | "button";
+type ListRightOption = "button" | "no-button";
 
 export const PlaygroundImplementation = () => {
   const [listType, setListType] = useState<ListTypeOption>("item");
 
   const [leftOptions, setLeftOptions] = useState<ListLeftOption>("icon");
 
-  const [rightOptions, setRightOptions] = useState<ListRightOption>("icon");
+  const [rightOptions, setRightOptions] = useState<ListRightOption>("button");
 
-  const [component, react, html] = useMemo(() => {
-    const element = listType === "item" ? (
+  const [listItemComponent, listItemReact, listItemHTML] = useMemo(() => {
+    const element = (
       <List itemType="ListItem">
-  <ListItem
-    actions={[
-      <IconButton aria-label="call" data-testid="neo-button-call" icon="call" id="btn-call" shape="circle" variant="tertiary"/>
-    ]}
-    icon={<Icon aria-label="star icon" icon="star" id="icon-star" role="img"/>}
-  >
-    Joan Barnett
-  </ListItem>
-  <ListItem
-    actions={[
-      <IconButton aria-label="call" data-testid="neo-button-call" icon="call" id="btn-call" shape="circle" variant="tertiary"/>
-    ]}
-    icon={<Icon aria-label="star icon" icon="star" id="icon-star" role="img"/>}
-  >
-    Joan Barnett
-  </ListItem>
-  <ListItem
-    actions={[
-      <IconButton aria-label="call" data-testid="neo-button-call" icon="call" id="btn-call" shape="circle" variant="tertiary"/>
-    ]}
-    icon={<Icon aria-label="star icon" icon="star" id="icon-star" role="img"/>}
-  >
-    Joan Barnett
-  </ListItem>
-  <ListItem
-    actions={[
-      <IconButton aria-label="call" data-testid="neo-button-call" icon="call" id="btn-call" shape="circle" variant="tertiary"/>
-    ]}
-    icon={<Icon aria-label="star icon" icon="star" id="icon-star" role="img"/>}
-  >
-    Joan Barnett
-  </ListItem>
-  <ListItem
-    actions={[
-      <IconButton aria-label="call" data-testid="neo-button-call" icon="call" id="btn-call" shape="circle" variant="tertiary"/>
-    ]}
-    icon={<Icon aria-label="star icon" icon="star" id="icon-star" role="img"/>}
-  >
-    Joan Barnett
-  </ListItem>
-</List>
-    ) : ();
+        <ListItem
+          actions={
+            rightOptions === "button" && [
+              <IconButton
+                aria-label="add call"
+                data-testid="neo-button-add-call"
+                icon="call-add"
+                id="btn-add-call"
+                shape="circle"
+                variant="tertiary"
+              />,
+            ]
+          }
+          icon={
+            leftOptions === "icon" && (
+              <Icon aria-label="star-icon" icon="star" />
+            )
+          }
+        >
+          Aman Kharti
+        </ListItem>
+
+        <ListItem
+          actions={
+            rightOptions === "button" && [
+              <IconButton
+                aria-label="add call"
+                data-testid="neo-button-add-call"
+                icon="call-add"
+                id="btn-add-call"
+                shape="circle"
+                variant="tertiary"
+              />,
+            ]
+          }
+          icon={
+            leftOptions === "icon" && (
+              <Icon aria-label="star-icon" icon="star" />
+            )
+          }
+        >
+          Aman Kharti
+        </ListItem>
+      </List>
+    );
 
     return [
       element,
-      prettyPrintReactElementToString(element, { filterProps: ["onClose"] }),
-      prettyPrintReactElementToHtml(element),
+      "one",
+      "two"
     ];
-  }, [chipType, chipVariant, chipVariable, disabled]);
+  }, [rightOptions, leftOptions]);
 
-  const [elementToRender, setElementToRender] = useState(component);
+  const [listSectionComponent, listSectionReact, listSectionHTML] =
+    useMemo(() => {
+      const element = (
+        <List itemType="ListSection">
+          <ListSection
+            actions={
+              rightOptions === "button" && [
+                <IconButton
+                  aria-label="add call"
+                  data-testid="neo-button-add-call"
+                  icon="call-add"
+                  id="btn-add-call"
+                  shape="circle"
+                  variant="tertiary"
+                />,
+              ]
+            }
+            icon={
+              leftOptions === "icon" && (
+                <Icon aria-label="star-icon" icon="star" />
+              )
+            }
+          >
+            Aman Kharti
+          </ListSection>
+
+          <ListSection
+            actions={
+              rightOptions === "button" && [
+                <IconButton
+                  aria-label="add call"
+                  data-testid="neo-button-add-call"
+                  icon="call-add"
+                  id="btn-add-call"
+                  shape="circle"
+                  variant="tertiary"
+                />,
+              ]
+            }
+            icon={
+              leftOptions === "icon" && (
+                <Icon aria-label="star-icon" icon="star" />
+              )
+            }
+          >
+            Aman Kharti
+          </ListSection>
+        </List>
+      );
+
+      return [
+        element,
+        "one",
+        "two"
+        // prettyPrintReactElementToString(element),
+        // prettyPrintReactElementToHtml(element),
+      ];
+    }, [rightOptions, leftOptions]);
+
+  const [elementToRender, setElementToRender] = useState(
+    listType === "item" ? listItemComponent : listSectionComponent,
+  );
+
+  const [react, setReact] = useState(
+    listType === "item" ? listItemReact : listSectionReact,
+  );
+
+  const [html, setHTML] = useState(
+    listType === "item" ? listItemHTML : listSectionHTML,
+  );
 
   useEffect(() => {
+
+    const component =
+      listType === "item" ? listItemComponent : listSectionComponent;
+
+    const reactToRender =
+      listType === "item" ? listItemReact : listSectionReact;
+
+    const htmlToRender = listType === "item" ? listItemHTML : listSectionHTML;
+
     setElementToRender(component);
-  }, [chipType, chipVariant, chipVariable, disabled, component]);
+    setReact(reactToRender);
+    setHTML(htmlToRender);
+  }, [listType, rightOptions, leftOptions]);
 
   return (
     <Playground
@@ -115,12 +197,12 @@ export const PlaygroundImplementation = () => {
               groupName="left options"
               selected={leftOptions}
               onChange={(e) => {
-                setLeftOptions(e.target.value as ListLeftOption);
+                console.log(e.target.value)
+                setLeftOptions(e.target.value);
               }}
             >
-              <Radio value="default">None</Radio>
-              <Radio value="icon">Icon</Radio>
-              <Radio value="avatar">Avatar</Radio>
+              <Radio value="icon">With Icon</Radio>
+              <Radio value="no-icon">Without Icon</Radio>
             </RadioGroup>
           </Playground.OptionsSection>
 
