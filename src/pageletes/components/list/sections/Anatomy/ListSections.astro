@@ -1,0 +1,50 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Description,
+  ImageWrapper,
+  InfoList,
+  InfoListItem,
+  SubHeader,
+} from "components";
+import { topics } from "../../static";
+
+const { id } = topics.anatomy;
+
+import image1 from "../../imgs/list-section-anatomy-1.svg";
+const img1AltText =
+  "Image showing the anatomy of a list section, there are 4 points of interest corresponding to the different elements within the list item.";
+---
+
+<SubHeader id={`${id}-list-sections`}>List Sections</SubHeader>
+
+<Description>
+  List Sections are list items that contain other items beneath. The appropriate
+  tab index attribute should be added. List Sections are expandable to show
+  other related options in the same list.
+</Description>
+
+<ImageWrapper>
+  <Image src={image1} alt={img1AltText} />
+</ImageWrapper>
+
+<InfoList type="decimal">
+  <InfoListItem label="Container">
+    The box that defines the extent of the list. All other components appear
+    inside the container.
+  </InfoListItem>
+
+  <InfoListItem label="Icon">
+    An icon can be added to the section if it helps to make the meaning clearer
+    or the function more apparent.
+  </InfoListItem>
+
+  <InfoListItem label="Text Label">
+    A description of the list item. The label should be as short as possible
+    while providing complete details.
+  </InfoListItem>
+
+  <InfoListItem label="Button Actions">
+    These optional icons provide additional actions to the user.
+  </InfoListItem>
+</InfoList>

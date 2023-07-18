@@ -1,0 +1,56 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Description,
+  ImageWrapper,
+  InfoList,
+  InfoListItem,
+  SubHeader,
+} from "components";
+import { topics } from "../../static";
+
+const { id } = topics.anatomy;
+
+import image1 from "../../imgs/list-items-anatomy-1.svg";
+const img1AltText =
+  "Image showing the anatomy of a list item, there are 5 points of interest corresponding to the different elements within the list item.";
+---
+
+<SubHeader id={`${id}-list-items`}>List Items</SubHeader>
+
+<Description>
+  List Items provide users with a groups of related options. They can be
+  navigation items allowing the user to jump to other sections of the
+  application, lists of contacts showing their current status and providing an
+  easy means to connect, or any other collection of similar elements.
+</Description>
+
+<ImageWrapper>
+  <Image src={image1} alt={img1AltText} />
+</ImageWrapper>
+
+<InfoList type="decimal">
+  <InfoListItem label="Container">
+    The box that defines the extent of the list. All components for this item
+    appear inside the container.
+  </InfoListItem>
+
+  <InfoListItem label="Avatar">
+    When a person is part of the list, this is a picture of the individual or
+    their initials.
+  </InfoListItem>
+
+  <InfoListItem label="Text Label">
+    A description of the list item. The label should be as short as possible
+    while providing complete details.
+  </InfoListItem>
+
+  <InfoListItem label="Support Body Copy">
+    This is additional information that helps to further define the list item.
+  </InfoListItem>
+
+  <InfoListItem label="Icon">
+    These represent one or more action items related to the list item, such as
+    “place a call to the person” or “edit the item’s settings.”
+  </InfoListItem>
+</InfoList>

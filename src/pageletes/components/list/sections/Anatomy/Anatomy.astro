@@ -1,0 +1,34 @@
+---
+import {
+  Description,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+} from "components";
+
+import ListItems from "./ListItems.astro";
+import ListSections from "./ListSections.astro";
+import { topics } from "../../static";
+
+const { title, id } = topics.anatomy;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    Lists are used to select between multiple options. They may include an
+    avatar or a person’s initials, labels, and any action items associated with
+    the list. Lists are always stacked vertically.
+  </Description>
+
+  <PageleteSubSection>
+    <ListItems />
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <ListSections />
+  </PageleteSubSection>
+</PageleteSection>
