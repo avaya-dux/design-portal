@@ -20,6 +20,6 @@ import RelatedContent from "./RelatedContent.astro";
 
 export { RelatedContent };
 
-import PlaygroundImplementation from "./PlaygroundImplementation.astro";
+import Playground from "./ListPlayground.astro";
 
-export { PlaygroundImplementation };
+export { Playground };
