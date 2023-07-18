@@ -29,7 +29,7 @@ export const PlaygroundImplementation = () => {
       leftOptions === "icon" ? (
         <Icon aria-label="star-icon" icon="star" />
       ) : (
-        <></>
+        ""
       );
 
     const iconButton =
@@ -119,8 +119,8 @@ export const PlaygroundImplementation = () => {
         </Playground.OptionsContainer>
       }
       examples={{
-        react: "one",
-        html: "two",
+        react,
+        html,
         sandbox,
         storybook,
       }}
