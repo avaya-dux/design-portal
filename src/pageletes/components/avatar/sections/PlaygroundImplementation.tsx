@@ -24,7 +24,13 @@ import avatarImg from "../imgs/avatarImg.png";
 
 type TypeOption = "generic" | "image" | "bot" | "initials";
 type SizeOption = "sm" | "md" | "lg";
-type StatusOption = "none" | "available" | "away" | "busy" | "offline" | "do-not-disturb";
+type StatusOption =
+  | "none"
+  | "available"
+  | "away"
+  | "busy"
+  | "offline"
+  | "do-not-disturb";
 
 export const PlaygroundImplementation = () => {
   const [type, setType] = useState<TypeOption>("generic");
@@ -61,11 +67,11 @@ export const PlaygroundImplementation = () => {
     };
 
     if (initialsValue) {
-      props = { ...props, initials: initialsValue }
+      props = { ...props, initials: initialsValue };
     }
 
     if (image) {
-      props = { ...props, image }
+      props = { ...props, image };
     }
 
     const element = <Avatar {...props} />;
