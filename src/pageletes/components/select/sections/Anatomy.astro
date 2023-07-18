@@ -1,4 +1,6 @@
 ---
+import { Image } from "@avaya/neo-react";
+
 import {
   ColumnLayout,
   Description,
@@ -10,15 +12,14 @@ import {
 } from "components/astro";
 
 import { topics } from "../static";
-import { Image } from "@avaya/neo-react";
 
 const { id, title } = topics.anatomy;
 
-import image1 from "./imgs/anatomy-1.svg";
+import image1 from "./imgs/select-anatomy-1.svg";
 const img1AltText =
   "Image showing a select component with its four notes pointed out and described below";
 
-import image2 from "./imgs/anatomy-2.svg";
+import image2 from "./imgs/select-anatomy-2.svg";
 const img2AltText =
   "Image showing an expanded select component with its expanded section noted as the fifth note and described below";
 ---
@@ -44,14 +45,24 @@ const img2AltText =
   </ColumnLayout>
 
   <InfoList type="decimal">
-    <InfoListItem label="Label">Description</InfoListItem>
+    <InfoListItem label="Label">
+      A label should be included above the select field to describe its function to the user.
+    </InfoListItem>
 
-    <InfoListItem label="Form">Description</InfoListItem>
+    <InfoListItem label="Form">
+      This field displays the currently selected function (if any) for this component.
+    </InfoListItem>
 
-    <InfoListItem label="Text Input Field">Description</InfoListItem>
+    <InfoListItem label="Helper Text">
+      This optional field provides additional information on the purpose of this field.
+    </InfoListItem>
 
-    <InfoListItem label="Chevron">Description</InfoListItem>
+    <InfoListItem label="Chevron">
+      The presence of the chevron icon shows that there is a menu of items that can be accessed by selecting the field.
+    </InfoListItem>
 
-    <InfoListItem label="Expand Trigger">Description</InfoListItem>
+    <InfoListItem label="Expand Trigger">
+      Each of the selectable options are shown here. The user will select one to make active.
+    </InfoListItem>
   </InfoList>
 </PageleteSection>
