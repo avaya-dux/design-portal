@@ -20,6 +20,8 @@ export const sandbox =
 export const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-notification";
 
+import avatarImg from "../imgs/avatar128.png";
+
 type TypeOption = "generic" | "image" | "bot" | "initials";
 type SizeOption = "sm" | "md" | "lg";
 type StatusOption = "none" | "available" | "away" | "busy" | "offline" | "dnd";
@@ -29,12 +31,17 @@ export const PlaygroundImplementation = () => {
   const [sizeOption, setSizeOption] = useState<SizeOption>("md");
   const [statusOption, setStatusOption] = useState<StatusOption>("none");
   const [initialsValue, setInitialsValue] = useState<initialsValue>("");
+  const [image, setImage] = useState<image>(null);
 
   const getVariant = (type: TypeOption) => {
     const strType = type as string;
     if (strType === "image") {
-      return "basic";
+      setImage(avatarImg);
+      setInitialsValue("");
+      return "generic";
     }
+
+    setImage(null);
 
     if (strType === "initials") {
       setInitialsValue("TC"); // Setting to arbitrary "TC" value
@@ -52,6 +59,7 @@ export const PlaygroundImplementation = () => {
       size: sizeOption,
       status: statusOption,
       initials: initialsValue,
+      image: image,
     };
 
     const element = <Avatar {...props} />;
@@ -60,7 +68,7 @@ export const PlaygroundImplementation = () => {
       prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
     ];
-  }, [type, sizeOption, statusOption, initialsValue]);
+  }, [type, sizeOption, statusOption, initialsValue, image]);
 
   return (
     <Playground
