@@ -60,7 +60,7 @@ export const PlaygroundImplementation = () => {
       prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
     ];
-  }, [type, sizeOption, statusOption]);
+  }, [type, sizeOption, statusOption, initialsValue]);
 
   return (
     <Playground
@@ -88,9 +88,9 @@ export const PlaygroundImplementation = () => {
                 setSizeOption(e.target.value as SizeOption);
               }}
             >
-              <Radio value="small">Small</Radio>
-              <Radio value="medium">Medium</Radio>
-              <Radio value="medium">large</Radio>
+              <Radio value="sm">Small</Radio>
+              <Radio value="md">Medium</Radio>
+              <Radio value="lg">large</Radio>
             </RadioGroup>
           </Playground.OptionsSection>
 
