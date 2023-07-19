@@ -1,5 +1,4 @@
-import { Icon, IconButton, List, ListItem, ListSection, Radio, RadioGroup, Select, SelectOption, Switch } from "@avaya/neo-react";
-import { clsx } from "clsx";
+import { Icon, IconButton, List, ListItem, ListProps, ListSection, Radio, RadioGroup, Select, SelectOption, Switch } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components";
@@ -8,8 +7,6 @@ import { prettyPrintReactElementToHtml, prettyPrintReactElementToString } from "
 export const sandbox = "https://codesandbox.io/s/neo-react-list-hvxfzq";
 export const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/docs/components-list--docs";
-
-type ListTypeOption = "item" | "section";
 
 type ListLeftOption = "icon" | "no-icon";
 
@@ -40,7 +37,7 @@ const getAction = (option: ListRightOption) => {
 };
 
 export const PlaygroundImplementation = () => {
-  const [listType, setListType] = useState<ListTypeOption>("item");
+  const [listType, setListType] = useState<ListProps["itemType"]>("ListItem");
 
   const [leftOptions, setLeftOptions] = useState<ListLeftOption>("icon");
 
@@ -59,7 +56,7 @@ export const PlaygroundImplementation = () => {
     const listChildren = listNames.map((name, index) => {
       const uniqueIndex = index + name + listType;
 
-      return listType === "item" ? (
+      return listType === "ListItem" ? (
         <ListItem {...listChildProps} key={uniqueIndex}>
           {name}
         </ListItem>
@@ -72,9 +69,7 @@ export const PlaygroundImplementation = () => {
     });
 
     const element = (
-      <List
-        itemType={clsx(listType === "section" ? "listSection" : "listItem")}
-      >
+      <List itemType={listType}>
         {listChildren}
       </List>
     );
@@ -94,12 +89,12 @@ export const PlaygroundImplementation = () => {
             <Select
               aria-label="List Types"
               onChange={(value: string) => {
-                setListType(value as ListTypeOption);
+                setListType(value as ListProps["itemType"]);
               }}
               value={listType}
             >
-              <SelectOption value="item">List Item Group</SelectOption>
-              <SelectOption value="section">List Section Group</SelectOption>
+              <SelectOption value="ListItem">List Item</SelectOption>
+              <SelectOption value="ListSection">List Section</SelectOption>
             </Select>
           </Playground.OptionsSection>
 
