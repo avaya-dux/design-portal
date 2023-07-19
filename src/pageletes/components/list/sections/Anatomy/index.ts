@@ -1,3 +1,3 @@
-import Anatomy from './Anatomy.astro';
+import Anatomy from "./Anatomy.astro";
 
 export { Anatomy };

@@ -21,7 +21,7 @@ export const topics: TopicsDict<LinkTopicNames> = {
     id: `${component}-anatomy`,
     title: "Anatomy",
   },
-  behavior: { order: 2, id: `${component}-anatomy`, title: "Behavior" },
+  behavior: { order: 2, id: `${component}-behavior`, title: "Behavior" },
   specs: {
     order: 3,
     id: `${component}-specs`,

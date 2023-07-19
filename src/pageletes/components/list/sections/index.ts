@@ -19,3 +19,7 @@ export { KeyboardInteractions };
 import RelatedContent from "./RelatedContent.astro";
 
 export { RelatedContent };
+
+import Playground from "./ListPlayground.astro";
+
+export { Playground };
