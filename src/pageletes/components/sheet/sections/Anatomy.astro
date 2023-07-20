@@ -1,0 +1,70 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  ColumnLayout,
+  Description,
+  InfoList,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import AnatomyImage1 from "../imgs/sheet-anatomy-1.svg";
+import AnatomyImage2 from "../imgs/sheet-anatomy-2.svg";
+
+const anatomyImg1AltText =
+  "Image showing the different parts that make up sheet with back and close icon.";
+const anatomyImg2AltText =
+  "Image showing the different parts that make up a sheet with buttons.";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.anatomy.id}>{topics.anatomy.title}</SectionHeader>
+
+  <Description>
+    The sheet component consists of different elements and action items.
+     These can include buttons, back and close icons.
+  </Description>
+
+  <ColumnLayout numOfColumns={2} bkgColor="#f1f1f1">
+    <StackedLayout label="Sheet with back and close icon">
+      <Image src={AnatomyImage1} alt={anatomyImg1AltText} />
+    </StackedLayout>
+    <StackedLayout label="Sheet with buttons">
+      <Image src={AnatomyImage2} alt={anatomyImg2AltText} />
+    </StackedLayout>
+  </ColumnLayout>
+
+  <InfoList type="decimal">
+    <InfoListItem label="Back Action:">
+      Returns the user to the previous page where sheets have sub-sheets.
+    </InfoListItem>
+
+    <InfoListItem label="Title:">
+      The title says what information is being displayed in the sheet. It should be short.
+    </InfoListItem>
+
+    <InfoListItem label="Close Icon:">
+      Use this to close the sheet and return to the underlaying page.
+    </InfoListItem>
+
+    <InfoListItem label="Container:">
+      The boundary for the sheet overlay uses elevation 300 for drop shadow.
+    </InfoListItem>
+
+    <InfoListItem label="Content Placement:">
+      The additional information provided by the sheet is placed here.
+    </InfoListItem>
+
+    <InfoListItem label="Secondary Button:">
+      The secoondary button provides and alternate action to the primary button.
+    </InfoListItem>
+
+    <InfoListItem label="Primary Button:">
+      The button provides the main action to the user.
+    </InfoListItem>
+  </InfoList>
+</PageleteSection>
