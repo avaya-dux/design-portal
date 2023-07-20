@@ -12,3 +12,9 @@ export { Placement };
 
 import Overlay from "./Overlay.astro";
 export { Overlay };
+
+import Scrolling from "./Scrolling.astro";
+export { Scrolling };
+
+import Dismissal from "./Dismissal.astro";
+export { Dismissal };
