@@ -5,27 +5,27 @@ import { DoAndDont } from "components/react";
 
 import { Image } from "@avaya/neo-react";
 
-import doImage1 from "../../imgs/sheet-behavior-appearance-do-1.svg";
-import dontImage1 from "../../imgs/sheet-behavior-appearance-dont-1.svg";
+import doImage1 from "../../imgs/sheet-behavior-buttons-do-1.svg";
+import dontImage1 from "../../imgs/sheet-behavior-buttons-dont-1.svg";
 
 const do1Instructions =
-  "Always use the Modal Scrim component to tint the page without covering the navigation menu.";
+  "Use the buttons included in the component to complete actions.";
 const doImg1AltText =
-  "An image showing a sheet displayed with the Modal Scrim component.";
+  "An image showing a sheet with buttons at the top.";
 
 const dont1Instructions =
-  "Do not leave the sheet on top of the page without using the Modal Scrim component.";
+  "Do not add buttons to the bottom of the sheet. This can cause actions to be hidden if the sheet is scrollable and the buttons are pushed off the top of the sheet.";
 const dontImg1AltText =
-  "An image showing a sheet that does not show the Modal Scrim when it should.";
+  "An image showing a sheet that incorrectly places buttons at the bottom.";
 
 ---
 
 <PageleteSubSection>
-  <SubHeader id="sheet-behavior-appearance">Appearance</SubHeader>
+  <SubHeader id="sheet-behavior-buttons">Buttons</SubHeader>
 
   <Description>
-    The sheet appears at the right side of the screen. A scrim is laid over the background behind the sheet.
-     It prevents the user from making any changes to the content until the sheet is closed.
+    The default buttons of sheet components appear in the top right corner of the container.
+     A primary button provides an additional action and a secondary icon dismisses the sheet.
   </Description>
 
   <DoAndDont>
