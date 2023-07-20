@@ -3,10 +3,10 @@ import { Image } from "@avaya/neo-react";
 import { ColumnLayout, Description, PageleteSection, SectionHeader, StackedLayout } from "components/astro";
 import { topics } from "../static";
 
-// import {
-//   StatusIndicator,
-//   UserTypes,
-// } from "./subsections";
+import {
+  Appearance,
+  Interaction,
+} from "./subsections";
 
 const { id, title } = topics.behavior;
 
@@ -32,5 +32,9 @@ const behaviorImgAltText =
       <Image src={BehaviorImage} alt={behaviorImgAltText} />
     </StackedLayout>
   </ColumnLayout>
+
+  <Interaction />
+
+  <Appearance />
 
 </PageleteSection>
