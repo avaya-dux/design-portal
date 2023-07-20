@@ -1,10 +1,6 @@
 ---
 import { Image } from "@avaya/neo-react";
-import {
-  Description,
-  DoAndDont,
-  SubHeader,
-} from "components";
+import { Description, DoAndDont, SubHeader } from "components";
 import { topics } from "../../static";
 
 const { id } = topics.anatomy;
@@ -25,7 +21,8 @@ import listDoImage3 from "../../imgs/list-behavior-grouped-do-3.svg";
 import listDontImage3 from "../../imgs/list-behavior-grouped-dont-3.svg";
 const listDoInstructions3 =
   "Use list sections for grouped items that can be expanded or selected.";
-const listDontInstructions3 = "Do not use list sections in place of form fields.";
+const listDontInstructions3 =
+  "Do not use list sections in place of form fields.";
 ---
 
 <SubHeader id={`${id}-grouped-content`}>Grouped Content</SubHeader>
@@ -37,38 +34,59 @@ const listDontInstructions3 = "Do not use list sections in place of form fields.
 <DoAndDont>
   <DoAndDont.DoContainer instructions={listDoInstructions1}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={listDoImage1} alt="An image of list items used to group non-data content" />
+      <Image
+        src={listDoImage1}
+        alt="An image of list items used to group non-data content"
+      />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DoContainer>
 
   <DoAndDont.DontContainer instructions={listDontInstructions1}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={listDontImage1} alt="An image of list items used in place of table rows" />
+      <Image
+        src={listDontImage1}
+        alt="An image of list items used in place of table rows"
+      />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DontContainer>
+</DoAndDont>
 
-
+<DoAndDont>
   <DoAndDont.DoContainer instructions={listDoInstructions2}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={listDoImage2} alt="An image of list item dividers used to group multiple related items" />
+      <Image
+        src={listDoImage2}
+        alt="An image of list item dividers used to group multiple related items"
+      />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DoContainer>
 
   <DoAndDont.DontContainer instructions={listDontInstructions2}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={listDontImage2} alt="An image of list item dividers being used between all items in a group" />
+      <Image
+        src={listDontImage2}
+        alt="An image of list item dividers being used between all items in a group"
+      />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DontContainer>
+</DoAndDont>
 
+<DoAndDont>
   <DoAndDont.DoContainer instructions={listDoInstructions3}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={listDoImage3} alt="An image of list item used with expandable grouped content" />
+      <Image
+        src={listDoImage3}
+        alt="An image of list item used with expandable grouped content"
+      />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DoContainer>
 
   <DoAndDont.DontContainer instructions={listDontInstructions3}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={listDontImage3} alt="An image of list sections being used in place of form fields" />
+      <Image
+        src={listDontImage3}
+        alt="An image of list sections being used in place of form fields"
+      />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DontContainer>
 </DoAndDont>
