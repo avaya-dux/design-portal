@@ -9,3 +9,6 @@ export { Buttons };
 
 import Placement from "./Placement.astro";
 export { Placement };
+
+import Overlay from "./Overlay.astro";
+export { Overlay };
