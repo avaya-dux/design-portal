@@ -1,5 +1,6 @@
 import { Icon } from "@avaya/neo-react";
 import clsx from "clsx";
+import parse from "html-react-parser";
 
 import "./DoAndDont.css";
 
@@ -70,7 +71,7 @@ const DoContainer = ({ children, instructions }: InstructionProps) => (
     </div>
 
     <p className="do-and-dont-paragraph">
-      <b>DO:</b> {instructions}
+      <b>DO:</b> <>{parse(instructions)}</>
     </p>
   </div>
 );
@@ -89,7 +90,7 @@ const DontContainer = ({ children, instructions }: InstructionProps) => (
     </div>
 
     <p className="do-and-dont-paragraph">
-      <b>DON'T:</b> {instructions}
+      <b>DON'T:</b> <>{parse(instructions)}</>
     </p>
   </div>
 );
