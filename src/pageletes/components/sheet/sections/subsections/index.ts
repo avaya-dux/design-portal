@@ -6,3 +6,6 @@ export { Appearance };
 
 import Buttons from "./Buttons.astro";
 export { Buttons };
+
+import Placement from "./Placement.astro";
+export { Placement };
