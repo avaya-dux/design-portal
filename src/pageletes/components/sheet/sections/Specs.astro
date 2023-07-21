@@ -1,0 +1,35 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  ColumnLayout,
+  Description,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import AnatomyImage from "../imgs/sheet-specs-1.svg";
+
+const anatomyImgAltText =
+  "Image showing the different parts that make up sheet with back and close icon.";
+
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.specs.id}>{topics.specs.title}</SectionHeader>
+
+  <Description>
+    Specs outline the size, style, spacing and padding properties of a component.
+     The width of the sheet is adjustable and the height depends upon the browser size.
+      The container is adjustable while maintaining the margins on all sides of the content.
+  </Description>
+
+  <ColumnLayout numOfColumns={1} bkgColor="#f1f1f1">
+    <StackedLayout>
+      <Image src={AnatomyImage} alt={anatomyImgAltText} />
+    </StackedLayout>
+  </ColumnLayout>
+
+</PageleteSection>
