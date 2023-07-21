@@ -1,0 +1,61 @@
+---
+import {
+  Description,
+  ImageWrapper,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  SubHeader,
+} from "components/astro";
+import { topics } from "../static";
+
+import { Image } from "@avaya/neo-react";
+
+const { id, title } = topics.type;
+
+import imageType1 from "../imgs/image-type-1.svg";
+import imageType2 from "../imgs/image-type-2.svg";
+
+const imageType1AltText =
+  "A three-by-two arrangement of photo portraits of different people";
+
+const imageType2AltText = "An image of a thumbnail with supporting text";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    There are two forms of an image; the photograph and the thumbnail. Each is
+    used for a specific purpose.
+  </Description>
+
+  <PageleteSubSection>
+    <SubHeader id="image-photograph">Photograph</SubHeader>
+
+    <Description>
+      The marketing team has a large collection of approved photographs in their <a href="https://avaya365.sharepoint.com/sites/AvayaOneCloudMarketing/stock-photo-library/SitePages/EventPlanHome.aspx?e=1:dff8d8d292a244b79464d9ce1fe2a3b5">image library</a>. Use these collections for your designs. Never use free or stock photos.
+      If you need assistance, reach out to the marketing team.
+    </Description>
+
+    <ImageWrapper>
+      <Image src={imageType1} alt={imageType1AltText} />
+    </ImageWrapper>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="image-thumbnail">Thumbnail</SubHeader>
+
+    <Description>
+      Thumbnail images are great for putting together a layout with placeholder
+      instead of the final picture. The actual image is added later. The
+      thumbnail provides a concept of what the final result will look like.
+    </Description>
+
+    <ImageWrapper>
+      <Image src={imageType2} alt={imageType2AltText} />
+    </ImageWrapper>
+  </PageleteSubSection>
+</PageleteSection>

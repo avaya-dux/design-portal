@@ -1,0 +1,60 @@
+---
+import {
+  Description,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  SubHeader,
+} from "components/astro";
+import { topics } from "../static";
+
+const { id, title } = topics.accessibility;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    When using images, it is important to ensure that all users can understand,
+    navigate and interact with the content. Accessibility means that we must
+    design and build with all types of users in mind, including those with
+    physical, motor or mental impairment.
+  </Description>
+
+  <PageleteSubSection>
+    <SubHeader id="image-alternative-text">Alternative Text</SubHeader>
+
+    <Description>
+      Alternative Text is embedded into the code. It provides a concise
+      description of the important elements of each image. Alt text should
+      convey the purpose and meaning of the image and how it relates to what is
+      happening in the user interface.
+    </Description>
+
+    <Description>
+      Screen readers and other assistive technologies rely upon alt text to
+      describe the image and meaning to users. Employ clear and specific
+      language, and avoid vague or redundant descriptions.
+    </Description>
+
+    <Description>
+      Be sure to include all relevant information from the image in the alt
+      text. If the color of a person’s shirt is not relevant to the situation,
+      it can safely be left out of the alt text.
+    </Description>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="image-decorative-images">Decorative Images</SubHeader>
+
+    <Description>
+      If an image is purely decorative and conveys no meaningful information,
+      such as a company logo, leave the alt text field empty. You can also use
+      the aria-hidden attribute to indicate that the image should be ignored by
+      screen readers. This helps to reduce clutter and allows assistive
+      technologies to focus on important content.
+    </Description>
+  </PageleteSubSection>
+</PageleteSection>
