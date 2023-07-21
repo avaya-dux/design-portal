@@ -16,22 +16,22 @@ export const topics: TopicsDict<ImageTopicNames> = {
     title: "Interactive Playground",
   },
   type: {
-    order: 0,
+    order: 1,
     id: `${component}-type`,
     title: "Type",
   },
   use: {
-    order: 0,
+    order: 2,
     id: `${component}-when-to-use`,
     title: "When to Use",
   },
   accessibility: {
-    order: 0,
+    order: 3,
     id: `${component}-accessibility`,
     title: "Accessibility",
   },
   related: {
-    order: 0,
+    order: 4,
     id: `${component}-related`,
     title: "Related Content",
   },
