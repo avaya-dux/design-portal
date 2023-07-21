@@ -87,7 +87,7 @@ ${
       }}
     >
       <Image
-        src={src}
+        src={defaultSrc}
         alt="Random image"
         thumbnail={isThumbnail}
         fallback="https://via.placeholder.com/200x300"
