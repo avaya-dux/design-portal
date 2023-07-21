@@ -1,0 +1,32 @@
+---
+import {
+  Description,
+  ImageWrapper,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+import { topics } from "../static";
+
+import { Image } from "@avaya/neo-react";
+
+const { id, title } = topics.use;
+
+import imageUse1 from "../imgs/image-use-1.svg";
+
+const imageUse1AltText = "An image of a login screen for Avaya's CCaaS product";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    Images are used only for public facing pages in the user interface. They
+    should be used sparingly and should never be used to replace icons.
+  </Description>
+
+  <ImageWrapper>
+    <Image src={imageUse1} alt={imageUse1AltText} />
+  </ImageWrapper>
+</PageleteSection>
