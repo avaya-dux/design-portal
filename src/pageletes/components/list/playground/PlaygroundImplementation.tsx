@@ -1,8 +1,23 @@
-import { Icon, IconButton, List, ListItem, ListProps, ListSection, Radio, RadioGroup, Select, SelectOption, Switch } from "@avaya/neo-react";
+import {
+  Icon,
+  IconButton,
+  List,
+  ListItem,
+  ListProps,
+  ListSection,
+  Radio,
+  RadioGroup,
+  Select,
+  SelectOption,
+  Switch,
+} from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components";
-import { prettyPrintReactElementToHtml, prettyPrintReactElementToString } from "helpers";
+import {
+  prettyPrintReactElementToHtml,
+  prettyPrintReactElementToString,
+} from "helpers";
 
 export const sandbox = "https://codesandbox.io/s/neo-react-list-hvxfzq";
 export const storybook =
@@ -68,11 +83,7 @@ export const PlaygroundImplementation = () => {
       );
     });
 
-    const element = (
-      <List itemType={listType}>
-        {listChildren}
-      </List>
-    );
+    const element = <List itemType={listType}>{listChildren}</List>;
 
     return [
       element,

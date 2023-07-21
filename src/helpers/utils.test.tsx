@@ -4,7 +4,14 @@ import {
   prettyPrintReactElementToString,
 } from "./utils";
 
-import { Checkbox, CheckboxGroup, List, ListItem, IconButton, Icon } from "@avaya/neo-react";
+import {
+  Checkbox,
+  CheckboxGroup,
+  List,
+  ListItem,
+  IconButton,
+  Icon,
+} from "@avaya/neo-react";
 
 describe(prettyPrintReactElementToString.name, () => {
   it("prettyPrint CheckboxGroup to react ", () => {
@@ -185,7 +192,7 @@ describe(prettyPrintReactElementToHtml.name, () => {
       </List>
     );
     expect(prettyPrintReactElementToHtml(element)).toMatchInlineSnapshot(
-   `
+      `
       "<ul class=\\"neo-group-list neo-group-list--hover\\">
         <li class=\\"neo-group-list__wrapper\\">
           <div class=\\"neo-group-list__item\\">
