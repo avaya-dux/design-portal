@@ -11,8 +11,6 @@ const storybook =
 const defaultSrc = "https://source.unsplash.com/random/200x300";
 
 export const PlaygroundImplementation = () => {
-  const [src, setSrc] = useState<ImageProps["src"]>(defaultSrc);
-
   const [isThumbnail, setIsThumbnail] =
     useState<ImageProps["thumbnail"]>(false);
 
@@ -20,7 +18,7 @@ export const PlaygroundImplementation = () => {
     () =>
       prettyPrintReact(`
 <Image
-  src="${src}"
+  src="${defaultSrc}"
   alt="Random image"
   thumbnail={${isThumbnail}}
   fallback="https://via.placeholder.com/200x300"
@@ -37,7 +35,7 @@ ${
     : ""
 }
   `),
-    [isThumbnail, src],
+    [isThumbnail],
   );
 
   const html = useMemo(
@@ -45,7 +43,7 @@ ${
       prettyPrintHtml(`
   <img
     alt="Random image"
-    src="${src}"
+    src="${defaultSrc}"
     class="${isThumbnail ? "neo-thumbnail" : "neo-img neo-img--fluid"}"
   />
 
@@ -60,7 +58,7 @@ ${
       : ""
   }
   `),
-    [isThumbnail, src],
+    [isThumbnail],
   );
 
   return (
@@ -71,7 +69,7 @@ ${
             <RadioGroup
               groupName="variations"
               selected={isThumbnail ? "thumbnail" : "image"}
-              onChange={(e) => {
+              onChange={() => {
                 setIsThumbnail(!isThumbnail);
               }}
             >
