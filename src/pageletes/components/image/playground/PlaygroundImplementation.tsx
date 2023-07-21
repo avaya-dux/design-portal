@@ -1,10 +1,4 @@
-import {
-  Checkbox,
-  CheckboxGroup,
-  Image,
-  ImageProps,
-  TextInput,
-} from "@avaya/neo-react";
+import { Image, ImageProps, RadioGroup, Radio } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components";
@@ -17,9 +11,6 @@ const storybook =
 const defaultSrc = "https://source.unsplash.com/random/200x300";
 
 export const PlaygroundImplementation = () => {
-  const [src, setSrc] = useState<ImageProps["src"]>(defaultSrc);
-
-  const [isBroken, setIsBroken] = useState(false);
   const [isThumbnail, setIsThumbnail] =
     useState<ImageProps["thumbnail"]>(false);
 
@@ -27,7 +18,7 @@ export const PlaygroundImplementation = () => {
     () =>
       prettyPrintReact(`
 <Image
-  src="${isBroken ? "baduri" : src}"
+  src="${defaultSrc}"
   alt="Random image"
   thumbnail={${isThumbnail}}
   fallback="https://via.placeholder.com/200x300"
@@ -44,7 +35,7 @@ ${
     : ""
 }
   `),
-    [isBroken, isThumbnail, src],
+    [isThumbnail],
   );
 
   const html = useMemo(
@@ -52,7 +43,7 @@ ${
       prettyPrintHtml(`
   <img
     alt="Random image"
-    src="${isBroken ? "baduri" : src}"
+    src="${defaultSrc}"
     class="${isThumbnail ? "neo-thumbnail" : "neo-img neo-img--fluid"}"
   />
 
@@ -67,46 +58,24 @@ ${
       : ""
   }
   `),
-    [isBroken, isThumbnail, src],
+    [isThumbnail],
   );
 
   return (
     <Playground
       options={
         <Playground.OptionsContainer>
-          <Playground.OptionsSection title="Image Source">
-            <TextInput
-              aria-label="Image Source"
-              defaultValue={src}
-              onChange={(e) => setSrc(e.target.value || defaultSrc)}
-            />
-          </Playground.OptionsSection>
-
-          <Playground.OptionsSection title="Variables" id="variables">
-            <CheckboxGroup
-              groupName="Variables"
-              aria-labelledby="variables"
-              onChange={(e) => {
-                const { value } = e.target as HTMLInputElement;
-                switch (value) {
-                  case "isBroken":
-                    setIsBroken(!isBroken);
-                    break;
-                  case "isThumbnail":
-                    setIsThumbnail(!isThumbnail);
-
-                    break;
-                }
+          <Playground.OptionsSection title="Variations">
+            <RadioGroup
+              groupName="variations"
+              selected={isThumbnail ? "thumbnail" : "image"}
+              onChange={() => {
+                setIsThumbnail(!isThumbnail);
               }}
             >
-              <Checkbox value="isBroken" checked={isBroken}>
-                Is Broken URI
-              </Checkbox>
-
-              <Checkbox value="isThumbnail" checked={isThumbnail}>
-                Is Thumbnail Image
-              </Checkbox>
-            </CheckboxGroup>
+              <Radio value="image">Image</Radio>
+              <Radio value="thumbnail">Thumbnail</Radio>
+            </RadioGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
       }
@@ -118,7 +87,7 @@ ${
       }}
     >
       <Image
-        src={isBroken ? "baduri" : src}
+        src={defaultSrc}
         alt="Random image"
         thumbnail={isThumbnail}
         fallback="https://via.placeholder.com/200x300"
