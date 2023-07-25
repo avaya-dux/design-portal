@@ -1,0 +1,37 @@
+---
+import { Image } from "@avaya/neo-react";
+import { Description, SubHeader, ImageWrapper } from "components";
+import { topics } from "../../static";
+
+const { id } = topics.behavior;
+
+import AlignmentImage1 from "../../imgs/modal-behavior-alignment-1.svg";
+const alignmentImageAltText = "An image of a center-aligned modal"
+
+import AlignmentImage2 from "../../imgs/modal-behavior-alignment-2.svg";
+const alignmentImage2AltText = "An image of a center-aligned modal at maximum height"
+---
+
+<SubHeader id={`${id}-alignment`}>Alignment</SubHeader>
+
+<Description>
+  Modals should be sized to fit the content they contain. They must be large
+  enough to display the content and actions clearly.
+</Description>
+
+<Description>
+  A modal is always centered horizontally and vertically on the page. A
+  transparent overlay separates the page behind from the modal.
+</Description>
+
+<ImageWrapper>
+  <Image src={AlignmentImage1} alt={alignmentImageAltText} />
+</ImageWrapper>
+
+<Description>
+  At its maximum height, a modal will cover the majority of the page with equal margins on top and bottom.
+</Description>
+
+<ImageWrapper>
+  <Image src={AlignmentImage2} alt={alignmentImage2AltText} />
+</ImageWrapper>

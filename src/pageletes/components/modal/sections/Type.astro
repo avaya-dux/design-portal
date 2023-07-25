@@ -1,0 +1,64 @@
+---
+import {
+  Description,
+  ImageWrapper,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  SubHeader,
+} from "components/astro";
+import { topics } from "../static";
+
+import { Image } from "@avaya/neo-react";
+
+const { id, title } = topics.type;
+
+import imageType1 from "../imgs/modal-types-basic-1.svg";
+import imageType2 from "../imgs/modal-types-info-1.svg";
+
+const imageType1AltText =
+  "An image of a basic modal which includes action buttons";
+
+const imageType2AltText =
+  "An image of an informational modal which does not include action buttons";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    There are different types of modal that vary by the amount of user
+    interaction required to close the modal.
+  </Description>
+
+  <PageleteSubSection>
+    <SubHeader id="modal-basic">Basic</SubHeader>
+
+    <Description>
+      The Basic modal type includes actionable buttons. The user must select a
+      button before being allowed to continue in the application.
+    </Description>
+
+    <ImageWrapper>
+      <Image src={imageType1} alt={imageType1AltText} />
+    </ImageWrapper>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="modal-informational">Informational</SubHeader>
+
+    <Description>
+      This type of modal is used to tell the user something about the current
+      state of the application. It can include guidance about what they need to
+      do next, or report on what they just did. The user can dismiss the modal
+      by clicking on the clear icon or the transparent background outside of the
+      modal.
+    </Description>
+
+    <ImageWrapper>
+      <Image src={imageType2} alt={imageType2AltText} />
+    </ImageWrapper>
+  </PageleteSubSection>
+</PageleteSection>
