@@ -12,13 +12,15 @@ const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/docs/components-sheet--docs";
 
 const actions = [
-  <Button variant="secondary" key="btn1">Action 1</Button>,
+  <Button variant="secondary" key="btn1">
+    Action 1
+  </Button>,
   <Button key="btn2">Action 2</Button>,
 ];
 
 const getActions = (hasActions: boolean) => {
   return hasActions ? actions : [];
-}
+};
 
 export const PlaygroundImplementation = () => {
   const [hasAnimation, setHasAnimation] = useState<boolean>(true);
