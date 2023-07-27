@@ -1,0 +1,25 @@
+---
+import { Image } from "@avaya/neo-react";
+import { Description, SubHeader, ImageWrapper } from "components";
+import { topics } from "../../static";
+
+const { id } = topics.behavior;
+
+import OverflowImage1 from "../../imgs/modal-behavior-overflow-1.svg";
+const overflowImageAltText = "An image of a modal with a scrollbar";
+
+---
+
+<SubHeader id={`${id}-scrolling`}>Overflow With Scrolling</SubHeader>
+
+<Description>
+  If the content exceeds the maximum height of the container, add a scrollbar.
+  Try to avoid scrolling wherever possible as walls of text are hard to read and
+  harm the user experience. Modal content should never scroll horizontally. If
+  more space is required, use a larger modal or reduce the amount of text.
+</Description>
+
+<ImageWrapper>
+  <Image src={OverflowImage1} alt={overflowImageAltText} />
+</ImageWrapper>
+
