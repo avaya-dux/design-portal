@@ -1,8 +1,5 @@
-import { Button, Radio, RadioGroup, Sheet, SheetProps, Switch } from "@avaya/neo-react";
+import { Button, Sheet, SheetProps, Switch } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
-
-import clsx from "clsx";
-
 import { Playground } from "components/react";
 import {
   prettyPrintReactElementToHtml,
@@ -12,6 +9,15 @@ import {
 const sandbox = "https://codesandbox.io/s/";
 const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/";
+
+const actions = [
+  <Button variant="secondary" key="btn1">Action 1</Button>,
+  <Button key="btn2">Action 2</Button>,
+];
+
+const getActions = (hasActions: boolean) => {
+  return hasActions ? actions : [];
+}
 
 export const PlaygroundImplementation = () => {
   const [hasAnimation, setHasAnimation] = useState<boolean>(true);
@@ -25,48 +31,23 @@ export const PlaygroundImplementation = () => {
       slide: hasAnimation,
     };
 
+    const actions = getActions(hasActions);
+
     if (hasActions) {
-      props = {
-        ...props,
-        actions: [
-          <Button variant="secondary" key="btn1">Action 1</Button>,
-          <Button key="btn2">Action 2</Button>,
-        ],
-      };
+      props = { ...props, actions };
     }
 
-    const actionsCode = hasActions
-      ? `actions={[
-    <Button variant="secondary" key="btn1">Action 1</Button>,
-    <Button key="btn2">Action 2</Button>
-  ]}`
-      : "";
-
-    const reactCode = `<Sheet
-  open=${isOpen}
-  slide=${hasAnimation}
-  title="Title"
-  ${actionsCode}
->
-  <div
-    style={{
-      height: '300px',
-      padding: '80px'
-    }}
-  >
-    Content goes here
-  </div>
-</Sheet>`;
-
     const element = (
-      <Sheet {...props}>
-        <div style={{ height: "300px", padding: "80px" }}>Content goes here</div>
+      <Sheet aria-label="Title" {...props}>
+        <div style={{ height: "300px", padding: "80px" }}>
+          Content goes here
+        </div>
       </Sheet>
     );
 
     return [
       element,
-      reactCode,
+      prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
     ];
   }, [hasActions, hasAnimation, isOpen]);
