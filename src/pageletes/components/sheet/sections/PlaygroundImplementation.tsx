@@ -6,9 +6,10 @@ import {
   prettyPrintReactElementToString,
 } from "helpers";
 
-const sandbox = "https://codesandbox.io/s/";
+const sandbox =
+  "https://codesandbox.io/s/neo-react-sheet-forked-ylhxgw?file=/src/App.js";
 const storybook =
-  "https://neo-react-library-storybook.netlify.app/?path=/story/";
+  "https://neo-react-library-storybook.netlify.app/?path=/docs/components-sheet--docs";
 
 const actions = [
   <Button variant="secondary" key="btn1">Action 1</Button>,
