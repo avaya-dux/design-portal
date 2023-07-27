@@ -5,26 +5,26 @@ import {
   RadioGroup,
   Switch,
 } from "@avaya/neo-react";
-import { useMemo, useState, type ReactNode } from "react";
+import { clsx } from "clsx";
+import { ReactNode, useMemo, useState } from "react";
 
 import { Playground } from "components";
 import { prettyPrintHtml, prettyPrintReactElementToString } from "helpers";
 
-import { clsx } from "clsx";
-
-export const sandbox = "https://codesandbox.io/s/neo-react-list-hvxfzq";
+export const sandbox =
+  "https://codesandbox.io/s/neo-react-modal-spsv6d?file=/src/App.js";
 export const storybook =
-  "https://neo-react-library-storybook.netlify.app/?path=/docs/introduction--docs";
+  "https://neo-react-library-storybook.netlify.app/?path=/story/components-modal--basic-modal-example";
 
 type ModalExampleType = "basic" | "info";
 
 export const PlaygroundImplementation = () => {
   const [modalType, setModalType] = useState<ModalExampleType>("basic");
 
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   const [component, react, html] = useMemo(() => {
-    let element: ReactNode = <p>Loading...</p>;
+    let element: ReactNode;
 
     const title = "Header of Modal";
 
