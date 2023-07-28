@@ -23,9 +23,9 @@ const getActions = (hasActions: boolean) => {
 };
 
 export const PlaygroundImplementation = () => {
-  const [hasAnimation, setHasAnimation] = useState<boolean>(true);
-  const [hasActions, setHasActions] = useState<boolean>(true);
-  const [isOpen, setIsOpen] = useState<boolean>(true);
+  const [hasAnimation, setHasAnimation] = useState(true);
+  const [hasActions, setHasActions] = useState(true);
+  const [isOpen, setIsOpen] = useState(true);
 
   const [element, react, html] = useMemo(() => {
     let props: SheetProps = {
