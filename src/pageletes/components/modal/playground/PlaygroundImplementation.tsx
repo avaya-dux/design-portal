@@ -12,18 +12,22 @@ export const storybook =
 
 type ModalExampleType = "basic" | "info";
 
+const modalActions = [<Button key="example1">Remove</Button>];
+
 export const PlaygroundImplementation = () => {
   const [modalType, setModalType] = useState<ModalExampleType>("basic");
 
   const [showModal, setShowModal] = useState(false);
 
   const [component, react, html] = useMemo(() => {
-
     const title = "Header of Modal";
 
     const modalContent = (
-      <div style={{ padding: "2rem" }}>
-        <p>Sample text content.</p>
+      <div>
+        <p>
+          This is just some plain text inside a paragraph tag, let's try longer
+          text to see how it wraps and aligns
+        </p>
       </div>
     );
 
@@ -33,6 +37,7 @@ export const PlaygroundImplementation = () => {
           open={showModal}
           title={title}
           onClose={() => setShowModal(false)}
+          actions={modalActions}
         >
           {modalContent}
         </BasicModal>
