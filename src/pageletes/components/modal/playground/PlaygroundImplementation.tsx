@@ -1,15 +1,10 @@
-import {
-  BasicModal,
-  InfoModal,
-  Radio,
-  RadioGroup,
-  Switch,
-} from "@avaya/neo-react";
+import { BasicModal, Button, InfoModal, Radio, RadioGroup, Switch } from "@avaya/neo-react";
 import { clsx } from "clsx";
 import { ReactNode, useMemo, useState } from "react";
 
 import { Playground } from "components";
 import { prettyPrintHtml, prettyPrintReactElementToString } from "helpers";
+import Modal from "pages/components/modal.astro";
 
 export const sandbox =
   "https://codesandbox.io/s/neo-react-modal-spsv6d?file=/src/App.js";
@@ -28,27 +23,39 @@ export const PlaygroundImplementation = () => {
 
     const title = "Header of Modal";
 
-    if (modalType === "basic") {
-      element = (
+    const modalContent = (
+      <div style={{ padding: "2rem" }}>
+        <p>Sample text content.</p>
+      </div>
+    );
+
+    const ModalToRender =
+      modalType === "basic" ? (
         <BasicModal
           open={showModal}
           title={title}
           onClose={() => setShowModal(false)}
         >
-          <p>Sample text content.</p>
+          {modalContent}
         </BasicModal>
-      );
-    } else {
-      element = (
+      ) : (
         <InfoModal
           open={showModal}
           title={title}
           onClose={() => setShowModal(false)}
         >
-          <p>Sample text content.</p>
+          {modalContent}
         </InfoModal>
       );
-    }
+
+    element = (
+      <>
+        <Button type="primary" onClick={() => setShowModal(!showModal)}>
+          Click to Open Modal
+        </Button>
+        {ModalToRender}
+      </>
+    );
 
     const htmlModal = `
     <div id="neo-modal-example" ${clsx(
@@ -88,15 +95,6 @@ export const PlaygroundImplementation = () => {
       <Playground
         options={
           <Playground.OptionsContainer>
-            <Playground.OptionsSection title="Show/Hide Modal">
-              <Switch
-                onChange={() => setShowModal(!showModal)}
-                checked={showModal}
-              >
-                Show/Hide
-              </Switch>
-            </Playground.OptionsSection>
-
             <Playground.OptionsSection title="Type">
               <RadioGroup
                 groupName="modal-type"
