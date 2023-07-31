@@ -1,10 +1,9 @@
-import { BasicModal, Button, InfoModal, Radio, RadioGroup, Switch } from "@avaya/neo-react";
+import { BasicModal, Button, InfoModal, Radio, RadioGroup } from "@avaya/neo-react";
 import { clsx } from "clsx";
 import { ReactNode, useMemo, useState } from "react";
 
 import { Playground } from "components";
 import { prettyPrintHtml, prettyPrintReactElementToString } from "helpers";
-import Modal from "pages/components/modal.astro";
 
 export const sandbox =
   "https://codesandbox.io/s/neo-react-modal-spsv6d?file=/src/App.js";
