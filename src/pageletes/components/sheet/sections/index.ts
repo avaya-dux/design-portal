@@ -15,3 +15,6 @@ export { KeyboardInteractions };
 
 import Related from "./Related.astro";
 export { Related };
+
+import SheetPlayground from "./SheetPlayground.astro";
+export { SheetPlayground };
