@@ -18,7 +18,6 @@ export const PlaygroundImplementation = () => {
   const [showModal, setShowModal] = useState(false);
 
   const [component, react, html] = useMemo(() => {
-    let element: ReactNode;
 
     const title = "Header of Modal";
 
@@ -47,7 +46,7 @@ export const PlaygroundImplementation = () => {
         </InfoModal>
       );
 
-    element = (
+    const element = (
       <>
         <Button type="primary" onClick={() => setShowModal(!showModal)}>
           Click to Open Modal
