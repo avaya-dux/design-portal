@@ -1,6 +1,6 @@
 import {
   NoContent,
-  NoContentProps,
+  type NoContentProps,
   Select,
   SelectOption,
   TextInput,

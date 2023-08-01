@@ -3,7 +3,7 @@ import {
   Radio,
   RadioGroup,
   Select,
-  NotificationProps,
+  type NotificationProps,
   SelectOption,
 } from "@avaya/neo-react";
 import { useMemo, useState, type Dispatch, type SetStateAction } from "react";
@@ -151,7 +151,6 @@ export const PlaygroundImplementation = () => {
               groupName="right-side-options"
               selected={rightSideOption}
               onChange={(e: { target: { value: string } }) => {
-                console.log(e.target.value);
                 setRightSideOption(e.target.value as RightSideOption);
                 setClosed(false);
               }}

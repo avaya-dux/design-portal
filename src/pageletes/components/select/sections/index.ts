@@ -20,5 +20,5 @@ export { Specs };
 import KeyboardInteractions from "./KeyboardInteractions.astro";
 export { KeyboardInteractions };
 
-import RelatedContent from "./RelatedContent.astro";
-export { RelatedContent };
+import Related from "./Related.astro";
+export { Related };

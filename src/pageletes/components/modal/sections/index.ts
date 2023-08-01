@@ -22,6 +22,10 @@ import KeyboardInteractions from "./KeyboardInteractions.astro";
 
 export { KeyboardInteractions };
 
-import RelatedContent from "./RelatedContent.astro";
+import Related from "./Related.astro";
 
-export { RelatedContent };
+export { Related };
+
+import ModalPlayground from "./ModalPlayground.astro";
+
+export { ModalPlayground };
