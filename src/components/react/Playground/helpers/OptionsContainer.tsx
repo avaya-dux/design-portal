@@ -1,5 +1,5 @@
 import { Button, IconButton } from "@avaya/neo-react";
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 
 import "./Options.css";
 
@@ -54,7 +54,7 @@ export const OptionsContainer = ({
   children,
   onReset,
 }: {
-  children: ReactNode;
+  children: React.ReactNode;
   onReset?: () => void;
 }) => {
   const [isOpen, setIsOpen] = useState(false);

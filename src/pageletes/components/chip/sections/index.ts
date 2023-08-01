@@ -11,8 +11,8 @@ export { Anatomy };
 import Type from "./Type.astro";
 export { Type };
 
-import RelatedContent from "./RelatedContent.astro";
-export { RelatedContent };
+import Related from "./Related.astro";
+export { Related };
 
 import Specs from "./Specs.astro";
 export { Specs };

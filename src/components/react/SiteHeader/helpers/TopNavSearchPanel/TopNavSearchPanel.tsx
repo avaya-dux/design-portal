@@ -1,5 +1,5 @@
 import { InfoModal } from "@avaya/neo-react";
-import { ReactElement, useEffect } from "react";
+import { useEffect } from "react";
 
 import type { PageAstroInstance } from "helpers/types";
 
@@ -16,7 +16,7 @@ import "./TopNavSearchPanel.css";
 type TopNavSearchPanelProps = {
   open: boolean;
   options: PageAstroInstance[];
-  children: ReactElement;
+  children: React.ReactElement;
   searchModalRef?: React.RefObject<HTMLDivElement>;
 };
 

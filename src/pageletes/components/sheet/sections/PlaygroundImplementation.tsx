@@ -1,4 +1,4 @@
-import { Button, Sheet, SheetProps, Switch } from "@avaya/neo-react";
+import { Button, Sheet, type SheetProps, Switch } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 import { Playground } from "components/react";
 import {

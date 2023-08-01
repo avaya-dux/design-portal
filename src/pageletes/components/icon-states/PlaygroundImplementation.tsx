@@ -1,6 +1,6 @@
 import {
   Icon,
-  IconProps,
+  type IconProps,
   Radio,
   RadioGroup,
   Select,
