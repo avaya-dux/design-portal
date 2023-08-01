@@ -151,7 +151,6 @@ export const PlaygroundImplementation = () => {
               groupName="right-side-options"
               selected={rightSideOption}
               onChange={(e: { target: { value: string } }) => {
-                console.log(e.target.value);
                 setRightSideOption(e.target.value as RightSideOption);
                 setClosed(false);
               }}

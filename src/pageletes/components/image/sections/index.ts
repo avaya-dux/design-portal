@@ -16,5 +16,5 @@ import Accessibility from "./Accessibility.astro";
 
 export { Accessibility };
 
-import RelatedContent from "./RelatedContent.astro";
-export { RelatedContent };
+import Related from "./Related.astro";
+export { Related };
