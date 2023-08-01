@@ -1,7 +1,7 @@
 import { Button, NeoThemeProvider } from "@avaya/neo-react";
 
 interface ButtonProps {
-  children:React.ReactNode;
+  children: React.ReactNode;
   className?: string;
   onClick?: () => void;
 }

@@ -91,7 +91,9 @@ export const LeftNavigation = ({
           isOpen={isOpen}
           closeButtonRef={closeButtonRef}
           topElementRef={leftNavigationTopElementRef}
-          toggleButtonRef={toggleButtonRef as React.RefObject<HTMLButtonElement>}
+          toggleButtonRef={
+            toggleButtonRef as React.RefObject<HTMLButtonElement>
+          }
         />
         <LeftNav
           aria-label="left-navigation"
