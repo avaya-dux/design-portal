@@ -6,7 +6,7 @@
     "all": "yarn && yarn clean && yarn format && yarn lint && yarn build && yarn test:badges",
     "github": "yarn && yarn clean && yarn lint && yarn build && yarn test",
     "clean": "rm -rf coverage dist",
-    "format": "yarn prettier --write ./src --loglevel warn",
+    "format": "yarn prettier --write ./src --log-level warn",
     "lint": "eslint src",
     "build": "astro build",
     "test": "vitest run",
