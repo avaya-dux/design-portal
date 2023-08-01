@@ -3,7 +3,7 @@ import {
   IconButton,
   List,
   ListItem,
-  ListProps,
+  type ListProps,
   ListSection,
   Radio,
   RadioGroup,

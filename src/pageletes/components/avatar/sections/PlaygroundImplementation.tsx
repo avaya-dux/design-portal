@@ -3,7 +3,7 @@ import {
   Radio,
   RadioGroup,
   Select,
-  AvatarProps,
+  type AvatarProps,
   SelectOption,
 } from "@avaya/neo-react";
 import { useMemo, useState } from "react";

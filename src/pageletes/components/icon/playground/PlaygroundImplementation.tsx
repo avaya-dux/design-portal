@@ -1,4 +1,4 @@
-import { Icon, IconProps, Radio, RadioGroup } from "@avaya/neo-react";
+import { Icon, type IconProps, Radio, RadioGroup } from "@avaya/neo-react";
 import clsx from "clsx";
 import { useMemo, useState } from "react";
 

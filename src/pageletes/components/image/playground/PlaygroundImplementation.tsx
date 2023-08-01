@@ -1,4 +1,4 @@
-import { Image, ImageProps, RadioGroup, Radio } from "@avaya/neo-react";
+import { Image, type ImageProps, RadioGroup, Radio } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components";
