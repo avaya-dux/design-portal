@@ -1,4 +1,3 @@
-import type { RefObject } from "react";
 import { useCallback, useEffect, useRef } from "react";
 import { LeftNav } from "@avaya/neo-react";
 import { useStore } from "@nanostores/react";
@@ -65,7 +64,7 @@ export const LeftNavigation = ({
     const firstFocusableElement =
       width > 799
         ? (closeButtonRef.current as HTMLElement)
-        : ((toggleButtonRef as RefObject<HTMLButtonElement>)
+        : ((toggleButtonRef as React.RefObject<HTMLButtonElement>)
             .current as HTMLElement);
 
     document.addEventListener("keydown", (event) =>
@@ -92,7 +91,7 @@ export const LeftNavigation = ({
           isOpen={isOpen}
           closeButtonRef={closeButtonRef}
           topElementRef={leftNavigationTopElementRef}
-          toggleButtonRef={toggleButtonRef as RefObject<HTMLButtonElement>}
+          toggleButtonRef={toggleButtonRef as React.RefObject<HTMLButtonElement>}
         />
         <LeftNav
           aria-label="left-navigation"
@@ -129,9 +128,9 @@ const LeftNavigationTopElement = ({
   toggleButtonRef,
 }: {
   isOpen: boolean | undefined;
-  closeButtonRef: RefObject<HTMLButtonElement>;
-  topElementRef: RefObject<HTMLDivElement>;
-  toggleButtonRef: RefObject<HTMLButtonElement>;
+  closeButtonRef: React.RefObject<HTMLButtonElement>;
+  topElementRef: React.RefObject<HTMLDivElement>;
+  toggleButtonRef: React.RefObject<HTMLButtonElement>;
 }) => {
   useEffect(() => {
     if (closeButtonRef.current && isOpen) {
