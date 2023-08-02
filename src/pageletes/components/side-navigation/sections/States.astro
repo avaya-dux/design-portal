@@ -1,0 +1,76 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  ColumnLayout,
+  Description,
+  InfoList,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+} from "components/astro";
+import { topics } from "../static";
+
+import StateDefaultImage from "../imgs/sideNav-states-1.svg";
+import StateHoverImage from "../imgs/sideNav-states-2.svg";
+import StateActiveImage from "../imgs/sideNav-states-3.svg";
+import StateDisabledImage from "../imgs/sideNav-states-4.svg";
+
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.states.id}>{topics.states.title}</SectionHeader>
+
+  <Description>
+    Side navigation can have different states depending on user actions and the design of the website or application.
+  </Description>
+
+  <ColumnLayout numOfColumns={2}>
+    <StackedLayout label="Default">
+      <Image src={StateDefaultImage} alt="Image showing default states for group menu and single link item" />
+    </StackedLayout>
+
+    <StackedLayout label="Hover">
+      <Image
+        src={StateHoverImage}
+        alt="Image showing hover states for group menu and single link item"
+      />
+    </StackedLayout>
+
+    <StackedLayout label="Active">
+      <Image
+        src={StateActiveImage}
+        alt="Image showing active states for group menu and single link item"
+      />
+    </StackedLayout>
+
+    <StackedLayout label="Disabled">
+      <Image
+        src={StateDisabledImage}
+        alt="Image showing disabled states for group menu and single link item"
+      />
+    </StackedLayout>
+  </ColumnLayout>
+
+  <InfoList type="disc">
+    <InfoListItem label="Default">
+      This is the rest state for side navigation items. When nothing else is happening,
+       it adopts this state (sometimes called "Up").
+    </InfoListItem>
+
+    <InfoListItem label="Hover">
+      When the user moves the mouse over the item, or when it becomes the focus using the keyboard, its state changes to Hover.
+       This lasts until the user moves off the item. While in the Hover state, use the Enter key, the Spacebar or click the mouse
+       button to navigate to the specified location.
+    </InfoListItem>
+
+    <InfoListItem label="Active">
+      While the side navigation option is selected, it is displayed in the Active state.
+    </InfoListItem>
+
+    <InfoListItem label="Disabled">
+      This shows that the side navigation item cannot be used. It may require an action to be taken first before it becomes actionable.
+    </InfoListItem>
+  </InfoList>
+</PageleteSection>
