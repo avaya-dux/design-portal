@@ -6,3 +6,6 @@ export { Condensed };
 
 import TextWrap from "./TextWrap.astro";
 export { TextWrap };
+
+import Scrolling from "./Scrolling.astro";
+export { Scrolling };
