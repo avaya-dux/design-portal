@@ -1,0 +1,59 @@
+---
+import {
+  Description,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableCellHead,
+  InfoTableHead,
+  InfoTableRow,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.keyboard.id}>{topics.keyboard.title}</SectionHeader>
+
+  <Description>
+    Accessibility requires that each item on the screen is reachable using the
+    keyboard alone. The mouse is not always an option for some users.
+  </Description>
+
+  <Description>
+    Keyboard navigation employs the following shortcuts.
+  </Description>
+
+  <InfoTable>
+    <InfoTableHead>
+      <InfoTableRow>
+        <InfoTableCellHead>Keystrokes</InfoTableCellHead>
+        <InfoTableCellHead>Interaction</InfoTableCellHead>
+      </InfoTableRow>
+    </InfoTableHead>
+
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>Tab</InfoTableCell>
+        <InfoTableCell>
+          Move forward to the next navigation element.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Shift + Tab</InfoTableCell>
+        <InfoTableCell>
+          Move backward to the previous navigation element.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Enter or Spacebar</InfoTableCell>
+        <InfoTableCell>
+          Activate the navigation item or expand / collapse a parent navigation.
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
+</PageleteSection>
