@@ -6,3 +6,6 @@ export { Anatomy };
 
 import States from "./States.astro";
 export { States };
+
+import Behavior from "./Behavior.astro";
+export { Behavior };
