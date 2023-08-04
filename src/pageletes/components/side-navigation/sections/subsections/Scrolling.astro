@@ -1,0 +1,27 @@
+---
+import { ColumnLayout, Description, PageleteSubSection, StackedLayout, SubHeader } from "components/astro";
+
+import { Image } from "@avaya/neo-react";
+
+import scrollingImage1 from "../../imgs/sideNav-behavior-scrolling-1.svg";
+
+---
+
+<PageleteSubSection>
+  <SubHeader id="sidenav-behavior-scrolling">Scrolling</SubHeader>
+
+  <Description>
+    Include a scroll bar when there are more items in the side navigation than will fit on the screen.
+     This should include provision for expanding the top-level menu items to show sub-menus.
+  </Description>
+
+  <ColumnLayout
+    bkgColor="#f1f1f1"
+    numOfColumns={1}
+  >
+    <StackedLayout vPadding="0">
+      <Image src={scrollingImage1} alt="Image showing side navigation with vertical scrollbar." />
+    </StackedLayout>
+  </ColumnLayout>
+
+</PageleteSubSection>
