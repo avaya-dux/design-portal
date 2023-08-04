@@ -11,7 +11,9 @@ import {
 } from "components/astro";
 
 import { topics } from "../static";
+const { id, title } = topics.anatomy;
 
+import type { title } from "pages/guidelines.astro";
 import AnatomyImage from "../imgs/sideNav-anatomy-1.svg";
 
 const anatomyImgAltText =
@@ -20,7 +22,7 @@ const anatomyImgAltText =
 ---
 
 <PageleteSection>
-  <SectionHeader id={topics.anatomy.id}>{topics.anatomy.title}</SectionHeader>
+  <SectionHeader id={id}>{title}</SectionHeader>
 
   <Description>
     Side navigation is a user interface element located on the left or right side of a website or application.
