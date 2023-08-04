@@ -42,17 +42,22 @@ const dontImg2AltText =
   <SubHeader id="sidenav-behavior-icons">Icons</SubHeader>
 
   <Description>
-    An avatar can be matched with a status indicator to provide the user’s current availability. The use of a status indicator is optional.
+    This side navigation uses icons for the top-level items only. Do not add icons to sub-menu items.
   </Description>
 
   <ColumnLayout
     bkgColor="#f1f1f1"
     numOfColumns={1}
+    marginBottom="3rem"
   >
     <StackedLayout>
       <Image src={iconsImage1} alt="Image showing side navigation with icons in top level items only." />
     </StackedLayout>
   </ColumnLayout>
+
+  <Description>
+    Here we show side navigation without icons.
+  </Description>
 
   <ColumnLayout
     bkgColor="#f1f1f1"

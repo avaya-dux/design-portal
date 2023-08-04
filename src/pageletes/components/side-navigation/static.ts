@@ -4,7 +4,6 @@ type SideNavTopicNames =
   | "playground"
   | "anatomy"
   | "states"
-  | "types"
   | "behavior"
   | "specs"
   | "keyboard"
@@ -18,7 +17,6 @@ export const topics: TopicsDict<SideNavTopicNames> = {
   },
   anatomy: { order: 1, id: "sidenav-anatomy", title: "Anatomy" },
   states: { order: 2, id: "sidenav-states", title: "States" },
-  types: { order: 3, id: "sidenav-types", title: "Types" },
   behavior: { order: 4, id: "sidenav-behavior", title: "Behavior" },
   specs: {
     order: 5,
