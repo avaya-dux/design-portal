@@ -11,14 +11,11 @@ const sandbox =
 const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/docs/components-left-navigation--docs";
 
-
 export const PlaygroundImplementation = () => {
   const [hasIcons, setHasIcons] = useState(true);
 
   const accountLinkItems = [
-    <LeftNav.LinkItem href="http://example.com/1">
-      Account
-    </LeftNav.LinkItem>,
+    <LeftNav.LinkItem href="http://example.com/1">Account</LeftNav.LinkItem>,
     <LeftNav.LinkItem href="http://example.com/2">
       Business Rules
     </LeftNav.LinkItem>,
@@ -27,12 +24,12 @@ export const PlaygroundImplementation = () => {
     </LeftNav.LinkItem>,
   ];
 
-    const analitycsLinkItems = [
-      <LeftNav.LinkItem href="http://example.com/4">Dashboard</LeftNav.LinkItem>,
-      <LeftNav.LinkItem href="http://example.com/5">
-        Usage Report
-      </LeftNav.LinkItem>
-    ];
+  const analitycsLinkItems = [
+    <LeftNav.LinkItem href="http://example.com/4">Dashboard</LeftNav.LinkItem>,
+    <LeftNav.LinkItem href="http://example.com/5">
+      Usage Report
+    </LeftNav.LinkItem>,
+  ];
 
   const categoryIcons = ["contact", "analytics"];
 
@@ -45,18 +42,16 @@ export const PlaygroundImplementation = () => {
       default:
         return null;
     }
-  }
-
+  };
 
   const [element, react, html] = useMemo(() => {
-    let props: LeftNavProps = {
+    const props: LeftNavProps = {
       currentUrl: "",
     };
 
     const categoryNames = ["Accounts", "Analytics"];
 
     const listCategories = categoryNames.map((category, index) => {
-
       return hasIcons ? (
         <LeftNav.NavCategory icon={categoryIcons[index]} label={category}>
           {getLinkItems(category)}
@@ -66,7 +61,7 @@ export const PlaygroundImplementation = () => {
           {getLinkItems(category)}
         </LeftNav.NavCategory>
       );
-    })
+    });
 
     const settingsTopLinkItem = hasIcons ? (
       <LeftNav.TopLinkItem icon="settings" label="Settings" href="#settings" />
