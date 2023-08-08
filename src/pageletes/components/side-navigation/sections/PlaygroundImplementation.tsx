@@ -24,25 +24,12 @@ export const PlaygroundImplementation = () => {
     </LeftNav.LinkItem>,
   ];
 
-  const analitycsLinkItems = [
+  const analyticsLinkItems = [
     <LeftNav.LinkItem href="http://example.com/4">Dashboard</LeftNav.LinkItem>,
     <LeftNav.LinkItem href="http://example.com/5">
       Usage Report
     </LeftNav.LinkItem>,
   ];
-
-  const categoryIcons = ["contact", "analytics"];
-
-  const getLinkItems = (category: string) => {
-    switch (category) {
-      case "Accounts":
-        return accountLinkItems;
-      case "Analytics":
-        return analitycsLinkItems;
-      default:
-        return null;
-    }
-  };
 
   const [element, react, html] = useMemo(() => {
     const props: LeftNavProps = {
@@ -50,6 +37,18 @@ export const PlaygroundImplementation = () => {
     };
 
     const categoryNames = ["Accounts", "Analytics"];
+    const categoryIcons = ["contact", "analytics"];
+
+    const getLinkItems = (category: string) => {
+      switch (category) {
+        case "Accounts":
+          return accountLinkItems;
+        case "Analytics":
+          return analyticsLinkItems;
+        default:
+          return null;
+      }
+    };
 
     const listCategories = categoryNames.map((category, index) => {
       return hasIcons ? (
@@ -80,7 +79,7 @@ export const PlaygroundImplementation = () => {
       prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
     ];
-  }, [hasIcons, categoryIcons, getLinkItems]);
+  }, [hasIcons]);
 
   return (
     <Playground
