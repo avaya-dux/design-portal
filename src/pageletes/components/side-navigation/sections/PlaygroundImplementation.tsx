@@ -80,7 +80,7 @@ export const PlaygroundImplementation = () => {
       prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
     ];
-  }, [hasIcons]);
+  }, [hasIcons, categoryIcons, getLinkItems]);
 
   return (
     <Playground
