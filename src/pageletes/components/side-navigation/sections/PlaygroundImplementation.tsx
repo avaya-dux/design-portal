@@ -14,27 +14,27 @@ const storybook =
 export const PlaygroundImplementation = () => {
   const [hasIcons, setHasIcons] = useState(true);
 
-  const accountLinkItems = [
-    <LeftNav.LinkItem href="http://example.com/1">Account</LeftNav.LinkItem>,
-    <LeftNav.LinkItem href="http://example.com/2">
-      Business Rules
-    </LeftNav.LinkItem>,
-    <LeftNav.LinkItem href="http://example.com/3">
-      Contact Centers
-    </LeftNav.LinkItem>,
-  ];
-
-  const analyticsLinkItems = [
-    <LeftNav.LinkItem href="http://example.com/4">Dashboard</LeftNav.LinkItem>,
-    <LeftNav.LinkItem href="http://example.com/5">
-      Usage Report
-    </LeftNav.LinkItem>,
-  ];
-
   const [element, react, html] = useMemo(() => {
     const props: LeftNavProps = {
       currentUrl: "",
     };
+
+    const accountLinkItems = [
+      <LeftNav.LinkItem href="http://example.com/1">Account</LeftNav.LinkItem>,
+      <LeftNav.LinkItem href="http://example.com/2">
+        Business Rules
+      </LeftNav.LinkItem>,
+      <LeftNav.LinkItem href="http://example.com/3">
+        Contact Centers
+      </LeftNav.LinkItem>,
+    ];
+
+    const analyticsLinkItems = [
+      <LeftNav.LinkItem href="http://example.com/4">Dashboard</LeftNav.LinkItem>,
+      <LeftNav.LinkItem href="http://example.com/5">
+        Usage Report
+      </LeftNav.LinkItem>,
+    ];
 
     const categoryNames = ["Accounts", "Analytics"];
     const categoryIcons = ["contact", "analytics"];
