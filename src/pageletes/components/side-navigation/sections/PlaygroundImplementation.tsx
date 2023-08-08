@@ -1,4 +1,4 @@
-import { LeftNav, type LeftNavProps, Switch } from "@avaya/neo-react";
+import { LeftNav, type LeftNavProps, Radio, RadioGroup } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 import { Playground } from "components/react";
 import {
@@ -12,7 +12,8 @@ const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/docs/components-left-navigation--docs";
 
 export const PlaygroundImplementation = () => {
-  const [hasIcons, setHasIcons] = useState(true);
+  type IconOption = "icon" | "none";
+  const [iconType, setIconType] = useState<IconOption>("icon");
 
   const [element, react, html] = useMemo(() => {
     const props: LeftNavProps = {
@@ -30,7 +31,9 @@ export const PlaygroundImplementation = () => {
     ];
 
     const analyticsLinkItems = [
-      <LeftNav.LinkItem href="http://example.com/4">Dashboard</LeftNav.LinkItem>,
+      <LeftNav.LinkItem href="http://example.com/4">
+        Dashboard
+      </LeftNav.LinkItem>,
       <LeftNav.LinkItem href="http://example.com/5">
         Usage Report
       </LeftNav.LinkItem>,
@@ -51,7 +54,7 @@ export const PlaygroundImplementation = () => {
     };
 
     const listCategories = categoryNames.map((category, index) => {
-      return hasIcons ? (
+      return iconType === "icon" ? (
         <LeftNav.NavCategory icon={categoryIcons[index]} label={category}>
           {getLinkItems(category)}
         </LeftNav.NavCategory>
@@ -62,15 +65,21 @@ export const PlaygroundImplementation = () => {
       );
     });
 
-    const settingsTopLinkItem = hasIcons ? (
-      <LeftNav.TopLinkItem icon="settings" label="Settings" href="#settings" />
-    ) : (
-      <LeftNav.TopLinkItem label="Settings" href="#settings" />
-    );
+    const settingsTopLinkItem =
+      iconType === "icon" ? (
+        <LeftNav.TopLinkItem
+          icon="settings"
+          label="Settings"
+          href="#settings"
+        />
+      ) : (
+        <LeftNav.TopLinkItem label="Settings" href="#settings" />
+      );
 
     const element = (
       <LeftNav aria-label="Main Navigation" {...props}>
-        {listCategories} {settingsTopLinkItem}
+        {listCategories}
+        {settingsTopLinkItem}
       </LeftNav>
     );
 
@@ -79,21 +88,23 @@ export const PlaygroundImplementation = () => {
       prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
     ];
-  }, [hasIcons]);
+  }, [iconType]);
 
   return (
     <Playground
       options={
         <Playground.OptionsContainer>
-          <Playground.OptionsSection title="Open Options">
-            <Switch
-              checked={hasIcons}
-              onChange={(_e, updatedChecked: boolean) =>
-                setHasIcons(updatedChecked)
-              }
+          <Playground.OptionsSection title="Icon Options">
+            <RadioGroup
+              groupName="options"
+              selected={iconType}
+              onChange={(e) => {
+                setIconType(e.target.value as IconOption);
+              }}
             >
-              Use Icons
-            </Switch>
+              <Radio value="icon">With Icon</Radio>
+              <Radio value="none">Text Only</Radio>
+            </RadioGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
       }
@@ -104,7 +115,7 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      {element}
+      <div style={{ minWidth: "15rem" }}>{element}</div>
     </Playground>
   );
 };
