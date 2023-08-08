@@ -7,9 +7,9 @@ import {
 } from "helpers";
 
 const sandbox =
-  "https://codesandbox.io/s/neo-react-";
+  "https://codesandbox.io/s/neo-react-sidenav-forked-5yml3c?file=/src/App.js";
 const storybook =
-  "https://neo-react-library-storybook.netlify.app/?path=/docs/";
+  "https://neo-react-library-storybook.netlify.app/?path=/docs/components-left-navigation--docs";
 
 
 export const PlaygroundImplementation = () => {
