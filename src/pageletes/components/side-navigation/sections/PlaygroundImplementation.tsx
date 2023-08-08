@@ -34,14 +34,16 @@ export const PlaygroundImplementation = () => {
       </LeftNav.LinkItem>
     ];
 
+  const categoryIcons = ["contact", "analytics", "settings"];
+
   const getLinkItems = (category: string) => {
     switch (category) {
       case "Accounts":
         return accountLinkItems;
       case "Analytics":
         return analitycsLinkItems;
-      case "Settings":
-        return [];
+      default:
+        return null;
     }
   }
 
@@ -53,11 +55,17 @@ export const PlaygroundImplementation = () => {
 
     const categoryNames = ["Accounts", "Analytics", "Settings"];
 
-    const listCategories = categoryNames.map((category) => {
+    const listCategories = categoryNames.map((category, index) => {
 
-      return (
-        <LeftNav.NavCategory label={category}>{getLinkItems(category)}</LeftNav.NavCategory>
-      )
+      return hasIcons ? (
+        <LeftNav.NavCategory icon={categoryIcons[index]} label={category}>
+          {getLinkItems(category)}
+        </LeftNav.NavCategory>
+      ) : (
+        <LeftNav.NavCategory label={category}>
+          {getLinkItems(category)}
+        </LeftNav.NavCategory>
+      );
     })
 
 
