@@ -34,7 +34,7 @@ export const PlaygroundImplementation = () => {
       </LeftNav.LinkItem>
     ];
 
-  const categoryIcons = ["contact", "analytics", "settings"];
+  const categoryIcons = ["contact", "analytics"];
 
   const getLinkItems = (category: string) => {
     switch (category) {
@@ -53,7 +53,7 @@ export const PlaygroundImplementation = () => {
       currentUrl: "",
     };
 
-    const categoryNames = ["Accounts", "Analytics", "Settings"];
+    const categoryNames = ["Accounts", "Analytics"];
 
     const listCategories = categoryNames.map((category, index) => {
 
@@ -68,10 +68,15 @@ export const PlaygroundImplementation = () => {
       );
     })
 
+    const settingsTopLinkItem = hasIcons ? (
+      <LeftNav.TopLinkItem icon="settings" label="Settings" href="#settings" />
+    ) : (
+      <LeftNav.TopLinkItem label="Settings" href="#settings" />
+    );
 
     const element = (
       <LeftNav aria-label="Main Navigation" {...props}>
-        {listCategories}
+        {listCategories} {settingsTopLinkItem}
       </LeftNav>
     );
 
