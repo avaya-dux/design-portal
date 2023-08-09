@@ -17,8 +17,10 @@ export const PlaygroundImplementation = () => {
 
   const [element, react, html] = useMemo(() => {
     const props: LeftNavProps = {
-      currentUrl: "",
+      currentUrl: "http://example.com/1",
     };
+
+    const expandedStates = [true, false];
 
     const accountLinkItems = [
       <LeftNav.LinkItem href="http://example.com/1">Account</LeftNav.LinkItem>,
@@ -55,11 +57,15 @@ export const PlaygroundImplementation = () => {
 
     const listCategories = categoryNames.map((category, index) => {
       return iconType === "icon" ? (
-        <LeftNav.NavCategory icon={categoryIcons[index]} label={category}>
+        <LeftNav.NavCategory
+          expanded={expandedStates[index]}
+          icon={categoryIcons[index]}
+          label={category}
+        >
           {getLinkItems(category)}
         </LeftNav.NavCategory>
       ) : (
-        <LeftNav.NavCategory label={category}>
+        <LeftNav.NavCategory expanded={expandedStates[index]} label={category}>
           {getLinkItems(category)}
         </LeftNav.NavCategory>
       );
