@@ -1,6 +1,9 @@
 ---
+import { Image } from "@avaya/neo-react";
 import {
   Description,
+  DoAndDont,
+  ImageWrapper,
   InfoTable,
   InfoTableBody,
   InfoTableCell,
@@ -11,22 +14,29 @@ import {
   PageleteSubSection,
   SectionHeader,
   SubHeader,
-} from "components/astro";
+} from "components";
 
 import { topics } from "../static";
-import { DoAndDont } from "components";
 
 const { id, title } = topics.behavior;
 
-const doInstructions =
-  "Use a toast to provide feedback for commonly performed actions.";
+import PlacementImage from "../imgs/toast-placement.svg";
+const placementImgAltText =
+  "Image showing the location in the screen where a toast appears";
 
-const dontInstructions =
+import doImage1 from "../imgs/toast-behavior-do-1.svg";
+import dontImage1 from "../imgs/toast-behavior-dont-1.svg";
+const do1Instructions =
+  "Use a toast to provide feedback for commonly performed actions.";
+const dont1Instructions =
   "Do not use a toast to display error message, use notification component instead.";
 
-const doInstructionsTwo = "Add text here.";
-
-const dontInstructionsTwo = "Add text here.";
+import doImage2 from "../imgs/toast-behavior-do-1.svg";
+import dontImage2 from "../imgs/toast-behavior-dont-2.svg";
+const do2Instructions =
+  "Add text here";
+const dont2Instructions =
+  "Add text here";
 ---
 
 <PageleteSection>
@@ -85,35 +95,45 @@ const dontInstructionsTwo = "Add text here.";
     <SubHeader id="toast-behavior-placement">Placement</SubHeader>
 
     <Description>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam. Add sentence about Interaction
+      Toasts are placed in a location that is easily visible to users,
+       but does not obstruct their view or interrupt their flow.
+        A common placement for toast notifications is in the top center of the screen.
     </Description>
-  </PageleteSubSection>
-
-  <PageleteSubSection>
-    <SubHeader id="toast-behavior-usage">Usage</SubHeader>
-
     <Description>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam.
+      If multiple toast notifications are triggered in quick succession, they should be
+       stacked on top of each other to avoid cluttering the screen.
+        Each notification should be visible for a short period of time before disappearing,
+         allowing users to quickly scan through them if necessary.
     </Description>
+
+    <ImageWrapper>
+      <Image src={PlacementImage} alt={placementImgAltText} />
+    </ImageWrapper>
 
     <DoAndDont>
-      <DoAndDont.DoContainer instructions={doInstructions} />
+      <DoAndDont.DoContainer instructions={do1Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={doImage1} alt="Image showing a toast notifying user that a file was successfuly saved" />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
 
-      <DoAndDont.DontContainer instructions={dontInstructions} />
+      <DoAndDont.DontContainer instructions={dont1Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={dontImage1} alt="Image showing a toast notifying user about an error condition" />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DontContainer>
     </DoAndDont>
+
   </PageleteSubSection>
 
   <PageleteSubSection>
-    <SubHeader id="toast-behavior-dismissal">Dismissal</SubHeader>
+    <SubHeader id="toast-behavior-duration">Duration</SubHeader>
 
     <Description>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam. talk about duration in the copy (5 seconds)
+      The duration of a toast should be short enough to convey the message,
+       but not so long that they become a distraction or annoyance.
+        A common duration for a toast is between 2-5 seconds, depending on the complexity
+         of the message and the user's familiarity with the app or website.
     </Description>
   </PageleteSubSection>
 
@@ -121,15 +141,23 @@ const dontInstructionsTwo = "Add text here.";
     <SubHeader id="toast-behavior-text-length">Text Length</SubHeader>
 
     <Description>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam.
+      The toast message should be short and to the point. It should not have a lot of copy where it
+       covers a large part of the dashboard. Avoid wrapping the text in multiple lines.
     </Description>
 
     <DoAndDont>
-      <DoAndDont.DoContainer instructions={doInstructionsTwo} />
+      <DoAndDont.DoContainer instructions={do2Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={doImage2} alt="Image showing a toast notifying user that a file was successfuly saved" />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
 
-      <DoAndDont.DontContainer instructions={dontInstructionsTwo} />
+      <DoAndDont.DontContainer instructions={dont2Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={dontImage2} alt="Image showing a toast notifying user about an error condition" />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DontContainer>
     </DoAndDont>
   </PageleteSubSection>
+
 </PageleteSection>

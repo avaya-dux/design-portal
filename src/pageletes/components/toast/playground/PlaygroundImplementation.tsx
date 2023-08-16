@@ -1,9 +1,6 @@
 import {
-  type ToastProps,
   Checkbox,
   Button,
-  Radio,
-  RadioGroup,
 } from "@avaya/neo-react";
 import clsx from "clsx";
 import { useMemo, useState, useEffect } from "react";
@@ -12,31 +9,29 @@ import { Playground } from "components";
 
 import "./ToastPlayground.css";
 
-const defaultReact = `<Toast position={"top"} duration={2000}>This is a toast</Toast>`;
+const defaultReact = `<Toast position="top" duration={2000}>This is a toast</Toast>`;
 const sandbox = "https://codesandbox.io/s/neo-react-toast-hdlfn9";
 const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-toast--default";
 
 export const PlaygroundImplementation = () => {
-  const [position, setPosition] = useState<ToastProps["position"]>("top");
   const [icon, setIcon] = useState<boolean>(false);
   const [showToast, setShowToast] = useState<boolean>(false);
-  const [duration, setDuration] = useState<ToastProps["duration"]>(2000);
   const [reloadToast, setReloadToast] = useState<boolean>(false);
 
   const isDefault = useMemo(
-    () => position === "top" && !icon && duration === 2000,
-    [position, icon, duration],
+    () => !icon,
+    [icon],
   );
 
   const react = useMemo(
     () =>
-      `<Toast position="${position}" ${
+      `<Toast position="top" ${
         icon ? `icon="info" ` : ""
-      }duration={${duration}}>${
+      }duration={2000}>${
         icon ? "This is a toast with an icon" : "This is a Toast"
       }</Toast>`,
-    [position, icon, duration],
+    [icon],
   );
 
   const html = useMemo(
@@ -53,57 +48,26 @@ export const PlaygroundImplementation = () => {
   );
 
   useEffect(() => {
-    setShowToast(true);
-
     const toastTimer = setTimeout(() => {
       setShowToast(false);
-    }, duration);
+    }, 2000);
 
     return () => clearTimeout(toastTimer);
-  }, [duration, position, icon, reloadToast]);
+  }, [icon, reloadToast]);
 
   return (
     <div>
       <Playground
         options={
           <Playground.OptionsContainer>
-            <Playground.OptionsSection title="Position">
-              <RadioGroup
-                groupName="Position"
-                selected={position as string}
-                onChange={(e) => {
-                  setPosition(e.target.value as ToastProps["position"]);
-                }}
-              >
-                <Radio value="top">Top</Radio>
-                <Radio value="top-left">Top-Left</Radio>
-                <Radio value="top-right">Top-Right</Radio>
-                <Radio value="bottom">Bottom</Radio>
-                <Radio value="bottom-left">Bottom-Left</Radio>
-                <Radio value="bottom-right">Bottom-Right</Radio>
-              </RadioGroup>
-            </Playground.OptionsSection>
-            <Playground.OptionsSection title="Icon">
+            <Playground.OptionsSection title="Variations">
               <Checkbox
                 value="icon"
                 checked={icon}
-                onChange={() => setIcon(!icon)}
+                onChange={() => { setIcon(!icon); }}
               >
                 Icon
               </Checkbox>
-            </Playground.OptionsSection>
-            <Playground.OptionsSection title="Duration (seconds)">
-              <RadioGroup
-                groupName="Duration (seconds)"
-                selected={String(duration / 1000)}
-                onChange={(event) => {
-                  setDuration(Number(event.target.value) * 1000);
-                }}
-              >
-                <Radio value="1">1</Radio>
-                <Radio value="2">2</Radio>
-                <Radio value="5">5</Radio>
-              </RadioGroup>
             </Playground.OptionsSection>
           </Playground.OptionsContainer>
         }
@@ -115,14 +79,14 @@ export const PlaygroundImplementation = () => {
         }}
       >
         <div className="toast-playground__wrapper">
-          <Button onClick={() => setReloadToast(!reloadToast)}>
+          <Button onClick={() => { setReloadToast(!reloadToast); setShowToast(true); }}>
             Click to Show Toast
           </Button>
           {showToast && (
             <div
               className={clsx(
                 "neo-toast",
-                `toast-playground__position--${position}`,
+                `toast-playground__position--top`,
               )}
               role="alert"
               aria-live="polite"

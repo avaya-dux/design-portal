@@ -1,8 +1,13 @@
 ---
-import { Description, PageleteSection, SectionHeader } from "components/astro";
+import { Image } from "@avaya/neo-react";
+
+import {ColumnLayout, Description, PageleteSection, SectionHeader, StackedLayout } from "components/astro";
 import { topics } from "../static";
 
 const { id, title } = topics.specs;
+
+import specsImage1 from "../imgs/toast-specs-1.svg";
+import specsImage2 from "../imgs/toast-specs-2.svg";
 ---
 
 <PageleteSection>
@@ -12,4 +17,14 @@ const { id, title } = topics.specs;
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
   </Description>
+
+    <ColumnLayout numOfColumns={2}>
+      <StackedLayout label="Toast size">
+        <Image src={specsImage1} alt="Image showing height of toast is 44 pixels" />
+      </StackedLayout>
+
+      <StackedLayout label="Toast padding">
+        <Image src={specsImage2} alt="Image showing 12 pixel padding around toast text " />
+      </StackedLayout>
+    </ColumnLayout>
 </PageleteSection>
