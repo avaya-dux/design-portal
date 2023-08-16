@@ -48,8 +48,6 @@ export const PlaygroundImplementation = () => {
   );
 
   useEffect(() => {
-    setShowToast(true);
-
     const toastTimer = setTimeout(() => {
       setShowToast(false);
     }, 2000);
@@ -66,7 +64,7 @@ export const PlaygroundImplementation = () => {
               <Checkbox
                 value="icon"
                 checked={icon}
-                onChange={() => setIcon(!icon)}
+                onChange={() => { setIcon(!icon); }}
               >
                 Icon
               </Checkbox>
@@ -81,7 +79,7 @@ export const PlaygroundImplementation = () => {
         }}
       >
         <div className="toast-playground__wrapper">
-          <Button onClick={() => setReloadToast(!reloadToast)}>
+          <Button onClick={() => { setReloadToast(!reloadToast); setShowToast(true); }}>
             Click to Show Toast
           </Button>
           {showToast && (
