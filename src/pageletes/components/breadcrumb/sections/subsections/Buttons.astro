@@ -1,0 +1,65 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  DoAndDont,
+  ImageWrapper,
+  PageleteSubSection,
+  SubHeader,
+} from "components";
+
+import buttonImage from "../../imgs/behavior-button.svg";
+
+const buttonImageAltText =
+  "Image showing the current page title buttond with ellipsis and a tooltip displaying the full title.";
+
+import doImage from "../../imgs/behavior-button-do-1.svg";
+import dontImage from "../../imgs/behavior-button-dont-1.svg";
+
+const doInstructions =
+  "Add Cancel and Save buttons to pages that include forms or other actions that need to be completed by a user.";
+const doImgAltText =
+  "Image showing breadcrumb on a form panel with Cancel and Save buttons.";
+
+const dontInstructions =
+  "Do not use Breadcrumb titles without buttons when the user is expected to complete a form or other actions.";
+const dontImgAltText =
+  "Image showing a breadcrumb on a form panel without any buttons.";
+
+---
+
+<PageleteSubSection>
+  <SubHeader id="breadcrumb-button">Buttons</SubHeader>
+
+  <Description>
+    Buttons associated with breadcrumbs are optional but, when included, should serve a clear and specific purpose,
+     such as allowing users to take an action related to the current page.
+      The buttons should be placed after the links in the breadcrumb, and should be visually distinct from the links.
+  </Description>
+
+  <Description>
+    On pages that have a form, the Save button should be disabled until the user fills in all required fields.
+     Once the necessary fields have been populated, the Save button becomes active and allows users to save the changes.
+  </Description>
+
+  <ImageWrapper>
+    <Image src={buttonImage} alt={buttonImageAltText} />
+  </ImageWrapper>
+
+
+  <DoAndDont size="wide">
+    <DoAndDont.DoContainer instructions={doInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage} alt={doImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dontInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage} alt={dontImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+
+</PageleteSubSection>
