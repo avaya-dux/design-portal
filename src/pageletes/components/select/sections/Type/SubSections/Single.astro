@@ -16,12 +16,12 @@ import doImage from "./imgs/select-type-do-1.svg";
 import dontImage from "./imgs/select-type-dont-1.svg";
 
 const doInstructions =
-  "Use select when choosing from a large list of items, or when spacing is limited.";
+  "Use select when choosing from a large list of items, or when space is limited.";
 const doImgAltText =
   "Image showing a closed select menu with a label and a preselected element";
 
 const dontInstructions =
-  "Avoid using select when there is room to use radio buttons instead.";
+  "Do not use select when there is room to use radio buttons instead.";
 const dontImgAltText =
   "Image showing a closed select menu with a preselected element that is 'yes'";
 ---
@@ -30,18 +30,15 @@ const dontImgAltText =
   <SubHeader id="select-type-single">Single Select</SubHeader>
 
   <Description>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+    When the user can only pick one item from the list, use the Single Select
+    type. The item chosen appears in the form field and the dropdown menu
+    closes. The user can return to the selector at any time to make a different
+    choice.
   </Description>
 
   <ImageWrapper marginBottom={"3rem"} padding="0">
     <Image src={img1} alt={img1alt} />
   </ImageWrapper>
-
-  <Description>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-  </Description>
 
   <DoAndDont>
     <DoAndDont.DoContainer instructions={doInstructions}>

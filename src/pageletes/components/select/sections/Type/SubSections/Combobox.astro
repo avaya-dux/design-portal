@@ -22,7 +22,7 @@ const doImgAltText =
   "Image showing an open select menu whose main area is a text input field and has the letter 'T' typed in it, the shown options are filtered to only show options that start with the letter 'T'";
 
 const dontInstructions =
-  "Do not use a combobox if only a few options are available.";
+  "Do not use a combobox for short lists.";
 const dontImgAltText =
   "Image showing an open select menu whose main area is a text input field, and has nothing typed into it, and has only three options shown";
 ---
@@ -31,18 +31,16 @@ const dontImgAltText =
   <SubHeader id="select-type-combo">Combobox</SubHeader>
 
   <Description>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+    The combobox displays multiple selections in a different way. Each item
+    chosen from the list appears as a chip inside the form field. Clicking the
+    X, or deselecting the item checkbox, removes that item from the list of
+    selections. The user can select items from the list, or they can start
+    typing and matching items.
   </Description>
 
   <ImageWrapper marginBottom={"3rem"} padding="0">
     <Image src={img1} alt={img1alt} />
   </ImageWrapper>
-
-  <Description>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-  </Description>
 
   <DoAndDont>
     <DoAndDont.DoContainer instructions={doInstructions}>
