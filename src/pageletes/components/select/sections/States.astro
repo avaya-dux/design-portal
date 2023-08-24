@@ -35,10 +35,8 @@ const img5AltText = "Image showing the error state of a select";
   <SectionHeader id={id}>{title}</SectionHeader>
 
   <Description>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, explicabo
-    adipisci aperiam laboriosam excepturi illo sint iure vero perferendis
-    doloribus reiciendis veniam libero, ratione quia vel quas ex magnam
-    consequatur.
+    Select can have different states depending on user actions and the design of
+    the application or website.
   </Description>
 
   <ColumnLayout bkgColor="white" numOfColumns={1} marginBottom="0">
@@ -71,14 +69,29 @@ const img5AltText = "Image showing the error state of a select";
   </ColumnLayout>
 
   <InfoList type="disc">
-    <InfoListItem label="Default">Description</InfoListItem>
+    <InfoListItem label="Enabled">
+      This state is used when no other state is active. It is the rest state of
+      the select component.
+    </InfoListItem>
 
-    <InfoListItem label="Active">Description</InfoListItem>
+    <InfoListItem label="Active">
+      The user can click the field to open the dropdown list to select items.
+      The user can also start typing and matching items will appear.
+    </InfoListItem>
 
-    <InfoListItem label="Hover">Description</InfoListItem>
+    <InfoListItem label="Hover">
+      Moving the mouse over the field changes it to the Hover state. There is no
+      hover state when using keyboard navigation.
+    </InfoListItem>
 
-    <InfoListItem label="Disabled">Description</InfoListItem>
+    <InfoListItem label="Disabled">
+      If the field cannot be selected or modified, use the Disabled state.
+      Another action or setting must be made to enable the field.
+    </InfoListItem>
 
-    <InfoListItem label="Error">Description</InfoListItem>
+    <InfoListItem label="Error">
+      When the value entered into the field is incorrect, or if it is a required
+      field but it has been left blank, an error message is displayed.
+    </InfoListItem>
   </InfoList>
 </PageleteSection>

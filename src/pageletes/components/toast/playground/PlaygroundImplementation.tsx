@@ -1,7 +1,4 @@
-import {
-  Checkbox,
-  Button,
-} from "@avaya/neo-react";
+import { Checkbox, Button } from "@avaya/neo-react";
 import clsx from "clsx";
 import { useMemo, useState, useEffect } from "react";
 
@@ -19,16 +16,11 @@ export const PlaygroundImplementation = () => {
   const [showToast, setShowToast] = useState<boolean>(false);
   const [reloadToast, setReloadToast] = useState<boolean>(false);
 
-  const isDefault = useMemo(
-    () => !icon,
-    [icon],
-  );
+  const isDefault = useMemo(() => !icon, [icon]);
 
   const react = useMemo(
     () =>
-      `<Toast position="top" ${
-        icon ? `icon="info" ` : ""
-      }duration={2000}>${
+      `<Toast position="top" ${icon ? `icon="info" ` : ""}duration={2000}>${
         icon ? "This is a toast with an icon" : "This is a Toast"
       }</Toast>`,
     [icon],
@@ -64,7 +56,9 @@ export const PlaygroundImplementation = () => {
               <Checkbox
                 value="icon"
                 checked={icon}
-                onChange={() => { setIcon(!icon); }}
+                onChange={() => {
+                  setIcon(!icon);
+                }}
               >
                 Icon
               </Checkbox>
@@ -79,15 +73,17 @@ export const PlaygroundImplementation = () => {
         }}
       >
         <div className="toast-playground__wrapper">
-          <Button onClick={() => { setReloadToast(!reloadToast); setShowToast(true); }}>
+          <Button
+            onClick={() => {
+              setReloadToast(!reloadToast);
+              setShowToast(true);
+            }}
+          >
             Click to Show Toast
           </Button>
           {showToast && (
             <div
-              className={clsx(
-                "neo-toast",
-                `toast-playground__position--top`,
-              )}
+              className={clsx("neo-toast", `toast-playground__position--top`)}
               role="alert"
               aria-live="polite"
             >

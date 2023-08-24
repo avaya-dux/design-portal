@@ -17,12 +17,12 @@ import doImage from "./imgs/select-type-do-2.svg";
 import dontImage from "./imgs/select-type-dont-2.svg";
 
 const doInstructions =
-  "When there is a large list of item that can be selected, use the multiple select.";
+  "Use the multiple select component when there is a long list of options and more than one can be selected, .";
 const doImgAltText =
   "Image showing an open select menu with checkboxes on the left side of each option";
 
 const dontInstructions =
-  "Avoid using multiple select for small lists of items. Use checkboxes instead.";
+  "Do not use multiple select for small lists of items. Use a <a class='neo-link neo-link__inline' href='/components/checkbox'>checkbox</a> instead.";
 const dontImgAltText =
   "Image showing an open select menu with checkboxes on the left side of each option";
 ---
@@ -31,18 +31,15 @@ const dontImgAltText =
   <SubHeader id="select-type-multi">Multiple Select</SubHeader>
 
   <Description>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+    When the user can choose more than one item from the list, use the Multiple
+    Select type. A checkbox in front of each menu item allows the user to pick
+    one or more items. The menu closes when the user moves to another field, or
+    clicks outside of the menu.
   </Description>
 
   <ImageWrapper marginBottom={"3rem"} padding="0">
     <Image src={img1} alt={img1alt} />
   </ImageWrapper>
-
-  <Description>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-  </Description>
 
   <DoAndDont>
     <DoAndDont.DoContainer instructions={doInstructions}>
