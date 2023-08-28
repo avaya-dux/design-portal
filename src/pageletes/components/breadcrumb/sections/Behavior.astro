@@ -1,0 +1,33 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components/astro";
+import { topics } from "../static";
+
+import {
+  Buttons,
+  Overflow,
+  Placement,
+  Truncate,
+} from "./subsections";
+
+const { id, title } = topics.behavior;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    Breadcrumbs use the behaviors shown below.
+  </Description>
+
+  <Placement />
+
+  <Overflow />
+
+  <Truncate />
+
+  <Buttons />
+
+
+</PageleteSection>
