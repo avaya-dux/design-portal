@@ -1,0 +1,79 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ImageWrapper,
+  InfoList,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+import { topics } from "../static";
+
+const { id, title } = topics.anatomy;
+
+import anatomyImage1 from "../imgs/pagination-anatomy-1.svg";
+const anatomyImgAltText1 =
+  "X";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Shown below are the parts that make up a pagination component.
+  </Description>
+
+  <ImageWrapper>
+    <Image src={anatomyImage1} alt={anatomyImgAltText1} />
+  </ImageWrapper>
+
+  <InfoList type="decimal">
+    <InfoListItem label="Page Count">
+      Shows the range of items (rows) displayed compared to the total number of
+      items in the table.
+    </InfoListItem>
+
+    <InfoListItem label="Previous Page">
+      Navigate to the previous page of data. If there are no previous pages
+      (e.g. you are already at page 1), this option is disabled.
+    </InfoListItem>
+
+    <InfoListItem label="First Page">
+      Takes the user to the first page of the table. It is always visible in the
+      pagination bar.
+    </InfoListItem>
+
+    <InfoListItem label="Hidden Page">
+      In large tables, not every page number can be displayed. Use the ellipsis
+      to show that there are more pages available.
+    </InfoListItem>
+
+    <InfoListItem label="Current Page">
+      The page currently displayed appears in the center of the bar. The pages
+      either side of the current page are also shown and can be selected to move
+      to that page.
+    </InfoListItem>
+
+    <InfoListItem label="Last Page">
+      Takes the user to the last page of the table. It is always visible in the
+      pagination bar.
+    </InfoListItem>
+
+    <InfoListItem label="Next Page">
+      Navigate to the next page of data. If there are no more pages (e.g. you
+      are already on the last page), this option is disabled.
+    </InfoListItem>
+
+    <InfoListItem label="Jump to Page">
+      Enter the page number in this space to jump directly to that page of the
+      table.
+    </InfoListItem>
+
+    <InfoListItem label="Display Count">
+      Displays the number of rows to display. This is user configurable in
+      increments of 20, 50, or 100.
+    </InfoListItem>
+  </InfoList>
+</PageleteSection>
