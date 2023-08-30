@@ -19,9 +19,9 @@ const sandbox = "https://codesandbox.io/s/";
 
 type ButtonOptions = "yes" | "no";
 
-  const currentPage = { href: "#current_page", text: "Current Page" };
+const currentPage = { href: "#current_page", text: "Current Page" };
 
-  const links = [{ href: "#parent1", text: "First Level Page" }];
+const links = [{ href: "#parent1", text: "First Level Page" }];
 
 const buttons = [
   <Button variant="secondary" key="btn1">
@@ -60,7 +60,7 @@ export const PlaygroundImplementation = () => {
       prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
     ];
-  }, [hasButtons, currentPage, links]);
+  }, [hasButtons]);
 
   return (
     <Playground
