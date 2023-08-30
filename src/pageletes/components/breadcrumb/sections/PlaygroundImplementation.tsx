@@ -15,7 +15,8 @@ import {
 const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-breadcrumb";
 
-const sandbox = "https://codesandbox.io/s/";
+const sandbox =
+  "https://codesandbox.io/s/neo-react-breadcrumbs-tqvmzp?file=/src/App.js";
 
 type ButtonOptions = "yes" | "no";
 
