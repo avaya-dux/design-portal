@@ -1,6 +1,9 @@
 import Intro from "./Intro.astro";
 export { Intro };
 
+import BreadcrumbPlayground from "./BreadcrumbPlayground.astro";
+export { BreadcrumbPlayground };
+
 import Anatomy from "./Anatomy.astro";
 export { Anatomy };
 
