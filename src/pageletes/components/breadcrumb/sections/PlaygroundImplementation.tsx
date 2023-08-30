@@ -19,6 +19,10 @@ const sandbox = "https://codesandbox.io/s/";
 
 type ButtonOptions = "yes" | "no";
 
+  const currentPage = { href: "#current_page", text: "Current Page" };
+
+  const links = [{ href: "#parent1", text: "First Level Page" }];
+
 const buttons = [
   <Button variant="secondary" key="btn1">
     Action 1
@@ -32,10 +36,6 @@ const getActions = (hasActions: boolean) => {
 
 export const PlaygroundImplementation = () => {
   const [hasButtons, setHasButtons] = useState<ButtonOptions>("yes");
-
-  const currentPage = { href: "#current_page", text: "Current Page" };
-
-  const links = [{ href: "#parent1", text: "First Level Page" }];
 
   const [element, react, html] = useMemo(() => {
     let props: BreadcrumbsProps = {
