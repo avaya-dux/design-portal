@@ -60,7 +60,7 @@ export const PlaygroundImplementation = () => {
       prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
     ];
-  }, [hasButtons]);
+  }, [hasButtons, currentPage, links]);
 
   return (
     <Playground
