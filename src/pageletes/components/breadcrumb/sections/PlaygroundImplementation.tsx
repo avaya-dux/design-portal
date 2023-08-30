@@ -51,7 +51,7 @@ export const PlaygroundImplementation = () => {
     }
 
     const element = (
-      <div style={{ width: "100%" }}>
+      <div style={{ width: "100%", height: "38px" }}>
         <Breadcrumbs aria-label="Path to current page" {...props} />
       </div>
     );
