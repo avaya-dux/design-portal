@@ -10,11 +10,7 @@ import clsx from "clsx";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components/react";
-import {
-  prettyPrintHtml,
-  prettyPrintReact,
-  prettyPrintReactElementToString,
-} from "helpers";
+import { prettyPrintHtml, prettyPrintReactElementToString } from "helpers";
 
 export const sandbox = "https://codesandbox.io/s/neo-react-icon-jvhyst";
 export const storybook =
