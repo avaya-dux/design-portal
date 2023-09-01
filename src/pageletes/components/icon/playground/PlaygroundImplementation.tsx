@@ -8,11 +8,13 @@ import {
   removePopupManagerContainer,
   usePopup,
 } from "@avaya/neo-react";
-import clsx from "clsx";
 import { useEffect, useMemo, useState } from "react";
 
 import { Playground } from "components/react";
-import { prettyPrintHtml, prettyPrintReactElementToString } from "helpers";
+import {
+  prettyPrintReactElementToHtml,
+  prettyPrintReactElementToString,
+} from "helpers";
 
 export const sandbox = "https://codesandbox.io/s/neo-react-icon-jvhyst";
 export const storybook =
@@ -41,27 +43,7 @@ export const PlaygroundImplementation = () => {
 
     const react = prettyPrintReactElementToString(element);
 
-    let sizing = "";
-    if (status !== "none" && size === "lg") {
-      sizing = "neo-icon-state--large";
-    } else if (status === "none") {
-      const sizeCssWord =
-        size === "lg" ? "large" : size === "md" ? "medium" : "small";
-      sizing = `neo-icon--${sizeCssWord}`;
-    }
-
-    const html = prettyPrintHtml(
-      `
-      <span
-        role="img"
-        aria-label="info icon"
-        class="${clsx(
-          "neo-icon-info",
-          sizing,
-          status !== "none" && `neo-icon-state--${status}`,
-        )}"></span>
-      `,
-    );
+    const html = prettyPrintReactElementToHtml(element);
 
     return [element, react, html];
   }, [size, status]);
