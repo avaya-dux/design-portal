@@ -65,7 +65,9 @@ export const PlaygroundImplementation = () => {
                 setSize(e.target.value as IconProps["size"]);
               }}
             >
-              <Radio value="sm">Small</Radio>
+              <Radio value="sm" disabled={status !== "none"}>
+                Small
+              </Radio>
               <Radio value="md">Medium</Radio>
               <Radio value="lg">Large</Radio>
             </RadioGroup>
@@ -75,7 +77,12 @@ export const PlaygroundImplementation = () => {
             <Select
               aria-label="Status"
               value={status}
-              onChange={(value) => setStatus(value as IconProps["status"])}
+              onChange={(value) => {
+                setStatus(value as IconProps["status"]);
+                if (value !== "none" && size === "sm") {
+                  setSize("md");
+                }
+              }}
             >
               {["none", "available", "away", "busy"].map((value) => (
                 <SelectOption key={value} value={value}>
