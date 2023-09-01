@@ -32,10 +32,14 @@ export const PlaygroundImplementation = () => {
 
     const react = prettyPrintReactElementToString(element);
 
-    const sizeCssWord =
-      size === "lg" ? "large" : size === "md" ? "medium" : "small";
-    const statusCssWord = status === "none" ? "" : "-state";
-    const iconSize = `neo-icon${statusCssWord}--${sizeCssWord}`;
+    let sizing = "";
+    if (status !== "none" && size === "lg") {
+      sizing = "neo-icon-state--large";
+    } else if (status === "none") {
+      const sizeCssWord =
+        size === "lg" ? "large" : size === "md" ? "medium" : "small";
+      sizing = `neo-icon--${sizeCssWord}`;
+    }
 
     const html = prettyPrintHtml(
       `
@@ -44,7 +48,7 @@ export const PlaygroundImplementation = () => {
         aria-label="info icon"
         class="${clsx(
           "neo-icon-info",
-          iconSize,
+          sizing,
           status !== "none" && `neo-icon-state--${status}`,
         )}"></span>
       `,
