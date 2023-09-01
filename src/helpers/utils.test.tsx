@@ -199,7 +199,7 @@ describe(prettyPrintReactElementToHtml.name, () => {
             <span
               role=\\"img\\"
               aria-label=\\"star-icon\\"
-              class=\\"neo-icon-star\\"
+              class=\\"neo-icon-star neo-icon--small\\"
             >
             </span>
           </div>
@@ -227,7 +227,7 @@ describe(prettyPrintReactElementToHtml.name, () => {
             <span
               role=\\"img\\"
               aria-label=\\"star-icon\\"
-              class=\\"neo-icon-star\\"
+              class=\\"neo-icon-star neo-icon--small\\"
             >
             </span>
           </div>
