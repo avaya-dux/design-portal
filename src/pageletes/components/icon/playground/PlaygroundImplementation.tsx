@@ -5,9 +5,11 @@ import {
   RadioGroup,
   Select,
   SelectOption,
+  removePopupManagerContainer,
+  usePopup,
 } from "@avaya/neo-react";
 import clsx from "clsx";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { Playground } from "components/react";
 import { prettyPrintHtml, prettyPrintReactElementToString } from "helpers";
@@ -17,6 +19,13 @@ export const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-icon";
 
 export const PlaygroundImplementation = () => {
+  useEffect(() => {
+    return () => {
+      removePopupManagerContainer();
+    };
+  }, []);
+  const { toast } = usePopup("interactive-toast");
+
   const [size, setSize] = useState<IconProps["size"]>("lg");
   const [status, setStatus] = useState<IconProps["status"]>("none");
 
@@ -85,6 +94,11 @@ export const PlaygroundImplementation = () => {
                 setStatus(value as IconProps["status"]);
                 if (value !== "none" && size === "sm") {
                   setSize("md");
+                  toast({
+                    position: "top-right",
+                    message:
+                      "NOTE: Icons with a status must be size medium or large.",
+                  });
                 }
               }}
             >
