@@ -1,6 +1,11 @@
 ---
-import { Description, PageleteSection, SectionHeader } from "components/astro";
+import { 
+  Description, 
+  PageleteSection, 
+  SectionHeader 
+} from "components/astro";
 
+import { PlaygroundImplementation } from "../playground";
 import { topics } from "../static";
 
 const { id, title } = topics.playground;
@@ -16,4 +21,6 @@ const { id, title } = topics.playground;
     styles and features. Once you get the results you want, copy the HTML or
     React code provided and paste it into your application.
   </Description>
+
+  <PlaygroundImplementation client:load />
 </PageleteSection>
