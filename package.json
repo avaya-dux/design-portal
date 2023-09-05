@@ -18,7 +18,7 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/react": "2.3.2",
+    "@astrojs/react": "3.0.0",
     "@astrojs/svelte": "4.0.0",
     "@astrojs/vue": "3.0.0",
     "@avaya/neo-icons": "1.4.0",
