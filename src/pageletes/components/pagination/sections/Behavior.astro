@@ -8,6 +8,8 @@ import {
   SectionHeader,
   SubHeader,
   ImageWrapper,
+  ColumnLayout,
+  StackedLayout,
 } from "components/astro";
 
 import { topics } from "../static";
@@ -20,10 +22,10 @@ const placementImgAltText1 = "Shows appropriate positioning for the pagination b
 import placementImage2 from "../imgs/pagination-behavior-placement-2.svg";
 const placementImgAltText2 = "Shows appropriate positioning for the pagination bar with pages with fewer rows.";
 
-import placementImage3 from "../imgs/pagination-behavior-placement-3.svg";
+import placementImage3 from "../imgs/pagination-behavior-items-1.svg";
 const placementImgAltText3 = "Shows how items per a page can effect the pagination bars position on a device.";
 
-import variationImage1 from "../imgs/pagination-behavior-items-1.svg";
+import variationImage1 from "../imgs/pagination-behavior-variations-1.svg";
 const variationImgAltText1 = "Shows variations to the pagination bar.";
 ---
 
@@ -34,26 +36,36 @@ const variationImgAltText1 = "Shows variations to the pagination bar.";
     The implementation of pagination varies depending upon the size of the
     table, and the size of the page showing the data.
   </Description>
-
+  
   <PageleteSubSection>
     <SubHeader id="pagination-placement">Placement</SubHeader>
-      <Description>
-        The pagination bar is always positioned at the bottom of the table.
-      </Description>
 
-      <ImageWrapper isShaded>
+    <Description>
+      The pagination bar is always positioned at the bottom of the table.
+    </Description>
+
+    <ColumnLayout   
+      marginBottom={"3rem"}
+      showGridlines={true} 
+      numOfColumns={1}>
+      <StackedLayout isShaded vPadding="0px">
         <Image src={placementImage1} alt={placementImgAltText1} />
-      </ImageWrapper>
+      </StackedLayout>
+    </ColumnLayout>
+    
+    <Description>
+      On pages with fewer rows, keep the pagination bar at the bottom of the
+      visible page.
+    </Description>
 
-      <Description>
-        On pages with fewer rows, keep the pagination bar at the bottom of the
-        visible page.
-      </Description>
-
-      <ImageWrapper isShaded>
+    <ColumnLayout 
+      marginBottom={"3rem"}
+      showGridlines={true} 
+      numOfColumns={1}>
+      <StackedLayout isShaded vPadding="0px">
         <Image src={placementImage2} alt={placementImgAltText2} />
-      </ImageWrapper>
-
+      </StackedLayout>
+    </ColumnLayout>
     <Description>
       On longer pages, use pagination rather than infinite scrolling. Infinite
       scrolling makes it difficult to keep track of where the content is.
@@ -70,9 +82,14 @@ const variationImgAltText1 = "Shows variations to the pagination bar.";
       rows or data per page. The default value is 20 rows per page.
     </Description>
 
-    <ImageWrapper isShaded>
-      <Image src={placementImage3} alt={placementImgAltText3} />
-    </ImageWrapper>
+    <ColumnLayout 
+      marginBottom={"3rem"}
+      showGridlines={true} 
+      numOfColumns={1}>
+      <StackedLayout isShaded vPadding="0px">
+        <Image src={placementImage3} alt={placementImgAltText3} />
+      </StackedLayout>
+    </ColumnLayout>
   </PageleteSubSection>
 
   <PageleteSubSection>
@@ -87,7 +104,14 @@ const variationImgAltText1 = "Shows variations to the pagination bar.";
       not needed when there are no additional pages.
     </Description>
 
-    <Image src={variationImage1} alt={variationImgAltText1} />
+    <ColumnLayout 
+      marginBottom={"3rem"}
+      showGridlines={true} 
+      numOfColumns={1}>
+      <StackedLayout isShaded vPadding="0px">
+        <Image src={variationImage1} alt={variationImgAltText1} />
+      </StackedLayout>
+    </ColumnLayout>
 
   </PageleteSubSection>
 </PageleteSection>
