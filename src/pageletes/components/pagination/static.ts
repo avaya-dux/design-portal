@@ -1,5 +1,4 @@
 import type { TopicsDict } from "components";
-import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
 type PaginationTopicNames =
   | "playground"
