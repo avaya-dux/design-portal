@@ -30,9 +30,9 @@ export const PlaygroundImplementation = () => {
     const element = (
       <Icon
         aria-label="info icon"
-        icon="info"
+        icon={type === "Icon" ? "info" : "call"}
         size={size}
-        status={status === "none" ? null : status}
+        status={type === "Icon" ? undefined : status}
       />
     );
 
@@ -41,7 +41,7 @@ export const PlaygroundImplementation = () => {
     const html = prettyPrintReactElementToHtml(element);
 
     return [element, react, html];
-  }, [size, status]);
+  }, [size, status, type]);
 
   return (
     <Playground
