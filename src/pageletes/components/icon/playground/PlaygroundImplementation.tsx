@@ -108,7 +108,7 @@ export const PlaygroundImplementation = () => {
               >
                 <Radio value="available">Available</Radio>
                 <Radio value="away">Away</Radio>
-                <Radio value="busy">Busy</Radio>
+                <Radio value="do-not-disturb">Do Not Disturb</Radio>
               </RadioGroup>
             </Playground.OptionsSection>
           )}
