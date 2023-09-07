@@ -1,0 +1,24 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components/astro";
+import { topics } from "../static";
+
+import {
+  Alignment,
+} from "./subsections";
+import Aligment from "./subsections/Aligment.astro";
+
+const { id, title } = topics.behavior;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    Effective form layout reduces user confusion and errors, improving the user experience and performance.
+  </Description>
+
+  <Aligment />
+
+</PageleteSection>
