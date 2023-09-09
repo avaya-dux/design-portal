@@ -9,3 +9,6 @@ export { ButtonPlacement };
 
 import Required from "./Required.astro";
 export { Required };
+
+import Validation from "./Validation.astro";
+export { Validation };
