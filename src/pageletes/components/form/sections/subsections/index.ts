@@ -6,3 +6,6 @@ export { Spacing };
 
 import ButtonPlacement from "./ButtonPlacement.astro";
 export { ButtonPlacement };
+
+import Required from "./Required.astro";
+export { Required };
