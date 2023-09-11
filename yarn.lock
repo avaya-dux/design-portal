@@ -177,22 +177,22 @@
   resolved "https://registry.yarnpkg.com/@atomic-layout/core/-/core-0.14.1.tgz#3d69be5f79775f11b8008f18bc603b04a2141ccd"
   integrity sha512-o5nhk/1djuKzB20C2LSOuetTDytsbGg4c0UfxXkq1pqoaN3hKJcHPYF9nV+p6+P5CWqNBaaJddZ32OsFSppULQ==
 
-"@avaya/neo-icons@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@avaya/neo-icons/-/neo-icons-1.2.0.tgz#611b983eb6f1bac3aaabe17f033c85caf2e6b656"
-  integrity sha512-sueDfWah4t+qVMFW2mp0SELbC5nAly9WTYtqI4hsnYVSyZRhHGnblRE7K2HRsgB79g7dKEO7E5sP7A5AYDZNwQ==
+"@avaya/neo-icons@1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@avaya/neo-icons/-/neo-icons-1.4.0.tgz#489a470119e936da155d7c25c3102dc0eb123173"
+  integrity sha512-VmCBfNEQN6q6nH1TRAK2OubEDJ0LeIQEsSDLRu+B82c9gKlq96VPeX/AXb9mvIsOpuLfob24jo5jjt7i/sF20Q==
 
-"@avaya/neo-react@0.8.9":
-  version "0.8.9"
-  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-0.8.9.tgz#d86fbcb7ea03b0db0a757b38cb4ba9a815c9025c"
-  integrity sha512-G4+VNnZs5Ny4DmWHXrTl4ob3Blu0zImal8e+j/z/Y8X8SCFzXGoft/kUipC/SjeVydpcD7C7MgsSOpCAjxu3sw==
+"@avaya/neo-react@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-1.0.1.tgz#3aab14b86b4bee007d4f02eb3979052c40f0b7dd"
+  integrity sha512-i1I7vLdY0fzw/5Pl8MdIqFIv9KqRRmGCCfmnmXcO3GyKiIeq3bYgnHoMlodq0doF5j35WI+G9O/TMt5iREUVyQ==
   dependencies:
     atomic-layout "0.16.2"
     loglevel "1.8.1"
     react-click-away-listener "2.2.3"
     react-focus-lock "2.9.5"
     react-input-autosize "3.0.0"
-    styled-components "6.0.5"
+    styled-components "6.0.7"
 
 "@babel/cli@^7.21.0":
   version "7.22.9"
@@ -7757,10 +7757,10 @@ style-to-object@0.4.1:
   dependencies:
     inline-style-parser "0.1.1"
 
-styled-components@6.0.5:
-  version "6.0.5"
-  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-6.0.5.tgz#a2588432507a57d946bfb6feb2ebd13fce447bd9"
-  integrity sha512-308zi5o7LrA9cVaP4nPD0TaUpOjGPePkAUFb/OGB0xRI3I9ozpW5UyASvRVi9wJcYASG+Y3mLDLDUZC7nqzimw==
+styled-components@6.0.7:
+  version "6.0.7"
+  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-6.0.7.tgz#1cf4a5e6b6181b29f941934df54af19b7ef05ab0"
+  integrity sha512-xIwWuiRMYR43mskVsW9MGTRjSo7ol4bcVjT595fGUp3OLBJOlOgaiKaxsHdC4a2HqWKqKnh0CmcRbk5ogyDjTg==
   dependencies:
     "@babel/cli" "^7.21.0"
     "@babel/core" "^7.21.0"
