@@ -18,3 +18,6 @@ export { PasswordInput };
 
 import Responsive from "./Responsive.astro";
 export { Responsive };
+
+import ReadOnly from "./ReadOnly.astro";
+export { ReadOnly };
