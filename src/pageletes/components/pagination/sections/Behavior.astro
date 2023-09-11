@@ -1,0 +1,116 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  SubHeader,
+  ColumnLayout,
+  StackedLayout,
+} from "components/astro";
+
+import { topics } from "../static";
+
+const { id, title } = topics.behavior;
+
+import placementImage1 from "../imgs/pagination-behavior-placement-1.svg";
+const placementImgAltText1 = "Shows appropriate positioning for the pagination bar.";
+
+import placementImage2 from "../imgs/pagination-behavior-placement-2.svg";
+const placementImgAltText2 = "Shows appropriate positioning for the pagination bar with pages with fewer rows.";
+
+import placementImage3 from "../imgs/pagination-behavior-items-1.svg";
+const placementImgAltText3 = "Shows how items per a page can effect the pagination bars position on a device.";
+
+import variationImage1 from "../imgs/pagination-behavior-variations-1.svg";
+const variationImgAltText1 = "Shows variations to the pagination bar.";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    The implementation of pagination varies depending upon the size of the
+    table, and the size of the page showing the data.
+  </Description>
+  
+  <PageleteSubSection>
+    <SubHeader id="pagination-placement">Placement</SubHeader>
+
+    <Description>
+      The pagination bar is always positioned at the bottom of the table.
+    </Description>
+
+    <ColumnLayout   
+      marginBottom={"3rem"}
+      showGridlines={true} 
+      numOfColumns={1}>
+      <StackedLayout isShaded vPadding="0px">
+        <Image src={placementImage1} alt={placementImgAltText1} />
+      </StackedLayout>
+    </ColumnLayout>
+    
+    <Description>
+      On pages with fewer rows, keep the pagination bar at the bottom of the
+      visible page.
+    </Description>
+
+    <ColumnLayout 
+      marginBottom={"3rem"}
+      showGridlines={true} 
+      numOfColumns={1}>
+      <StackedLayout isShaded vPadding="0px">
+        <Image src={placementImage2} alt={placementImgAltText2} />
+      </StackedLayout>
+    </ColumnLayout>
+    <Description>
+      On longer pages, use pagination rather than infinite scrolling. Infinite
+      scrolling makes it difficult to keep track of where the content is.
+    </Description>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="pagination-items">Items Per Page</SubHeader>
+
+    <Description>
+      The number of rows to show in a table depends on how much data is being
+      presented, the screen size and resolution of the device being used, and
+      user preferences.<br /><br />The user can choose to display 20, 50, or 100
+      rows or data per page. The default value is 20 rows per page.
+    </Description>
+
+    <ColumnLayout 
+      marginBottom={"3rem"}
+      showGridlines={true} 
+      numOfColumns={1}>
+      <StackedLayout isShaded vPadding="0px">
+        <Image src={placementImage3} alt={placementImgAltText3} />
+      </StackedLayout>
+    </ColumnLayout>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="pagination-variations">Variations</SubHeader>
+
+    <Description>
+      The width of the window where the table appears impacts the amount of
+      detail that can appear in the pagination bar, such as the use of
+      descriptive labels for page links or buttons, the ability to jump to
+      specific pages, or searches within the data set. The optimal page size
+      depends upon the needs of the interface and its users. A pagination bar is
+      not needed when there are no additional pages.
+    </Description>
+
+    <ColumnLayout 
+      marginBottom={"3rem"}
+      showGridlines={true} 
+      numOfColumns={1}>
+      <StackedLayout isShaded vPadding="0px">
+        <Image src={variationImage1} alt={variationImgAltText1} />
+      </StackedLayout>
+    </ColumnLayout>
+
+  </PageleteSubSection>
+</PageleteSection>
