@@ -12,3 +12,6 @@ export { Required };
 
 import Validation from "./Validation.astro";
 export { Validation };
+
+import PasswordInput from "./PasswordInput.astro";
+export { PasswordInput };
