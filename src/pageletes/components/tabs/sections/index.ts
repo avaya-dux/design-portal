@@ -10,6 +10,10 @@ import Anatomy from "./Anatomy.astro";
 
 export { Anatomy };
 
+import States from "./States.astro";
+
+export { States };
+
 import Type from "./Type.astro";
 
 export { Type };
@@ -29,5 +33,3 @@ export { KeyboardInteractions };
 import Related from "./Related.astro";
 
 export { Related };
-
-

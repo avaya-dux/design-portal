@@ -1,0 +1,75 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  ColumnLayout,
+  Description,
+  InfoList,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+} from "components/astro";
+import { topics } from "../static";
+
+const { id, title } = topics.states;
+
+import image1 from "../imgs/tabs-states-1.svg";
+const img1AltText = "Image showing an enabled tab";
+
+import image2 from "../imgs/tabs-states-2.svg";
+const img2AltText = "Image showing an active tab";
+
+import image3 from "../imgs/tabs-states-3.svg";
+const img3AltText = "Image showing a tab when hovered over";
+
+import image4 from "../imgs/tabs-states-4.svg";
+const img4AltText = "Image showing a disabled tab";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>A tab can exist in one of four states.</Description>
+
+  <ColumnLayout bkgColor="white" numOfColumns={4}>
+    <StackedLayout label="Enabled">
+      <Image src={image1} alt={img1AltText} />
+    </StackedLayout>
+
+    <StackedLayout label="Active">
+      <Image src={image2} alt={img2AltText} />
+    </StackedLayout>
+
+    <StackedLayout label="Hover">
+      <Image src={image3} alt={img3AltText} />
+    </StackedLayout>
+
+    <StackedLayout label="Disabled">
+      <Image src={image4} alt={img4AltText} />
+    </StackedLayout>
+  </ColumnLayout>
+
+  <InfoList type="disc">
+    <InfoListItem label="Enabled">
+      A tab that is Enabled can be selected and it’s content will be displayed.
+      It is not the tab currently shown.
+    </InfoListItem>
+
+    <InfoListItem label="Active">
+      The Active tab is the one currently displayed on the screen. It has a line
+      drawn beneath or beside the text to show this status. The text is also
+      blue and bold to further emphasize the Active status.
+    </InfoListItem>
+
+    <InfoListItem label="Hover">
+      When moving the mouse over a tab, it changes to the Hover state. It
+      returns to its previous state when the mouse moves away.
+    </InfoListItem>
+
+    <InfoListItem label="Disabled">
+      A tab in this state cannot be selected or displayed. Some other action or
+      setting must be altered to enable the tab.
+    </InfoListItem>
+  </InfoList>
+</PageleteSection>

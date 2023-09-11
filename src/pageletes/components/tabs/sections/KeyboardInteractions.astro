@@ -1,0 +1,71 @@
+---
+import {
+  Description,
+  PageleteSection,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableCellHead,
+  InfoTableHead,
+  InfoTableRow,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+const { id, title } = topics.keyboard;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Accessibility requires that each item on the screen is reachable using the
+    keyboard alone. The mouse is not always an option for some users.
+  </Description>
+  <Description>
+    Keyboard navigation employs the following shortcuts.
+  </Description>
+
+  <InfoTable>
+    <InfoTableHead>
+      <InfoTableRow>
+        <InfoTableCellHead>Keystrokes</InfoTableCellHead>
+        <InfoTableCellHead>Interaction</InfoTableCellHead>
+      </InfoTableRow>
+    </InfoTableHead>
+
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>Tab</InfoTableCell>
+        <InfoTableCell>
+          Move into and out of the tab group, and between carousel buttons.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>← and →</InfoTableCell>
+        <InfoTableCell>
+          Move between tab items in horizontal lists.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>↑ and ↓</InfoTableCell>
+        <InfoTableCell>Move between tab items in vertical lists.</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Enter or Spacebar</InfoTableCell>
+        <InfoTableCell>Select a tab</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Delete</InfoTableCell>
+        <InfoTableCell>
+          Close the tab for tabs with a close button.
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
+</PageleteSection>
