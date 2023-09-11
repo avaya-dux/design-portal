@@ -12,7 +12,6 @@ import {
 const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/docs/components-pagination--docs";
 
-// Update URL
 const sandbox = "https://codesandbox.io/s/neo-react-pagination-r7ffxy?file=/src/App.js";
 
 type PaginationTypeOption = "full" | "condensed";
