@@ -6,3 +6,6 @@ export { Anatomy };
 
 import Behavior from "./Behavior.astro";
 export { Behavior };
+
+import Related from "./Related.astro";
+export { Related };
