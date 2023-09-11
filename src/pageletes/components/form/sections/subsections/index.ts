@@ -15,3 +15,6 @@ export { Validation };
 
 import PasswordInput from "./PasswordInput.astro";
 export { PasswordInput };
+
+import Responsive from "./Responsive.astro";
+export { Responsive };
