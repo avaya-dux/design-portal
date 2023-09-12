@@ -1,0 +1,82 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  DoAndDont,
+  ImageWrapper,
+  PageleteSubSection,
+  SubHeader,
+} from "components";
+
+import spacingImage1 from "../../imgs/behavior-spacing-1.svg";
+const spacingImage1AltText =
+  "Image showing how elements inside a form are vertically spaced.";
+
+import spacingImage2 from "../../imgs/behavior-spacing-2.svg";
+const spacingImage2AltText =
+  "Image showing how elements inside a form are horizontally spaced.";
+
+import spacingImage3 from "../../imgs/behavior-spacing-3.svg";
+const spacingImage3AltText =
+  "Image showing how two horizontally stacked fields have a padding of 8 pixels.";
+
+import doImage1 from "../../imgs/behavior-spacing-do-1.svg";
+import dontImage1 from "../../imgs/behavior-spacing-dont-1.svg";
+
+const do1Instructions =
+  "Stack form fields vertically. Use horizontal layouts only when items are closely associated with each other, or when there is limited space.";
+const doImg1AltText =
+  "An image showing a form with fields vertically stacked.";
+
+const dont1Instructions =
+  "Do not stack form fields horizontally. Use horizontal layouts only when items are closely associated with each other, or when space is limited.";
+const dontImg1AltText =
+  "An image showing a form with fields horizontally stacked.";
+
+
+---
+
+<PageleteSubSection>
+  <SubHeader id="form-spacing">Spacing and Arrangement</SubHeader>
+
+  <Description>
+    Vertical forms should maintain consistent padding between each element and the actionable buttons.
+  </Description>
+
+  <ImageWrapper marginBottom="3rem" isShaded={false}>
+    <Image src={spacingImage1} alt={spacingImage1AltText} />
+  </ImageWrapper>
+
+  <Description>
+    Forms with two or more fields placed horizontally have 16 px padding between each element.
+  </Description>
+
+  <ImageWrapper marginBottom="3rem" isShaded={false}>
+    <Image src={spacingImage2} alt={spacingImage2AltText} />
+  </ImageWrapper>
+
+  <Description>
+    When two form fields are related, such as a zip code and country, they are stacked horizontally
+     and the padding between each element is 8 px.
+  </Description>
+
+  <ImageWrapper isShaded={false}>
+    <Image src={spacingImage3} alt={spacingImage3AltText} />
+  </ImageWrapper>
+
+  <DoAndDont size="wide">
+    <DoAndDont.DoContainer instructions={do1Instructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage1} alt={doImg1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dont1Instructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage1} alt={dontImg1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+
+</PageleteSubSection>
