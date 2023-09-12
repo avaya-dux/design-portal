@@ -1,0 +1,59 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ImageWrapper,
+  PageleteSubSection,
+  SubHeader,
+} from "components";
+
+import buttonImage1 from "../../imgs/behavior-button-1.svg";
+const buttonImage1AltText =
+  "Image showing buttons placed on the bottom right edge of the stepper component.";
+
+import buttonImage2 from "../../imgs/behavior-button-2.svg";
+const buttonImage2AltText =
+  "Image showing buttons placed on the right side of the breadcrumbs component.";
+
+import buttonImage3 from "../../imgs/behavior-button-3.svg";
+const buttonImage3AltText =
+  "Image showing the primary button on the left inside a single page form.";
+
+
+---
+
+<PageleteSubSection>
+  <SubHeader id="form-button-placement">Button Placement</SubHeader>
+
+  <Description>
+    Buttons in a form are sorted by importance from right to left, with the most important button (primary)
+    on the right. The recommended placement for action buttons is the right edge of a form.
+  </Description>
+
+  <Description>
+    Pages with a stepper also include the actionable buttons positioned on the right.
+  </Description>
+
+  <ImageWrapper padding="0" marginBottom="3rem">
+    <Image src={buttonImage1} alt={buttonImage1AltText} />
+  </ImageWrapper>
+
+  <Description>
+    Breadcrumbs can also include actionable buttons. In this case, the primary button is positioned to the right.
+  </Description>
+
+  <ImageWrapper padding="0" marginBottom="3rem">
+    <Image src={buttonImage2} alt={buttonImage2AltText} />
+  </ImageWrapper>
+
+  <Description>
+    Exceptions to this are single-page forms, flags,
+     and section messages where buttons are left aligned with the primary button on the left.
+  </Description>
+
+  <ImageWrapper padding="0">
+    <Image src={buttonImage3} alt={buttonImage3AltText} />
+  </ImageWrapper>
+
+</PageleteSubSection>
