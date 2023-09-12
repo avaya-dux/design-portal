@@ -1,0 +1,49 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  DoAndDont,
+  PageleteSubSection,
+  SubHeader,
+} from "components";
+
+import doImage1 from "../../imgs/behavior-readonly-do-1.svg";
+import dontImage1 from "../../imgs/behavior-readonly-dont-1.svg";
+
+const do1Instructions =
+  "In read-only mode, display fields as read-only. A disabled field type should only be used when data cannot be entered on an active form.";
+const doImg1AltText =
+  "An image showing 2 input fields in read-only mode.";
+
+const dont1Instructions =
+  "Do not use disabled fields for read only views.";
+const dontImg1AltText =
+  "An image showing input fields in disabled mode.";
+
+
+---
+
+<PageleteSubSection>
+  <SubHeader id="form-behavior-readonly">Read-only</SubHeader>
+
+  <Description>
+    Read-only text fields are often used to display information or data that is important for the user to see, but that cannot be edited or changed at this time.
+     Some examples of read-only text include displaying user account information, order details, or confirmation messages.
+  </Description>
+
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={do1Instructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage1} alt={doImg1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dont1Instructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage1} alt={dontImg1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+
+</PageleteSubSection>
