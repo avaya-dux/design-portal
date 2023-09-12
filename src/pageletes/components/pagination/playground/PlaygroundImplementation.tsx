@@ -14,11 +14,7 @@ const storybook =
 
 const sandbox = "https://codesandbox.io/s/neo-react-pagination-r7ffxy?file=/src/App.js";
 
-type PaginationTypeOption = "full" | "condensed";
-
 export const PlaygroundImplementation = () => {
-  const [paginationOption, setPaginationOption] =
-    useState<PaginationTypeOption>("full");
   const [setIndex, setPageIndex] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(5);
   const itemCount = 20;
@@ -51,16 +47,6 @@ export const PlaygroundImplementation = () => {
       options={
         <Playground.OptionsContainer>
           <Playground.OptionsSection title="Pagination Options">
-            <RadioGroup
-              groupName="options"
-              selected={paginationOption}
-              onChange={(e) => {
-                setPaginationOption(e.target.value as PaginationTypeOption);
-              }}
-            >
-              <Radio value="full">Full</Radio>
-              <Radio value="condensed">Condensed</Radio>
-            </RadioGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
       }
