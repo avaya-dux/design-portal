@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { Playground } from "components/react";
 import {
   Button,
+  Checkbox,
   Form,
   Radio,
   RadioGroup,
@@ -26,13 +27,26 @@ export const PlaygroundImplementation = () => {
   const [element, react, html] = useMemo(() => {
 
     const element = (
-      <div style={{ width: "100%" }}>
-        <Form aria-label="Playground form" inline={formStyle === "inline" ? true : false}>
+      <div style={{ maxWidth: "50%" }}>
+        <Form
+          aria-label="Playground form"
+          inline={formStyle === "inline" ? true : false}
+        >
           <TextInput
-            label="First Name"
+            label="Name"
             clearable
-            helperText="Type the First Name here."
+            helperText="Type your full name here."
           />
+
+          <TextInput
+            label="Email"
+            clearable
+            type="email"
+            helperText="Type your email here."
+          />
+          <Checkbox aria-label="Newsletter checkbox" value={1}>
+            Yes, sign me up for Newsletter.
+          </Checkbox>
           <Button variant="primary" id="btnSubmit">
             Submit
           </Button>
