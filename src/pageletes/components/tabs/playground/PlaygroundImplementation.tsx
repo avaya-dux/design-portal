@@ -1,8 +1,6 @@
 import {
   Checkbox,
   CheckboxGroup,
-  Radio,
-  RadioGroup,
   Tabs,
   TabList,
   Select,
@@ -11,6 +9,7 @@ import {
   TabPanel,
   TabPanels,
   type TabProps,
+  type TabPanelProps,
 } from "@avaya/neo-react";
 
 import { useCallback, useMemo, useState } from "react";
@@ -25,37 +24,47 @@ export const sandbox = "https://codesandbox.io/s/neo-react-tabs-s44lnl";
 export const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-tab--uncontrolled-active-tab-story";
 
-type StateType = "default" | "disabled";
 type Orientation = "horizontal" | "vertical";
+const icons = ["info", "settings", "check", "chat"];
 export const PlaygroundImplementation = () => {
   const [withIcon, setWithIcon] = useState(false);
-  const [state, setState] = useState<StateType>("default");
   const [orientation, setOrientation] = useState<Orientation>("horizontal");
   const createTab = useCallback(
     (id: string) => {
       const props: TabProps = {
         id: `tab${id}`,
-        disabled: state === "disabled",
-        children: `Tab${id}`,
+        children: `Tab item ${id}`,
       };
       if (withIcon) {
-        props.icon = "check";
+        props.icon = icons[parseInt(id)];
+      }
+      if (id === "3") {
+        props.disabled = true;
       }
       return <Tab {...props}></Tab>;
     },
-    [withIcon, state],
+    [withIcon],
+  );
+
+  const createTabPanel = useCallback(
+    (id: string) => {
+      const props = {} as TabPanelProps;
+      if (orientation === "horizontal") {
+        props.children = <p style={{ marginTop: "1rem" }}>content {id}</p>;
+      } else {
+        props.children = <p style={{ marginLeft: "1rem" }}>content {id}</p>;
+      }
+      return <TabPanel key={id} {...props}></TabPanel>;
+    },
+    [orientation],
   );
 
   const [component, react, html] = useMemo(() => {
+    const panels = [1, 2, 3].map((i) => createTabPanel(i.toString()));
     const element = (
-      <Tabs defaultIndex={0} initialFocus={true} orientation={orientation}>
+      <Tabs defaultIndex={0} orientation={orientation}>
         <TabList>{[1, 2, 3].map((i) => createTab(i.toString()))}</TabList>
-
-        <TabPanels>
-          <TabPanel>content 1</TabPanel>
-          <TabPanel>content 2</TabPanel>
-          <TabPanel>content 3</TabPanel>
-        </TabPanels>
+        <TabPanels>{panels}</TabPanels>
       </Tabs>
     );
 
@@ -64,7 +73,7 @@ export const PlaygroundImplementation = () => {
       prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
     ];
-  }, [orientation, createTab]);
+  }, [orientation, createTab, createTabPanel]);
   return (
     <Playground
       options={
@@ -96,18 +105,6 @@ export const PlaygroundImplementation = () => {
                 With Icon
               </Checkbox>
             </CheckboxGroup>
-          </Playground.OptionsSection>
-          <Playground.OptionsSection title="State">
-            <RadioGroup
-              groupName="state"
-              selected={state}
-              onChange={(e) => {
-                setState(e.target.value as StateType);
-              }}
-            >
-              <Radio value="default">Default</Radio>
-              <Radio value="disabled">Disabled</Radio>
-            </RadioGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
       }
