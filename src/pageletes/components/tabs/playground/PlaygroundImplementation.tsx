@@ -61,7 +61,7 @@ export const PlaygroundImplementation = () => {
 
     return [
       element,
-      prettyPrintReactElementToString(element, { filterProps: ["onClose"] }),
+      prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
     ];
   }, [orientation, createTab]);
