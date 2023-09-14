@@ -17,14 +17,14 @@ const sandbox = "https://codesandbox.io/s/neo-react-pagination-r7ffxy?file=/src/
 export const PlaygroundImplementation = () => {
   const [setIndex, setPageIndex] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(5);
-  const itemCount = 20;
+  const itemCount = 100;
 
   const element = (
     <Pagination
       currentPageIndex={setIndex}
       itemCount={itemCount}
       itemsPerPage={itemsPerPage}
-      itemsPerPageOptions={[1, 5, 10]}
+      itemsPerPageOptions={[20, 50, 100]}
       itemDisplayType={"page"}
       onPageChange={(e, newIndex) => {
         e?.preventDefault();
