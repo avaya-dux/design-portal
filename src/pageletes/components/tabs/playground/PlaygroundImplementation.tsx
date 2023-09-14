@@ -1,103 +1,108 @@
 import {
   Checkbox,
   CheckboxGroup,
-  Radio,
-  RadioGroup,
-  Switch,
+  Tabs,
+  TabList,
+  Select,
+  SelectOption,
+  Tab,
+  TabPanel,
+  TabPanels,
+  type TabProps,
+  type TabPanelProps,
 } from "@avaya/neo-react";
 
-import clsx from "clsx";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 import { Playground } from "components/react";
-import { prettyPrintHtml, prettyPrintReact } from "helpers";
+import {
+  prettyPrintReactElementToHtml,
+  prettyPrintReactElementToString,
+} from "helpers/utils";
 
-export const sandbox = "https://codesandbox.io/s/neo-react-switch-eeb2m1";
+export const sandbox = "https://codesandbox.io/s/neo-react-tabs-s44lnl";
 export const storybook =
-  "https://neo-react-library-storybook.netlify.app/?path=/story/components-switch--default";
+  "https://neo-react-library-storybook.netlify.app/?path=/story/components-tab--uncontrolled-active-tab-story";
 
+type Orientation = "horizontal" | "vertical";
+const icons = ["info", "settings", "check", "chat"];
 export const PlaygroundImplementation = () => {
-  const [withLabel, setWithLabel] = useState<string>("right");
+  const [withIcon, setWithIcon] = useState(false);
+  const [orientation, setOrientation] = useState<Orientation>("horizontal");
+  const createTab = useCallback(
+    (id: string) => {
+      const props: TabProps = {
+        id: `tab${id}`,
+        children: `Tab item ${id}`,
+      };
+      if (withIcon) {
+        props.icon = icons[parseInt(id)];
+      }
+      if (id === "3") {
+        props.disabled = true;
+      }
+      return <Tab {...props}></Tab>;
+    },
+    [withIcon],
+  );
 
-  const [isSelected, setIsSelected] = useState<boolean>(false);
+  const createTabPanel = useCallback(
+    (id: string) => {
+      const props = {} as TabPanelProps;
+      if (orientation === "horizontal") {
+        props.children = <p style={{ marginTop: "1rem" }}>content {id}</p>;
+      } else {
+        props.children = <p style={{ marginLeft: "1rem" }}>content {id}</p>;
+      }
+      return <TabPanel key={id} {...props}></TabPanel>;
+    },
+    [orientation],
+  );
 
-  const [isDisabled, setIsDisabled] = useState<boolean>(false);
-
-  const isDefault = withLabel === "right" && !isSelected && !isDisabled;
-
-  const [react, html] = useMemo(() => {
-    const react = prettyPrintReact(
-      `
-    <Switch${!isDefault ? " " : ""}${clsx(
-      withLabel === "none" && 'aria-label="Option"',
-      withLabel === "left" && "dir='rtl'",
-      isDisabled && "disabled",
-      isSelected && "checked",
-    )}>${withLabel !== "none" ? "Option" : ""}</Switch>
-`,
+  const [component, react, html] = useMemo(() => {
+    const panels = [1, 2, 3].map((i) => createTabPanel(i.toString()));
+    const element = (
+      <Tabs defaultIndex={0} orientation={orientation}>
+        <TabList>{[1, 2, 3].map((i) => createTab(i.toString()))}</TabList>
+        <TabPanels>{panels}</TabPanels>
+      </Tabs>
     );
 
-    const html = prettyPrintHtml(
-      `<div class="neo-form-control" ${clsx(
-        withLabel === "left" && "dir='rtl'",
-      )}>
-      <label class="${clsx(
-        "neo-switch",
-        isDisabled && "neo-switch--disabled",
-      )}" for="switch">
-        <input id="switch" type="checkbox" role="switch" ${clsx(
-          withLabel === "none" && 'aria-label="Option"',
-          isSelected && "checked",
-          isDisabled && "disabled",
-        )} />
-        <i class="neo-switch__icon"></i>
-        ${withLabel !== "none" ? "Option" : ""}
-      </label>
-    </div>`,
-    );
-
-    return [react, html];
-  }, [withLabel, isSelected, isDisabled, isDefault]);
-
+    return [
+      element,
+      prettyPrintReactElementToString(element),
+      prettyPrintReactElementToHtml(element),
+    ];
+  }, [orientation, createTab, createTabPanel]);
   return (
     <Playground
       options={
         <Playground.OptionsContainer>
-          <Playground.OptionsSection title="Label">
-            <RadioGroup
-              groupName="label"
-              selected={withLabel}
-              onChange={(e) => {
-                setWithLabel(e.target.value);
-              }}
+          <Playground.OptionsSection title="Type">
+            <Select
+              aria-label="Tabs Orientation"
+              onChange={(value) => setOrientation(value as Orientation)}
+              defaultValue="horizontal"
             >
-              <Radio value="none">None</Radio>
-              <Radio value="right">Right</Radio>
-              <Radio value="left">Left</Radio>
-            </RadioGroup>
+              <SelectOption value="horizontal">Horizontal</SelectOption>
+              <SelectOption value="vertical">Vertical</SelectOption>
+            </Select>
           </Playground.OptionsSection>
-          <Playground.OptionsSection title="Variables">
+          <Playground.OptionsSection title="Variable">
             <CheckboxGroup
-              groupName="Variables"
-              aria-labelledby="variables"
+              groupName="Variable"
+              aria-labelledby="variable"
               onChange={(e) => {
                 const { value } = e.target as HTMLInputElement;
                 switch (value) {
                   case "selected":
-                    setIsSelected(!isSelected);
-                    break;
-                  case "disabled":
-                    setIsDisabled(!isDisabled);
+                    setWithIcon(!withIcon);
                     break;
                 }
               }}
             >
-              <Checkbox value="selected" checked={isSelected}>
-                Selected
-              </Checkbox>
-
-              <Checkbox value="disabled" checked={isDisabled}>
-                Disabled
+              <Checkbox value="selected" checked={withIcon}>
+                With Icon
               </Checkbox>
             </CheckboxGroup>
           </Playground.OptionsSection>
@@ -110,15 +115,7 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      <Switch
-        aria-label={withLabel === "none" ? "Option" : ""}
-        dir={withLabel === "left" ? "rtl" : "ltr"}
-        disabled={isDisabled}
-        checked={isSelected}
-        onClick={() => setIsSelected(!isSelected)}
-      >
-        {withLabel !== "none" && "Option"}
-      </Switch>
+      {component}
     </Playground>
   );
 };
