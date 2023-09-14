@@ -16,10 +16,10 @@ import {
 import "./PlaygroundImplementation.css";
 
 const storybook =
-  "https://neo-react-library-storybook.netlify.app/?path=/story/components-form";
+  "https://neo-react-library-storybook.netlify.app/?path=/docs/components-form-base--docs";
 
 const sandbox =
-  "https://codesandbox.io/s/neo-react-breadcrumbs-tqvmzp?file=/src/App.js";
+  "https://codesandbox.io/s/neo-react-form-9z3j4q?file=/src/App.js";
 
 type InlineType = "inline" | "normal";
 
@@ -37,7 +37,7 @@ export const PlaygroundImplementation = () => {
           label="Email"
           clearable
           type="email"
-          helperText="Type your email here."
+          placeholder="Type your email here."
         />
 
         <Checkbox aria-label="subscribe" value={1}>
