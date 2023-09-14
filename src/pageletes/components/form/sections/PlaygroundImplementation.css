@@ -1,5 +1,5 @@
 /*
-  NOTE: Getting the layout of components to space out inside the form.
+  NOTE: Fixing spacing around buttons inside the form.
 */
 #btn-submit {
   margin-right: 8px;
@@ -9,5 +9,3 @@
 #btn-submit-inline {
     margin-right: 8px;
 }
-
-

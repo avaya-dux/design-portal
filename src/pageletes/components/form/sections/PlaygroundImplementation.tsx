@@ -34,17 +34,21 @@ export const PlaygroundImplementation = () => {
         inline={formStyle === "inline" ? true : false}
       >
         <TextInput
+          label="Name"
+          clearable
+          type="text"
+          placeholder="Type your name here."
+        />
+        <TextInput
           label="Email"
           clearable
           type="email"
           placeholder="Type your email here."
         />
-
-        <Checkbox aria-label="subscribe" value={1}>
-          Subscribe
-        </Checkbox>
-
-        <Button variant="primary" id={formStyle === "inline" ? "btn-submit-inline" : "btn-submit"}>
+        <Button
+          variant="primary"
+          id={formStyle === "inline" ? "btn-submit-inline" : "btn-submit"}
+        >
           Submit
         </Button>
         <Button variant="secondary" id="btnCancel">
