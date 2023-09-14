@@ -23,11 +23,9 @@ const sandbox =
 
 type InlineType = "inline" | "normal";
 
-
 export const PlaygroundImplementation = () => {
   const [formStyle, setFormStyle] = useState<InlineType>("normal");
   const [element, react, html] = useMemo(() => {
-
     const element = (
       <Form
         aria-label="Playground form"
