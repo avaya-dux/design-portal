@@ -13,6 +13,8 @@ import {
   prettyPrintReactElementToString,
 } from "helpers";
 
+import "./PlaygroundImplementation.css";
+
 const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-form";
 
@@ -27,34 +29,28 @@ export const PlaygroundImplementation = () => {
   const [element, react, html] = useMemo(() => {
 
     const element = (
-      <div style={{ maxWidth: "50%" }}>
-        <Form
-          aria-label="Playground form"
-          inline={formStyle === "inline" ? true : false}
-        >
-          <TextInput
-            label="Name"
-            clearable
-            helperText="Type your full name here."
-          />
+      <Form
+        aria-label="Playground form"
+        inline={formStyle === "inline" ? true : false}
+      >
+        <TextInput
+          label="Email"
+          clearable
+          type="email"
+          helperText="Type your email here."
+        />
 
-          <TextInput
-            label="Email"
-            clearable
-            type="email"
-            helperText="Type your email here."
-          />
-          <Checkbox aria-label="Newsletter checkbox" value={1}>
-            Yes, sign me up for Newsletter.
-          </Checkbox>
-          <Button variant="primary" id="btnSubmit">
-            Submit
-          </Button>
-          <Button variant="secondary" id="btnCancel">
-            Cancel
-          </Button>
-        </Form>
-      </div>
+        <Checkbox aria-label="subscribe" value={1}>
+          Subscribe
+        </Checkbox>
+
+        <Button variant="primary" id={formStyle === "inline" ? "btn-submit-inline" : "btn-submit"}>
+          Submit
+        </Button>
+        <Button variant="secondary" id="btnCancel">
+          Cancel
+        </Button>
+      </Form>
     );
 
     return [
