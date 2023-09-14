@@ -1,5 +1,5 @@
 import { Pagination } from "@avaya/neo-react";
-
+import "./pagination-playground.css";
 import { useState } from "react";
 
 import { Playground } from "components/react";
