@@ -16,7 +16,7 @@ const sandbox = "https://codesandbox.io/s/neo-react-pagination-r7ffxy?file=/src/
 
 export const PlaygroundImplementation = () => {
   const [setIndex, setPageIndex] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(5);
+  const [itemsPerPage, setItemsPerPage] = useState(20);
   const itemCount = 100;
 
   const element = (
