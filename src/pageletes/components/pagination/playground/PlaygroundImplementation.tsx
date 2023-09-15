@@ -26,7 +26,8 @@ export const PlaygroundImplementation = () => {
       itemCount={itemCount}
       itemsPerPage={itemsPerPage}
       itemsPerPageOptions={[20, 50, 100]}
-      itemDisplayType={"page"}
+      itemDisplayType={"count"}
+      itemsPerPageLabel={"items"}
       onPageChange={(e, newIndex) => {
         e?.preventDefault();
         setPageIndex(newIndex);
