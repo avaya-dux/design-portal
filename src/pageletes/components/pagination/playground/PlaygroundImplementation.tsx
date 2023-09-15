@@ -22,6 +22,7 @@ export const PlaygroundImplementation = () => {
   const element = (
     <Pagination
       currentPageIndex={setIndex}
+      alwaysShowPagination={true}
       itemCount={itemCount}
       itemsPerPage={itemsPerPage}
       itemsPerPageOptions={[20, 50, 100]}
