@@ -5,6 +5,7 @@ import {
   ColumnLayout,
   Description,
   DoAndDont,
+  ImageWrapper,
   PageleteSection,
   PageleteSubSection,
   SectionHeader,
@@ -38,6 +39,22 @@ const doImg3AltText = "An icon without a label and a Tooltip being displayed";
 
 const alignmentImage1AltText =
   "A button and two icons aligned on the same horizontal axis";
+
+import statusIndicatorsImg from "../imgs/icons-status-indicator.svg";
+import statusIndicatorDoImage from "../imgs/icons-status-do-1.svg";
+import statusIndicatorDontImage from "../imgs/icons-status-dont-1.svg";
+
+const statusIndicatorsImgAltText =
+  "A visual representation of all status indicators";
+
+const statusIndicatorDoInstructions =
+  "Use the designated color associated with each status indicator";
+const statusIndcatorsDoImgAltText =
+  "An image of a phone icon with a green checkmark in the top right hand corner.";
+const statusIndicatorDontInstructions =
+  "Do not make the status indicator and the channel icon to be the in the same color or use a different color than its designated color.";
+const statusIndcatorsDontImgAltText =
+  "An image of a phone icon with a red checkmark in the top right hand corner.";
 ---
 
 <PageleteSection>
@@ -82,7 +99,7 @@ const alignmentImage1AltText =
 
     <Description>
       Whenever possible, icons should be accompanied by descriptive text since
-      this better communicates each element’s function than icons alone do. If
+      this better communicates each element's function than icons alone do. If
       there is not enough space for an icon to have text beside it, include a
       tooltip with the required text.
     </Description>
@@ -101,6 +118,40 @@ const alignmentImage1AltText =
       </DoAndDont.DoContainer>
     </DoAndDont>
   </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="icons-status-indicator">Status Indicator</SubHeader>
+
+    <Description>
+      Icon states are used to show the current status of a channel, device, or
+      function (e.g. Which device is active, Connected/Not Connected).
+    </Description>
+
+    <ImageWrapper>
+      <Image src={statusIndicatorsImg} alt={statusIndicatorsImgAltText} />
+    </ImageWrapper>
+
+    <DoAndDont>
+      <DoAndDont.DoContainer instructions={statusIndicatorDoInstructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image
+            src={statusIndicatorDoImage}
+            alt={statusIndcatorsDoImgAltText}
+          />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
+
+      <DoAndDont.DoContainer instructions={statusIndicatorDontInstructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image
+            src={statusIndicatorDontImage}
+            alt={statusIndcatorsDontImgAltText}
+          />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
+    </DoAndDont>
+  </PageleteSubSection>
+
   <PageleteSubSection>
     <SubHeader id="icons-alignment">Alignment</SubHeader>
 

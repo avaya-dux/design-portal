@@ -9,3 +9,6 @@ export { Behavior };
 
 import Related from "./Related.astro";
 export { Related };
+
+import FormPlayground from "./FormPlayground.astro";
+export { FormPlayground };
