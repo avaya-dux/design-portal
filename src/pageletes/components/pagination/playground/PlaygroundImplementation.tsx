@@ -15,7 +15,7 @@ const storybook =
 const sandbox = "https://codesandbox.io/s/neo-react-pagination-r7ffxy?file=/src/App.js";
 
 export const PlaygroundImplementation = () => {
-  const [setIndex, setPageIndex] = useState(1);
+  const [setIndex, setPageIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(20);
   const itemCount = 100;
 
