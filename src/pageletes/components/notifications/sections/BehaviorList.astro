@@ -2,58 +2,56 @@
 import { Image } from "@avaya/neo-react";
 
 import {
-    Description,
-    ImageWrapper,
-    PageleteSubSection,
-    SubHeader,
+  Description,
+  ImageWrapper,
+  PageleteSubSection,
+  SubHeader,
 } from "components/astro";
 
 import { DoAndDont } from "components/react";
 
 import imageOne from "../imgs/notification-behavior-list-1.svg";
-const imageOneAltText =
-    "Image showing a list of notifications";
+const imageOneAltText = "Image showing a list of notifications";
 
 import behaviorDo from "../imgs/notification-behavior-list-do-1.svg";
 import behaviorDont from "../imgs/notification-behavior-list-dont-1.svg";
 
 const behaviorDoAltText =
-    "Stack the newest notification on top when multiple events occur quickly. If there are more than two, display the “multiple notifications” message to open the notification center.";
+  "Stack the newest notification on top when multiple events occur quickly. If there are more than two, display the “multiple notifications” message to open the notification center.";
 const behaviorDontAltText =
-    "Do not hide time sensitive notifications under “multiple notifications”, such as incoming calls and calendar reminders.";
+  "Do not hide time sensitive notifications under “multiple notifications”, such as incoming calls and calendar reminders.";
 ---
 
 <PageleteSubSection>
-    <SubHeader id="notifications-behavior-list">Notification List</SubHeader>
+  <SubHeader id="notifications-behavior-list">Notification List</SubHeader>
 
-    <Description>
-        Notifications provide limited space for content, and therefore the
-        content must be short and concise. A user should be able to quickly scan
-        the notification, be apprised of the situation, and know what to do
-        next.
-    </Description>
-    <Description>
-        If General Notification requires a message longer than two lines, use an
-        actionable notification and include a short message with a “Show more”
-        link that takes the user to a view of the full notification message.
-        This can be either a full page with more details or a Sheet.
-    </Description>
+  <Description>
+    Notifications provide limited space for content, and therefore the content
+    must be short and concise. A user should be able to quickly scan the
+    notification, be apprised of the situation, and know what to do next.
+  </Description>
+  <Description>
+    If General Notification requires a message longer than two lines, use an
+    actionable notification and include a short message with a “Show more” link
+    that takes the user to a view of the full notification message. This can be
+    either a full page with more details or a Sheet.
+  </Description>
 
-    <ImageWrapper padding="0">
-        <Image src={imageOne} alt={imageOneAltText} />
-    </ImageWrapper>
+  <ImageWrapper padding="0">
+    <Image src={imageOne} alt={imageOneAltText} />
+  </ImageWrapper>
 
-    <DoAndDont>
-        <DoAndDont.DoContainer instructions={behaviorDoAltText}>
-            <DoAndDont.ImageExampleContainer>
-                <Image src={behaviorDo} alt={behaviorDoAltText} />
-            </DoAndDont.ImageExampleContainer>
-        </DoAndDont.DoContainer>
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={behaviorDoAltText}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={behaviorDo} alt={behaviorDoAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
 
-        <DoAndDont.DontContainer instructions={behaviorDontAltText}>
-            <DoAndDont.ImageExampleContainer>
-                <Image src={behaviorDont} alt={behaviorDontAltText} />
-            </DoAndDont.ImageExampleContainer>
-        </DoAndDont.DontContainer>
-    </DoAndDont>
+    <DoAndDont.DontContainer instructions={behaviorDontAltText}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={behaviorDont} alt={behaviorDontAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
 </PageleteSubSection>

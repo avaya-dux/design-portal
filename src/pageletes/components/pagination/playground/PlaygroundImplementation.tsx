@@ -12,7 +12,8 @@ import {
 const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/docs/components-pagination--docs";
 
-const sandbox = "https://codesandbox.io/s/neo-react-pagination-r7ffxy?file=/src/App.js";
+const sandbox =
+  "https://codesandbox.io/s/neo-react-pagination-r7ffxy?file=/src/App.js";
 
 export const PlaygroundImplementation = () => {
   const [setIndex, setPageIndex] = useState(1);
@@ -47,8 +48,7 @@ export const PlaygroundImplementation = () => {
     <Playground
       options={
         <Playground.OptionsContainer>
-          <Playground.OptionsSection title="Pagination Options">
-          </Playground.OptionsSection>
+          <Playground.OptionsSection title="Pagination Options"></Playground.OptionsSection>
         </Playground.OptionsContainer>
       }
       examples={{
