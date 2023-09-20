@@ -83,7 +83,7 @@ export const SiteHeader = ({
       </TopNav.LinkButton>
 
       <TopNav.LinkButton
-        href="/guidelines"
+        href="/guidelines/overview"
         active={isActiveLink("/guidelines")}
         rel="prefetch"
       >
