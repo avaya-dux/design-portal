@@ -6,8 +6,8 @@ const { id, title } = topics.regulations;
 
 import { Link } from "@avaya/neo-react";
 
-const standards= [
-  {    
+const standards = [
+  {
     link: `https://www.w3.org/WAI/standards-guidelines/wcag/`,
     title: "WCAG 2.1",
   },
@@ -18,8 +18,7 @@ const standards= [
   {
     link: `https://www.section508.gov/`,
     title: "Section 508",
-  }
-
+  },
 ];
 ---
 
@@ -28,13 +27,26 @@ const standards= [
 
   <Description>
     Neo targets Web Content Accessibility Guidelines (WCAG) 2.1 Level AA (used
-    in many <Link inline href="https://www.w3.org/WAI/policies/" target="_blank" rel="noopener noreferrer">government regulations</Link> internationally), as well as Section 508
-    regulations. More information can be found here.
+    in many <Link
+      inline
+      href="https://www.w3.org/WAI/policies/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      government regulations
+    </Link> internationally), as well as Section 508 regulations. More
+    information can be found here.
   </Description>
 
   <ul class="dash-list">
     {
-      standards.map((item) => <li><a href={item.link} target="_blank" rel="noopener noreferrer">{item.title}</a></li>)
+      standards.map((item) => (
+        <li>
+          <a href={item.link} target="_blank" rel="noopener noreferrer">
+            {item.title}
+          </a>
+        </li>
+      ))
     }
   </ul>
 </PageleteSection>

@@ -11,29 +11,29 @@ const type = "Low Vision";
 const firstDescription =
   "Low vision refers to those who are partially-sighted in one or both eyes, and are able to view content with assistive technology. They interact with an interface by using screen magnification tools, high contrast modes, monochrome displays, or screen readers.";
 
-const secondDescription = 
+const secondDescription =
   "These considerations will also help other users, including those in poor lighting conditions, or other environments where they may experience similar difficulties.";
 ---
 
 <TypesLayout
-    graphicIcon={graphic}
-    graphicAltText={altText}
-    type={type}
-    firstDescription={firstDescription}
-    secondDescription={secondDescription}>
-    <li>
-      Maximize readability and visual clarity of content.
-    </li>
-    <li>
-      Consider how the proximity of information changes when a page is magnified.
-    </li>
-    <li>
-      Time limits should provide sufficient time or be extendable.
-    </li>
-    <li>
-      Test all designs with a screen reader where possible.
-    </li>
-    <li>
-      Test with <Link inline href="https://design.avaya.com/guidelines/testing_tools">color contrast tools or color simulators</Link> to ensure sufficient contrast.
-    </li>
+  graphicIcon={graphic}
+  graphicAltText={altText}
+  type={type}
+  firstDescription={firstDescription}
+  secondDescription={secondDescription}
+>
+  <li>Maximize readability and visual clarity of content.</li>
+  <li>
+    Consider how the proximity of information changes when a page is magnified.
+  </li>
+  <li>Time limits should provide sufficient time or be extendable.</li>
+  <li>Test all designs with a screen reader where possible.</li>
+  <li>
+    Test with <Link
+      inline
+      href="https://design.avaya.com/guidelines/testing_tools"
+    >
+      color contrast tools or color simulators
+    </Link> to ensure sufficient contrast.
+  </li>
 </TypesLayout>

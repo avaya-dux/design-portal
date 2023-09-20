@@ -1,9 +1,5 @@
 ---
-import {
-  Description,
-  PageleteSection,
-  SectionHeader,
-} from "components";
+import { Description, PageleteSection, SectionHeader } from "components";
 
 import FrameLayout from "./types-frame-layout/FrameLayout.astro";
 
@@ -29,18 +25,18 @@ const { id, title } = topics.disabilities;
     experience for everyone.
   </Description>
 
-  <FrameLayout >
-    <TypeBlind slot="left-frame"/>
-    <TypeLowVision slot="right-frame"/>
+  <FrameLayout>
+    <TypeBlind slot="left-frame" />
+    <TypeLowVision slot="right-frame" />
   </FrameLayout>
 
-  <FrameLayout >
-    <TypeColor slot="left-frame"/>
-    <TypeDeaf slot="right-frame"/>
+  <FrameLayout>
+    <TypeColor slot="left-frame" />
+    <TypeDeaf slot="right-frame" />
   </FrameLayout>
 
-  <FrameLayout >
-    <TypeCognitive slot="left-frame"/>
-    <TypePhysical slot="right-frame"/>
+  <FrameLayout>
+    <TypeCognitive slot="left-frame" />
+    <TypePhysical slot="right-frame" />
   </FrameLayout>
 </PageleteSection>
