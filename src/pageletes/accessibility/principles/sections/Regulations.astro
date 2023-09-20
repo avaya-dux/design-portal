@@ -1,0 +1,22 @@
+---
+import { Description, PageleteSection, SectionHeader, Topics } from "components";
+
+import { topics } from "../static";
+const { id, title } = topics.regulations;
+
+import { standards } from "../standards";
+
+import { Link } from "@avaya/neo-react";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Neo targets Web Content Accessibility Guidelines (WCAG) 2.1 Level AA (used
+    in many <Link inline href="https://www.w3.org/WAI/policies/">government regulations</Link> internationally), as well as Section 508
+    regulations. More information can be found here.
+  </Description>
+
+  <Topics topics={standards}/>
+</PageleteSection>

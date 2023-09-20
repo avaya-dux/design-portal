@@ -91,7 +91,7 @@ export const SiteHeader = ({
       </TopNav.LinkButton>
 
       <TopNav.LinkButton
-        href="/accessibility"
+        href="/accessibility/principles"
         active={isActiveLink("/accessibility")}
         rel="prefetch"
       >

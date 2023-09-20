@@ -1,0 +1,53 @@
+---
+export interface Props {
+    graphicIcon?: string;
+    graphicAltText?: string;
+    type?: string;
+    firstDescription?: string;
+    secondDescription?: string;
+}
+const {
+    graphicIcon = "no data found",
+    graphicAltText = "no data found",
+    type = "no data found",
+    firstDescription = "no data found",
+    secondDescription = "no data found"
+} = Astro.props as Props;
+
+import { 
+    ImageWrapper, 
+    Description,
+} from "components"
+
+import { Image } from "@avaya/neo-react";
+import TypeList from "./TypeList.astro";
+import TypeSubSection from "./TypeSubSection.astro"
+---
+
+<TypeSubSection>
+    <ImageWrapper marginTop="0" marginBottom="0">
+        <Image src={graphicIcon} alt={graphicAltText} width={408}/>
+    </ImageWrapper>
+
+    <div>
+        <h4 class="type-header"> {type} </h4>
+        
+        <Description> {firstDescription} </Description>
+
+        <Description>Things to consider:</Description>
+            <TypeList>
+                <slot/>
+            </TypeList>
+        <Description> {secondDescription} </Description>
+    </div>
+</TypeSubSection>
+
+<style>
+    .type-header{
+        font-size: 19px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 28px;
+        margin-bottom: 8px;
+    }
+</style>
