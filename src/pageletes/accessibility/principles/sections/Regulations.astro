@@ -1,12 +1,26 @@
 ---
-import { Description, PageleteSection, SectionHeader, Topics } from "components";
+import { Description, PageleteSection, SectionHeader } from "components";
 
 import { topics } from "../static";
 const { id, title } = topics.regulations;
 
-import { standards } from "../standards";
-
 import { Link } from "@avaya/neo-react";
+
+const standards= [
+  {    
+    link: `https://www.w3.org/WAI/standards-guidelines/wcag/`,
+    title: "WCAG 2.1",
+  },
+  {
+    link: `https://www.w3.org/WAI/standards-guidelines/aria/`,
+    title: "ARIA 1.1",
+  },
+  {
+    link: `https://www.section508.gov/`,
+    title: "Section 508",
+  }
+
+];
 ---
 
 <PageleteSection>
@@ -14,9 +28,13 @@ import { Link } from "@avaya/neo-react";
 
   <Description>
     Neo targets Web Content Accessibility Guidelines (WCAG) 2.1 Level AA (used
-    in many <Link inline href="https://www.w3.org/WAI/policies/">government regulations</Link> internationally), as well as Section 508
+    in many <Link inline href="https://www.w3.org/WAI/policies/" target="_blank" rel="noopener noreferrer">government regulations</Link> internationally), as well as Section 508
     regulations. More information can be found here.
   </Description>
 
-  <Topics topics={standards}/>
+  <ul class="dash-list">
+    {
+      standards.map((item) => <li><a href={item.link} target="_blank" rel="noopener noreferrer">{item.title}</a></li>)
+    }
+  </ul>
 </PageleteSection>
