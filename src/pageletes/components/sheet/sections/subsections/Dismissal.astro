@@ -1,25 +1,32 @@
 ---
-import { ColumnLayout, Description, PageleteSubSection, StackedLayout, SubHeader } from "components/astro";
+import {
+  ColumnLayout,
+  Description,
+  PageleteSubSection,
+  StackedLayout,
+  SubHeader,
+} from "components/astro";
 
 import { Image } from "@avaya/neo-react";
 
 import dismissalImage from "../../imgs/sheet-behavior-dismissal-1.svg";
-
 ---
 
 <PageleteSubSection>
   <SubHeader id="sheet-behavior-dismissal">Dismissal</SubHeader>
 
   <Description>
-    Dismissal determines how the sheet is closed. Use a close button to dismiss in pages with forms with editable input.
-     A sheet can also be dismissed by selecting the close icon if there is one.
+    Dismissal determines how the sheet is closed. Use a close button to dismiss
+    in pages with forms with editable input. A sheet can also be dismissed by
+    selecting the close icon if there is one.
   </Description>
 
-  <ColumnLayout
-    numOfColumns={1}
-  >
+  <ColumnLayout numOfColumns={1}>
     <StackedLayout vPadding="0">
-      <Image src={dismissalImage} alt="Image showing a sheet with a close button." />
+      <Image
+        src={dismissalImage}
+        alt="Image showing a sheet with a close button."
+      />
     </StackedLayout>
-
+  </ColumnLayout>
 </PageleteSubSection>

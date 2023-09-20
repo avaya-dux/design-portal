@@ -1,6 +1,12 @@
 ---
 import { Image } from "@avaya/neo-react";
-import { ColumnLayout, Description, PageleteSection, SectionHeader, StackedLayout } from "components/astro";
+import {
+  ColumnLayout,
+  Description,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+} from "components/astro";
 import { topics } from "../static";
 
 import {
@@ -27,9 +33,10 @@ const behaviorImgAltText =
   </SectionHeader>
 
   <Description>
-    The Sheet component provides users with actions and information related to the current page.
-     It does not interrupt the flow in the same way that a modal will.
-      Use sheets to present additional or related content within the same area to help users keep track of their current flow.
+    The Sheet component provides users with actions and information related to
+    the current page. It does not interrupt the flow in the same way that a
+    modal will. Use sheets to present additional or related content within the
+    same area to help users keep track of their current flow.
   </Description>
 
   <ColumnLayout numOfColumns={1}>
@@ -51,5 +58,4 @@ const behaviorImgAltText =
   <Scrolling />
 
   <Dismissal />
-
 </PageleteSection>

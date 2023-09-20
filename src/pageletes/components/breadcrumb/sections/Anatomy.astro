@@ -21,7 +21,8 @@ const anatomyImgAltText =
   <SectionHeader id={topics.anatomy.id}>{topics.anatomy.title}</SectionHeader>
 
   <Description>
-    There are a number of key elements to correctly display each breadcrumb trail.
+    There are a number of key elements to correctly display each breadcrumb
+    trail.
   </Description>
 
   <ColumnLayout bkgColor="#f1f1f1" numOfColumns={1}>
@@ -32,32 +33,35 @@ const anatomyImgAltText =
 
   <InfoList type="decimal">
     <InfoListItem label="Default First Page">
-      This is the top of the hierachy of the present trail. From this page, choices were made that lead
-      to the current location.
+      This is the top of the hierachy of the present trail. From this page,
+      choices were made that lead to the current location.
 
-    <InfoListItem label="Overflow">
-      Where the trail is too long for the given space, intermediate steps in the hierarchy can be bundled
-      together under the overlow icon.
-    </InfoListItem>
+      <InfoListItem label="Overflow">
+        Where the trail is too long for the given space, intermediate steps in
+        the hierarchy can be bundled together under the overlow icon.
+      </InfoListItem>
 
-    <InfoListItem label="Child Page">
-      The list of pages from the First page that lead to the current location.
-    </InfoListItem>
+      <InfoListItem label="Child Page">
+        The list of pages from the First page that lead to the current location.
+      </InfoListItem>
 
-    <InfoListItem label="Separator">
-      Each child page must be divided from its neighbors by a forward slash separator.
+      <InfoListItem label="Separator">
+        Each child page must be divided from its neighbors by a forward slash
+        separator.
 
-    <InfoListItem label="Current Page">
-      The currently displayed page. The breadcrumb trail leads here.
-    </InfoListItem>
+        <InfoListItem label="Current Page">
+          The currently displayed page. The breadcrumb trail leads here.
+        </InfoListItem>
 
-    <InfoListItem label="Truncated Page Title">
-      If the current page title is too long for the available space, then it can be trimmed with
-      an ellipsis.
-    </InfoListItem>
+        <InfoListItem label="Truncated Page Title">
+          If the current page title is too long for the available space, then it
+          can be trimmed with an ellipsis.
+        </InfoListItem>
 
-    <InfoListItem label="Buttons (optional)">
-      Buttons can be added where necessary to provide additional controls.
+        <InfoListItem label="Buttons (optional)">
+          Buttons can be added where necessary to provide additional controls.
+        </InfoListItem>
+      </InfoListItem>
     </InfoListItem>
   </InfoList>
 </PageleteSection>
