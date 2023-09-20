@@ -1,7 +1,7 @@
 ---
 import TypesLayout from "../TypesLayout.astro";
 
-import graphic from "../../../imgs/principles-types-1.svg"
+import graphic from "../../../imgs/principles-types-1.svg";
 import { Link } from "@avaya/neo-react";
 
 const altText = "An icon representing blindness";
@@ -10,32 +10,30 @@ const type = "Blind";
 const firstDescription =
   "Blindness refers to a large range of visual disabilities, from impairments that interfere with completing tasks, to total blindness. Blind users interact with interfaces by using screen readers, refreshable braille displays, and other assistive technologies.";
 
-const secondDescription = 
+const secondDescription =
   "These considerations will also help others as audio interfaces, such as Siri and Alexa, are increasingly popular for assisting with tasks.";
 ---
 
 <TypesLayout
-    graphicIcon={graphic}
-    graphicAltText={altText}
-    type={type}
-    firstDescription={firstDescription}
-    secondDescription={secondDescription}>
-    <li>
-      Visual information should be also provided in text format (e.g. alt text).
-    </li>
-    <li>
-      Functional elements should be controllable with a keyboard.
-    </li>
-    <li>
-      Content should be structured and simplified where possible.
-    </li>
-    <li>
-      Time limits should provide sufficient time or be extendable.
-    </li>
-    <li>
-      Video should include audio narration.
-    </li>
-    <li>
-      Test all designs with <Link inline href="https://design.avaya.com/guidelines/testing_tools">screen reader</Link> a where possible.
-    </li>
+  graphicIcon={graphic}
+  graphicAltText={altText}
+  type={type}
+  firstDescription={firstDescription}
+  secondDescription={secondDescription}
+>
+  <li>
+    Visual information should be also provided in text format (e.g. alt text).
+  </li>
+  <li>Functional elements should be controllable with a keyboard.</li>
+  <li>Content should be structured and simplified where possible.</li>
+  <li>Time limits should provide sufficient time or be extendable.</li>
+  <li>Video should include audio narration.</li>
+  <li>
+    Test all designs with <Link
+      inline
+      href="https://design.avaya.com/guidelines/testing_tools"
+    >
+      screen reader
+    </Link> a where possible.
+  </li>
 </TypesLayout>

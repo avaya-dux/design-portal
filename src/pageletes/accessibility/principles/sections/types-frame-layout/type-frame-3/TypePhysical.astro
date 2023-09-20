@@ -2,26 +2,24 @@
 import TypesLayout from "../TypesLayout.astro";
 
 import graphic from "../../../imgs/principles-types-5.svg";
-  
+
 const altText = "An icon representing physical disabilites";
 const type = "Physical Disabilities";
 
 const firstDescription =
   "Physical disabilities refer to impairments of mobility or dexterity. These users interact with interfaces using keyboards, track balls, voice recognition, or other assistive technologies.";
 
-const secondDescription = 
+const secondDescription =
   "These considerations can also help others since keyboard navigation and shortcuts are frequently used to perform tasks quickly.";
 ---
+
 <TypesLayout
-    graphicIcon={graphic}
-    graphicAltText={altText}
-    type={type}
-    firstDescription={firstDescription}
-    secondDescription={secondDescription}>
-    <li>
-      Functional elements should be controllable with a keyboard.
-    </li>
-    <li>
-      Ensure clickable regions have sufficient target space.
-    </li>
+  graphicIcon={graphic}
+  graphicAltText={altText}
+  type={type}
+  firstDescription={firstDescription}
+  secondDescription={secondDescription}
+>
+  <li>Functional elements should be controllable with a keyboard.</li>
+  <li>Ensure clickable regions have sufficient target space.</li>
 </TypesLayout>
