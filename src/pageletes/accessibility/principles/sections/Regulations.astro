@@ -1,5 +1,5 @@
 ---
-import { Description, PageleteSection, SectionHeader } from "components";
+import { Description, PageleteSection, SectionHeader, InfoList, InfoListItem } from "components";
 
 import { topics } from "../static";
 const { id, title } = topics.regulations;
@@ -32,9 +32,9 @@ const standards= [
     regulations. More information can be found here.
   </Description>
 
-  <ul class="dash-list">
+  <InfoList type="'- '">
     {
-      standards.map((item) => <li><a href={item.link} target="_blank" rel="noopener noreferrer">{item.title}</a></li>)
+      standards.map((item) => <InfoListItem label="" isLink={true}><a href={item.link} target="_blank" rel="noopener noreferrer">{item.title}</a></InfoListItem>)
     }
-  </ul>
+  </InfoList>
 </PageleteSection>

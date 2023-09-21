@@ -1,9 +1,13 @@
 ---
 export interface Props {
   label: string;
+  isLink?: boolean;
 }
 
-const { label } = Astro.props as Props;
+const { label, isLink = false } = Astro.props as Props;
 ---
-
-<li><b>{label}:</b> <slot /></li>
+{
+  ()=>{
+    return isLink ? (<li><b>{label}</b> <slot /></li>) : (<li><b>{label}:</b> <slot /></li>)
+  }
+}

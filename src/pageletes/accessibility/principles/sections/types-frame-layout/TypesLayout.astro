@@ -30,20 +30,22 @@ import TypeSubSection from "./TypeSubSection.astro"
     </ImageWrapper>
 
     <div>
-        <h4 class="type-header"> {type} </h4>
+        <h4 class="section-header"> {type} </h4>
         
         <Description> {firstDescription} </Description>
 
         <Description>Things to consider:</Description>
+
             <TypeList>
                 <slot/>
             </TypeList>
+            
         <Description> {secondDescription} </Description>
     </div>
 </TypeSubSection>
 
 <style>
-    .type-header{
+    .section-header{
         font-size: 19px;
         font-style: normal;
         font-weight: 600;

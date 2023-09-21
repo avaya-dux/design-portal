@@ -10,8 +10,8 @@ export { Regulations };
 import TypesLayout from "./types-frame-layout/TypesLayout.astro";
 export { TypesLayout };
 
-import FrameLayout from "./types-frame-layout/FrameLayout.astro";
-export { FrameLayout };
+import TwoColumnLayout from "./types-frame-layout/TwoColumnLayout.astro";
+export { TwoColumnLayout };
 
 import Types from "./Types.astro";
 export { Types };

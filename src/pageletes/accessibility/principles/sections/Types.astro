@@ -5,7 +5,7 @@ import {
   SectionHeader,
 } from "components";
 
-import FrameLayout from "./types-frame-layout/FrameLayout.astro";
+import TwoColumnLayout from "./types-frame-layout/TwoColumnLayout.astro";
 
 import TypeBlind from "./types-frame-layout/type-frame-1/TypeBlind.astro";
 import TypeLowVision from "./types-frame-layout/type-frame-1/TypeLowVision.astro";
@@ -29,18 +29,18 @@ const { id, title } = topics.disabilities;
     experience for everyone.
   </Description>
 
-  <FrameLayout >
+  <TwoColumnLayout>
     <TypeBlind slot="left-frame"/>
     <TypeLowVision slot="right-frame"/>
-  </FrameLayout>
+  </TwoColumnLayout>
 
-  <FrameLayout >
+  <TwoColumnLayout>
     <TypeColor slot="left-frame"/>
     <TypeDeaf slot="right-frame"/>
-  </FrameLayout>
+  </TwoColumnLayout>
 
-  <FrameLayout >
+  <TwoColumnLayout >
     <TypeCognitive slot="left-frame"/>
     <TypePhysical slot="right-frame"/>
-  </FrameLayout>
+  </TwoColumnLayout>
 </PageleteSection>
