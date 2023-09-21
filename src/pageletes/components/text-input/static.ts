@@ -1,10 +1,5 @@
 import type { TopicsDict } from "components";
 
-export const sandbox =
-  "https://codesandbox.io/s/neo-react-textinput-gl5x9k?file=/src/App.js";
-export const storybook =
-  "https://neo-react-library-storybook.netlify.app/?path=/story/components-text-input--default";
-
 type TextInputTopicNames =
   | "playground"
   | "anatomy"
