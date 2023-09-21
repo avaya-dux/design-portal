@@ -1,0 +1,22 @@
+---
+import {
+  Description,
+  PageleteSection,
+  SectionHeader,
+  Topics,
+} from "components";
+
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <SectionHeader id="Principles">Principles</SectionHeader>
+
+  <Description>
+    Avaya believes that our software and hardware solutions should be accessible
+    to everyone. Neo is committed to following and complying with industry best
+    practices and regulations.
+  </Description>
+
+  <Topics topics={topics} />
+</PageleteSection>

@@ -1,9 +1,9 @@
 ---
 export interface Props {
-  type?: "disc" | "decimal" | "none";
+  type?: "disc" | "decimal" | "'- '" | "none";
 }
 
-const { type = "none" } = Astro.props as Props;
+const { type = "none"} = Astro.props as Props;
 const marginLeft = type === "none" ? 0 : "1rem";
 ---
 

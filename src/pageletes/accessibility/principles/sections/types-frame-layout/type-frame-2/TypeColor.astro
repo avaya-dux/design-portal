@@ -1,0 +1,28 @@
+---
+import TypesLayout from "../TypesLayout.astro";
+
+import graphic from "../../../imgs/principles-types-3.svg";
+
+import { Link } from "@avaya/neo-react";
+
+const altText = "An icon representing color blindness";
+const type = "Color Blindness";
+
+const firstDescription =
+  "Color blindness refers to those who are unable to see all colors. There are three main forms of color blindness: red-green, blue-yellow, and total color blindness. These users interact with an interface by relying on non-color information to complete tasks, and may use adjusted display settings or color filters to compensate.";
+
+const secondDescription =
+  "These considerations will also help other users, including those in poor lighting conditions, or other environments where they may experience similar difficulties.";
+---
+
+<TypesLayout
+  graphicIcon={graphic}
+  graphicAltText={altText}
+  type={type}
+  firstDescription={firstDescription}
+  secondDescription={secondDescription}
+  >
+    <li>Ensure information is not conveyed with color alone.</li>
+
+    <li>Test with <Link inline href="https://design.avaya.com/guidelines/testing_tools">color contrast tools or color simulators</Link> to ensure sufficient contrast.</li>
+</TypesLayout>
