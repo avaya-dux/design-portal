@@ -2,7 +2,7 @@ import type { TopicsDict } from "components";
 
 type PrinciplesTopicNames = "accessibility" | "regulations" | "disabilities";
 
-const component = "priniciples";
+const component = "principles";
 export const topics: TopicsDict<PrinciplesTopicNames> = {
   accessibility: {
     order: 0,
