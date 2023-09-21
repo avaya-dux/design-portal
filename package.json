@@ -2,11 +2,12 @@
   "name": "@avaya/design-portal",
   "version": "3.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "all": "yarn && yarn clean && yarn format && yarn lint && yarn build && yarn test:badges",
     "github": "yarn && yarn clean && yarn lint && yarn build && yarn test",
     "clean": "rm -rf coverage dist",
-    "format": "yarn prettier --write ./src --log-level warn",
+    "format": "yarn prettier --write ./src --log-level warn --plugin prettier-plugin-astro",
     "lint": "eslint src",
     "build": "astro build",
     "test": "vitest run",
@@ -55,7 +56,7 @@
   "dependencies": {
     "@astrojs/netlify": "2.6.0",
     "@astrojs/prefetch": "0.3.0",
-    "@avaya/neo-react": "1.0.1",
+    "@avaya/neo-react": "1.0.2",
     "@nanostores/react": "0.7.1",
     "clsx": "2.0.0",
     "diffable-html": "5.0.0",

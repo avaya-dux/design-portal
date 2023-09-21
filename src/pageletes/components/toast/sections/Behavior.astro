@@ -33,10 +33,8 @@ const dont1Instructions =
 
 import doImage2 from "../imgs/toast-behavior-do-1.svg";
 import dontImage2 from "../imgs/toast-behavior-dont-2.svg";
-const do2Instructions =
-  "Add text here";
-const dont2Instructions =
-  "Add text here";
+const do2Instructions = "Add text here";
+const dont2Instructions = "Add text here";
 ---
 
 <PageleteSection>
@@ -95,15 +93,15 @@ const dont2Instructions =
     <SubHeader id="toast-behavior-placement">Placement</SubHeader>
 
     <Description>
-      Toasts are placed in a location that is easily visible to users,
-       but does not obstruct their view or interrupt their flow.
-        A common placement for toast notifications is in the top center of the screen.
+      Toasts are placed in a location that is easily visible to users, but does
+      not obstruct their view or interrupt their flow. A common placement for
+      toast notifications is in the top center of the screen.
     </Description>
     <Description>
-      If multiple toast notifications are triggered in quick succession, they should be
-       stacked on top of each other to avoid cluttering the screen.
-        Each notification should be visible for a short period of time before disappearing,
-         allowing users to quickly scan through them if necessary.
+      If multiple toast notifications are triggered in quick succession, they
+      should be stacked on top of each other to avoid cluttering the screen.
+      Each notification should be visible for a short period of time before
+      disappearing, allowing users to quickly scan through them if necessary.
     </Description>
 
     <ImageWrapper>
@@ -113,27 +111,32 @@ const dont2Instructions =
     <DoAndDont>
       <DoAndDont.DoContainer instructions={do1Instructions}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={doImage1} alt="Image showing a toast notifying user that a file was successfuly saved" />
+          <Image
+            src={doImage1}
+            alt="Image showing a toast notifying user that a file was successfuly saved"
+          />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DoContainer>
 
       <DoAndDont.DontContainer instructions={dont1Instructions}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={dontImage1} alt="Image showing a toast notifying user about an error condition" />
+          <Image
+            src={dontImage1}
+            alt="Image showing a toast notifying user about an error condition"
+          />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DontContainer>
     </DoAndDont>
-
   </PageleteSubSection>
 
   <PageleteSubSection>
     <SubHeader id="toast-behavior-duration">Duration</SubHeader>
 
     <Description>
-      The duration of a toast should be short enough to convey the message,
-       but not so long that they become a distraction or annoyance.
-        A common duration for a toast is between 2-5 seconds, depending on the complexity
-         of the message and the user's familiarity with the app or website.
+      The duration of a toast should be short enough to convey the message, but
+      not so long that they become a distraction or annoyance. A common duration
+      for a toast is between 2-5 seconds, depending on the complexity of the
+      message and the user's familiarity with the app or website.
     </Description>
   </PageleteSubSection>
 
@@ -141,23 +144,29 @@ const dont2Instructions =
     <SubHeader id="toast-behavior-text-length">Text Length</SubHeader>
 
     <Description>
-      The toast message should be short and to the point. It should not have a lot of copy where it
-       covers a large part of the dashboard. Avoid wrapping the text in multiple lines.
+      The toast message should be short and to the point. It should not have a
+      lot of copy where it covers a large part of the dashboard. Avoid wrapping
+      the text in multiple lines.
     </Description>
 
     <DoAndDont>
       <DoAndDont.DoContainer instructions={do2Instructions}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={doImage2} alt="Image showing a toast notifying user that a file was successfuly saved" />
+          <Image
+            src={doImage2}
+            alt="Image showing a toast notifying user that a file was successfuly saved"
+          />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DoContainer>
 
       <DoAndDont.DontContainer instructions={dont2Instructions}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={dontImage2} alt="Image showing a toast notifying user about an error condition" />
+          <Image
+            src={dontImage2}
+            alt="Image showing a toast notifying user about an error condition"
+          />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DontContainer>
     </DoAndDont>
   </PageleteSubSection>
-
 </PageleteSection>

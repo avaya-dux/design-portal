@@ -1,12 +1,17 @@
 ---
 import { Image } from "@avaya/neo-react";
-import { ColumnLayout, Description, PageleteSection, SectionHeader, StackedLayout } from "components/astro";
+import {
+  ColumnLayout,
+  Description,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+} from "components/astro";
 import { topics } from "../static";
 
 const { id, title } = topics.specs;
 
 import specsImage from "../imgs/sideNav-specs-1.svg";
-
 ---
 
 <PageleteSection>
@@ -20,8 +25,10 @@ import specsImage from "../imgs/sideNav-specs-1.svg";
 
   <ColumnLayout bkgColor="#f1f1f1" numOfColumns={1}>
     <StackedLayout vPadding="2rem">
-      <Image src={specsImage} alt="Image showing padding and spacing values for side navigation component." />
+      <Image
+        src={specsImage}
+        alt="Image showing padding and spacing values for side navigation component."
+      />
     </StackedLayout>
   </ColumnLayout>
-
 </PageleteSection>
