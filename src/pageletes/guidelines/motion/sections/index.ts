@@ -6,3 +6,9 @@ export { Easing };
 
 import Duration from "./Duration.astro";
 export { Duration };
+
+import Examples from "./Examples.astro";
+export { Examples };
+
+import Accessibility from "./Accessibility.astro";
+export { Accessibility };
