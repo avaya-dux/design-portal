@@ -26,27 +26,27 @@ import TypeSubSection from "./TypeSubSection.astro";
     <Image src={graphicIcon} alt={graphicAltText} width={408} />
   </ImageWrapper>
 
-    <div>
-        <h4 class="section-header"> {type} </h4>
-        
-        <Description> {firstDescription} </Description>
+  <div>
+    <h4 class="section-header">{type}</h4>
 
-        <Description>Things to consider:</Description>
+    <Description>{firstDescription}</Description>
 
-            <TypeList>
-                <slot/>
-            </TypeList>
-            
-        <Description> {secondDescription} </Description>
-    </div>
+    <Description>Things to consider:</Description>
+
+    <TypeList>
+      <slot />
+    </TypeList>
+
+    <Description>{secondDescription}</Description>
+  </div>
 </TypeSubSection>
 
 <style>
-    .section-header{
-        font-size: 19px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 28px;
-        margin-bottom: 8px;
-    }
+  .section-header {
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    margin-bottom: 8px;
+  }
 </style>
