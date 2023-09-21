@@ -6,8 +6,17 @@ export interface Props {
 
 const { label, isLink = false } = Astro.props as Props;
 ---
+
 {
-  ()=>{
-    return isLink ? (<li><b>{label}</b> <slot /></li>) : (<li><b>{label}:</b> <slot /></li>)
+  () => {
+    return isLink ? (
+      <li>
+        <b>{label}</b> <slot />
+      </li>
+    ) : (
+      <li>
+        <b>{label}:</b> <slot />
+      </li>
+    );
   }
 }

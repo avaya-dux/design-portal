@@ -1,5 +1,11 @@
 ---
-import { Description, PageleteSection, SectionHeader, InfoList, InfoListItem } from "components";
+import {
+  Description,
+  PageleteSection,
+  SectionHeader,
+  InfoList,
+  InfoListItem,
+} from "components";
 
 import { topics } from "../static";
 const { id, title } = topics.regulations;
@@ -40,7 +46,13 @@ const standards = [
 
   <InfoList type="'- '">
     {
-      standards.map((item) => <InfoListItem label="" isLink={true}><a href={item.link} target="_blank" rel="noopener noreferrer">{item.title}</a></InfoListItem>)
+      standards.map((item) => (
+        <InfoListItem label="" isLink={true}>
+          <a href={item.link} target="_blank" rel="noopener noreferrer">
+            {item.title}
+          </a>
+        </InfoListItem>
+      ))
     }
   </InfoList>
 </PageleteSection>
