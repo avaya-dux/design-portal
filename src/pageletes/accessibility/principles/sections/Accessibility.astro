@@ -1,0 +1,24 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components";
+
+import { topics } from "../static";
+const { id, title } = topics.accessibility;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    In addition to helping users with disabilities, accessible design helps
+    provide better user experiences for everyone. A text description included in
+    an image makes its content available to a user who is blind, and makes it
+    possible for search engines to index the image.
+  </Description>
+
+  <Description>
+    Using Neo components improves accessibility and consistency when building
+    UX/UI solutions. However, the way Neo is used can affect the accessibility
+    of the application. Be sure to include testing in the design and development
+    process to avoid any accessibility barriers.
+  </Description>
+</PageleteSection>

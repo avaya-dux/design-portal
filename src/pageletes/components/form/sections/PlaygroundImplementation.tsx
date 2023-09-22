@@ -1,12 +1,6 @@
 import { useState, useMemo } from "react";
 import { Playground } from "components/react";
-import {
-  Button,
-  Form,
-  Radio,
-  RadioGroup,
-  TextInput,
-} from "@avaya/neo-react";
+import { Button, Form, Radio, RadioGroup, TextInput } from "@avaya/neo-react";
 import {
   prettyPrintReactElementToHtml,
   prettyPrintReactElementToString,

@@ -29,9 +29,7 @@ const unselectedDisabledImageAltText = "Unselected switch with disabled state";
 <PageleteSection>
   <SectionHeader id={id}>{title}</SectionHeader>
 
-  <Description>
-    A switch can exist in one of four states.
-  </Description>
+  <Description>A switch can exist in one of four states.</Description>
 
   <ColumnLayout bkgColor="white" numOfColumns={4}>
     <StackedLayout label="Off">
@@ -58,14 +56,22 @@ const unselectedDisabledImageAltText = "Unselected switch with disabled state";
   </ColumnLayout>
 
   <InfoList type="disc">
-    <InfoListItem label="Off">With the switch in this position (left) the function is disabled/inactive.</InfoListItem>
+    <InfoListItem label="Off">
+      With the switch in this position (left) the function is disabled/inactive.
+    </InfoListItem>
 
     <InfoListItem label="On">
       In this position (right), the function is enabled/active.
     </InfoListItem>
 
-    <InfoListItem label="On Disabled">This switch is unavailable (greyed out) and the function is currently enabled/active.</InfoListItem>
+    <InfoListItem label="On Disabled">
+      This switch is unavailable (greyed out) and the function is currently
+      enabled/active.
+    </InfoListItem>
 
-    <InfoListItem label="Off Disabled">This switch is unavailable and the function is currently disabled/inactive.</InfoListItem>
+    <InfoListItem label="Off Disabled">
+      This switch is unavailable and the function is currently
+      disabled/inactive.
+    </InfoListItem>
   </InfoList>
 </PageleteSection>

@@ -2,12 +2,7 @@
 import { Description, PageleteSection, SectionHeader } from "components/astro";
 import { topics } from "../static";
 
-import {
-  Condensed,
-  Icons,
-  Scrolling,
-  TextWrap,
-} from "./subsections";
+import { Condensed, Icons, Scrolling, TextWrap } from "./subsections";
 
 const { id, title } = topics.behavior;
 ---
@@ -18,8 +13,9 @@ const { id, title } = topics.behavior;
   </SectionHeader>
 
   <Description>
-    A side navigation can have various behaviors that determine how it interacts with the user and the rest of the website or application.
-     The following examples show several implementations of the side navigation bar.
+    A side navigation can have various behaviors that determine how it interacts
+    with the user and the rest of the website or application. The following
+    examples show several implementations of the side navigation bar.
   </Description>
 
   <Icons />
@@ -29,5 +25,4 @@ const { id, title } = topics.behavior;
   <TextWrap />
 
   <Scrolling />
-
 </PageleteSection>
