@@ -1,2 +1,2 @@
-import Header from "./Header.astro";
-export { Header };
+import NeoIntro from "./NeoIntro.astro";
+export { NeoIntro };

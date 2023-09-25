@@ -1,0 +1,32 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Description,
+  ColumnLayout,
+  ImageWrapper,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import image1 from "../imgs/motion-examples.svg";
+
+const image1Alt = "Motion playground goes here.";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.examples.id}>{topics.examples.title}</SectionHeader>
+
+  <Description>
+    Easing and duration can be combined to create different types of motion
+    effects. Use the widget below to explore different combinations.
+  </Description>
+
+  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={1}>
+    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image1} alt={image1Alt} />
+    </ImageWrapper>
+  </ColumnLayout>
+</PageleteSection>
+
