@@ -1,0 +1,45 @@
+---
+import { Image } from "@avaya/neo-react";
+import { ImageWrapper, Description, SubHeader, DoAndDont } from "components";
+
+import widthsImage from "../imgs/text-behavior-widths-1.svg";
+import widthsDoImage1 from "../imgs/text-behavior-widths-do-1.svg";
+import widthsDontImage1 from "../imgs/text-behavior-widths-dont-1.svg";
+const widthsDoInstructions1 =
+  "Keep vertically stacking inputs the same width whenever possible.";
+const widthsDontInstructions1 =
+  "Do not use inputs with different widths if there is enough space.";
+---
+
+<SubHeader id="text-widths-behavior-subheader">Widths</SubHeader>
+
+<Description>
+  The width of input fields should be the same. For naturally narrower fields, group them together onto a single line with a total width equal to the other input fields on the page.
+</Description>
+
+<ImageWrapper>
+  <Image
+    src={ widthsImage}
+    alt="Image showing proper width alignments with text inputs"
+  />
+</ImageWrapper>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={widthsDoInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image 
+      src={widthsDoImage1} 
+      alt="Image showing text inputs with widths that are aligned with one another." 
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={widthsDontInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={widthsDontImage1}
+        alt="Image showing text inputs with varying widths"
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>

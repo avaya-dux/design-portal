@@ -9,6 +9,8 @@ export interface Props {
   labelPaddingTop?: string;
   vMargin?: string;
   vPadding?: string;
+  hMargin?: string;
+  hPadding?: string;
 }
 
 const {
@@ -19,6 +21,8 @@ const {
   labelPaddingTop = "0px",
   vMargin = "0",
   vPadding = "3rem",
+  hMargin = "0",
+  hPadding = "0",
 } = Astro.props as Props;
 ---
 
@@ -28,7 +32,7 @@ const {
 </div>
 
 <style
-  define:vars={{ gap, vMargin, vPadding, labelPaddingLeft, labelPaddingTop }}
+  define:vars={{ gap, vMargin, hMargin, hPadding, vPadding, labelPaddingLeft, labelPaddingTop }}
 >
   div.stack-container {
     display: flex;
@@ -37,8 +41,12 @@ const {
     align-items: center;
     padding-top: var(--vPadding);
     padding-bottom: var(--vPadding);
+    padding-left: var(--hPadding);
+    padding-right: var(--hPadding);
     margin-top: var(--vMargin);
     margin-bottom: var(--vMargin);
+    margin-left: var(--hMargin);
+    margin-right: var(--hMargin);
   }
   div.stack-container.stack-container--shaded {
     background-color: var(--neo-color-base-100);

@@ -19,17 +19,23 @@ export { Types };
 import Behavior from "./Behavior.astro";
 export { Behavior };
 
-import TextInputBehavior from "./TextInputBehavior.astro";
-export { TextInputBehavior };
-
-import TextAreaBehavior from "./TextAreaBehavior.astro";
-export { TextAreaBehavior };
-
-import PasswordInputBehavior from "./PasswordInputBehavior.astro";
-export { PasswordInputBehavior };
-
-import AlignmentBehavior from "./AlignmentBehavior.astro";
-export { AlignmentBehavior };
-
 import Specs from "./Specs.astro";
 export { Specs };
+
+import Related from "./Related.astro";
+export { Related }
+
+import HelperTextBehavior from "./subsections/HelperTextBehavior.astro";
+export { HelperTextBehavior };
+
+import MultipleLinesBehavior from "./subsections/MultipleLinesBehavior.astro";
+export { MultipleLinesBehavior };
+
+import PasswordInputBehavior from "./subsections/PasswordInputBehavior.astro";
+export { PasswordInputBehavior };
+
+import WidthBehavior from "./subsections/WidthBehavior.astro";
+export { WidthBehavior };
+
+import PrefixAndSuffix from "./subsections/PrefixAndSuffix.astro"
+export { PrefixAndSuffix }

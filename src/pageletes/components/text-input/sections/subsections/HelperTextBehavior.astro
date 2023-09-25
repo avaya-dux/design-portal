@@ -1,0 +1,64 @@
+---
+import { Image } from "@avaya/neo-react";
+import { Description, SubHeader, DoAndDont } from "components";
+
+import helperDoImage1 from "../imgs/text-behavior-helper-do-1.svg";
+import helperDontImage1 from "../imgs/text-behavior-helper-dont-1.svg";
+const helperDoInstructions1 =
+  "Use helper text to provide additional information on the input, such as format requirements or a description.";
+const helperDontInstructions1 = 
+  "Do not use helper text as a placeholder. It disappears the moment the user starts typing so they lose the guidance.";
+
+import helperDoImage2 from "../imgs/text-behavior-helper-do-2.svg";
+import helperDontImage2 from "../imgs/text-behavior-helper-dont-2.svg";
+const helperDoInstructions2 =
+  "Use helper text for supplemental information only when needed, such as for examples.";
+const helperDontInstructions2 =
+  "Do not use placeholders unnecessarily.";
+---
+
+<SubHeader id="text-helper-behavior-subheader">Helper Text</SubHeader>
+
+<Description>
+  Helper text provides guidance as to the type of data or the format of that data, such as the appearance of a date field (i.e. mm/dd/yyyy) or password.
+</Description>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={helperDoInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image 
+      src={helperDoImage1} 
+      alt="Image showing correct helper text." 
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={helperDontInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={helperDontImage1}
+        alt="Image showing improper helper text inside placeholder"
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={helperDoInstructions2}>
+    <DoAndDont.ImageExampleContainer>
+      <Image 
+      src={helperDoImage2} 
+      alt="Image showing correct helper text." 
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={helperDontInstructions2}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={helperDontImage2}
+        alt="Image showing improper helper text inside placeholder"
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>

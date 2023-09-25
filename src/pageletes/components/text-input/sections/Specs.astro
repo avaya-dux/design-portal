@@ -6,39 +6,40 @@ import {
   ColumnLayout,
   PageleteSection,
   SectionHeader,
-  StackedLayout,
   SubHeader,
 } from "components/astro";
 import { topics } from "../static";
 
-import SpecsImage1 from "./imgs/text-input-specs-1.svg";
-import SpecsImage2 from "./imgs/text-input-specs-2.svg";
+import SpecsImage1 from "./imgs/text-specs-1.svg";
+import SpecsImage2 from "./imgs/text-specs-2.svg";
+
+import LayoutWrapper from "./subsections/components/LayoutWrapper.astro";
 ---
 
 <PageleteSection>
   <SectionHeader id={topics.specs.id}>{topics.specs.title}</SectionHeader>
 
-  <Description>Specs Description.</Description>
+  <Description>The settings for input fields are show below.</Description>
 
-  <SubHeader id="text-input-alignment">Alignment</SubHeader>
+  <SubHeader id="text-input-alignment">Sizes</SubHeader>
 
   <Description>
-    Show both default and small sizes along with its specs.
+    There are 2 standard sizes for text input fields. Both sizes share 4 pixel padding above and below the container. The font size remains the same regardless of the field size.
   </Description>
 
   <ColumnLayout bkgColor="white" numOfColumns={2}>
-    <StackedLayout label="Default Text Input">
+    <LayoutWrapper label="Meduim Text Input">
       <Image
         src={SpecsImage1}
         alt="Image showing Default Text Input dimensions"
       />
-    </StackedLayout>
+    </LayoutWrapper>
 
-    <StackedLayout label="Small Text Input">
+    <LayoutWrapper label="Small Text Input">
       <Image
         src={SpecsImage2}
         alt="Image showing Small Text Input dimensions"
       />
-    </StackedLayout>
+    </LayoutWrapper>
   </ColumnLayout>
 </PageleteSection>

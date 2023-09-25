@@ -7,7 +7,8 @@ type TextInputTopicNames =
   | "types"
   | "behavior"
   | "specs"
-  | "interactions";
+  | "interactions"
+  | "related";
 
 export const topics: TopicsDict<TextInputTopicNames> = {
   playground: {
@@ -44,5 +45,10 @@ export const topics: TopicsDict<TextInputTopicNames> = {
     order: 6,
     id: "text-input-interactions",
     title: "Keyboard Interactions",
+  },
+  related: {
+    order: 7,
+    id: "text-input-related",
+    title: "Related Content",
   },
 };
