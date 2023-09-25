@@ -1,8 +1,9 @@
 ---
 import { Image } from "@avaya/neo-react";
 import {
-  Description,
+  Caption,
   ColumnLayout,
+  Description,
   ImageWrapper,
   PageleteSection,
   SectionHeader,
@@ -43,22 +44,16 @@ const image3Alt =
     numOfColumns={2}
     marginTop={"1.5rem"}
   >
-    <div>
-      <h4 class="image-header">Ease</h4>
-      <Description>
-        Elements can slide in and out from the screen in any of the 4
+    <Caption title="Ease">
+      Elements can slide in and out from the screen in any of the 4
         directions. Motion is quickest at the edges and slows down toward the
         middle of the screen.
-      </Description>
-    </div>
-    <div>
-      <h4 class="image-header">Ease-in</h4>
-      <Description>
-        When an element comes onto the screen, it can ease-in, either from the
+    </Caption>
+    <Caption title="Ease-in">
+      When an element comes onto the screen, it can ease-in, either from the
         right or the left of the screen. It starts by moving quickly, but
         rapidly slows down as it reaches its final position.
-      </Description>
-    </div>
+    </Caption>
   </ColumnLayout>
 
   <ColumnLayout
@@ -78,19 +73,11 @@ const image3Alt =
     numOfColumns={2}
     marginTop={"1.5rem"}
   >
-    <div>
-      <h4 class="image-header">Ease-out</h4>
-      <Description>
-        When an element leaves the screen, it can ease-out, either to the right
+    <Caption title="Ease-out">
+     When an element leaves the screen, it can ease-out, either to the right
         or the left of the screen. It starts by moving slowly, but rapidly
         speeds up as it disappears off the edge.
-      </Description>
-    </div>
+    </Caption>
   </ColumnLayout>
 </PageleteSection>
 
-<style>
-  .image-header {
-    margin-bottom: 0.5rem;
-  }
-</style>
