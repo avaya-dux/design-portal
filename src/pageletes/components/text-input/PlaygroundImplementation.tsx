@@ -22,7 +22,7 @@ export const PlaygroundImplementation = () => {
   const [toggleHelperText, setToggleHelperText] = useState<ToggleHelperText>("on");
   const [textSize, setTextSize] = useState<TextSize>("default");
   const [required, setRequired] = useState<TextInputProps["required"]>(false);
-  const [isSmall, setIsSmall] = useState<TextInputProps['isSmall']>(false);
+  //const [isSmall, setIsSmall] = useState<TextInputProps['isSmall']>(false);
   const [helperText, setHelperText] =
     useState<TextInputProps["helperText"]>("Additional content");
 
@@ -33,7 +33,7 @@ export const PlaygroundImplementation = () => {
       type="text"
       helperText={helperText}
       required={required}
-      isSmall={true}
+      //isSmall={true}
     />
   );
 
@@ -75,7 +75,7 @@ export const PlaygroundImplementation = () => {
               selected={textSize}
               onChange={(e) => {
                 setTextSize(e.target.value as TextSize);
-                (e.target.value=="default") ? setIsSmall(true) : setIsSmall(false);
+                //(e.target.value=="default") ? setIsSmall(true) : setIsSmall(false);
               }}
             >
               <Radio value="default">Default</Radio>
