@@ -1,22 +1,21 @@
 ---
 import { Image } from "@avaya/neo-react";
 import {
-  ColumnLayout,
   Description,
+  ImageWrapper,
   InfoList,
   InfoListItem,
   PageleteSection,
   PageleteSubSection,
   SectionHeader,
-  StackedLayout,
   SubHeader,
 } from "components/astro";
 
 import { topics } from "../static";
 
-import AnatomyImage from "./imgs/text-input-anatomy.svg";
-import AnatomyImage2 from "./imgs/text-area-anatomy.svg";
-import AnatomyImage3 from "./imgs/text-password-input-anatomy.svg";
+import AnatomyImage from "./imgs/text-anatomy-1.svg";
+import AnatomyImage2 from "./imgs/text-anatomy-2.svg";
+import AnatomyImage3 from "./imgs/text-anatomy-3.svg";
 const anatomyImgAltText =
   "Image showing the different parts that make up a Text Input component.";
 ---
@@ -24,30 +23,49 @@ const anatomyImgAltText =
 <PageleteSection>
   <SectionHeader id={topics.anatomy.id}>{topics.anatomy.title}</SectionHeader>
 
-  <Description>Anatomy description</Description>
+  <Description>
+    Text input fields vary according to the amount and type of information
+    expected. For data that is essential, a “Required” marker is attached to the
+    label.
+  </Description>
 
   <PageleteSubSection>
     <SubHeader id="text-input-subheader">Text Input</SubHeader>
 
-    <Description>Text Input description</Description>
+    <Description>
+      The text input field is used when there are only a few words expected for
+      the data, such as a first name or a last name.
+    </Description>
 
-    <ColumnLayout bkgColor="white" numOfColumns={1}>
-      <StackedLayout>
-        <Image src={AnatomyImage} alt={anatomyImgAltText} />
-      </StackedLayout>
-    </ColumnLayout>
+    <ImageWrapper padding="24px 24px" marginBottom="48px">
+      <Image src={AnatomyImage} alt={anatomyImgAltText} />
+    </ImageWrapper>
 
     <InfoList type="decimal">
-      <InfoListItem label="Label">Input label</InfoListItem>
-
-      <InfoListItem label="Input Text">
-        Text input where users type in an input
+      <InfoListItem label="Label">
+        The label for the field specifies the type of information expected. The
+        label for the field specifies the type of information expected.
       </InfoListItem>
 
-      <InfoListItem label="Container">Text input container</InfoListItem>
+      <InfoListItem label="Required Marker">
+        This icon indicates that completing this input is mandatory. The user
+        will not be able to leave this screen until all required fields have
+        data entered.
+      </InfoListItem>
+
+      <InfoListItem label="Input Text">
+        Enter a few words or a short sentence in this space. The text will
+        automatically scroll with the text.
+      </InfoListItem>
+
+      <InfoListItem label="Container">
+        The data entered is contained within the outlined space.
+      </InfoListItem>
 
       <InfoListItem label="Helper Text">
-        Additional information to help users
+        Additional information on the data to be entered is placed here. It can
+        include formatting (i.e. mm/dd/yyyy) or other helpful directions (i.e.
+        password requirements).
       </InfoListItem>
     </InfoList>
   </PageleteSubSection>
@@ -55,30 +73,37 @@ const anatomyImgAltText =
   <PageleteSubSection>
     <SubHeader id="text-area-subheader">Text Area</SubHeader>
 
-    <Description>Text Area description</Description>
+    <Description>
+      The text area field is used when the data entered can be several sentences
+      or paragraphs long.
+    </Description>
 
-    <ColumnLayout bkgColor="white" numOfColumns={1}>
-      <StackedLayout>
-        <Image src={AnatomyImage2} alt={anatomyImgAltText} />
-      </StackedLayout>
-    </ColumnLayout>
+    <ImageWrapper padding="56px 24px" marginBottom="48px">
+      <Image src={AnatomyImage2} alt={anatomyImgAltText} />
+    </ImageWrapper>
 
     <InfoList type="decimal">
-      <InfoListItem label="Label">Input label</InfoListItem>
-
-      <InfoListItem label="Input Text">
-        Text input where users type in an input
+      <InfoListItem label="Label">
+        The label for the field specifies the type of information that is
+        expected.
       </InfoListItem>
 
-      <InfoListItem label="Container">Text input container</InfoListItem>
+      <InfoListItem label="Input Text">
+        Enter the text in this space. Limits can be place upon the total number
+        of characters allowed.
+      </InfoListItem>
+
+      <InfoListItem label="Container">
+        The data entered is contained within the outlined space.
+      </InfoListItem>
 
       <InfoListItem label="Helper Text">
-        Additional information to help users
+        Additional information on the data to be entered is placed here.
       </InfoListItem>
 
       <InfoListItem label="Character Count">
-        Indicates the max number of characters and counts number of characters
-        used as the user types
+        Shows the number of characters entered and the maximum number of
+        characters allowed for the field.
       </InfoListItem>
     </InfoList>
   </PageleteSubSection>
@@ -86,33 +111,46 @@ const anatomyImgAltText =
   <PageleteSubSection>
     <SubHeader id="password-input-subheader">Password Input</SubHeader>
 
-    <Description>Password description</Description>
+    <Description>
+      The password input field is used when the data entered should remain
+      hidden for security purposes, such as for passwords. Text entered is
+      replaced with the * character to ensure confidentiality.
+    </Description>
 
-    <ColumnLayout bkgColor="white" numOfColumns={1}>
-      <StackedLayout>
-        <Image src={AnatomyImage3} alt={anatomyImgAltText} />
-      </StackedLayout>
-    </ColumnLayout>
+    <ImageWrapper padding="24px 24px" marginBottom="48px">
+      <Image src={AnatomyImage3} alt={anatomyImgAltText} />
+    </ImageWrapper>
 
     <InfoList type="decimal">
-      <InfoListItem label="Label">Input label</InfoListItem>
+      <InfoListItem label="Label">
+        The label identifies this as a password field, and may include the name
+        of the password that is needed (i.e. “Sales Password”).
+      </InfoListItem>
 
       <InfoListItem label="Required Label Icon">
-        This icon indicates that completing this input is mandatory
+        This icon indicates that completing this input is mandatory. The user
+        will not be able to leave this screen until all required fields have
+        data entered.
       </InfoListItem>
 
       <InfoListItem label="Password Input Text">
-        Text input where users type in password
+        Enter the password in this space. By default, the value is hidden.
       </InfoListItem>
 
-      <InfoListItem label="Container">Text input container</InfoListItem>
-
-      <InfoListItem label="Helper Text">
-        Additional information to help users
+      <InfoListItem label="Container">
+        The password entered is contained within the outlined space.
       </InfoListItem>
 
       <InfoListItem label="Password Icon Trigger">
-        This icon turns the user's password visible and hidden
+        Click this icon to make the entered password visible in the container.
+        This can help the user to verify that they have entered the correct
+        password.
+      </InfoListItem>
+
+      <InfoListItem label="Password Requirements">
+        A list of all the password requirements in detail. This can include the
+        minimum length and specific character requirements (i.e. at least one
+        upper case and one lower case, at least one numeric character, etc.).
       </InfoListItem>
     </InfoList>
   </PageleteSubSection>

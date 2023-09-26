@@ -1,127 +1,97 @@
 import type { TextInputProps } from "@avaya/neo-react";
 import { Radio, RadioGroup, TextInput } from "@avaya/neo-react";
-import { useMemo, useState } from "react";
-import { prettyPrintReact } from "helpers";
+import { useState } from "react";
+import {
+  prettyPrintReactElementToHtml,
+  prettyPrintReactElementToString,
+} from "helpers";
 
 import { Playground } from "components";
 
-import { sandbox, storybook } from "./static";
-import clsx from "clsx";
+const sandbox =
+  "https://codesandbox.io/s/neo-react-textinput-gl5x9k?file=/src/App.js";
+const storybook =
+  "https://neo-react-library-storybook.netlify.app/?path=/story/components-text-input--default";
 
-type TypeOption = "text" | "password";
-type LabelOption = "optional" | "required" | "none";
+type InputType = "true" | "false";
+type ToggleHelperText = "on" | "off";
+type TextSize = "default" | "small";
 
 export const PlaygroundImplementation = () => {
-  const [labelOption, setLabelOption] = useState<LabelOption>("optional");
-  const [required, setRequired] = useState<TextInputProps["required"]>(false);
-  const [inputValue, setInputValue] = useState<TextInputProps["value"]>("");
+  const [inputType, setInputType] = useState<InputType>("true");
+  const [toggleHelperText, setToggleHelperText] =
+    useState<ToggleHelperText>("on");
+  const [textSize, setTextSize] = useState<TextSize>("default");
   const [helperText, setHelperText] =
-    useState<TextInputProps["helperText"]>("Helper text");
-  const [error, setError] = useState<TextInputProps["error"]>(false);
-  const [typeOption, setTypeOption] = useState<TypeOption>("text");
+    useState<TextInputProps["helperText"]>("Additional content");
 
-  const [html, react] = useMemo(() => {
-    const htmlCode = `
-<div class="neo-form-control" ${clsx(
-      error && " neo-form-control--error  neo-form-control--required",
-    )}>
-  <div class="neo-input-group">
-    <label for="input1">
-      Name
-    </label>
-    <div class="neo-input-editable__wrapper">
-      <input
-        class="neo-input"
-        id="input1"
-        aria-describedby="text-hint"
-        type="${typeOption}"
+  const element = (
+    <TextInput
+      label="Label"
+      type="text"
+      helperText={helperText}
+      required={Boolean(inputType)}
     />
-      <button aria-label="clear input" class="neo-input-edit__icon neo-icon-end"></button>
-      ${clsx(
-        typeOption === "password" &&
-          '<button aria-label="Show Password" aria-pressed="false" class="neo-icon-view-on" type="button"></button>',
-      )}
-    </div>
-  </div>
-  <div id="text-hint" class="neo-input-hint" ${clsx(
-    error && ' aria-live="assertive"',
-  )}>${helperText}</div>
-</div>
-`;
-
-    const reactCode = prettyPrintReact(
-      `<TextInput
-  type="${typeOption}"
-  label="Label"
-  helperText="${helperText}"
-  required="${required}"
-  error="${error}"
-/>`,
-    );
-    return [htmlCode, reactCode];
-  }, [error, helperText, required, typeOption]);
+  );
 
   return (
     <Playground
       options={
         <Playground.OptionsContainer>
-          <Playground.OptionsSection title="Type">
+          <Playground.OptionsSection title="Input Value">
             <RadioGroup
               groupName="type-options"
-              selected={typeOption}
+              selected={inputType}
               onChange={(e) => {
-                setTypeOption(e.target.value as TypeOption);
+                setInputType(e.target.value as InputType);
+                e.target.value == "true"
+                  ? setInputType("true")
+                  : setInputType("false");
               }}
             >
-              <Radio value="text">Text</Radio>
-              <Radio value="password">Password</Radio>
+              <Radio value="false">Optional</Radio>
+              <Radio value="true">Required</Radio>
             </RadioGroup>
           </Playground.OptionsSection>
 
-          <Playground.OptionsSection title="Value">
+          <Playground.OptionsSection title="Helper Text">
             <RadioGroup
               groupName="value-options"
-              selected={labelOption}
+              selected={toggleHelperText}
               onChange={(e) => {
-                setLabelOption(e.target.value as LabelOption);
-
-                if (e.target.value === "optional") {
-                  setRequired(false);
-                  setError(false);
-                  setHelperText("Helper text");
-                } else {
-                  setInputValue("");
-                  setRequired(true);
-                  setError(true);
-                  setHelperText("This field is required");
-                }
+                setToggleHelperText(e.target.value as ToggleHelperText);
+                e.target.value == "on"
+                  ? setHelperText("Additional content")
+                  : setHelperText("");
               }}
             >
-              <Radio value="optional">Optional</Radio>
-              <Radio value="required">Required</Radio>
+              <Radio value="on">On</Radio>
+              <Radio value="off">Off</Radio>
+            </RadioGroup>
+          </Playground.OptionsSection>
+
+          <Playground.OptionsSection title="Size">
+            <RadioGroup
+              groupName="size-options"
+              selected={textSize}
+              onChange={(e) => {
+                setTextSize(e.target.value as TextSize);
+              }}
+            >
+              <Radio value="default">Default</Radio>
+              <Radio value="small">Small</Radio>
             </RadioGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
       }
       examples={{
-        html,
-        react,
+        html: prettyPrintReactElementToHtml(element),
+        react: prettyPrintReactElementToString(element),
         sandbox,
         storybook,
       }}
     >
-      <TextInput
-        label="Label"
-        value={inputValue}
-        type={typeOption}
-        helperText={helperText}
-        required={required}
-        error={error}
-        onChange={(e) => {
-          setInputValue(e.target.value);
-          setError(false);
-        }}
-      />
+      {element}
     </Playground>
   );
 };

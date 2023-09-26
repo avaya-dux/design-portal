@@ -1,0 +1,38 @@
+---
+import { Image } from "@avaya/neo-react";
+import { Description, SubHeader, DoAndDont } from "components";
+
+import multipleLinesDoImage1 from "../imgs/text-behavior-multiple-do-1.svg";
+import multipleLinesDontImage1 from "../imgs/text-behavior-multiple-dont-1.svg";
+const multipleLinesDoInstructions1 =
+  "Use a text area field for content that requires multiple lines or paragraphs.";
+const multipleLinesDontInstructions1 =
+  "Do not use single line inputs if there is a large amount of text. Instead use the Text Area input box.";
+---
+
+<SubHeader id="text-multiple-lines-behavior">Multiple Lines</SubHeader>
+
+<Description>
+  Larger amounts of text can entered using the Text Area input box. This
+  prevents text from being cutoff.
+</Description>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={multipleLinesDoInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={multipleLinesDoImage1}
+        alt="Image showing Text Area with multiple lines of text."
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={multipleLinesDontInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={multipleLinesDontImage1}
+        alt="Image showing Text Input with truncated text that doesn't fit."
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>

@@ -1,10 +1,5 @@
 import type { TopicsDict } from "components";
 
-export const sandbox =
-  "https://codesandbox.io/s/neo-react-textinput-gl5x9k?file=/src/App.js";
-export const storybook =
-  "https://neo-react-library-storybook.netlify.app/?path=/story/components-text-input--default";
-
 type TextInputTopicNames =
   | "playground"
   | "anatomy"
@@ -12,7 +7,8 @@ type TextInputTopicNames =
   | "types"
   | "behavior"
   | "specs"
-  | "interactions";
+  | "interactions"
+  | "related";
 
 export const topics: TopicsDict<TextInputTopicNames> = {
   playground: {
@@ -49,5 +45,10 @@ export const topics: TopicsDict<TextInputTopicNames> = {
     order: 6,
     id: "text-input-interactions",
     title: "Keyboard Interactions",
+  },
+  related: {
+    order: 7,
+    id: "text-input-related",
+    title: "Related Content",
   },
 };
