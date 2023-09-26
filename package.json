@@ -21,7 +21,7 @@
   "devDependencies": {
     "@astrojs/react": "2.2.2",
     "@astrojs/svelte": "4.0.2",
-    "@astrojs/vue": "2.2.1",
+    "@astrojs/vue": "3.0.0",
     "@avaya/neo-icons": "1.4.0",
     "@testing-library/jest-dom": "6.0.0",
     "@testing-library/react": "14.0.0",
