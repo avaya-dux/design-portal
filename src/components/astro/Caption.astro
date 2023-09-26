@@ -1,0 +1,21 @@
+---
+import { Description } from "components/astro";
+
+export interface Props {
+  title?: string | undefined;
+}
+
+const { title="" } = Astro.props as Props;
+
+---
+
+<div>
+  <h4 class="caption-title">{title}</h4>
+  <Description><slot /></Description>
+</div>
+
+<style>
+  .caption-title {
+    margin-bottom: 0.5rem;
+  }
+</style>

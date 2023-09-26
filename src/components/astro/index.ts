@@ -1,5 +1,7 @@
-import ColumnLayout from "./ColumnLayout.astro";
+import Caption from "./Caption.astro";
+export { Caption };
 
+import ColumnLayout from "./ColumnLayout.astro";
 export { ColumnLayout };
 
 import Description from "./Description.astro";

@@ -1,0 +1,94 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Description,
+  ColumnLayout,
+  ImageWrapper,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import image1 from "../imgs/motion-duration-1.svg";
+import image2 from "../imgs/motion-duration-2.svg";
+import image3 from "../imgs/motion-duration-3.svg";
+
+const image1Alt = "Image showing a speed gauge with its marker on slow.";
+const image2Alt = "Image showing a speed gauge with its marker on medium.";
+const image3Alt = "Image showing a speed gauge with its marker on fast.";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.duration.id}>{topics.duration.title}</SectionHeader>
+
+  <Description>
+    When an on-screen element changes from one thing to another, it may be
+    configured to happen over time. When a field value changes, or when a mouse
+    hovers over something, the duration of the animation specifies how long the
+    change takes.
+  </Description>
+
+  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
+    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image1} alt={image1Alt} />
+    </ImageWrapper>
+    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image2} alt={image2Alt} />
+    </ImageWrapper>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    gap="2rem"
+    numOfColumns={2}
+    marginTop={"1.5rem"}
+  >
+    <div>
+      <h4 class="image-header">Slow</h4>
+      <Description>
+        Use this for transitions that take 0.9 seconds to occur.
+      </Description>
+    </div>
+    <div>
+      <h4 class="image-header">Medium</h4>
+      <Description>
+        These transition are 0.4 seconds in length. This is the primary speed
+        used throughout Neo. It is used for hover states, opening and closing,
+        sheets sliding in and out of the page, etc.
+      </Description>
+    </div>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    marginTop={"1.5rem"}
+    gap="2rem"
+    numOfColumns={2}
+  >
+    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image3} alt={image3Alt} />
+    </ImageWrapper>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    gap="2rem"
+    numOfColumns={2}
+    marginTop={"1.5rem"}
+  >
+    <div>
+      <h4 class="image-header">Fast</h4>
+      <Description>
+        The quickest transitions are 0.15 seconds in length. This is
+        occasionally used in Neo for expanding table rows.
+      </Description>
+    </div>
+  </ColumnLayout>
+</PageleteSection>
+
+<style>
+  .image-header {
+    margin-bottom: 0.5rem;
+  }
+</style>

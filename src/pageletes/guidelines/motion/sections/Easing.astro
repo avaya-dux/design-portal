@@ -1,0 +1,83 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Caption,
+  ColumnLayout,
+  Description,
+  ImageWrapper,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import image1 from "../imgs/motion-easing-1.svg";
+import image2 from "../imgs/motion-easing-2.svg";
+import image3 from "../imgs/motion-easing-3.svg";
+
+const image1Alt = "Image showing a circle shape animating side to side.";
+const image2Alt = "Image showing a circle shape easing in from the left.";
+const image3Alt =
+  "Image showing a circle shape easing out of the screen to the right.";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.easing.id}>{topics.easing.title}</SectionHeader>
+
+  <Description>
+    Easing refers to how a moving UI element changes speed over time. Neo has 3
+    types of easing tokens available.
+  </Description>
+
+  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
+    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image1} alt={image1Alt} />
+    </ImageWrapper>
+    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image2} alt={image2Alt} />
+    </ImageWrapper>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    gap="2rem"
+    numOfColumns={2}
+    marginTop={"1.5rem"}
+  >
+    <Caption title="Ease">
+      Elements can slide in and out from the screen in any of the 4
+        directions. Motion is quickest at the edges and slows down toward the
+        middle of the screen.
+    </Caption>
+    <Caption title="Ease-in">
+      When an element comes onto the screen, it can ease-in, either from the
+        right or the left of the screen. It starts by moving quickly, but
+        rapidly slows down as it reaches its final position.
+    </Caption>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    marginTop={"1.5rem"}
+    gap="2rem"
+    numOfColumns={2}
+  >
+    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image3} alt={image3Alt} />
+    </ImageWrapper>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    gap="2rem"
+    numOfColumns={2}
+    marginTop={"1.5rem"}
+  >
+    <Caption title="Ease-out">
+     When an element leaves the screen, it can ease-out, either to the right
+        or the left of the screen. It starts by moving slowly, but rapidly
+        speeds up as it disappears off the edge.
+    </Caption>
+  </ColumnLayout>
+</PageleteSection>
+
