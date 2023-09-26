@@ -13,16 +13,15 @@ const sandbox =
 const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-text-input--default";
 
-type InputType = "optional" | "required";
+type InputType = "true" | "false";
 type ToggleHelperText = "on" | "off";
 type TextSize = "default" | "small";
 
 export const PlaygroundImplementation = () => {
-  const [inputType, setInputType] = useState<InputType>("optional");
+  const [inputType, setInputType] = useState<InputType>("true");
   const [toggleHelperText, setToggleHelperText] =
     useState<ToggleHelperText>("on");
   const [textSize, setTextSize] = useState<TextSize>("default");
-  const [required, setRequired] = useState<TextInputProps["required"]>(false);
   const [helperText, setHelperText] =
     useState<TextInputProps["helperText"]>("Additional content");
 
@@ -31,7 +30,7 @@ export const PlaygroundImplementation = () => {
       label="Label"
       type="text"
       helperText={helperText}
-      required={required}
+      required={Boolean(inputType)}
     />
   );
 
@@ -45,13 +44,13 @@ export const PlaygroundImplementation = () => {
               selected={inputType}
               onChange={(e) => {
                 setInputType(e.target.value as InputType);
-                e.target.value == "optional"
-                  ? setRequired(true)
-                  : setRequired(false);
+                e.target.value == "true"
+                  ? setInputType("true")
+                  : setInputType("false");
               }}
             >
-              <Radio value="optional">Optional</Radio>
-              <Radio value="required">Required</Radio>
+              <Radio value="false">Optional</Radio>
+              <Radio value="true">Required</Radio>
             </RadioGroup>
           </Playground.OptionsSection>
 

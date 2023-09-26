@@ -8,6 +8,7 @@ import {
   InfoTableRow,
   PageleteSection,
   SectionHeader,
+  Description,
 } from "components/astro";
 import { topics } from "../static";
 ---
@@ -16,6 +17,14 @@ import { topics } from "../static";
   <SectionHeader id={topics.interactions.id}>
     {topics.interactions.title}
   </SectionHeader>
+
+  <Description>
+    Accessibility requires that each item on the screen is reachable using the keyboard alone. The mouse is not always an option for some users.
+  </Description>
+
+  <Description>
+    Keyboard navigation employs the following shortcuts.
+  </Description>
 
   <InfoTable>
     <InfoTableHead>
