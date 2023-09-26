@@ -1,15 +1,18 @@
 ---
-export interface Props { label: string }
+export interface Props {
+  label: string;
+}
 const { label = "" } = Astro.props as Props;
 
-import { StackedLayout } from "components/astro"; 
+import { StackedLayout } from "components/astro";
 ---
 
-<StackedLayout 
+<StackedLayout
   label={label}
   vPadding="40px"
   hPadding="24px"
   labelPaddingLeft="0"
-  gap="40px">
-  <slot/>
+  gap="40px"
+>
+  <slot />
 </StackedLayout>

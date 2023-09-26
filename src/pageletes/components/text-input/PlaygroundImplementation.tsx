@@ -1,4 +1,4 @@
-import type { TextInputProps,  } from "@avaya/neo-react";
+import type { TextInputProps } from "@avaya/neo-react";
 import { Radio, RadioGroup, TextInput } from "@avaya/neo-react";
 import { useState } from "react";
 import {
@@ -19,12 +19,12 @@ type TextSize = "default" | "small";
 
 export const PlaygroundImplementation = () => {
   const [inputType, setInputType] = useState<InputType>("optional");
-  const [toggleHelperText, setToggleHelperText] = useState<ToggleHelperText>("on");
+  const [toggleHelperText, setToggleHelperText] =
+    useState<ToggleHelperText>("on");
   const [textSize, setTextSize] = useState<TextSize>("default");
   const [required, setRequired] = useState<TextInputProps["required"]>(false);
   const [helperText, setHelperText] =
     useState<TextInputProps["helperText"]>("Additional content");
-
 
   const element = (
     <TextInput
@@ -45,7 +45,9 @@ export const PlaygroundImplementation = () => {
               selected={inputType}
               onChange={(e) => {
                 setInputType(e.target.value as InputType);
-                (e.target.value=="optional") ? setRequired(true) : setRequired(false);
+                e.target.value == "optional"
+                  ? setRequired(true)
+                  : setRequired(false);
               }}
             >
               <Radio value="optional">Optional</Radio>
@@ -59,7 +61,9 @@ export const PlaygroundImplementation = () => {
               selected={toggleHelperText}
               onChange={(e) => {
                 setToggleHelperText(e.target.value as ToggleHelperText);
-                (e.target.value=="on") ? setHelperText("Additional content") : setHelperText("");
+                e.target.value == "on"
+                  ? setHelperText("Additional content")
+                  : setHelperText("");
               }}
             >
               <Radio value="on">On</Radio>

@@ -23,7 +23,7 @@ import Specs from "./Specs.astro";
 export { Specs };
 
 import Related from "./Related.astro";
-export { Related }
+export { Related };
 
 import HelperTextBehavior from "./subsections/HelperTextBehavior.astro";
 export { HelperTextBehavior };
@@ -37,5 +37,5 @@ export { PasswordInputBehavior };
 import WidthBehavior from "./subsections/WidthBehavior.astro";
 export { WidthBehavior };
 
-import PrefixAndSuffix from "./subsections/PrefixAndSuffix.astro"
-export { PrefixAndSuffix }
+import PrefixAndSuffix from "./subsections/PrefixAndSuffix.astro";
+export { PrefixAndSuffix };

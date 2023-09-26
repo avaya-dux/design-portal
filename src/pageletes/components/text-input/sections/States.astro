@@ -23,9 +23,7 @@ import LayoutWrapper from "./subsections/components/LayoutWrapper.astro";
 <PageleteSection>
   <SectionHeader id={topics.states.id}>{topics.states.title}</SectionHeader>
 
-  <Description>
-    Text input fields can appear in one of five states. 
-  </Description>
+  <Description>Text input fields can appear in one of five states.</Description>
 
   <ColumnLayout bkgColor="white" numOfColumns={3} marginBottom={"0"}>
     <LayoutWrapper label="Default">
@@ -36,15 +34,15 @@ import LayoutWrapper from "./subsections/components/LayoutWrapper.astro";
     </LayoutWrapper>
 
     <LayoutWrapper label="Hover">
-      <Image 
-        src={StateDefaultImage} 
-        alt="Text Input with hover state look like this" 
+      <Image
+        src={StateDefaultImage}
+        alt="Text Input with hover state look like this"
       />
     </LayoutWrapper>
 
     <LayoutWrapper label="Active">
-      <Image 
-        src={StateDisabledImage} 
+      <Image
+        src={StateDisabledImage}
         alt="Text Input with active state look like this"
       />
     </LayoutWrapper>
@@ -72,7 +70,8 @@ import LayoutWrapper from "./subsections/components/LayoutWrapper.astro";
 
   <InfoList type="disc">
     <InfoListItem label="Default">
-      This is the default state for the field, and shows that it is ready to receive data.
+      This is the default state for the field, and shows that it is ready to
+      receive data.
     </InfoListItem>
 
     <InfoListItem label="Hover">
@@ -84,11 +83,15 @@ import LayoutWrapper from "./subsections/components/LayoutWrapper.astro";
     </InfoListItem>
 
     <InfoListItem label="Error">
-      This state shows that something is wrong with the data entered. It may be the wrong data type (e.g. text instead of a date), or it could be a required field that has been left empty.
+      This state shows that something is wrong with the data entered. It may be
+      the wrong data type (e.g. text instead of a date), or it could be a
+      required field that has been left empty.
     </InfoListItem>
 
     <InfoListItem label="Disabled">
-      When disabled, the field cannot be changed and new data cannot be entered. It will remain locked until some other field is populated or a setting is changed. The current value for the field is displayed.
+      When disabled, the field cannot be changed and new data cannot be entered.
+      It will remain locked until some other field is populated or a setting is
+      changed. The current value for the field is displayed.
     </InfoListItem>
   </InfoList>
 </PageleteSection>
