@@ -1,0 +1,194 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Description,
+  ColumnLayout,
+  ImageWrapper,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import image1 from "../imgs/principles-1.svg";
+import image2 from "../imgs/principles-2.svg";
+import image3 from "../imgs/principles-3.svg";
+import image4 from "../imgs/principles-4.svg";
+import image5 from "../imgs/principles-5.svg";
+import image6 from "../imgs/principles-6.svg";
+import image7 from "../imgs/principles-7.svg";
+import image8 from "../imgs/principles-8.svg";
+import image9 from "../imgs/principles-9.svg";
+import image10 from "../imgs/principles-10.svg";
+
+const image1Alt = "Image showing a traffic light.";
+const image2Alt = "Image showing two symbols with an equals sign between them.";
+const image3Alt =
+  "Image showing a set of three sliders in different positions.";
+const image4Alt =
+  "Image showing a circle with two arrows wrapping around it in opposite directions.";
+const image5Alt = "Image showing a stop sign.";
+const image6Alt =
+  "Image showing a circle, a square, a triangle with a single line running through them.";
+const image7Alt =
+  "Image showing a rectangle which is flexed around its center.";
+const image8Alt =
+  "Image showing a rectangle with a circle and two lines inside it.";
+const image9Alt =
+  "Image showing a medical cross with an arrow wrapping around it clockwise.";
+const image10Alt = "Image showing a circle with a dialogue box attached.";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.principles.id}>
+    {topics.principles.title}
+  </SectionHeader>
+
+  <Description>
+    Neo, Avaya’s Design System, is supplemented by a set of core user-centered
+    principles to compose, implement, and evaluate user experiences. These
+    principles are based on user needs and industry best practices. We use these
+    principles to bring the foundational building blocks to life, leading to
+    designs across Avaya products that are consistent, effective, meaningful and
+    engaging.
+  </Description>
+
+  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
+    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image1} alt={image1Alt} />
+    </ImageWrapper>
+    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image2} alt={image2Alt} />
+    </ImageWrapper>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    gap="2rem"
+    numOfColumns={2}
+    marginTop={"1.5rem"}
+  >
+    <div>
+      <h4 class="image-header">Visibility</h4>
+      <Description>
+        Show system status and indicate what's happening.
+      </Description>
+    </div>
+    <div>
+      <h4 class="image-header">Commonality</h4>
+      <Description>
+        Accessible by design. Use familiar metaphors and language.
+      </Description>
+    </div>
+  </ColumnLayout>
+
+  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
+    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image3} alt={image3Alt} />
+    </ImageWrapper>
+    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image4} alt={image4Alt} />
+    </ImageWrapper>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    gap="2rem"
+    numOfColumns={2}
+    marginTop={"1.5rem"}
+  >
+    <div>
+      <h4 class="image-header">Freedom</h4>
+      <Description>
+        Provide defaults and undos. Enable personalization.
+      </Description>
+    </div>
+    <div>
+      <h4 class="image-header">Consistency</h4>
+      <Description>
+        Provide a reliable and consistent experience throughout.
+      </Description>
+    </div>
+  </ColumnLayout>
+
+  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
+    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image5} alt={image5Alt} />
+    </ImageWrapper>
+    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image6} alt={image6Alt} />
+    </ImageWrapper>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    gap="2rem"
+    numOfColumns={2}
+    marginTop={"1.5rem"}
+  >
+    <div>
+      <h4 class="image-header">Error Prevention</h4>
+      <Description>Help users avoid making mistakes.</Description>
+    </div>
+    <div>
+      <h4 class="image-header">Recognition</h4>
+      <Description>
+        Make information and workflows easy to discover.
+      </Description>
+    </div>
+  </ColumnLayout>
+
+  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
+    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image7} alt={image7Alt} />
+    </ImageWrapper>
+    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image8} alt={image8Alt} />
+    </ImageWrapper>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    gap="2rem"
+    numOfColumns={2}
+    marginTop="1.5rem"
+  >
+    <div>
+      <h4 class="image-header">Flexibility</h4>
+      <Description>Make advanced tasks fluid & efficient.</Description>
+    </div>
+    <div>
+      <h4 class="image-header">Minimalism</h4>
+      <Description>Provide only necessary info in an elegant way.</Description>
+    </div>
+  </ColumnLayout>
+
+  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
+    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image9} alt={image9Alt} />
+    </ImageWrapper>
+    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image10} alt={image10Alt} />
+    </ImageWrapper>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    gap="2rem"
+    numOfColumns={2}
+    marginTop={"1.5rem"}
+  >
+    <div>
+      <h4 class="image-header">Error Recovery</h4>
+      <Description>
+        Help users recognize, diagnose and recover from bad situations.
+      </Description>
+    </div>
+    <div>
+      <h4 class="image-header">Help</h4>
+      <Description>
+        Use proactive and in-place hints to guide users.
+      </Description>
+    </div>
+  </ColumnLayout>
+</PageleteSection>
