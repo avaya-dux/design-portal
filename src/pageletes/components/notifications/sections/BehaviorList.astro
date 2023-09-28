@@ -38,19 +38,19 @@ const behaviorDontAltText =
   </Description>
 
   <ImageWrapper padding="0">
-    <Image src={imageOne} alt={imageOneAltText} />
+    <Image src={imageOne.src} alt={imageOneAltText} />
   </ImageWrapper>
 
   <DoAndDont>
     <DoAndDont.DoContainer instructions={behaviorDoAltText}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={behaviorDo} alt={behaviorDoAltText} />
+        <Image src={behaviorDo.src} alt={behaviorDoAltText} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DoContainer>
 
     <DoAndDont.DontContainer instructions={behaviorDontAltText}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={behaviorDont} alt={behaviorDontAltText} />
+        <Image src={behaviorDont.src} alt={behaviorDontAltText} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DontContainer>
   </DoAndDont>

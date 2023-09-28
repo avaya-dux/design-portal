@@ -50,13 +50,13 @@ const progressiveLoadingImgAltText = "Image showing progressive loading";
     <DoAndDont size="wide">
       <DoAndDont.DoContainer instructions={dynamicContentInstruction}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={DynamicImage} alt={dynamicImgAltText} />
+          <Image src={DynamicImage.src} alt={dynamicImgAltText} />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DoContainer>
 
       <DoAndDont.DontContainer instructions={staticContentInstruction}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={StaticImage} alt={staticImgAltText} />
+          <Image src={StaticImage.src} alt={staticImgAltText} />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DontContainer>
     </DoAndDont>
@@ -75,7 +75,7 @@ const progressiveLoadingImgAltText = "Image showing progressive loading";
       of the viewport, interactive components, and variable text.
     </Description>
     <ImageWrapper>
-      <Image src={progressiveLoadingImage} alt={progressiveLoadingImgAltText} />
+      <Image src={progressiveLoadingImage.src} alt={progressiveLoadingImgAltText} />
     </ImageWrapper>
   </PageleteSubSection>
 </PageleteSection>

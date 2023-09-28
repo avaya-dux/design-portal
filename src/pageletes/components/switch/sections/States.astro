@@ -33,23 +33,23 @@ const unselectedDisabledImageAltText = "Unselected switch with disabled state";
 
   <ColumnLayout bkgColor="white" numOfColumns={4}>
     <StackedLayout label="Off">
-      <Image src={StateUnselectedImage} alt={unselectedImageAltText} />
+      <Image src={StateUnselectedImage.src} alt={unselectedImageAltText} />
     </StackedLayout>
 
     <StackedLayout label="On">
-      <Image src={StateSelectedImage} alt={selectedImageAltText} />
+      <Image src={StateSelectedImage.src} alt={selectedImageAltText} />
     </StackedLayout>
 
     <StackedLayout label="Off - Disabled">
       <Image
-        src={StateSelectedDisabledImage}
+        src={StateSelectedDisabledImage.src}
         alt={selectedDisabledImageAltText}
       />
     </StackedLayout>
 
     <StackedLayout label="On - Disabled">
       <Image
-        src={StateUnselectedDisabledImage}
+        src={StateUnselectedDisabledImage.src}
         alt={unselectedDisabledImageAltText}
       />
     </StackedLayout>
