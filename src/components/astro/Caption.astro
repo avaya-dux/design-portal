@@ -5,8 +5,7 @@ export interface Props {
   title?: string | undefined;
 }
 
-const { title="" } = Astro.props as Props;
-
+const { title = "" } = Astro.props as Props;
 ---
 
 <div>
