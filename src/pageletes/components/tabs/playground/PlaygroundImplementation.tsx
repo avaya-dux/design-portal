@@ -16,7 +16,7 @@ import { useCallback, useMemo, useState } from "react";
 
 import { Playground } from "components/react";
 import {
-  prettyPrintReactElementToHtml,
+  // prettyPrintReactElementToHtml, // TODO: fix
   prettyPrintReactElementToString,
 } from "helpers/utils";
 
@@ -71,7 +71,9 @@ export const PlaygroundImplementation = () => {
     return [
       element,
       prettyPrintReactElementToString(element),
-      prettyPrintReactElementToHtml(element),
+      // TODO: fix
+      // prettyPrintReactElementToHtml(element),
+      "In progress",
     ];
   }, [orientation, createTab, createTabPanel]);
   return (

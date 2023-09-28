@@ -2,7 +2,10 @@ import { Checkbox, CheckboxGroup, Table } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components/react";
-import { prettyPrintReact, prettyPrintReactElementToHtml } from "helpers";
+import {
+  // prettyPrintReactElementToHtml, // TODO: fix
+  prettyPrintReactElementToHtml,
+} from "helpers";
 
 import styles from "./PlaygroundImplementation.module.css";
 
@@ -47,18 +50,13 @@ export const PlaygroundImplementation = () => {
       />
     );
 
-    const reactString = prettyPrintReact(`
-<Table
-  columns={${JSON.stringify(columns, null, 2)}}
-  data={${JSON.stringify(data, null, 2)}}
-  handleRefresh={() => setData(data.slice(1))}
-  rowHeight="${compact ? "compact" : "large"}"
-  selectableRows="${selectable ? "single" : "none"}"
-  showPagination={${showPagination}}
-/>
-    `);
-
-    return [element, reactString, prettyPrintReactElementToHtml(element)];
+    return [
+      element,
+      // TODO: fix
+      // prettyPrintReactElementToHtml(element),
+      "In progress",
+      prettyPrintReactElementToHtml(element),
+    ];
   }, [compact, data, selectable, showPagination]);
 
   return (

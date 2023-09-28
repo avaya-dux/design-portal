@@ -2,7 +2,7 @@ import { Button, Sheet, type SheetProps, Switch } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 import { Playground } from "components/react";
 import {
-  prettyPrintReactElementToHtml,
+  // prettyPrintReactElementToHtml, // TODO: fix
   prettyPrintReactElementToString,
 } from "helpers";
 
@@ -51,7 +51,9 @@ export const PlaygroundImplementation = () => {
     return [
       element,
       prettyPrintReactElementToString(element),
-      prettyPrintReactElementToHtml(element),
+      // TODO: fix
+      // prettyPrintReactElementToHtml(element),
+      "In progress",
     ];
   }, [hasActions, hasAnimation, isOpen]);
 

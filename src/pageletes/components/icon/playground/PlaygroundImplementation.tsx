@@ -11,7 +11,7 @@ import { useMemo, useState } from "react";
 
 import { Playground } from "components/react";
 import {
-  prettyPrintReactElementToHtml,
+  // prettyPrintReactElementToHtml, // TODO: fix
   prettyPrintReactElementToString,
 } from "helpers";
 
@@ -38,7 +38,10 @@ export const PlaygroundImplementation = () => {
 
     const react = prettyPrintReactElementToString(element);
 
-    const html = prettyPrintReactElementToHtml(element);
+    // const html = prettyPrintReactElementToHtml(element);
+    // TODO: fix
+    // prettyPrintReactElementToHtml(element),
+    const html = "In progress";
 
     return [element, react, html];
   }, [size, status, type]);
