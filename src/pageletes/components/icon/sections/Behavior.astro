@@ -128,14 +128,14 @@ const statusIndcatorsDontImgAltText =
     </Description>
 
     <ImageWrapper>
-      <Image src={statusIndicatorsImg} alt={statusIndicatorsImgAltText} />
+      <Image src={statusIndicatorsImg.src} alt={statusIndicatorsImgAltText} />
     </ImageWrapper>
 
     <DoAndDont>
       <DoAndDont.DoContainer instructions={statusIndicatorDoInstructions}>
         <DoAndDont.ImageExampleContainer>
           <Image
-            src={statusIndicatorDoImage}
+            src={statusIndicatorDoImage.src}
             alt={statusIndcatorsDoImgAltText}
           />
         </DoAndDont.ImageExampleContainer>
@@ -144,7 +144,7 @@ const statusIndcatorsDontImgAltText =
       <DoAndDont.DoContainer instructions={statusIndicatorDontInstructions}>
         <DoAndDont.ImageExampleContainer>
           <Image
-            src={statusIndicatorDontImage}
+            src={statusIndicatorDontImage.src}
             alt={statusIndcatorsDontImgAltText}
           />
         </DoAndDont.ImageExampleContainer>
@@ -163,7 +163,7 @@ const statusIndcatorsDontImgAltText =
 
     <ColumnLayout bkgColor="white" numOfColumns={1}>
       <StackedLayout>
-        <Image src={alignmentImage1} alt={alignmentImage1AltText} />
+        <Image src={alignmentImage1.src} alt={alignmentImage1AltText} />
       </StackedLayout>
     </ColumnLayout>
   </PageleteSubSection>
