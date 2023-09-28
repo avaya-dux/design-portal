@@ -8,6 +8,8 @@ import {
   SectionHeader,
 } from "components/astro";
 
+import { MotionWidget } from "../widget";
+
 import { topics } from "../static";
 
 import image1 from "../imgs/motion-examples.svg";
@@ -22,6 +24,8 @@ const image1Alt = "Motion playground goes here.";
     Easing and duration can be combined to create different types of motion
     effects. Use the widget below to explore different combinations.
   </Description>
+
+  <MotionWidget client:load />
 
   <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={1}>
     <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
