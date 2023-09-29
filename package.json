@@ -57,7 +57,7 @@
   "dependencies": {
     "@astrojs/netlify": "3.0.2",
     "@astrojs/prefetch": "0.4.0",
-    "@avaya/neo-react": "1.0.3-alpha",
+    "@avaya/neo-react": "1.0.3-beta",
     "@nanostores/react": "0.7.1",
     "clsx": "2.0.0",
     "diffable-html": "5.0.0",
