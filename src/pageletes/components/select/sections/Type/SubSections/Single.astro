@@ -37,19 +37,19 @@ const dontImgAltText =
   </Description>
 
   <ImageWrapper marginBottom={"3rem"} padding="0">
-    <Image src={img1} alt={img1alt} />
+    <Image src={img1.src} alt={img1alt} />
   </ImageWrapper>
 
   <DoAndDont>
     <DoAndDont.DoContainer instructions={doInstructions}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={doImage} alt={doImgAltText} />
+        <Image src={doImage.src} alt={doImgAltText} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DoContainer>
 
     <DoAndDont.DontContainer instructions={dontInstructions}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={dontImage} alt={dontImgAltText} />
+        <Image src={dontImage.src} alt={dontImgAltText} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DontContainer>
   </DoAndDont>

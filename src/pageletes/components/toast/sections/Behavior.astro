@@ -105,14 +105,14 @@ const dont2Instructions = "Add text here";
     </Description>
 
     <ImageWrapper>
-      <Image src={PlacementImage} alt={placementImgAltText} />
+      <Image src={PlacementImage.src} alt={placementImgAltText} />
     </ImageWrapper>
 
     <DoAndDont>
       <DoAndDont.DoContainer instructions={do1Instructions}>
         <DoAndDont.ImageExampleContainer>
           <Image
-            src={doImage1}
+            src={doImage1.src}
             alt="Image showing a toast notifying user that a file was successfuly saved"
           />
         </DoAndDont.ImageExampleContainer>
@@ -121,7 +121,7 @@ const dont2Instructions = "Add text here";
       <DoAndDont.DontContainer instructions={dont1Instructions}>
         <DoAndDont.ImageExampleContainer>
           <Image
-            src={dontImage1}
+            src={dontImage1.src}
             alt="Image showing a toast notifying user about an error condition"
           />
         </DoAndDont.ImageExampleContainer>
@@ -153,7 +153,7 @@ const dont2Instructions = "Add text here";
       <DoAndDont.DoContainer instructions={do2Instructions}>
         <DoAndDont.ImageExampleContainer>
           <Image
-            src={doImage2}
+            src={doImage2.src}
             alt="Image showing a toast notifying user that a file was successfuly saved"
           />
         </DoAndDont.ImageExampleContainer>
@@ -162,7 +162,7 @@ const dont2Instructions = "Add text here";
       <DoAndDont.DontContainer instructions={dont2Instructions}>
         <DoAndDont.ImageExampleContainer>
           <Image
-            src={dontImage2}
+            src={dontImage2.src}
             alt="Image showing a toast notifying user about an error condition"
           />
         </DoAndDont.ImageExampleContainer>

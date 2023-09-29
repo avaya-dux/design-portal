@@ -41,7 +41,7 @@ const dontImg1AltText =
   <ColumnLayout bkgColor="#f1f1f1" numOfColumns={1} marginBottom="3rem">
     <StackedLayout vPadding="0">
       <Image
-        src={condensedImage1}
+        src={condensedImage1.src}
         alt="Image showing side navigation with icons in top level items only."
       />
     </StackedLayout>
@@ -55,7 +55,7 @@ const dontImg1AltText =
   <ColumnLayout bkgColor="#f1f1f1" numOfColumns={1}>
     <StackedLayout vPadding="0">
       <Image
-        src={condensedImage2}
+        src={condensedImage2.src}
         alt="Image showing side navigation without icons."
       />
     </StackedLayout>
@@ -64,13 +64,13 @@ const dontImg1AltText =
   <DoAndDont>
     <DoAndDont.DoContainer instructions={do1Instructions}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={doImage1} alt={doImg1AltText} />
+        <Image src={doImage1.src} alt={doImg1AltText} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DoContainer>
 
     <DoAndDont.DontContainer instructions={dont1Instructions}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={dontImage1} alt={dontImg1AltText} />
+        <Image src={dontImage1.src} alt={dontImg1AltText} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DontContainer>
   </DoAndDont>

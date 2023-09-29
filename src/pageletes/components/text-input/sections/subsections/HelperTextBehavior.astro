@@ -26,14 +26,17 @@ const helperDontInstructions2 = "Do not use placeholders unnecessarily.";
 <DoAndDont>
   <DoAndDont.DoContainer instructions={helperDoInstructions1}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={helperDoImage1} alt="Image showing correct helper text." />
+      <Image
+        src={helperDoImage1.src}
+        alt="Image showing correct helper text."
+      />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DoContainer>
 
   <DoAndDont.DontContainer instructions={helperDontInstructions1}>
     <DoAndDont.ImageExampleContainer>
       <Image
-        src={helperDontImage1}
+        src={helperDontImage1.src}
         alt="Image showing improper helper text inside placeholder"
       />
     </DoAndDont.ImageExampleContainer>
@@ -43,14 +46,17 @@ const helperDontInstructions2 = "Do not use placeholders unnecessarily.";
 <DoAndDont>
   <DoAndDont.DoContainer instructions={helperDoInstructions2}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={helperDoImage2} alt="Image showing correct helper text." />
+      <Image
+        src={helperDoImage2.src}
+        alt="Image showing correct helper text."
+      />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DoContainer>
 
   <DoAndDont.DontContainer instructions={helperDontInstructions2}>
     <DoAndDont.ImageExampleContainer>
       <Image
-        src={helperDontImage2}
+        src={helperDontImage2.src}
         alt="Image showing improper helper text inside placeholder"
       />
     </DoAndDont.ImageExampleContainer>
