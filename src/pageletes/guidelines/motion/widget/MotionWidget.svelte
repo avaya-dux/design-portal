@@ -1,17 +1,25 @@
 <script>
 	import { fade, fly } from 'svelte/transition';
-	let visible = true;
+
+  const options = [
+		{ label: 'Ease', motion: "ease" },
+		{ label: 'Ease In', motion: "ease-in" },
+		{ label: 'Ease Out', motion: "ease-out" }
+	];
+
+  let selected = options[0];
 </script>
 
 <div class="widget-container">
   <div class="options-panel">
-    <label>
-      <input type="checkbox" bind:checked={visible} />
-      visible
-    </label>
+    <select bind:value={selected}>
+      {#each options as option}
+        <option value={option}>{option.label}</option>
+      {/each}
+    </select>
   </div>
   <div class="animation-panel">
-    {#if visible}
+    {#if selected.motion=== "ease"}
       <p in:fly={{ y: 100, duration: 2000 }} out:fade>Flies in, fades out</p>
     {/if}
   </div>
