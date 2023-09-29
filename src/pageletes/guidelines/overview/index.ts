@@ -1,2 +1,1 @@
-import Intro from "./Intro.astro";
-export { Intro };
+export * from "./sections";
