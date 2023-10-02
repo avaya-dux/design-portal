@@ -1,9 +1,9 @@
+import type { AvatarProps } from "@avaya/neo-react";
 import {
   Avatar,
   Radio,
   RadioGroup,
   Select,
-  type AvatarProps,
   SelectOption,
 } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
@@ -23,64 +23,31 @@ export const storybook =
 import avatarImg from "../imgs/avatarImg.png";
 
 type TypeOption = "generic" | "image" | "bot" | "initials";
-type SizeOption = "sm" | "md" | "lg";
-type StatusOption =
-  | "none"
-  | "available"
-  | "away"
-  | "busy"
-  | "offline"
-  | "do-not-disturb";
 
 export const PlaygroundImplementation = () => {
   const [type, setType] = useState<TypeOption>("generic");
-  const [sizeOption, setSizeOption] = useState<SizeOption>("md");
-  const [statusOption, setStatusOption] = useState<StatusOption>("none");
-  const [initialsValue, setInitialsValue] = useState<initialsValue>("");
-  const [image, setImage] = useState<image>(null);
-
-  const getVariant = (type: TypeOption) => {
-    const strType = type as string;
-    if (strType === "image") {
-      setImage(avatarImg);
-      setInitialsValue("");
-      return "generic";
-    }
-
-    setImage(null);
-
-    if (strType === "initials") {
-      setInitialsValue("TC"); // Setting to arbitrary "TC" value
-    } else {
-      setInitialsValue("");
-    }
-
-    return strType;
-  };
+  const [size, setSize] = useState<AvatarProps["size"]>("md");
+  const [status, setStatus] = useState<AvatarProps["status"] | "none">("none");
 
   const [element, react, html] = useMemo(() => {
-    const variant = getVariant(type);
-    let props: AvatarProps = {
-      variant: variant,
-      size: sizeOption,
-      status: statusOption,
-    };
-
-    if (initialsValue) {
-      props = { ...props, initials: initialsValue };
-    }
-
-    if (image) {
-      props = { ...props, image };
-    }
-
-    const element = <Avatar {...props} />;
+    const variant: AvatarProps["variant"] =
+      type === "bot" || type === "generic" ? type : undefined;
+    const element = (
+      <Avatar
+        size={size}
+        status={status as AvatarProps["status"]}
+        variant={variant}
+        label="Joey Joe Joe Jr."
+        initials={type === "initials" ? "TS" : undefined}
+        image={type === "image" ? avatarImg.src : undefined}
+      />
+    );
     return [
       element,
       prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
     ];
-  }, [type, sizeOption, statusOption, initialsValue, image]);
+  }, [type, size, status]);
 
   return (
     <Playground
@@ -90,9 +57,7 @@ export const PlaygroundImplementation = () => {
             <Select
               aria-label="Avatar Type"
               value={type}
-              onChange={(value: string) => {
-                setType(value as TypeOption);
-              }}
+              onChange={(value) => setType(value as TypeOption)}
             >
               <SelectOption value="generic">Generic</SelectOption>
               <SelectOption value="image">Image</SelectOption>
@@ -103,9 +68,9 @@ export const PlaygroundImplementation = () => {
           <Playground.OptionsSection title="Size">
             <RadioGroup
               groupName="size"
-              selected={sizeOption}
+              selected={size}
               onChange={(e: { target: { value: string } }) => {
-                setSizeOption(e.target.value as SizeOption);
+                setSize(e.target.value as AvatarProps["size"]);
               }}
             >
               <Radio value="sm">Small</Radio>
@@ -114,13 +79,12 @@ export const PlaygroundImplementation = () => {
             </RadioGroup>
           </Playground.OptionsSection>
 
-          <Playground.OptionsSection title="Right Side">
+          <Playground.OptionsSection title="Status Icon">
             <RadioGroup
               groupName="status-options"
-              selected={statusOption}
+              selected={status}
               onChange={(e: { target: { value: string } }) => {
-                console.log(e.target.value);
-                setStatusOption(e.target.value as StatusOption);
+                setStatus(e.target.value as AvatarProps["status"]);
               }}
             >
               <Radio value="none">None</Radio>

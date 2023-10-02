@@ -114,7 +114,6 @@ export const PlaygroundImplementation = () => {
               groupName="left-options"
               selected={leftOptions}
               onChange={(e: { target: { value: string } }) => {
-                console.log(e.target.value);
                 setLeftOptions(e.target.value as ListLeftOption);
               }}
             >

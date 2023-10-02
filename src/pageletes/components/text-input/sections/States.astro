@@ -28,21 +28,21 @@ import LayoutWrapper from "./subsections/components/LayoutWrapper.astro";
   <ColumnLayout bkgColor="white" numOfColumns={3} marginBottom="0">
     <LayoutWrapper label="Default">
       <Image
-        src={StateActiveImage}
+        src={StateActiveImage.src}
         alt="Text Input with default state looks like this"
       />
     </LayoutWrapper>
 
     <LayoutWrapper label="Hover">
       <Image
-        src={StateDefaultImage}
+        src={StateDefaultImage.src}
         alt="Text Input with hover state look like this"
       />
     </LayoutWrapper>
 
     <LayoutWrapper label="Active">
       <Image
-        src={StateDisabledImage}
+        src={StateDisabledImage.src}
         alt="Text Input with active state look like this"
       />
     </LayoutWrapper>
@@ -55,14 +55,14 @@ import LayoutWrapper from "./subsections/components/LayoutWrapper.astro";
   >
     <LayoutWrapper label="Error">
       <Image
-        src={StateHoverImage}
+        src={StateHoverImage.src}
         alt="Text Input with error state look like this"
       />
     </LayoutWrapper>
 
     <LayoutWrapper label="Disabled">
       <Image
-        src={StateErrorImage}
+        src={StateErrorImage.src}
         alt="Text Input with disabled state look like this"
       />
     </LayoutWrapper>

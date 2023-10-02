@@ -42,17 +42,23 @@ const dontImg1AltText =
   <ColumnLayout bkgColor="white" numOfColumns={3} marginBottom={"0"}>
     <StackedLayout label="Available">
       <Image
-        src={statusAvailableImage}
+        src={statusAvailableImage.src}
         alt="Image showing avatar with available state"
       />
     </StackedLayout>
 
     <StackedLayout label="Away">
-      <Image src={statusAwayImage} alt="Image showing avatar with away state" />
+      <Image
+        src={statusAwayImage.src}
+        alt="Image showing avatar with away state"
+      />
     </StackedLayout>
 
     <StackedLayout label="Busy">
-      <Image src={statusBusyImage} alt="Image showing avatar with busy state" />
+      <Image
+        src={statusBusyImage.src}
+        alt="Image showing avatar with busy state"
+      />
     </StackedLayout>
   </ColumnLayout>
   <ColumnLayout
@@ -63,14 +69,14 @@ const dontImg1AltText =
   >
     <StackedLayout label="Do Not Disturb">
       <Image
-        src={statusDNDImage}
+        src={statusDNDImage.src}
         alt="Image showing avatar with do not disturb state"
       />
     </StackedLayout>
 
     <StackedLayout label="Offline">
       <Image
-        src={statusOfflineImage}
+        src={statusOfflineImage.src}
         alt="Image showing avatar with offline state"
       />
     </StackedLayout>
@@ -104,13 +110,13 @@ const dontImg1AltText =
   <DoAndDont>
     <DoAndDont.DoContainer instructions={do1Instructions}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={doImage1} alt={doImg1AltText} />
+        <Image src={doImage1.src} alt={doImg1AltText} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DoContainer>
 
     <DoAndDont.DontContainer instructions={dont1Instructions}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={dontImage1} alt={dontImg1AltText} />
+        <Image src={dontImage1.src} alt={dontImg1AltText} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DontContainer>
   </DoAndDont>

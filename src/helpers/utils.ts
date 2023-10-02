@@ -1,12 +1,12 @@
+import { elementToStaticHtml } from "@avaya/neo-react";
 import toDiffableHtml from "diffable-html";
 
 import type { ReactElement } from "react";
-import { renderToStaticMarkup } from "react-dom/server";
 import type { Options } from "react-element-to-jsx-string";
 import reactElementToJSXString from "react-element-to-jsx-string";
 
 export const prettyPrintReactElementToHtml = (element: ReactElement) => {
-  return prettyPrintHtml(renderToStaticMarkup(element));
+  return elementToStaticHtml(element);
 };
 
 export const prettyPrintReactElementToString = (

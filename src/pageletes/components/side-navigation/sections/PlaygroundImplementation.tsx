@@ -28,20 +28,22 @@ export const PlaygroundImplementation = () => {
     const expandedStates = [true, false];
 
     const accountLinkItems = [
-      <LeftNav.LinkItem href="http://example.com/1">Account</LeftNav.LinkItem>,
-      <LeftNav.LinkItem href="http://example.com/2">
+      <LeftNav.LinkItem key="account-link-item-1" href="http://example.com/1">
+        Account
+      </LeftNav.LinkItem>,
+      <LeftNav.LinkItem key="account-link-item-2" href="http://example.com/2">
         Business Rules
       </LeftNav.LinkItem>,
-      <LeftNav.LinkItem href="http://example.com/3">
+      <LeftNav.LinkItem key="account-link-item-3" href="http://example.com/3">
         Contact Centers
       </LeftNav.LinkItem>,
     ];
 
     const analyticsLinkItems = [
-      <LeftNav.LinkItem href="http://example.com/4">
+      <LeftNav.LinkItem key="analytics-link-item-1" href="http://example.com/4">
         Dashboard
       </LeftNav.LinkItem>,
-      <LeftNav.LinkItem href="http://example.com/5">
+      <LeftNav.LinkItem key="analytics-link-item-2" href="http://example.com/5">
         Usage Report
       </LeftNav.LinkItem>,
     ];
@@ -66,11 +68,16 @@ export const PlaygroundImplementation = () => {
           expanded={expandedStates[index]}
           icon={categoryIcons[index]}
           label={category}
+          key={`icon-category-${index}`}
         >
           {getLinkItems(category)}
         </LeftNav.NavCategory>
       ) : (
-        <LeftNav.NavCategory expanded={expandedStates[index]} label={category}>
+        <LeftNav.NavCategory
+          expanded={expandedStates[index]}
+          label={category}
+          key={`nonicon-category-${index}`}
+        >
           {getLinkItems(category)}
         </LeftNav.NavCategory>
       );
@@ -79,12 +86,17 @@ export const PlaygroundImplementation = () => {
     const settingsTopLinkItem =
       iconType === "icon" ? (
         <LeftNav.TopLinkItem
+          key="settings-top-link-item-1"
           icon="settings"
           label="Settings"
           href="#settings"
         />
       ) : (
-        <LeftNav.TopLinkItem label="Settings" href="#settings" />
+        <LeftNav.TopLinkItem
+          key="settings-top-link-item-2"
+          label="Settings"
+          href="#settings"
+        />
       );
 
     const element = (

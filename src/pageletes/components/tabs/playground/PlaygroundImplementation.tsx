@@ -34,6 +34,7 @@ export const PlaygroundImplementation = () => {
       const props: TabProps = {
         id: `tab${id}`,
         children: `Tab item ${id}`,
+        key: id,
       };
       if (withIcon) {
         props.icon = icons[parseInt(id)];
