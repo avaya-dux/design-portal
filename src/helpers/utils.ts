@@ -1,10 +1,12 @@
 import toDiffableHtml from "diffable-html";
-import * as ReactDOMServer from "react-dom/server";
+
+import type { ReactElement } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
 import type { Options } from "react-element-to-jsx-string";
 import reactElementToJSXString from "react-element-to-jsx-string";
 
 export const prettyPrintReactElementToHtml = (element: ReactElement) => {
-  return prettyPrintHtml(ReactDOMServer.renderToStaticMarkup(element));
+  return prettyPrintHtml(renderToStaticMarkup(element));
 };
 
 export const prettyPrintReactElementToString = (
