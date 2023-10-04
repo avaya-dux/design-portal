@@ -1,0 +1,57 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Caption,
+  ColumnLayout,
+  Description,
+  ImageWrapper,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import image1 from "../imgs/sound-use-1.svg";
+import image2 from "../imgs/sound-use-2.svg";
+
+const image1Alt =
+  "Image showing a telephone icon with sound waves emanating from it";
+const image2Alt = "Image showing notification and alert UI elements.";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.whenToUse.id}>
+    {topics.whenToUse.title}
+  </SectionHeader>
+
+  <Description>
+    As with our foundational components, sound should be used to convey
+    information in meaningful context. There are some situations where sounds
+    are a useful addition.
+  </Description>
+
+  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
+    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image1.src} alt={image1Alt} />
+    </ImageWrapper>
+    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image2.src} alt={image2Alt} />
+    </ImageWrapper>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    gap="2rem"
+    numOfColumns={2}
+    marginTop={"1.5rem"}
+  >
+    <Caption title="Speech">
+      Traditional telephony sounds, such as incoming and outgoing ringtones,
+      dial tones, and conferencing tones when entering and exiting a space, all
+      help to convey the current state within the environment.
+    </Caption>
+    <Caption title="Notifications and Alerts">
+      In-product notifications and alerts can bring highlight these elements.
+    </Caption>
+  </ColumnLayout>
+</PageleteSection>
