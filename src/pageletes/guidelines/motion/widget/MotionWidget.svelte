@@ -8,6 +8,7 @@
 	];
 
   let selected = options[0];
+  let inMotion = true;
 </script>
 
 <div class="widget-container">
@@ -63,14 +64,14 @@
             </div>
           </div>
         </form>
-        <button id="start-btn" class="neo-btn neo-btn-primary neo-btn-primary--default">
+        <button on:click={() => inMotion = !inMotion } id="start-btn" class="neo-btn neo-btn-primary neo-btn-primary--default">
           Start
         </button>
   </div>
   <div class="animation-panel">
-    {#if selected.motion=== "ease"}
-      <div class="boxy"></div>
-    {/if}
+
+    <div class="boxy"></div>
+
   </div>
 </div>
 
@@ -112,6 +113,11 @@
   border: 4px solid var(--neo-color-base-200);
   height: 100px;
   width: 100px;
+  transition: transform 1s;
+}
+
+.animation-panel:hover .boxy {
+  transform: translateX(100%);
 }
 
 .drawer {
