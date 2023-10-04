@@ -101,6 +101,9 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
   nav.neo-navbar .neo-nav--left .neo-badge__navbutton {
     display: block;
   }
+  body nav.neo-navbar .neo-nav--left a img {
+    height: 55px;
+  }
 }
 
 .neo-nav--left .neo-skipnav {
