@@ -23,49 +23,49 @@
       <form class="neo-form flex-right-item">
         <div class="neo-form-control">
           <div class="neo-input-group">
-            <label id="top-label" for="Select Option">
-              Select Option
-            </label>
             <div class="neo-input-group--inline" role="radiogroup" aria-labelledby="top-label">
               <input
                 class="neo-radio"
                 type="radio"
                 name="Select Option"
-                value="Calendar"
-                id="calendar"
+                value="Fast"
+                id="fast"
                 role="radio"
                 aria-checked="false"
               >
-              <label for="calendar">
-                Calendar
+              <label for="fast">
+                Fast
               </label>
               <input
                 class="neo-radio"
                 type="radio"
                 name="Select Option"
-                value="Calculator"
-                id="calculator"
+                value="Medium"
+                id="medium"
                 role="radio"
                 aria-checked="false"
               >
-              <label for="calculator">
-                Calculator
+              <label for="medium">
+                Medium
               </label>
               <input
                 class="neo-radio"
                 type="radio"
                 name="Select Option"
-                value="Notes"
-                id="notes"
+                value="Slow"
+                id="slow"
                 role="radio"
                 aria-checked="false"
               >
-              <label for="notes">
-                Notes
+              <label for="slow">
+                Slow
               </label>
             </div>
           </div>
-      </form>
+        </form>
+        <button id="start-btn" class="neo-btn neo-btn-primary neo-btn-primary--default">
+          Start
+        </button>
   </div>
   <div class="animation-panel">
     {#if selected.motion=== "ease"}
@@ -78,7 +78,6 @@
 <style>
 .widget-container {
   border: 1px solid var(--neo-color-base-200);
-  height: 400px;
 }
 
 .options-panel {
@@ -86,25 +85,52 @@
 
   display: flex;
 
-  flex-wrap: no-wrap;
   flex-direction: row;
-  gap: 20px;
+  gap: 1.2rem;
+  align-items: center;
 }
 
 .flex-left-item {
   flex: 30%;
-  padding: 10px;
+  margin-top: 0.8rem;
+  padding-left: 1rem;
 }
 .flex-right-item {
   flex: 70%;
+  margin-top: 2.2rem;
+}
+
+.animation-panel {
+  height: 200px;
+  clip-path: inset(10px 20px 10px 20px)
 }
 
 .boxy {
   position: relative;
-		top: 400px;
+		top: 10px;
 		left: 400px;
   border: 4px solid var(--neo-color-base-200);
   height: 100px;
   width: 100px;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #ddd;
+  padding: 16px;
+  height: 100vh;
+  width: 200px;
+  border-left: 1px solid rgba(0, 0, 0, .1);
+  box-shadow: -2px 0px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+#motion-select {
+  margin-top: 5px;
+}
+
+#start-btn {
+  height: 35px;
 }
 </style>
