@@ -1,26 +1,19 @@
 <script>
 	import { fade, fly, slide } from 'svelte/transition';
-	import { sineIn, sineOut } from 'svelte/easing';
+	import { quintIn, quintOut } from 'svelte/easing';
 
-  const options = [
-		{ label: 'Ease', motion: "ease" },
-		{ label: 'Ease In', motion: "ease-in" },
-		{ label: 'Ease Out', motion: "ease-out" }
-	];
-
-  let selected = options[0];
   let inMotion = true;
   let buttonLabel = "Ease Out";
-  let easingFunc = sineIn;
+  let easingFunc = quintIn;
   let speed = 150;
 
   const onMotionChange = () => {
     inMotion = !inMotion;
     if (inMotion) {
-      easingFunc = sineOut;
+      easingFunc = quintOut;
       buttonLabel = "Ease Out";
     } else {
-      easingFunc = sineIn;
+      easingFunc = quintIn;
       buttonLabel = "Ease In";
     }
   }
@@ -90,7 +83,7 @@
   </div>
   <div class="animation-panel">
     {#if inMotion}
-      <div class="boxy" transition:fly={{ duration: speed, easing: quintIn, x:500 }}></div>
+      <div class="boxy" transition:fly={{ duration: speed, easing: easingFunc, x:500 }}></div>
     {/if}
   </div>
 </div>
@@ -133,12 +126,7 @@
   border: 4px solid var(--neo-color-base-200);
   height: 100px;
   width: 100px;
-  /* transition: transform 1s; */
 }
-
-/* .animation-panel:hover .boxy {
-  transform: translateX(100%);
-} */
 
 .drawer {
   position: fixed;
