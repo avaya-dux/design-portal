@@ -1,5 +1,6 @@
 <script>
-	import { fade, fly } from 'svelte/transition';
+	import { fade, fly, slide } from 'svelte/transition';
+	import { quintIn, quintOut } from 'svelte/easing';
 
   const options = [
 		{ label: 'Ease', motion: "ease" },
@@ -9,13 +10,22 @@
 
   let selected = options[0];
   let inMotion = true;
+  let easingFunc = undefined;
+
+  const onMotionChange = () => {
+    if (selected.motion === "ease-out") {
+      easingFunc = quintOut;
+    } else {
+      easingFunc = quintIn;
+    }
+  }
 </script>
 
 <div class="widget-container">
   <div class="options-panel">
     <div class="neo-select flex-left-item">
       <label for="motion-select">Type</label>
-      <select id="motion-select" bind:value={selected}>
+      <select id="motion-select" bind:value={selected} on:change={onMotionChange}>
         {#each options as option}
           <option value={option}>{option.label}</option>
         {/each}
@@ -70,8 +80,9 @@
   </div>
   <div class="animation-panel">
 
-    <div class="boxy"></div>
-
+    {#if inMotion}
+      <div class="boxy" transition:fly={{ duration: 1000, easing: easingFunc, x:500 }}></div>
+    {/if}
   </div>
 </div>
 
@@ -113,12 +124,12 @@
   border: 4px solid var(--neo-color-base-200);
   height: 100px;
   width: 100px;
-  transition: transform 1s;
+  /* transition: transform 1s; */
 }
 
-.animation-panel:hover .boxy {
+/* .animation-panel:hover .boxy {
   transform: translateX(100%);
-}
+} */
 
 .drawer {
   position: fixed;
