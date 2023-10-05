@@ -1,10 +1,7 @@
 import { TopNav } from "@avaya/neo-react";
 import { useCallback, useEffect, useRef } from "react";
 
-import {
-  isLeftNavigationOpen,
-  leftNavToggleButtonRef,
-} from "components/react/utils/layoutState";
+import { isLeftNavigationOpen, leftNavToggleButtonRef } from "components/react/utils/layoutState";
 
 import type { PageAstroInstance } from "helpers/types";
 
@@ -122,26 +119,26 @@ const Logo = () => (
     <picture>
       <source
         media="(max-width: 320px) and (prefers-color-scheme: dark)"
-        srcSet="/imgs/logo-condensed-dark.svg"
+        srcSet="/imgs/logo-mobile-dark.svg"
       />
       <source
         media="(max-width: 320px)"
-        srcSet="/imgs/logo-condensed-light.svg"
+        srcSet="/imgs/logo-mobile-light.svg"
       />
 
       <source
-        media="(max-width: 799px) and (prefers-color-scheme: dark)"
-        srcSet="/imgs/logo-full-dark.svg"
-      />
-      <source media="(max-width: 799px)" srcSet="/imgs/logo-full-light.svg" />
-
-      <source
-        media="(max-width: 1279px) and (prefers-color-scheme: dark)"
+        media="(min-width: 321px) and (max-width: 799px) and (prefers-color-scheme: dark)"
         srcSet="/imgs/logo-condensed-dark.svg"
       />
+      <source media="(min-width: 321px) and (max-width: 799px)" srcSet="/imgs/logo-condensed-light.svg" />
+
       <source
-        media="(max-width: 1279px)"
-        srcSet="/imgs/logo-condensed-light.svg"
+        media="(min-width: 800px) and (max-width: 1279px) and (prefers-color-scheme: dark)"
+        srcSet="/imgs/logo-full-dark.svg"
+      />
+      <source
+        media="(min-width: 800px) and (max-width: 1279px)"
+        srcSet="/imgs/logo-full-light.svg"
       />
 
       <source
