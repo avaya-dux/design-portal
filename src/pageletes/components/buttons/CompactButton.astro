@@ -26,13 +26,16 @@ const compactButtonDontImgAltText =
 <DoAndDont>
   <DoAndDont.DoContainer instructions={compactButtonDoInstructions}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={compactButtonDoImage} alt={compactButtonDotImgAltText} />
+      <Image src={compactButtonDoImage.src} alt={compactButtonDotImgAltText} />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DoContainer>
 
   <DoAndDont.DontContainer instructions={compactButtonDontInstructions}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={compactButtonDontImage} alt={compactButtonDontImgAltText} />
+      <Image
+        src={compactButtonDontImage.src}
+        alt={compactButtonDontImgAltText}
+      />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DontContainer>
 </DoAndDont>

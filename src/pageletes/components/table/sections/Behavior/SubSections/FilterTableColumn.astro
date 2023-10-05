@@ -39,7 +39,7 @@ const dontImgAltText1 =
 
 <ColumnLayout bkgColor={"white"} numOfColumns={1}>
   <StackedLayout isShaded vMargin="1.5rem">
-    <Image src={img1} alt={img1Alt} />
+    <Image src={img1.src} alt={img1Alt} />
   </StackedLayout>
 </ColumnLayout>
 <InfoList type="decimal">
@@ -51,13 +51,13 @@ const dontImgAltText1 =
 <DoAndDont>
   <DoAndDont.DoContainer instructions={doInstructions1}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={doImg1} alt={doImgAltText1} />
+      <Image src={doImg1.src} alt={doImgAltText1} />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DoContainer>
 
   <DoAndDont.DontContainer instructions={dontInstructions1}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={dontImg1} alt={dontImgAltText1} />
+      <Image src={dontImg1.src} alt={dontImgAltText1} />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DontContainer>
 </DoAndDont>
