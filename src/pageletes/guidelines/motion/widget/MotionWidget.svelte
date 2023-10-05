@@ -127,18 +127,6 @@
   width: 100px;
 }
 
-.drawer {
-  position: fixed;
-  top: 0;
-  right: 0;
-  background: #ddd;
-  padding: 16px;
-  height: 100vh;
-  width: 200px;
-  border-left: 1px solid rgba(0, 0, 0, .1);
-  box-shadow: -2px 0px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
 #motion-select {
   margin-top: 5px;
 }
