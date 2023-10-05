@@ -118,7 +118,7 @@
 
 .boxy {
   position: relative;
-	top: 10px;
+	top: 50px;
 	left: 400px;
   border: 4px solid var(--neo-color-base-200);
   height: 100px;
