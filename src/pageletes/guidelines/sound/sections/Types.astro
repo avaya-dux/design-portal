@@ -1,0 +1,56 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Caption,
+  ColumnLayout,
+  Description,
+  ImageWrapper,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import image1 from "../imgs/sound-types-1.svg";
+import image2 from "../imgs/sound-types-2.svg";
+
+const image1Alt =
+  "Image showing a microphone in front of a box with lines meant to represent on-screen text.";
+const image2Alt = "Image showing an audio equalizer at different levels.";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.types.id}>{topics.types.title}</SectionHeader>
+
+  <Description>
+    There are two types of sound available in the UI: audio tones and speech.
+    Each communicates different things, and may be used together depending on
+    the context.
+  </Description>
+
+  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
+    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image1.src} alt={image1Alt} />
+    </ImageWrapper>
+    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={image2.src} alt={image2Alt} />
+    </ImageWrapper>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    gap="2rem"
+    numOfColumns={2}
+    marginTop={"1.5rem"}
+  >
+    <Caption title="Speech">
+      Speech output can communicate information that tones alone cannot, such as
+      conversations. For example, the Spaces dial-in menu when joining a space
+      via telephone.
+    </Caption>
+    <Caption title="Audio Tones">
+      Shorter sounds, such as notification alerts and dial tones, are used most
+      frequently in applications.
+    </Caption>
+  </ColumnLayout>
+</PageleteSection>
