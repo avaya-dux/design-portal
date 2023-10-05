@@ -1,6 +1,6 @@
 <script>
 	import { fade, fly, slide } from 'svelte/transition';
-	import { quintIn, quintOut } from 'svelte/easing';
+	import { sineIn, sineOut } from 'svelte/easing';
 
   const options = [
 		{ label: 'Ease', motion: "ease" },
@@ -10,36 +10,45 @@
 
   let selected = options[0];
   let inMotion = true;
-  let easingFunc = undefined;
+  let buttonLabel = "Ease Out";
+  let easingFunc = sineIn;
+  let speed = 150;
 
   const onMotionChange = () => {
-    if (selected.motion === "ease-out") {
-      easingFunc = quintOut;
+    inMotion = !inMotion;
+    if (inMotion) {
+      easingFunc = sineOut;
+      buttonLabel = "Ease Out";
     } else {
-      easingFunc = quintIn;
+      easingFunc = sineIn;
+      buttonLabel = "Ease In";
     }
+  }
+
+  const onSpeedChange = (event) => {
+    speed = event.currentTarget.value;
   }
 </script>
 
 <div class="widget-container">
   <div class="options-panel">
     <div class="neo-select flex-left-item">
-      <label for="motion-select">Type</label>
-      <select id="motion-select" bind:value={selected} on:change={onMotionChange}>
-        {#each options as option}
-          <option value={option}>{option.label}</option>
-        {/each}
-      </select>
+      <label for="start-btn">Motion Options</label>
+        <button on:click={onMotionChange} id="start-btn" class="neo-btn neo-btn-primary neo-btn-primary--default">
+          {buttonLabel}
+        </button>
     </div>
       <form class="neo-form flex-right-item">
         <div class="neo-form-control">
           <div class="neo-input-group">
             <div class="neo-input-group--inline" role="radiogroup" aria-labelledby="top-label">
               <input
+                checked={speed===150}
+                on:change={onSpeedChange}
                 class="neo-radio"
                 type="radio"
                 name="Select Option"
-                value="Fast"
+                value="150"
                 id="fast"
                 role="radio"
                 aria-checked="false"
@@ -48,10 +57,12 @@
                 Fast
               </label>
               <input
+                checked={speed===400}
+                on:change={onSpeedChange}
                 class="neo-radio"
                 type="radio"
                 name="Select Option"
-                value="Medium"
+                value="400"
                 id="medium"
                 role="radio"
                 aria-checked="false"
@@ -60,10 +71,12 @@
                 Medium
               </label>
               <input
+                checked={speed===900}
+                on:change={onSpeedChange}
                 class="neo-radio"
                 type="radio"
                 name="Select Option"
-                value="Slow"
+                value="900"
                 id="slow"
                 role="radio"
                 aria-checked="false"
@@ -74,14 +87,10 @@
             </div>
           </div>
         </form>
-        <button on:click={() => inMotion = !inMotion } id="start-btn" class="neo-btn neo-btn-primary neo-btn-primary--default">
-          Start
-        </button>
   </div>
   <div class="animation-panel">
-
     {#if inMotion}
-      <div class="boxy" transition:fly={{ duration: 1000, easing: easingFunc, x:500 }}></div>
+      <div class="boxy" transition:fly={{ duration: speed, easing: quintIn, x:500 }}></div>
     {/if}
   </div>
 </div>
