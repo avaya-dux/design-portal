@@ -1,0 +1,29 @@
+---
+import {
+  Description,
+  PageleteSection,
+  PageTitle,
+  Topics,
+} from "components/astro";
+
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <PageTitle>Sound</PageTitle>
+
+  <Description>
+    Sound can be used as a way to communicate additional information in a UI. It
+    enhances the overall experience and provides some personality to the
+    application.
+  </Description>
+
+  <Description>
+    Sound should never be used by itself, but must always be used in conjunction
+    with other components. For example, an audio file playback should be
+    accompanied by a transcription or subtitles for people with impaired
+    hearing.
+  </Description>
+
+  <Topics topics={topics} />
+</PageleteSection>
