@@ -26,7 +26,7 @@
 <div class="widget-container">
   <div class="options-panel">
     <div class="flex-left-item">
-        <button on:click={onMotionChange} id="start-btn" class="neo-btn neo-btn-primary neo-btn-primary--default">
+        <button on:click={onMotionChange} id="start-btn" class="neo-btn neo-btn-secondary neo-btn-secondary--default">
           {buttonLabel}
         </button>
     </div>
@@ -102,12 +102,12 @@
 }
 
 .flex-left-item {
-  flex: 30%;
+  flex: 14%;
   margin-top: 0.2rem;
   padding-left: 1rem;
 }
 .flex-right-item {
-  flex: 70%;
+  flex: 86%;
   margin-top: 1rem;
 }
 
