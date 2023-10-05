@@ -102,7 +102,7 @@
 }
 
 .flex-left-item {
-  flex: 14%;
+  flex: 122px;
   margin-top: 0.2rem;
   padding-left: 1rem;
 }
