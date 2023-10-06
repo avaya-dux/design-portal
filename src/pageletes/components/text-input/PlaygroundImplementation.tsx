@@ -14,23 +14,26 @@ const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-text-input--default";
 
 type InputType = "true" | "false";
-type ToggleHelperText = "on" | "off";
 type TextSize = "default" | "small";
+type ToggleHelperText = "on" | "off";
 
 export const PlaygroundImplementation = () => {
   const [inputType, setInputType] = useState<InputType>("true");
+  const [required, setRequired] = useState<TextInputProps["required"]>(false);
   const [toggleHelperText, setToggleHelperText] =
     useState<ToggleHelperText>("on");
-  const [textSize, setTextSize] = useState<TextSize>("default");
   const [helperText, setHelperText] =
     useState<TextInputProps["helperText"]>("Additional content");
+  const [textSize, setTextSize] = useState<TextSize>("default");
+  const [isSmall, setIsSmall] = useState<TextInputProps["isSmall"]>(false);
 
   const element = (
     <TextInput
       label="Label"
       type="text"
       helperText={helperText}
-      required={Boolean(inputType)}
+      required={required}
+      isSmall={isSmall}
     />
   );
 
@@ -44,9 +47,9 @@ export const PlaygroundImplementation = () => {
               selected={inputType}
               onChange={(e) => {
                 setInputType(e.target.value as InputType);
-                e.target.value == "true"
-                  ? setInputType("true")
-                  : setInputType("false");
+                e.target.value === "true"
+                  ? setRequired(true)
+                  : setRequired(false);
               }}
             >
               <Radio value="false">Optional</Radio>
@@ -75,7 +78,10 @@ export const PlaygroundImplementation = () => {
               groupName="size-options"
               selected={textSize}
               onChange={(e) => {
-                setTextSize(e.target.value as TextSize);
+                setTextSize(e.target.value as TextSize)
+                e.target.value === "small"
+                  ? setIsSmall(true)
+                  : setIsSmall(false);
               }}
             >
               <Radio value="default">Default</Radio>
