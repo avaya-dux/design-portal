@@ -36,7 +36,7 @@ nav.neo-navbar
   .neo-nav--left
   .neo-badge__navbutton
   .neo-badge__navbutton--content:before {
-  color: var(--neo-color-base-0);
+  color: var(--global-font-color);
 }
 
 nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle {
