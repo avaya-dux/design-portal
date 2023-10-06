@@ -28,7 +28,7 @@ nav.neo-navbar a.neo-nav-link-btn {
 }
 
 nav.neo-navbar .neo-nav--left .neo-badge__navbutton {
-  display: none;
+  display: block;
   margin-top: 0px;
 }
 
@@ -47,6 +47,21 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle {
 nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
   cursor: pointer;
   background-color: var(--global-background);
+}
+
+@media (max-width: 320px) {
+  nav.neo-navbar .neo-nav {
+    /* padding: 0 9px; */
+    display: none;
+  }
+  nav.neo-navbar .neo-nav a.neo-nav-link-btn {
+    width: auto;
+    justify-content: center;
+  }
+
+  .neo-navbar .neo-nav--right .search__button {
+    justify-content: end;
+  }
 }
 
 @media (max-width: 799px) {
@@ -76,32 +91,19 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
     display: flex;
     justify-content: flex-end;
   }
+}
+
+@media (max-width: 1279px) {
+
   body nav.neo-navbar .neo-nav--left a img {
-    height: 48px;
+    height: 57px;
   }
+
 }
 
-@media (max-width: 320px) {
-  nav.neo-navbar .neo-nav {
-    /* padding: 0 9px; */
-    display: none;
-  }
-  nav.neo-navbar .neo-nav a.neo-nav-link-btn {
-    width: auto;
-    justify-content: center;
-  }
-
-  .neo-navbar .neo-nav--right .search__button {
-    justify-content: end;
-  }
-}
-
-@media (max-width: 1280px) {
+@media (min-width: 1280px) {
   nav.neo-navbar .neo-nav--left .neo-badge__navbutton {
-    display: block;
-  }
-  body nav.neo-navbar .neo-nav--left a img {
-    height: 55px;
+    display: none;
   }
 }
 

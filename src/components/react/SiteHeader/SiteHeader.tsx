@@ -118,28 +118,19 @@ const Logo = () => (
   <a href="/" aria-label="Homepage">
     <picture>
       <source
-        media="(max-width: 320px) and (prefers-color-scheme: dark)"
+        media="(max-width: 799px) and (prefers-color-scheme: dark)"
         srcSet="/imgs/logo-mobile-dark.svg"
       />
       <source
-        media="(max-width: 320px)"
+        media="(max-width: 799px)"
         srcSet="/imgs/logo-mobile-light.svg"
       />
 
       <source
-        media="(min-width: 321px) and (max-width: 799px) and (prefers-color-scheme: dark)"
+        media="(max-width: 1279px) and (prefers-color-scheme: dark)"
         srcSet="/imgs/logo-condensed-dark.svg"
       />
-      <source media="(min-width: 321px) and (max-width: 799px)" srcSet="/imgs/logo-condensed-light.svg" />
-
-      <source
-        media="(min-width: 800px) and (max-width: 1279px) and (prefers-color-scheme: dark)"
-        srcSet="/imgs/logo-full-dark.svg"
-      />
-      <source
-        media="(min-width: 800px) and (max-width: 1279px)"
-        srcSet="/imgs/logo-full-light.svg"
-      />
+      <source media="(max-width: 1279px)" srcSet="/imgs/logo-condensed-light.svg" />
 
       <source
         media="(min-width: 1280px) and (prefers-color-scheme: dark)"
