@@ -118,11 +118,11 @@ const Logo = () => (
   <a href="/" aria-label="Homepage">
     <picture>
       <source
-        media="(max-width: 799px) and (prefers-color-scheme: dark)"
+        media="(max-width: 832px) and (prefers-color-scheme: dark)"
         srcSet="/imgs/logo-mobile-dark.svg"
       />
       <source
-        media="(max-width: 799px)"
+        media="(max-width: 832px)"
         srcSet="/imgs/logo-mobile-light.svg"
       />
 

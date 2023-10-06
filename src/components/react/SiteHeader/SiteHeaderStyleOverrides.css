@@ -75,7 +75,7 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
   }
 }
 
-@media (max-width: 799px) {
+@media (max-width: 832px) {
   nav.neo-navbar .neo-nav--right button.neo-btn {
     border: none;
   }
