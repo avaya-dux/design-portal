@@ -11,6 +11,8 @@ import { useMemo, useState } from "react";
 import { Playground } from "components/react";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
+import "./PlaygroundImplementation_shim.css";
+
 export const sandbox = "https://codesandbox.io/s/neo-react-switch-eeb2m1";
 export const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-switch--default";
