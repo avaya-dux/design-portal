@@ -49,9 +49,20 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
   background-color: var(--global-background);
 }
 
+@media (max-width: 1279px) {
+  body nav.neo-navbar .neo-nav--left a img {
+    height: 57px;
+  }
+
+  /* HACK: This button uses !important in its height property, the below code is a way to override that -- the actual change should be done in the CSS library*/
+
+  .neo-nav--left .neo-badge__navbutton button.neo-badge__navbutton--content {
+    height: 57px !important;
+  }
+}
+
 @media (max-width: 320px) {
   nav.neo-navbar .neo-nav {
-    /* padding: 0 9px; */
     display: none;
   }
   nav.neo-navbar .neo-nav a.neo-nav-link-btn {
@@ -91,14 +102,16 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
     display: flex;
     justify-content: flex-end;
   }
-}
-
-@media (max-width: 1279px) {
 
   body nav.neo-navbar .neo-nav--left a img {
-    height: 57px;
+    height: 48px;
   }
 
+  /* HACK: This button uses !important in its height property, the below code is a way to override that -- the actual change should be done in the CSS library*/
+
+  .neo-nav--left .neo-badge__navbutton button.neo-badge__navbutton--content {
+    height: 48px !important;
+  }
 }
 
 @media (min-width: 1280px) {
