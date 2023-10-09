@@ -1,18 +1,13 @@
 ---
-import { Image } from "@avaya/neo-react";
 import {
   Description,
-  ColumnLayout,
-  ImageWrapper,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
 
+import { MotionWidget } from "../widget";
+
 import { topics } from "../static";
-
-import image1 from "../imgs/motion-examples.svg";
-
-const image1Alt = "Motion playground goes here.";
 ---
 
 <PageleteSection>
@@ -23,9 +18,5 @@ const image1Alt = "Motion playground goes here.";
     effects. Use the widget below to explore different combinations.
   </Description>
 
-  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={1}>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image1.src} alt={image1Alt} />
-    </ImageWrapper>
-  </ColumnLayout>
+  <MotionWidget client:load />
 </PageleteSection>
