@@ -1,0 +1,61 @@
+---
+import {
+  Description,
+  PageleteSection,
+  SectionHeader,
+  SubHeader,
+} from "components";
+
+import { topics } from "../static";
+const { id, title } = topics.mac;
+
+import { Link } from "@avaya/neo-react";
+
+import TwoColumnLayout from "./sections-frame-layout/TwoColumnLayout.astro";
+import Icons from "./sections-frame-layout/mac/frame-1/Icons.astro";
+import NativeElements from "./sections-frame-layout/mac/frame-1/NativeElements.astro";
+import KeyboardShortcuts from "./sections-frame-layout/mac/frame-2/KeyboardShortcuts.astro";
+import ResponsiveDisplay from "./sections-frame-layout/mac/frame-2/ResponsiveDisplay.astro";
+import Accessibility from "./sections-frame-layout/mac/frame-3/Accessibility.astro";
+import TouchTargets from "./sections-frame-layout/mac/frame-3/TouchTargets.astro";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    MacOS is a desktop operating system created by Apple that is used on their
+    computer systems. An overview of Apple’s best practices can be found in
+    their <Link inline>Human Interface Guidelines</Link>.
+  </Description>
+
+  <SubHeader id="user-interface" marginTop="64px">User Interface</SubHeader>
+
+  <Description>
+    The visual appearance for MacOS applications should utilize a combination of
+    native elements and Neo styling.
+  </Description>
+
+  <TwoColumnLayout>
+    <NativeElements slot="left-frame" />
+    <Icons slot="right-frame" />
+  </TwoColumnLayout>
+
+  <SubHeader id="interactions" marginTop="64px">Interactions</SubHeader>
+
+  <Description>
+    Interactions such as display, responsiveness, accessibility and touch
+    targets should follow web standards, as well as the Neo guidelines found
+    throughout the portal.
+  </Description>
+
+  <TwoColumnLayout>
+    <KeyboardShortcuts slot="left-frame" />
+    <ResponsiveDisplay slot="right-frame" />
+  </TwoColumnLayout>
+
+  <TwoColumnLayout>
+    <Accessibility slot="left-frame" />
+    <TouchTargets slot="right-frame" />
+  </TwoColumnLayout>
+</PageleteSection>

@@ -1,0 +1,19 @@
+---
+import SectionLayout from "../../SectionLayout.astro";
+
+import graphic from "../../../../imgs/user-interface-1.svg";
+
+import { Description } from "components";
+
+const altText = "Graphic representing various elements";
+const type = "Native Elements";
+---
+
+<SectionLayout graphicIcon={graphic.src} graphicAltText={altText} type={type}>
+  <Description slot="description">
+    Applications built MacOS should use native components wherever possible to
+    ensure consistency across platforms, while leveraging built-in
+    accessibility. Neo should be applied at the design token level by leveraging
+    our colors, font and icons where possible.
+  </Description>
+</SectionLayout>
