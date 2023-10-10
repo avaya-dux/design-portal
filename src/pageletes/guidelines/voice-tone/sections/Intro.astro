@@ -1,0 +1,32 @@
+---
+import {
+  Description,
+  PageleteSection,
+  PageTitle,
+  Topics,
+} from "components/astro";
+
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <PageTitle>Voice and Tone</PageTitle>
+
+  <Description>
+    The goal of Avaya is to create “Experiences that Matter” for all users. For
+    most customers, that will be most strongly felt through the interface of our
+    products. When they sit down to use our applications, they see the UI that
+    we created. How that is realized will determine to a large extent the way it
+    makes them feel. Your job is to lead the customer where they want to go,
+    even if you don’t know where that is at the start.
+  </Description>
+
+  <Description>
+    This guide defines our philosophy for the writing that you must build into
+    the content you create. How you write the text, and how it is presented to
+    the user will strongly influence their experience so we must get it right.
+    The UI creates the UX.
+  </Description>
+
+  <Topics topics={topics} />
+</PageleteSection>
