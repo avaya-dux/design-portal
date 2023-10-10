@@ -10,12 +10,12 @@ const altText = "Graphic representing keyboard keys";
 const type = "Keyboard Shortcuts";
 ---
 
-<SectionLayout
-  graphicIcon={graphic.src}
-  graphicAltText={altText}
-  type={type}
->
-  <Description slot="description">Shortcuts created for an iOS or iPadOS application must not conflict with existing system shortcuts. Refer to the <Link inline>iPasOS page</Link> for a complete list.</Description>
+<SectionLayout graphicIcon={graphic.src} graphicAltText={altText} type={type}>
+  <Description slot="description">
+    Shortcuts created for an iOS or iPadOS application must not conflict with
+    existing system shortcuts. Refer to the <Link inline>iPasOS page</Link> for
+    a complete list.
+  </Description>
   <InfoListItem label="" isLink={true}>
     <Link>View Keyboard interactions</Link>
   </InfoListItem>

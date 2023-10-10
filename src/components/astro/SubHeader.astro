@@ -3,7 +3,7 @@ import { SectionLink } from "components/react";
 
 export interface Props {
   id: string;
-  marginTop? : string;
+  marginTop?: string;
 }
 
 const { id, marginTop = "0px" } = Astro.props as Props;
@@ -19,7 +19,7 @@ const fullSectionURL = `${url}#${id}`;
   </a>
 </div>
 
-<style is:global define:vars={{ marginTop}}>
+<style is:global define:vars={{ marginTop }}>
   .section-header__wrapper {
     display: flex;
     align-items: center;

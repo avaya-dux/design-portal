@@ -10,12 +10,10 @@ const altText = "Graphic representing icons";
 const type = "Icons";
 ---
 
-<SectionLayout
-  graphicIcon={graphic.src}
-  graphicAltText={altText}
-  type={type}
->
-<Description slot="description">All icons used by web applications are available from the Neo icon page.</Description>
+<SectionLayout graphicIcon={graphic.src} graphicAltText={altText} type={type}>
+  <Description slot="description">
+    All icons used by web applications are available from the Neo icon page.
+  </Description>
   <InfoListItem label="" isLink={true}>
     <Link href="https://design.avaya.com/components/icons/">
       View Icon Library

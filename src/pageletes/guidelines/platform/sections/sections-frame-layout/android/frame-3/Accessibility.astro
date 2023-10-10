@@ -10,13 +10,17 @@ const altText = "Graphic representing accessibility";
 const type = "Accessibility";
 ---
 
-<SectionLayout
-  graphicIcon={graphic.src}
-  graphicAltText={altText}
-  type={type}
->
-  <Description slot="description">Android applications must be accessible to all users. Learn more with <Link inline>Android’s documentation</Link> and our accessibility guidelines.</Description>
+<SectionLayout graphicIcon={graphic.src} graphicAltText={altText} type={type}>
+  <Description slot="description">
+    Android applications must be accessible to all users. Learn more with <Link
+      inline
+    >
+      Android’s documentation
+    </Link> and our accessibility guidelines.
+  </Description>
   <InfoListItem label="" isLink={true}>
-    <Link href="https://design.avaya.com/guidelines/accessibility-principles/">View Accessibility</Link>
+    <Link href="https://design.avaya.com/guidelines/accessibility-principles/">
+      View Accessibility
+    </Link>
   </InfoListItem>
 </SectionLayout>
