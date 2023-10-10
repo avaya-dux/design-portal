@@ -1,0 +1,19 @@
+---
+import SectionLayout from "../../SectionLayout.astro";
+
+import graphic from "../../../../imgs/interactions-4.svg";
+
+import { Link } from "@avaya/neo-react";
+import { Description } from "components";
+
+const altText = "Graphic representing interactive control widths and heights";
+const type = "Touch Targets";
+---
+
+<SectionLayout
+  graphicIcon={graphic.src}
+  graphicAltText={altText}
+  type={type}
+>
+  <Description slot="description">Interactive controls, such as buttons, should have a minimum 40px x 40px tappable area making them easy to see and use, and to meet <Link inline>Window’s specifications</Link>.</Description>
+</SectionLayout>

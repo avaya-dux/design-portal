@@ -3,9 +3,10 @@ import { SectionLink } from "components/react";
 
 export interface Props {
   id: string;
+  marginTop? : string;
 }
 
-const { id } = Astro.props as Props;
+const { id, marginTop = "0px" } = Astro.props as Props;
 const { url } = Astro.request;
 
 const fullSectionURL = `${url}#${id}`;
@@ -18,11 +19,12 @@ const fullSectionURL = `${url}#${id}`;
   </a>
 </div>
 
-<style>
+<style is:global define:vars={{ marginTop}}>
   .section-header__wrapper {
     display: flex;
     align-items: center;
     padding-bottom: 1rem;
+    margin-top: var(--marginTop);
   }
   .section-header__link {
     margin-left: 0.5rem;

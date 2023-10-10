@@ -1,0 +1,22 @@
+---
+import SectionLayout from "../../SectionLayout.astro";
+
+import graphic from "../../../../imgs/interactions-3.svg";
+
+import { Link } from "@avaya/neo-react";
+import { Description, InfoListItem } from "components";
+
+const altText = "Graphic representing accessibility";
+const type = "Accessibility";
+---
+
+<SectionLayout
+  graphicIcon={graphic.src}
+  graphicAltText={altText}
+  type={type}
+>
+  <Description slot="description">MacOS applications must be accessible to all users. Learn more with <Link inline>Apple’s documentation</Link> and our accessibility guidelines.</Description>
+  <InfoListItem label="" isLink={true}>
+    <Link href="https://design.avaya.com/guidelines/accessibility-principles/">View Accessibility</Link>
+  </InfoListItem>
+</SectionLayout>

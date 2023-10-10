@@ -1,9 +1,10 @@
 ---
 export interface Props {
   type?: "disc" | "decimal" | "'- '" | "none";
+  fontSize? : string;
 }
 
-const { type = "none" } = Astro.props as Props;
+const { type = "none", fontSize = "14px"} = Astro.props as Props;
 const marginLeft = type === "none" ? 0 : "1rem";
 ---
 
@@ -11,12 +12,12 @@ const marginLeft = type === "none" ? 0 : "1rem";
   <slot />
 </ul>
 
-<style is:global define:vars={{ type, marginLeft }}>
+<style is:global define:vars={{ type, marginLeft, fontSize }}>
   ul.info-list {
     list-style-type: var(--type);
     line-height: 20px;
     margin: 0 0 0 var(--marginLeft);
-    font-size: 14px;
+    font-size: var(--fontSize);
   }
 
   ul.info-list :not(li:last-child) {

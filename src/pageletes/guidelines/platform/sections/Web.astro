@@ -1,0 +1,92 @@
+---
+import {
+  Description,
+  PageleteSection,
+  SectionHeader,
+  SubHeader,
+} from "components";
+
+import { topics } from "../static";
+const { id, title } = topics.web;
+
+import { Link } from "@avaya/neo-react";
+
+import TwoColumnLayout from "./sections-frame-layout/TwoColumnLayout.astro";
+import Icons from "./sections-frame-layout/web/frame-1/Icons.astro";
+import NativeElements from "./sections-frame-layout/web/frame-1/NativeElements.astro";
+import KeyboardShortcuts from "./sections-frame-layout/web/frame-2/KeyboardShortcuts.astro";
+import ResponsiveDisplay from "./sections-frame-layout/web/frame-2/ResponsiveDisplay.astro";
+import Accessibility from "./sections-frame-layout/web/frame-3/Accessibility.astro";
+import TouchTargets from "./sections-frame-layout/web/frame-3/TouchTargets.astro";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    The development of web pages and web-based applications involves supporting
+    the major platforms, including
+    <Link
+      inline
+      href="https://developer.chrome.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Chrome</Link>,
+    <Link
+      inline
+      href="https://developer.mozilla.org/en-US/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Firefox
+    </Link>,
+    <Link
+      inline
+      href="https://learn.microsoft.com/en-us/microsoft-edge/#microsoft-edge-for-developers"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Edge
+    </Link>, and
+    <Link
+      inline
+      href="https://developer.apple.com/safari/resources/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Safari
+    </Link>. Refer to each browser’s development site for associated best
+    practices.
+  </Description>
+
+  <SubHeader id="user-interface" marginTop="64px">User Interface</SubHeader>
+
+  <Description>
+    The visual appearance for web applications should use Neo design elements,
+    such as components, icons and typography.
+  </Description>
+
+  <TwoColumnLayout>
+    <NativeElements slot="left-frame" />
+    <Icons slot="right-frame" />
+  </TwoColumnLayout>
+
+  <SubHeader id="interactions" marginTop="64px">Interactions</SubHeader>
+
+  <Description>
+    Interactions such as display, responsiveness, accessibility and touch
+    targets should conform to web standards, as well as the Neo guidelines found
+    throughout this portal.
+  </Description>
+
+  <TwoColumnLayout>
+    <KeyboardShortcuts slot="left-frame" />
+    <ResponsiveDisplay slot="right-frame" />
+  </TwoColumnLayout>
+
+  <TwoColumnLayout>
+    <Accessibility slot="left-frame" />
+    <TouchTargets slot="right-frame" />
+  </TwoColumnLayout>
+</PageleteSection>

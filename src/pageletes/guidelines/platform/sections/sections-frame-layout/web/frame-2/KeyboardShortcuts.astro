@@ -1,0 +1,43 @@
+---
+import SectionLayout from "../../SectionLayout.astro";
+
+import graphic from "../../../../imgs/interactions-5.svg";
+
+import { Link } from "@avaya/neo-react";
+import { InfoListItem, Description } from "components";
+
+const altText = "Graphic representing keyboard keys";
+const type = "Keyboard Shortcuts";
+---
+
+<SectionLayout graphicIcon={graphic.src} graphicAltText={altText} type={type}>
+  <Description slot="description">
+    Shortcuts created for applications must not conflict with existing browser
+    and desktop shortcuts. Refer to the browser sites, and the<Link
+      inline
+      href="https://support.apple.com/en-us/HT201236"
+      target="_blank" rel="noopener noreferrer"
+    >
+      MacOS
+    </Link>and<Link
+      inline
+      href="https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec"
+      target="_blank" rel="noopener noreferrer"
+    >Windows</Link>pages for a complete list.
+  </Description>
+  <InfoListItem label="" isLink={true}>
+    <Link href="https://support.google.com/chrome/answer/157179?co=GENIE.Platform%3DDesktop&hl=en" target="_blank" rel="noopener noreferrer">Chrome shortcuts</Link>
+  </InfoListItem>
+  <InfoListItem label="" isLink={true}>
+    <Link href="https://support.mozilla.org/en-US/kb/keyboard-shortcuts-perform-firefox-tasks-quickly" target="_blank" rel="noopener noreferrer">Firefox shortcuts</Link>
+  </InfoListItem>
+  <InfoListItem label="" isLink={true}>
+    <Link href="https://support.microsoft.com/en-us/microsoft-edge/keyboard-shortcuts-in-microsoft-edge-50d3edab-30d9-c7e4-21ce-37fe2713cfad" target="_blank" rel="noopener noreferrer">Microsoft Edge shortcuts</Link>
+  </InfoListItem>
+  <InfoListItem label="" isLink={true}>
+    <Link href="https://support.apple.com/en-ca/guide/safari/cpsh003/mac" target="_blank" rel="noopener noreferrer">Safari shortcuts</Link>
+  </InfoListItem>
+  <InfoListItem label="" isLink={true}>
+    <Link href="https://design.avaya.com/guidelines/keyboard_interaction">View Keyboard interactions</Link>
+  </InfoListItem>
+</SectionLayout>
