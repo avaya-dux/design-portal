@@ -1,0 +1,18 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components/astro";
+
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.summary.id}>{topics.summary.title}</SectionHeader>
+
+  <Description>
+    The user interface is an instructional document that tells the reader what
+    they need to know in order to succeed. Lead them down the easiest path to a
+    great user experience and they will tell their friends how good it was. Make
+    it so obvious and intuitive that they never have to ask “How do I…”
+  </Description>
+
+  <Description>If we can do that, we will have done our job.</Description>
+</PageleteSection>

@@ -78,7 +78,7 @@ export const PlaygroundImplementation = () => {
               groupName="size-options"
               selected={textSize}
               onChange={(e) => {
-                setTextSize(e.target.value as TextSize)
+                setTextSize(e.target.value as TextSize);
                 e.target.value === "small"
                   ? setIsSmall(true)
                   : setIsSmall(false);

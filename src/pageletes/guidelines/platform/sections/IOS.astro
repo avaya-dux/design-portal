@@ -1,0 +1,73 @@
+---
+import {
+  Description,
+  PageleteSection,
+  SectionHeader,
+  SubHeader,
+} from "components";
+
+import { topics } from "../static";
+const { id, title } = topics.ios;
+
+import { Link } from "@avaya/neo-react";
+
+import TwoColumnLayout from "./sections-frame-layout/TwoColumnLayout.astro";
+import Icons from "./sections-frame-layout/ios/frame-1/Icons.astro";
+import NativeElements from "./sections-frame-layout/ios/frame-1/NativeElements.astro";
+import KeyboardShortcuts from "./sections-frame-layout/ios/frame-4/KeyboardShortcuts.astro";
+import ResponsiveDisplay from "./sections-frame-layout/ios/frame-2/ResponsiveDisplay.astro";
+import Accessibility from "./sections-frame-layout/ios/frame-3/Accessibility.astro";
+import TouchTargets from "./sections-frame-layout/ios/frame-3/TouchTargets.astro";
+import Gestures from "./sections-frame-layout/ios/frame-2/Gestures.astro";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    iOS is a mobile operating system created by Apple and used across their
+    portable devices. An overview of iOS best practices can be found in Apple’s <Link
+      inline
+      href="https://developer.apple.com/design/human-interface-guidelines"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Human Interface Guidelines
+    </Link>.
+  </Description>
+
+  <SubHeader id="user-interface" marginTop="64px">User Interface</SubHeader>
+
+  <Description>
+    Interactions such as display, responsiveness, accessibility and touch
+    targets should follow iOS standards as well as the Neo guidelines outlined
+    throughout the portal.
+  </Description>
+
+  <TwoColumnLayout>
+    <NativeElements slot="left-frame" />
+    <Icons slot="right-frame" />
+  </TwoColumnLayout>
+
+  <SubHeader id="interactions" marginTop="64px">Interactions</SubHeader>
+
+  <Description>
+    Interactions such as display, responsiveness, accessibility and touch
+    targets should follow iOS standards as well as the Neo guidelines found
+    throughout the portal.
+  </Description>
+
+  <TwoColumnLayout>
+    <ResponsiveDisplay slot="left-frame" />
+    <Gestures slot="right-frame" />
+  </TwoColumnLayout>
+
+  <TwoColumnLayout>
+    <Accessibility slot="left-frame" />
+    <TouchTargets slot="right-frame" />
+  </TwoColumnLayout>
+
+  <TwoColumnLayout>
+    <KeyboardShortcuts slot="left-frame" />
+  </TwoColumnLayout>
+</PageleteSection>
