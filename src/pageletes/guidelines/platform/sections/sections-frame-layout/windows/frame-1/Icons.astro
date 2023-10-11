@@ -1,0 +1,23 @@
+---
+import SectionLayout from "../../SectionLayout.astro";
+
+import graphic from "../../../../imgs/user-interface-2.svg";
+
+import { Link } from "@avaya/neo-react";
+import { Description, InfoListItem } from "components";
+
+const altText = "Graphic representing icons";
+const type = "Icons";
+---
+
+<SectionLayout graphicIcon={graphic.src} graphicAltText={altText} type={type}>
+  <Description slot="description">
+    All non-system icons used by Windows applications are available on the icons
+    page.
+  </Description>
+  <InfoListItem label="" isLink={true}>
+    <Link href="https://design.avaya.com/components/icons">
+      View Icon Library
+    </Link>
+  </InfoListItem>
+</SectionLayout>

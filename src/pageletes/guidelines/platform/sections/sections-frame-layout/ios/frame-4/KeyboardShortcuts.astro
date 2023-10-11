@@ -1,0 +1,23 @@
+---
+import SectionLayout from "../../SectionLayout.astro";
+
+import graphic from "../../../../imgs/interactions-5.svg";
+
+import { Link } from "@avaya/neo-react";
+import { Description, InfoListItem } from "components";
+
+const altText = "Graphic representing keyboard keys";
+const type = "Keyboard Shortcuts";
+---
+
+<SectionLayout graphicIcon={graphic.src} graphicAltText={altText} type={type}>
+  <Description slot="description">
+    Shortcuts created for an iOS or iPadOS application must not conflict with
+    existing system shortcuts. Refer to the <Link inline href="https://support.apple.com/en-us/HT211096" target="_blank"
+    rel="noopener noreferrer">iPadOS page</Link> for
+    a complete list.
+  </Description>
+  <InfoListItem label="" isLink={true}>
+    <Link>View Keyboard interactions</Link>
+  </InfoListItem>
+</SectionLayout>

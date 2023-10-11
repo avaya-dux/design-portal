@@ -1,0 +1,24 @@
+---
+import SectionLayout from "../../SectionLayout.astro";
+
+import graphic from "../../../../imgs/interactions-1.svg";
+
+import { Link } from "@avaya/neo-react";
+import { InfoListItem, Description } from "components";
+
+const altText = "Graphic representing responsive display sizes";
+const type = "Display and Responsive Size";
+---
+
+<SectionLayout graphicIcon={graphic.src} graphicAltText={altText} type={type}>
+  <Description slot="description">
+    Layouts need to be flexible and responsive, with scaling to match different
+    screen sizes. Accurate proportions improve the composition and hierarchy.
+    This ensures consistency and a common user experience across all platforms.
+  </Description>
+  <InfoListItem label="" isLink={true}>
+    <Link href="https://design.avaya.com/guidelines/layout&grid/">
+      View Layout and Grid
+    </Link>
+  </InfoListItem>
+</SectionLayout>

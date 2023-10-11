@@ -1,0 +1,25 @@
+---
+import SectionLayout from "../../SectionLayout.astro";
+
+import graphic from "../../../../imgs/interactions-5.svg";
+
+import { Link } from "@avaya/neo-react";
+import { Description, InfoListItem } from "components";
+
+const altText = "Graphic representing keyboard keys";
+const type = "Keyboard Shortcuts";
+---
+
+<SectionLayout graphicIcon={graphic.src} graphicAltText={altText} type={type}>
+  <Description slot="description">
+    Shortcuts created for Windows applications must not conflict with existing
+    browser and desktop shortcuts. Refer to the <Link inline>Microsoft documentation</Link> 
+    as well as <Link inline>Narrator</Link>, <Link inline>JAWS</Link> 
+    and <Link inline>NVDA</Link> sites for the complete list.
+  </Description>
+  <InfoListItem label="" isLink={true}>
+    <Link href="https://design.avaya.com/guidelines/keyboard_interaction">
+      View Keyboard interactions
+    </Link>
+  </InfoListItem>
+</SectionLayout>
