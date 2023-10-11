@@ -6,3 +6,6 @@ export { CommonGuidelines };
 
 import LineCharts from "./LineCharts.astro";
 export { LineCharts };
+
+import BarCharts from "./BarCharts.astro";
+export { BarCharts };
