@@ -1,0 +1,37 @@
+---
+import {
+  Description,
+  PageleteSection,
+  SectionHeader,
+  InfoList,
+} from "components/astro";
+
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.language.id}>{topics.language.title}</SectionHeader>
+
+  <Description>
+    We have talked about setting the mood for the end-user, but there are still
+    some mechanical aspects of writing we must use.
+  </Description>
+
+  <InfoList type="disc">
+    <li>
+      Use the Active Voice. It is the reader that does the action, not the
+      action is done by the reader - "(You) Push the Save button" Not "The Save
+      button must now be pushed (by you)".
+    </li>
+    <li>
+      Be consistent. Use the same words and procedure for the same thing
+      whenever it appears. How many ways are there to print a document in
+      MSWord? Pick one and use it every time.
+    </li>
+    <li>
+      Parts of Speech. Metaphor is like the plague, something to be avoided.
+      Colloquialisms are also out the window. No jargon, euphemisms or clichés
+      either.
+    </li>
+  </InfoList>
+</PageleteSection>
