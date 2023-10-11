@@ -9,3 +9,6 @@ export { LineCharts };
 
 import BarCharts from "./BarCharts.astro";
 export { BarCharts };
+
+import PieCharts from "./PieCharts.astro";
+export { PieCharts };
