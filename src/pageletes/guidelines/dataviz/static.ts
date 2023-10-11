@@ -1,6 +1,10 @@
 import type { TopicsDict } from "components";
 
-type DataVizTopicNames = "guidelines" | "linecharts" | "barcharts" | "piecharts";
+type DataVizTopicNames =
+  | "guidelines"
+  | "linecharts"
+  | "barcharts"
+  | "piecharts";
 
 export const topics: TopicsDict<DataVizTopicNames> = {
   guidelines: {

@@ -15,12 +15,14 @@ import image1 from "../imgs/use-minimal-categories.svg";
 import image2 from "../imgs/provide-whitespace-values.svg";
 
 const image1Alt = "Image showing a pie chart with 5 slices.";
-const image2Alt = "Image showing a pie chart slices with a clear gap between them.";
-
+const image2Alt =
+  "Image showing a pie chart slices with a clear gap between them.";
 ---
 
 <PageleteSection>
-  <SectionHeader id={topics.piecharts.id}>{topics.piecharts.title}</SectionHeader>
+  <SectionHeader id={topics.piecharts.id}>
+    {topics.piecharts.title}
+  </SectionHeader>
 
   <Description>
     Pie charts are used to show percentages and proportional data.
@@ -42,8 +44,9 @@ const image2Alt = "Image showing a pie chart slices with a clear gap between the
     marginTop={"1.5rem"}
   >
     <Caption title="Use Minimal Categories">
-      Avoid using more that 5 categories in a pie chart as the data will become difficult to digest.
-       If more categories are required, use a bar chart instead.
+      Avoid using more that 5 categories in a pie chart as the data will become
+      difficult to digest. If more categories are required, use a bar chart
+      instead.
     </Caption>
     <Caption title="Provide Whitespace Between Values">
       Use whitespace between slices to provide clear contrast between elements.

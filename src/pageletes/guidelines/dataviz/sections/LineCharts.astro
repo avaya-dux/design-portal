@@ -16,16 +16,18 @@ import image2 from "../imgs/sparkline.svg";
 import image3 from "../imgs/actual-versus-predicted-data.svg";
 import image4 from "../imgs/data-points-uneven-increments.svg";
 
-
 const image1Alt = "Image showing a standard linechart.";
 const image2Alt = "Image showing a sparkline.";
-const image3Alt = "Image showing an solid line chart as actual data and dotted line as predicted.";
-const image4Alt = "Image showing line chart with datapoints that don't line up in the increments in the x and y axis.";
-
+const image3Alt =
+  "Image showing an solid line chart as actual data and dotted line as predicted.";
+const image4Alt =
+  "Image showing line chart with datapoints that don't line up in the increments in the x and y axis.";
 ---
 
 <PageleteSection>
-  <SectionHeader id={topics.linecharts.id}>{topics.linecharts.title}</SectionHeader>
+  <SectionHeader id={topics.linecharts.id}>
+    {topics.linecharts.title}
+  </SectionHeader>
 
   <Description>
     These guidelines apply to all data visualization presentation types.
@@ -76,11 +78,12 @@ const image4Alt = "Image showing line chart with datapoints that don't line up i
   >
     <Caption title="Actual Versus Predicted Data">
       Use solid lines to display real data, and dashed lines for predicted data.
-       Avoid smoothing the lines as it will obscure the data points.
+      Avoid smoothing the lines as it will obscure the data points.
     </Caption>
     <Caption title="Data points On Uneven Increments">
-      Data points can be useful when displaying information that isn't collected in even increments.
-       Avoid displaying these points when they become too dense.
+      Data points can be useful when displaying information that isn't collected
+      in even increments. Avoid displaying these points when they become too
+      dense.
     </Caption>
   </ColumnLayout>
 </PageleteSection>

@@ -21,11 +21,14 @@ const image1Alt = "Image showing a 3D chart crossed out.";
 const image2Alt = "Image showing a palette with different colors.";
 const image3Alt = "Image showing a tooltip over a line chart data point.";
 const image4Alt = "Image showing legends for each data series in a chart.";
-const image5Alt = "Image showing a visual gap in a line chart to depict missing data.";
+const image5Alt =
+  "Image showing a visual gap in a line chart to depict missing data.";
 ---
 
 <PageleteSection>
-  <SectionHeader id={topics.guidelines.id}>{topics.guidelines.title}</SectionHeader>
+  <SectionHeader id={topics.guidelines.id}>
+    {topics.guidelines.title}
+  </SectionHeader>
 
   <Description>
     These guidelines apply to all data visualization presentation types.
@@ -51,7 +54,7 @@ const image5Alt = "Image showing a visual gap in a line chart to depict missing 
     </Caption>
     <Caption title="Use Neo's Color Palette">
       Use the color palette provided by Neo to ensure data has sufficient
-       contrast and is accessible for all users. See Colors to learn more.
+      contrast and is accessible for all users. See Colors to learn more.
     </Caption>
   </ColumnLayout>
 
@@ -76,8 +79,9 @@ const image5Alt = "Image showing a visual gap in a line chart to depict missing 
     marginTop={"1.5rem"}
   >
     <Caption title="Use Tooltips">
-      Tooltips should be used to provide supplemental information on a chart (e.g. date or data value).
-       They should not be the only way to identify the data.
+      Tooltips should be used to provide supplemental information on a chart
+      (e.g. date or data value). They should not be the only way to identify the
+      data.
     </Caption>
     <Caption title="Include Legends">
       Include legends when more than one data series is shown.
@@ -102,8 +106,8 @@ const image5Alt = "Image showing a visual gap in a line chart to depict missing 
     marginTop={"1.5rem"}
   >
     <Caption title="Indicate When Data Is Missing">
-      When a set of data includes null or missing data, the chart should reflect this with a space rather
-       than using '0' or connecting points.
+      When a set of data includes null or missing data, the chart should reflect
+      this with a space rather than using '0' or connecting points.
     </Caption>
   </ColumnLayout>
 </PageleteSection>
