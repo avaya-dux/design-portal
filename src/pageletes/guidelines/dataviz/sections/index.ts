@@ -3,3 +3,6 @@ export { Intro };
 
 import CommonGuidelines from "./CommonGuidelines.astro";
 export { CommonGuidelines };
+
+import LineCharts from "./LineCharts.astro";
+export { LineCharts };
