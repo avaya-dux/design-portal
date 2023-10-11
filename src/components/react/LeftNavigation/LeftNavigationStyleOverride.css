@@ -114,12 +114,12 @@
 
   .left-navigation .neo-nav--left .neo-badge__navbutton .neo-btn {
     /* No equivalent to Avaya red in Neo design system */
-    background-color: #da291c;
+    background-color: var(--global-background);
     border-radius: 0;
   }
 
   .left-navigation .neo-nav--left .neo-badge__navbutton .neo-btn:hover {
-    background-color: var(--neo-color-red-600);
+    background-color: var(--global-background);
     cursor: pointer;
   }
 
