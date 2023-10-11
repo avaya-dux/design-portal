@@ -1,31 +1,36 @@
 import type { TopicsDict } from "components";
 
-type PlatformTopicNames = "web" | "ios" | "android" | "windows" | "mac";
+type PlatformTopicNames = "platform" | "web" | "ios" | "android" | "windows" | "mac";
 
 const component = "platform";
 export const topics: TopicsDict<PlatformTopicNames> = {
-  web: {
+  platform: {
     order: 0,
+    id: `${component}`,
+    title: "Platform",
+  },
+  web: {
+    order: 1,
     id: `${component}-web`,
     title: "Web",
   },
   ios: {
-    order: 1,
+    order: 2,
     id: `${component}-ios`,
     title: "iOS",
   },
   android: {
-    order: 2,
+    order: 3,
     id: `${component}-andriod`,
     title: "Android",
   },
   windows: {
-    order: 3,
+    order: 4,
     id: `${component}-windows`,
     title: "Windows",
   },
   mac: {
-    order: 4,
+    order: 5,
     id: `${component}-mac`,
     title: "Mac",
   },
