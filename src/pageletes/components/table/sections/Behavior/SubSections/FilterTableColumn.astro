@@ -18,11 +18,11 @@ const img1Alt =
 import doImg1 from "./imgs/table-behavior-filter-column-do-1.svg";
 import dontImg1 from "./imgs/table-behavior-filter-column-dont-1.svg";
 const doInstructions1 =
-  "Include a filter icon next to the column header to indicate a filter has been applied and make the entire cell a single click.";
+  "Include a filter icon next to the column header to indicate that a filter has been applied. Also make the column header a single click item.";
 const doImgAltText1 =
   "Image showing a table with the first column header highlighted";
 const dontInstructions1 =
-  "Do not make the filter and chevron icons to be two separate actions.";
+  "Do not make the filter and chevron icons separate clickable actions.";
 const dontImgAltText1 =
   "Image showing a table with the first column header filter icon highlighted";
 ---
@@ -32,9 +32,9 @@ const dontImgAltText1 =
 </SubHeader>
 
 <Description>
-  Table columns can be filtered. When a filter has been applied, a filter icon
-  appears next to the header name. It visualizes to the user that this column
-  has a filter applied to it.
+  Table columns can be filtered. When a filter has been applied, the filter icon
+  appears next to the header name. Only one column at a time can be filtered in
+  this way.
 </Description>
 
 <ColumnLayout bkgColor={"white"} numOfColumns={1}>
@@ -43,9 +43,16 @@ const dontImgAltText1 =
   </StackedLayout>
 </ColumnLayout>
 <InfoList type="decimal">
-  <InfoListItem label="Clickable Column">Description</InfoListItem>
-  <InfoListItem label="Filter Applied Visual Icon">Description</InfoListItem>
-  <InfoListItem label="Expand Column Dropdown">Description</InfoListItem>
+  <InfoListItem label="Expand Column">
+    This is the header name of the column to be sorted. Not all columns will be
+    sortable / filterable.
+  </InfoListItem>
+  <InfoListItem label="Filter Applied Icon">
+    The icon shows that a filter is acting upon this column.
+  </InfoListItem>
+  <InfoListItem label="Expand Column Dropdown">
+    This icon provides access to the sort and filter functions for the column.
+  </InfoListItem>
 </InfoList>
 
 <DoAndDont>

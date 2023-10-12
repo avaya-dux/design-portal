@@ -22,11 +22,5 @@ export { FilterTable };
 import FilterTableColumn from "./FilterTableColumn.astro";
 export { FilterTableColumn };
 
-import ClickAndDrag from "./ClickAndDrag.astro";
-export { ClickAndDrag };
-
-import Sticky from "./Sticky.astro";
-export { Sticky };
-
 import InsetTable from "./InsetTable.astro";
 export { InsetTable };
