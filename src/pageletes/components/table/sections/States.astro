@@ -14,7 +14,7 @@ import { topics } from "../static";
 
 const { id, title } = topics.states;
 
-import image1 from "./imgs/states-1.svg";
+import image1 from "./imgs/table-states-1.svg";
 const img1AltText =
   "Image showing a table component with its five interactive states pointed out and described below";
 ---
@@ -23,10 +23,8 @@ const img1AltText =
   <SectionHeader id={id}>{title}</SectionHeader>
 
   <Description>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, explicabo
-    adipisci aperiam laboriosam excepturi illo sint iure vero perferendis
-    doloribus reiciendis veniam libero, ratione quia vel quas ex magnam
-    consequatur.
+    Each record in the table has a different state based upon the current
+    situation.
   </Description>
 
   <ImageWrapper isShaded>
@@ -34,14 +32,26 @@ const img1AltText =
   </ImageWrapper>
 
   <InfoList type="decimal">
-    <InfoListItem label="Default">Description</InfoListItem>
+    <InfoListItem label="Default">
+      When no other states are applied, the record appears in the default state.
+    </InfoListItem>
 
-    <InfoListItem label="Hover">Description</InfoListItem>
+    <InfoListItem label="Hover">
+      This occurs when the mouse passes over the record.
+    </InfoListItem>
 
-    <InfoListItem label="Selected Hover">Description</InfoListItem>
+    <InfoListItem label="Selected">
+      One or more records can be selected for further processing. These are
+      shown with the checkbox selected.
+    </InfoListItem>
 
-    <InfoListItem label="Selected">Description</InfoListItem>
+    <InfoListItem label="Selected-Hover">
+      A record that has already been selected and also has the mouse hovering
+      over it.
+    </InfoListItem>
 
-    <InfoListItem label="Disabled">Description</InfoListItem>
+    <InfoListItem label="Disabled">
+      When in this state, the record cannot be selected or modified.
+    </InfoListItem>
   </InfoList>
 </PageleteSection>
