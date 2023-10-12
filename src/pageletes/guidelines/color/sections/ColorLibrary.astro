@@ -1,5 +1,5 @@
 ---
-import { Description, PageleteSection, SectionHeader } from "components";
+import { Description, PageleteSection, SectionHeader, ImageWrapper } from "components";
 
 import { topics } from "../static";
 const { id, title } = topics.library;
@@ -35,5 +35,7 @@ import image1 from "../temp-imgs/color-library.svg";
     backgrounds, borders and sections.
   </Description>
 
-  <Image src={image1.src} alt="temperary image for neo's color library" />
+  <ImageWrapper>
+    <Image src={image1.src} alt="temperary image for neo's color library" />
+  </ImageWrapper>
 </PageleteSection>
