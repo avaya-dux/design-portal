@@ -2,12 +2,12 @@
 export interface Props {
   graphicIcon?: string;
   graphicAltText?: string;
-  type?: string;
+  header?: string;
 }
 const {
   graphicIcon = "no data found",
   graphicAltText = "no data found",
-  type = "no data found",
+  header = "no data found",
 } = Astro.props as Props;
 
 import { ImageWrapper } from "components";
@@ -23,7 +23,7 @@ import FrameSubSection from "./FrameSubSection.astro";
   </ImageWrapper>
 
   <div>
-    <h4 class="section-header">{type}</h4>
+    <h4 class="section-header">{header}</h4>
 
     <slot name="description" />
 
