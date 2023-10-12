@@ -1,0 +1,32 @@
+---
+import {
+Description,
+  PageleteSection,
+  SectionHeader,
+} from "components";
+
+import TwoColumnLayout from "./sections-frame-layout/TwoColumnLayout.astro";
+import Flexible from "./sections-frame-layout/principles/frame-1/Flexible.astro";
+import Accessible from "./sections-frame-layout/principles/frame-1/Accessible.astro";
+import Purposeful from "./sections-frame-layout/principles/frame-2/Purposeful.astro";
+import Hierarchical from "./sections-frame-layout/principles/frame-2/Hierarchical.astro";
+
+import { topics } from "../static";
+const { id, title } = topics.principles
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>The color palette was created with the following principles in mind.</Description>
+
+  <TwoColumnLayout>
+    <Flexible slot="left-frame"/>
+    <Accessible slot="right-frame"/>
+  </TwoColumnLayout>
+
+  <TwoColumnLayout>
+    <Purposeful slot="left-frame"/>
+    <Hierarchical slot="right-frame"/>
+  </TwoColumnLayout>
+</PageleteSection>

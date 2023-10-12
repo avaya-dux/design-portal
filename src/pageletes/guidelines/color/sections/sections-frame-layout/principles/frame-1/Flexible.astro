@@ -1,0 +1,16 @@
+---
+import SectionLayout from "../../SectionLayout.astro";
+
+import graphic from "../../../../imgs/color-principles-1.svg";
+
+import { Description } from "components";
+
+const altText = "Graphic representing the same color with different shades ranging from light to dark";
+const type = "Flexible";
+---
+
+<SectionLayout graphicIcon={graphic.src} graphicAltText={altText} type={type}>
+  <Description slot="description">
+    Each color is provided in a range of variants to allow for design flexibility, as well as light and dark mode themes.
+  </Description>
+</SectionLayout>

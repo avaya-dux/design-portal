@@ -1,0 +1,16 @@
+---
+import SectionLayout from "../../SectionLayout.astro";
+
+import graphic from "../../../../imgs/color-principles-4.svg";
+
+import { Description } from "components";
+
+const altText = "Graphic representing diverging colors with dark green color swatches slowly fading into red color swatches";
+const type = "Diverging";
+---
+
+<SectionLayout graphicIcon={graphic.src} graphicAltText={altText} type={type}>
+  <Description slot="description">
+    Data that has numeric meaning and includes negative values, or ranges within 2 extremes, should be displayed with a diverging color scheme. This scheme contains 2 ranges of colors that meet in the center.
+  </Description>
+</SectionLayout>

@@ -1,0 +1,16 @@
+---
+import SectionLayout from "../SectionLayout.astro";
+
+import graphic from "../../../imgs/color-accessibility-2.svg";
+
+import { Description } from "components";
+
+const altText = "Graphic demonstrating low vision";
+const type = "Low Vision";
+---
+
+<SectionLayout graphicIcon={graphic.src} graphicAltText={altText} type={type}>
+  <Description slot="description">
+    Low vision is often referred to as "partially sighted" and “sight impaired.” It is estimated that approximately 246 million people worldwide have some level of vision impairment. The level of impairment varies from person-to-person and can include: visual acuity (clarity/sharpness of vision), light sensitivity, contrast sensitivity, and field of vision (the area one can see when their eyes are focused in one place).
+  </Description>
+</SectionLayout>

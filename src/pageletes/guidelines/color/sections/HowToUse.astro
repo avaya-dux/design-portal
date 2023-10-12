@@ -1,0 +1,24 @@
+---
+import {
+Description,
+  PageleteSection,
+  SectionHeader,
+} from "components";
+
+import { topics } from "../static";
+const { id, title } = topics.how;
+
+import { Image } from "@avaya/neo-react";
+
+import image1 from "../temp-imgs/Frame 34421.svg";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Each of the main color groups have specific uses cases. Select a color to see when to use that color in your UI designs.
+  </Description>
+
+  <Image src={image1.src} alt="jkb"/>
+</PageleteSection>

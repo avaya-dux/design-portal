@@ -1,0 +1,16 @@
+---
+import SectionLayout from "../../SectionLayout.astro";
+
+import graphic from "../../../../imgs/color-principles-2.svg";
+
+import { Description } from "components";
+
+const altText = "Graphic representing components with color constrast";
+const type = "Accessible";
+---
+
+<SectionLayout graphicIcon={graphic.src} graphicAltText={altText} type={type}>
+  <Description slot="description">
+    Color combinations meet WCAG 2.1 AA standards to ensure legibility for color blind and low vision users.
+  </Description>
+</SectionLayout>
