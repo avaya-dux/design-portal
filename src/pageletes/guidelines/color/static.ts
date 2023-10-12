@@ -1,6 +1,12 @@
 import type { TopicsDict } from "components";
 
-type ColorTopicNames = "color" | "principles" | "library" | "how" | "data" | "accessibility";
+type ColorTopicNames =
+  | "color"
+  | "principles"
+  | "library"
+  | "how"
+  | "data"
+  | "accessibility";
 
 const component = "color";
 export const topics: TopicsDict<ColorTopicNames> = {

@@ -1,6 +1,6 @@
 ---
 import {
-Description,
+  Description,
   InfoList,
   InfoListItem,
   PageleteSection,
@@ -19,12 +19,15 @@ const { id, title } = topics.accessibility;
   <SectionHeader id={id}>{title}</SectionHeader>
 
   <Description>
-    The improper use of color can create barriers for users with color blindness or low vision. Users that are color blind struggle to differentiate between some colors, while those with low vision experience difficulties viewing an interface.
+    The improper use of color can create barriers for users with color blindness
+    or low vision. Users that are color blind struggle to differentiate between
+    some colors, while those with low vision experience difficulties viewing an
+    interface.
   </Description>
 
   <TwoColumnLayout marginBottom="16px">
-    <ColorBlindness slot="left-frame"/>
-    <LowVision slot="right-frame"/>
+    <ColorBlindness slot="left-frame" />
+    <LowVision slot="right-frame" />
   </TwoColumnLayout>
 
   <Description>
@@ -33,16 +36,25 @@ const { id, title } = topics.accessibility;
 
   <InfoList type="decimal" fontSize="16px">
     <InfoListItem label="" isLink>
-      Use color with other visual means of communication. 
+      Use color with other visual means of communication.
     </InfoListItem>
     <InfoListItem label="" isLink>
-      Color alone should not be used to convey information as the content may not be apparent to those with color blindness or low vision. Color should be combined with other elements, such as labels or  shape. In addition to making it easily legible, it also makes items quicker to process for those with normal vision. 
+      Color alone should not be used to convey information as the content may
+      not be apparent to those with color blindness or low vision. Color should
+      be combined with other elements, such as labels or shape. In addition to
+      making it easily legible, it also makes items quicker to process for those
+      with normal vision.
     </InfoListItem>
     <InfoListItem label="" isLink>
-      Use sufficient contrast between elements. Navy blue text on a black background is hard to anyone to read.
+      Use sufficient contrast between elements. Navy blue text on a black
+      background is hard to anyone to read.
     </InfoListItem>
     <InfoListItem label="" isLink>
-      To ensure the interface is clearly legible for all users, use these rules when applying colors to text and UI elements. These apply to all colors at the same level (e.g. Red-100 is equivalent to Blue-100, Green-100, etc.). Note that decorative items (such as branding images) do not need to meet this requirement.
+      To ensure the interface is clearly legible for all users, use these rules
+      when applying colors to text and UI elements. These apply to all colors at
+      the same level (e.g. Red-100 is equivalent to Blue-100, Green-100, etc.).
+      Note that decorative items (such as branding images) do not need to meet
+      this requirement.
     </InfoListItem>
   </InfoList>
 </PageleteSection>

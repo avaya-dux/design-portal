@@ -2,9 +2,7 @@
 export interface Props {
   marginBottom?: string;
 }
-const {
-  marginBottom="48px"
-} = Astro.props as Props;
+const { marginBottom = "48px" } = Astro.props as Props;
 ---
 
 <div class="two-column-layout">

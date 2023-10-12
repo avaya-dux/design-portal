@@ -1,5 +1,11 @@
 ---
-import { Description, PageleteSection, PageleteSubSection, SectionHeader, SubHeader } from "components";
+import {
+  Description,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  SubHeader,
+} from "components";
 
 import { topics } from "../static";
 import TwoColumnLayout from "./sections-frame-layout/TwoColumnLayout.astro";
@@ -16,23 +22,27 @@ import image1 from "../temp-imgs/Rectangle 2570.svg";
   <SectionHeader id={id}>{title}</SectionHeader>
 
   <Description>
-    Data colors are a collection of color maps used in data visualization. The colors to use are defined by the data type.
+    Data colors are a collection of color maps used in data visualization. The
+    colors to use are defined by the data type.
   </Description>
 
   <TwoColumnLayout>
-    <Categorical slot="left-frame"/>
-    <Sequential slot="right-frame"/>
+    <Categorical slot="left-frame" />
+    <Sequential slot="right-frame" />
   </TwoColumnLayout>
 
   <TwoColumnLayout>
-    <Diverging slot="left-frame"/>
+    <Diverging slot="left-frame" />
   </TwoColumnLayout>
 
   <PageleteSubSection marginTop="32px">
     <SubHeader id="interactive-tool">Interactive Tool</SubHeader>
 
-    <Description>This interactive tool allows you to experiment with various color styles and combinations.</Description>
+    <Description>
+      This interactive tool allows you to experiment with various color styles
+      and combinations.
+    </Description>
 
-    <Image src={image1.src} alt={"dasd"}/>
+    <Image src={image1.src} alt={"dasd"} />
   </PageleteSubSection>
 </PageleteSection>
