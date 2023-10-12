@@ -1,9 +1,19 @@
 ---
-import { Description, PageleteSection, PageTitle } from "components";
+import { Description, PageleteSection, PageTitle, Topics } from "components";
+
+import { topics } from "../static";
 ---
 
 <PageleteSection>
-  <PageTitle>TopNav</PageTitle>
+  <PageTitle>Header</PageTitle>
 
-  <Description>This is a placeholder page for the TopNav</Description>
+  <Description>
+    Form layout refers to the arrangement of input fields, labels, and other
+    elements on a page where user input is required. The goal is to make it easy
+    and intuitive for users to enter data into the form accurately and
+    efficiently.
+  </Description>
+
+  <Topics topics={topics} />
 </PageleteSection>
+
