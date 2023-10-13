@@ -1,0 +1,17 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components/astro";
+
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.regions.id}>
+    {topics.regions.title}
+  </SectionHeader>
+
+  <Description>
+    Regions refer to distinct areas within the UI that serve a specific purpose
+    or contain related content. Regions help organize and structure the layout,
+    making it easier for users to understand and navigate.
+  </Description>
+</PageleteSection>

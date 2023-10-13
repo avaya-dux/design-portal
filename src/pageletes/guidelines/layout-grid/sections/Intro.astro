@@ -1,0 +1,22 @@
+---
+import {
+  Description,
+  PageleteSection,
+  PageTitle,
+  Topics,
+} from "components/astro";
+
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <PageTitle>Layout and Grid</PageTitle>
+
+  <Description>
+    Neo's responsive design adapts to screen size and orientation, ensuring
+    consistency across applications and devices. It helps to prevent loss of
+    content through truncation or distortion.
+  </Description>
+
+  <Topics topics={topics} />
+</PageleteSection>
