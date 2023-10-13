@@ -1,7 +1,20 @@
 ---
-import { Description, PageleteSection, SectionHeader } from "components/astro";
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  PageleteSection,
+  SectionHeader,
+  ImageWrapper,
+  InfoList,
+  InfoListItem,
+} from "components/astro";
 
 import { topics } from "../static";
+
+import AnatomyImage from "../imgs/layout-anatomy-1.svg";
+const anatomyImgAltText =
+  "Image showing the different parts that make up a layout";
 ---
 
 <PageleteSection>
@@ -14,4 +27,27 @@ import { topics } from "../static";
     or contain related content. Regions help organize and structure the layout,
     making it easier for users to understand and navigate.
   </Description>
+
+  <ImageWrapper>
+    <Image src={AnatomyImage.src} alt={anatomyImgAltText} />
+  </ImageWrapper>
+
+  <InfoList type="decimal">
+    <InfoListItem label="Header">
+      The header region contains information and links that are pinned to the
+      top of the screen. The application name, user details, and primary
+      navigation links appear here.
+    </InfoListItem>
+
+    <InfoListItem label="Side Navigation">
+      This region provides additional information and action items and
+      navigation options for the content region.
+    </InfoListItem>
+
+    <InfoListItem label="Content">
+      The main content of the page is shown here. This region will occupy most
+      of the user’s focus, and contains the most detailed and pertinent
+      information relating to their current workflow needs.
+    </InfoListItem>
+  </InfoList>
 </PageleteSection>

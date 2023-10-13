@@ -1,0 +1,27 @@
+---
+import {
+  Description,
+  PageleteSubSection,
+  SubHeader,
+  ImageWrapper,
+} from "components/astro";
+
+import { Image } from "@avaya/neo-react";
+
+import AlignmentImage from "../../imgs/layout-grid-alignment-1.svg";
+const alignmentImgAltText =
+  "Image showing elments of similiar importancea are aligned";
+---
+
+<PageleteSubSection>
+  <SubHeader id="grid-system-alignment">Alignment</SubHeader>
+
+  <Description>
+    Screen elements of similar importance or that contain similar information
+    should be aligned within that region.
+  </Description>
+
+  <ImageWrapper>
+    <Image src={AlignmentImage.src} alt={alignmentImgAltText} />
+  </ImageWrapper>
+</PageleteSubSection>

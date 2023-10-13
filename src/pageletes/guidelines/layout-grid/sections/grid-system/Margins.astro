@@ -1,7 +1,15 @@
 ---
-import { Description, PageleteSubSection, SubHeader } from "components/astro";
+import {
+  Description,
+  PageleteSubSection,
+  SubHeader,
+  ImageWrapper,
+} from "components/astro";
 
 import { Image } from "@avaya/neo-react";
+
+import MarginsImage from "../../imgs/layout-grid-margins-1.svg";
+const marginsImgAltText = "Image showing margins around an element in a layout";
 ---
 
 <PageleteSubSection>
@@ -11,4 +19,8 @@ import { Image } from "@avaya/neo-react";
     A margin is the space around the outside left, right, top, and bottom edges
     of elements within a layout.
   </Description>
+
+  <ImageWrapper padding="0">
+    <Image src={MarginsImage.src} alt={marginsImgAltText} />
+  </ImageWrapper>
 </PageleteSubSection>

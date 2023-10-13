@@ -1,0 +1,27 @@
+---
+import {
+  Description,
+  PageleteSubSection,
+  SubHeader,
+  ImageWrapper,
+} from "components/astro";
+
+import { Image } from "@avaya/neo-react";
+
+import DimensionsImage from "../../imgs/layout-grid-dimensions-1.svg";
+const dimensionsImgAltText = "Image showing dimensions of an element";
+---
+
+<PageleteSubSection>
+  <SubHeader id="grid-system-dimensions">Dimensions</SubHeader>
+
+  <Description>
+    This specifies the width, height and internal structure of components. These
+    measurements align with the 8 px grid. When only the height is specified, in
+    a table row for example, the width is responsive to the viewport width.
+  </Description>
+
+  <ImageWrapper>
+    <Image src={DimensionsImage.src} alt={dimensionsImgAltText} />
+  </ImageWrapper>
+</PageleteSubSection>
