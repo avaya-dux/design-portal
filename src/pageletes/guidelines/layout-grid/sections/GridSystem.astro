@@ -1,0 +1,35 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components/astro";
+
+import {
+  Margins,
+  Padding,
+  Gutter,
+  GridSystemSub,
+  Pixels,
+  Dimensions,
+  Alignment,
+} from "./grid-system";
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.gridSystem.id}>
+    {topics.gridSystem.title}
+  </SectionHeader>
+
+  <Description>
+    A grid system in UX design is a foundational layout structure that helps
+    organize and arrange content on a user interface in a consistent and
+    visually pleasing manner. Grid systems are widely used in application UI
+    design to create and reinforce order, hierarchy, and balance.
+  </Description>
+
+  <Margins />
+  <Padding />
+  <Gutter />
+  <GridSystemSub />
+  <Pixels />
+  <Dimensions />
+  <Alignment />
+</PageleteSection>
