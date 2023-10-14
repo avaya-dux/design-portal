@@ -34,26 +34,23 @@ const image4Alt =
   </Description>
 
   <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom="0rem">
-      <Image src={image1.src} alt={image1Alt} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="0rem">
-      <Image src={image2.src} alt={image2Alt} />
-    </ImageWrapper>
-  </ColumnLayout>
+    <div>
+      <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom="1.5rem">
+        <Image src={image1.src} alt={image1Alt} />
+      </ImageWrapper>
+      <Caption title="Standard Line Chart">
+        Displays one or more lines to reflect changes over time.
+      </Caption>
+    </div>
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image2.src} alt={image2Alt} />
+      </ImageWrapper>
 
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop="1.5rem"
-  >
-    <Caption title="Standard Line Chart">
-      Displays one or more lines to reflect changes over time.
-    </Caption>
-    <Caption title="Sparkline">
-      Provides a compact representation of trends next to data values.
-    </Caption>
+      <Caption title="Sparkline">
+        Provides a compact representation of trends next to data values.
+      </Caption>
+    </div>
   </ColumnLayout>
 
   <ColumnLayout
