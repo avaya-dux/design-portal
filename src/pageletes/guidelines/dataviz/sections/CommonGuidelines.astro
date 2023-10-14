@@ -68,28 +68,26 @@ const image5Alt =
     gap="2rem"
     numOfColumns={2}
   >
-    <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="0rem">
-      <Image src={image3.src} alt={image3Alt} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="0rem">
-      <Image src={image4.src} alt={image4Alt} />
-    </ImageWrapper>
-  </ColumnLayout>
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image3.src} alt={image3Alt} />
+      </ImageWrapper>
 
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop="1.5rem"
-  >
-    <Caption title="Use Tooltips">
-      Tooltips should be used to provide supplemental information on a chart
-      (e.g. date or data value). They should not be the only way to identify the
-      data.
-    </Caption>
-    <Caption title="Include Legends">
-      Include legends when more than one data series is shown.
-    </Caption>
+      <Caption title="Use Tooltips">
+        Tooltips should be used to provide supplemental information on a chart
+        (e.g. date or data value). They should not be the only way to identify the
+        data.
+      </Caption>
+    </div>
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image4.src} alt={image4Alt} />
+      </ImageWrapper>
+
+      <Caption title="Include Legends">
+        Include legends when more than one data series is shown.
+      </Caption>
+    </div>
   </ColumnLayout>
 
   <ColumnLayout
@@ -98,20 +96,16 @@ const image5Alt =
     gap="2rem"
     numOfColumns={2}
   >
-    <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="0rem">
-      <Image src={image5.src} alt={image5Alt} />
-    </ImageWrapper>
-  </ColumnLayout>
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image5.src} alt={image5Alt} />
 
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop="1.5rem"
-  >
-    <Caption title="Indicate When Data Is Missing">
-      When a set of data includes null or missing data, the chart should reflect
-      this with a space rather than using '0' or connecting points.
-    </Caption>
+      </ImageWrapper>
+
+      <Caption title="Indicate When Data Is Missing">
+        When a set of data includes null or missing data, the chart should reflect
+        this with a space rather than using '0' or connecting points.
+      </Caption>
+    </div>
   </ColumnLayout>
 </PageleteSection>
