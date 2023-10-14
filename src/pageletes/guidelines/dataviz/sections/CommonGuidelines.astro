@@ -35,33 +35,31 @@ const image5Alt =
   </Description>
 
   <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom="0rem">
-      <Image src={image1.src} alt={image1Alt} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="0rem">
-      <Image src={image2.src} alt={image2Alt} />
-    </ImageWrapper>
-  </ColumnLayout>
+    <div>
+      <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom="1.5rem">
+        <Image src={image1.src} alt={image1Alt} />
+      </ImageWrapper>
 
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop="1.5rem"
-  >
-    <Caption title="Avoid 3D Charts">
-      Using 3D charts reduces readability and provides no additional value.
-    </Caption>
-    <Caption title="Use Neo's Color Palette">
-      Use the color palette provided by Neo to ensure data has sufficient
-      contrast and is accessible for all users. See
-      <Link
-      inline
-      href="/guidelines/color"
-      >
-        Colors to learn more.
-      </Link>
-    </Caption>
+      <Caption title="Avoid 3D Charts">
+        Using 3D charts reduces readability and provides no additional value.
+      </Caption>
+    </div>
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image2.src} alt={image2Alt} />
+      </ImageWrapper>
+
+      <Caption title="Use Neo's Color Palette">
+        Use the color palette provided by Neo to ensure data has sufficient
+        contrast and is accessible for all users. See
+        <Link
+        inline
+        href="/guidelines/color"
+        >
+          Colors to learn more.
+        </Link>
+      </Caption>
+    </div>
   </ColumnLayout>
 
   <ColumnLayout
