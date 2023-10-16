@@ -37,7 +37,7 @@ const image4Alt =
 
   <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
     <div>
-      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="0rem">
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
         <Image src={image1.src} alt={image1Alt} />
       </ImageWrapper>
 
@@ -46,21 +46,16 @@ const image4Alt =
         horizontally.
       </Caption>
     </div>
-    <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="0rem">
-      <Image src={image2.src} alt={image2Alt} />
-    </ImageWrapper>
-  </ColumnLayout>
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image2.src} alt={image2Alt} />
+      </ImageWrapper>
 
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop="1.5rem"
-  >
-    <Caption title="Stacked Bar Chart">
-      Displays multiple subcategories within each data set. Sections should be
-      divided with whitespace to provide clear contrast between elements.
-    </Caption>
+      <Caption title="Stacked Bar Chart">
+        Displays multiple subcategories within each data set. Sections should be
+        divided with whitespace to provide clear contrast between elements.
+      </Caption>
+    </div>
   </ColumnLayout>
 
   <ColumnLayout
@@ -69,27 +64,25 @@ const image4Alt =
     gap="2rem"
     numOfColumns={2}
   >
-    <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="0rem">
-      <Image src={image3.src} alt={image3Alt} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="0rem">
-      <Image src={image4.src} alt={image4Alt} />
-    </ImageWrapper>
-  </ColumnLayout>
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image3.src} alt={image3Alt} />
+      </ImageWrapper>
 
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop="1.5rem"
-  >
-    <Caption title="Order The Data Series">
-      Sort the series by either ascending or descending order when possible to
-      aid readability. Order by date to show trends over time.
-    </Caption>
-    <Caption title="Start At Zero">
-      Ensure the numerical axes start at zero so the bars reflect accurate
-      proportions compared to one another.
-    </Caption>
+      <Caption title="Order The Data Series">
+        Sort the series by either ascending or descending order when possible to
+        aid readability. Order by date to show trends over time.
+      </Caption>
+    </div>
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image4.src} alt={image4Alt} />
+      </ImageWrapper>
+
+      <Caption title="Start At Zero">
+        Ensure the numerical axes start at zero so the bars reflect accurate
+        proportions compared to one another.
+      </Caption>
+    </div>
   </ColumnLayout>
 </PageleteSection>

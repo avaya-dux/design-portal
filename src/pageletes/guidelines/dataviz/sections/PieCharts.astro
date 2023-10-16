@@ -29,27 +29,25 @@ const image2Alt =
   </Description>
 
   <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="0rem">
-      <Image src={image1.src} alt={image1Alt} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="0rem">
-      <Image src={image2.src} alt={image2Alt} />
-    </ImageWrapper>
-  </ColumnLayout>
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image1.src} alt={image1Alt} />
+      </ImageWrapper>
 
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop="1.5rem"
-  >
-    <Caption title="Use Minimal Categories">
-      Avoid using more that 5 categories in a pie chart as the data will become
-      difficult to digest. If more categories are required, use a bar chart
-      instead.
-    </Caption>
-    <Caption title="Provide Whitespace Between Values">
-      Use whitespace between slices to provide clear contrast between elements.
-    </Caption>
+      <Caption title="Use Minimal Categories">
+        Avoid using more that 5 categories in a pie chart as the data will become
+        difficult to digest. If more categories are required, use a bar chart
+        instead.
+      </Caption>
+    </div>
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image2.src} alt={image2Alt} />
+      </ImageWrapper>
+
+      <Caption title="Provide Whitespace Between Values">
+        Use whitespace between slices to provide clear contrast between elements.
+      </Caption>
+    </div>
   </ColumnLayout>
 </PageleteSection>
