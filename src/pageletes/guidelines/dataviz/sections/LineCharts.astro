@@ -1,0 +1,85 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Caption,
+  ColumnLayout,
+  Description,
+  ImageWrapper,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import image1 from "../imgs/data-vis-line-charts-1.svg";
+import image2 from "../imgs/data-vis-line-charts-2.svg";
+import image3 from "../imgs/data-vis-line-charts-3.svg";
+import image4 from "../imgs/data-vis-line-charts-4.svg";
+
+const image1Alt = "Image showing a standard linechart.";
+const image2Alt = "Image showing a sparkline.";
+const image3Alt =
+  "Image showing an solid line chart as actual data and dotted line as predicted.";
+const image4Alt =
+  "Image showing line chart with datapoints that don't line up in the increments in the x and y axis.";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.linecharts.id}>
+    {topics.linecharts.title}
+  </SectionHeader>
+
+  <Description>
+    Line charts are used to show continuous data, show trends, or to compare data over time.
+  </Description>
+
+  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
+    <div>
+      <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom="1.5rem">
+        <Image src={image1.src} alt={image1Alt} />
+      </ImageWrapper>
+      <Caption title="Standard Line Chart">
+        Displays one or more lines to reflect changes over time.
+      </Caption>
+    </div>
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image2.src} alt={image2Alt} />
+      </ImageWrapper>
+
+      <Caption title="Sparkline">
+        Provides a compact representation of trends next to data values.
+      </Caption>
+    </div>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    marginTop="1.5rem"
+    gap="2rem"
+    numOfColumns={2}
+  >
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image3.src} alt={image3Alt} />
+      </ImageWrapper>
+
+      <Caption title="Actual Versus Predicted Data">
+        Use solid lines to display real data, and dashed lines for predicted data.
+        Avoid smoothing the lines as it will obscure the data points.
+      </Caption>
+    </div>
+
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image4.src} alt={image4Alt} />
+      </ImageWrapper>
+
+      <Caption title="Data Points On Uneven Increments">
+        Data points can be useful when displaying information that isn't collected
+        in even increments. Avoid displaying these points when they become too
+        dense.
+      </Caption>
+    </div>
+  </ColumnLayout>
+</PageleteSection>
