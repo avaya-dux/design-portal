@@ -1,0 +1,60 @@
+---
+import { Description, PageleteSubSection, SubHeader } from "components";
+
+import ThreeColumnLayout from "../ThreeColumnLayout.astro";
+import InfoBlockLayout from "../InfoBlockLayout.astro";
+
+import textImage from "../../../imgs/how-to-images/base-text.svg";
+import disabledImage from "../../../imgs/how-to-images/base-disabled-states.svg";
+import containersImage from "../../../imgs/how-to-images/base-containers.svg";
+
+const textBlock = {
+    image: textImage.src,
+    altText: "graphic representing base color use for text",
+    header: "Text",
+    description: "For headers and regular body content",
+}
+
+const disabledBlock = {
+    image: disabledImage.src,
+    altText: "graphic representing base color use for disabled states",
+    header: "Disabled States",
+    description: "Inactive components, such as buttons, input fields and sections.",
+}
+
+const containersBlock = {
+    image: containersImage.src,
+    altText: "graphic representing base color use for containers",
+    header: "Containers",
+    description: "Backgrounds and borders for sections such as navigation, headers and cards.",
+}
+---
+
+<PageleteSubSection>
+    <SubHeader id="base">Base</SubHeader>
+
+    <Description>
+        The improper use of color can create barriers for users with color blindness or low vision. Users that are color blind struggle to differentiate between some colors, while those with low vision experience difficulties viewing an interface.
+    </Description>
+
+    <ThreeColumnLayout>
+        <InfoBlockLayout slot="left-frame"
+            graphicIcon={textBlock.image}
+            graphicAltText={textBlock.altText}
+            header={textBlock.header} 
+            description={textBlock.description}>
+        </InfoBlockLayout>
+        <InfoBlockLayout slot="middle-frame"
+            graphicIcon={disabledBlock.image}
+            graphicAltText={disabledBlock.altText}
+            header={disabledBlock.header} 
+            description={disabledBlock.description}>
+        </InfoBlockLayout>
+        <InfoBlockLayout slot="right-frame"
+            graphicIcon={containersBlock.image}
+            graphicAltText={containersBlock.altText}
+            header={containersBlock.header} 
+            description={containersBlock.description}>
+        </InfoBlockLayout>
+    </ThreeColumnLayout>
+</PageleteSubSection>

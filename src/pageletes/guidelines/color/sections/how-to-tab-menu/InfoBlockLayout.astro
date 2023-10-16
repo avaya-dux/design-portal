@@ -1,0 +1,49 @@
+---
+export interface Props {
+  graphicIcon?: string;
+  graphicAltText?: string;
+  header?: string;
+  description?: string;
+}
+const {
+  graphicIcon = "no data found",
+  graphicAltText = "no data found",
+  header = "no data found",
+  description = "no data found",
+} = Astro.props as Props;
+
+import { Image } from "@avaya/neo-react";
+import InfoBlockSubSection from "./InfoBlockSubSection.astro";
+import { Description, ImageWrapper } from "components";
+---
+
+<InfoBlockSubSection>
+  <div class="image-dimensions">
+      <Image src={graphicIcon} alt={graphicAltText}/>
+  </div>
+  <div>
+    <h4 class="section-header">{header}</h4>
+
+    <Description>{description}</Description>
+  </div>
+</InfoBlockSubSection>
+
+<style>
+  .section-header {
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    margin-bottom: 8px;
+  }
+
+  .image-dimensions{
+    display: flex;
+    justify-content: center;
+    width: 296px;
+    height: 168px;
+
+    border: 1px solid var(--neo-color-base-200);
+    background-color: var(--neo-color-base-100);
+  }
+</style>
