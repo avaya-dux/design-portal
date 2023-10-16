@@ -1,0 +1,28 @@
+---
+import {
+  Description,
+  PageleteSubSection,
+  SubHeader,
+  ImageWrapper,
+} from "components/astro";
+
+import { Image } from "@avaya/neo-react";
+
+import PaddingImage from "../../imgs/layout-grid-padding-1.svg";
+const paddingImgAltText = "Image showing padding around an element in a layout";
+---
+
+<PageleteSubSection>
+  <SubHeader id="grid-system-padding">Padding</SubHeader>
+
+  <Description>
+    Padding refers to the space between the regions in the UI. It is an
+    essential aspect of design as it affects the visual balance, readability,
+    and user experience. No text should encroach into the padding areas. Without
+    padding, fields can run together or overlap making comprehension difficult.
+  </Description>
+
+  <ImageWrapper padding="0">
+    <Image src={PaddingImage.src} alt={paddingImgAltText} />
+  </ImageWrapper>
+</PageleteSubSection>
