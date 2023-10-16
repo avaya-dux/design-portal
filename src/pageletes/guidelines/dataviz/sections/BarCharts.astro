@@ -36,9 +36,16 @@ const image4Alt =
   </Description>
 
   <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="0rem">
-      <Image src={image1.src} alt={image1Alt} />
-    </ImageWrapper>
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="0rem">
+        <Image src={image1.src} alt={image1Alt} />
+      </ImageWrapper>
+
+      <Caption title="Standard Bar Chart">
+        Displays one category per bar, and can be oriented vertically or
+        horizontally.
+      </Caption>
+    </div>
     <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="0rem">
       <Image src={image2.src} alt={image2Alt} />
     </ImageWrapper>
@@ -50,10 +57,6 @@ const image4Alt =
     numOfColumns={2}
     marginTop="1.5rem"
   >
-    <Caption title="Standard Bar Chart">
-      Displays one category per bar, and can be oriented vertically or
-      horizontally.
-    </Caption>
     <Caption title="Stacked Bar Chart">
       Displays multiple subcategories within each data set. Sections should be
       divided with whitespace to provide clear contrast between elements.
