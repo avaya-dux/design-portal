@@ -1,0 +1,28 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ImageWrapper,
+  PageleteSubSection,
+  SubHeader,
+} from "components";
+
+import searchImage from "../../imgs/header-behavior-search-1.svg";
+
+const searchImageAltText =
+  "Image showing the seach field placed to the left of the utility items and the avatar.";
+---
+
+<PageleteSubSection>
+  <SubHeader id="header-search">Search</SubHeader>
+
+  <Description>
+    The search field should be positioned to the left of the utility items and the avatar.
+     The search field is expanded by default on larger screens.
+  </Description>
+
+  <ImageWrapper padding="0" isShaded={false}>
+    <Image src={searchImage.src} alt={searchImageAltText} />
+  </ImageWrapper>
+</PageleteSubSection>

@@ -6,3 +6,6 @@ export { Brand };
 
 import Profile from "./Profile.astro";
 export { Profile };
+
+import Search from "./Search.astro";
+export { Search };
