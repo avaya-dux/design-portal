@@ -1,0 +1,32 @@
+---
+import { Description, PageleteSubSection, SubHeader } from "components";
+
+import ThreeColumnLayout from "../ThreeColumnLayout.astro";
+import InfoBlockLayout from "../InfoBlockLayout.astro";
+
+import observingImage from "../../../imgs/how-to-images/purple-supervisor-observing.svg";
+
+const observingBlock = {
+    image: observingImage.src,
+    altText: "graphic representing greens use for an observing agent",
+    header: "Supervisor and Observing Agents",
+    description: "Related to messaging and states for these users.",
+}
+---
+
+<PageleteSubSection>
+    <SubHeader id="base">Base</SubHeader>
+
+    <Description>
+        The improper use of color can create barriers for users with color blindness or low vision. Users that are color blind struggle to differentiate between some colors, while those with low vision experience difficulties viewing an interface.
+    </Description>
+
+    <ThreeColumnLayout>
+        <InfoBlockLayout slot="left-frame"
+            graphicIcon={observingBlock.image}
+            graphicAltText={observingBlock.altText}
+            header={observingBlock.header} 
+            description={observingBlock.description}>
+        </InfoBlockLayout>
+    </ThreeColumnLayout>
+</PageleteSubSection>

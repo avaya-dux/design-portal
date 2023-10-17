@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+import Tools from "./Tools.astro";
+
+import tempAreaImage from "../../imgs/tool-area.svg";
+---
+
+<div class="interactive-tool">
+    <div>
+        <Tools />
+    </div>
+    <div class="interactive-tool-visual">
+    </div>
+</div>
+
+
+<style>
+    .interactive-tool{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 112px 82px 40px 82px;
+        background-color: var(--neo-color-base-200);
+    }
+
+    .interactive-tool-visual{
+        margin: 82px 40px;
+        background-color: var(--neo-color-base-400);
+    }
+
+    .tool-area{
+        margin: 112px 40px 0px 0px;
+    }
+</style>

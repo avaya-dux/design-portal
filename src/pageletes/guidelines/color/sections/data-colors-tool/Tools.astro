@@ -1,0 +1,30 @@
+---
+import { Menu, MenuItem, Button } from "@avaya/neo-react";
+---
+
+<select
+    class="tool-dropdown"
+    id="type"
+    name="type"
+>
+<option value="categorical">Categorical</option>
+<option value="sequential">Sequential</option>
+<option value="diverging">Diverging</option>
+
+<style>
+    .tool-dropdown{
+        webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: var(--input-background-color);
+        border: 1px solid var(--input-border-color);
+        box-shadow: none;
+        color: var(--input-font-color);
+        cursor: pointer;
+        display: block;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: 20px;
+        padding: 8px 32px 8px 12px;
+        width: 100%;
+    }
+</style>

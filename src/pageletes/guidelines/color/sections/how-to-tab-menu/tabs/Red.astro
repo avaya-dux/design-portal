@@ -1,0 +1,105 @@
+---
+import { Description, PageleteSubSection, SubHeader } from "components";
+
+import ThreeColumnLayout from "../ThreeColumnLayout.astro";
+import InfoBlockLayout from "../InfoBlockLayout.astro";
+
+import errorImage from "../../../imgs/how-to-images/red-errors.svg";
+import negativeImage from "../../../imgs/how-to-images/red-negative.svg";
+import destructiveImage from "../../../imgs/how-to-images/red-destructive.svg";
+import priorityImage from "../../../imgs/how-to-images/red-high-priorty.svg";
+import overdueImage from "../../../imgs/how-to-images/red-missing-overdue.svg";
+import endActionImage from "../../../imgs/how-to-images/red-end-directions.svg";
+
+const errorBlock = {
+    image: errorImage.src,
+    altText: "graphic representing reds use for errors",
+    header: "Errors",
+    description: "Appears in messaging and status, such as banners and forms fields.",
+}
+
+const negativeBlock = {
+    image: negativeImage.src,
+    altText: "graphic representing reds use for negative values",
+    header: "Negative",
+    description: "Below zero values such as amounts, balances and scores.",
+}
+
+const destructiveBlock = {
+    image: destructiveImage.src,
+    altText: "graphic representing reds use for destructive actions",
+    header: "Destructive",
+    description: "Alert for irreversible actions such as permanent deletion.",
+}
+
+const priorityBlock = {
+    image: priorityImage.src,
+    altText: "graphic representing reds use for high priority items",
+    header: "High Priority",
+    description: "Items that require immediate attention.",
+}
+
+const overdueBlock = {
+    image: overdueImage.src,
+    altText: "graphic representing reds use for overdue items",
+    header: "Missing & Overdue Items",
+    description: "Overdue tasks, missing required items, or missed interactions.",
+}
+
+const endActionBlock = {
+    image: endActionImage.src,
+    altText: "graphic representing reds use for ending or closing interaction",
+    header: "End Interactions",
+    description: "Finish interactions, such as leaving a call or meeting, and closing a session.",
+}
+---
+
+<PageleteSubSection>
+    <SubHeader id="base">Base</SubHeader>
+
+    <Description>
+        The improper use of color can create barriers for users with color blindness or low vision. Users that are color blind struggle to differentiate between some colors, while those with low vision experience difficulties viewing an interface.
+    </Description>
+
+    <ThreeColumnLayout>
+        <InfoBlockLayout slot="left-frame"
+            graphicIcon={errorBlock.image}
+            graphicAltText={errorBlock.altText}
+            header={errorBlock.header} 
+            description={errorBlock.description}>
+        </InfoBlockLayout>
+        <InfoBlockLayout slot="middle-frame"
+            graphicIcon={negativeBlock.image}
+            graphicAltText={negativeBlock.altText}
+            header={negativeBlock.header} 
+            description={negativeBlock.description}>
+        </InfoBlockLayout>
+        <InfoBlockLayout slot="right-frame"
+            graphicIcon={destructiveBlock.image}
+            graphicAltText={destructiveBlock.altText}
+            header={destructiveBlock.header} 
+            description={destructiveBlock.description}>
+        </InfoBlockLayout>
+    </ThreeColumnLayout>
+
+    <ThreeColumnLayout>
+        <InfoBlockLayout slot="left-frame"
+            graphicIcon={priorityBlock.image}
+            graphicAltText={priorityBlock.altText}
+            header={priorityBlock.header} 
+            description={priorityBlock.description}>
+        </InfoBlockLayout>
+        <InfoBlockLayout slot="middle-frame"
+            graphicIcon={overdueBlock.image}
+            graphicAltText={overdueBlock.altText}
+            header={overdueBlock.header} 
+            description={overdueBlock.description}>
+        </InfoBlockLayout>
+        <InfoBlockLayout slot="right-frame"
+            graphicIcon={endActionBlock.image}
+            graphicAltText={endActionBlock.altText}
+            header={endActionBlock.header} 
+            description={endActionBlock.description}>
+        </InfoBlockLayout>
+    </ThreeColumnLayout>
+</PageleteSubSection>

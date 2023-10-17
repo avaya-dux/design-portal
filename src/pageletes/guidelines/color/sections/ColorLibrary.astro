@@ -3,7 +3,6 @@ import {
   Description,
   PageleteSection,
   SectionHeader,
-  ImageWrapper,
 } from "components";
 
 import { topics } from "../static";
@@ -11,7 +10,7 @@ const { id, title } = topics.library;
 
 import { Image } from "@avaya/neo-react";
 
-import image1 from "../temp-imgs/color-library.svg";
+import image1 from "../imgs/color-library-1.svg";
 ---
 
 <PageleteSection marginTop="64px">
@@ -40,7 +39,5 @@ import image1 from "../temp-imgs/color-library.svg";
     backgrounds, borders and sections.
   </Description>
 
-  <ImageWrapper>
-    <Image src={image1.src} alt="temperary image for neo's color library" />
-  </ImageWrapper>
+  <Image src={image1.src} alt="neos color library" />
 </PageleteSection>

@@ -12,12 +12,11 @@ import TwoColumnLayout from "./sections-frame-layout/TwoColumnLayout.astro";
 import Categorical from "./sections-frame-layout/data-colors/frame-1/Categorical.astro";
 import Sequential from "./sections-frame-layout/data-colors/frame-1/Sequential.astro";
 import Diverging from "./sections-frame-layout/data-colors/frame-2/Diverging.astro";
-import { Image } from "@avaya/neo-react";
+
+import InteractiveTool from "./data-colors-tool/InteractiveTool.astro"
+
 const { id, title } = topics.data;
-
-import image1 from "../temp-imgs/Rectangle 2570.svg";
 ---
-
 <PageleteSection>
   <SectionHeader id={id}>{title}</SectionHeader>
 
@@ -43,6 +42,6 @@ import image1 from "../temp-imgs/Rectangle 2570.svg";
       and combinations.
     </Description>
 
-    <Image src={image1.src} alt="temperary image placeholder for color demo" />
+    <InteractiveTool />
   </PageleteSubSection>
 </PageleteSection>

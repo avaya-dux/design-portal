@@ -4,7 +4,14 @@ import { Description, PageleteSection, SectionHeader } from "components";
 import { topics } from "../static";
 const { id, title } = topics.how;
 
-import TabMenu from "./how-to-tab-menu/TabMenu.astro"
+import { TabMenu } from "./how-to-tab-menu";
+
+import Base from "./how-to-tab-menu/tabs/Base.astro";
+import Red from "./how-to-tab-menu/tabs/Red.astro";
+import Blue from "./how-to-tab-menu/tabs/Blue.astro";
+import Green from "./how-to-tab-menu/tabs/Green.astro";
+import Orange from "./how-to-tab-menu/tabs/Orange.astro";
+import Purple from "./how-to-tab-menu/tabs/Purple.astro";
 ---
 
 <PageleteSection>
@@ -15,5 +22,12 @@ import TabMenu from "./how-to-tab-menu/TabMenu.astro"
     see when to use that color in your UI designs.
   </Description>
 
-  <TabMenu />
+  <TabMenu client:load>
+    <Base slot="tab1" />
+    <Red slot="tab2" />
+    <Blue slot="tab3" />
+    <Green slot="tab4" />
+    <Orange slot="tab5" />
+    <Purple slot="tab6" />
+  </TabMenu>
 </PageleteSection>
