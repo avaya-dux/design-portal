@@ -1,0 +1,23 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components/astro";
+import { topics } from "../static";
+
+import {
+  Placement,
+} from "./subsections";
+
+const { id, title } = topics.behavior;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    There are many different behaviors a header can have.
+  </Description>
+
+  <Placement />
+
+</PageleteSection>
