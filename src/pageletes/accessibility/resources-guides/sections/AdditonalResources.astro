@@ -1,11 +1,10 @@
 ---
-import { SectionLayout, TwoColumnLayout } from "../components";
+import { SectionLayout, TwoColumnLayout, ExternalLink } from "../components";
 
 import image1 from "../imgs/resources-additional-1.svg";
 
 import image2 from "../imgs/resources-additional-2.svg";
 
-import { Link } from "@avaya/neo-react";
 import {
   InfoListItem,
   Description,
@@ -44,14 +43,14 @@ const header2 = "Web Accessibility Perspective Videos";
       </Description>
 
       <InfoListItem label="" isLink>
-        <Link href="https://not-checklist.intopia.digital/">
+        <ExternalLink href="https://not-checklist.intopia.digital/">
           Accessibility Not-Checklist
-        </Link>
+        </ExternalLink>
       </InfoListItem>
       <InfoListItem label="" isLink>
-        <Link href="https://codepen.io/weboverhauls/full/zYvopYE">
+        <ExternalLink href="https://codepen.io/weboverhauls/full/zYvopYE">
           WCAG 2.1 Checklist with Filter and Links
-        </Link>
+        </ExternalLink>
       </InfoListItem>
     </SectionLayout>
     <SectionLayout
@@ -66,9 +65,9 @@ const header2 = "Web Accessibility Perspective Videos";
         provides.
       </Description>
       <InfoListItem label="" isLink>
-        <Link href="https://www.w3.org/WAI/perspective-videos/">
+        <ExternalLink href="https://www.w3.org/WAI/perspective-videos/">
           View Videos
-        </Link>
+        </ExternalLink>
       </InfoListItem>
     </SectionLayout>
   </TwoColumnLayout>
