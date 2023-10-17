@@ -1,7 +1,10 @@
 import { TopNav } from "@avaya/neo-react";
 import { useCallback, useEffect, useRef } from "react";
 
-import { isLeftNavigationOpen, leftNavToggleButtonRef } from "components/react/utils/layoutState";
+import {
+  isLeftNavigationOpen,
+  leftNavToggleButtonRef,
+} from "components/react/utils/layoutState";
 
 import type { PageAstroInstance } from "helpers/types";
 
@@ -121,16 +124,16 @@ const Logo = () => (
         media="(max-width: 832px) and (prefers-color-scheme: dark)"
         srcSet="/imgs/logo-mobile-dark.svg"
       />
-      <source
-        media="(max-width: 832px)"
-        srcSet="/imgs/logo-mobile-light.svg"
-      />
+      <source media="(max-width: 832px)" srcSet="/imgs/logo-mobile-light.svg" />
 
       <source
         media="(max-width: 1279px) and (prefers-color-scheme: dark)"
         srcSet="/imgs/logo-condensed-dark.svg"
       />
-      <source media="(max-width: 1279px)" srcSet="/imgs/logo-condensed-light.svg" />
+      <source
+        media="(max-width: 1279px)"
+        srcSet="/imgs/logo-condensed-light.svg"
+      />
 
       <source
         media="(min-width: 1280px) and (prefers-color-scheme: dark)"

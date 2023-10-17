@@ -1,0 +1,88 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Caption,
+  ColumnLayout,
+  Description,
+  ImageWrapper,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import image1 from "../imgs/data-vis-bar-charts-1.svg";
+import image2 from "../imgs/data-vis-bar-charts-2.svg";
+import image3 from "../imgs/data-vis-bar-charts-3.svg";
+import image4 from "../imgs/data-vis-bar-charts-4.svg";
+
+const image1Alt = "Image showing a vertically oriented bar chart.";
+const image2Alt =
+  "Image showing a stacked bar chart with clear gaps between sections.";
+const image3Alt =
+  "Image showing a bar chart where the x-axis values are sorted.";
+const image4Alt =
+  "Image showing a bar chart where values on the y-axis start at zero.";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.barcharts.id}>
+    {topics.barcharts.title}
+  </SectionHeader>
+
+  <Description>
+    Bar charts are used to compare different values that have the same level of
+    importance.
+  </Description>
+
+  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image1.src} alt={image1Alt} />
+      </ImageWrapper>
+
+      <Caption title="Standard Bar Chart">
+        Displays one category per bar, and can be oriented vertically or
+        horizontally.
+      </Caption>
+    </div>
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image2.src} alt={image2Alt} />
+      </ImageWrapper>
+
+      <Caption title="Stacked Bar Chart">
+        Displays multiple subcategories within each data set. Sections should be
+        divided with whitespace to provide clear contrast between elements.
+      </Caption>
+    </div>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    marginTop="1.5rem"
+    gap="2rem"
+    numOfColumns={2}
+  >
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image3.src} alt={image3Alt} />
+      </ImageWrapper>
+
+      <Caption title="Order The Data Series">
+        Sort the series by either ascending or descending order when possible to
+        aid readability. Order by date to show trends over time.
+      </Caption>
+    </div>
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image4.src} alt={image4Alt} />
+      </ImageWrapper>
+
+      <Caption title="Start At Zero">
+        Ensure the numerical axes start at zero so the bars reflect accurate
+        proportions compared to one another.
+      </Caption>
+    </div>
+  </ColumnLayout>
+</PageleteSection>
