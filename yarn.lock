@@ -132,10 +132,10 @@
   resolved "https://registry.yarnpkg.com/@avaya/neo-icons/-/neo-icons-1.6.0.tgz#08b8cccf4c54f8ae88cdb384d75b30ac3806cd10"
   integrity sha512-8C3j4GfnNJEf6E3059WtP1WblwYZtO+zhewl9dY2C/bMIs4pxFaH+j6KZ3K7TKUtMHuDomU1adwCZiIXx2i3pQ==
 
-"@avaya/neo-react@1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-1.0.3.tgz#93e4d08c7026ea5f86eea12b86cacc20904e3a66"
-  integrity sha512-IRSEshQXEjPGHqTRco08fJcxBwXguUeGaJ8W8C1PHD9HuxW/7Evz+Xg7Mmpi5X/OcsG1y7rk75D29kHo61uqVg==
+"@avaya/neo-react@1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-1.0.4.tgz#1abfb504011870a48b8c9805242e158063ac1d80"
+  integrity sha512-NgyEzNyydsLejGTBXzul+bcb0k2vI5+YIQSx+MN9lvJyrNwFCcAVOJIZA7CbYwm8ogkGsKpaqGIfsUS/K8yx4Q==
   dependencies:
     atomic-layout "0.16.2"
     loglevel "1.8.1"
