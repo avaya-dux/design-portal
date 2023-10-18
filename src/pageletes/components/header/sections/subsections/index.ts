@@ -9,3 +9,6 @@ export { Profile };
 
 import Search from "./Search.astro";
 export { Search };
+
+import Responsiveness from "./Responsiveness.astro";
+export { Responsiveness };
