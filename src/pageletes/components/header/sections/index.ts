@@ -9,3 +9,6 @@ export { Behavior };
 
 import Specs from "./Specs.astro";
 export { Specs };
+
+import KeyboardInteractions from "./KeyboardInteractions.astro";
+export { KeyboardInteractions };
