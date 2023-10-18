@@ -12,3 +12,6 @@ export { Search };
 
 import Responsiveness from "./Responsiveness.astro";
 export { Responsiveness };
+
+import Skip from "./Skip.astro";
+export { Skip };
