@@ -1,0 +1,65 @@
+---
+import { Image } from "@avaya/neo-react";
+import { Description, SubHeader, DoAndDont } from "components";
+
+import helperDoImage1 from "../imgs/tree-behaviors-do-1.svg";
+import helperDontImage1 from "../imgs/tree-behaviors-dont-1.svg";
+const helperDoInstructions1 =
+  "Use tree views to display the levels of a hierarchical menu.";
+const helperDontInstructions1 =
+  "Do not use the tree view as the primary method of navigation in an application, or instead of an accordion.";
+
+import helperDoImage2 from "../imgs/tree-behaviors-do-2.svg";
+import helperDontImage2 from "../imgs/tree-behaviors-dont-2.svg";
+const helperDoInstructions2 =
+  "Always display the chevron icon to indicate a tree view parent with child items.";
+const helperDontInstructions2 = 
+  "Do not use collapsible tree view items without a chevron. Do not replace the chevron with another icon.";
+---
+
+<SubHeader id="text-helper-behavior-subheader">Helper Text</SubHeader>
+
+<Description>
+  Helper text provides guidance as to the type of data or the format of that
+  data, such as the appearance of a date field (i.e. mm/dd/yyyy) or password.
+</Description>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={helperDoInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={helperDoImage1.src}
+        alt="Image showing correct tree hierarchy"
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={helperDontInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={helperDontImage1.src}
+        alt="Image showing improper tree hierarchy"
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={helperDoInstructions2}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={helperDoImage2.src}
+        alt="Image showing correct chevron use"
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={helperDontInstructions2}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={helperDontImage2.src}
+        alt="Image showing lack of a chevron"
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>

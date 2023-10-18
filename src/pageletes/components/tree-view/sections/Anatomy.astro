@@ -1,0 +1,61 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ImageWrapper,
+  InfoList,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+import { topics } from "../static";
+
+const { id, title } = topics.anatomy;
+
+import anatomyImage1 from "../imgs/tree-view-anatomy-1.svg";
+const anatomyImgAltText1 =
+  "Displays the anatomy of a tree view";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    A tree view component is a design element that displays data in a hierarchical, tree-like structure. Each item in the tree is represented by a node or a branch. Similar related child items are grouped beneath an encompassing parent.
+  </Description>
+
+  <ImageWrapper isShaded>
+    <Image src={anatomyImage1.src} alt={anatomyImgAltText1} />
+  </ImageWrapper>
+
+  <InfoList type="decimal">
+    <InfoListItem label="Status indicator">
+      The bar to the left indicates that this item is currently selected.
+    </InfoListItem>
+
+    <InfoListItem label="Drag icon">
+      Users can click and drag tree view items to change their location on the list, or to move items to a different parent.
+    </InfoListItem>
+
+    <InfoListItem label="Collapse and expand button">
+      Use this icon to show the child items on a lower branch.
+    </InfoListItem>
+
+    <InfoListItem label="Selector Options">
+      Users can select one-or-more items. It can be a checkbox or a radio button. This box contains a dash when child items are selected.
+    </InfoListItem>
+
+    <InfoListItem label="Label Icon (optional)">
+      Adding an icon helps the user quickly identify the information the item contains.
+    </InfoListItem>
+
+    <InfoListItem label="Label">
+      This is the title of the category or list item, saying what information or function it contains.
+    </InfoListItem>
+
+    <InfoListItem label="Actions Area">
+      This area can include actions and other functions, such as a switch or a chip.
+    </InfoListItem>
+  </InfoList>
+</PageleteSection>

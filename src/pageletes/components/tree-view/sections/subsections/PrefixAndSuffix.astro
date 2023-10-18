@@ -1,0 +1,40 @@
+---
+import { Image } from "@avaya/neo-react";
+import { Description, SubHeader, DoAndDont } from "components";
+
+import multipleLinesDoImage1 from "../imgs/text-behavior-prefix-do-1.svg";
+import multipleLinesDontImage1 from "../imgs/text-behavior-prefix-dont-1.svg";
+const multipleLinesDoInstructions1 =
+  "Use the prefix and suffix styles to provide additional context to an input when needed.";
+const multipleLinesDontInstructions1 =
+  "Do not use the prefix and suffix styles for data that can be dynamically changed.";
+---
+
+<SubHeader id="text-prefix-and-suffix-behavior">Prefix and Suffix</SubHeader>
+
+<Description>
+  A prefix or suffix can be added to an input field to guide users toward the
+  correct type of data to be entered. This also tells the user that including
+  units in the data is not required or expected. The information in the suffix
+  or prefix should be constant, not a selectable value.
+</Description>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={multipleLinesDoInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={multipleLinesDoImage1.src}
+        alt="Image showing dollar sign prefix to indicate a monetary value"
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={multipleLinesDontInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={multipleLinesDontImage1.src}
+        alt="Image showing improper use of a suffix in the form of a drop down menu item"
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>

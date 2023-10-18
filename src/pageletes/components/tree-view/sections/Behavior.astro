@@ -1,0 +1,48 @@
+---
+import {
+  Description,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+} from "components";
+
+import { topics } from "../static";
+
+import {
+  GeneralBehavior,
+  WidthBehavior,
+  PasswordInputBehavior,
+  MultipleLinesBehavior,
+  PrefixAndSuffix,
+} from "pageletes/components/text-input/sections";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.behavior.id}>
+    {topics.behavior.title}
+  </SectionHeader>
+
+  <Description>
+    Tree View has different behaviors that determine how it interacts with the user. The following examples show several implementations.
+  </Description>
+
+  <PageleteSubSection marginTop="4rem">
+    <GeneralBehavior />
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <MultipleLinesBehavior />
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <PrefixAndSuffix />
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <WidthBehavior />
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <PasswordInputBehavior />
+  </PageleteSubSection>
+</PageleteSection>
