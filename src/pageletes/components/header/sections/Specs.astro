@@ -1,0 +1,30 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  ColumnLayout,
+  Description,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import specsImage from "../imgs/header-specs-1.svg";
+const specsImgAltText =
+  "Image showing the dimentions in pixes for each element that make up a header.";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.specs.id}>{topics.specs.title}</SectionHeader>
+
+  <Description>
+    Shown below are the specifications for the header component.
+  </Description>
+
+  <ColumnLayout isShaded numOfColumns={1}>
+    <StackedLayout>
+      <Image src={specsImage.src} alt={specsImgAltText} />
+    </StackedLayout>
+  </ColumnLayout>
+</PageleteSection>
