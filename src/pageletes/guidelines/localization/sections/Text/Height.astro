@@ -1,0 +1,29 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ImageWrapper,
+  PageleteSubSection,
+  SubHeader,
+} from "components";
+
+import heightImage from "../../imgs/localization-text-height-1.svg";
+
+const heightImageAltText =
+  "Image showing text height of various words in different languages";
+---
+
+<PageleteSubSection>
+  <SubHeader id="localization-text-height">Height</SubHeader>
+
+  <Description>
+    Many non-Latin writing systems have taller characters, and often require
+    more vertical space between lines. The user interface should provide enough
+    vertical space to accommodate them.
+  </Description>
+
+  <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+    <Image src={heightImage.src} alt={heightImageAltText} />
+  </ImageWrapper>
+</PageleteSubSection>

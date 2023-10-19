@@ -2,12 +2,7 @@ import type { TopicsDict } from "components";
 
 type DropdownTopicNames =
   // | "playground"
-  | "anatomy"
-  | "states"
-  | "behavior"
-  | "specs"
-  | "keyboard"
-  | "related";
+  "anatomy" | "states" | "behavior" | "specs" | "keyboard" | "related";
 
 export const topics: TopicsDict<DropdownTopicNames> = {
   // playground: {

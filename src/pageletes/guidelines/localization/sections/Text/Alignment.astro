@@ -1,0 +1,31 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ImageWrapper,
+  PageleteSubSection,
+  SubHeader,
+} from "components";
+
+import alignmentImage from "../../imgs/localization-text-alignment-1.svg";
+
+const alignmentImageAltText =
+  "Image showing text alignment for both right-to-left and left-to-right languages";
+---
+
+<PageleteSubSection>
+  <SubHeader id="localization-text-alignment">Alignment</SubHeader>
+
+  <Description>
+    Some writing systems (such as Arabic, Hebrew, Persian and Urdu) are
+    displayed with characters that go from right-to-left. Alignments for these
+    systems must be adjusted accordingly. Visit the <a href="#fixme"
+      >bidirectionality</a
+    > section to learn more.
+  </Description>
+
+  <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+    <Image src={alignmentImage.src} alt={alignmentImageAltText} />
+  </ImageWrapper>
+</PageleteSubSection>

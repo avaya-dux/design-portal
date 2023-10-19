@@ -1,0 +1,110 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ImageWrapper,
+  PageleteSubSection,
+  SubHeader,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableCellHead,
+  InfoTableHead,
+  InfoTableRow,
+  ColumnLayout,
+} from "components";
+
+import smallHeaderImage from "../../imgs/localization-text-length-1.svg";
+import buttonImage from "../../imgs/localization-text-length-2.svg";
+
+const smallHeaderImageAltText =
+  "Image showing average text expansion for small headers";
+const buttonImageAltText = "Image showing average text expansion for buttons";
+---
+
+<PageleteSubSection>
+  <SubHeader id="localization-text-word-length">Word Length</SubHeader>
+
+  <Description>
+    Average word lengths vary between languages, even those that use similar
+    glyphs (e.g. English and German). In the UI, ensure there is enough space to
+    fit longer translations, otherwise text may overlap or be cut off.
+    Generally, shorter text fields are more likely to be expanded in other
+    languages. Below is a table from IBM’s Globalization Guidelines that
+    provides an idea about how much space could be provided.
+  </Description>
+
+  <InfoTable>
+    <InfoTableHead>
+      <InfoTableRow>
+        <InfoTableCellHead>Characters (In English)</InfoTableCellHead>
+        <InfoTableCellHead>Average Expansion</InfoTableCellHead>
+        <InfoTableCellHead>Can Apply To</InfoTableCellHead>
+      </InfoTableRow>
+    </InfoTableHead>
+
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>{"<= 10"}</InfoTableCell>
+        <InfoTableCell>200 - 300%</InfoTableCell>
+        <InfoTableCell>Buttons, menus and tabs</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>11 - 20</InfoTableCell>
+        <InfoTableCell>180 - 200%</InfoTableCell>
+        <InfoTableCell>Labels, form fields, chips and tables</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>21 - 30</InfoTableCell>
+        <InfoTableCell>160 - 180%</InfoTableCell>
+        <InfoTableCell>Longer headers</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>31 - 50</InfoTableCell>
+        <InfoTableCell>140 - 160%</InfoTableCell>
+        <InfoTableCell>Short headers, tooltips and notifications</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>51 - 70</InfoTableCell>
+        <InfoTableCell>151 - 170%</InfoTableCell>
+        <InfoTableCell>Short paragraphs</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>{"> 70"}</InfoTableCell>
+        <InfoTableCell>130%</InfoTableCell>
+        <InfoTableCell>Longer paragraphs</InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
+
+  <ColumnLayout numOfColumns={2} gap="2rem">
+    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={smallHeaderImage.src} alt={smallHeaderImageAltText} />
+    </ImageWrapper>
+    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={buttonImage.src} alt={buttonImageAltText} />
+    </ImageWrapper>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    gap="2rem"
+    numOfColumns={2}
+    marginTop={"1.5rem"}
+  >
+    <div>
+      <h4 class="image-header neo-bold">Small header</h4>
+      <Description>Average text expansion of 140-160%.</Description>
+    </div>
+    <div>
+      <h4 class="image-header neo-bold">Button</h4>
+      <Description>Average text expansion of 200 - 300%.</Description>
+    </div>
+  </ColumnLayout>
+</PageleteSubSection>

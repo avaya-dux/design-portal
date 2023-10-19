@@ -1,0 +1,69 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ImageWrapper,
+  PageleteSubSection,
+  SubHeader,
+  ColumnLayout,
+} from "components";
+
+import modifierKeys from "../../imgs/localization-content-keyboards-1.svg";
+import personalization from "../../imgs/localization-content-keyboards-2.svg";
+
+const modifierKeysAltText =
+  "Image showing different text for each modifier key";
+const personalizationAltText =
+  "Image showing a series of partially completed checkboxes, indicating personal preference";
+---
+
+<PageleteSubSection>
+  <SubHeader id="localization-content-keyboard-shortcuts">
+    Keyboard Shortcuts
+  </SubHeader>
+
+  <Description>
+    Many languages have their own keyboard layouts for their most common
+    characters. Some languages can have several layouts. Any shortcuts you
+    create must consider how these actions can be triggered in each language.
+  </Description>
+
+  <ColumnLayout numOfColumns={2} gap="2rem">
+    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={modifierKeys.src} alt={modifierKeysAltText} />
+    </ImageWrapper>
+    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={personalization.src} alt={personalizationAltText} />
+    </ImageWrapper>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    gap="2rem"
+    numOfColumns={2}
+    marginTop={"1.5rem"}
+  >
+    <div>
+      <h4 class="image-header neo-bold">Differentiate between Modifier Keys</h4>
+      <Description>
+        Most languages use a modifier key such as AltGr (known as the right
+        Alt/option key on a U.S. English keyboard) to enter additional letters,
+        diacritics or symbols. To avoid clashing with shortcuts that use Alt,
+        make sure the application differientates between these 2 keys. On the
+        web, this can be achieved by checking the .key attribute instead of
+        .keycode.
+      </Description>
+    </div>
+    <div>
+      <h4 class="image-header neo-bold">Allow for Personalization</h4>
+      <Description>
+        Providing users with a mechanism to override embedded shortcuts with
+        their own is a great way to alleviate conflicts between languages and
+        allows users to select the configuration that is most comfortable for
+        them. Where possible, allow users to define their own shortcuts within
+        an application.
+      </Description>
+    </div>
+  </ColumnLayout>
+</PageleteSubSection>

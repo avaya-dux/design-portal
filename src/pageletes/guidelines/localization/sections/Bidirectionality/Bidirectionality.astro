@@ -1,0 +1,26 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components/astro";
+
+import MirroringLayout from "./MirroringLayout.astro";
+
+import WhenNotToMirror from "./WhenNotToMirror.astro";
+
+import { topics } from "../../static";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.bidirectionality.id}>
+    {topics.bidirectionality.title}
+  </SectionHeader>
+
+  <Description>
+    Some writing systems (such as Arabic, Hebrew, Persian and Urdu) are
+    displayed with characters that flow from right-to-left (RTL). In these
+    cases, the user interface should be mirrored to reflect the RTL reading
+    pattern.
+  </Description>
+
+  <MirroringLayout />
+
+  <WhenNotToMirror />
+</PageleteSection>
