@@ -13,7 +13,7 @@ import { Image } from "@avaya/neo-react";
 
 const { id, title } = topics.anatomy;
 
-import image1 from "./imgs/anatomy-1.svg";
+import image1 from "./imgs/table-anatomy-1.svg";
 const img1AltText =
   "Image showing a table component with its six notes pointed out and described below";
 ---
@@ -31,16 +31,36 @@ const img1AltText =
   </ImageWrapper>
 
   <InfoList type="decimal">
-    <InfoListItem label="Toolbar">Description</InfoListItem>
+    <InfoListItem label="Toolbar">
+      A collection of functions, such as edit, copy, and delete, that can be
+      used to modify the data in the table.
+    </InfoListItem>
 
-    <InfoListItem label="Column Header">Description</InfoListItem>
+    <InfoListItem label="Column Header">
+      The title of each column contains a description of the data it contains.
+    </InfoListItem>
 
-    <InfoListItem label="Row">Description</InfoListItem>
+    <InfoListItem label="Row">
+      Each row is a single record within the database. All columns on the row
+      relate to the same record.
+    </InfoListItem>
 
-    <InfoListItem label="Pagination">Description</InfoListItem>
+    <InfoListItem label="Pagination">
+      The table footer contains information regarding the total number of
+      records, the range of records being shown, and navigation tools to move
+      through multiple pages where necessary.
+    </InfoListItem>
 
-    <InfoListItem label="Search Table">Description</InfoListItem>
+    <InfoListItem label="Search Fiedl">
+      Use this field to search all rows and columns of the table to find a
+      specific record or data value.
+    </InfoListItem>
 
-    <InfoListItem label="Sort and Filter">Description</InfoListItem>
+    <InfoListItem label="Sort and Filter">
+      These standard tools can be applied to each column. Sort reorders the
+      records, such as toggling between ascending and descending order. A Filter
+      allows you to select only the records that meet specified parameters (e.g.
+      a date range).
+    </InfoListItem>
   </InfoList>
 </PageleteSection>

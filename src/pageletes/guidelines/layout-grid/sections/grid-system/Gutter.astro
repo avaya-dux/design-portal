@@ -1,0 +1,26 @@
+---
+import {
+  Description,
+  PageleteSubSection,
+  SubHeader,
+  ImageWrapper,
+} from "components/astro";
+
+import { Image } from "@avaya/neo-react";
+
+import GutterImage from "../../imgs/layout-grid-gutter-1.svg";
+const gutterImgAltText = "Image showing gutter between elements in a layout";
+---
+
+<PageleteSubSection>
+  <SubHeader id="grid-system-gutter">Gutter</SubHeader>
+
+  <Description>
+    A gutter separates the regions in the layout. It helps to create visual
+    separation, organize content, and establish the hierarchy.
+  </Description>
+
+  <ImageWrapper padding="0">
+    <Image src={GutterImage.src} alt={gutterImgAltText} />
+  </ImageWrapper>
+</PageleteSubSection>

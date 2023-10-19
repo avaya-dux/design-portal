@@ -1,0 +1,48 @@
+---
+export interface Props {
+  graphicIcon?: string;
+  graphicAltText?: string;
+  sectionHeader?: string;
+}
+const {
+  graphicIcon = "no data found",
+  graphicAltText = "no data found",
+  sectionHeader = "no data found",
+} = Astro.props as Props;
+
+import { ImageWrapper, InfoList } from "components";
+
+import { Image } from "@avaya/neo-react";
+---
+
+<div class="frame-sub-section">
+  <ImageWrapper marginTop="0" marginBottom="0">
+    <Image src={graphicIcon} alt={graphicAltText} width={408} />
+  </ImageWrapper>
+
+  <div>
+    <h4 class="section-header">{sectionHeader}</h4>
+
+    <slot name="description" />
+
+    <InfoList type="'- '" fontSize="16px">
+      <slot />
+    </InfoList>
+  </div>
+</div>
+
+<style>
+  .frame-sub-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .section-header {
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    margin-bottom: 8px;
+  }
+</style>

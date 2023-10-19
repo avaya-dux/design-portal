@@ -15,20 +15,10 @@ import img3 from "./imgs/table-behavior-actions-3.svg";
 const img3Alt =
   "Image showing a selectable table one selection and 'Edit', 'Copy', and 'Delete' actions available";
 
-import doImg1 from "./imgs/table-behavior-actions-do-1.svg";
-import dontImg1 from "./imgs/table-behavior-actions-dont-1.svg";
-const doInstructions1 = "Display checkboxes and action buttons on hover.";
-const doImgAltText1 =
-  "Image showing a selectable table with no selections but a checkbox is shown on the one row that is hovered over";
-const dontInstructions1 =
-  "Do not display checkboxes and action buttons on every row by default.";
-const dontImgAltText1 =
-  "Image showing a selectable table with all rows showing checkboxes without any hover";
-
 import doImg2 from "./imgs/table-behavior-actions-do-2.svg";
 import dontImg2 from "./imgs/table-behavior-actions-dont-2.svg";
 const doInstructions2 =
-  "Use a More button with a dropdown menu to display the list of available actions when multiple options are possible.";
+  "Use a More icon with a dropdown menu to display the actions when multiple options are available.";
 const doImgAltText2 =
   "Image showing a selectable table, the right most side has an ellipsis icon that when clicked shows a dropdown menu with the available actions";
 const dontInstructions2 = "Do not display all available actions on the row.";
@@ -39,13 +29,13 @@ const dontImgAltText2 =
 <SubHeader id="table-behavior-actions">Actions</SubHeader>
 
 <Description>
-  Table actions refer to the operations or functions that can be performed on a
-  table component in order to manipulate or interact with its data.
+  Actions are operations that can be performed on a record to modify the data.
 </Description>
 
 <Description>
-  When multiple actions are available to a selected row, the actions are
-  condensed and added to the more menu icon.
+  When multiple actions are available for a selected row, pick the desired
+  action from the icon in the header. These actions also available under the
+  More ( ... ) icon.
 </Description>
 
 <ImageWrapper isShaded marginBottom={"3rem"}>
@@ -53,8 +43,7 @@ const dontImgAltText2 =
 </ImageWrapper>
 
 <Description>
-  If there is only one actionable item, the action is fully exposed on the
-  table.
+  If there is only one available action, it is fully exposed on the table.
 </Description>
 
 <ImageWrapper isShaded marginBottom={"3rem"}>
@@ -62,27 +51,13 @@ const dontImgAltText2 =
 </ImageWrapper>
 
 <Description>
-  In a condensed window, the more actions are positioned next to the first item
-  so these actions are always visible.
+  In a condensed window, the More menu is positioned next to the first column so
+  it is available without scrolling.
 </Description>
 
 <ImageWrapper isShaded marginBottom={"3rem"}>
   <Image src={img3.src} alt={img3Alt} />
 </ImageWrapper>
-
-<DoAndDont>
-  <DoAndDont.DoContainer instructions={doInstructions1}>
-    <DoAndDont.ImageExampleContainer>
-      <Image src={doImg1.src} alt={doImgAltText1} />
-    </DoAndDont.ImageExampleContainer>
-  </DoAndDont.DoContainer>
-
-  <DoAndDont.DontContainer instructions={dontInstructions1}>
-    <DoAndDont.ImageExampleContainer>
-      <Image src={dontImg1.src} alt={dontImgAltText1} />
-    </DoAndDont.ImageExampleContainer>
-  </DoAndDont.DontContainer>
-</DoAndDont>
 
 <DoAndDont>
   <DoAndDont.DoContainer instructions={doInstructions2}>
