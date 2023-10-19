@@ -1,0 +1,110 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  ColumnLayout,
+  Description,
+  InfoList,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+import { topics } from "../static";
+
+import StateEnabledImage from "../imgs/tree-states-1.svg";
+import StateHoverImage from "../imgs/tree-states-2.svg";
+import StateDisabledImage from "../imgs/tree-states-3.svg";
+import StateActiveEnabledImage from "../imgs/tree-states-4.svg";
+import StateActiveHoverImage from "../imgs/tree-states-5.svg";
+import StateActiveDisabledImage from "../imgs/tree-states-6.svg";
+
+import LayoutWrapper from "./subsections/components/LayoutWrapper.astro";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.states.id}>{topics.states.title}</SectionHeader>
+
+  <Description>
+    This component can be displayed in one of six states.
+  </Description>
+
+  <ColumnLayout bkgColor="white" numOfColumns={3} marginBottom="0">
+    <LayoutWrapper label="Enabled">
+      <Image
+        src={StateEnabledImage.src}
+        alt="Tree view with default states look like this"
+      />
+    </LayoutWrapper>
+
+    <LayoutWrapper label="Hover">
+      <Image
+        src={StateHoverImage.src}
+        alt="Tree view with hover states look like this"
+      />
+    </LayoutWrapper>
+
+    <LayoutWrapper label="Disabled">
+      <Image
+        src={StateDisabledImage.src}
+        alt="Tree view with disabled states look like this"
+      />
+    </LayoutWrapper>
+  </ColumnLayout>
+  <ColumnLayout
+    bkgColor="white"
+    numOfColumns={3}
+    marginTop="0"
+    showTopBorder={false}
+  >
+    <LayoutWrapper label="Active - Enabled">
+      <Image
+        src={StateActiveEnabledImage.src}
+        alt="Tree view with active and enabled states look like this"
+      />
+    </LayoutWrapper>
+
+    <LayoutWrapper label="Active - Hover">
+      <Image
+        src={StateActiveHoverImage.src}
+        alt="Tree view with active and hover states look like this"
+      />
+    </LayoutWrapper>
+
+    <LayoutWrapper label="Active - Disabled">
+      <Image
+        src={StateActiveDisabledImage.src}
+        alt="Tree view with active and disabled states look like this"
+      />
+    </LayoutWrapper>
+  </ColumnLayout>
+
+  <InfoList type="disc">
+    <InfoListItem label="Enabled">
+      This is the default state. The item can be selected or expanded.
+    </InfoListItem>
+
+    <InfoListItem label="Hover">
+      Moving the mouse over the item changes it to the Hover state. There is no
+      hover state when using keyboard navigation.
+    </InfoListItem>
+
+    <InfoListItem label="Disabled">
+      If the field cannot be selected, use the Disabled state. Another action or
+      setting must be made to enable the field.
+    </InfoListItem>
+
+    <InfoListItem label="Active - Enabled">
+      This is the item currently selected. Click to open the child menu where
+      there is one.
+    </InfoListItem>
+
+    <InfoListItem label="Active - Hover">
+      Moving the mouse over the active field changes it to the Active-Hover
+      state.
+    </InfoListItem>
+
+    <InfoListItem label="Active - Disabled">
+      The field is active but cannot be unselected or modified.
+    </InfoListItem>
+  </InfoList>
+</PageleteSection>
