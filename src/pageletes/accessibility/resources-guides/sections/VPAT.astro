@@ -1,0 +1,57 @@
+---
+import {
+  Description,
+  PageleteSection,
+  SectionHeader,
+  InfoList,
+  InfoListItem,
+} from "components";
+
+import { ExternalLink } from "../components";
+
+import { topics } from "../static";
+const { id, title } = topics.vpat;
+
+const links = {
+  vpat: {
+    link: "https://www.itic.org/policy/accessibility/vpat",
+    title: "follow the link to complete the form",
+  },
+  avaya: {
+    link: "http://www.avaya.com/us-government-solutions/capabilities/accessibility/",
+    title: "Avaya Accessibility",
+  },
+};
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    A Voluntary Product Accessibility Template (VPAT) is a document prepared by
+    a manufacturer that gives information about the degree to which a particular
+    product complies with WCAG 2.1 and Section 508 links for accessibility.
+    VPATs are used by federal agencies, governments and other clients to assess
+    accessibility when performing market research and evaluating proposals.
+  </Description>
+
+  <Description>
+    The WCAG (Web Component Accessibility Guidelines) regulations are managed by
+    the World Wide Web Consortium (W3C) and represent the worldwide standard for
+    accessibility.
+    <InfoList type="'- '">
+      <InfoListItem label="" isLink={true}>
+        To create a VPAT for a product, <ExternalLink href={links.vpat.link}>
+          {links.vpat.title}
+        </ExternalLink>.
+      </InfoListItem>
+      <InfoListItem label="" isLink={true}>
+        To view the VPATs currently available for Avaya's products, visit <ExternalLink
+          href={links.avaya.link}
+        >
+          {links.avaya.title}
+        </ExternalLink>.
+      </InfoListItem>
+    </InfoList>
+  </Description>
+</PageleteSection>
