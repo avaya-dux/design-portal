@@ -1,0 +1,37 @@
+---
+import { Image } from "@avaya/neo-react";
+import { Description, SubHeader, DoAndDont } from "components";
+
+import overflowDoImage1 from "../../imgs/tree-behaviors-overflow-do-1.svg";
+import overflowDontImage1 from "../../imgs/tree-behaviors-overflow-dont-1.svg";
+const overflowDoInstructions1 =
+  "Use concise labels within the tree view. Labels can wrap to a second line if needed (such as for translated text).";
+const overflowDontInstructions1 =
+  "Do not use the helper text to indicate an error without providing enough information to fix the problem.";
+---
+
+<SubHeader id="tree-view-overflowbehavior">Overflow</SubHeader>
+
+<Description>
+  Try to keep the labels short enough to appear on a single line within the tree view. The text can be wrapped to a second line when it is necessary.
+</Description>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={overflowDoInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={overflowDoImage1.src}
+        alt="Image showing correct overflow where the words do not get cut off"
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={overflowDontInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={overflowDontImage1.src}
+        alt="Image showing improper overflow with the words being cut off"
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>

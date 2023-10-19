@@ -10,11 +10,12 @@ import { topics } from "../static";
 
 import {
   GeneralBehavior,
-  WidthBehavior,
-  PasswordInputBehavior,
-  MultipleLinesBehavior,
-  PrefixAndSuffix,
-} from "pageletes/components/text-input/sections";
+  NestedBehavior,
+  MultiselectBehavior,
+  InteractionBehavior,
+  OverflowBehavior,
+  IconsBehavior
+} from "pageletes/components/tree-view/sections";
 ---
 
 <PageleteSection>
@@ -31,18 +32,22 @@ import {
   </PageleteSubSection>
 
   <PageleteSubSection>
-    <MultipleLinesBehavior />
+    <NestedBehavior />
   </PageleteSubSection>
 
   <PageleteSubSection>
-    <PrefixAndSuffix />
+    <MultiselectBehavior />
   </PageleteSubSection>
 
   <PageleteSubSection>
-    <WidthBehavior />
+    <InteractionBehavior />
   </PageleteSubSection>
 
   <PageleteSubSection>
-    <PasswordInputBehavior />
+    <OverflowBehavior />
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <IconsBehavior />
   </PageleteSubSection>
 </PageleteSection>

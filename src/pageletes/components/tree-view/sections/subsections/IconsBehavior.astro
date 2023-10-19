@@ -1,0 +1,37 @@
+---
+import { Image } from "@avaya/neo-react";
+import { Description, SubHeader, DoAndDont } from "components";
+
+import iconsDoImage1 from "../../imgs/tree-behaviors-icons-do-1.svg";
+import iconsDontImage1 from "../../imgs/tree-behaviors-icons-dont-1.svg";
+const iconsDoInstructions1 =
+  "Use consistent treatment within the tree view. Only use icons when it adds value and has a strong association with the label.";
+const iconsDontInstructions1 =
+  "Do not add icons to only some items in the tree view. Do not use them for decoration.";
+---
+
+<SubHeader id="tree-view-icons-behavior">icons</SubHeader>
+
+<Description>
+  Icons can be added to the items in the tree view to help the user readily identify each element.
+</Description>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={iconsDoInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={iconsDoImage1.src}
+        alt="Image showing correct use of icons on all elements"
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={iconsDontInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={iconsDontImage1.src}
+        alt="Image showing improper use of icons on only some elements"
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>

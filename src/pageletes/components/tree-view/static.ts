@@ -3,6 +3,8 @@ import type { TopicsDict } from "components";
 type PaginationTopicNames =
   | "playground"
   | "anatomy"
+  | "states"
+  | "types"
   | "behavior"
   | "specs"
   | "keyboard"
@@ -20,23 +22,28 @@ export const topics: TopicsDict<PaginationTopicNames> = {
     id: `${component}-anatomy`,
     title: "Anatomy",
   },
-  behavior: {
+  states: {
     order: 2,
+    id: `${component}-states`,
+    title: "States",
+  },
+  behavior: {
+    order: 3,
     id: `${component}-checkbox`,
     title: "Behavior",
   },
   specs: {
-    order: 3,
+    order: 4,
     id: `${component}-specs`,
     title: "Specs",
   },
   keyboard: {
-    order: 4,
+    order: 5,
     id: `${component}-keyboard-interactions`,
     title: "Keyboard Interactions",
   },
   related: {
-    order: 5,
+    order: 6,
     id: `${component}-related-content`,
     title: "Related Content",
   },

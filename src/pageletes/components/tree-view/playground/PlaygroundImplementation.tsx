@@ -1,4 +1,3 @@
-import "./pagination-playground.css";
 import { useState } from "react";
 
 import { Playground } from "components/react";

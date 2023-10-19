@@ -1,0 +1,37 @@
+---
+import { Image } from "@avaya/neo-react";
+import { Description, SubHeader, DoAndDont } from "components";
+
+import multiselectDoImage1 from "../../imgs/tree-behaviors-select-do-1.svg";
+import multiselectDontImage1 from "../../imgs/tree-behaviors-select-dont-1.svg";
+const multiselectDoInstructions1 =
+  "Display an indeterminate checkbox in the parent when one or more child items are selected.";
+const multiselectDontInstructions1 =
+  "Do not display the parent without indicating its indeterminate state.";
+---
+
+<SubHeader id="tree-view-multiselect-behavior">Select and Multiselect</SubHeader>
+
+<Description>
+  Items in the tree view can be configured with checkboxes where more than one selection is allowed. Each selected child will have a check in the box. A parent with selected child elements is displayed with an Indeterminate checkbox. 
+</Description>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={multiselectDoInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={multiselectDoImage1.src}
+        alt="Image showing proper us of select and multiselect"
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={multiselectDontInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={multiselectDontImage1.src}
+        alt="Image showing parent objects not selected but child object is"
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>
