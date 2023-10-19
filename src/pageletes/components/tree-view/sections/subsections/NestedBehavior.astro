@@ -4,8 +4,7 @@ import { Description, SubHeader, DoAndDont } from "components";
 
 import nestedDoImage1 from "../../imgs/tree-behaviors-nested-do-1.svg";
 import nestedDontImage1 from "../../imgs/tree-behaviors-nested-dont-1.svg";
-const nestedDoInstructions1 =
-  "Minimize the number of levels when possible.";
+const nestedDoInstructions1 = "Minimize the number of levels when possible.";
 const nestedDontInstructions1 =
   "Do not use too many levels unless it is for user-generated information. Consolidate the layers instead.";
 ---
@@ -13,16 +12,15 @@ const nestedDontInstructions1 =
 <SubHeader id="tree-view-nested-behavior">Nested</SubHeader>
 
 <Description>
-  The tree view provides a means to show an organized list of items. Each parent can have one or more child items nested underneath. Each parent may be the child of another parent above it in the hierarchy.
+  The tree view provides a means to show an organized list of items. Each parent
+  can have one or more child items nested underneath. Each parent may be the
+  child of another parent above it in the hierarchy.
 </Description>
 
 <DoAndDont>
   <DoAndDont.DoContainer instructions={nestedDoInstructions1}>
     <DoAndDont.ImageExampleContainer>
-      <Image
-        src={nestedDoImage1.src}
-        alt="Image showing proper tree nesting"
-      />
+      <Image src={nestedDoImage1.src} alt="Image showing proper tree nesting" />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DoContainer>
 

@@ -13,7 +13,7 @@ import helperDoImage2 from "../../imgs/tree-behaviors-do-2.svg";
 import helperDontImage2 from "../../imgs/tree-behaviors-dont-2.svg";
 const helperDoInstructions2 =
   "Always display the chevron icon to indicate a tree view parent with child items.";
-const helperDontInstructions2 = 
+const helperDontInstructions2 =
   "Do not use collapsible tree view items without a chevron. Do not replace the chevron with another icon.";
 ---
 
@@ -47,19 +47,13 @@ const helperDontInstructions2 =
 <DoAndDont>
   <DoAndDont.DoContainer instructions={helperDoInstructions2}>
     <DoAndDont.ImageExampleContainer>
-      <Image
-        src={helperDoImage2.src}
-        alt="Image showing correct chevron use"
-      />
+      <Image src={helperDoImage2.src} alt="Image showing correct chevron use" />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DoContainer>
 
   <DoAndDont.DontContainer instructions={helperDontInstructions2}>
     <DoAndDont.ImageExampleContainer>
-      <Image
-        src={helperDontImage2.src}
-        alt="Image showing lack of a chevron"
-      />
+      <Image src={helperDontImage2.src} alt="Image showing lack of a chevron" />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DontContainer>
 </DoAndDont>

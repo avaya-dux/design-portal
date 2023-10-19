@@ -14,10 +14,7 @@ const sandbox =
   "https://codesandbox.io/s/neo-react-pagination-r7ffxy?file=/src/App.js";
 
 export const PlaygroundImplementation = () => {
-
-  const element = (
-    <></>
-  );
+  const element = <></>;
 
   return (
     <Playground

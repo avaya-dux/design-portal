@@ -24,7 +24,9 @@ import LayoutWrapper from "./subsections/components/LayoutWrapper.astro";
 <PageleteSection>
   <SectionHeader id={topics.states.id}>{topics.states.title}</SectionHeader>
 
-  <Description>This component can be displayed in one of six states.</Description>
+  <Description>
+    This component can be displayed in one of six states.
+  </Description>
 
   <ColumnLayout bkgColor="white" numOfColumns={3} marginBottom="0">
     <LayoutWrapper label="Enabled">
@@ -82,19 +84,23 @@ import LayoutWrapper from "./subsections/components/LayoutWrapper.astro";
     </InfoListItem>
 
     <InfoListItem label="Hover">
-      Moving the mouse over the item changes it to the Hover state. There is no hover state when using keyboard navigation.
+      Moving the mouse over the item changes it to the Hover state. There is no
+      hover state when using keyboard navigation.
     </InfoListItem>
 
     <InfoListItem label="Disabled">
-      If the field cannot be selected, use the Disabled state. Another action or setting must be made to enable the field.
+      If the field cannot be selected, use the Disabled state. Another action or
+      setting must be made to enable the field.
     </InfoListItem>
 
     <InfoListItem label="Active - Enabled">
-      This is the item currently selected. Click to open the child menu where there is one.
+      This is the item currently selected. Click to open the child menu where
+      there is one.
     </InfoListItem>
 
     <InfoListItem label="Active - Hover">
-      Moving the mouse over the active field changes it to the Active-Hover state.
+      Moving the mouse over the active field changes it to the Active-Hover
+      state.
     </InfoListItem>
 
     <InfoListItem label="Active - Disabled">
