@@ -13,11 +13,12 @@ import Categorical from "./sections-frame-layout/data-colors/frame-1/Categorical
 import Sequential from "./sections-frame-layout/data-colors/frame-1/Sequential.astro";
 import Diverging from "./sections-frame-layout/data-colors/frame-2/Diverging.astro";
 
-import InteractiveTool from "./data-colors-tool/InteractiveTool.astro"
+import InteractiveTool from "./data-colors-tool/InteractiveTool.astro";
 
 const { id, title } = topics.data;
 ---
-<PageleteSection>
+
+<PageleteSection marginTop="64px">
   <SectionHeader id={id}>{title}</SectionHeader>
 
   <Description>

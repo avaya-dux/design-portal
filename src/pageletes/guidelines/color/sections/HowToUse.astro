@@ -12,6 +12,8 @@ import Blue from "./how-to-tab-menu/tabs/Blue.astro";
 import Green from "./how-to-tab-menu/tabs/Green.astro";
 import Orange from "./how-to-tab-menu/tabs/Orange.astro";
 import Purple from "./how-to-tab-menu/tabs/Purple.astro";
+
+const tabNames = ["base", "red", "blue", "green", "orange", "purple"];
 ---
 
 <PageleteSection>
@@ -22,12 +24,12 @@ import Purple from "./how-to-tab-menu/tabs/Purple.astro";
     see when to use that color in your UI designs.
   </Description>
 
-  <TabMenu client:load>
-    <Base slot="tab1" />
-    <Red slot="tab2" />
-    <Blue slot="tab3" />
-    <Green slot="tab4" />
-    <Orange slot="tab5" />
-    <Purple slot="tab6" />
+  <TabMenu client:only="react" panels={tabNames}>
+    <Base slot="base" />
+    <Red slot="red" />
+    <Blue slot="blue" />
+    <Green slot="green" />
+    <Orange slot="orange" />
+    <Purple slot="purple" />
   </TabMenu>
 </PageleteSection>
