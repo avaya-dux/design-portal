@@ -1,6 +1,6 @@
 ---
 import { Image } from "@avaya/neo-react";
-import { Description, SubHeader, DoAndDont } from "components";
+import { DoAndDont } from "components";
 
 import helperDoImage1 from "../../imgs/tree-behaviors-do-1.svg";
 import helperDontImage1 from "../../imgs/tree-behaviors-dont-1.svg";
@@ -16,13 +16,6 @@ const helperDoInstructions2 =
 const helperDontInstructions2 =
   "Do not use collapsible tree view items without a chevron. Do not replace the chevron with another icon.";
 ---
-
-<SubHeader id="tree-view-general-behavior">Helper Text</SubHeader>
-
-<Description>
-  Helper text provides guidance as to the type of data or the format of that
-  data, such as the appearance of a date field (i.e. mm/dd/yyyy) or password.
-</Description>
 
 <DoAndDont>
   <DoAndDont.DoContainer instructions={helperDoInstructions1}>

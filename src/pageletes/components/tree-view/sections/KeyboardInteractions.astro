@@ -20,7 +20,12 @@ const { id, title } = topics.keyboard;
   <SectionHeader id={id}>{title}</SectionHeader>
 
   <Description>
-    This section illustrates keyboard interactions for the Pagination component.
+    Accessibility requires that each item on the screen is reachable using the
+    keyboard alone. The mouse is not always an option for some users.
+  </Description>
+
+  <Description>
+    Keyboard navigation employs the following shortcuts.
   </Description>
 
   <InfoTable>
@@ -35,20 +40,59 @@ const { id, title } = topics.keyboard;
       <InfoTableRow>
         <InfoTableCell>Tab</InfoTableCell>
         <InfoTableCell>
-          Move forward to the next interactive element
+          Move forward into and out of the tree view, or to any elements such as
+          buttons.
         </InfoTableCell>
       </InfoTableRow>
 
       <InfoTableRow>
         <InfoTableCell>Shift + Tab</InfoTableCell>
         <InfoTableCell>
-          Move backward to the previous interactive element
+          Move backward to the previous interactive element.
         </InfoTableCell>
       </InfoTableRow>
 
       <InfoTableRow>
-        <InfoTableCell>Enter or Spacebar</InfoTableCell>
-        <InfoTableCell>Activate the button</InfoTableCell>
+        <InfoTableCell>Enter</InfoTableCell>
+        <InfoTableCell>Activate the tree item’s default action.</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>→ (or ← in RTL)</InfoTableCell>
+        <InfoTableCell>
+          Open a tree item if closed, or move the focus to the first child if
+          open. If at the end, does nothing.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>← (or→ in RTL)</InfoTableCell>
+        <InfoTableCell>
+          Close a tree item if open, or move the focus to the parent item if
+          closed or at the end end. If this is a root item, does nothing.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>↑ and ↓</InfoTableCell>
+        <InfoTableCell>
+          Move focus to the previous and next item without opening or closing
+          it.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Home</InfoTableCell>
+        <InfoTableCell>
+          Move focus to the first item without opening or closing it.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>End</InfoTableCell>
+        <InfoTableCell>
+          Move focus to the last item without opening or closing it.
+        </InfoTableCell>
       </InfoTableRow>
     </InfoTableBody>
   </InfoTable>

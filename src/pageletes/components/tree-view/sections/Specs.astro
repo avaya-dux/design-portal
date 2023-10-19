@@ -6,8 +6,11 @@ import {
   ImageWrapper,
   PageleteSection,
   SectionHeader,
+  ColumnLayout,
 } from "components/astro";
 import { topics } from "../static";
+
+import LayoutWrapper from "./subsections/components/LayoutWrapper.astro";
 
 const { id, title } = topics.specs;
 
@@ -29,7 +32,7 @@ const specsAltText4 = "Shows a 56 pixel spacing before the chevron";
     Tree view items have the size and padding shown here.
   </Description>
 
-  <ImageWrapper isShaded>
+  <ImageWrapper isShaded marginBottom="48px">
     <Image src={specsImage1.src} alt={specsAltText1} />
   </ImageWrapper>
 
@@ -38,4 +41,18 @@ const specsAltText4 = "Shows a 56 pixel spacing before the chevron";
     hierarchy of the list. Each layer is indented 24 px beyond the previous
     layer.
   </Description>
+
+  <ColumnLayout isShaded numOfColumns={3} marginTop="48px">
+    <LayoutWrapper label="Level 1 Tree View Item">
+      <Image src={specsImage2.src} alt={specsAltText2} />
+    </LayoutWrapper>
+
+    <LayoutWrapper label="Level 2 Tree View Item">
+      <Image src={specsImage3.src} alt={specsAltText3} />
+    </LayoutWrapper>
+
+    <LayoutWrapper label="Level 3 Tree View Item">
+      <Image src={specsImage4.src} alt={specsAltText4} />
+    </LayoutWrapper>
+  </ColumnLayout>
 </PageleteSection>
