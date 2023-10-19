@@ -25,11 +25,11 @@ const tabNames = ["base", "red", "blue", "green", "orange", "purple"];
   </Description>
 
   <TabMenu client:only="react" panels={tabNames}>
-    <Base slot="base" />
-    <Red slot="red" />
-    <Blue slot="blue" />
-    <Green slot="green" />
-    <Orange slot="orange" />
-    <Purple slot="purple" />
+    <Base slot={tabNames[0]} />
+    <Red slot={tabNames[1]}" />
+    <Blue slot={tabNames[2]} />
+    <Green slot={tabNames[3]} />
+    <Orange slot={tabNames[4]} />
+    <Purple slot={tabNames[5]} />
   </TabMenu>
 </PageleteSection>
