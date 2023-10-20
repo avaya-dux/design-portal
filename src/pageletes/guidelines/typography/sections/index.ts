@@ -1,7 +1,8 @@
 import Intro from "./Intro.astro";
+
 export { Intro };
 
-import TypeScale from "./Typescale.astro";
+import TypeScale from "./TypeScale.astro";
 
 export { TypeScale };
 
