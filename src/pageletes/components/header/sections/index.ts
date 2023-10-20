@@ -1,6 +1,9 @@
 import Intro from "./Intro.astro";
 export { Intro };
 
+import HeaderPlayground from "./HeaderPlayground.astro";
+export { HeaderPlayground };
+
 import Anatomy from "./Anatomy.astro";
 export { Anatomy };
 

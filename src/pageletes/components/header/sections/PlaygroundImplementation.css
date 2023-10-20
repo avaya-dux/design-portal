@@ -1,0 +1,11 @@
+  .playground-topnav >
+    nav.neo-navbar
+   .neo-nav--left {
+    align-items: center;
+  }
+
+  .playground-topnav >
+    nav.neo-navbar
+   .neo-nav--left a {
+    height: 3.3rem;
+  }
