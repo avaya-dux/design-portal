@@ -3,11 +3,10 @@ import { Playground } from "components/react";
 import {
   Checkbox,
   CheckboxGroup,
-  // type CheckboxProps,
+  type CheckboxProps,
   Image,
   TopNav,
   type TopNavProps,
-  Button,
 } from "@avaya/neo-react";
 
 import {
@@ -24,39 +23,36 @@ const storybook =
 const sandbox =
   "https://codesandbox.io/s/";
 
-type ButtonOptions = "yes" | "no";
-
 const Logo = (
   <a href="/" title="Logo Link">
     <Image src={logoImage.src} isDecorativeOrBranding />
   </a>
 );
 
-const buttons = [
-  <Button variant="secondary" key="btn1">
-    Action 1
-  </Button>,
-  <Button key="btn2">Action 2</Button>,
-];
+// const buttons = [
+//   <Button variant="secondary" key="btn1">
+//     Action 1
+//   </Button>,
+//   <Button key="btn2">Action 2</Button>,
+// ];
 
-const getActions = (hasActions: boolean) => {
-  return hasActions ? buttons : [];
+const getTitle = (hasTitle: boolean | undefined | "mixed") => {
+  return hasTitle ? "My App" : undefined;
 };
 
 export const PlaygroundImplementation = () => {
-  const [hasButtons, setHasButtons] = useState<ButtonOptions>("yes");
+  const [hasTitle, setHasTitle] = useState<CheckboxProps["checked"]>(false);
 
   const [element, react, html] = useMemo(() => {
     let props: TopNavProps = {
-      title: "My App Name",
       logo: Logo
     };
 
-    // const buttons = getActions(hasButtons === "yes");
+    const title = getTitle(hasTitle);
 
-    // if (hasButtons === "yes") {
-    //   props = { ...props };
-    // }
+    if (hasTitle) {
+      props = { ...props, title };
+    }
 
     const element = (
       <div className="playground-topnav">
@@ -69,7 +65,7 @@ export const PlaygroundImplementation = () => {
       prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
     ];
-  }, [hasButtons]);
+  }, [hasTitle]);
 
   return (
     <Playground
@@ -82,11 +78,10 @@ export const PlaygroundImplementation = () => {
               onChange={(e) => {
                 const { value } = e.target as HTMLInputElement;
                 switch (value) {
-                  case "open":
-                    // setOpen(!open);
-                    // setStackedOpenIndexes([!open, !open, !open]);
+                  case "title":
+                    setHasTitle(!hasTitle);
                     break;
-                  case "disabled":
+                  case "search":
                     // setOpen(false);
                     // setStackedOpenIndexes([false, false, false]);
                     // setDisabled(!disabled);
