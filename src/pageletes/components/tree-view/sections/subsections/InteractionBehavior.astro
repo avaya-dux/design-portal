@@ -1,0 +1,39 @@
+---
+import { Image } from "@avaya/neo-react";
+import { Description, SubHeader, DoAndDont } from "components";
+
+import interactionDoImage1 from "../../imgs/tree-behaviors-interactions-do-1.svg";
+import interactionDontImage1 from "../../imgs/tree-behaviors-interactions-dont-1.svg";
+const interactionDoInstructions1 =
+  "A tree view node can be dragged within the same level.";
+const interactionDontInstructions1 =
+  "Do not move a tree view node to a different level.";
+---
+
+<SubHeader id="tree-view-interaction-behavior">Interactions</SubHeader>
+
+<Description>
+  Both parent and child items can be dragged to a new location providing the
+  element stays in the same level of the tree. It can be moved to another branch
+  of the tree providing it is at the same level.
+</Description>
+
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={interactionDoInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={interactionDoImage1.src}
+        alt="Image showing tree view movement through similar children components"
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
+
+  <DoAndDont.DontContainer instructions={interactionDontInstructions1}>
+    <DoAndDont.ImageExampleContainer>
+      <Image
+        src={interactionDontImage1.src}
+        alt="Image showing tree view movement of a child to a parent"
+      />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>
