@@ -1,0 +1,75 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components";
+
+import { topics } from "../static";
+import { Card, ViewWebsite, TwoColumnGrid } from "../components";
+const { id, title } = topics.accessibilityCheckers;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Automated test applications review a product's UI for accessibility
+    compliance. However, they cannot detect all issues, and false positives are
+    also common. Therefore, these tools must always be used in conjunction with
+    a manual review.
+  </Description>
+
+  <TwoColumnGrid>
+    <Card header="Wave Web Accessibility Evaluation Tool">
+      <p slot="description">
+        A suite of evaluation tools that help make a UI more accessible.
+      </p>
+      <ViewWebsite href="https://wave.webaim.org/" slot="link" />
+    </Card>
+    <Card header="Accessibility Insights">
+      <p slot="description">
+        A general evaluation tool for the Windows, Chrome and Microsoft Edge
+        platforms.
+      </p>
+      <ViewWebsite href="https://accessibilityinsights.io/" slot="link" />
+    </Card>
+    <Card header="Xcode Accessibility Inspector">
+      <p slot="description">
+        Enables you to identify the parts of your design that are not
+        accessible.
+      </p>
+      <ViewWebsite
+        href="https://developer.apple.com/videos/play/wwdc2019/257/"
+        slot="link"
+      />
+    </Card>
+    <Card header="Accessibility Scanner">
+      <p slot="description">
+        When you design and develop an Android app, Accessibility Scanner can
+        help improve the UI.
+      </p>
+      <ViewWebsite
+        href="https://support.google.com/accessibility/android/answer/6376570"
+        slot="link"
+      />
+    </Card>
+    <Card header="AXE Tools">
+      <p slot="description">
+        Automated accessibility testing built on the World's most accurate
+        testing library.
+      </p>
+      <ViewWebsite href="" slot="link" />
+    </Card>
+    <Card header="ANDI">
+      <p slot="description">
+        Accessible Name & Description Inspector is a free testing tool used by
+        the U.S. Government.
+      </p>
+      <ViewWebsite href="" slot="link" />
+    </Card>
+    <Card header="JavaScript Bookmarklets">
+      <p slot="description">
+        Bookmarklets for Accessibility Testing use JavaScript to highlight
+        roles, states, and properties of accessibility elements in a UI.
+      </p>
+      <ViewWebsite href="" slot="link" />
+    </Card>
+  </TwoColumnGrid>
+</PageleteSection>

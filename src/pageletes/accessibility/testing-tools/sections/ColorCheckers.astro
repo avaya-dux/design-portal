@@ -1,0 +1,60 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components";
+
+import { topics } from "../static";
+import { Card, ViewWebsite, TwoColumnGrid } from "../components";
+const { id, title } = topics.colorCheckers;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Objects can be difficult to discern if the background and foreground colors
+    are not sufficiently distinct (e.g. dark blue text on black background).
+    Testing color contrast ensures that visually impaired users are able to
+    perceive the content on any given interface.
+  </Description>
+
+  <TwoColumnGrid>
+    <Card header="WebAIM Contrast Checker">
+      <p slot="description">
+        Tests the foreground color against the background color.
+      </p>
+      <ViewWebsite
+        href="https://webaim.org/resources/contrastchecker/"
+        slot="link"
+      />
+    </Card>
+    <Card header="Color Contrast Analyser">
+      <p slot="description">
+        TPGi’s free color contrast checker that allows you to easily determine
+        the contrast ratio between two colors by using the eyedropper tool.
+      </p>
+      <ViewWebsite
+        href="https://developer.paciellogroup.com/resources/contrastanalyser/"
+        slot="link"
+      />
+    </Card>
+    <Card header="Chrome Dev Tools">
+      <p slot="description">
+        The most full-featured tool for manually testing contrast within a
+        webpage on Chrome.
+      </p>
+      <ViewWebsite
+        href="https://developer.paciellogroup.com/resources/contrastanalyser/"
+        slot="link"
+      />
+    </Card>
+    <Card header="Color Blindness Simulator">
+      <p slot="description">
+        The Color Blindness Simulator shows what it is like to have a color
+        vision handicap.
+      </p>
+      <ViewWebsite
+        href="https://www.color-blindness.com/coblis-color-blindness-simulator/"
+        slot="link"
+      />
+    </Card>
+  </TwoColumnGrid>
+</PageleteSection>
