@@ -1,0 +1,94 @@
+---
+import {
+  Description,
+  ImageWrapper,
+  ColumnLayout,
+  PageleteSection,
+  SectionHeader,
+} from "components";
+
+import { Image } from "@avaya/neo-react";
+import typographyComponents1 from "../imgs/typography-components-1.svg";
+import typographyComponents2 from "../imgs/typography-components-2.svg";
+import typographyComponents3 from "../imgs/typography-components-3.svg";
+
+const typographyComponents1AltText =
+  "Image showing icon top represent headings";
+const typographyComponents2AltText =
+  "Image showing icon to represent body text";
+const typographyComponents3AltText = "Image showing icon to represent captions";
+
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.typographyComponents.id}>
+    {topics.typographyComponents.title}
+  </SectionHeader>
+
+  <Description>
+    Using typography components correctly ensures a clean and consistent
+    hierarchy throughout the user interface. Where possible, use the design
+    tokens embedded inside the components.
+  </Description>
+
+  <ColumnLayout numOfColumns={2} gap="2rem">
+    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image
+        src={typographyComponents1.src}
+        alt={typographyComponents1AltText}
+      />
+    </ImageWrapper>
+    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image
+        src={typographyComponents2.src}
+        alt={typographyComponents2AltText}
+      />
+    </ImageWrapper>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    gap="2rem"
+    numOfColumns={2}
+    marginTop={"1.5rem"}
+  >
+    <div>
+      <h4 class="image-header neo-bold">Headings</h4>
+      <Description>
+        Headings are used to create visual hierarchies throughout the user
+        interface. Heading 1 should only be used once per page.
+      </Description>
+    </div>
+    <div>
+      <h4 class="image-header neo-bold">Body</h4>
+      <Description>
+        The Body style is used in components and for blocks of text.
+      </Description>
+    </div>
+  </ColumnLayout>
+
+  <ColumnLayout numOfColumns={2} gap="2rem">
+    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image
+        src={typographyComponents3.src}
+        alt={typographyComponents3AltText}
+      />
+    </ImageWrapper>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    gap="2rem"
+    numOfColumns={2}
+    marginTop={"1.5rem"}
+  >
+    <div>
+      <h4 class="image-header neo-bold">Captions</h4>
+      <Description>
+        Captions are used for adding extra information or smaller items in the
+        hierarchy of text.
+      </Description>
+    </div>
+  </ColumnLayout>
+</PageleteSection>

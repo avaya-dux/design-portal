@@ -1,0 +1,98 @@
+---
+import {
+  Description,
+  ImageWrapper,
+  ColumnLayout,
+  PageleteSection,
+  SectionHeader,
+} from "components";
+
+import { Image } from "@avaya/neo-react";
+import textFormatting1 from "../imgs/typography-formatting-1.svg";
+import textFormatting2 from "../imgs/typography-formatting-2.svg";
+import textFormatting3 from "../imgs/typography-formatting-3.svg";
+import textFormatting4 from "../imgs/typography-formatting-4.svg";
+
+const textFormatting1AltText = "Image showing icon top represent bold text";
+const textFormatting2AltText =
+  "Image showing icon to represent underlined text";
+const textFormatting3AltText = "Image showing icon to represent italic text";
+const textFormatting4AltText = "Image showing icon to represent capitalization";
+
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.textFormatting.id}>
+    {topics.textFormatting.title}
+  </SectionHeader>
+
+  <Description>
+    Style options can be applied to text, buttons and labels. Apply none, one,
+    or more of these styles to make important points stand out on the screen.
+    These should be used sparingly to ensure that those important points aren’t
+    lost in a flurry of too many other important points.
+  </Description>
+
+  <ColumnLayout numOfColumns={2} gap="2rem">
+    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={textFormatting1.src} alt={textFormatting1AltText} />
+    </ImageWrapper>
+    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={textFormatting2.src} alt={textFormatting2AltText} />
+    </ImageWrapper>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    gap="2rem"
+    numOfColumns={2}
+    marginTop={"1.5rem"}
+  >
+    <div>
+      <h4 class="image-header neo-bold">Bold</h4>
+      <Description>
+        Bold text is used to emphasize a particular item.
+      </Description>
+    </div>
+    <div>
+      <h4 class="image-header neo-bold">Underline</h4>
+      <Description>
+        Underlining should be used only for text links (either for hover states
+        or default).
+      </Description>
+    </div>
+  </ColumnLayout>
+
+  <ColumnLayout numOfColumns={2} gap="2rem">
+    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={textFormatting3.src} alt={textFormatting3AltText} />
+    </ImageWrapper>
+    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+      <Image src={textFormatting4.src} alt={textFormatting4AltText} />
+    </ImageWrapper>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    gap="2rem"
+    numOfColumns={2}
+    marginTop={"1.5rem"}
+  >
+    <div>
+      <h4 class="image-header neo-bold">Italic</h4>
+      <Description>
+        Italics are used for emphasizing a part of sentence. It’s also used for
+        placeholder text and image captions. Italics are not used for Chinese,
+        Japanese, Korean, and Arabic.
+      </Description>
+    </div>
+    <div>
+      <h4 class="image-header neo-bold">Capitalization</h4>
+      <Description>
+        Uppercase text should be used sparingly (acronyms and short labels).
+        Title case is used in labels for titles, controls, and other components.
+      </Description>
+    </div>
+  </ColumnLayout>
+</PageleteSection>
