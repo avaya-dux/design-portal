@@ -1,0 +1,95 @@
+---
+import { PageleteSubSection } from "components";
+
+import ThreeColumnLayout from "../ThreeColumnLayout.astro";
+import InfoBlockLayout from "../InfoBlockLayout.astro";
+
+import successImage from "../../../imgs/how-to-images/green-success.svg";
+import positiveImage from "../../../imgs/how-to-images/green-positive.svg";
+import activeStatesImage from "../../../imgs/how-to-images/green-active-states.svg";
+import activeItemsImage from "../../../imgs/how-to-images/green-active-items.svg";
+import startImage from "../../../imgs/how-to-images/green-start-interactions.svg";
+
+const successBlock = {
+  image: successImage.src,
+  altText: "graphic representing greens use for success",
+  header: "Success",
+  description:
+    "Related to messaging and states, such as banners and forms fields.",
+};
+
+const positiveBlock = {
+  image: positiveImage.src,
+  altText: "graphic representing greens use for postive values",
+  header: "Positive",
+  description: "Above zero values such as amounts, balances and scores.",
+};
+
+const activeStatesBlock = {
+  image: activeStatesImage.src,
+  altText: "graphic representing greens use for active states",
+  header: "Active States",
+  description: "Including ready, available, online and similar states.",
+};
+
+const activeItemsBlock = {
+  image: activeItemsImage.src,
+  altText: "graphic representing greens use for active items",
+  header: "Active Items",
+  description: "Completed or active tasks, items, or interactions.",
+};
+
+const startBlock = {
+  image: startImage.src,
+  altText: "graphic representing greens use for start interactions",
+  header: "Start Interactions",
+  description:
+    "Begins an interaction, such as accepting a call or a meeting, or starting a session.",
+};
+---
+
+<PageleteSubSection marginTop="0" marginBottom="0">
+  <ThreeColumnLayout>
+    <InfoBlockLayout
+      slot="left-frame"
+      graphicIcon={successBlock.image}
+      graphicAltText={successBlock.altText}
+      header={successBlock.header}
+      description={successBlock.description}
+    />
+
+    <InfoBlockLayout
+      slot="middle-frame"
+      graphicIcon={positiveBlock.image}
+      graphicAltText={positiveBlock.altText}
+      header={positiveBlock.header}
+      description={positiveBlock.description}
+    />
+
+    <InfoBlockLayout
+      slot="right-frame"
+      graphicIcon={activeStatesBlock.image}
+      graphicAltText={activeStatesBlock.altText}
+      header={activeStatesBlock.header}
+      description={activeStatesBlock.description}
+    />
+  </ThreeColumnLayout>
+
+  <ThreeColumnLayout>
+    <InfoBlockLayout
+      slot="left-frame"
+      graphicIcon={activeItemsBlock.image}
+      graphicAltText={activeItemsBlock.altText}
+      header={activeItemsBlock.header}
+      description={activeItemsBlock.description}
+    />
+
+    <InfoBlockLayout
+      slot="middle-frame"
+      graphicIcon={startBlock.image}
+      graphicAltText={startBlock.altText}
+      header={startBlock.header}
+      description={startBlock.description}
+    />
+  </ThreeColumnLayout>
+</PageleteSubSection>

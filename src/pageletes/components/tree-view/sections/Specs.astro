@@ -1,0 +1,58 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ImageWrapper,
+  PageleteSection,
+  SectionHeader,
+  ColumnLayout,
+} from "components/astro";
+import { topics } from "../static";
+
+import LayoutWrapper from "./subsections/components/LayoutWrapper.astro";
+
+const { id, title } = topics.specs;
+
+import specsImage1 from "../imgs/tree-specs-1.svg";
+import specsImage2 from "../imgs/tree-specs-2.svg";
+import specsImage3 from "../imgs/tree-specs-3.svg";
+import specsImage4 from "../imgs/tree-specs-4.svg";
+
+const specsAltText1 = "Shows layout and spacing within a tree view component.";
+const specsAltText2 = "Shows a 8 pixel spacing before the chevron";
+const specsAltText3 = "Shows a 32 pixel spacing before the chevron";
+const specsAltText4 = "Shows a 56 pixel spacing before the chevron";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Tree view items have the size and padding shown here.
+  </Description>
+
+  <ImageWrapper isShaded marginBottom="48px">
+    <Image src={specsImage1.src} alt={specsAltText1} />
+  </ImageWrapper>
+
+  <Description>
+    Each layer within the tree is progressively indented to accentuate the
+    hierarchy of the list. Each layer is indented 24 px beyond the previous
+    layer.
+  </Description>
+
+  <ColumnLayout isShaded numOfColumns={3} marginTop="48px">
+    <LayoutWrapper label="Level 1 Tree View Item">
+      <Image src={specsImage2.src} alt={specsAltText2} />
+    </LayoutWrapper>
+
+    <LayoutWrapper label="Level 2 Tree View Item">
+      <Image src={specsImage3.src} alt={specsAltText3} />
+    </LayoutWrapper>
+
+    <LayoutWrapper label="Level 3 Tree View Item">
+      <Image src={specsImage4.src} alt={specsAltText4} />
+    </LayoutWrapper>
+  </ColumnLayout>
+</PageleteSection>
