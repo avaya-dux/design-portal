@@ -4,9 +4,13 @@ export const sandbox = "https://codesandbox.io/";
 export const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/";
 
-type HeaderTopicNames = "playground" | "anatomy" | "behavior"
-  | "specs" | "keyboard" | "related";
-
+type HeaderTopicNames =
+  | "playground"
+  | "anatomy"
+  | "behavior"
+  | "specs"
+  | "keyboard"
+  | "related";
 
 export const topics: TopicsDict<HeaderTopicNames> = {
   playground: {

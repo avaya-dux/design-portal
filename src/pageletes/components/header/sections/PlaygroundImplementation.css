@@ -1,14 +1,10 @@
-  /* The Portal has some css that overrides the TopNav component classes and breaks some vertical aligment
+/* The Portal has some css that overrides the TopNav component classes and breaks some vertical aligment
   this css fixes those issues. */
 
-  .playground-topnav >
-    nav.neo-navbar
-   .neo-nav--left {
-    align-items: center;
-  }
+.playground-topnav > nav.neo-navbar .neo-nav--left {
+  align-items: center;
+}
 
-  .playground-topnav >
-    nav.neo-navbar
-   .neo-nav--left a {
-    height: 3.3rem;
-  }
+.playground-topnav > nav.neo-navbar .neo-nav--left a {
+  height: 3.3rem;
+}

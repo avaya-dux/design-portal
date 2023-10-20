@@ -20,8 +20,7 @@ import "./PlaygroundImplementation.css";
 const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-topnav";
 
-const sandbox =
-  "https://codesandbox.io/s/";
+const sandbox = "https://codesandbox.io/s/";
 
 const Logo = (
   <a href="/" title="Logo Link">
@@ -29,21 +28,19 @@ const Logo = (
   </a>
 );
 
-const SearchBar = (
-  <TopNav.Search />
-);
+const SearchBar = <TopNav.Search />;
 
 const getTitle = (hasTitle: boolean | undefined | "mixed") => {
   return hasTitle ? "My App" : undefined;
 };
 
 const getSearchBar = (hasTitle: boolean | undefined | "mixed") => {
-  return hasTitle ? SearchBar: undefined;
+  return hasTitle ? SearchBar : undefined;
 };
 
 export const PlaygroundImplementation = () => {
   const [hasTitle, setHasTitle] = useState<CheckboxProps["checked"]>(false);
-    const [hasSearch, setHasSearch] = useState<CheckboxProps["checked"]>(false);
+  const [hasSearch, setHasSearch] = useState<CheckboxProps["checked"]>(false);
 
   const [element, react, html] = useMemo(() => {
     let props: TopNavProps = {
@@ -94,12 +91,8 @@ export const PlaygroundImplementation = () => {
                 }
               }}
             >
-              <Checkbox value="title">
-                App title
-              </Checkbox>
-              <Checkbox value="search">
-                Search
-              </Checkbox>
+              <Checkbox value="title">App title</Checkbox>
+              <Checkbox value="search">Search</Checkbox>
             </CheckboxGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
