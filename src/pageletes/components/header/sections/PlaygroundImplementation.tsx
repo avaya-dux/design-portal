@@ -29,6 +29,10 @@ const Logo = (
   </a>
 );
 
+const SearchBar = (
+  <TopNav.Search />
+);
+
 // const buttons = [
 //   <Button variant="secondary" key="btn1">
 //     Action 1
@@ -40,18 +44,28 @@ const getTitle = (hasTitle: boolean | undefined | "mixed") => {
   return hasTitle ? "My App" : undefined;
 };
 
+const getSearchBar = (hasTitle: boolean | undefined | "mixed") => {
+  return hasTitle ? SearchBar: undefined;
+};
+
 export const PlaygroundImplementation = () => {
   const [hasTitle, setHasTitle] = useState<CheckboxProps["checked"]>(false);
+    const [hasSearch, setHasSearch] = useState<CheckboxProps["checked"]>(false);
 
   const [element, react, html] = useMemo(() => {
     let props: TopNavProps = {
-      logo: Logo
+      logo: Logo,
     };
 
     const title = getTitle(hasTitle);
+    const search = getSearchBar(hasSearch);
 
     if (hasTitle) {
       props = { ...props, title };
+    }
+
+    if (hasSearch) {
+      props = { ...props, search };
     }
 
     const element = (
@@ -65,7 +79,7 @@ export const PlaygroundImplementation = () => {
       prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
     ];
-  }, [hasTitle]);
+  }, [hasTitle, hasSearch]);
 
   return (
     <Playground
@@ -82,9 +96,7 @@ export const PlaygroundImplementation = () => {
                     setHasTitle(!hasTitle);
                     break;
                   case "search":
-                    // setOpen(false);
-                    // setStackedOpenIndexes([false, false, false]);
-                    // setDisabled(!disabled);
+                    setHasSearch(!hasSearch);
                     break;
                 }
               }}
