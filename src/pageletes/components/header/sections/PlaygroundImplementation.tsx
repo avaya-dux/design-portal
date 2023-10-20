@@ -33,13 +33,6 @@ const SearchBar = (
   <TopNav.Search />
 );
 
-// const buttons = [
-//   <Button variant="secondary" key="btn1">
-//     Action 1
-//   </Button>,
-//   <Button key="btn2">Action 2</Button>,
-// ];
-
 const getTitle = (hasTitle: boolean | undefined | "mixed") => {
   return hasTitle ? "My App" : undefined;
 };
