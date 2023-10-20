@@ -1,7 +1,6 @@
 import type { TopicsDict } from "components";
 
 type ColorTopicNames =
-  | "color"
   | "principles"
   | "library"
   | "how"
@@ -10,11 +9,6 @@ type ColorTopicNames =
 
 const component = "color";
 export const topics: TopicsDict<ColorTopicNames> = {
-  color: {
-    order: 0,
-    id: `${component}`,
-    title: "Color",
-  },
   principles: {
     order: 0,
     id: `${component}-principles`,
