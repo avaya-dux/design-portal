@@ -1,0 +1,50 @@
+---
+export interface Props {
+    title: string;
+    section: []
+}
+
+const { 
+    title = "no Title",
+    section = [],
+} = Astro.props as Props;
+---
+
+<h4 class="changelog-header">{title}</h4>
+<ul>
+    {
+        (section.length > 0) ?
+            section.map((point) => (
+                <li><p class="changelog-point-text">{point}</p></li>
+            )) :
+            <li><p class="changelog-point-text">N/A</p></li>
+    }
+</ul>
+
+<style>
+    .changelog-header{
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px;
+    }
+
+    ul{
+        padding-top: 8px;
+        margin-left: 0px;
+        margin-bottom: 16px;
+    }
+
+    li{
+        list-style-position: inside;
+        font-size: 10px;
+    }
+
+    .changelog-point-text{
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        display: inline;
+    }
+</style>

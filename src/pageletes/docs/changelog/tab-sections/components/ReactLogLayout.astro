@@ -1,0 +1,68 @@
+---
+
+import { PageleteSection, SectionHeader } from "components";
+import { updates } from "../releases/react-updates";
+import chip from "../imgs/chip.svg";
+import { Image } from "@avaya/neo-react";
+---
+<div class="change-log-tab-panel">
+    {
+        updates.map((releases, index) => (
+            <PageleteSection marginBottom="0" marginTop={(index === 0) ? "48px" : "32px"}>
+                <SectionHeader id={releases.date + "-react-update"}>
+                    {releases.version + " " + releases.date + " "}
+                    {
+                        (index===0) ? 
+                        <Image src={chip.src} alt="Newest version chip" />  : 
+                        <></>
+                    }
+                </SectionHeader>
+
+                {
+                    releases.sections.map((section) => (
+                        <h4 class="changelog-header">What's Changed</h4>
+                        <ul>
+                            {
+                                section.whatsChanged.map((point) => (
+                                    <li><p class="changelog-point-text">{point}</p></li>
+                                )) 
+                            }
+                        </ul>
+                    ))
+                }
+            </PageleteSection>
+        ))
+    }
+</div>
+
+<style>
+    .change-log-tab-panel{
+        width: 960px;
+    }
+
+    .changelog-header{
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px;
+    }
+
+    ul{
+        padding-top: 8px;
+        margin-left: 0px;
+        margin-bottom: 16px;
+    }
+    
+    li{
+        list-style-position: inside;
+        font-size: 10px;
+    }
+
+    .changelog-point-text{
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        display: inline;
+    }
+</style>
