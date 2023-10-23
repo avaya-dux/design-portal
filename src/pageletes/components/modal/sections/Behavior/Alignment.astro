@@ -1,6 +1,12 @@
 ---
 import { Image } from "@avaya/neo-react";
-import { Description, SubHeader, ImageWrapper } from "components";
+import {
+  Description,
+  SubHeader,
+  ImageWrapper,
+  ColumnLayout,
+  StackedLayout,
+} from "components";
 import { topics } from "../../static";
 
 const { id } = topics.behavior;
@@ -25,15 +31,19 @@ const alignmentImage2AltText =
   transparent overlay separates the page behind from the modal.
 </Description>
 
-<ImageWrapper>
-  <Image src={AlignmentImage1.src} alt={alignmentImageAltText} />
-</ImageWrapper>
+<ColumnLayout bkgColor="white" numOfColumns={1}>
+  <StackedLayout vPadding="0">
+    <Image src={AlignmentImage1.src} alt={alignmentImageAltText} />
+  </StackedLayout>
+</ColumnLayout>
 
 <Description>
   At its maximum height, a modal will cover the majority of the page with equal
   margins on top and bottom.
 </Description>
 
-<ImageWrapper>
-  <Image src={AlignmentImage2.src} alt={alignmentImage2AltText} />
-</ImageWrapper>
+<ColumnLayout bkgColor="white" numOfColumns={1}>
+  <StackedLayout vPadding="0">
+    <Image src={AlignmentImage2.src} alt={alignmentImage2AltText} />
+  </StackedLayout>
+</ColumnLayout>

@@ -8,13 +8,15 @@ import {
   PageleteSubSection,
   SubHeader,
   ImageWrapper,
+  ColumnLayout,
+  StackedLayout,
 } from "components/astro";
 
 import { DoAndDont } from "components/react";
 
 import { topics } from "../static";
 
-const { id, title } = topics.relatedContent;
+const { id, title } = topics.type;
 
 import DynamicImage from "../imgs/shimmer-type-content-do-1.svg";
 import StaticImage from "../imgs/shimmer-type-content-dont-1.svg";
@@ -74,11 +76,13 @@ const progressiveLoadingImgAltText = "Image showing progressive loading";
       fixed and non-data text. Following batches include images, content outside
       of the viewport, interactive components, and variable text.
     </Description>
-    <ImageWrapper>
-      <Image
-        src={progressiveLoadingImage.src}
-        alt={progressiveLoadingImgAltText}
-      />
-    </ImageWrapper>
+    <ColumnLayout bkgColor="var(--neo-color-base-100)" numOfColumns={1}>
+      <StackedLayout vPadding="2.8rem" gap="2.8rem">
+        <Image
+          src={progressiveLoadingImage.src}
+          alt={progressiveLoadingImgAltText}
+        />
+      </StackedLayout>
+    </ColumnLayout>
   </PageleteSubSection>
 </PageleteSection>
