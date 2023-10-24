@@ -1,6 +1,7 @@
 ---
 import { Image } from "@avaya/neo-react";
 import {
+ColumnLayout,
   Description,
   DoAndDont,
   ImageWrapper,
@@ -13,6 +14,7 @@ import {
   PageleteSection,
   PageleteSubSection,
   SectionHeader,
+  StackedLayout,
   SubHeader,
 } from "components";
 
@@ -104,9 +106,11 @@ const dont2Instructions = "Add text here";
       disappearing, allowing users to quickly scan through them if necessary.
     </Description>
 
-    <ImageWrapper>
-      <Image src={PlacementImage.src} alt={placementImgAltText} />
-    </ImageWrapper>
+    <ColumnLayout bkgColor="white" numOfColumns={1} marginTop={"1.5rem"}>
+      <StackedLayout vPadding="0px">
+        <Image src={PlacementImage.src} alt={placementImgAltText} />
+      </StackedLayout>
+    </ColumnLayout>
 
     <DoAndDont>
       <DoAndDont.DoContainer instructions={do1Instructions}>
