@@ -29,7 +29,7 @@ const notMirroring4AltText = "Image showing passage of time";
     In some situations, content should not be mirrored. These include:
   </Description>
 
-  <ColumnLayout numOfColumns={2} gap="2rem">
+  <ColumnLayout numOfColumns={2} gap="2rem" showRightBorder>
     <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
       <Image src={notMirroring1.src} alt={notMirroring1AltText} />
     </ImageWrapper>
@@ -45,18 +45,18 @@ const notMirroring4AltText = "Image showing passage of time";
     marginTop={"1.5rem"}
   >
     <div>
-      <h4 class="image-header neo-bold">Numbers</h4>
+      <h4 class="image-header neo-semibold">Numbers</h4>
       <Description>For example clocks and phone numbers.</Description>
     </div>
     <div>
-      <h4 class="image-header neo-bold">Untranslated Text</h4>
+      <h4 class="image-header neo-semibold">Untranslated Text</h4>
       <Description>
         This is true even if it is part of a phrase that is in an RTL language.
       </Description>
     </div>
   </ColumnLayout>
 
-  <ColumnLayout numOfColumns={2} gap="2rem">
+  <ColumnLayout numOfColumns={2} gap="2rem" showRightBorder>
     <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
       <Image src={notMirroring3.src} alt={notMirroring3AltText} />
     </ImageWrapper>
@@ -72,13 +72,13 @@ const notMirroring4AltText = "Image showing passage of time";
     marginTop={"1.5rem"}
   >
     <div>
-      <h4 class="image-header neo-bold">Icons that do not convey direction</h4>
+      <h4 class="image-header neo-semibold">Icons that do not convey direction</h4>
       <Description>
         Icons that do not show direction or flow should not be flipped.
       </Description>
     </div>
     <div>
-      <h4 class="image-header neo-bold">Passage of Time</h4>
+      <h4 class="image-header neo-semibold">Passage of Time</h4>
       <Description>This includes components such as media players.</Description>
     </div>
   </ColumnLayout>
