@@ -1,17 +1,16 @@
 ---
 export interface Props {
-  label: string;
-  isLink?: boolean;
+  label?: string;
 }
 
-const { label, isLink = false } = Astro.props as Props;
+const { label = "" } = Astro.props as Props;
 ---
 
 {
   () => {
-    return isLink ? (
+    return label === "" ? (
       <li>
-        <b>{label}</b> <slot />
+        <slot />
       </li>
     ) : (
       <li>

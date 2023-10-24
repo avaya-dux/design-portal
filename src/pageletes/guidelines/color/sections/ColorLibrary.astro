@@ -1,0 +1,40 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components";
+
+import { topics } from "../static";
+const { id, title } = topics.library;
+
+import { Image, Link } from "@avaya/neo-react";
+
+import image1 from "../imgs/color-library-1.svg";
+---
+
+<PageleteSection marginTop="64px">
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Our color library helps ensure that the colors used in an interface are
+    accessible, harmonious, and effective at communicating the intended message.
+    They are also selected to match the Avaya branding guidelines.
+  </Description>
+
+  <Description>
+    Neo has 5 functional colors used to communicate meaning, such as errors,
+    warnings, success, etc. Each color contains 9 variants to provide
+    flexibility in design, support for light and dark modes, and sufficient
+    contrast for accessibility (see below for more information). See 
+    <Link inline href="https://design.avaya.com/components/tokens">Design
+    Tokens</Link> for guidance on platform specific usage.
+  </Description>
+
+  <Description>
+    Neo also has a base grayscale consisting of 11 variants used to create a
+    visual hierarchy throughout the interface - white, black and equivalent
+    levels as functional colors. The grays are neutral to ensure they do not
+    distract users from the main focus when completing tasks. They should be
+    used across all other elements on the interface, including text,
+    backgrounds, borders and sections.
+  </Description>
+
+  <Image src={image1.src} alt="neos color library" />
+</PageleteSection>
