@@ -1,0 +1,57 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components";
+
+import { topics } from "../static";
+import { Card, ViewWebsite, TwoColumnGrid } from "../components";
+const { id, title } = topics.screenReaders;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Screen readers are a text-to-speech engine used by people who are visually
+    impaired or blind to hear spoken descriptions of the content of the
+    screen/application. Testing with screen readers enables designers and
+    developers to evaluate the content from their perspective. This helps to
+    catch mistakes that are otherwise difficult to spot visually, and can help
+    identify structural problems such as reading order, table markup and form
+    elements.
+  </Description>
+
+  <Description>
+    These are the recommended free screen readers to test your designs.
+  </Description>
+  <TwoColumnGrid>
+    <Card header="NVDA">
+      <p slot="description">
+        A free and open-source screen reader for the Microsoft Windows operating
+        system.
+      </p>
+      <ViewWebsite href="https://www.nvaccess.org/download/" slot="link" />
+    </Card>
+    <Card header="VoiceOver">
+      <p slot="description">A screen reader built into Apple devices.</p>
+      <ViewWebsite
+        href="https://help.apple.com/voiceover/mac/10.15/"
+        slot="link"
+      />
+    </Card>
+    <Card header="ChromeVox">
+      <p slot="description">
+        An extension available for the Chrome web browser.
+      </p>
+      <ViewWebsite
+        href="https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en"
+        slot="link"
+      />
+    </Card>
+    <Card header="Google TalkBack">
+      <p slot="description">Android’s built-in tool for accessibility.</p>
+      <ViewWebsite
+        href="https://developer.android.com/guide/topics/ui/accessibility/testing"
+        slot="link"
+      />
+    </Card>
+  </TwoColumnGrid>
+</PageleteSection>
