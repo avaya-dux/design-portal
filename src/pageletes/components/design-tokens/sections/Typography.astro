@@ -1,0 +1,18 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components";
+
+import { topics } from "../static";
+
+const { id, title } = topics.typography;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Neo’s typography system provides a consistent look to all Avaya products
+    while creating a consistent hierarchy for your UI designs. The selected font
+    has been tested for readability across different languages, and meets
+    accessibility guidelines.
+  </Description>
+</PageleteSection>

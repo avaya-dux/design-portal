@@ -1,0 +1,17 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components";
+
+import { topics } from "../static";
+
+const { id, title } = topics.color;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Using the Neo color system will help align your designs with Avaya’s brand
+    guidelines. It also promotes consistency across Avaya’s product range by
+    encouraging standardization.
+  </Description>
+</PageleteSection>

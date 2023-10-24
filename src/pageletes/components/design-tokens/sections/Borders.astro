@@ -1,0 +1,16 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components";
+
+import { topics } from "../static";
+
+const { id, title } = topics.borders;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Borders surround fields to help define their limits. There are multiple
+    line, shape and corner styles to choose from.
+  </Description>
+</PageleteSection>

@@ -1,0 +1,17 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components";
+
+import { topics } from "../static";
+
+const { id, title } = topics.interactivity;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    These define animated actions used when hovering the mouse over an object in
+    the UI. Objects can appear and disappear, or slide in and out according to
+    the desired effect.
+  </Description>
+</PageleteSection>
