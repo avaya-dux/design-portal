@@ -1,0 +1,21 @@
+---
+export interface Props {
+  href: string;
+}
+import { Link } from "@avaya/neo-react";
+
+const { href } = Astro.props as Props;
+---
+
+<span>
+  <Link inline href={href} target="_blank" rel="noopener noreferrer">
+    <slot />
+  </Link>
+</span>
+
+<style>
+  span a.neo-link.neo-link__inline {
+    padding-right: 0;
+    display: inline-block;
+  }
+</style>
