@@ -1,0 +1,61 @@
+---
+import { PageleteSubSection } from "components";
+
+import ThreeColumnLayout from "../ThreeColumnLayout.astro";
+import InfoBlockLayout from "../InfoBlockLayout.astro";
+
+import informImage from "../../../imgs/how-to-images/blue-information.svg";
+import interactiveImage from "../../../imgs/how-to-images/blue-interactive-items.svg";
+import hoverImage from "../../../imgs/how-to-images/blue-hover-states.svg";
+
+const informBlock = {
+  image: informImage.src,
+  altText: "graphic representing blues use for information",
+  header: "Information",
+  description:
+    "Used for messaging and status, such as banners and forms fields.",
+};
+
+const interactiveBlock = {
+  image: interactiveImage.src,
+  altText: "graphic representing blues use for interactive items",
+  header: "Interactive Items",
+  description:
+    "Links, buttons, and interactive inputs such as checkboxes and radio buttons.",
+};
+
+const hoverBlock = {
+  image: hoverImage.src,
+  altText: "graphic representing blues use for hover states within lists",
+  header: "Hover States in Lists",
+  description: "Within dropdowns lists, tables and other list items.",
+};
+---
+
+<PageleteSubSection marginTop="0" marginBottom="0">
+  <ThreeColumnLayout>
+    <InfoBlockLayout
+      slot="left-frame"
+      graphicIcon={informBlock.image}
+      graphicAltText={informBlock.altText}
+      header={informBlock.header}
+      description={informBlock.description}
+    />
+
+    <InfoBlockLayout
+      slot="middle-frame"
+      graphicIcon={interactiveBlock.image}
+      graphicAltText={interactiveBlock.altText}
+      header={interactiveBlock.header}
+      description={interactiveBlock.description}
+    />
+
+    <InfoBlockLayout
+      slot="right-frame"
+      graphicIcon={hoverBlock.image}
+      graphicAltText={hoverBlock.altText}
+      header={hoverBlock.header}
+      description={hoverBlock.description}
+    />
+  </ThreeColumnLayout>
+</PageleteSubSection>
