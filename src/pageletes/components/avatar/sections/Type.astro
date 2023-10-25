@@ -26,18 +26,18 @@ import TypeImage4 from "../imgs/avatar-type-4.svg";
     icon and the user initials.
   </Description>
 
-  <ColumnLayout numOfColumns={4}>
-    <StackedLayout>
-      <Image src={TypeImage1.src} alt="Image showing generic avatar" />
+  <ColumnLayout numOfColumns={4} bkgColor="white">
+    <StackedLayout label="Generic">
+      <Image src={TypeImage1.src} alt="Image showing generic avatar"/>
     </StackedLayout>
-    <StackedLayout>
+    <StackedLayout label="Image">
       <Image src={TypeImage2.src} alt="Image showing image avatar" />
     </StackedLayout>
-    <StackedLayout>
+    <StackedLayout label="Bot">
       <Image src={TypeImage3.src} alt="Image showing bot avatar" />
     </StackedLayout>
-    <StackedLayout>
-      <Image src={TypeImage4.src} alt="Image showing initials avatar" />
+    <StackedLayout label="Initials">
+      <Image src={TypeImage4.src} alt="Image showing initials avatar"/>
     </StackedLayout>
   </ColumnLayout>
 
