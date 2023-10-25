@@ -46,17 +46,6 @@ const AgentAvatar = (
   <Fragment key="the-avatar">
     <TopNav.Avatar
       avatar={<Avatar initials="MD" />}
-      dropdown={
-        <Menu
-          itemAlignment="left"
-          menuRootElement={
-            <MenuButton onClick={function Ha() {}}>Functional Menu</MenuButton>
-          }
-        >
-          <MenuItem>Settings</MenuItem>
-          <MenuItem>Log Out</MenuItem>
-        </Menu>
-      }
     />
   </Fragment>
 );
@@ -64,6 +53,7 @@ const AgentAvatar = (
 const getAgentComponent = (isAgentCard: boolean | undefined) => {
   return isAgentCard ? AgentStatusCard : AgentAvatar;
 };
+
 
 export const PlaygroundImplementation = () => {
   const [statusType, setStatusType] = useState<UserStatusType>("avatar");
@@ -115,7 +105,7 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      {element}
+      <div style={{ width: "100%" }}>{element}</div>
     </Playground>
   );
 };
