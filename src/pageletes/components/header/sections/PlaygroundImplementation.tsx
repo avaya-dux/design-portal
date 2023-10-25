@@ -15,7 +15,7 @@ import {
   prettyPrintReactElementToString,
 } from "helpers";
 
-import logoImage from "../imgs/logo-condensed-light.svg";
+import logoImage from "../imgs/logo-fpo.png";
 import "./PlaygroundImplementation.css";
 
 const storybook =
@@ -27,9 +27,7 @@ const sandbox =
 type UserStatusType = "card" | "avatar";
 
 const Logo = (
-  <a href="/" title="Logo Link">
-    <Image src={logoImage.src} isDecorativeOrBranding />
-  </a>
+  <Image src={logoImage.src} isDecorativeOrBranding />
 );
 
 const AgentStatusCard = (
