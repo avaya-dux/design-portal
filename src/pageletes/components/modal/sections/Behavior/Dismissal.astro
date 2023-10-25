@@ -4,8 +4,6 @@ import {
   Description,
   SubHeader,
   ImageWrapper,
-  ColumnLayout,
-  StackedLayout,
 } from "components";
 import { topics } from "../../static";
 
@@ -29,7 +27,7 @@ const dismissalImage2AltText =
   action is completed.
 </Description>
 
-<ImageWrapper>
+<ImageWrapper padding="0" isRounded={false}>
   <Image src={DismissalImage1.src} alt={dismissalImageAltText} />
 </ImageWrapper>
 
@@ -39,8 +37,6 @@ const dismissalImage2AltText =
   the close icon.
 </Description>
 
-<ColumnLayout bkgColor="white" numOfColumns={1}>
-  <StackedLayout vPadding="0">
-    <Image src={DismissalImage2.src} alt={dismissalImage2AltText} />
-  </StackedLayout>
-</ColumnLayout>
+<ImageWrapper padding="0" isRounded={false}>
+  <Image src={DismissalImage2.src} alt={dismissalImage2AltText} />
+</ImageWrapper>

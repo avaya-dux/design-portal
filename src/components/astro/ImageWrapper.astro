@@ -6,6 +6,7 @@ export interface Props {
   marginTop?: string;
   marginBottom?: string;
   padding?: string;
+  isRounded?: boolean;
 }
 const {
   isShaded = false,
@@ -13,6 +14,7 @@ const {
   marginTop = "3rem",
   marginBottom = "1.5rem",
   padding = "2.5rem 1.5rem",
+  isRounded = true,
 } = Astro.props as Props;
 ---
 
@@ -21,6 +23,7 @@ const {
     "image-centered",
     showBorders && "show-borders",
     isShaded && "image-wrapper--shaded",
+    !isRounded && "no-rounded-corners"
   )}
 >
   <slot />
@@ -38,6 +41,10 @@ const {
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
+  }
+
+  .no-rounded-corners :global(img) {
+    border-radius: initial;
   }
 
   .show-borders {
