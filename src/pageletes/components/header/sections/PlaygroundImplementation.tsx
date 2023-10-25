@@ -1,10 +1,14 @@
-import { useState, useMemo } from "react";
+import { Fragment, useState, useMemo } from "react";
 import { Playground } from "components/react";
 import {
-  Checkbox,
-  CheckboxGroup,
-  type CheckboxProps,
+  AgentCard,
+  Avatar,
   Image,
+  Menu,
+  MenuButton,
+  MenuItem,
+  Radio,
+  RadioGroup,
   TopNav,
   type TopNavProps,
 } from "@avaya/neo-react";
@@ -22,45 +26,60 @@ const storybook =
 
 const sandbox = "https://codesandbox.io/s/";
 
+type UserStatusType = "card" | "avatar";
+
 const Logo = (
   <a href="/" title="Logo Link">
     <Image src={logoImage.src} isDecorativeOrBranding />
   </a>
 );
 
-const SearchBar = <TopNav.Search />;
+const AgentStatusCard = (
+  <AgentCard
+    agentName="Bob Boberson"
+    agentStatus="connected"
+    avatar={<Avatar />}
+  />
+);
 
-const getTitle = (hasTitle: boolean | undefined | "mixed") => {
-  return hasTitle ? "My App" : undefined;
-};
+const AgentAvatar = (
+  <Fragment key="the-avatar">
+    <TopNav.Avatar
+      avatar={<Avatar initials="MD" />}
+      dropdown={
+        <Menu
+          itemAlignment="left"
+          menuRootElement={
+            <MenuButton onClick={function Ha() {}}>Functional Menu</MenuButton>
+          }
+        >
+          <MenuItem>Settings</MenuItem>
+          <MenuItem>Log Out</MenuItem>
+        </Menu>
+      }
+    />
+  </Fragment>
+);
 
-const getSearchBar = (hasTitle: boolean | undefined | "mixed") => {
-  return hasTitle ? SearchBar : undefined;
+const getAgentComponent = (isAgentCard: boolean | undefined) => {
+  return isAgentCard ? AgentStatusCard : AgentAvatar;
 };
 
 export const PlaygroundImplementation = () => {
-  const [hasTitle, setHasTitle] = useState<CheckboxProps["checked"]>(false);
-  const [hasSearch, setHasSearch] = useState<CheckboxProps["checked"]>(false);
+  const [statusType, setStatusType] = useState<UserStatusType>("avatar");
 
   const [element, react, html] = useMemo(() => {
     let props: TopNavProps = {
       logo: Logo,
     };
 
-    const title = getTitle(hasTitle);
-    const search = getSearchBar(hasSearch);
-
-    if (hasTitle) {
-      props = { ...props, title };
-    }
-
-    if (hasSearch) {
-      props = { ...props, search };
-    }
+    const AgentComponent = getAgentComponent(statusType === "card");
 
     const element = (
       <div className="playground-topnav">
-        <TopNav aria-label="Main header" {...props} />
+        <TopNav aria-label="Main header" {...props}>
+          {AgentComponent}
+        </TopNav>
       </div>
     );
 
@@ -69,31 +88,23 @@ export const PlaygroundImplementation = () => {
       prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
     ];
-  }, [hasTitle, hasSearch]);
+  }, [statusType]);
 
   return (
     <Playground
       options={
         <Playground.OptionsContainer>
-          <Playground.OptionsSection title="Button Options">
-            <CheckboxGroup
-              groupName="Options"
-              aria-labelledby="options"
+          <Playground.OptionsSection title="User Options">
+            <RadioGroup
+              groupName="user-options"
+              selected={statusType}
               onChange={(e) => {
-                const { value } = e.target as HTMLInputElement;
-                switch (value) {
-                  case "title":
-                    setHasTitle(!hasTitle);
-                    break;
-                  case "search":
-                    setHasSearch(!hasSearch);
-                    break;
-                }
+                setStatusType(e.target.value as UserStatusType);
               }}
             >
-              <Checkbox value="title">App title</Checkbox>
-              <Checkbox value="search">Search</Checkbox>
-            </CheckboxGroup>
+              <Radio value="avatar">Avatar</Radio>
+              <Radio value="card">Agent Card</Radio>
+            </RadioGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
       }
