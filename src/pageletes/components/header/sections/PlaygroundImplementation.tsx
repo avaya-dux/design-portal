@@ -50,12 +50,11 @@ const getAgentComponent = (isAgentCard: boolean | undefined) => {
   return isAgentCard ? AgentStatusCard : AgentAvatar;
 };
 
-
 export const PlaygroundImplementation = () => {
   const [statusType, setStatusType] = useState<UserStatusType>("avatar");
 
   const [element, react, html] = useMemo(() => {
-    let props: TopNavProps = {
+    const props: TopNavProps = {
       logo: Logo,
     };
 
@@ -65,7 +64,10 @@ export const PlaygroundImplementation = () => {
       <div className="playground-topnav">
         <TopNav aria-label="Main header" {...props}>
           <Fragment key="the-actions">
-            <TopNav.IconButton aria-label="notifications" icon="notifications-on" />
+            <TopNav.IconButton
+              aria-label="notifications"
+              icon="notifications-on"
+            />
             <TopNav.IconButton aria-label="Settings" icon="settings" />
             {AgentComponent}
           </Fragment>
