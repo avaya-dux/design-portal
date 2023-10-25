@@ -19,9 +19,10 @@ import logoImage from "../imgs/logo-condensed-light.svg";
 import "./PlaygroundImplementation.css";
 
 const storybook =
-  "https://neo-react-library-storybook.netlify.app/?path=/story/components-topnav";
+  "https://neo-react-library-storybook.netlify.app/?path=/docs/components-top-navigation";
 
-const sandbox = "https://codesandbox.io/s/";
+const sandbox =
+  "https://codesandbox.io/s/neo-react-header-forked-vwj3td?file=/src/App.js";
 
 type UserStatusType = "card" | "avatar";
 
