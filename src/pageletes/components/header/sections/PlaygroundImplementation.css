@@ -1,6 +1,10 @@
 /* The Portal has some css that overrides the TopNav component classes and breaks some vertical aligment
   this css fixes those issues. */
 
+#the-avatar {
+  margin-top: 0.6rem;
+}
+
 .playground-topnav > nav.neo-navbar .neo-nav--left {
   align-items: center;
 }

@@ -4,9 +4,6 @@ import {
   AgentCard,
   Avatar,
   Image,
-  Menu,
-  MenuButton,
-  MenuItem,
   Radio,
   RadioGroup,
   TopNav,
@@ -43,11 +40,9 @@ const AgentStatusCard = (
 );
 
 const AgentAvatar = (
-  <Fragment key="the-avatar">
-    <TopNav.Avatar
-      avatar={<Avatar initials="MD" />}
-    />
-  </Fragment>
+  <div id="the-avatar">
+    <TopNav.Avatar avatar={<Avatar initials="MD" />} />
+  </div>
 );
 
 const getAgentComponent = (isAgentCard: boolean | undefined) => {
@@ -68,7 +63,11 @@ export const PlaygroundImplementation = () => {
     const element = (
       <div className="playground-topnav">
         <TopNav aria-label="Main header" {...props}>
-          {AgentComponent}
+          <Fragment key="the-actions">
+            <TopNav.IconButton aria-label="notifications" icon="notifications-on" />
+            <TopNav.IconButton aria-label="Settings" icon="settings" />
+            {AgentComponent}
+          </Fragment>
         </TopNav>
       </div>
     );
