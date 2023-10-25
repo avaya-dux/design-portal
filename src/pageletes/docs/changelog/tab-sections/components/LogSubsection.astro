@@ -1,50 +1,46 @@
 ---
 export interface Props {
-    title: string;
-    section: []
+  title: string;
+  section: string[];
 }
 
-const { 
-    title = "no Title",
-    section = [],
-} = Astro.props as Props;
+const { title = "no Title", section = [] } = Astro.props as Props;
 ---
 
 <h4 class="changelog-header">{title}</h4>
 <ul>
-    {
-        (section.length > 0) ?
-            section.map((point) => (
-                <li><p class="changelog-point-text">{point}</p></li>
-            )) :
-            <li><p class="changelog-point-text">N/A</p></li>
-    }
+  {
+    section.length > 0 ? (
+      section.map((point) => <li set:html={point} />)
+    ) : (
+      <li>N/A</li>
+    )
+  }
 </ul>
 
-<style>
-    .changelog-header{
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 24px;
-    }
+<style is:global>
+  .changelog-emphasis {
+    background: var(--neo-color-base-100);
+    color: red;
+    font-family: monospace !important;
+    font-style: normal;
+  }
 
-    ul{
-        padding-top: 8px;
-        margin-left: 0px;
-        margin-bottom: 16px;
-    }
+  .changelog-header {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+  }
 
-    li{
-        list-style-position: inside;
-        font-size: 10px;
-    }
+  ul {
+    padding-top: 8px;
+    margin-left: 8px;
+    margin-bottom: 16px;
+  }
 
-    .changelog-point-text{
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 24px;
-        display: inline;
-    }
+  li {
+    list-style-position: inside;
+    line-height: 24px;
+  }
 </style>

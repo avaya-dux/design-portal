@@ -1,20 +1,26 @@
 ---
 import { PageleteSection, TabMenu } from "components";
 
-const tabNames = [
-  "Design Updates",
-  "CSS",
-  "React"
-];
+const tabNames = ["Design Updates", "CSS", "React"];
 
-import DesignUpdateLogLayout from "./TabSections/components/DesignUpdateLogLayout.astro";
-import CSSLogLayout from "./TabSections/components/CSSLogLayout.astro";
-import ReactLogLayout from "./TabSections/components/ReactLogLayout.astro";
+import DesignUpdateLogLayout from "./tab-sections/components/DesignUpdateLogLayout.astro";
+import CSSLogLayout from "./tab-sections/components/CSSLogLayout.astro";
+import ReactLogLayout from "./tab-sections/components/ReactLogLayout.astro";
 ---
+
 <PageleteSection>
-    <TabMenu client:only="react" panels={tabNames}>
-      <DesignUpdateLogLayout slot="design updates"/>
-      <CSSLogLayout slot="css"/>
-      <ReactLogLayout slot="react"/>
-    </TabMenu>
+  <TabMenu client:only="react" panels={tabNames}>
+    <DesignUpdateLogLayout slot="design updates" />
+    <CSSLogLayout slot="css" />
+    <ReactLogLayout slot="react" />
+  </TabMenu>
 </PageleteSection>
+
+<style>
+  .changelog-emphasis {
+    background: var(--neo-color-base-100);
+    color: red;
+    font-family: monospace !important;
+    font-style: normal;
+  }
+</style>
