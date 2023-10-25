@@ -18,8 +18,8 @@
 <path d="M192.5 88H264.334V132H192.5V88Z"/>
 </mask>
 <path d="M192.5 88H264.334V132H192.5V88Z" fill="white"/>
-<rect x="212.5" y="102" width="16" height="16" rx="4" fill="white"/>
-<rect x="213" y="102.5" width="15" height="15" rx="3.5" stroke="#1B77AF"/>
+<rect x="212.5" y="102" width="16" height="16" rx="4" fill="#1B77AF"/>
+<path d="M225.55 110.25H215.4C215.15 110.25 215 110.1 215 109.9C215 109.7 215.15 109.5 215.4 109.5H225.6C225.8 109.5 226 109.65 226 109.9C226 110.15 225.75 110.25 225.55 110.25Z" fill="white"/>
 <path d="M192.5 89H264.334V87H192.5V89ZM264.334 131H192.5V133H264.334V131Z" fill="#C9C9C9" mask="url(#path-14-inside-1_9721_688987)"/>
 <mask id="path-19-inside-2_9721_688987" fill="white">
 <path d="M192.5 132H264.334V176H192.5V132Z"/>

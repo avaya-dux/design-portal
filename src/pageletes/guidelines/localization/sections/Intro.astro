@@ -1,0 +1,23 @@
+---
+import {
+  Description,
+  PageleteSection,
+  PageTitle,
+  Topics,
+} from "components/astro";
+
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <PageTitle>Localization</PageTitle>
+
+  <Description>
+    Localization refers to the translation of all text items on the screen to
+    other languages. Different alphabets can take up more or less room on the
+    screen, so UI designs must test to make sure that the content and meaning
+    are not lost.
+  </Description>
+
+  <Topics topics={topics} />
+</PageleteSection>

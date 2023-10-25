@@ -1,6 +1,10 @@
 ---
 import { Image } from "@avaya/neo-react";
-import { Description, SubHeader, ImageWrapper } from "components";
+import {
+  Description,
+  SubHeader,
+ImageWrapper,
+} from "components";
 import { topics } from "../../static";
 
 const { id } = topics.behavior;
@@ -18,6 +22,6 @@ const overflowImageAltText = "An image of a modal with a scrollbar";
   more space is required, use a larger modal or reduce the amount of text.
 </Description>
 
-<ImageWrapper>
+<ImageWrapper padding="0" isRounded={false}>
   <Image src={OverflowImage1.src} alt={overflowImageAltText} />
 </ImageWrapper>
