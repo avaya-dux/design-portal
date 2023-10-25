@@ -46,8 +46,8 @@ const imageType2AltText = "An image of a thumbnail with supporting text";
       If you need assistance, reach out to the marketing team.
     </Description>
 
-    <ImageWrapper>
-      <Image src={imageType1} alt={imageType1AltText} />
+    <ImageWrapper showBorders={false} padding="0">
+      <Image src={imageType1.src} alt={imageType1AltText} />
     </ImageWrapper>
   </PageleteSubSection>
 
@@ -61,7 +61,7 @@ const imageType2AltText = "An image of a thumbnail with supporting text";
     </Description>
 
     <ImageWrapper>
-      <Image src={imageType2} alt={imageType2AltText} />
+      <Image src={imageType2.src} alt={imageType2AltText} />
     </ImageWrapper>
   </PageleteSubSection>
 </PageleteSection>

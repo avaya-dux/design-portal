@@ -1,6 +1,10 @@
 ---
 import { Image } from "@avaya/neo-react";
-import { Description, SubHeader, ImageWrapper } from "components";
+import {
+  Description,
+  SubHeader,
+  ImageWrapper,
+} from "components";
 import { topics } from "../../static";
 
 const { id } = topics.behavior;
@@ -23,7 +27,7 @@ const dismissalImage2AltText =
   action is completed.
 </Description>
 
-<ImageWrapper>
+<ImageWrapper padding="0" isRounded={false}>
   <Image src={DismissalImage1.src} alt={dismissalImageAltText} />
 </ImageWrapper>
 
@@ -33,6 +37,6 @@ const dismissalImage2AltText =
   the close icon.
 </Description>
 
-<ImageWrapper>
+<ImageWrapper padding="0" isRounded={false}>
   <Image src={DismissalImage2.src} alt={dismissalImage2AltText} />
 </ImageWrapper>

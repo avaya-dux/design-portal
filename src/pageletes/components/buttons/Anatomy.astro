@@ -3,9 +3,9 @@ import { Image } from "@avaya/neo-react";
 import {
   Description,
   ColumnLayout,
-  ImageWrapper,
   PageleteSection,
   SectionHeader,
+  StackedLayout,
 } from "components/astro";
 
 import { topics } from "./static";
@@ -34,19 +34,19 @@ const image4Alt =
     as desired.
   </Description>
 
-  <ColumnLayout numOfColumns={2}>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+  <ColumnLayout numOfColumns={2} bkgColor="white">
+    <StackedLayout label="1">
       <Image src={image1.src} alt={image1Alt} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+    </StackedLayout>
+    <StackedLayout label="2">
       <Image src={image2.src} alt={image2Alt} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+    </StackedLayout>
+    <StackedLayout label="3">
       <Image src={image3.src} alt={image3Alt} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
+    </StackedLayout>
+    <StackedLayout label="4">
       <Image src={image4.src} alt={image4Alt} />
-    </ImageWrapper>
+    </StackedLayout>
   </ColumnLayout>
 
   <ColumnLayout numOfColumns={4} marginTop={"1.5rem"}>

@@ -1,6 +1,10 @@
 ---
 import { Image } from "@avaya/neo-react";
-import { Description, SubHeader, ImageWrapper } from "components";
+import {
+  Description,
+  SubHeader,
+ImageWrapper,
+} from "components";
 import { topics } from "../../static";
 
 const { id } = topics.behavior;
@@ -25,7 +29,7 @@ const alignmentImage2AltText =
   transparent overlay separates the page behind from the modal.
 </Description>
 
-<ImageWrapper>
+<ImageWrapper padding="0" isRounded={false}>
   <Image src={AlignmentImage1.src} alt={alignmentImageAltText} />
 </ImageWrapper>
 
@@ -34,6 +38,6 @@ const alignmentImage2AltText =
   margins on top and bottom.
 </Description>
 
-<ImageWrapper>
+<ImageWrapper padding="0" isRounded={false}>
   <Image src={AlignmentImage2.src} alt={alignmentImage2AltText} />
 </ImageWrapper>
