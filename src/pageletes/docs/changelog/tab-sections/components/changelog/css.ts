@@ -5,14 +5,14 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "Added <em class=changelog-emphasis>decimal, boolean and integer</em> <a href='/components/icon'>Icons</a> (NEO-1865)",
+          "Added \"decimal\", \"boolean\" and \"integer\" icons (NEO-1865)",
           "NEO-1845 allow <a href='/components/dropdown'>Dropdown</a> to expand upwards and to be placed to either side of the toggle",
         ],
         breakingChanges: [],
         additionalChanges: [],
         bugs: [
           "Added missing RTL styles to <a href='/components/accordion'>Accordion</a> headers (NEO-1853)",
-          "Added missing alignment styling to <a href='/components/switch'>Switch</a> <a href='/components/icon'>Icons</a> (NEO-1885)",
+          "Added missing alignment styling to <a href='/components/switch'>Switch</a> icons (NEO-1885)",
         ],
       },
     ],
@@ -24,11 +24,11 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "Added <em class=changelog-emphasis>flow</em> <a href='/components/icon'>Icons</a> (NEO-1847)",
+          "Added \"flow\" icons (NEO-1847)",
         ],
         breakingChanges: [],
         additionalChanges: [
-          "Updated <em class=changelog-emphasis>network quality</em> <a href='/components/icon'>Icons</a> (NEO-1852)",
+          "Updated \"network quality\" icons (NEO-1852)",
         ],
         bugs: [],
       },
@@ -41,7 +41,7 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "Added <em class=changelog-emphasis>http</em> <a href='/components/icon'>Icon</a> (NEO-1822)",
+          "Added \"http\" icon (NEO-1822)",
         ],
         breakingChanges: [],
         additionalChanges: [],
@@ -56,7 +56,7 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "Added <em class=changelog-emphasis>missed</em> <a href='/components/icon'>Icon</a> (NEO-1775)",
+          "Added \"missed\" icon (NEO-1775)",
         ],
         breakingChanges: [],
         additionalChanges: [],
@@ -71,7 +71,7 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "Added <em class=changelog-emphasis>loop-single, loop-multiple, variable-assign, sub-accounts-select, sub-accounts-switch, customer-journey-retrieve-data, customer-journey-store-data, label-go, broadcast-play, broadcast-stop, callback-offer, queue-removed</em>, <a href='/components/icon'>Icons</a> (NEO-1481)",
+          "Added \"loop-single\", \"loop-multiple\", \"variable-assign\", \"sub-accounts-select\", \"sub-accounts-switch\", \"customer-journey-retrieve-data\", \"customer-journey-store-data\", \"label-go\", \"broadcast-play\", \"broadcast-stop\", \"callback-offer\", \"queue-removed\", icons (NEO-1481)",
         ],
         breakingChanges: [],
         additionalChanges: [],
@@ -86,7 +86,7 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "Added <em class=changelog-emphasis>axp, axp-alerting, axp-connected, axp-inbound, axp-missed, axp-not-ready, axp-outbound, axp-pending, axp-ready</em> <a href='/components/icon'>Icons</a> (NEO-1749)",
+          "Added \"axp\", \"axp-alerting\", \"axp-connected\", \"axp-inbound\", \"axp-missed\", \"axp-not-ready\", \"axp-outbound\", \"axp-pending\", \"axp-ready\" icons (NEO-1749)",
         ],
         breakingChanges: [],
         additionalChanges: [],
@@ -104,7 +104,7 @@ export const CSSChangelog = [
         breakingChanges: [],
         additionalChanges: [],
         bugs: [
-          "Added missing RTL styles to expand <a href='/components/icon'>Icon</a> in expandable <a href='/components/table'>Table</a> rows (NEO-1736)",
+          "Added missing RTL styles to expand icon in expandable <a href='/components/table'>Table</a> rows (NEO-1736)",
           "Fixed syntax issue in color variable for ACW state (NEO-1747)",
           "Tweaked behavior of Spinner animation to avoid shifting on rotation (NEO-1002)",
         ],
@@ -187,7 +187,7 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "Added new <em class=changelog-emphasis>mic-extended-off, mic-extended-on, vdn-incoming-call, user-return, list-number-complete, zoom-default, call-sms, table-insert, table-delete</em> <a href='/components/icon'>Icons</a> (NEO-1556/NEO-1555/NEO-1563)",
+          "Added new \"mic-extended-off\", \"mic-extended-on\", \"vdn-incoming-call\", \"user-return\", \"list-number-complete\", \"zoom-default\", \"call-sms\", \"table-insert\", \"table-delete\" icons (NEO-1556/NEO-1555/NEO-1563)",
         ],
         breakingChanges: [],
         additionalChanges: [],
@@ -203,7 +203,7 @@ export const CSSChangelog = [
       {
         newFeatures: [
           "Added new <em class=changelog-emphasis>.neo-leftnav__sub--multiline</em> class to correctly align active state dot when text wraps to multiple lines (NEO-1497)",
-          "Updated <em class=changelog-emphasis>error, error-filled, warning, warning-filled</em> <a href='/components/icon'>Icons</a> to new versions (NEO-1535)",
+          "Updated \"error\", \"error-filled\", \"warning\", \"warning-filled\" icons to new versions (NEO-1535)",
           "Added new iconography to <a href='/components/switch'>Switch</a> Component unchecked and checked states (NEO-1541)",
         ],
         breakingChanges: [],
@@ -222,7 +222,7 @@ export const CSSChangelog = [
       {
         newFeatures: [
           "Added <em class=changelog-emphasis>neo-leftnav__main__item</em> class for additional flexibility when building Component (NEO-1433)",
-          "Added new acw state <a href='/components/icon'>Icon</a> to Icon State Component (NEO-1508)",
+          "Added new acw state icon to Icon State Component (NEO-1508)",
           "Added new <em class=changelog-emphasis>neo-radio--multiline</em> class to correctly align text in <a href='/components/radio'>Radio Buttons</a> with multiple lines of text (CCNXT-108299)",
         ],
         breakingChanges: [],
@@ -243,7 +243,7 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "Added new <em class=changelog-emphasis>neo-icon--small, neo-icon--medium and neo-icon--large</em> classes for specific <a href='/components/icon'>Icon</a> sizing (NEO-645)",
+          "Added new <em class=changelog-emphasis>neo-icon--small, neo-icon--medium and neo-icon--large</em> classes for specific icon sizing (NEO-645)",
         ],
         breakingChanges: [],
         additionalChanges: [],
@@ -259,7 +259,7 @@ export const CSSChangelog = [
       {
         newFeatures: [
           "Added new <em class=changelog-emphasis>.neo-input-editable__wrapper--small</em> class name for correct styling of small <a href='/components/text-input'>Text Inputs</a> (NEO-1402)",
-          "Added new icon <em class=changelog-emphasis>unlock</em> (NEO-1416)",
+          "Added new icon \"unlock\" (NEO-1416)",
           "Added new <em class=changelog-emphasis>.neo-form-control--no-label</em> class to remove minimum height on horizontal <a href='/components/form'>Form</a> elements (NEO-1438)",
         ],
         breakingChanges: [
@@ -283,7 +283,7 @@ export const CSSChangelog = [
         additionalChanges: [],
         bugs: [
           "Provide style tweaks for <a href='/components/dropdown'>Dropdown</a> in <a href='/components/header'>Navbar</a> (NEO-1262)",
-          "Tweaked display and alignment styles for chevron in <a href='/components/table'>Table</a> Headers with sorting <a href='/components/icon'>Icons</a> (NEO-1405)",
+          "Tweaked display and alignment styles for chevron in <a href='/components/table'>Table</a> Headers with sorting icons (NEO-1405)",
           "Tweaked positioning of <a href='/components/radio'>Radio Buttons</a> in <a href='/components/widget'>Widget</a> Components to avoid border cut-off on focus (CCNXT-108310)",
         ],
       },
@@ -296,7 +296,7 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "New cell, column, row, table and cut <a href='/components/icon'>Icons</a>",
+          "New \"cell\", \"column\", \"row\", \"table\" and \"cut\" icons",
           "Added new class and style for small <a href='/components/select'>Select</a> Component",
         ],
         breakingChanges: [],
@@ -329,12 +329,12 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "Added new communication <a href='/components/icon'>Icons</a>, <em class=changelog-emphasis>including audio-incoming, audio-outgoing, call-incoming, call-outgoing, chat-incoming, chat-outgoing, email-incoming, email-outgoing, messaging-incoming, messaging-outgoing, sms-incoming, sms-outgoing, social-incoming, social-outgoing, video-incoming, and video-outgoing</em>, to <a href='/components/icon'>Icon</a>",
+          "Added new communication icons, including \"audio-incoming\", \"audio-outgoing\", \"call-incoming\", \"call-outgoing\", \"chat-incoming\", \"chat-outgoing\", \"email-incoming\", \"email-outgoing\", \"messaging-incoming\", \"messaging-outgoing\", \"sms-incoming\", \"sms-outgoing\", \"social-incoming\", \"social-outgoing\", \"video-incoming\", and \"video-outgoing\", to icon",
         ],
         breakingChanges: [
-          "Updated SVGs for social <a href='/components/icon'>Icons</a>, including social-outbound, social-inbound, social-ready, social-missed, social-alerting, social-pending, social-not-ready, and social-connected. And moved these icons to communication category in Icon",
-          "Renamed icon other/social-integrations to communication/social in <a href='/components/icon'>Icon</a>",
-          "Renamed social/social icon (illustration of thumbs up) to social/social-media in <a href='/components/icon'>Icon</a>",
+          "Updated SVGs for social icons, including social-outbound, social-inbound, social-ready, social-missed, social-alerting, social-pending, social-not-ready, and social-connected. And moved these icons to communication category in Icon",
+          "Renamed icon other/social-integrations to communication/social in icon",
+          "Renamed social/social icon (illustration of thumbs up) to social/social-media in icon",
         ],
         additionalChanges: [],
         bugs: [],
@@ -348,9 +348,9 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "Added redial icon <a href='/components/icon'>Icon</a>",
-          "Added new style properties for <a href='/components/icon'>Icon</a> <a href='/components/buttons'>Button</a> <a href='/components/dropdown'>Dropdowns</a>",
-          "Added new style properties for <a href='/components/header'>Navbar</a> <a href='/components/icon'>Icon</a> <a href='/components/buttons'>Button</a> <a href='/components/dropdown'>Dropdown</a>",
+          "Added redial icon icon",
+          "Added new style properties for icon <a href='/components/buttons'>Button</a> <a href='/components/dropdown'>Dropdowns</a>",
+          "Added new style properties for <a href='/components/header'>Navbar</a> icon <a href='/components/buttons'>Button</a> <a href='/components/dropdown'>Dropdown</a>",
         ],
         breakingChanges: [],
         additionalChanges: [],
@@ -389,7 +389,7 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "Added new <em class=changelog-emphasis>bot-agent and hospitality</em> <a href='/components/icon'>Icon</a>",
+          "Added new \"bot-agent\" and \"hospitality\" icon",
         ],
         breakingChanges: [],
         additionalChanges: [],
@@ -421,7 +421,7 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "Added <em class=changelog-emphasis>after-work-call</em> <a href='/components/icon'>Icon</a>",
+          "Added \"after-work-call\" icon",
         ],
         breakingChanges: [],
         additionalChanges: [],
@@ -481,7 +481,7 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "Added new <em class=changelog-emphasis>analytics-filled</em> <a href='/components/icon'>Icon</a>",
+          "Added new \"analytics-filled\" icon",
         ],
         breakingChanges: [
           "Updated multiline <a href='/components/switch'>Switch</a> to work with <em class=changelog-emphasis>dir='rtl'</em>",
@@ -557,7 +557,7 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "Added new <em class=changelog-emphasis>user</em> <a href='/components/icon'>Icon</a>",
+          "Added new \"user\" icon",
         ],
         breakingChanges: [],
         additionalChanges: [],

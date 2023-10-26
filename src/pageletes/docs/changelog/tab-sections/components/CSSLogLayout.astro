@@ -6,6 +6,7 @@ import { Image } from "@avaya/neo-react";
 
 import LogSubsection from "./LogSubsection.astro";
 ---
+<div class="changelog-separator"/>
 
 <div class="change-log-tab-panel">
   {
@@ -15,7 +16,7 @@ import LogSubsection from "./LogSubsection.astro";
         marginTop={index === 0 ? "48px" : "32px"}
       >
         <SectionHeader id={`${releases.date}-css-update`}>
-          {`${releases.version} ${releases.date} `}
+          { `${releases.version} ${releases.date} `}
           {index === 0 ? (
             <Image src={chip.src} alt="Newest version chip" />
           ) : (
@@ -27,17 +28,17 @@ import LogSubsection from "./LogSubsection.astro";
           <>
             <LogSubsection
               title="New Features - Recently Added"
-              section={section.newFeatures}
+              points={section.newFeatures}
             />
             <LogSubsection
               title="Breaking Change - Needs Immediate Attention"
-              section={section.breakingChanges}
+              points={section.breakingChanges}
             />
             <LogSubsection
               title="Additional Changes - Update at Earliest Convenience"
-              section={section.additionalChanges}
+              points={section.additionalChanges}
             />
-            <LogSubsection title="Bugs - Updated List" section={section.bugs} />
+            <LogSubsection title="Bugs - Updated List" points={section.bugs} />
           </>
         ))}
       </PageleteSection>
@@ -46,7 +47,9 @@ import LogSubsection from "./LogSubsection.astro";
 </div>
 
 <style>
-  .change-log-tab-panel {
-    width: 960px;
+  .changelog-separator{
+    width: 100%;
+    height: 1px;
+    background-color: var(--neo-color-base-200);
   }
 </style>

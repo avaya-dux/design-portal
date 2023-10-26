@@ -1,6 +1,6 @@
 export const DesignChangelog = [
   {
-    date: "(March 10, 2022)",
+    date: "March 10, 2022",
     sections: [
       {
         header: "Design Tokens",
@@ -13,7 +13,7 @@ export const DesignChangelog = [
   },
 
   {
-    date: "(January 25, 2022)",
+    date: "January 25, 2022",
 
     sections: [
       {
@@ -31,7 +31,7 @@ export const DesignChangelog = [
   },
 
   {
-    date: "(December 22, 2021)",
+    date: "December 22, 2021",
 
     sections: [
       {
@@ -42,7 +42,7 @@ export const DesignChangelog = [
   },
 
   {
-    date: "(December 08, 2021)",
+    date: "December 08, 2021",
 
     sections: [
       {
@@ -53,7 +53,7 @@ export const DesignChangelog = [
   },
 
   {
-    date: "(December 01, 2021)",
+    date: "December 01, 2021",
 
     sections: [
       {
@@ -66,7 +66,7 @@ export const DesignChangelog = [
   },
 
   {
-    date: "(October 20, 2021)",
+    date: "October 20, 2021",
 
     sections: [
       {
@@ -90,7 +90,7 @@ export const DesignChangelog = [
   },
 
   {
-    date: "(October 06, 2021)",
+    date: "October 06, 2021",
 
     sections: [
       {
@@ -110,7 +110,7 @@ export const DesignChangelog = [
   },
 
   {
-    date: "(September 22, 2021)",
+    date: "September 22, 2021",
 
     sections: [
       {
@@ -125,7 +125,7 @@ export const DesignChangelog = [
   },
 
   {
-    date: "(September 08, 2021)",
+    date: "September 08, 2021",
 
     sections: [
       {
@@ -136,7 +136,7 @@ export const DesignChangelog = [
   },
 
   {
-    date: "(August 18, 2021)",
+    date: "August 18, 2021",
 
     sections: [
       {
@@ -149,7 +149,7 @@ export const DesignChangelog = [
   },
 
   {
-    date: "(August 04, 2021)",
+    date: "August 04, 2021",
 
     sections: [
       {
@@ -160,7 +160,7 @@ export const DesignChangelog = [
   },
 
   {
-    date: "(July 28, 2021)",
+    date: "July 28, 2021",
 
     sections: [
       {

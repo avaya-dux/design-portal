@@ -4,6 +4,7 @@ import { DesignChangelog } from "./changelog/design";
 import chip from "../imgs/chip.svg";
 import { Image } from "@avaya/neo-react";
 ---
+<div class="changelog-separator"/>
 
 <div class="change-log-tab-panel">
   {
@@ -12,8 +13,8 @@ import { Image } from "@avaya/neo-react";
         marginBottom="0"
         marginTop={index === 0 ? "48px" : "32px"}
       >
-        <SectionHeader id={releases.date + "-design-update"}>
-          {releases.date + " "}
+        <SectionHeader id={`${releases.date}-design-update`}>
+          {`${releases.date} `}
           {index === 0 ? (
             <Image src={chip.src} alt="Newest version chip" />
           ) : (
@@ -37,8 +38,10 @@ import { Image } from "@avaya/neo-react";
 </div>
 
 <style>
-  .change-log-tab-panel {
-    width: 960px;
+  .changelog-separator{
+    width: 100%;
+    height: 1px;
+    background-color: var(--neo-color-base-200);
   }
 
   .changelog-header {
