@@ -1,0 +1,48 @@
+---
+import clsx from "clsx";
+
+export interface Props {
+  token?: string;
+  rgb?: string;
+}
+const { token = "please specify token", rgb = "please specify rgb" } =
+  Astro.props as Props;
+
+const hasBorder = token.endsWith("base-0");
+const classes = clsx("rgb", hasBorder && "rgb__border");
+---
+
+<div class="row">
+  <div class={classes}></div>
+  <div class="token">{token}</div>
+</div>
+
+<style define:vars={{ rgb }}>
+  .row {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .rgb {
+    display: inline-block;
+    background-color: var(--rgb);
+    width: 96px;
+    height: 40px;
+  }
+  .rgb__border {
+    border: 1px solid var(--neo-color-base-200);
+  }
+  .token {
+    display: inline-block;
+    width: 184px;
+    padding: 0 16px;
+    font-family: Noto Sans;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--neo-color-base-900);
+  }
+</style>

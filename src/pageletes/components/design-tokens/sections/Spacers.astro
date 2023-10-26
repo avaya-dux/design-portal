@@ -1,7 +1,16 @@
 ---
-import { Description, PageleteSection, SectionHeader } from "components";
+import {
+  Description,
+  PageleteSection,
+  SectionHeader,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableRow,
+} from "components";
 
 import { topics } from "../static";
+
+import { TypographyTable } from "../components";
 
 const { id, title } = topics.spacers;
 ---
@@ -12,4 +21,24 @@ const { id, title } = topics.spacers;
   <Description>
     Spacers help evenly distribute the content in your UI designs.
   </Description>
+
+  <TypographyTable
+title=""
+head1="Token Name"
+head2="Example"
+head3="Description"
+>
+<InfoTableBody>
+  <InfoTableRow>
+    <InfoTableCell></InfoTableCell>
+    <InfoTableCell></InfoTableCell>
+    <InfoTableCell></InfoTableCell>
+  </InfoTableRow>
+  <InfoTableRow>
+    <InfoTableCell></InfoTableCell>
+    <InfoTableCell></InfoTableCell>
+    <InfoTableCell></InfoTableCell>
+  </InfoTableRow>
+</InfoTableBody>
+</TypographyTable>
 </PageleteSection>

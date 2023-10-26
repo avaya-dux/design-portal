@@ -2,6 +2,7 @@
 import { Description, PageleteSection, SectionHeader } from "components";
 
 import { topics } from "../static";
+import { ThreeColumnGrid, ColorColumn, SingleColor } from "../components/";
 
 const { id, title } = topics.color;
 ---
@@ -14,4 +15,107 @@ const { id, title } = topics.color;
     guidelines. It also promotes consistency across Avaya’s product range by
     encouraging standardization.
   </Description>
+  <ThreeColumnGrid>
+    <ColorColumn header="Base">
+      <SingleColor token="--neo-color-base-0" rgb="#FFFFFF" />
+      <SingleColor token="--neo-color-base-100" rgb="#F1F1F1" />
+      <SingleColor token="--neo-color-base-200" rgb="#DDDDDD" />
+      <SingleColor token="--neo-color-base-300" rgb="#C9C9C9" />
+      <SingleColor token="--neo-color-base-400" rgb="#939393" />
+      <SingleColor token="--neo-color-base-500" rgb="#757474" />
+      <SingleColor token="--neo-color-base-600" rgb="#5E5E5E" />
+      <SingleColor token="--neo-color-base-700" rgb="#323232" />
+      <SingleColor token="--neo-color-base-800" rgb="#2B2B2B" />
+      <SingleColor token="--neo-color-base-900" rgb="#242424" />
+      <SingleColor token="--neo-color-base-1000" rgb="#000000" />
+    </ColorColumn>
+    <ColorColumn header="Red">
+      <SingleColor token="--neo-color-red-100" rgb="#FDEDED" />
+      <SingleColor token="--neo-color-red-200" rgb="#FFC0BE" />
+      <SingleColor token="--neo-color-red-300" rgb="#FF9D98" />
+      <SingleColor token="--neo-color-red-400" rgb="#FA6156" />
+      <SingleColor token="--neo-color-red-500" rgb="#DA291C" />
+      <SingleColor token="--neo-color-red-600" rgb="#B51418" />
+      <SingleColor token="--neo-color-red-700" rgb="#8A0F13" />
+      <SingleColor token="--neo-color-red-800" rgb="#600B0C" />
+      <SingleColor token="--neo-color-red-900" rgb="#400708" />
+    </ColorColumn>
+    <ColorColumn header="Blue">
+      <SingleColor token="--neo-color-blue-100" rgb="#E7F4FB" />
+      <SingleColor token="--neo-color-blue-200" rgb="#ABD8F1" />
+      <SingleColor token="--neo-color-blue-300" rgb="#78C1E8" />
+      <SingleColor token="--neo-color-blue-400" rgb="#2E9FDB" />
+      <SingleColor token="--neo-color-blue-500" rgb="#1B77AF" />
+      <SingleColor token="--neo-color-blue-600" rgb="#155E8B" />
+      <SingleColor token="--neo-color-blue-700" rgb="#004E6C" />
+      <SingleColor token="--neo-color-blue-800" rgb="#003A51" />
+      <SingleColor token="--neo-color-blue-900" rgb="#002837" />
+    </ColorColumn>
+    <ColorColumn header="Green">
+        <SingleColor token="--neo-color-green-100" rgb="#E4F7E4" />
+        <SingleColor token="--neo-color-green-200" rgb="#9CD99C" />
+        <SingleColor token="--neo-color-green-300" rgb="#6FC86F" />
+        <SingleColor token="--neo-color-green-400" rgb="#51A651" />
+        <SingleColor token="--neo-color-green-500" rgb="#088A08" />
+        <SingleColor token="--neo-color-green-600" rgb="#2B6B2B" />
+        <SingleColor token="--neo-color-green-700" rgb="#215321" />
+        <SingleColor token="--neo-color-green-800" rgb="#173B17" />
+        <SingleColor token="--neo-color-green-900" rgb="#102910" />
+      </ColorColumn>
+      <ColorColumn header="Orange">
+        <SingleColor token="--neo-color-orange-100" rgb="#FFF7EB" />
+        <SingleColor token="--neo-color-orange-200" rgb="#FFD79B" />
+        <SingleColor token="--neo-color-orange-300" rgb="#FFC46C" />
+        <SingleColor token="--neo-color-orange-400" rgb="#F38D00" />
+        <SingleColor token="--neo-color-orange-500" rgb="#B35C00" />
+        <SingleColor token="--neo-color-orange-600" rgb="#8E4900" />
+        <SingleColor token="--neo-color-orange-700" rgb="#693700" />
+        <SingleColor token="--neo-color-orange-800" rgb="#512A00" />
+        <SingleColor token="--neo-color-orange-900" rgb="#341B00" />
+      </ColorColumn>
+      <ColorColumn header="Purple">
+        <SingleColor token="--neo-color-purple-100" rgb="#F7EDFC" />
+        <SingleColor token="--neo-color-purple-200" rgb="#E0BBF2" />
+        <SingleColor token="--neo-color-purple-300" rgb="#CE94EB" />
+        <SingleColor token="--neo-color-purple-400" rgb="#BF73E5" />
+        <SingleColor token="--neo-color-purple-500" rgb="#AB3FE0" />
+        <SingleColor token="--neo-color-purple-600" rgb="#8832B3" />
+        <SingleColor token="--neo-color-purple-700" rgb="#6C288E" />
+        <SingleColor token="--neo-color-purple-800" rgb="#4C1D63" />
+        <SingleColor token="--neo-color-purple-900" rgb="#371547" />
+      </ColorColumn>
+      <ColorColumn header="Gold">
+        <SingleColor token="--neo-color-gold-100" rgb="#FFFBEA" />
+        <SingleColor token="--neo-color-gold-200" rgb="#E4D8AB" />
+        <SingleColor token="--neo-color-gold-300" rgb="#C8AC65" />
+        <SingleColor token="--neo-color-gold-400" rgb="#B29629" />
+        <SingleColor token="--neo-color-gold-500" rgb="#896C15" />
+        <SingleColor token="--neo-color-gold-600" rgb="#775D13" />
+        <SingleColor token="--neo-color-gold-700" rgb="#5C480F" />
+        <SingleColor token="--neo-color-gold-800" rgb="#48380C" />
+        <SingleColor token="--neo-color-gold-900" rgb="#322708" />
+      </ColorColumn>
+      <ColorColumn header="Teal">
+        <SingleColor token="--neo-color-teal-100" rgb="#DFF9FC" />
+        <SingleColor token="--neo-color-teal-200" rgb="#ABF2F9" />
+        <SingleColor token="--neo-color-teal-300" rgb="#50DFED" />
+        <SingleColor token="--neo-color-teal-400" rgb="#1CC6D7" />
+        <SingleColor token="--neo-color-teal-500" rgb="#0A8E9B" />
+        <SingleColor token="--neo-color-teal-600" rgb="#087781" />
+        <SingleColor token="--neo-color-teal-700" rgb="#076169" />
+        <SingleColor token="--neo-color-teal-800" rgb="#054B51" />
+        <SingleColor token="--neo-color-teal-900" rgb="#043539" />
+      </ColorColumn>
+      <ColorColumn header="Pink">
+        <SingleColor token="--neo-color-pink-100" rgb="#FDE6F4" />
+        <SingleColor token="--neo-color-pink-200" rgb="#F8AAD9" />
+        <SingleColor token="--neo-color-pink-300" rgb="#F476C3" />
+        <SingleColor token="--neo-color-pink-400" rgb="#F042AB" />
+        <SingleColor token="--neo-color-pink-500" rgb="#D51588" />
+        <SingleColor token="--neo-color-pink-600" rgb="#B31272" />
+        <SingleColor token="--neo-color-pink-700" rgb="#8B0E59" />
+        <SingleColor token="--neo-color-pink-800" rgb="#680A42" />
+        <SingleColor token="--neo-color-pink-900" rgb="#46072C" />
+      </ColorColumn>
+  </ThreeColumnGrid>
 </PageleteSection>

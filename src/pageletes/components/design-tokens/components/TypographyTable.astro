@@ -1,0 +1,111 @@
+---
+import {
+  InfoTable,
+  InfoTableHead,
+  InfoTableCellHead,
+  InfoTableRow,
+} from "components";
+
+export interface Props {
+  title?: string;
+  head1?: string;
+  head2?: string;
+  head3?: string;
+}
+const {
+  title = "please specify title",
+  head1 = "head 1",
+  head2 = "head 2",
+  head3 = "head 3",
+} = Astro.props as Props;
+---
+
+<div class="wrapper">
+  <div class="title">{title}</div>
+  <InfoTable>
+    <InfoTableHead>
+      <InfoTableRow>
+        <InfoTableCellHead>{head1}</InfoTableCellHead>
+        <InfoTableCellHead>{head2}</InfoTableCellHead>
+        <InfoTableCellHead>{head3}</InfoTableCellHead>
+      </InfoTableRow>
+    </InfoTableHead>
+    <slot />
+  </InfoTable>
+</div>
+
+<style is:inline>
+  .wrapper {
+    padding: 0;
+  }
+
+  .title {
+    border: 0;
+    color: var(--neo-color-base-1000);
+    font-family: Noto Sans;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: -1rem;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td:first-child {
+    vertical-align: middle;
+    width: 480px;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td:nth-child(2) {
+    vertical-align: middle;
+    width: 196px;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td:nth-child(3) {
+    vertical-align: middle;
+    width: 276px;
+  }
+  .wrapper table.neo-table.neo-table--info thead tr th {
+    height: 48px;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td {
+    padding: 0;
+    height: 56px;
+    position: relative;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td h1 {
+    top: -4px;
+    position: absolute;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td span.weight-300 {
+    font-weight: 300;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td span.weight-400 {
+    font-weight: 400;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td span.weight-600 {
+    font-weight: 600;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td span.weight-700 {
+    font-weight: 700;
+  }
+
+  .wrapper
+    table.neo-table.neo-table--info
+    tbody
+    tr
+    td
+    span.text-underline {
+    text-decoration: underline;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td span.font-italic {
+    font-style: italic;
+  }
+</style>
