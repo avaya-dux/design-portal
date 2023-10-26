@@ -1,0 +1,29 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ImageWrapper,
+  PageleteSubSection,
+  SubHeader,
+} from "components";
+
+import skipImage from "../../imgs/header-behavior-skip-1.svg";
+
+const skipImageAltText =
+  "Image showing the seach field placed to the left of the utility items and the avatar.";
+---
+
+<PageleteSubSection>
+  <SubHeader id="header-skip">Skip Navigation</SubHeader>
+
+  <Description>
+    Skip navigations are used to jump to other sections of the page so the user
+    doesn’t have to cycle through every focusable item to find the one they
+    want.
+  </Description>
+
+  <ImageWrapper padding="0" isShaded={false}>
+    <Image src={skipImage.src} alt={skipImageAltText} />
+  </ImageWrapper>
+</PageleteSubSection>

@@ -1,0 +1,46 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  DoAndDont,
+  PageleteSubSection,
+  SubHeader,
+} from "components";
+
+import doImage1 from "../../imgs/header-behavior-brand-do-1.svg";
+import dontImage1 from "../../imgs/header-behavior-brand-dont-1.svg";
+
+const do1Instructions = "Place the company name and product name fields on the left side of the header. ";
+const doImg1AltText =
+  "An image showing a header with logo, company and product names on the left side.";
+
+const dont1Instructions =
+"Do not use the left side just for placing navigation items.";
+const dontImg1AltText =
+"Image showing buttons on the left side of the header.";
+---
+
+<PageleteSubSection>
+  <SubHeader id="header-behavior-brand">Brand and Product Name</SubHeader>
+
+  <Description>
+    The company logo and the product name are located at the left end of the
+    header. Clicking the logo and the product name will return the user to the
+    main page of the application.
+  </Description>
+
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={do1Instructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage1.src} alt={doImg1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dont1Instructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage1.src} alt={dontImg1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+</PageleteSubSection>
