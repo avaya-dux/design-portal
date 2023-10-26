@@ -17,10 +17,8 @@ import LogSubsection from "./LogSubsection.astro";
       >
         <SectionHeader id={`${releases.date}-css-update`}>
           { `${releases.version} ${releases.date} `}
-          {index === 0 ? (
+          {index === 0 && (
             <Image src={chip.src} alt="Newest version chip" />
-          ) : (
-            <div />
           )}
         </SectionHeader>
 
