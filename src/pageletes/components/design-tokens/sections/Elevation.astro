@@ -1,5 +1,14 @@
 ---
-import { Description, PageleteSection, SectionHeader } from "components";
+import {
+  Description,
+  PageleteSection,
+  SectionHeader,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableRow,
+} from "components";
+
+import { TypographyTable } from "../components";
 
 import { topics } from "../static";
 
@@ -13,4 +22,24 @@ const { id, title } = topics.elevation;
     Any field can be further enhanced by the use of drop-shadowing and other
     highlighting techniques.
   </Description>
+
+  <TypographyTable
+    title=""
+    head1="Token Name"
+    head2="Example"
+    head3="Description"
+  >
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell />
+        <InfoTableCell />
+        <InfoTableCell />
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell />
+        <InfoTableCell />
+        <InfoTableCell />
+      </InfoTableRow>
+    </InfoTableBody>
+  </TypographyTable>
 </PageleteSection>

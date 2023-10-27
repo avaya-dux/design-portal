@@ -1,5 +1,14 @@
 ---
-import { Description, PageleteSection, SectionHeader } from "components";
+import {
+  Description,
+  PageleteSection,
+  SectionHeader,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableRow,
+} from "components";
+
+import { TypographyTable } from "../components";
 
 import { topics } from "../static";
 
@@ -14,4 +23,77 @@ const { id, title } = topics.interactivity;
     the UI. Objects can appear and disappear, or slide in and out according to
     the desired effect.
   </Description>
+
+  <TypographyTable
+    title=""
+    head1="Token Name"
+    head2="Example"
+    head3="Description"
+  >
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>$interactivity-motion-fast</InfoTableCell>
+        <InfoTableCell><div class="interactivity fast ease"><div role="button">Hover Me</div></div></InfoTableCell>
+        <InfoTableCell>Fast</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$interactivity-motion-medium</InfoTableCell>
+        <InfoTableCell><div class="interactivity medium ease"><div role="button">Hover Me</div></div></InfoTableCell>
+        <InfoTableCell>Medium</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$interactivity-motion-slow</InfoTableCell>
+        <InfoTableCell><div class="interactivity slow ease"><div role="button">Hover Me</div></div></InfoTableCell>
+        <InfoTableCell>Slow</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>$interactivity-motion-ease-in/$interactivity-motion-fast</InfoTableCell>
+        <InfoTableCell><div class="interactivity fast ease-in"><div role="button">Hover Me</div></div></InfoTableCell>
+        <InfoTableCell>Ease In Fast</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$interactivity-motion-ease-in/$interactivity-motion-medium</InfoTableCell>
+        <InfoTableCell><div class="interactivity medium ease-in"><div role="button">Hover Me</div></div></InfoTableCell>
+        <InfoTableCell>Ease In Medium</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$interactivity-motion-ease-in/$interactivity-motion-slow</InfoTableCell>
+        <InfoTableCell><div class="interactivity slow ease-in"><div role="button">Hover Me</div></div></InfoTableCell>
+        <InfoTableCell>Ease In Slow</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>$interactivity-motion-ease/$interactivity-motion-fast</InfoTableCell>
+        <InfoTableCell><div class="interactivity fast ease"><div role="button">Hover Me</div></div></InfoTableCell>
+        <InfoTableCell>Ease Fast</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$interactivity-motion-ease/$interactivity-motion-medium</InfoTableCell>
+        <InfoTableCell><div class="interactivity medium ease"><div role="button">Hover Me</div></div></InfoTableCell>
+        <InfoTableCell>Ease Medium</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$interactivity-motion-ease/$interactivity-motion-slow</InfoTableCell>
+        <InfoTableCell><div class="interactivity slow ease"><div role="button">Hover Me</div></div></InfoTableCell>
+        <InfoTableCell>Ease Slow</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>$interactivity-motion-ease-out/$interactivity-motion-fast</InfoTableCell>
+        <InfoTableCell><div class="interactivity fast ease-out"><div role="button">Hover Me</div></div></InfoTableCell>
+        <InfoTableCell>Ease Out Fast</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$interactivity-motion-ease-out/$interactivity-motion-medium</InfoTableCell>
+        <InfoTableCell><div class="interactivity medium ease-out"><div role="button">Hover Me</div></div></InfoTableCell>
+        <InfoTableCell>Ease Out Medium</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$interactivity-motion-ease-out/$interactivity-motion-slow</InfoTableCell>
+        <InfoTableCell><div class="interactivity slow ease-out"><div role="button">Hover Me</div></div></InfoTableCell>
+        <InfoTableCell>Ease Out Slow</InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </TypographyTable>
 </PageleteSection>

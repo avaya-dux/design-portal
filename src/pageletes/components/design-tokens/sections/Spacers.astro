@@ -8,9 +8,9 @@ import {
   InfoTableRow,
 } from "components";
 
-import { topics } from "../static";
-
 import { TypographyTable } from "../components";
+
+import { topics } from "../static";
 
 const { id, title } = topics.spacers;
 ---
@@ -23,22 +23,31 @@ const { id, title } = topics.spacers;
   </Description>
 
   <TypographyTable
-title=""
-head1="Token Name"
-head2="Example"
-head3="Description"
->
-<InfoTableBody>
-  <InfoTableRow>
-    <InfoTableCell></InfoTableCell>
-    <InfoTableCell></InfoTableCell>
-    <InfoTableCell></InfoTableCell>
-  </InfoTableRow>
-  <InfoTableRow>
-    <InfoTableCell></InfoTableCell>
-    <InfoTableCell></InfoTableCell>
-    <InfoTableCell></InfoTableCell>
-  </InfoTableRow>
-</InfoTableBody>
-</TypographyTable>
+    head1="Token Name"
+    head2="Example"
+    head3="Description"
+  >
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>$global-spacer-small</InfoTableCell>
+        <InfoTableCell><div class="square square-small"></div></InfoTableCell>
+        <InfoTableCell>Global spacer small</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$global-spacer-regular</InfoTableCell>
+        <InfoTableCell><div class="square square-regular"></div></InfoTableCell>
+        <InfoTableCell>Global spacer regular</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$global-spacer-large</InfoTableCell>
+        <InfoTableCell><div class="square square-large"></div></InfoTableCell>
+        <InfoTableCell>Global spacer large</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$global-spacer-x-large</InfoTableCell>
+        <InfoTableCell><div class="square square-x-large"></div></InfoTableCell>
+        <InfoTableCell>Global spacer extra large</InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </TypographyTable>
 </PageleteSection>
