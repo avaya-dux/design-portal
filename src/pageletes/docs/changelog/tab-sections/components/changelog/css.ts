@@ -349,16 +349,16 @@ export const CSSChangelog = [
       {
         newFeatures: [
           "Added redial icon icon",
-          "Added new style properties for icon <a href='/components/buttons'>Button</a> <a href='/components/dropdown'>Dropdowns</a>",
-          "Added new style properties for <a href='/components/header'>Navbar</a> icon <a href='/components/buttons'>Button</a> <a href='/components/dropdown'>Dropdown</a>",
+          "Added new style properties for icon button <a href='/components/dropdown'>Dropdowns</a>",
+          "Added new style properties for <a href='/components/header'>Navbar</a> icon button <a href='/components/dropdown'>Dropdown</a>",
         ],
         breakingChanges: [],
         additionalChanges: [],
         bugs: [
-          "Added missing RTL styles to <a href='/components/buttons'>Buttons</a> in <a href='/components/dropdown'>Dropdowns</a> with Inputs to fix misalignment",
+          "Added missing RTL styles to buttons in <a href='/components/dropdown'>Dropdowns</a> with Inputs to fix misalignment",
           "Add back <em class=changelog-emphasis>.neo-form and .neo-form-control</em> styles inside <a href='/components/header'>Navbar</a>",
-          "Added transparent border to <a href='/components/header'>Navbar</a> <a href='/components/buttons'>Button</a>s to preserve alignment between <a href='/components/buttons'>Button</a>s in active state",
-          "Removed styles associated with :empty selector in <a href='/components/avatar'>Avatars</a> in <a href='/components/header'>Navbar</a> that were causing unintentional layout issues",
+          "Added transparent border to <a href='/components/header'>Navbar</a> buttons to preserve alignment between buttons in active state",
+          "Removed styles associated with :empty selector in avatars in <a href='/components/header'>Navbar</a> that were causing unintentional layout issues",
         ],
       },
     ],
@@ -374,7 +374,7 @@ export const CSSChangelog = [
         ],
         breakingChanges: [
           "Changed line-height and padding values on <a href='/components/checkbox'>Checkboxes</a> to treat alignment issues",
-          "Changed margin property on <a href='/components/checkbox'>Checkboxes</a> in <a href='/components/table'>Tables</a> to correctly align <a href='/components/tooltip'>Tooltips</a>",
+          "Changed margin property on Checkboxes in <a href='/components/table'>Tables</a> to correctly align tooltips",
           "Removed margins between <a href='/components/pagination'>Pagination</a> items",
         ],
         additionalChanges: [],
@@ -405,8 +405,8 @@ export const CSSChangelog = [
       {
         newFeatures: [
           "Added 1px margin to <em class=changelog-emphasis>.neo-form</em> class when used in <a href='/components/widget'>Widget</a> Component",
-          "Tweaked class name for <a href='/components/tooltip'>Tooltips</a> to avoid issues with toggling collapsed Left Navigation",
-          "Added properties to <a href='/components/avatar'>Avatars</a> in <a href='/components/header'>Navbar</a> Components to avoid issues in RTL",
+          "Tweaked class name for tooltips to avoid issues with toggling collapsed Left Navigation",
+          "Added properties to avatars in <a href='/components/header'>Navbar</a> Components to avoid issues in RTL",
         ],
         breakingChanges: [],
         additionalChanges: [],
@@ -453,10 +453,10 @@ export const CSSChangelog = [
         ],
         breakingChanges: [],
         additionalChanges: [
-          "Changed role to <a href='/components/switch'>Switch</a> from default one, <a href='/components/checkbox'>Checkbox</a> switches",
+          "Changed role to <a href='/components/switch'>Switch</a> from default one, Checkbox switches",
         ],
         bugs: [
-          "Multiline <a href='/components/switch'>Switch</a>: no longer bold text when on switches",
+          "Multiline Switch: no longer bold text when on <a href='/components/switch'>Switches</a>",
         ],
       },
     ],
@@ -544,7 +544,7 @@ export const CSSChangelog = [
         additionalChanges: [],
         bugs: [
           "Fixed background color issue on chevron in disabled <a href='/components/select'>Selectbox</a> Component",
-          "Removed redundant 'height' and 'width' properties from Tooltip Components causing alignment issues when used in <a href='/components/header'>Navbar</a>",
+          "Removed redundant 'height' and 'width' properties from <a href='/components/tooltip'>Tooltip</a> Components causing alignment issues when used in <a href='/components/header'>Navbar</a>",
           "Added new <em class=changelog-emphasis>justify-content</em> property to Category items in Left Navigation Component.",
         ],
       },
