@@ -1,5 +1,5 @@
-import ThreeColumnGrid from "./ThreeColumnGrid.astro";
-export { ThreeColumnGrid };
+import ColorGrid from "./ColorGrid.astro";
+export { ColorGrid };
 
 import ColorColumn from "./ColorColumn.astro";
 export { ColorColumn };
