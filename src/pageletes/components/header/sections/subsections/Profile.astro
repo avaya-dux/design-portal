@@ -1,0 +1,39 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  ColumnLayout,
+  Description,
+  PageleteSubSection,
+  StackedLayout,
+  SubHeader,
+} from "components";
+
+import profileImage1 from "../../imgs/header-behavior-profile-1.svg";
+import profileImage2 from "../../imgs/header-behavior-profile-2.svg";
+
+const profileImage1AltText =
+  "Image showing an Avatar placed at the end of the right side of the header.";
+
+const profileImage2AltText =
+  "Image showing the agent status placed at the end of the right side of the header.";
+---
+
+<PageleteSubSection>
+  <SubHeader id="header-profile">Profile and Status</SubHeader>
+
+  <Description>
+    The user’s profile and current status (where applicable) is positioned at
+    the end of the right side of the header with the avatar. The status is used
+    when an agent is connected and ready to interact with a customer.
+  </Description>
+
+  <ColumnLayout numOfColumns={2}>
+    <StackedLayout isShaded label="Avatar">
+      <Image src={profileImage1.src} alt={profileImage1AltText} />
+    </StackedLayout>
+    <StackedLayout isShaded label="Agent State">
+      <Image src={profileImage2.src} alt={profileImage2AltText} />
+    </StackedLayout>
+  </ColumnLayout>
+</PageleteSubSection>

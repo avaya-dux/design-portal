@@ -62,7 +62,7 @@ const standaloneUsageImgDontAltText =
       <DoAndDont.DoContainer instructions={standaloneUsageImgDoAltText}>
         <DoAndDont.ImageExampleContainer>
           <Image
-            src={StandaloneUsageImageDo}
+            src={StandaloneUsageImageDo.src}
             alt={standaloneUsageImgDoAltText}
           />
         </DoAndDont.ImageExampleContainer>
@@ -71,7 +71,7 @@ const standaloneUsageImgDontAltText =
       <DoAndDont.DontContainer instructions={standaloneUsageImgDontAltText}>
         <DoAndDont.ImageExampleContainer>
           <Image
-            src={StandaloneUsageImageDont}
+            src={StandaloneUsageImageDont.src}
             alt={standaloneUsageImgDontAltText}
           />
         </DoAndDont.ImageExampleContainer>
@@ -93,21 +93,21 @@ const standaloneUsageImgDontAltText =
     <ColumnLayout bkgColor="white" numOfColumns={3}>
       <StackedLayout label="Default" vPadding="2.8rem" gap="2.8rem">
         <Image
-          src={StandaloneIconDefault}
+          src={StandaloneIconDefault.src}
           alt="Standalone Default Link with Icon"
         />
       </StackedLayout>
 
       <StackedLayout label="Hover" vPadding="2.8rem" gap="2.8rem">
         <Image
-          src={StandaloneIconHover}
+          src={StandaloneIconHover.src}
           alt="Standalone Hover Link with Icon"
         />
       </StackedLayout>
 
       <StackedLayout label="Disabled" vPadding="2.8rem" gap="2.8rem">
         <Image
-          src={StandaloneIconDisabled}
+          src={StandaloneIconDisabled.src}
           alt="Standalone Disabled Link Icon"
         />
       </StackedLayout>
@@ -130,13 +130,16 @@ const standaloneUsageImgDontAltText =
     <DoAndDont>
       <DoAndDont.DoContainer instructions={inlineUsageImgDoAltText}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={InlineUsageImageDo} alt={inlineUsageImgDoAltText} />
+          <Image src={InlineUsageImageDo.src} alt={inlineUsageImgDoAltText} />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DoContainer>
 
       <DoAndDont.DontContainer instructions={inlineUsageImgDontAltText}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={InlineUsageImageDont} alt={inlineUsageImgDontAltText} />
+          <Image
+            src={InlineUsageImageDont.src}
+            alt={inlineUsageImgDontAltText}
+          />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DontContainer>
     </DoAndDont>

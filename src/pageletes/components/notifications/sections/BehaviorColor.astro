@@ -45,7 +45,6 @@ import eventImg from "../imgs/notification-behavior-color-5.svg";
     numOfColumns={2}
     marginTop="0"
     marginBottom="0"
-    k
     showTopBorder={false}
   >
     <StackedLayout label="Success">
@@ -83,13 +82,13 @@ import eventImg from "../imgs/notification-behavior-color-5.svg";
   <DoAndDont>
     <DoAndDont.DoContainer instructions={behaviorDoAltText}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={behaviorDo} alt={behaviorDoAltText} />
+        <Image src={behaviorDo.src} alt={behaviorDoAltText} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DoContainer>
 
     <DoAndDont.DontContainer instructions={behaviorDontAltText}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={behaviorDont} alt={behaviorDontAltText} />
+        <Image src={behaviorDont.src} alt={behaviorDontAltText} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DontContainer>
   </DoAndDont>

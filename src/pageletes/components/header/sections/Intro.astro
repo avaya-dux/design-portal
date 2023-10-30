@@ -1,9 +1,16 @@
 ---
-import { Description, PageleteSection, PageTitle } from "components";
+import { Description, PageleteSection, PageTitle, Topics } from "components";
+
+import { topics } from "../static";
 ---
 
 <PageleteSection>
-  <PageTitle>TopNav</PageTitle>
+  <PageTitle>Header</PageTitle>
 
-  <Description>This is a placeholder page for the TopNav</Description>
+  <Description>
+    A header tells users where they currently are within the site or application. It also provides
+     navigation access to other areas of the interface.
+  </Description>
+
+  <Topics topics={topics} />
 </PageleteSection>

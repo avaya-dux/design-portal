@@ -1,0 +1,22 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components/astro";
+
+import FormattingFields from "./FormattingFields.astro";
+
+import KeyboardShortcuts from "./KeyboardShortcuts.astro";
+
+import { topics } from "../../static";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.content.id}>{topics.content.title}</SectionHeader>
+
+  <Description>
+    When translating content into other languages, there are a number of items
+    that should be taken into consideration.
+  </Description>
+
+  <FormattingFields />
+
+  <KeyboardShortcuts />
+</PageleteSection>
