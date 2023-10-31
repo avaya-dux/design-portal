@@ -61,7 +61,7 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 832px) {
   nav.neo-navbar .neo-nav {
     display: none;
   }
@@ -73,18 +73,34 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
   .neo-navbar .neo-nav--right .search__button {
     justify-content: end;
   }
-}
-
-@media (max-width: 832px) {
   nav.neo-navbar .neo-nav--right button.neo-btn {
     border: none;
   }
-
   nav.neo-navbar {
     overflow: visible;
     margin-bottom: 3rem;
     border: none;
   }
+  nav.neo-navbar .neo-nav a.neo-nav-link-btn {
+    padding: 0px;
+    width: 25%;
+    justify-content: center;
+  }
+  nav.neo-navbar .neo-nav--right {
+    display: flex;
+    justify-content: flex-end;
+  }
+  body nav.neo-navbar .neo-nav--left a img {
+    height: 48px;
+  }
+  /* HACK: This button uses !important in its height property, the below code is a way to override that -- the actual change should be done in the CSS library*/
+  .neo-nav--left .neo-badge__navbutton button.neo-badge__navbutton--content {
+    height: 48px !important;
+  }
+}
+
+/* @media (max-width: 832px) {
+
   nav.neo-navbar .neo-nav {
     height: var(--header-height);
     border-bottom: 1px solid var(--navbar-border-bottom-color);
@@ -92,27 +108,11 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
     justify-content: space-around;
     background-color: var(--global-background);
   }
-  nav.neo-navbar .neo-nav a.neo-nav-link-btn {
-    padding: 0px;
-    width: 25%;
-    justify-content: center;
-  }
 
-  nav.neo-navbar .neo-nav--right {
-    display: flex;
-    justify-content: flex-end;
-  }
 
-  body nav.neo-navbar .neo-nav--left a img {
-    height: 48px;
-  }
 
-  /* HACK: This button uses !important in its height property, the below code is a way to override that -- the actual change should be done in the CSS library*/
 
-  .neo-nav--left .neo-badge__navbutton button.neo-badge__navbutton--content {
-    height: 48px !important;
-  }
-}
+}*/
 
 @media (min-width: 1280px) {
   nav.neo-navbar .neo-nav--left .neo-badge__navbutton {
