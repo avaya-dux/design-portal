@@ -37,12 +37,12 @@ const {
 <style is:inline>
   :root {
     --elevation-border-color-rgb: 0, 0, 0;
-
+    --elevation-background-color: rgba(0, 0, 0, 0);
   }
   @media (prefers-color-scheme: dark) {
     :root .neo-dynamic {
       --elevation-border-color-rgb: 255, 255, 255;
-
+      --elevation-background-color: #FFFFFF;
     }
   }
   .wrapper {
@@ -235,14 +235,18 @@ const {
 
   .wrapper table.neo-table.neo-table--info tbody tr td div.elevation-100 {
     box-shadow: 0px 4px 4px 0px rgba(var(--elevation-border-color-rgb), 0.25);
+    background-color: var(--elevation-background-color);
   }
   .wrapper table.neo-table.neo-table--info tbody tr td div.elevation-200 {
     box-shadow: 0px 4px 8px 0px rgba(var(--elevation-border-color-rgb), 0.25);
+    background-color: var(--elevation-background-color);
   }
   .wrapper table.neo-table.neo-table--info tbody tr td div.elevation-300 {
     box-shadow: 0px 8px 16px 0px rgba(var(--elevation-border-color-rgb), 0.25);
+    background-color: var(--elevation-background-color);
   }
   .wrapper table.neo-table.neo-table--info tbody tr td div.elevation-400 {
     box-shadow: 0px 16px 32px 0px rgba(var(--elevation-border-color-rgb), 0.25);
+    background-color: var(--elevation-background-color);
   }
 </style>
