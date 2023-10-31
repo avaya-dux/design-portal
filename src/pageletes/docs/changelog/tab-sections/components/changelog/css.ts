@@ -348,9 +348,9 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "Added redial icon icon",
+          "Added \"redial\" icon",
           "Added new style properties for icon button <a href='/components/dropdown'>Dropdowns</a>",
-          "Added new style properties for <a href='/components/header'>Navbar</a> icon button <a href='/components/dropdown'>Dropdown</a>",
+          "Added new style properties for <a href='/components/header'>Navbar</a> icon button dropdown",
         ],
         breakingChanges: [],
         additionalChanges: [],
@@ -405,7 +405,7 @@ export const CSSChangelog = [
       {
         newFeatures: [
           "Added 1px margin to <em class=changelog-emphasis>.neo-form</em> class when used in <a href='/components/widget'>Widget</a> Component",
-          "Tweaked class name for tooltips to avoid issues with toggling collapsed Left Navigation",
+          "Tweaked class name for tooltips to avoid issues with toggling collapsed <a href='/components/side-navigation'>Left Navigation</a>",
           "Added properties to avatars in <a href='/components/header'>Navbar</a> Components to avoid issues in RTL",
         ],
         breakingChanges: [],
@@ -453,10 +453,10 @@ export const CSSChangelog = [
         ],
         breakingChanges: [],
         additionalChanges: [
-          "Changed role to <a href='/components/switch'>Switch</a> from default one, Checkbox switches",
+          "Changed role to \"switch\" from default one, \"checkbox\" <a href='/components/switch'>switches</a>",
         ],
         bugs: [
-          "Multiline Switch: no longer bold text when on <a href='/components/switch'>Switches</a>",
+          "Multiline Switch: no longer bold text when on <a href='/components/switch'>switches</a>",
         ],
       },
     ],
@@ -489,9 +489,9 @@ export const CSSChangelog = [
         additionalChanges: [],
         bugs: [
           "Updated cursor styles in <a href='/components/breadcrumb'>Breadcrumbs</a> component",
-          "Updated pulse width to 15px from 10px",
+          "Updated <a href='/components/buttons'>Pulse</a> width to 15px from 10px",
           "Updated <a href='/components/notifications'>Notifications</a> to work with <em class=changelog-emphasis>dir='rtl'</em>",
-          "Updated <a href='/components/buttons'>Button</a>s and <a href='/components/header'>Navbar</a> with improved btn hover styles",
+          "Updated <a href='/components/buttons'>Buttons</a> and <a href='/components/header'>Navbar</a> with improved btn hover styles",
         ],
       },
     ],
@@ -508,7 +508,7 @@ export const CSSChangelog = [
         breakingChanges: [],
         additionalChanges: [],
         bugs: [
-          "Updated Skip Nav to work with <em class=changelog-emphasis>dir='rtl'</em>",
+          "Updated <a href='/components/header'>Skip Nav</a> to work with <em class=changelog-emphasis>dir='rtl'</em>",
           "Fixed issue with layout shift when toggling error messages in <a href='/components/form'>Form</a> Layout",
           "Fixed CSS issue with <a href='/components/header'>Navbar</a> search input",
         ],
@@ -544,8 +544,8 @@ export const CSSChangelog = [
         additionalChanges: [],
         bugs: [
           "Fixed background color issue on chevron in disabled <a href='/components/select'>Selectbox</a> Component",
-          "Removed redundant 'height' and 'width' properties from <a href='/components/tooltip'>Tooltip</a> Components causing alignment issues when used in <a href='/components/header'>Navbar</a>",
-          "Added new <em class=changelog-emphasis>justify-content</em> property to Category items in Left Navigation Component.",
+          "Removed redundant 'height' and 'width' properties from Navbar",
+          "Added new <em class=changelog-emphasis>justify-content</em> property to Category items in <a href='/components/side-navigation'>Left Navigation</a> Component.",
         ],
       },
     ],
