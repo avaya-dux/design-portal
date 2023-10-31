@@ -9,6 +9,7 @@ body nav.neo-navbar {
 body nav.neo-navbar .neo-nav--left {
   height: 100%;
   align-items: unset;
+  border-bottom: 1px solid var(--navbar-border-bottom-color);
 }
 
 body nav.neo-navbar .neo-nav--left a {
@@ -80,11 +81,12 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
     overflow: visible;
     margin-bottom: 3rem;
   }
-  nav.neo-navbar .neo-nav a.neo-nav-link-btn {
+  /* nav.neo-navbar .neo-nav a.neo-nav-link-btn {
+    DUPLICATE SELECTOR
     padding: 0px;
     width: 25%;
     justify-content: center;
-  }
+  } */
   nav.neo-navbar .neo-nav--right {
     display: flex;
     justify-content: flex-end;
