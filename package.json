@@ -61,7 +61,7 @@
     "@nanostores/react": "0.7.1",
     "clsx": "2.0.0",
     "diffable-html": "5.0.0",
-    "fuse.js": "6.6.2",
+    "fuse.js": "7.0.0",
     "nanostores": "0.9.4",
     "prism-react-renderer": "2.1.0",
     "react-element-to-jsx-string": "15.0.0"
