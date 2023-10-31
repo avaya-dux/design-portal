@@ -35,13 +35,23 @@ const {
 </div>
 
 <style is:inline>
+  :root {
+    --elevation-border-color-rgb: 0, 0, 0;
+
+  }
+  @media (prefers-color-scheme: dark) {
+    :root .neo-dynamic {
+      --elevation-border-color-rgb: 255, 255, 255;
+
+    }
+  }
   .wrapper {
     padding: 0;
   }
 
   .title {
     border: 0;
-    color: var(--neo-color-base-1000);
+    color: var(--global-font-color);
     font-family: Noto Sans;
     font-size: 19px;
     font-weight: 400;
@@ -113,7 +123,7 @@ const {
   }
 
   .wrapper table.neo-table.neo-table--info tbody tr td div.square {
-    background-color: var(--neo-color-base-1000);
+    background-color: var(--global-font-color);
   }
 
   .wrapper table.neo-table.neo-table--info tbody tr td div.square-small {
@@ -137,8 +147,8 @@ const {
   }
 
   .wrapper table.neo-table.neo-table--info tbody tr td div.square-white {
-    background-color: var(--neo-color-base-0);
-    color: var(--neo-color-base-1000);
+    background-color: var(--global-background);
+    color: var(--global-font-color);
   }
 
   .wrapper table.neo-table.neo-table--info tbody tr td div.border-1px {
@@ -224,15 +234,15 @@ const {
   }
 
   .wrapper table.neo-table.neo-table--info tbody tr td div.elevation-100 {
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px 0px rgba(var(--elevation-border-color-rgb), 0.25);
   }
   .wrapper table.neo-table.neo-table--info tbody tr td div.elevation-200 {
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 8px 0px rgba(var(--elevation-border-color-rgb), 0.25);
   }
   .wrapper table.neo-table.neo-table--info tbody tr td div.elevation-300 {
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 8px 16px 0px rgba(var(--elevation-border-color-rgb), 0.25);
   }
   .wrapper table.neo-table.neo-table--info tbody tr td div.elevation-400 {
-    box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 16px 32px 0px rgba(var(--elevation-border-color-rgb), 0.25);
   }
 </style>
