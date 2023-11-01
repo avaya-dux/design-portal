@@ -86,7 +86,7 @@ switch (pathname.split("/")[1]) {
         client:load
       />
       <div class="main__wrapper">
-        <LeftPanel pages={leftNavPages} />
+        <LeftPanel allPages={pages} filteredpages={leftNavPages} />
         {
           pathname.endsWith("icons") ? (
             <DynamicTheme client:only="react">

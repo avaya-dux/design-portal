@@ -14,15 +14,19 @@ import { trapFocus, useWindowSize } from "../utils";
 import "./LeftNavigationStyleOverride.css";
 
 export const LeftNavigation = ({
-  pages,
+  allPages,
+  filteredpages,
   currentUrl,
 }: {
-  pages: PageAstroInstance[];
+  allPages: PageAstroInstance[];
+  filteredpages: PageAstroInstance[];
   currentUrl: string;
 }) => {
   const handleNavigate = (_: string, url: string) => {
     window.location.href = url;
   };
+
+  console.log({ allPages });
 
   const isOpen = useStore(isLeftNavigationOpen);
 
@@ -58,7 +62,7 @@ export const LeftNavigation = ({
     const lastFocusableElement = document
       .querySelector(".left-navigation")
       ?.querySelectorAll(
-        `[href="${pages[pages.length - 1]?.url}"]`,
+        `[href="${filteredpages[filteredpages.length - 1]?.url}"]`,
       )[0] as HTMLElement;
 
     const firstFocusableElement =
@@ -76,7 +80,7 @@ export const LeftNavigation = ({
         handleKeyDown(event, firstFocusableElement, lastFocusableElement),
       );
     };
-  }, [handleKeyDown, isOpen, pages, toggleButtonRef, width]);
+  }, [handleKeyDown, isOpen, filteredpages, toggleButtonRef, width]);
 
   return (
     <>
@@ -101,7 +105,7 @@ export const LeftNavigation = ({
           onNavigate={handleNavigate}
           isActiveOverride
         >
-          {pages.map((page, index) => (
+          {filteredpages.map((page, index) => (
             <LeftNav.TopLinkItem
               key={`${index}${page.title}`}
               label={page.title}
