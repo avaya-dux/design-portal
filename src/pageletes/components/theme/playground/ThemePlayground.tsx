@@ -25,7 +25,7 @@ export const PlaygroundImplementation = () => {
 
   const [elementToRender, react, html] = useMemo(() => {
     const accordion = (
-      <div className={`dpv3-accordion-stack neo-global-colors neo-${theme}`}>
+      <div className={`neo-global-colors neo-${theme}`} style={{width: '100%'}}>
         <Accordion header="Accordion 1">
           Inner content of Accordion example
         </Accordion>
