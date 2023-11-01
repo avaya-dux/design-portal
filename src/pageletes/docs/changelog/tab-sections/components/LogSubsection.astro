@@ -1,0 +1,47 @@
+---
+export interface Props {
+  title: string;
+  points: string[];
+}
+
+const { title = "no Title", points = [] } = Astro.props as Props;
+---
+
+<h4 class="changelog-header">{title}</h4>
+<ul>
+  {
+    points.length > 0 ? (
+    points.map((point) => <li set:html={point} />)
+    ) : (
+      <li>N/A</li>
+    )
+  }
+</ul>
+
+<style is:global>
+
+  .changelog-emphasis {
+    background: var(--neo-color-base-100);
+    color: red;
+    font-family: monospace;
+    font-style: normal;
+  }
+
+  .changelog-header {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  ul {
+    padding-top: 8px;
+    margin-left: 8px;
+    margin-bottom: 16px;
+  }
+
+  li {
+    list-style-position: inside;
+    line-height: 24px;
+  }
+</style>
