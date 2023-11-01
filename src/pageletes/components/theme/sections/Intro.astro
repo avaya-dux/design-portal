@@ -1,9 +1,22 @@
 ---
-import { Description, PageleteSection, PageTitle } from "components/astro";
+import { Description, PageleteSection, PageTitle, Topics } from "components";
+
+import { topics } from "../static";
 ---
 
 <PageleteSection>
   <PageTitle>Theme</PageTitle>
 
-  <Description>This is a placeholder page for the Theme</Description>
+  <Description>
+    Themes are the two color schemes used to create a visual design for an app
+    or website. Users can change between themes within the application.
+  </Description>
+
+  <Description>
+    The <strong>Light</strong> theme features light colored backgrounds with
+    dark text and UI elements. The <strong>Dark</strong> theme features dark
+    backgrounds with light text and other UI elements.
+  </Description>
+
+  <Topics topics={topics} />
 </PageleteSection>
