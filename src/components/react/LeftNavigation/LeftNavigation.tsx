@@ -12,6 +12,7 @@ import type { PageAstroInstance } from "helpers/types";
 import { trapFocus, useWindowSize } from "../utils";
 
 import "./LeftNavigationStyleOverride.css";
+import { LeftNavMobile } from ".";
 
 export const LeftNavigation = ({
   allPages,
@@ -99,23 +100,27 @@ export const LeftNavigation = ({
             toggleButtonRef as React.RefObject<HTMLButtonElement>
           }
         />
-        <LeftNav
-          aria-label="left-navigation"
-          currentUrl={currentUrl}
-          onNavigate={handleNavigate}
-          isActiveOverride
-        >
-          {filteredpages.map((page, index) => (
-            <LeftNav.TopLinkItem
-              key={`${index}${page.title}`}
-              label={page.title}
-              href={page.url as string}
-              className={clsx(
-                currentUrl === page.url && "neo-leftnav__main--active",
-              )}
-            />
-          ))}
-        </LeftNav>
+        {width > 831 ?
+          <LeftNav
+            aria-label="left-navigation"
+            currentUrl={currentUrl}
+            onNavigate={handleNavigate}
+            isActiveOverride
+          >
+            {filteredpages.map((page, index) => (
+              <LeftNav.TopLinkItem
+                key={`${index}${page.title}`}
+                label={page.title}
+                href={page.url as string}
+                className={clsx(
+                  currentUrl === page.url && "neo-leftnav__main--active",
+                )}
+              />
+            ))}
+          </LeftNav>
+          :
+          <LeftNavMobile currentUrl={currentUrl} onNavigate={handleNavigate} allPages={allPages} />
+        }
       </div>
       <div
         className="left-navigation-scrim"

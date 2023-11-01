@@ -9,7 +9,6 @@ export const LeftNavMobile = ({
   currentUrl,
   onNavigate,
 }: {
-  topics: string[];
   allPages: PageAstroInstance[];
   currentUrl: string;
   onNavigate?: (id: string, url: string) => void;
