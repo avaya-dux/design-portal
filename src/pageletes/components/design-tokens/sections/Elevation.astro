@@ -1,0 +1,63 @@
+---
+import {
+  Description,
+  PageleteSection,
+  SectionHeader,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableRow,
+} from "components";
+
+import { TypographyTable } from "../components";
+
+import { topics } from "../static";
+
+const { id, title } = topics.elevation;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Any field can be further enhanced by the use of drop-shadowing and other
+    highlighting techniques.
+  </Description>
+
+  <TypographyTable
+    title=""
+    head1="Property Name"
+    head2="Example"
+    head3="Description"
+  >
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>$shadows-elevation-100</InfoTableCell>
+        <InfoTableCell>
+          <div class="square-x-large elevation-100"></div>
+        </InfoTableCell>
+        <InfoTableCell>Elevation 100</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$shadows-elevation-200</InfoTableCell>
+        <InfoTableCell>
+          <div class="square-x-large elevation-200"></div>
+        </InfoTableCell>
+        <InfoTableCell>Elevation 200</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$shadows-elevation-300</InfoTableCell>
+        <InfoTableCell>
+          <div class="square-x-large elevation-300"></div>
+        </InfoTableCell>
+        <InfoTableCell>Elevation 300</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$shadows-elevation-400</InfoTableCell>
+        <InfoTableCell>
+          <div class="square-x-large elevation-400"></div>
+        </InfoTableCell>
+        <InfoTableCell>Elevation 400</InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </TypographyTable>
+</PageleteSection>
