@@ -1,0 +1,53 @@
+---
+import { PageleteSection, SectionHeader } from "components";
+import { CSSChangelog } from "./changelog/css";
+import chip from "../imgs/chip.svg";
+import { Image } from "@avaya/neo-react";
+
+import LogSubsection from "./LogSubsection.astro";
+---
+<div class="changelog-separator"/>
+
+<div class="change-log-tab-panel">
+  {
+    CSSChangelog.map((releases, index) => (
+      <PageleteSection
+        marginBottom="0"
+        marginTop={index === 0 ? "48px" : "32px"}
+      >
+        <SectionHeader id={`${releases.date}-css-update`}>
+          { `${releases.version} ${releases.date} `}
+          {index === 0 && (
+            <Image src={chip.src} alt="Newest version chip" />
+          )}
+        </SectionHeader>
+
+        {releases.sections.map((section) => (
+          <>
+            <LogSubsection
+              title="New Features - Recently Added"
+              points={section.newFeatures}
+            />
+            <LogSubsection
+              title="Breaking Change - Needs Immediate Attention"
+              points={section.breakingChanges}
+            />
+            <LogSubsection
+              title="Additional Changes - Update at Earliest Convenience"
+              points={section.additionalChanges}
+            />
+            <LogSubsection title="Bugs - Updated List" points={section.bugs} />
+          </>
+        ))}
+      </PageleteSection>
+    ))
+  }
+</div>
+
+<style>
+  .changelog-separator{
+    width: 100%;
+    height: 1px;
+    background-color: var(--neo-color-base-200);
+  }
+</style>
