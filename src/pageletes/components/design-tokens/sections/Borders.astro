@@ -1,0 +1,127 @@
+---
+import {
+  Description,
+  PageleteSection,
+  SectionHeader,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableRow,
+} from "components";
+
+import { TypographyTable } from "../components";
+
+import { topics } from "../static";
+
+const { id, title } = topics.borders;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Borders surround fields to help define their limits. There are multiple
+    line, shape and corner styles to choose from.
+  </Description>
+
+  <TypographyTable
+    title=""
+    head1="Token Name"
+    head2="Example"
+    head3="Description"
+  >
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>$token-border-solid-1-px-</InfoTableCell>
+        <InfoTableCell>
+          <div class="square-white square-x-large border-1px border-solid">
+          </div>
+        </InfoTableCell>
+        <InfoTableCell>1px solid border</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$token-border-dotted-1-px-</InfoTableCell>
+        <InfoTableCell>
+          <div class="square-white square-x-large border-1px border-dotted">
+          </div>
+        </InfoTableCell>
+        <InfoTableCell>1px dotted border</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>$token-border-solid-2-px-</InfoTableCell>
+        <InfoTableCell>
+          <div class="square-white square-x-large border-2px border-solid">
+          </div>
+        </InfoTableCell>
+        <InfoTableCell>2px solid border</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$token-border-dotted-2-px-</InfoTableCell>
+        <InfoTableCell>
+          <div class="square-white square-x-large border-2px border-dotted">
+          </div>
+        </InfoTableCell>
+        <InfoTableCell>2px dotted border</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>$token-border-solid-3-px-</InfoTableCell>
+        <InfoTableCell>
+          <div class="square-white square-x-large border-3px border-solid">
+          </div>
+        </InfoTableCell>
+        <InfoTableCell>3px solid border</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$token-border-dotted-3-px-</InfoTableCell>
+        <InfoTableCell>
+          <div class="square-white square-x-large border-3px border-dotted">
+          </div>
+        </InfoTableCell>
+        <InfoTableCell>3px dotted border</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>$token-border-radius-2-px-</InfoTableCell>
+        <InfoTableCell>
+          <div
+            class="square-white square-x-large border-1px border-solid border-radius-2px"
+          >
+          </div>
+        </InfoTableCell>
+        <InfoTableCell>2px border radius</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$token-border-radius-4-px-</InfoTableCell>
+        <InfoTableCell>
+          <div
+            class="square-white square-x-large border-1px border-solid border-radius-4px"
+          >
+          </div>
+        </InfoTableCell>
+        <InfoTableCell>4px border radius</InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>$token-border-radius-16-px-</InfoTableCell>
+        <InfoTableCell>
+          <div
+            class="square-white square-x-large border-1px border-solid border-radius-16px"
+          >
+          </div>
+        </InfoTableCell>
+        <InfoTableCell>16px border radius</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$token-border-radius-100-</InfoTableCell>
+        <InfoTableCell>
+          <div
+            class="square-white square-x-large border-1px border-solid border-radius-100"
+          >
+          </div>
+        </InfoTableCell>
+        <InfoTableCell>100% border radius</InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </TypographyTable>
+</PageleteSection>
