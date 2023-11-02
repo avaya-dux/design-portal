@@ -1,13 +1,13 @@
-import { Radio, RadioGroup, Accordion, LeftNav } from "@avaya/neo-react";
+import { Accordion, LeftNav, Radio, RadioGroup } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
-
-import "./ThemePlayground.css";
 
 import { Playground } from "components/react";
 import {
   prettyPrintReactElementToHtml,
   prettyPrintReactElementToString,
 } from "helpers";
+
+import "./ThemePlayground.css";
 
 export const sandbox =
   "https://codesandbox.io/s/neo-react-theme-provider-2vk8xl";
@@ -25,7 +25,10 @@ export const PlaygroundImplementation = () => {
 
   const [elementToRender, react, html] = useMemo(() => {
     const accordion = (
-      <div className={`neo-global-colors neo-${theme}`} style={{width: '100%'}}>
+      <div
+        className={`neo-global-colors neo-${theme}`}
+        style={{ width: "100%" }}
+      >
         <Accordion header="Accordion 1">
           Inner content of Accordion example
         </Accordion>
@@ -74,6 +77,7 @@ export const PlaygroundImplementation = () => {
 
   return (
     <Playground
+      isPadded={false}
       options={
         <Playground.OptionsContainer>
           <Playground.OptionsSection title="Examples">
@@ -109,7 +113,11 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      {elementToRender}
+      <div
+        className={`theme-playground-example neo-global-colors neo-${theme}`}
+      >
+        {elementToRender}
+      </div>
     </Playground>
   );
 };
