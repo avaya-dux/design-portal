@@ -36,7 +36,7 @@ export const LeftNavMobile = ({
       onNavigate={onNavigate}
       isActiveOverride
     >
-      <LeftNav.NavCategory icon="audio-on" label="Docs">
+      <LeftNav.NavCategory label="Docs">
         {docsPages.map((page, index) => (
           <LeftNav.TopLinkItem
             key={`${index}${page.title}`}
