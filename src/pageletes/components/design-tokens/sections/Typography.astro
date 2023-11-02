@@ -1,0 +1,211 @@
+---
+import {
+  Description,
+  PageleteSection,
+  SectionHeader,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableRow,
+} from "components";
+
+import { topics } from "../static";
+
+import { TypographyTable } from "../components";
+
+const { id, title } = topics.typography;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Neo’s typography system provides a consistent look to all Avaya products
+    while creating a consistent hierarchy for your UI designs. The selected font
+    has been tested for readability across different languages, and meets
+    accessibility guidelines.
+  </Description>
+
+  <TypographyTable
+    title="Global"
+    head1="Property Name"
+    head2="Value"
+    head3="Description"
+  >
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>font-family</InfoTableCell>
+        <InfoTableCell>Noto Sans JP</InfoTableCell>
+        <InfoTableCell>Global font family</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>letter-spacing</InfoTableCell>
+        <InfoTableCell>0px</InfoTableCell>
+        <InfoTableCell>Global letter spacing</InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </TypographyTable>
+
+  <TypographyTable
+    title="Header"
+    head1="Token Name"
+    head2="Example"
+    head3="Description"
+  >
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>h1</InfoTableCell>
+        <InfoTableCell><h1>H1</h1></InfoTableCell>
+        <InfoTableCell>Header 1 font styles</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>h2</InfoTableCell>
+        <InfoTableCell><h2>H2</h2></InfoTableCell>
+        <InfoTableCell>Header 2 font styles</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>h3</InfoTableCell>
+        <InfoTableCell><h3>H3</h3></InfoTableCell>
+        <InfoTableCell>Header 3 font styles</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>h4</InfoTableCell>
+        <InfoTableCell><h4>H4</h4></InfoTableCell>
+        <InfoTableCell>Header 4 font styles</InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </TypographyTable>
+
+  <TypographyTable
+    title="Large Body Styles"
+    head1="Token Name"
+    head2="Example"
+    head3="Description"
+  >
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>$typography-web-body-large-font-size</InfoTableCell>
+        <InfoTableCell>16px</InfoTableCell>
+        <InfoTableCell>Large Body font size</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$typography-web-body-tiny-line-height</InfoTableCell>
+        <InfoTableCell>22pxt</InfoTableCell>
+        <InfoTableCell>Large Body line height</InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </TypographyTable>
+
+  <TypographyTable
+    title="Regular Body Styles"
+    head1="Token Name"
+    head2="Example"
+    head3="Description"
+  >
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>$typography-web-body-regular-font-size</InfoTableCell>
+        <InfoTableCell>14px</InfoTableCell>
+        <InfoTableCell>Regular Body font size</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$typography-web-body-regular-line-height</InfoTableCell>
+        <InfoTableCell>19px</InfoTableCell>
+        <InfoTableCell>Regular Body line height</InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </TypographyTable>
+
+  <TypographyTable
+    title="Small Body Styles"
+    head1="Token Name"
+    head2="Example"
+    head3="Description"
+  >
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>$typography-web-body-small-font-size</InfoTableCell>
+        <InfoTableCell>12px</InfoTableCell>
+        <InfoTableCell>Small Body font size</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$typography-web-body-regular-line-height</InfoTableCell>
+        <InfoTableCell>16px</InfoTableCell>
+        <InfoTableCell>Small Body line height</InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </TypographyTable>
+
+  <TypographyTable
+    title="Tiny Body Styles"
+    head1="Token Name"
+    head2="Example"
+    head3="Description"
+  >
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>$typography-web-body-tiny-font-size</InfoTableCell>
+        <InfoTableCell>10px</InfoTableCell>
+        <InfoTableCell>Tiny Body font size</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$typography-web-body-tiny-line-height</InfoTableCell>
+        <InfoTableCell>13px</InfoTableCell>
+        <InfoTableCell>Regular Body line height</InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </TypographyTable>
+
+  <TypographyTable
+    title="Font Weights"
+    head1="Property Name"
+    head2="Example"
+    head3="Description"
+  >
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>$token-web-typography-fontweight-light</InfoTableCell>
+        <InfoTableCell><span class="weight-300">300</span></InfoTableCell>
+        <InfoTableCell>Light Font</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$token-web-typography-fontweight-regular</InfoTableCell>
+        <InfoTableCell><span class="weight-400">400</span></InfoTableCell>
+        <InfoTableCell>Regular Font</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$token-web-typography-fontweight-semibold</InfoTableCell>
+        <InfoTableCell><span class="weight-600">600</span></InfoTableCell>
+        <InfoTableCell>Semi-bold Font</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$token-web-typography-fontweight-bold</InfoTableCell>
+        <InfoTableCell><span class="weight-700">700</span></InfoTableCell>
+        <InfoTableCell>Bold Font</InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </TypographyTable>
+
+  <TypographyTable
+    title="Text Decoration/Font Style"
+    head1="Token Name"
+    head2="Example"
+    head3="Description"
+  >
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>$web-body-underline-text-decoration</InfoTableCell>
+        <InfoTableCell>
+          <span class="text-underline">underline</span>
+        </InfoTableCell>
+        <InfoTableCell>Underline text</InfoTableCell>
+      </InfoTableRow>
+      <InfoTableRow>
+        <InfoTableCell>$web-body-italic-text-style</InfoTableCell>
+        <InfoTableCell>
+          <span class="font-italic">italic</span>
+        </InfoTableCell>
+        <InfoTableCell>Italicize text</InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </TypographyTable>
+</PageleteSection>
