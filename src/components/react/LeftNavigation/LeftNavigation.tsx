@@ -42,14 +42,14 @@ export const LeftNavigation = ({
   const handleKeyDown = useCallback(
     (
       event: KeyboardEvent,
-      firstFocusableElement: HTMLElement,
-      lastFocusableElement: HTMLElement,
+      // firstFocusableElement: HTMLElement,
+      // lastFocusableElement: HTMLElement,
     ) => {
       if (isOpen && event.key === "Escape") {
         isLeftNavigationOpen.set(false);
       }
 
-      trapFocus(event, firstFocusableElement, lastFocusableElement);
+      // trapFocus(event, firstFocusableElement, lastFocusableElement);
     },
     [isOpen],
   );
@@ -60,27 +60,27 @@ export const LeftNavigation = ({
     }
 
     // HACK: React LeftNav.TopLinkItem does not currently support using refs
-    const lastFocusableElement = document
-      .querySelector(".left-navigation")
-      ?.querySelectorAll(
-        `[href="${filteredpages[filteredpages.length - 1]?.url}"]`,
-      )[0] as HTMLElement;
+    // const lastFocusableElement = document
+    //   .querySelector(".left-navigation")
+    //   ?.querySelectorAll(
+    //     `[href="${filteredpages[filteredpages.length - 1]?.url}"]`,
+    //   )[0] as HTMLElement;
 
-    const firstFocusableElement =
-      width > 799
-        ? (closeButtonRef.current as HTMLElement)
-        : ((toggleButtonRef as React.RefObject<HTMLButtonElement>)
-            .current as HTMLElement);
+    // const firstFocusableElement =
+    //   width > 799
+    //     ? (closeButtonRef.current as HTMLElement)
+    //     : ((toggleButtonRef as React.RefObject<HTMLButtonElement>)
+    //         .current as HTMLElement);
 
-    document.addEventListener("keydown", (event) =>
-      handleKeyDown(event, firstFocusableElement, lastFocusableElement),
-    );
+    // document.addEventListener("keydown", (event) =>
+    //   handleKeyDown(event, firstFocusableElement, lastFocusableElement),
+    // );
 
-    return () => {
-      document.removeEventListener("keydown", (event) =>
-        handleKeyDown(event, firstFocusableElement, lastFocusableElement),
-      );
-    };
+    // return () => {
+    //   document.removeEventListener("keydown", (event) =>
+    //     handleKeyDown(event, firstFocusableElement, lastFocusableElement),
+    //   );
+    // };
   }, [handleKeyDown, isOpen, filteredpages, toggleButtonRef, width]);
 
   return (
@@ -100,26 +100,28 @@ export const LeftNavigation = ({
             toggleButtonRef as React.RefObject<HTMLButtonElement>
           }
         />
-        {width > 831 ?
-          <LeftNav
-            aria-label="left-navigation"
-            currentUrl={currentUrl}
-            onNavigate={handleNavigate}
-            isActiveOverride
-          >
-            {filteredpages.map((page, index) => (
-              <LeftNav.TopLinkItem
-                key={`${index}${page.title}`}
-                label={page.title}
-                href={page.url as string}
-                className={clsx(
-                  currentUrl === page.url && "neo-leftnav__main--active",
-                )}
-              />
-            ))}
-          </LeftNav>
-          :
+        {
+          width > 831 ? (
+            <LeftNav
+              aria-label="left-navigation"
+              currentUrl={currentUrl}
+              onNavigate={handleNavigate}
+              isActiveOverride
+            >
+              {filteredpages.map((page, index) => (
+                <LeftNav.TopLinkItem
+                  key={`${index}${page.title}`}
+                  label={page.title}
+                  href={page.url as string}
+                  className={clsx(
+                    currentUrl === page.url && "neo-leftnav__main--active",
+                  )}
+                />
+              ))}
+            </LeftNav>
+          ) : (
           <LeftNavMobile currentUrl={currentUrl} onNavigate={handleNavigate} allPages={allPages} />
+          )
         }
       </div>
       <div
@@ -150,7 +152,8 @@ const LeftNavigationTopElement = ({
         document
           .querySelector(".left-navigation")
           ?.querySelectorAll(".neo-leftnav__main a")[0] as HTMLElement
-      ).focus();
+      )
+        // .focus();
     }
 
     if (
@@ -159,7 +162,8 @@ const LeftNavigationTopElement = ({
       isOpen !== undefined &&
       !isOpen
     ) {
-      toggleButtonRef.current?.focus();
+      // toggleButtonRef.current?.focus();
+      console.log({ toggleButtonRef });
     }
   }, [closeButtonRef, isOpen, toggleButtonRef]);
 

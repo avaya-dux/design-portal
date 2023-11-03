@@ -134,10 +134,10 @@
 
 @media (max-width: 799px) {
   .left-navigation {
-    position: fixed;
+    /* position: fixed; */
     transform: translate3d(-15rem, 0, 0);
     padding-top: 0;
-    top: calc(var(--header-height) * 2);
+    top: var(--header-height);
     bottom: 0;
     z-index: 100;
   }

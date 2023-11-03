@@ -38,14 +38,15 @@ export const LeftNavMobile = ({
     >
       <LeftNav.NavCategory label="Docs">
         {docsPages.map((page, index) => (
-          <LeftNav.TopLinkItem
+          <LeftNav.LinkItem
             key={`${index}${page.title}`}
-            label={page.title}
             href={page.url as string}
-            className={clsx(
-              currentUrl === page.url && "neo-leftnav__main--active",
-            )}
-          />
+            // className={clsx(
+            //   currentUrl === page.url && "neo-leftnav__main--active",
+            // )}
+          >
+            {page.title}
+          </LeftNav.LinkItem>
         ))}
       </LeftNav.NavCategory>
     </LeftNav>
