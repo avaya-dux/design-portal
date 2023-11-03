@@ -6,3 +6,15 @@
   align-items: center;
   padding: 2rem;
 }
+
+.theme-playground-example
+  .neo-accordion__header
+  > .neo-accordion__header-text:hover,
+.theme-playground-example
+  .neo-accordion
+  .neo-accordion__header
+  > button.neo-accordion__header-text:not(:disabled):hover {
+  background-color: var(--accordion-body-color);
+  color: var(--global-font-color);
+  transition: none;
+}
