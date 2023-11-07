@@ -132,7 +132,7 @@
   }
 }
 
-@media (max-width: 799px) {
+@media (max-width: 831px) {
   .left-navigation {
     /* position: fixed; */
     transform: translate3d(-15rem, 0, 0);
