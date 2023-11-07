@@ -26,9 +26,7 @@ const sandbox =
 
 type UserStatusType = "card" | "avatar";
 
-const Logo = (
-  <Image src={logoImage.src} isDecorativeOrBranding />
-);
+const Logo = <Image src={logoImage.src} isDecorativeOrBranding />;
 
 const AgentStatusCard = (
   <AgentCard

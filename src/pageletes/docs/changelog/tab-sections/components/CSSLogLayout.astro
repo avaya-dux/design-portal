@@ -6,7 +6,8 @@ import { Image } from "@avaya/neo-react";
 
 import LogSubsection from "./LogSubsection.astro";
 ---
-<div class="changelog-separator"/>
+
+<div class="changelog-separator"></div>
 
 <div class="change-log-tab-panel">
   {
@@ -16,10 +17,8 @@ import LogSubsection from "./LogSubsection.astro";
         marginTop={index === 0 ? "48px" : "32px"}
       >
         <SectionHeader id={`${releases.date}-css-update`}>
-          { `${releases.version} ${releases.date} `}
-          {index === 0 && (
-            <Image src={chip.src} alt="Newest version chip" />
-          )}
+          {`${releases.version} ${releases.date} `}
+          {index === 0 && <Image src={chip.src} alt="Newest version chip" />}
         </SectionHeader>
 
         {releases.sections.map((section) => (
@@ -45,7 +44,7 @@ import LogSubsection from "./LogSubsection.astro";
 </div>
 
 <style>
-  .changelog-separator{
+  .changelog-separator {
     width: 100%;
     height: 1px;
     background-color: var(--neo-color-base-200);
