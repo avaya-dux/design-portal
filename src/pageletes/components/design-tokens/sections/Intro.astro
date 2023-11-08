@@ -1,0 +1,18 @@
+---
+import { Description, PageleteSection, PageTitle, Topics } from "components";
+
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <PageTitle>Design Tokens</PageTitle>
+
+  <Description>
+    Design tokens are the foundational elements of Neo. They are named entities
+    that store design attribute information, and are used instead of hard-coded
+    values (such as hex values for color or pixel values for spacing) to
+    maintain a scalable and consistent visual appearance.
+  </Description>
+
+  <Topics topics={topics} />
+</PageleteSection>

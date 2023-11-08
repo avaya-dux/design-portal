@@ -1,0 +1,76 @@
+---
+import {
+  ColumnLayout,
+  Description,
+  ImageWrapper,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  StackedLayout,
+  SubHeader,
+} from "components/astro";
+import { topics } from "../static";
+
+import { Image } from "@avaya/neo-react";
+
+const { id, title } = topics.behavior;
+
+import imageBehavior1 from "../imgs/theme-behavior-color-1.svg";
+import imageBehavior2 from "../imgs/theme-behavior-color-2.svg";
+import imageBehavior3 from "../imgs/theme-behavior-elevation-1.svg";
+
+const imageBehavior1AltText =
+  "An image of a color conversion chart for grayscale colors";
+
+const imageBehavior2AltText =
+  "An image of a color conversion chart for shades of blue";
+
+const imageBehavior3AltText =
+  "An image showing ways to represent elevation on elements in both light and dark mode";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    Light and dark themes have different behaviors and characteristics that can
+    affect user experience.
+  </Description>
+
+  <PageleteSubSection>
+    <SubHeader id="theme-color-conversion">Color Conversion</SubHeader>
+
+    <Description>
+      This table shows how colors are converted when the user changes from one
+      theme to the other.
+    </Description>
+
+    <ColumnLayout bkgColor="white" numOfColumns={2}>
+      <StackedLayout label="Base">
+        <Image src={imageBehavior1.src} alt={imageBehavior1AltText} />
+      </StackedLayout>
+
+      <StackedLayout label="Colors">
+        <Image src={imageBehavior2.src} alt={imageBehavior2AltText} />
+      </StackedLayout>
+    </ColumnLayout>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="theme-elevation">Elevation</SubHeader>
+
+    <Description>
+      For all user interface elements that use elevation or dropshadow in the
+      Light theme, these effects should be entirely removed when switching to
+      Dark theme. In dark mode, shadows are not easily visible and visual
+      elevation is created by adding lighter transparent overlays onto surfaces
+      that should be a higher elevation.
+    </Description>
+
+    <ImageWrapper padding="0" isRounded={false}>
+      <Image src={imageBehavior3.src} alt={imageBehavior3AltText} />
+    </ImageWrapper>
+  </PageleteSubSection>
+</PageleteSection>

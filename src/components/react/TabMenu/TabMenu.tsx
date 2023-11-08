@@ -5,12 +5,12 @@ export const TabMenu = (props) => {
     <Tabs>
       <TabList>
         {props.panels.map((panel: string) => (
-          <Tab id={panel}>{panel.charAt(0).toUpperCase() + panel.slice(1)}</Tab>
+          <Tab id={panel.toLowerCase()}>{panel}</Tab>
         ))}
       </TabList>
       <TabPanels>
         {props.panels.map((panel: string) => (
-          <TabPanel>{props[panel]}</TabPanel>
+          <TabPanel>{props[panel.toLowerCase()]}</TabPanel>
         ))}
       </TabPanels>
     </Tabs>

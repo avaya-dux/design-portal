@@ -31,6 +31,10 @@
   padding: 2rem;
 }
 
+.playground-container .playground-element.playground-element--no-padding {
+  padding: 0;
+}
+
 /* START: code examples styles */
 .playground-container .playground-examples .playground-code {
   flex-basis: 100%;
