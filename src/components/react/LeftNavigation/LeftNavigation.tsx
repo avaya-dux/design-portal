@@ -27,8 +27,6 @@ export const LeftNavigation = ({
     window.location.href = url;
   };
 
-  console.log({ allPages });
-
   const isOpen = useStore(isLeftNavigationOpen);
 
   const toggleButtonRef = useStore(leftNavToggleButtonRef);
