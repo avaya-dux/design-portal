@@ -6,7 +6,7 @@ import { LeftNavigation } from "components";
 import { IconFilters, iconCategories } from "pageletes/icons";
 
 export interface Props {
-  allPages:  PageAstroInstance[];
+  allPages: PageAstroInstance[];
   filteredpages: PageAstroInstance[];
 }
 const { allPages, filteredpages } = Astro.props;
@@ -19,6 +19,11 @@ const isIconPage = pathname.includes("icons");
 {isIconPage && <IconFilters categories={iconCategories} client:load />}
 {
   filteredpages.length > 0 && (
-    <LeftNavigation allPages={allPages} filteredpages={filteredpages} currentUrl={pathname} client:load />
+    <LeftNavigation
+      allPages={allPages}
+      filteredpages={filteredpages}
+      currentUrl={pathname}
+      client:load
+    />
   )
 }

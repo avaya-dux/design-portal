@@ -1,7 +1,4 @@
 import { LeftNav } from "@avaya/neo-react";
-import clsx from "clsx";
-
-
 import type { PageAstroInstance } from "helpers/types";
 
 export const LeftNavMobile = ({
@@ -12,22 +9,20 @@ export const LeftNavMobile = ({
   allPages: PageAstroInstance[];
   currentUrl: string;
   onNavigate?: (id: string, url: string) => void;
-  }) => {
-    const accessibilityPages = allPages.filter(
-      (page) => page.url?.includes("accessibility"),
-    );
+}) => {
+  const accessibilityPages = allPages.filter(
+    (page) => page.url?.includes("accessibility"),
+  );
 
-    const componentPages = allPages.filter(
-      (page) => page.url?.includes("components"),
-    );
+  const componentPages = allPages.filter(
+    (page) => page.url?.includes("components"),
+  );
 
-    const docsPages = allPages.filter(
-      (page) => page.url?.includes("docs"),
-    );
+  const docsPages = allPages.filter((page) => page.url?.includes("docs"));
 
-    const guidelinesPages = allPages.filter(
-      (page) => page.url?.includes("guidelines"),
-    );
+  const guidelinesPages = allPages.filter(
+    (page) => page.url?.includes("guidelines"),
+  );
 
   return (
     <LeftNav
@@ -80,11 +75,7 @@ export const LeftNavMobile = ({
         ))}
       </LeftNav.NavCategory>
 
-      <LeftNav.TopLinkItem
-        key="theIcons"
-        label="Icons"
-        href="/icons"
-      />
+      <LeftNav.TopLinkItem key="theIcons" label="Icons" href="/icons" />
     </LeftNav>
   );
 };
