@@ -5,7 +5,7 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "Added \"decimal\", \"boolean\" and \"integer\" icons (NEO-1865)",
+          'Added "decimal", "boolean" and "integer" icons (NEO-1865)',
           "NEO-1845 allow <a href='/components/dropdown'>Dropdown</a> to expand upwards and to be placed to either side of the toggle",
         ],
         breakingChanges: [],
@@ -23,13 +23,9 @@ export const CSSChangelog = [
     date: "(September 13, 2023)",
     sections: [
       {
-        newFeatures: [
-          "Added \"flow\" icons (NEO-1847)",
-        ],
+        newFeatures: ['Added "flow" icons (NEO-1847)'],
         breakingChanges: [],
-        additionalChanges: [
-          "Updated \"network quality\" icons (NEO-1852)",
-        ],
+        additionalChanges: ['Updated "network quality" icons (NEO-1852)'],
         bugs: [],
       },
     ],
@@ -40,9 +36,7 @@ export const CSSChangelog = [
     date: "(August 30, 2023)",
     sections: [
       {
-        newFeatures: [
-          "Added \"http\" icon (NEO-1822)",
-        ],
+        newFeatures: ['Added "http" icon (NEO-1822)'],
         breakingChanges: [],
         additionalChanges: [],
         bugs: [],
@@ -55,9 +49,7 @@ export const CSSChangelog = [
     date: "(August 16, 2023)",
     sections: [
       {
-        newFeatures: [
-          "Added \"missed\" icon (NEO-1775)",
-        ],
+        newFeatures: ['Added "missed" icon (NEO-1775)'],
         breakingChanges: [],
         additionalChanges: [],
         bugs: [],
@@ -71,7 +63,7 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "Added \"loop-single\", \"loop-multiple\", \"variable-assign\", \"sub-accounts-select\", \"sub-accounts-switch\", \"customer-journey-retrieve-data\", \"customer-journey-store-data\", \"label-go\", \"broadcast-play\", \"broadcast-stop\", \"callback-offer\", \"queue-removed\", icons (NEO-1481)",
+          'Added "loop-single", "loop-multiple", "variable-assign", "sub-accounts-select", "sub-accounts-switch", "customer-journey-retrieve-data", "customer-journey-store-data", "label-go", "broadcast-play", "broadcast-stop", "callback-offer", "queue-removed", icons (NEO-1481)',
         ],
         breakingChanges: [],
         additionalChanges: [],
@@ -86,7 +78,7 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "Added \"axp\", \"axp-alerting\", \"axp-connected\", \"axp-inbound\", \"axp-missed\", \"axp-not-ready\", \"axp-outbound\", \"axp-pending\", \"axp-ready\" icons (NEO-1749)",
+          'Added "axp", "axp-alerting", "axp-connected", "axp-inbound", "axp-missed", "axp-not-ready", "axp-outbound", "axp-pending", "axp-ready" icons (NEO-1749)',
         ],
         breakingChanges: [],
         additionalChanges: [],
@@ -187,7 +179,7 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "Added new \"mic-extended-off\", \"mic-extended-on\", \"vdn-incoming-call\", \"user-return\", \"list-number-complete\", \"zoom-default\", \"call-sms\", \"table-insert\", \"table-delete\" icons (NEO-1556/NEO-1555/NEO-1563)",
+          'Added new "mic-extended-off", "mic-extended-on", "vdn-incoming-call", "user-return", "list-number-complete", "zoom-default", "call-sms", "table-insert", "table-delete" icons (NEO-1556/NEO-1555/NEO-1563)',
         ],
         breakingChanges: [],
         additionalChanges: [],
@@ -203,7 +195,7 @@ export const CSSChangelog = [
       {
         newFeatures: [
           "Added new <em class=changelog-emphasis>.neo-leftnav__sub--multiline</em> class to correctly align active state dot when text wraps to multiple lines (NEO-1497)",
-          "Updated \"error\", \"error-filled\", \"warning\", \"warning-filled\" icons to new versions (NEO-1535)",
+          'Updated "error", "error-filled", "warning", "warning-filled" icons to new versions (NEO-1535)',
           "Added new iconography to <a href='/components/switch'>Switch</a> Component unchecked and checked states (NEO-1541)",
         ],
         breakingChanges: [],
@@ -259,7 +251,7 @@ export const CSSChangelog = [
       {
         newFeatures: [
           "Added new <em class=changelog-emphasis>.neo-input-editable__wrapper--small</em> class name for correct styling of small <a href='/components/text-input'>Text Inputs</a> (NEO-1402)",
-          "Added new icon \"unlock\" (NEO-1416)",
+          'Added new icon "unlock" (NEO-1416)',
           "Added new <em class=changelog-emphasis>.neo-form-control--no-label</em> class to remove minimum height on horizontal <a href='/components/form'>Form</a> elements (NEO-1438)",
         ],
         breakingChanges: [
@@ -296,7 +288,7 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "New \"cell\", \"column\", \"row\", \"table\" and \"cut\" icons",
+          'New "cell", "column", "row", "table" and "cut" icons',
           "Added new class and style for small <a href='/components/select'>Select</a> Component",
         ],
         breakingChanges: [],
@@ -329,7 +321,7 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "Added new communication icons, including \"audio-incoming\", \"audio-outgoing\", \"call-incoming\", \"call-outgoing\", \"chat-incoming\", \"chat-outgoing\", \"email-incoming\", \"email-outgoing\", \"messaging-incoming\", \"messaging-outgoing\", \"sms-incoming\", \"sms-outgoing\", \"social-incoming\", \"social-outgoing\", \"video-incoming\", and \"video-outgoing\", to icon",
+          'Added new communication icons, including "audio-incoming", "audio-outgoing", "call-incoming", "call-outgoing", "chat-incoming", "chat-outgoing", "email-incoming", "email-outgoing", "messaging-incoming", "messaging-outgoing", "sms-incoming", "sms-outgoing", "social-incoming", "social-outgoing", "video-incoming", and "video-outgoing", to icon',
         ],
         breakingChanges: [
           "Updated SVGs for social icons, including social-outbound, social-inbound, social-ready, social-missed, social-alerting, social-pending, social-not-ready, and social-connected. And moved these icons to communication category in Icon",
@@ -348,7 +340,7 @@ export const CSSChangelog = [
     sections: [
       {
         newFeatures: [
-          "Added \"redial\" icon",
+          'Added "redial" icon',
           "Added new style properties for icon button <a href='/components/dropdown'>Dropdowns</a>",
           "Added new style properties for <a href='/components/header'>Navbar</a> icon button dropdown",
         ],
@@ -388,9 +380,7 @@ export const CSSChangelog = [
     date: "(August 30, 2022)",
     sections: [
       {
-        newFeatures: [
-          "Added new \"bot-agent\" and \"hospitality\" icon",
-        ],
+        newFeatures: ['Added new "bot-agent" and "hospitality" icon'],
         breakingChanges: [],
         additionalChanges: [],
         bugs: [],
@@ -420,9 +410,7 @@ export const CSSChangelog = [
     date: "(August 10, 2022)",
     sections: [
       {
-        newFeatures: [
-          "Added \"after-work-call\" icon",
-        ],
+        newFeatures: ['Added "after-work-call" icon'],
         breakingChanges: [],
         additionalChanges: [],
         bugs: [],
@@ -453,7 +441,7 @@ export const CSSChangelog = [
         ],
         breakingChanges: [],
         additionalChanges: [
-          "Changed role to \"switch\" from default one, \"checkbox\" <a href='/components/switch'>switches</a>",
+          'Changed role to "switch" from default one, "checkbox" <a href=\'/components/switch\'>switches</a>',
         ],
         bugs: [
           "Multiline Switch: no longer bold text when on <a href='/components/switch'>switches</a>",
@@ -480,9 +468,7 @@ export const CSSChangelog = [
     date: "(July 27, 2022)",
     sections: [
       {
-        newFeatures: [
-          "Added new \"analytics-filled\" icon",
-        ],
+        newFeatures: ['Added new "analytics-filled" icon'],
         breakingChanges: [
           "Updated multiline <a href='/components/switch'>Switch</a> to work with <em class=changelog-emphasis>dir='rtl'</em>",
         ],
@@ -556,9 +542,7 @@ export const CSSChangelog = [
     date: "(April 06, 2022)",
     sections: [
       {
-        newFeatures: [
-          "Added new \"user\" icon",
-        ],
+        newFeatures: ['Added new "user" icon'],
         breakingChanges: [],
         additionalChanges: [],
         bugs: [],

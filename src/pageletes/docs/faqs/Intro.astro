@@ -1,7 +1,213 @@
 ---
-import { Description, PageTitle } from "components/astro";
+import { Link } from "@avaya/neo-react";
+import { Description, PageTitle, PageleteSection } from "components/astro";
 ---
 
-<PageTitle>FAQs Placeholder</PageTitle>
+<PageleteSection>
+  <PageTitle>FAQs</PageTitle>
+  <Description>
+    Get immediate answers to your questions. You can also visit
+    <Link
+      inline
+      href="https://spaces.avayacloud.com/spaces/5fdab55a49115337dfabe103"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Spaces for Neo Community
+    </Link>
+     for additional answers.
+  </Description>
+</PageleteSection>
 
-<Description>Lorem Ipsum</Description>
+<section>
+  <div>
+    <h3>What is Neo?</h3>
+    <p>
+      Neo is Avaya’s Design System. It is an open-source design system for all
+      Avaya products. It provides a consistent look across all digital forms.
+    </p>
+  </div>
+
+  <div>
+    <h3>Why should my application use Neo?</h3>
+    <p>
+      Neo uses a set of standardized components and UX best practices to ensure
+      a consistent and easy to use experience across our product ecosystem.
+    </p>
+  </div>
+
+  <div>
+    <h3>What are guidelines?</h3>
+    <p>
+      Guidelines provide an overview of different key topics related to our
+      design system, as well as best practices. Visit the <Link
+        inline
+        href="/guidelines/overview"
+      >
+        Guidelines page
+      </Link>
+       to get the whole picture.
+    </p>
+  </div>
+
+  <div>
+    <h3>What are components and how do I use them?</h3>
+    <p>
+      Components represent commonly used UI elements and are the building blocks
+      for application design. A block of code that defines a UI feature or
+      element that can be reusable. Each component has a detailed explanation of
+      how to use the component. View the
+      <Link inline href="/guidelines/overview">Components section</Link>.
+    </p>
+  </div>
+
+  <div>
+    <h3>How do I install Neo?</h3>
+    <p>
+      Neo components for different platforms can be downloaded from the
+      <Link inline href="/docs/setup">Setup Neo</Link>.
+    </p>
+  </div>
+
+  <div>
+    <h3>Which browsers does Neo support?</h3>
+    <p>Neo is set to support the latest 2 versions of modern browsers.</p>
+  </div>
+
+  <div>
+    <h3>Where can I download the icons?</h3>
+    <p>
+      Neo Icons are available in SVG and PNG formats from the
+      <Link inline href="/icons">Icons page</Link>.
+    </p>
+  </div>
+
+  <div>
+    <h3>How can I download the Noto Sans typeface?</h3>
+    <p>
+      Noto Sans is pre-installed in the web versions of Neo. For other
+      platforms, it can be downloaded at
+      <Link
+        inline
+        href="https://fonts.google.com/noto"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Google Noto Fonts
+      </Link>.
+    </p>
+  </div>
+
+  <div>
+    <h3>What development languages are supported?</h3>
+    <p>
+      Neo has CSS and React support today, with Angular and Vue versions coming
+      soon.
+    </p>
+  </div>
+  <div>
+    <h3>Can multiple versions of Neo be used within the same project?</h3>
+    <p>Always use the latest version to avoid potential conflicts.</p>
+  </div>
+  <div>
+    <h3>How should the keyboard interaction work for each component?</h3>
+    <p>
+      Refer to the keyboard interactions page, or the specific component page
+      for a list of standard keyboard interactions.
+    </p>
+  </div>
+
+  <div>
+    <h3>Where do I start to make my application accessible?</h3>
+    <p>
+      Read through the <Link inline href="/accessibility/principles">
+        Accessibility
+      </Link> guidelines for an introduction and some hot tips. The <Link
+        inline
+        href="/guidelines/overview"
+      >
+        Guidelines page
+      </Link>
+       is also a great place to look for ideas.
+    </p>
+  </div>
+
+  <div>
+    <h3>How do I make my white labelled product adopt Neo?</h3>
+    <p>
+      Depending on the flexibility of the product, use our font (Noto Sans), as
+      well as our color system and icons where possible.
+    </p>
+  </div>
+
+  <div>
+    <h3>Where do I report an issue with Neo?</h3>
+    <p>
+      All bugs should be reported in the Avaya Space
+      <Link
+        inline
+        href="https://spaces.avayacloud.com/spaces/63d91605385d4693560107ca"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Neo Design System Feedback
+      </Link>.
+    </p>
+  </div>
+
+  <div>
+    <h3>When can I expect a response after a bug is reported?</h3>
+    <p>You should receive a response within one business day.</p>
+  </div>
+
+  <div>
+    <h3>How do I receive feature and bug updates?</h3>
+    <p>
+      You can join the Avaya Space
+      <Link
+        inline
+        href="https://spaces.avayacloud.com/spaces/63d91605385d4693560107ca"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Neo Design System Feedback
+      </Link>.
+    </p>
+  </div>
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+    margin-bottom: 6rem;
+  }
+  section div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.75rem;
+  }
+  section div h3 {
+    font-family: noto-sans;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  section div p {
+    font-family: noto-sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  p a.neo-link.neo-link__inline {
+    padding: 0;
+    display: inline-block;
+  }
+</style>
