@@ -81,12 +81,6 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
     overflow: visible;
     margin-bottom: 3rem;
   }
-  /* nav.neo-navbar .neo-nav a.neo-nav-link-btn {
-    DUPLICATE SELECTOR
-    padding: 0px;
-    width: 25%;
-    justify-content: center;
-  } */
   nav.neo-navbar .neo-nav--right {
     display: flex;
     justify-content: flex-end;
@@ -99,21 +93,6 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
     height: 48px !important;
   }
 }
-
-/* @media (max-width: 832px) {
-
-  nav.neo-navbar .neo-nav {
-    height: var(--header-height);
-    border-bottom: 1px solid var(--navbar-border-bottom-color);
-    border-top: 1px solid var(--navbar-border-bottom-color);
-    justify-content: space-around;
-    background-color: var(--global-background);
-  }
-
-
-
-
-}*/
 
 @media (min-width: 1280px) {
   nav.neo-navbar .neo-nav--left .neo-badge__navbutton {
