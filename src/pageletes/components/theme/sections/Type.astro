@@ -1,0 +1,64 @@
+---
+import {
+  Description,
+  ImageWrapper,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  SubHeader,
+} from "components/astro";
+import { topics } from "../static";
+
+import { Image } from "@avaya/neo-react";
+
+const { id, title } = topics.type;
+
+import imageType1 from "../imgs/theme-type-1.svg";
+import imageType2 from "../imgs/theme-type-2.svg";
+
+const imageType1AltText = "An image of a UI with light mode theme";
+
+const imageType2AltText = "An image of a UI with dark mode theme";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    Light and dark modes are color schemes used to display the user interface.
+    Other elements on the screen, such as icons and buttons, may also be changed
+    by the theme to ensure that they are still accessible and visible to all
+    users. Images are not affected by the theme.
+  </Description>
+
+  <PageleteSubSection>
+    <SubHeader id="theme-light-mode">Light Mode</SubHeader>
+
+    <Description>
+      Characterized by a light or white background throughout, the Light theme
+      has dark, contrasting text and other UI elements. Light mode creates a
+      clean look that can be particularly effective in apps or websites with
+      lots of text.
+    </Description>
+
+    <ImageWrapper padding="0" isRounded={false}>
+      <Image src={imageType1.src} alt={imageType1AltText} />
+    </ImageWrapper>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="theme-dark-mode">Dark Mode</SubHeader>
+
+    <Description>
+      The Dark theme features a dark background, with contrasting light text and
+      other UI elements. It helps to reduce eye strain in low-light
+      environments, and is often preferred when working from devices.
+    </Description>
+
+    <ImageWrapper padding="0" isRounded={false}>
+      <Image src={imageType2.src} alt={imageType2AltText} />
+    </ImageWrapper>
+  </PageleteSubSection>
+</PageleteSection>
