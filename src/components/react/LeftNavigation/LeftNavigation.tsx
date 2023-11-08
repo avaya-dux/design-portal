@@ -162,7 +162,6 @@ const LeftNavigationTopElement = ({
       !isOpen
     ) {
       toggleButtonRef.current?.focus();
-      console.log({ toggleButtonRef });
     }
   }, [closeButtonRef, isOpen, toggleButtonRef]);
 
