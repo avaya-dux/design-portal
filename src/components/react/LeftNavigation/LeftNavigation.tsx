@@ -60,15 +60,11 @@ export const LeftNavigation = ({
     }
 
     // HACK: React LeftNav.TopLinkItem does not currently support using refs
-    let lastFocusableElement:any = undefined;
-    if (width > 831) {
-        lastFocusableElement =
-      document
-        .querySelector(".left-navigation")
-        ?.querySelectorAll(
-          `[href="${filteredpages[filteredpages.length - 1]?.url}"]`,
-        )[0] as HTMLElement;
-    }
+    const lastFocusableElement = document
+      .querySelector(".left-navigation")
+      ?.querySelectorAll(
+        `[href="${filteredpages[filteredpages.length - 1]?.url}"]`,
+      )[0] as HTMLElement;
 
     const firstFocusableElement =
       width > 831
@@ -104,29 +100,31 @@ export const LeftNavigation = ({
             toggleButtonRef as React.RefObject<HTMLButtonElement>
           }
         />
-        {
-          width > 831 ? (
-            <LeftNav
-              aria-label="left-navigation"
-              currentUrl={currentUrl}
-              onNavigate={handleNavigate}
-              isActiveOverride
-            >
-              {filteredpages.map((page, index) => (
-                <LeftNav.TopLinkItem
-                  key={`${index}${page.title}`}
-                  label={page.title}
-                  href={page.url as string}
-                  className={clsx(
-                    currentUrl === page.url && "neo-leftnav__main--active",
-                  )}
-                />
-              ))}
-            </LeftNav>
-          ) : (
-          <LeftNavMobile currentUrl={currentUrl} onNavigate={handleNavigate} allPages={allPages} />
-          )
-        }
+        {width > 831 ? (
+          <LeftNav
+            aria-label="left-navigation"
+            currentUrl={currentUrl}
+            onNavigate={handleNavigate}
+            isActiveOverride
+          >
+            {filteredpages.map((page, index) => (
+              <LeftNav.TopLinkItem
+                key={`${index}${page.title}`}
+                label={page.title}
+                href={page.url as string}
+                className={clsx(
+                  currentUrl === page.url && "neo-leftnav__main--active",
+                )}
+              />
+            ))}
+          </LeftNav>
+        ) : (
+          <LeftNavMobile
+            currentUrl={currentUrl}
+            onNavigate={handleNavigate}
+            allPages={allPages}
+          />
+        )}
       </div>
       <div
         className="left-navigation-scrim"
@@ -156,8 +154,7 @@ const LeftNavigationTopElement = ({
         document
           .querySelector(".left-navigation")
           ?.querySelectorAll(".neo-leftnav__main a")[0] as HTMLElement
-      )
-        .focus();
+      ).focus();
     }
 
     if (
