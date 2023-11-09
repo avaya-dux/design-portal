@@ -9,7 +9,6 @@ body nav.neo-navbar {
 body nav.neo-navbar .neo-nav--left {
   height: 100%;
   align-items: unset;
-  border-bottom: 1px solid var(--navbar-border-bottom-color);
 }
 
 body nav.neo-navbar .neo-nav--left a {
