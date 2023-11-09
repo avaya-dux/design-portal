@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef } from "react";
 import { LeftNav } from "@avaya/neo-react";
 import { useStore } from "@nanostores/react";
 import clsx from "clsx";
+import { breakpoints } from "components/react/utils/constants";
 
 import {
   isLeftNavigationOpen,
@@ -65,7 +66,7 @@ export const LeftNavigation = ({
       )[0] as HTMLElement;
 
     const firstFocusableElement =
-      width > 831
+      width > breakpoints.mobileMax
         ? (closeButtonRef.current as HTMLElement)
         : ((toggleButtonRef as React.RefObject<HTMLButtonElement>)
             .current as HTMLElement);
@@ -98,7 +99,7 @@ export const LeftNavigation = ({
             toggleButtonRef as React.RefObject<HTMLButtonElement>
           }
         />
-        {width > 831 ? (
+        {width > breakpoints.mobileMax ? (
           <LeftNav
             aria-label="left-navigation"
             currentUrl={currentUrl}
