@@ -3,7 +3,7 @@ import {
   prettyPrintHtml,
   prettyPrintReactElementToHtml,
   prettyPrintReactElementToString,
-  moveToStart
+  moveToStart,
 } from "./utils";
 
 import {
@@ -17,15 +17,19 @@ import {
 
 describe("moveToStart", () => {
   it("should move element to start if found", () => {
-    expect(moveToStart([{ url: "aa" }, { url: "bb" }] as PageAstroInstance[], "b")).toEqual([{ url: "bb" }, { url: "aa" }])
-  })
+    expect(
+      moveToStart([{ url: "aa" }, { url: "bb" }] as PageAstroInstance[], "b"),
+    ).toEqual([{ url: "bb" }, { url: "aa" }]);
+  });
   it("should return the same array if not found", () => {
-    expect(moveToStart([{ url: "aa" }, { url: "bb" }] as PageAstroInstance[], "d")).toEqual([{ url: "aa" }, { url: "bb" }])
-  })
+    expect(
+      moveToStart([{ url: "aa" }, { url: "bb" }] as PageAstroInstance[], "d"),
+    ).toEqual([{ url: "aa" }, { url: "bb" }]);
+  });
   it("should do nothing if array is empty", () => {
-    expect(moveToStart([], "b")).toEqual([])
-  })
-})
+    expect(moveToStart([], "b")).toEqual([]);
+  });
+});
 describe(prettyPrintReactElementToString.name, () => {
   it("prettyPrint CheckboxGroup to react ", () => {
     const element = (

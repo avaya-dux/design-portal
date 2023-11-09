@@ -34,13 +34,18 @@ export const prettyPrintReact = (react: string) => {
   return react.trim();
 };
 
-export const moveToStart = (data: Array<PageAstroInstance>, element: string) => {
-  const index = data.findIndex((value) => value.url && value.url.indexOf(element) > -1);
+export const moveToStart = (
+  data: Array<PageAstroInstance>,
+  element: string,
+) => {
+  const index = data.findIndex(
+    (value) => value.url && value.url.indexOf(element) > -1,
+  );
   if (index !== -1) {
     const ret = data.filter((_, i) => index !== i);
     ret.unshift(data[index]!);
     return ret;
   } else {
-    return data
+    return data;
   }
 };
