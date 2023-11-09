@@ -54,6 +54,10 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
     height: 57px;
   }
 
+  ul.neo-leftnav__nav {
+    padding-top: 0px;
+  }
+
   /* HACK: This button uses !important in its height property, the below code is a way to override that -- the actual change should be done in the CSS library*/
 
   .neo-nav--left .neo-badge__navbutton button.neo-badge__navbutton--content {
