@@ -1,7 +1,3 @@
-.neo-table__actions .neo-multiselect .neo-multiselect__header:after {
-  right: 17px;
-}
-
-.neo-table__actions .neo-table__actions--right {
+div#guidelines-typography-typescaletable div.neo-table__actions {
   display: none;
 }

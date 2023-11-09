@@ -1,4 +1,4 @@
-import { Select, SelectOption, Table } from "@avaya/neo-react";
+import { Form, Select, SelectOption, Table } from "@avaya/neo-react";
 import { useEffect, useState } from "react";
 
 import type { LanguageOptions } from "./type-scale-translations";
@@ -91,11 +91,8 @@ export const TypeScaleTable = () => {
   }, [language]);
 
   return (
-    <Table
-      columns={columns}
-      data={data}
-      showPagination={false}
-      customActionsNode={
+    <div id="guidelines-typography-typescaletable">
+      <Form inline>
         <Select
           label="Language"
           value={language}
@@ -111,7 +108,9 @@ export const TypeScaleTable = () => {
           <SelectOption value="cyrillic">Cyrillic</SelectOption>
           <SelectOption value="greek">Greek</SelectOption>
         </Select>
-      }
-    />
+      </Form>
+
+      <Table columns={columns} data={data} showPagination={false} />
+    </div>
   );
 };
