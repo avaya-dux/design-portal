@@ -48,8 +48,8 @@ switch (pathname.split("/")[1]) {
     break;
 
   case "guidelines":
-    const untreated = pages.filter((page) => page.url?.includes("guidelines"));
-    leftNavPages = moveToStart(untreated, "overview");
+    leftNavPages = pages.filter((page) => page.url?.includes("guidelines"));
+    leftNavPages = moveToStart(leftNavPages, "overview");
     break;
 
   default:
