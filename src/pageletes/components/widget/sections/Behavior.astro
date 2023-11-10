@@ -1,0 +1,58 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  ColumnLayout,
+  Description,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  StackedLayout,
+  SubHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import BehaviorImage1 from "../imgs/widget-empty-1.svg";
+import BehaviorImage2 from "../imgs/widget-loading-1.svg";
+const behaviorImage1AltText = "Image showing a widget in loading state";
+const behaviorImage2AltText = "Image showing a widget in empty state";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.behavior.id}>{topics.behavior.title}</SectionHeader>
+
+  <Description>
+    The widget component conforms to the following rules.
+  </Description>
+
+  <PageleteSubSection>
+    <SubHeader id="widget-loading-data">Loading Data</SubHeader>
+
+    <Description>
+      Opening a widget may take some time. While data is loading, the widget
+      contains Shimmers in place of the data fields. Add the widget--loading
+      class while the data is being collected, then remove it when finished.
+    </Description>
+
+    <ColumnLayout numOfColumns={1} marginTop={"3rem"} isRounded={false}>
+      <StackedLayout vPadding="0">
+        <Image src={BehaviorImage1.src} alt={behaviorImage1AltText} />
+      </StackedLayout>
+    </ColumnLayout>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="widget-empty">Empty</SubHeader>
+
+    <Description>
+      Occasionally, a widget will return no relevant information or actions.
+      When this happens, the widget will appear and be labeled as empty.
+    </Description>
+
+    <ColumnLayout numOfColumns={1} marginTop={"3rem"} isRounded={false}>
+      <StackedLayout vPadding="0">
+        <Image src={BehaviorImage2.src} alt={behaviorImage2AltText} />
+      </StackedLayout>
+    </ColumnLayout>
+  </PageleteSubSection>
+</PageleteSection>
