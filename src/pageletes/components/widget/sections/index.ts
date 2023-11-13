@@ -21,3 +21,7 @@ export { KeyboardInteractions };
 import Related from "./Related.astro";
 
 export { Related };
+
+import WidgetPlayground from "./WidgetPlayground.astro";
+
+export { WidgetPlayground };

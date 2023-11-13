@@ -1,37 +1,70 @@
-import { Radio, RadioGroup, Widget, Header, Content, Action, Icon } from "@avaya/neo-react";
-import clsx from "clsx";
-import { useMemo, useState, useEffect } from "react";
+import {
+  Button,
+  Checkbox,
+  Icon,
+  IconButton,
+  Radio,
+  RadioGroup,
+  Switch,
+  TextInput,
+  Widget,
+  WidgetAction,
+  WidgetContent,
+  WidgetHeader,
+} from "@avaya/neo-react";
+
+import { useMemo, useState } from "react";
 
 import { Playground } from "components";
+import {
+  prettyPrintReactElementToHtml,
+  prettyPrintReactElementToString,
+} from "helpers";
 
-import "./ToastPlayground.css";
-
-const defaultReact = `<Toast position="top" duration={2000}>This is a toast</Toast>`;
-const sandbox = "https://codesandbox.io/s/neo-react-toast-hdlfn9";
+const sandbox = "https://codesandbox.io/s/neo-react-widget-5qlt65";
 const storybook =
-  "https://neo-react-library-storybook.netlify.app/?path=/story/components-toast--default";
+  "https://neo-react-library-storybook.netlify.app/?path=/docs/components-widget--docs";
 
 type RightSideProps = "empty" | "button" | "iconbutton" | "inputs" | "switch";
 
 export const PlaygroundImplementation = () => {
-  const [withIcon, setWithIcon] = useState<boolean>(true);
+  const [withIcon, setWithIcon] = useState<string>("icon");
 
   const [rightSide, setRightSide] = useState<RightSideProps>("empty");
 
+  const [isDisabled, setIsDisabled] = useState<boolean>(false);
+
   const [element, react, html] = useMemo(() => {
+    const getRightSideAction = (rightSide: RightSideProps) => {
+      switch (rightSide) {
+        case "empty":
+          return "";
+        case "button":
+          return <Button>Button</Button>;
+        case "iconbutton":
+          return <IconButton aria-label="add item" icon="add"></IconButton>;
+        case "inputs":
+          return <TextInput aria-label="widget input" />;
+        case "switch":
+          return <Switch aria-label="switch input"></Switch>;
+        default:
+          return "";
+      }
+    };
 
     const element = (
-      <Widget>
-      <Header>
-        {withIcon && <Icon icon="chat" aria-label="chat" />}
-        <p>Header of widget window</p>
-      </Header>
-      <Content>
-        Adipisicing in consequat incididunt occaecat sit eu
-        <strong>enim ex pariatur</strong>. Ad eiusmod duis incididunt
-        reprehenderit.
-      </Content>
-    </Widget>
+      <Widget disabled={isDisabled}>
+        <WidgetHeader>
+          {withIcon === "icon" && <Icon icon="chat" aria-label="chat" />}
+          <p>Header of widget window</p>
+        </WidgetHeader>
+        <WidgetAction>{getRightSideAction(rightSide)}</WidgetAction>
+        <WidgetContent>
+          Adipisicing in consequat incididunt occaecat sit eu
+          <strong>enim ex pariatur</strong>. Ad eiusmod duis incididunt
+          reprehenderit.
+        </WidgetContent>
+      </Widget>
     );
 
     return [
@@ -39,55 +72,57 @@ export const PlaygroundImplementation = () => {
       prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
     ];
-  }, [withIcon, rightSide]);
+  }, [withIcon, rightSide, isDisabled]);
 
   return (
     <div>
       <Playground
         options={
           <Playground.OptionsContainer>
-            <Playground.OptionsSection title="Variations">
+            <Playground.OptionsSection title="Type">
+              <RadioGroup
+                groupName="type"
+                selected={withIcon}
+                onChange={(e) => setWithIcon(e.target.value)}
+              >
+                <Radio value="icon">With Icon</Radio>
+                <Radio value="no-icon">No Icon</Radio>
+              </RadioGroup>
+            </Playground.OptionsSection>
+            <Playground.OptionsSection title="Right Side">
+              <RadioGroup
+                groupName="actions"
+                selected={rightSide}
+                onChange={(e) => setRightSide(e.target.value as RightSideProps)}
+              >
+                <Radio value="empty">Empty</Radio>
+                <Radio value="button">Button</Radio>
+                <Radio value="iconbutton">Icon Button</Radio>
+                <Radio value="inputs">Inputs</Radio>
+                <Radio value="switch">Switch</Radio>
+              </RadioGroup>
+            </Playground.OptionsSection>
+            <Playground.OptionsSection title="Variables">
               <Checkbox
-                value="icon"
-                checked={icon}
+                value="disabled"
+                checked={isDisabled}
                 onChange={() => {
-                  setIcon(!icon);
+                  setIsDisabled(!isDisabled);
                 }}
               >
-                Icon
+                Disabled
               </Checkbox>
             </Playground.OptionsSection>
           </Playground.OptionsContainer>
         }
         examples={{
-          html: html,
-          react: isDefault ? defaultReact : react,
+          html,
+          react,
           sandbox,
           storybook,
         }}
       >
-        <div className="toast-playground__wrapper">
-          <Button
-            onClick={() => {
-              setReloadToast(!reloadToast);
-              setShowToast(true);
-            }}
-          >
-            Click to Show Toast
-          </Button>
-          {showToast && (
-            <div
-              className={clsx("neo-toast", `toast-playground__position--top`)}
-              role="alert"
-              aria-live="polite"
-            >
-              {icon && <span className="neo-toast__icon neo-icon-info"></span>}
-              <div className="neo-toast__message">
-                {icon ? `This is a toast with an icon` : `This is a toast`}
-              </div>
-            </div>
-          )}
-        </div>
+        {element}
       </Playground>
     </div>
   );
