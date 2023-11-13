@@ -29,28 +29,24 @@ const image2Alt = "Image showing an audio equalizer at different levels.";
   </Description>
 
   <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image1.src} alt={image1Alt} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image2.src} alt={image2Alt} />
-    </ImageWrapper>
-  </ColumnLayout>
-
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
-    <Caption title="Speech">
-      Speech output can communicate information that tones alone cannot, such as
-      conversations. For example, the Spaces dial-in menu when joining a space
-      via telephone.
-    </Caption>
-    <Caption title="Audio Tones">
-      Shorter sounds, such as notification alerts and dial tones, are used most
-      frequently in applications.
-    </Caption>
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image1.src} alt={image1Alt} />
+      </ImageWrapper>
+      <Caption title="Speech">
+        Speech output can communicate information that tones alone cannot, such
+        as conversations. For example, the Spaces dial-in menu when joining a
+        space via telephone.
+      </Caption>
+    </div>
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image2.src} alt={image2Alt} />
+      </ImageWrapper>
+      <Caption title="Audio Tones">
+        Shorter sounds, such as notification alerts and dial tones, are used
+        most frequently in applications.
+      </Caption>
+    </div>
   </ColumnLayout>
 </PageleteSection>
