@@ -1,3 +1,7 @@
 div#guidelines-typography-typescaletable div.neo-table__actions {
   display: none;
 }
+
+div#guidelines-typography-typescaletable .neo-table td:first-child {
+  width: 400px;
+}
