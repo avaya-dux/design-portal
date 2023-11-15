@@ -10,3 +10,9 @@ div#guidelines-typography-typescaletable .neo-table tbody tr {
     border-bottom-color: var(--neo-color-base-800);
   }
 }
+
+/* remove hover effect */
+div#guidelines-typography-typescaletable .neo-table tr:not(.disabled):hover,
+.neo-table tr:not(.disabled):focus-within {
+  background-color: inherit;
+}
