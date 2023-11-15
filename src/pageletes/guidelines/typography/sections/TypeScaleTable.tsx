@@ -110,7 +110,7 @@ export const TypeScaleTable = () => {
         </Select>
       </Form>
 
-      <Table columns={columns} data={data} showPagination={false} />
+      <Table columns={columns} data={data} showPagination={false} readonly />
     </div>
   );
 };
