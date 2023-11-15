@@ -91,7 +91,7 @@ export const TypeScaleTable = () => {
   }, [language]);
 
   return (
-    <div id="guidelines-typography-typescaletable" style={{ minWidth: 800 }}>
+    <div id="guidelines-typography-typescaletable">
       <Form inline>
         <Select
           label="Language"

@@ -1,5 +1,16 @@
+div#guidelines-typography-typescaletable {
+  min-width: 800px;
+}
 div#guidelines-typography-typescaletable .neo-table td:first-child {
   width: 400px;
+}
+@media (max-width: 850px) {
+  div#guidelines-typography-typescaletable {
+    min-width: unset;
+  }
+  div#guidelines-typography-typescaletable .neo-table td:first-child {
+    width: 220px;
+  }
 }
 
 div#guidelines-typography-typescaletable .neo-table tbody tr {
