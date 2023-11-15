@@ -34,7 +34,7 @@ export const LeftNavMobile = ({
       <LeftNav.NavCategory label="Docs">
         {docsPages.map((page, index) => (
           <LeftNav.LinkItem
-            key={`${index}${page.title}`}
+            key={`doc-${index}`}
             href={page.url as string}
           >
             {page.title}
@@ -45,7 +45,7 @@ export const LeftNavMobile = ({
       <LeftNav.NavCategory label="Guidelines">
         {guidelinesPages.map((page, index) => (
           <LeftNav.LinkItem
-            key={`${index}${page.title}`}
+            key={`guidelines-${index}`}
             href={page.url as string}
           >
             {page.title}
@@ -56,7 +56,7 @@ export const LeftNavMobile = ({
       <LeftNav.NavCategory label="Accessibility">
         {accessibilityPages.map((page, index) => (
           <LeftNav.LinkItem
-            key={`${index}${page.title}`}
+            key={`accessibility-${index}`}
             href={page.url as string}
           >
             {page.title}

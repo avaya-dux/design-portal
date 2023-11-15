@@ -18,7 +18,7 @@
   .neo-leftnav__nav
   .neo-leftnav__main
   a {
-  padding: 1rem 2rem 1rem 2.5rem;
+  padding: 1rem 2rem 1rem 1rem;
 }
 
 .left-navigation + .left-navigation-scrim {
