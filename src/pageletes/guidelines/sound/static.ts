@@ -10,7 +10,7 @@ export const topics: TopicsDict<SoundTopicNames> = {
   },
   whenToUse: { order: 1, id: "sound-when-to-use", title: "When To Use" },
   whenNotToUse: {
-    order: 1,
+    order: 2,
     id: "sound-when-not-to-use",
     title: "When Not To Use",
   },
