@@ -30,11 +30,11 @@ export const trapFocus = (
 
   if (event.shiftKey && document.activeElement === firstFocusableItem) {
     event.preventDefault();
-    lastFocusableItem.focus();
+    lastFocusableItem?.focus();
   }
 
   if (!event.shiftKey && document.activeElement === lastFocusableItem) {
     event.preventDefault();
-    firstFocusableItem.focus();
+    firstFocusableItem?.focus();
   }
 };

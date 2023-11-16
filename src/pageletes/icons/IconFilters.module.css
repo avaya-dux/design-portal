@@ -95,7 +95,7 @@
   }
 }
 
-@media (max-width: 799px) {
+@media (max-width: 831px) {
   .icon-filters {
     top: calc(var(--header-height) * 2);
     height: calc(100vh - var(--header-height) * 2);
