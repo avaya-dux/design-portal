@@ -5,12 +5,16 @@ export interface Props {
   isShaded?: boolean;
   marginTop?: string;
   marginBottom?: string;
+  padding?: string;
+  isRounded?: boolean;
 }
 const {
   isShaded = false,
   showBorders = true,
   marginTop = "3rem",
   marginBottom = "1.5rem",
+  padding = "2.5rem 1.5rem",
+  isRounded = true,
 } = Astro.props as Props;
 ---
 
@@ -18,17 +22,18 @@ const {
   class={clsx(
     "image-centered",
     showBorders && "show-borders",
-    isShaded && "image-wrapper--shaded"
+    isShaded && "image-wrapper--shaded",
+    !isRounded && "no-rounded-corners",
   )}
 >
   <slot />
 </div>
 
-<style define:vars={{ marginTop, marginBottom }}>
+<style define:vars={{ marginTop, marginBottom, padding }}>
   .image-centered {
     background-color: var(--neo-color-base-0);
 
-    padding: 8rem 2rem;
+    padding: var(--padding);
     margin-top: var(--marginTop);
     margin-bottom: var(--marginBottom);
 
@@ -36,6 +41,10 @@ const {
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
+  }
+
+  .no-rounded-corners :global(img) {
+    border-radius: initial;
   }
 
   .show-borders {

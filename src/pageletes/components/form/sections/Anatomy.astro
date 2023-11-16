@@ -1,0 +1,76 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  ColumnLayout,
+  Description,
+  InfoList,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import AnatomyImage from "../imgs/form-anatomy.svg";
+const anatomyImgAltText =
+  "Image showing the different parts that make up a Form";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.anatomy.id}>{topics.anatomy.title}</SectionHeader>
+
+  <Description>
+    This example shows a layout that includes labels, text input fields,
+    buttons, and other elements of the form.
+  </Description>
+
+  <ColumnLayout bkgColor="#f1f1f1" numOfColumns={1}>
+    <StackedLayout>
+      <Image src={AnatomyImage.src} alt={anatomyImgAltText} />
+    </StackedLayout>
+  </ColumnLayout>
+
+  <InfoList type="decimal">
+    <InfoListItem label="Section Header">
+      The title of this form. It tells the user what this section is about and
+      the sort of information that may be required.
+    </InfoListItem>
+
+    <InfoListItem label="Required Field">
+      A field label that ends with an asterisk * signifies that this field must
+      be filled in by the user before they can proceed to the next screen.
+    </InfoListItem>
+
+    <InfoListItem label="Error Text Field">
+      When the system detects a problem with the data entered, the border around
+      the field will turn red.
+    </InfoListItem>
+
+    <InfoListItem label="Error Helper Text">
+      When the system detects a problem with the data entered, an error message
+      is placed beneath the field with the problem. The error text should
+      indicate what the problem is and, where possible, how to fix it.
+    </InfoListItem>
+
+    <InfoListItem label="Optional Field">
+      A field label that does not end with an asterisk is optional. The user can
+      leave this field blank if they choose.
+    </InfoListItem>
+
+    <InfoListItem label="Checkbox">
+      A checkbox can be used to allow the user to opt-in to a feature of the
+      program (e.g. subscription, provide feedback, etc.). In this case, it is
+      optional. Checkboxes can also be used to verify that a user has read the
+      legal text, or otherwise understands what is about to happen(e.g. data
+      collection).
+    </InfoListItem>
+
+    <InfoListItem label="Action Buttons">
+      Once all of the required information has been entered into the form, the
+      user can select Submit to pass the information to the system for
+      processing. Cancel will clear the data from the form and return the user
+      to the previous screen.
+    </InfoListItem>
+  </InfoList>
+</PageleteSection>

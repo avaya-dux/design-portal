@@ -1,0 +1,46 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  DoAndDont,
+  PageleteSubSection,
+  SubHeader,
+} from "components";
+
+import doImage1 from "../../imgs/behavior-validation-do-1.svg";
+import dontImage1 from "../../imgs/behavior-validation-dont-1.svg";
+
+const do1Instructions = "Specify errors inline where possible.";
+const doImg1AltText =
+  "An image showing an input field with a validation error just below it.";
+
+const dont1Instructions =
+  "Do not display errors only at the page-level if they can be included inline.";
+const dontImg1AltText =
+  "An image showing an error displayed at the top of the form.";
+---
+
+<PageleteSubSection>
+  <SubHeader id="form-behavior-validation">Validation Feedback</SubHeader>
+
+  <Description>
+    Text input feedback is the response given to users when they enter data that
+    is invalid. Providing clear feedback is important for accessibility, and for
+    a better user experience.
+  </Description>
+
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={do1Instructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage1.src} alt={doImg1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dont1Instructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage1.src} alt={dontImg1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+</PageleteSubSection>

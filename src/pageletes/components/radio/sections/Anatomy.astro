@@ -22,23 +22,31 @@ const img1AltText =
   <SectionHeader id={id}>{title}</SectionHeader>
 
   <Description>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, explicabo
-    adipisci aperiam laboriosam excepturi illo sint iure vero perferendis
-    doloribus reiciendis veniam libero, ratione quia vel quas ex magnam
-    consequatur.
+    Radios are used to select a single option from a list of related options.
+    They should include a label to identify the feature it controls if there is
+    enough space on the screen.
   </Description>
 
   <ImageWrapper>
-    <Image src={image1} alt={img1AltText} />
+    <Image src={image1.src} alt={img1AltText} />
   </ImageWrapper>
 
   <InfoList type="decimal">
-    <InfoListItem label="Radio Group Label">Description</InfoListItem>
+    <InfoListItem label="Radio Group Label (optional)">
+      Identifies the common factor for this group of buttons.
+    </InfoListItem>
 
-    <InfoListItem label="Radio Button">Description</InfoListItem>
+    <InfoListItem label="Radio Label">
+      This is the active element used to select the option. When selected, the
+      radio button appears as a filled circle.
+    </InfoListItem>
 
-    <InfoListItem label="Radio Label">Description</InfoListItem>
+    <InfoListItem label="Radio Button">
+      Shows the function controlled by that button.
+    </InfoListItem>
 
-    <InfoListItem label="Unselected Radio Button">Description</InfoListItem>
+    <InfoListItem label="Unselected Radio Button">
+      The radio button is an empty circle while not selected.
+    </InfoListItem>
   </InfoList>
 </PageleteSection>

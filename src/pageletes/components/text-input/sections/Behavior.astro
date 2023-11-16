@@ -9,10 +9,11 @@ import {
 import { topics } from "../static";
 
 import {
-  AlignmentBehavior,
+  WidthBehavior,
   PasswordInputBehavior,
-  TextAreaBehavior,
-  TextInputBehavior,
+  MultipleLinesBehavior,
+  HelperTextBehavior,
+  PrefixAndSuffix,
 } from "pageletes/components/text-input/sections";
 ---
 
@@ -21,21 +22,27 @@ import {
     {topics.behavior.title}
   </SectionHeader>
 
-  <Description>Behavior Description goes here.</Description>
+  <Description>
+    The text input field can be modified to suit the type of data being entered.
+  </Description>
 
   <PageleteSubSection marginTop="4rem">
-    <TextInputBehavior />
+    <HelperTextBehavior />
   </PageleteSubSection>
 
   <PageleteSubSection>
-    <TextAreaBehavior />
+    <MultipleLinesBehavior />
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <PrefixAndSuffix />
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <WidthBehavior />
   </PageleteSubSection>
 
   <PageleteSubSection>
     <PasswordInputBehavior />
-  </PageleteSubSection>
-
-  <PageleteSubSection>
-    <AlignmentBehavior />
   </PageleteSubSection>
 </PageleteSection>

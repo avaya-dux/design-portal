@@ -1,9 +1,9 @@
 ---
 import { Image } from "@avaya/neo-react";
 import {
-  ColumnLayout,
   Description,
   DoAndDont,
+  ImageWrapper,
   PageleteSection,
   PageleteSubSection,
   SectionHeader,
@@ -12,9 +12,9 @@ import {
 
 import { topics } from "./static";
 
-import doImage from "./button-imgs/do-icon-button1.svg";
-import dontImage from "./button-imgs/dont-icon-button1.svg";
-import iconButtons from "./button-imgs/icon-buttons.png";
+import doImage from "./button-imgs/button-behavior-icon-button-do-1.svg";
+import dontImage from "./button-imgs/button-behavior-icon-button-dont-1.svg";
+import iconButtons from "./button-imgs/button-icon-1.svg";
 
 const doInstructions =
   "Add an icon to a button if it will help the user to understand the attached function.";
@@ -49,13 +49,13 @@ const dontImgAltText =
     <DoAndDont>
       <DoAndDont.DoContainer instructions={doInstructions}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={doImage} alt={doImgAltText} />
+          <Image src={doImage.src} alt={doImgAltText} />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DoContainer>
 
       <DoAndDont.DontContainer instructions={dontInstructions}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={dontImage} alt={dontImgAltText} />
+          <Image src={dontImage.src} alt={dontImgAltText} />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DontContainer>
     </DoAndDont>
@@ -72,11 +72,11 @@ const dontImgAltText =
       expandable menus.
     </Description>
 
-    <ColumnLayout numOfColumns={1} marginTop={"3rem"}>
+    <ImageWrapper marginBottom="0" marginTop="0" padding="0">
       <Image
-        src={iconButtons}
+        src={iconButtons.src}
         alt="image showing different uses for icon buttons"
       />
-    </ColumnLayout>
+    </ImageWrapper>
   </PageleteSubSection>
 </PageleteSection>

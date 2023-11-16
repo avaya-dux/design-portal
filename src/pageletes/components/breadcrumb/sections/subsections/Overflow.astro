@@ -1,0 +1,29 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ImageWrapper,
+  PageleteSubSection,
+  SubHeader,
+} from "components";
+
+import overflowImage from "../../imgs/behavior-overflow.svg";
+
+const overflowImageAltText =
+  "Image showing the ellipsis button which in turn shows all the collapsed page levels in a dropdown.";
+---
+
+<PageleteSubSection>
+  <SubHeader id="breadcrumb-overflow">Overflow</SubHeader>
+
+  <Description>
+    When there is not enough space to display all of the pages in the
+    breadcrumb, collapse intermediate items into a dropdown menu. The First Page
+    and the Current Page should always appear in full where space is available.
+  </Description>
+
+  <ImageWrapper isShaded={true}>
+    <Image src={overflowImage.src} alt={overflowImageAltText} />
+  </ImageWrapper>
+</PageleteSubSection>

@@ -30,13 +30,13 @@ describe("translatePositionToCSSName", () => {
 
   it("should return 'down-left' if passed 'bottom-left'", () => {
     expect(translatePositionToCSSName("bottom-left")).toBe(
-      `${cssName}down-left`
+      `${cssName}down-left`,
     );
   });
 
   it("should return 'down-right' if passed 'bottom-right'", () => {
     expect(translatePositionToCSSName("bottom-right")).toBe(
-      `${cssName}down-right`
+      `${cssName}down-right`,
     );
   });
 
@@ -45,7 +45,7 @@ describe("translatePositionToCSSName", () => {
     vi.spyOn(console, "warn").mockImplementation(() => null);
 
     expect(translatePositionToCSSName("bad" as TooltipPosition)).toBe(
-      `${cssName}up`
+      `${cssName}up`,
     );
   });
 });

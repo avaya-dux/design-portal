@@ -1,0 +1,57 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  ColumnLayout,
+  Description,
+  InfoList,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import StatesImage1 from "../imgs/states-1.svg";
+import StatesImage2 from "../imgs/states-2.svg";
+import StatesImage3 from "../imgs/states-3.svg";
+const statesImgAltText = "Image showing the different states of an breadcrumb";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.states.id}>{topics.states.title}</SectionHeader>
+
+  <Description>
+    The Current Page is displayed differently from the First page and all the
+    Child pages.
+  </Description>
+
+  <ColumnLayout numOfColumns={3} marginTop="3rem" bkgColor="white">
+    <StackedLayout label="Enabled">
+      <Image src={StatesImage1.src} alt={statesImgAltText} />
+    </StackedLayout>
+    <StackedLayout label="Hover">
+      <Image src={StatesImage2.src} alt={statesImgAltText} />
+    </StackedLayout>
+    <StackedLayout label="Current Page">
+      <Image src={StatesImage3.src} alt={statesImgAltText} />
+    </StackedLayout>
+  </ColumnLayout>
+
+  <InfoList type="disc">
+    <InfoListItem label="Enabled">
+      This state shows that the link is available to be selected to move to that
+      page. All linkable pages use this state.
+    </InfoListItem>
+
+    <InfoListItem label="Hover">
+      Moving the focus to a link changes it to the Hover state to show that
+      selecting this link will take you to that page.
+    </InfoListItem>
+
+    <InfoListItem label="Current Page">
+      Displays the name of the page currently displayed. This does not need to
+      be a link since the user is already on this page.
+    </InfoListItem>
+  </InfoList>
+</PageleteSection>

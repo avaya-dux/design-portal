@@ -1,16 +1,18 @@
+import { elementToStaticHtml } from "@avaya/neo-react";
 import toDiffableHtml from "diffable-html";
+
 import type { ReactElement } from "react";
-import * as ReactDOMServer from "react-dom/server";
 import type { Options } from "react-element-to-jsx-string";
 import reactElementToJSXString from "react-element-to-jsx-string";
+import type { PageAstroInstance } from "./types";
 
 export const prettyPrintReactElementToHtml = (element: ReactElement) => {
-  return prettyPrintHtml(ReactDOMServer.renderToStaticMarkup(element));
+  return elementToStaticHtml(element);
 };
 
 export const prettyPrintReactElementToString = (
-  element: ReactElement,
-  options?: Options
+  element: React.ReactElement,
+  options?: Options,
 ) => {
   return reactElementToJSXString(element, options);
 };
@@ -30,4 +32,20 @@ export const prettyPrintHtml = (html: string) => {
  */
 export const prettyPrintReact = (react: string) => {
   return react.trim();
+};
+
+export const moveToStart = (
+  data: Array<PageAstroInstance>,
+  element: string,
+) => {
+  const index = data.findIndex(
+    (value) => value.url && value.url.indexOf(element) > -1,
+  );
+  if (index !== -1) {
+    const ret = data.filter((_, i) => index !== i);
+    ret.unshift(data[index]!);
+    return ret;
+  } else {
+    return data;
+  }
 };

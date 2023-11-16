@@ -9,6 +9,7 @@ export interface Props {
   numOfColumns: 1 | 2 | 3 | 4;
   showGridlines?: boolean;
   showTopBorder?: boolean;
+  showRightBorder?: boolean;
 }
 
 const {
@@ -20,13 +21,15 @@ const {
   numOfColumns = 1,
   showGridlines = true,
   showTopBorder = true,
+  showRightBorder = false,
 } = Astro.props as Props;
 
 const borderPatternClass = clsx(
   "variable-grid-columns",
   showGridlines && `gridlines-enabled grid-borders-${numOfColumns}-columns`,
+  showRightBorder && "right-border",
   !showTopBorder && "no-top-border",
-  isShaded && "column-layout--shaded"
+  isShaded && "column-layout--shaded",
 );
 ---
 
@@ -48,6 +51,10 @@ const borderPatternClass = clsx(
   .gridlines-enabled :global(div) {
     border: 1px solid var(--neo-color-base-200);
     border-right: none;
+  }
+
+  .right-border :global(div:nth-child(n)) {
+    border-right: 1px solid var(--neo-color-base-200);
   }
 
   .grid-borders-1-columns :global(div:nth-child(n + 2)) {

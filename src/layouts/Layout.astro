@@ -11,6 +11,8 @@ import LeftPanel from "./LeftPanel.astro";
 
 import type { PageAstroInstance } from "helpers/types";
 
+import { moveToStart } from "helpers";
+
 import "@avaya/neo-react/avaya-neo-react.css";
 
 const userAgentString = Astro.request.headers.get("user-agent");
@@ -33,6 +35,10 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
 
 let leftNavPages: PageAstroInstance[] = [];
 switch (pathname.split("/")[1]) {
+  case "accessibility":
+    leftNavPages = pages.filter((page) => page.url?.includes("accessibility"));
+    break;
+
   case "components":
     leftNavPages = pages.filter((page) => page.url?.includes("components"));
     break;
@@ -41,12 +47,17 @@ switch (pathname.split("/")[1]) {
     leftNavPages = pages.filter((page) => page.url?.includes("docs"));
     break;
 
+  case "guidelines":
+    leftNavPages = pages.filter((page) => page.url?.includes("guidelines"));
+    leftNavPages = moveToStart(leftNavPages, "overview");
+    break;
+
   default:
     break;
 }
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -141,61 +152,70 @@ switch (pathname.split("/")[1]) {
       .neo-tooltip__content {
         text-align: left;
       }
-    </style>
 
-    <style>
-      body {
-        margin: 0;
+      /* helper class */
+      .hidden {
+        display: none;
       }
 
-      body main {
-        /* plus `1px` for border */
-        --body-main-margin-top: 3rem;
-        --body-main-height: calc(
-          100vh - var(--header-height) - var(--footer-height) -
-            var(--body-main-margin-top) - 1px
-        );
-
-        min-height: var(--body-main-height);
-        max-width: 60rem;
-        padding: 0 1rem 2rem 1rem;
-        margin: auto;
-        margin-top: var(--body-main-margin-top);
-      }
-
-      .main__wrapper {
-        display: flex;
-      }
-
-      @media screen and (max-width: 1279px) {
-        body main {
-          /*
-            `LeftNavigationStyleOverride.css` adds `margin-bottom: 3rem;` at `@media (max-width: 1279px)`
-          */
-          --body-main-height: calc(
-            100vh - var(--header-height) - var(--footer-height) -
-              var(--body-main-margin-top) - 3rem - 1px
-          );
-        }
-      }
-      @media screen and (max-width: 799px) {
-        body main {
-          /*
-            NOTE: the footer and header both expand into a grid format, so we _do_ want the `var`s
-            to remain as they are, thus why we need this "special/tribal knowledge" implementation
-          */
-          --body-main-height: calc(
-            100vh - var(--header-height) - (var(--footer-height) * 3) -
-              (var(--body-main-margin-top) * 2) - 1px
-          );
-        }
-
-        .main__wrapper {
-          display: block;
-          position: relative;
-          overflow-x: hidden;
-        }
+      .image-header {
+        margin-bottom: 0.5rem;
       }
     </style>
   </body>
+
+  <style>
+    body {
+      margin: 0;
+    }
+
+    body main {
+      /* plus `1px` for border */
+      --body-main-margin-top: 3rem;
+      --body-main-height: calc(
+        100vh - var(--header-height) - var(--footer-height) -
+          var(--body-main-margin-top) - 1px
+      );
+
+      min-height: var(--body-main-height);
+      max-width: 60rem;
+      padding: 0 1rem 2rem 1rem;
+      margin: auto;
+      margin-top: var(--body-main-margin-top);
+    }
+
+    .main__wrapper {
+      display: flex;
+    }
+
+    @media screen and (max-width: 1279px) {
+      body main {
+        /*
+            `LeftNavigationStyleOverride.css` adds `margin-bottom: 3rem;` at `@media (max-width: 1279px)`
+          */
+        --body-main-height: calc(
+          100vh - var(--header-height) - var(--footer-height) -
+            var(--body-main-margin-top) - 3rem - 1px
+        );
+      }
+    }
+    @media screen and (max-width: 799px) {
+      body main {
+        /*
+            NOTE: the footer and header both expand into a grid format, so we _do_ want the `var`s
+            to remain as they are, thus why we need this "special/tribal knowledge" implementation
+          */
+        --body-main-height: calc(
+          100vh - var(--header-height) - (var(--footer-height) * 3) -
+            (var(--body-main-margin-top) * 2) - 1px
+        );
+      }
+
+      .main__wrapper {
+        display: block;
+        position: relative;
+        overflow-x: hidden;
+      }
+    }
+  </style>
 </html>

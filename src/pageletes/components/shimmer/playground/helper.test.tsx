@@ -17,7 +17,7 @@ describe("helper functions", () => {
   describe("createReactString", () => {
     it("should have correct output", () => {
       expect(createReactString(true, "rectangle", "md")).toMatchInlineSnapshot(
-        '"<Shimmer loopInfinitely />"'
+        '"<Shimmer loopInfinitely />"',
       );
     });
   });

@@ -1,4 +1,4 @@
-import { createRef, RefObject, useEffect, useState } from "react";
+import { createRef, useEffect, useState } from "react";
 
 import type { PageAstroInstance } from "helpers/types";
 
@@ -13,16 +13,16 @@ type TopNavSearchResultsProps = {
 export const TopNavSearchResults = ({ options }: TopNavSearchResultsProps) => {
   const [indexToFocus, setIndexToFocus] = useState<number | undefined>();
 
-  const [anchorRefs, setAnchorRefs] = useState<RefObject<HTMLAnchorElement>[]>(
-    []
-  );
+  const [anchorRefs, setAnchorRefs] = useState<
+    React.RefObject<HTMLAnchorElement>[]
+  >([]);
 
   useEffect(() => {
     setAnchorRefs((anchorRefs) =>
       Array.from(
         { length: options.length },
-        (_, i) => anchorRefs[i] || createRef()
-      )
+        (_, i) => anchorRefs[i] || createRef(),
+      ),
     );
   }, [options]);
 
@@ -38,7 +38,7 @@ export const TopNavSearchResults = ({ options }: TopNavSearchResultsProps) => {
         event,
         options.length,
         indexToFocus,
-        setIndexToFocus
+        setIndexToFocus,
       );
     };
 

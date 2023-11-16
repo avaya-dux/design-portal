@@ -23,35 +23,45 @@ const img3Alt = "Image showing a table";
 <SubHeader id="table-behavior-sorting">Sorting</SubHeader>
 
 <Description>
-  Sorting allows users to arrange the data in ascending or descending order
-  based on a selected column.
+  Sorting allows users to arrange the data logically, such as alphanumerically
+  or by date, in ascending or descending order, for a selected column.
 </Description>
 
 <ColumnLayout bkgColor="white" numOfColumns={2} marginBottom={"3rem"}>
   <StackedLayout label="Alphabetical Order">
-    <Image src={img1} alt={img1Alt} />
+    <Image src={img1.src} alt={img1Alt} />
   </StackedLayout>
 
   <StackedLayout label="Specified Order">
-    <Image src={img2} alt={img2Alt} />
+    <Image src={img2.src} alt={img2Alt} />
   </StackedLayout>
 </ColumnLayout>
 
 <Description>
-  A column can be sorted in an ascending or descending order. An arrow icon next
-  to the column header lets the user know the defined sorting order.
+  Different sorting options are available depending upon the type of data in the
+  column. The arrow icon next to the column header shows the direction of the
+  sort. Click the clickable column to reverse the order.
 </Description>
 
 <ColumnLayout bkgColor="white" numOfColumns={1}>
   <StackedLayout isShaded vMargin="0rem">
-    <Image src={img3} alt={img3Alt} />
+    <Image src={img3.src} alt={img3Alt} />
   </StackedLayout>
 </ColumnLayout>
 
 <InfoList type="decimal">
-  <InfoListItem label="Clickable Column">Description</InfoListItem>
+  <InfoListItem label="Clickable Column">
+    This is the column to be sorted. Not all columns will be sortable /
+    filterable.
+  </InfoListItem>
 
-  <InfoListItem label="Sortable Visual Icon">Description</InfoListItem>
+  <InfoListItem label="Sortable Visual Icon">
+    The arrow displays the direction of the sort, whether ascending (up arrow)
+    or descending (down arrow). If there is no arrow, the column has not been
+    sorted.
+  </InfoListItem>
 
-  <InfoListItem label="Expand Column Dropdown">Description</InfoListItem>
+  <InfoListItem label="Expand Column Dropdown">
+    This icon provides access to the sort and filter functions for the column.
+  </InfoListItem>
 </InfoList>

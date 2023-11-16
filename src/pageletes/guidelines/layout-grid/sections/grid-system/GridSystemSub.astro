@@ -1,0 +1,38 @@
+---
+import {
+  Description,
+  PageleteSubSection,
+  SubHeader,
+  ImageWrapper,
+} from "components/astro";
+
+import { Image } from "@avaya/neo-react";
+
+import GridColumnImage1 from "../../imgs/layout-grid-column-1.svg";
+const gridColumnImgAltText1 = "Image showing a grid with 16 columns";
+
+import GridColumnImage2 from "../../imgs/layout-grid-column-2.svg";
+const gridColumnImgAltText2 = "Image showing column are compressed";
+---
+
+<PageleteSubSection>
+  <SubHeader id="grid-system-grid-system">Grid System</SubHeader>
+
+  <Description>
+    The Content region of the UI is divided into a 16-column grid. The width of
+    each column will adapt to the size of the window. Other regions, such as
+    side navigation, do not use the 16 column grid.
+  </Description>
+
+  <ImageWrapper marginBottom="3rem">
+    <Image src={GridColumnImage1.src} alt={gridColumnImgAltText1} />
+  </ImageWrapper>
+
+  <Description>
+    Columns are stretched or compressed based upon the width of the region.
+  </Description>
+
+  <ImageWrapper>
+    <Image src={GridColumnImage2.src} alt={gridColumnImgAltText2} />
+  </ImageWrapper>
+</PageleteSubSection>

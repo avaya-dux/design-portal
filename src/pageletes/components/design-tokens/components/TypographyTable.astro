@@ -1,0 +1,252 @@
+---
+import {
+  InfoTable,
+  InfoTableHead,
+  InfoTableCellHead,
+  InfoTableRow,
+} from "components";
+
+export interface Props {
+  title?: string;
+  head1?: string;
+  head2?: string;
+  head3?: string;
+}
+const {
+  title = "",
+  head1 = "head 1",
+  head2 = "head 2",
+  head3 = "head 3",
+} = Astro.props as Props;
+---
+
+<div class="wrapper">
+  <div class="title">{title}</div>
+  <InfoTable>
+    <InfoTableHead>
+      <InfoTableRow>
+        <InfoTableCellHead>{head1}</InfoTableCellHead>
+        <InfoTableCellHead>{head2}</InfoTableCellHead>
+        <InfoTableCellHead>{head3}</InfoTableCellHead>
+      </InfoTableRow>
+    </InfoTableHead>
+    <slot />
+  </InfoTable>
+</div>
+
+<style is:inline>
+  :root {
+    --elevation-border-color-rgb: 0, 0, 0;
+    --elevation-background-color: rgba(0, 0, 0, 0);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root .neo-dynamic {
+      --elevation-border-color-rgb: 255, 255, 255;
+      --elevation-background-color: #ffffff;
+    }
+  }
+  .wrapper {
+    padding: 0;
+  }
+
+  .title {
+    border: 0;
+    color: var(--global-font-color);
+    font-family: noto-sans, sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: -1rem;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td:first-child {
+    vertical-align: middle;
+    width: 480px;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td:nth-child(2) {
+    vertical-align: middle;
+    width: 196px;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td:nth-child(3) {
+    vertical-align: middle;
+    width: 276px;
+  }
+  .wrapper table.neo-table.neo-table--info thead tr th {
+    height: 48px;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr {
+    pointer-events: auto;
+  }
+  .wrapper table.neo-table.neo-table--info tbody tr:hover {
+    background-color: var(--table-row-hover-color);
+    border-bottom: 1px solid var(--table-row-border-hover-active-color);
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td {
+    padding: 0;
+    height: 56px;
+    position: relative;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td h1 {
+    top: -4px;
+    position: absolute;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td span.weight-300 {
+    font-weight: 300;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td span.weight-400 {
+    font-weight: 400;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td span.weight-600 {
+    font-weight: 600;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td span.weight-700 {
+    font-weight: 700;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td span.text-underline {
+    text-decoration: underline;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td span.font-italic {
+    font-style: italic;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td div.square {
+    background-color: var(--global-font-color);
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td div.square-small {
+    width: 8px;
+    height: 8px;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td div.square-regular {
+    width: 16px;
+    height: 16px;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td div.square-large {
+    width: 22px;
+    height: 22px;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td div.square-x-large {
+    width: 28px;
+    height: 28px;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td div.square-white {
+    background-color: var(--global-background);
+    color: var(--global-font-color);
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td div.border-1px {
+    border-width: 1px;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td div.border-2px {
+    border-width: 2px;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td div.border-3px {
+    border-width: 3px;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td div.border-solid {
+    border-style: solid;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td div.border-dotted {
+    border-style: dotted;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td div.border-radius-2px {
+    border-radius: 2px;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td div.border-radius-4px {
+    border-radius: 4px;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td div.border-radius-16px {
+    border-radius: 16px;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td div.border-radius-100 {
+    border-radius: 100%;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td div.interactivity {
+    position: relative;
+    pointer-events: auto;
+    widows: 100%;
+    height: 30px;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td div.interactivity > div {
+    left: 0;
+    position: absolute;
+    cursor: pointer;
+    font-weight: bold;
+    transition-delay: 0s;
+    transition-property: all;
+  }
+
+  .wrapper
+    table.neo-table.neo-table--info
+    tbody
+    tr
+    td
+    div.interactivity:hover
+    > div {
+    left: 100px;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td div.fast > div {
+    transition-duration: 0.15s;
+  }
+  .wrapper table.neo-table.neo-table--info tbody tr td div.medium > div {
+    transition-duration: 0.4s;
+  }
+  .wrapper table.neo-table.neo-table--info tbody tr td div.slow > div {
+    transition-duration: 0.9s;
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td div.ease > div {
+    transition-timing-function: ease;
+  }
+  .wrapper table.neo-table.neo-table--info tbody tr td div.ease-in > div {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.7, 0.2);
+  }
+  .wrapper table.neo-table.neo-table--info tbody tr td div.ease-out > div {
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .wrapper table.neo-table.neo-table--info tbody tr td div.elevation-100 {
+    box-shadow: 0px 4px 4px 0px rgba(var(--elevation-border-color-rgb), 0.25);
+    background-color: var(--elevation-background-color);
+  }
+  .wrapper table.neo-table.neo-table--info tbody tr td div.elevation-200 {
+    box-shadow: 0px 4px 8px 0px rgba(var(--elevation-border-color-rgb), 0.25);
+    background-color: var(--elevation-background-color);
+  }
+  .wrapper table.neo-table.neo-table--info tbody tr td div.elevation-300 {
+    box-shadow: 0px 8px 16px 0px rgba(var(--elevation-border-color-rgb), 0.25);
+    background-color: var(--elevation-background-color);
+  }
+  .wrapper table.neo-table.neo-table--info tbody tr td div.elevation-400 {
+    box-shadow: 0px 16px 32px 0px rgba(var(--elevation-border-color-rgb), 0.25);
+    background-color: var(--elevation-background-color);
+  }
+</style>

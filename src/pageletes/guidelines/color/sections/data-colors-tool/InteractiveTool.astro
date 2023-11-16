@@ -1,0 +1,42 @@
+---
+import { Image } from "@avaya/neo-react";
+import dataType from "./placeholder-images/select.svg";
+import numOfDataPoints from "./placeholder-images/select-1.svg";
+import chartType from "./placeholder-images/select-2.svg";
+
+import visualPlaceholder from "./placeholder-images/Rectangle 2430.svg";
+---
+
+<div class="interactive-tool">
+  <div class="interactive-tool-area">
+    <Image src={dataType.src} alt="placeholder for data type dropdown" />
+    <Image
+      src={numOfDataPoints.src}
+      alt="placeholder for number of data points dropdown"
+    />
+    <Image src={chartType.src} alt="placeholder for chart type dropdown" />
+  </div>
+  <div class="interactive-tool-visual">
+    <Image src={visualPlaceholder.src} alt="placeholder for data visual area" />
+  </div>
+</div>
+
+<style>
+  .interactive-tool {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 112px 82px 40px 82px;
+    background-color: var(--neo-color-base-100);
+  }
+
+  .interactive-tool-visual {
+    margin-top: 40px;
+  }
+
+  .interactive-tool-area {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
+</style>

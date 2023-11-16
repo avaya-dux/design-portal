@@ -6,27 +6,27 @@ import { Description, DoAndDont, SubHeader } from "components";
 import doImg1 from "./imgs/table-behavior-text-do-1.svg";
 import dontImg1 from "./imgs/table-behavior-text-dont-1.svg";
 const doInstructions1 =
-  "When a table row opens a new page or sheet, set the first column to use a link style when there is more information available.";
+  "Set the table's first column to use the Link style when there is more information available.";
 const doImgAltText1 = "Image showing a table with 'Customer Name' as a link";
 const dontInstructions1 =
-  "Do not use the link style for table rows that are not interactive.";
+  "Do not use the link style for table cells that are not interactive.";
 const dontImgAltText1 = "Image showing a table with 'Last Modified' as a link";
 
 import doImg2 from "./imgs/table-behavior-text-do-2.svg";
 import dontImg2 from "./imgs/table-behavior-text-dont-2.svg";
-const doInstructions2 = "Left align textual data.";
+const doInstructions2 = "All text data in cells should be left-aligned.";
 const doImgAltText2 =
   "Image showing a table with all text content left aligned";
-const dontInstructions2 = "Do not right align or center align textual data.";
+const dontInstructions2 = "Do not right-align or center-align text data.";
 const dontImgAltText2 =
   "Image showing a table with all text content right or center aligned";
 
 import doImg3 from "./imgs/table-behavior-text-do-3.svg";
 import dontImg3 from "./imgs/table-behavior-text-dont-3.svg";
-const doInstructions3 = "Right align numerical data.";
+const doInstructions3 = "All numerical data in cells should be right-aligned.";
 const doImgAltText3 =
   "Image showing a table with all text content left aligned and numerical data right aligned";
-const dontInstructions3 = "Do not left or center align numerical data.";
+const dontInstructions3 = "Do not left-align or center-align numerical data.";
 const dontImgAltText3 =
   "Image showing a table with all numerical data left or center aligned";
 ---
@@ -34,19 +34,20 @@ const dontImgAltText3 =
 <SubHeader id="table-behavior-text">Text</SubHeader>
 
 <Description>
-  Text links is used on items that is clickable and opens a new page or a sheet.
+  When clicked, linked items open a new page or sheet with additional
+  information on that record.
 </Description>
 
 <DoAndDont>
   <DoAndDont.DoContainer instructions={doInstructions1}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={doImg1} alt={doImgAltText1} />
+      <Image src={doImg1.src} alt={doImgAltText1} />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DoContainer>
 
   <DoAndDont.DontContainer instructions={dontInstructions1}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={dontImg1} alt={dontImgAltText1} />
+      <Image src={dontImg1.src} alt={dontImgAltText1} />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DontContainer>
 </DoAndDont>
@@ -54,13 +55,13 @@ const dontImgAltText3 =
 <DoAndDont>
   <DoAndDont.DoContainer instructions={doInstructions2}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={doImg2} alt={doImgAltText2} />
+      <Image src={doImg2.src} alt={doImgAltText2} />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DoContainer>
 
   <DoAndDont.DontContainer instructions={dontInstructions2}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={dontImg2} alt={dontImgAltText2} />
+      <Image src={dontImg2.src} alt={dontImgAltText2} />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DontContainer>
 </DoAndDont>
@@ -68,13 +69,13 @@ const dontImgAltText3 =
 <DoAndDont>
   <DoAndDont.DoContainer instructions={doInstructions3}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={doImg3} alt={doImgAltText3} />
+      <Image src={doImg3.src} alt={doImgAltText3} />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DoContainer>
 
   <DoAndDont.DontContainer instructions={dontInstructions3}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={dontImg3} alt={dontImgAltText3} />
+      <Image src={dontImg3.src} alt={dontImgAltText3} />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DontContainer>
 </DoAndDont>

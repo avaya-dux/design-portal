@@ -1,0 +1,45 @@
+---
+import {
+  Description,
+  PageleteSection,
+  SectionHeader,
+  InfoList,
+} from "components/astro";
+
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.points.id}>{topics.points.title}</SectionHeader>
+
+  <Description>
+    Here are a few additional points to keep in mind when designing a UI:
+  </Description>
+
+  <InfoList type="disc">
+    <li>
+      Keep it relevant and to the point. You don't need to talk about what is
+      going on behind the scenes. Just tell them what to do now to keep moving
+      forward. Provide a simple, direct and obvious path to the solution - Tell
+      them what they need to do. Tell them what they are looking at. Tell them
+      what went wrong.
+    </li>
+    <li>
+      You should always Lead, don't Push, Show, don't Assume, Ask, don't Demand.
+    </li>
+    <li>
+      Start with the most important thing at the top. The somewhat important
+      comes next. Lastly are the extra bits, the least important. People won't
+      read it all so make your point at the start.
+    </li>
+    <li>Never be vague or uncertain. “Do this” rather than “Try this.”</li>
+    <li>
+      Never accuse. The error is not their fault. Help them fix it, don't blame
+      them for it.
+    </li>
+    <li>
+      Don't skip steps or jump ahead. YOU may know the procedure but they don't.
+    </li>
+    <li>Have fun with it. If you are enjoying it, so will the reader.</li>
+  </InfoList>
+</PageleteSection>

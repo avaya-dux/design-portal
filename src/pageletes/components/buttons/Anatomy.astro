@@ -5,13 +5,24 @@ import {
   ColumnLayout,
   PageleteSection,
   SectionHeader,
+  StackedLayout,
 } from "components/astro";
 
 import { topics } from "./static";
 
-import AnatomyImage from "./button-imgs/illustration-anatomy.svg";
-const anatomyImgAltText =
-  "Image showing the different parts that make up a button";
+import image1 from "./button-imgs/button-anatomy-1.svg";
+import image2 from "./button-imgs/button-anatomy-2.svg";
+import image3 from "./button-imgs/button-anatomy-3.svg";
+import image4 from "./button-imgs/button-anatomy-4.svg";
+
+const image1Alt =
+  "Image showing the different parts that make up a primary button";
+const image2Alt =
+  "Image showing the different parts that make up a secondary button";
+const image3Alt =
+  "Image showing the different parts that make up a tertiary button";
+const image4Alt =
+  "Image showing the different parts that make up an icon button";
 ---
 
 <PageleteSection>
@@ -23,8 +34,19 @@ const anatomyImgAltText =
     as desired.
   </Description>
 
-  <ColumnLayout bkgColor="white" numOfColumns={1}>
-    <Image src={AnatomyImage} alt={anatomyImgAltText} />
+  <ColumnLayout numOfColumns={2} bkgColor="white">
+    <StackedLayout label="1">
+      <Image src={image1.src} alt={image1Alt} />
+    </StackedLayout>
+    <StackedLayout label="2">
+      <Image src={image2.src} alt={image2Alt} />
+    </StackedLayout>
+    <StackedLayout label="3">
+      <Image src={image3.src} alt={image3Alt} />
+    </StackedLayout>
+    <StackedLayout label="4">
+      <Image src={image4.src} alt={image4Alt} />
+    </StackedLayout>
   </ColumnLayout>
 
   <ColumnLayout numOfColumns={4} marginTop={"1.5rem"}>

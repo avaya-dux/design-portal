@@ -1,5 +1,3 @@
-import type { ReactNode } from "react";
-import { useCallback, useState } from "react";
 import {
   Tab,
   TabLink,
@@ -8,9 +6,12 @@ import {
   TabPanels,
   Tabs,
 } from "@avaya/neo-react";
+import { clsx } from "clsx";
+import { useCallback, useState } from "react";
 
 import { CodeHighlight } from "components/react";
-import { OptionsSection, OptionsContainer } from "./helpers";
+
+import { OptionsContainer, OptionsSection } from "./helpers";
 
 import "./Playground.css";
 
@@ -23,11 +24,12 @@ interface Examples {
   storybook: string;
 }
 export interface PlaygroundProps {
-  children: ReactNode;
+  children: React.ReactNode;
   examples: Examples;
   options: JSX.Element;
   title?: string;
   description?: string;
+  isPadded?: boolean;
 }
 
 /**
@@ -87,13 +89,14 @@ export const Playground = ({
   examples: { html, react, sandbox, storybook },
   options,
   title,
+  isPadded = true,
 }: PlaygroundProps) => {
   const [activePanel, setActivePanel] = useState(0);
   const onTabPanelChange = useCallback(
     (panel: number) => {
       setActivePanel(panel);
     },
-    [setActivePanel]
+    [setActivePanel],
   );
 
   return (
@@ -102,7 +105,14 @@ export const Playground = ({
       {description && <p className="playground-description">{description}</p>}
 
       <div className="playground-examples">
-        <div className="playground-element">{children}</div>
+        <div
+          className={clsx(
+            "playground-element",
+            !isPadded && "playground-element--no-padding",
+          )}
+        >
+          {children}
+        </div>
 
         {options}
 

@@ -1,0 +1,31 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ImageWrapper,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+const { id, title } = topics.specs;
+
+import specsImage from "../imgs/specs.svg";
+const specsImageAltText =
+  "Image showing the height and widths of the different parts that make up a breadcrumb.";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Below are the dimensions and padding for the breadcrumb component. The
+    breadcrumb bar is 52 px high. Leave at least 24 px between the end of the
+    Current Page link and the first button.
+  </Description>
+
+  <ImageWrapper isShaded>
+    <Image src={specsImage.src} alt={specsImageAltText} />
+  </ImageWrapper>
+</PageleteSection>

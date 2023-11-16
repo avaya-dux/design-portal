@@ -1,0 +1,18 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components/astro";
+
+import { MotionWidget } from "../widget";
+
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.examples.id}>{topics.examples.title}</SectionHeader>
+
+  <Description>
+    Easing and duration can be combined to create different types of motion
+    effects. Use the widget below to explore different combinations.
+  </Description>
+
+  <MotionWidget client:load />
+</PageleteSection>

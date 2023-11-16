@@ -1,0 +1,79 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  ColumnLayout,
+  Description,
+  InfoList,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+} from "components/astro";
+
+import { topics } from "../static";
+const { id, title } = topics.anatomy;
+
+import AnatomyImage from "../imgs/sideNav-anatomy-1.svg";
+
+const anatomyImgAltText =
+  "Image showing the different parts that make up a side navigation component.";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Side navigation is a user interface element located on the left or right
+    side of a website or application. It contains a list of links that allow
+    users to move between different sections or pages within the site or app.
+  </Description>
+
+  <ColumnLayout numOfColumns={1} bkgColor="#f1f1f1">
+    <StackedLayout>
+      <Image src={AnatomyImage.src} alt={anatomyImgAltText} />
+    </StackedLayout>
+  </ColumnLayout>
+
+  <InfoList type="decimal">
+    <InfoListItem label="Fully Expanded">
+      The side navigation panel appears within this container when maximized.
+    </InfoListItem>
+
+    <InfoListItem label="Active">
+      The colored bar shows which of the menu groups is selected.
+    </InfoListItem>
+
+    <InfoListItem label="Collapse Chevron">
+      Close this menu group and show only the title (see #7).
+    </InfoListItem>
+
+    <InfoListItem label="Active Dot Indicator">
+      The colored dot shows the current location within the application for the
+      second level of navigation.
+    </InfoListItem>
+
+    <InfoListItem label="Icon">
+      This optional component is used to provide a visual representation of the
+      function of that menu group. All items should have an icon, or none
+      should.
+    </InfoListItem>
+
+    <InfoListItem label="Label">
+      Provide a brief text description of the location linked to the item.
+    </InfoListItem>
+
+    <InfoListItem label="Expand Chevron">
+      Open this menu group and show all the items it contains. (see #3).
+    </InfoListItem>
+
+    <InfoListItem label="Condensed">
+      When the side navigation bar is minimized, it appears as a narrow strip
+      with only the icons showing. Items without icons will not be visible in
+      the condensed sidebar.
+    </InfoListItem>
+
+    <InfoListItem label="Expand/Condense Navigation Bar">
+      Use this icon to maximize and minimize the sidebar.
+    </InfoListItem>
+  </InfoList>
+</PageleteSection>

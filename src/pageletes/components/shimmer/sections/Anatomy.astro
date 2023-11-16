@@ -3,7 +3,7 @@ import { Image } from "@avaya/neo-react";
 import {
   InfoList,
   InfoListItem,
-  ColumnLayout,
+  ImageWrapper,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -12,7 +12,7 @@ import { topics } from "../static";
 
 const { id, title } = topics.anatomy;
 
-import AnatomyImage from "../imgs/shimmer-anatomy.svg";
+import AnatomyImage from "../imgs/shimmer-anatomy-1.svg";
 const anatomyImgAltText =
   "Image showing the different parts that make up a shimmer";
 ---
@@ -21,17 +21,20 @@ const anatomyImgAltText =
   <SectionHeader id={id}>
     {title}
   </SectionHeader>
-  <ColumnLayout bkgColor="white" numOfColumns={1}>
-    <Image src={AnatomyImage} alt={anatomyImgAltText} />
-  </ColumnLayout>
+  <ImageWrapper>
+    <Image src={AnatomyImage.src} alt={anatomyImgAltText} />
+  </ImageWrapper>
 
   <InfoList type="decimal">
     <InfoListItem label="Shape">
-      Represents page elements such as text, tables, avatars, icons, and images.
+      This replaces page elements that are still loading, such as text and text
+      fields, avatars, icons, and images. Use the correct shape for the type of
+      content each represents.
     </InfoListItem>
 
     <InfoListItem label="Animation">
-      This is a moving shaded band that travels from Left to Right.
+      This is a moving shaded band that travels from Left to Right to show that
+      the object is still loading.
     </InfoListItem>
   </InfoList>
 </PageleteSection>

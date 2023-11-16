@@ -8,103 +8,131 @@ import {
   InfoListItem,
   PageleteSection,
   SectionHeader,
-  StackedLayout,
 } from "components/astro";
 import { topics } from "../static";
 
-import TypesDefaultImage from "./imgs/text-input-types-default.svg";
-import TypesLeftIconImage from "./imgs/text-input-types-left-icon.svg";
-import TypesRightIconImage from "./imgs/text-input-types-right-icon.svg";
-import TypesLeftRightIconsImage from "./imgs/text-input-types-left-right-icons.svg";
-import TypesPrefixImage from "./imgs/text-input-types-prefix.svg";
-import TypesSuffixImage from "./imgs/text-input-types-suffix.svg";
-import TypesPrefixSuffixImage from "./imgs/text-input-types-prefix-suffix.svg";
-import TypesLeftIconSuffixImage from "./imgs/text-input-types-left-icon-suffix.svg";
-import TypesReadOnlyImage from "./imgs/text-input-types-readonly.svg";
+import TypesDefaultImage from "./imgs/text-types-1.svg";
+import TypesLeftIconImage from "./imgs/text-types-2.svg";
+import TypesRightIconImage from "./imgs/text-types-3.svg";
+import TypesLeftRightIconsImage from "./imgs/text-types-4.svg";
+import TypesPrefixImage from "./imgs/text-types-5.svg";
+import TypesSuffixImage from "./imgs/text-types-6.svg";
+import TypesPrefixSuffixImage from "./imgs/text-types-7.svg";
+import TypesLeftIconSuffixImage from "./imgs/text-types-8.svg";
+import TypesReadOnlyImage from "./imgs/text-types-9.svg";
+
+import LayoutWrapper from "./subsections/components/LayoutWrapper.astro";
 ---
 
 <PageleteSection>
   <SectionHeader id={topics.types.id}>{topics.types.title}</SectionHeader>
 
-  <Description>Types description</Description>
+  <Description>
+    A wide variety of options exist for the text entry field. These vary
+    according to the type of data to be entered, associated units of measure,
+    and the presence of icons.
+  </Description>
 
   <ColumnLayout bkgColor="white" numOfColumns={3}>
-    <StackedLayout label="Default">
+    <LayoutWrapper label="Default">
       <Image
-        src={TypesDefaultImage}
+        src={TypesDefaultImage.src}
         alt="Text Input with default type look like this"
       />
-    </StackedLayout>
-    <StackedLayout label="Left Icon">
+    </LayoutWrapper>
+    <LayoutWrapper label="Left Icon">
       <Image
-        src={TypesLeftIconImage}
+        src={TypesLeftIconImage.src}
         alt="Text Input with left icon look like this"
       />
-    </StackedLayout>
+    </LayoutWrapper>
 
-    <StackedLayout label="Right Icon">
+    <LayoutWrapper label="Right Icon">
       <Image
-        src={TypesRightIconImage}
+        src={TypesRightIconImage.src}
         alt="Text Input with right icon look like this"
       />
-    </StackedLayout>
+    </LayoutWrapper>
 
-    <StackedLayout label="Left and Right Icons">
+    <LayoutWrapper label="Left and Right Icons">
       <Image
-        src={TypesLeftRightIconsImage}
+        src={TypesLeftRightIconsImage.src}
         alt="Text Input with left and right icons look like this"
       />
-    </StackedLayout>
-    <StackedLayout label="Prefix">
+    </LayoutWrapper>
+    <LayoutWrapper label="Prefix">
       <Image
-        src={TypesPrefixImage}
+        src={TypesPrefixImage.src}
         alt="Text Input with prefix look like this"
       />
-    </StackedLayout>
-    <StackedLayout label="Suffix">
+    </LayoutWrapper>
+    <LayoutWrapper label="Suffix">
       <Image
-        src={TypesSuffixImage}
+        src={TypesSuffixImage.src}
         alt="Text Input with suffix look like this"
       />
-    </StackedLayout>
+    </LayoutWrapper>
 
-    <StackedLayout label="Prefix and Suffix">
+    <LayoutWrapper label="Prefix and Suffix">
       <Image
-        src={TypesPrefixSuffixImage}
+        src={TypesPrefixSuffixImage.src}
         alt="Text Input with prefix and suffix look like this"
       />
-    </StackedLayout>
-    <StackedLayout label="Left Icon and Suffix">
+    </LayoutWrapper>
+    <LayoutWrapper label="Left Icon and Suffix">
       <Image
-        src={TypesLeftIconSuffixImage}
+        src={TypesLeftIconSuffixImage.src}
         alt="Text Input with left icon and suffix look like this"
       />
-    </StackedLayout>
-    <StackedLayout label="Read Only">
+    </LayoutWrapper>
+    <LayoutWrapper label="Read Only">
       <Image
-        src={TypesReadOnlyImage}
+        src={TypesReadOnlyImage.src}
         alt="Text Input with read only type look like this"
       />
-    </StackedLayout>
+    </LayoutWrapper>
   </ColumnLayout>
 
   <InfoList type="disc">
-    <InfoListItem label="Default">Description</InfoListItem>
+    <InfoListItem label="Default">
+      This is the simplest type with no added features.
+    </InfoListItem>
 
-    <InfoListItem label="Left Icon">Description</InfoListItem>
+    <InfoListItem label="Left Icon">
+      An icon can be added to the input field if it helps the user to identify
+      the information required. This icon appears at the left-side of the field.
+    </InfoListItem>
 
-    <InfoListItem label="Right Icon">Description</InfoListItem>
+    <InfoListItem label="Right Icon">
+      An icon can be added to the input field if it helps the user to identify
+      the information required. This icon appears at the right-side of the
+      field.
+    </InfoListItem>
 
-    <InfoListItem label="Left and Right Icons">Description</InfoListItem>
+    <InfoListItem label="Left and Right Icons">
+      Adds icons at both ends of the field.
+    </InfoListItem>
 
-    <InfoListItem label="Prefix">Description</InfoListItem>
+    <InfoListItem label="Prefix">
+      The prefix to the field is often added to show the units of measure for
+      the data, or for other prepended information.
+    </InfoListItem>
 
-    <InfoListItem label="Suffix">Description</InfoListItem>
+    <InfoListItem label="Suffix">
+      The suffix to the field appends other fixed information to the field, such
+      as a domain or unit of measure (e.g. seconds).
+    </InfoListItem>
 
-    <InfoListItem label="Prefix and Suffix">Description</InfoListItem>
+    <InfoListItem label="Prefix and Suffix">
+      Both a prefix and a suffix can be added to the input field as appropriate.
+    </InfoListItem>
 
-    <InfoListItem label="Left Icon and Suffix">Description</InfoListItem>
+    <InfoListItem label="Left Icon and Suffix">
+      Both a left icon and a suffix can be added to the input field.
+    </InfoListItem>
 
-    <InfoListItem label="Read Only">Description</InfoListItem>
+    <InfoListItem label="Read Only">
+      This field is for display purposes only and the data cannot be changed.
+    </InfoListItem>
   </InfoList>
 </PageleteSection>

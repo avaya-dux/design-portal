@@ -1,0 +1,173 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  DoAndDont,
+  ImageWrapper,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  SubHeader,
+} from "components";
+
+import { topics } from "../static";
+
+const { id, title } = topics.behavior;
+
+import spacingDoImage1 from "../imgs/tabs-behavior-spacing-do-1.svg";
+import spacingDontImage1 from "../imgs/tabs-behavior-spacing-dont-1.svg";
+
+import labelsDoImage1 from "../imgs/tabs-behavior-labels-do-1.svg";
+import labelsDontImage1 from "../imgs/tabs-behavior-labels-dont-1.svg";
+import labelsDoImage2 from "../imgs/tabs-behavior-labels-do-2.svg";
+import labelsDontImage2 from "../imgs/tabs-behavior-labels-dont-2.svg";
+
+import iconDoImage1 from "../imgs/tabs-behavior-icons-do-1.svg";
+import iconDontImage1 from "../imgs/tabs-behavior-icons-dont-1.svg";
+
+import carouselImage1 from "../imgs/tabs-behavior-carousel-1.svg";
+
+const spacingDo1Instructions =
+  "Tabs are connected together without any padding in-between.";
+const spacingDont1Instructions = "Do not add any padding in between each tab.";
+const spacingDoImg1AltText =
+  "An image shows three tabs are connected together without any padding in-between.";
+const spacingDontImg1AltText =
+  "An image shows padding added in between each tab.";
+
+const labelsDo1Instructions =
+  "Use tabs to categorize items with an equal level of importance.";
+const labelsDont1Instructions =
+  "Do not wrap text to a second line in horizontal tabs. Shorten the label instead.";
+const labelsDoImg1AltText =
+  "An image shows tabs are used to categorize items with an equal level of importance.";
+const labelsDontImg1AltText =
+  "An image shows text wrapped to a second line in horizontal tabs. Shorten the label instead.";
+
+const labelsDo2Instructions =
+  "Wrap text onto a second line in vertical tabs to make the width manageable.";
+const labelsDont2Instructions =
+  "Do not truncate text. Shorten the label instead.";
+const labelsDoImg2AltText =
+  "An image shows text wrapped onto a second line in vertical tabs to make the width manageable.";
+const labelsDontImg2AltText =
+  "An image shows text gets truncated. Shorten the label instead.";
+
+const iconDo1Instructions =
+  "Use icons where there is value, and where there is a strong association with the label.";
+const iconDont1Instructions =
+  "Do not add icons on only some tabs within a group. Do not add them only for decoration.";
+const iconDoImg1AltText =
+  "Image shows using icons where there is value, and where there is a strong association with the label.";
+const iconDontImg1AltText =
+  "Image shows only one tab has an icon. Do not add them only for decoration.";
+
+const carouselImage1AltText = "Image shows tabs with carousel.";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>Tabs conform to the following rules.</Description>
+
+  <PageleteSubSection>
+    <SubHeader id="tabs-behavior-spacing">Spacing</SubHeader>
+
+    <Description>
+      Each horizontal tab will expand in width to fit the text label. The text
+      is center-justified within the tab. Vertical tabs are all the same height
+      with the text left justified.
+    </Description>
+    <DoAndDont>
+      <DoAndDont.DoContainer instructions={spacingDo1Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={spacingDoImage1.src} alt={spacingDoImg1AltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
+
+      <DoAndDont.DontContainer instructions={spacingDont1Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={spacingDontImage1.src} alt={spacingDontImg1AltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DontContainer>
+    </DoAndDont>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="tabs-behavior-labels">Labels</SubHeader>
+
+    <Description>
+      Labels describe the function of the options under each tab. They should be
+      descriptive but short so the tab doesn’t get too big.
+    </Description>
+
+    <DoAndDont>
+      <DoAndDont.DoContainer instructions={labelsDo1Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={labelsDoImage1.src} alt={labelsDoImg1AltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
+
+      <DoAndDont.DontContainer instructions={labelsDont1Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={labelsDontImage1.src} alt={labelsDontImg1AltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DontContainer>
+    </DoAndDont>
+
+    <DoAndDont>
+      <DoAndDont.DoContainer instructions={labelsDo2Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={labelsDoImage2.src} alt={labelsDoImg2AltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
+
+      <DoAndDont.DontContainer instructions={labelsDont2Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={labelsDontImage2.src} alt={labelsDontImg2AltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DontContainer>
+    </DoAndDont>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="tabs-behavior-icons">Icons</SubHeader>
+
+    <Description>
+      Add icons to help the user easily determine the function of each tab. They
+      should never be used purely for decoration, but must provide a
+      recognizable and understandable representation of what the tab does. Icons
+      are optional.
+    </Description>
+    <DoAndDont>
+      <DoAndDont.DoContainer instructions={iconDo1Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={iconDoImage1.src} alt={iconDoImg1AltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
+
+      <DoAndDont.DontContainer instructions={iconDont1Instructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={iconDontImage1.src} alt={iconDontImg1AltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DontContainer>
+    </DoAndDont>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="tabs-behavior-carousel">Carousel</SubHeader>
+
+    <Description>
+      A list of tabs that is too long to fit within the panel is scrollable
+      using the Carousel component. This applies to both vertical and horizontal
+      tab bars. Clicking the arrows rotates the hidden tabs into view.
+    </Description>
+
+    <ImageWrapper padding="0">
+      <Image src={carouselImage1.src} alt={carouselImage1AltText} />
+    </ImageWrapper>
+  </PageleteSubSection>
+</PageleteSection>

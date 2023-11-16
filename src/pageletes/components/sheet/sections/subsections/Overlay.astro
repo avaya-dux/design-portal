@@ -1,0 +1,44 @@
+---
+import { Description, PageleteSubSection, SubHeader } from "components/astro";
+
+import { DoAndDont } from "components/react";
+
+import { Image } from "@avaya/neo-react";
+
+import doImage1 from "../../imgs/sheet-behavior-overlay-do-1.svg";
+import dontImage1 from "../../imgs/sheet-behavior-overlay-dont-1.svg";
+
+const do1Instructions =
+  "You can have 2 sheets open at one time, the second sheet must partially overlay the first sheet.";
+const doImg1AltText =
+  "An image showing a sheet layered on top of another one so the one in the bottom is still visible.";
+
+const dont1Instructions =
+  "Do not show the second sheet overlay as a singular sheet. Do not completely cover the previous sheet.";
+const dontImg1AltText =
+  "An image showing a sheet overlayed on top of another but completely covering the one in the bottom.";
+---
+
+<PageleteSubSection>
+  <SubHeader id="sheet-behavior-overlay">Overlay</SubHeader>
+
+  <Description>
+    The sheet component can be layered with other sheets. This can be used where
+    secondary forms or steps are required to complete an action on the first
+    sheet.
+  </Description>
+
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={do1Instructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage1.src} alt={doImg1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dont1Instructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage1.src} alt={dontImg1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+</PageleteSubSection>

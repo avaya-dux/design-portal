@@ -11,24 +11,26 @@ import WidthDontImage1 from "./width-dont-1.svg";
 import WidthDoImage2 from "./width-do-2.svg";
 import WidthDontImage2 from "./width-dont-2.svg";
 
-import TypesDoImage from "./types-do-1.svg";
-import TypesDontImage from "./types-dont-1.svg";
-
 import StatesDefaultImage from "./states-default.svg";
 import StatesHoverImage from "./states-hover.svg";
 import StatesDisabledImage from "./states-disabled.svg";
-import StatesSelectedImage from "./states-default.svg";
+import StatesSelectedImage from "./states-selected.svg";
 
 import AnatomyImage from "./anatomy-1.svg";
 
-import TypesImage from "./types-1.svg";
+import TypesDefaultImage from "./types-default.svg";
+import TypesSelectedImage from "./types-selected.svg";
+import TypesCheckboxImage from "./types-checkbox.svg";
+import TypesGroupImage from "./types-group.svg";
 
-import BehaviorDoImage1 from "./behavior-icons-do-1.svg";
-import BehaviorDontImage1 from "./behavior-icons-dont-1.svg";
-import BehaviorDoImage2 from "./behavior-do-2.svg";
-import BehaviorDontImage2 from "./behavior-dont-2.svg";
-import BehaviorDoImage3 from "./behavior-do-3.svg";
-import BehaviorDontImage3 from "./behavior-dont-3.svg";
+import IconsDoImage1 from "./behavior-icons-do-1.svg";
+import IconsDontImage1 from "./behavior-icons-dont-1.svg";
+import GroupingDoImage1 from "./grouping-do-1.svg";
+import GroupingDontImage1 from "./grouping-dont-1.svg";
+import GroupingDoImage2 from "./grouping-do-2.svg";
+import GroupingDontImage2 from "./grouping-dont-2.svg";
+import ScrollingDoImage from "./scrolling-do-1.svg";
+import ScrollingDontImage from "./scrolling-dont-1.svg";
 
 import SpecsImage1 from "./specs-1.svg";
 import SpecsImage2 from "./specs-2.svg";
@@ -42,20 +44,23 @@ export {
   WidthDontImage1,
   WidthDoImage2,
   WidthDontImage2,
-  TypesDoImage,
-  TypesDontImage,
   StatesDefaultImage,
   StatesHoverImage,
   StatesDisabledImage,
   StatesSelectedImage,
   AnatomyImage,
-  TypesImage,
-  BehaviorDoImage1,
-  BehaviorDontImage1,
-  BehaviorDoImage2,
-  BehaviorDontImage2,
-  BehaviorDoImage3,
-  BehaviorDontImage3,
+  TypesCheckboxImage,
+  TypesDefaultImage,
+  TypesGroupImage,
+  TypesSelectedImage,
+  IconsDoImage1,
+  IconsDontImage1,
+  GroupingDoImage1,
+  GroupingDontImage1,
+  GroupingDoImage2,
+  GroupingDontImage2,
+  ScrollingDoImage,
+  ScrollingDontImage,
   SpecsImage1,
   SpecsImage2,
 };

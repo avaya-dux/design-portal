@@ -1,4 +1,6 @@
 ---
+import { Image } from "@avaya/neo-react";
+
 import {
   ColumnLayout,
   Description,
@@ -9,12 +11,11 @@ import {
 
 import { topics } from "../static";
 
-import image1 from "./imgs/specs-1.svg";
+import image1 from "./imgs/select-specs-1.svg";
 const img1AltText =
   "Image showing spacing around the radio button, 16px on the left and top, and 8px between the radio button and the label";
 
-import image2 from "./imgs/specs-2.svg";
-import { Image } from "@avaya/neo-react";
+import image2 from "./imgs/select-specs-2.svg";
 const img2AltText =
   "Image showing the vertical margin between the radio buttons in a vertically aligned group, 8px";
 
@@ -25,17 +26,18 @@ const { id, title } = topics.specs;
   <SectionHeader id={id}>{title}</SectionHeader>
 
   <Description>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+    There are 2 sizes of the select component. Choose the one that is the best
+    fit for the amount of space available to display it. The 2 sizes differ in
+    the total height of the field.
   </Description>
 
   <ColumnLayout bkgColor="white" numOfColumns={2}>
-    <StackedLayout label="Default">
-      <Image height="120px" src={image1} alt={img1AltText} />
+    <StackedLayout label="Medium">
+      <Image height="120px" src={image1.src} alt={img1AltText} />
     </StackedLayout>
 
     <StackedLayout label="Small">
-      <Image src={image2} alt={img2AltText} />
+      <Image src={image2.src} alt={img2AltText} />
     </StackedLayout>
   </ColumnLayout>
 </PageleteSection>

@@ -1,0 +1,126 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Caption,
+  Description,
+  ColumnLayout,
+  ImageWrapper,
+  PageleteSection,
+  PageTitle,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import image1 from "../imgs/overview-1.svg";
+import image2 from "../imgs/overview-2.svg";
+import image3 from "../imgs/overview-3.svg";
+import image4 from "../imgs/overview-4.svg";
+import image5 from "../imgs/overview-5.svg";
+import image6 from "../imgs/overview-6.svg";
+
+const image1Alt = "Image showing a three concentric circles.";
+const image2Alt =
+  "Image showing a heart with a line through it, with two circles on each end.";
+const image3Alt =
+  "Image showing an arrow piercing the innermost of two concentric circles.";
+const image4Alt =
+  "Image showing two adjacent boxes, the left with an 'x' mark inside, and the right with a checkmark inside.";
+const image5Alt = "Image showing crosshairs centered on a circle.";
+const image6Alt =
+  "Image showing a circle, a square, a triangle and a pentagon arranged equidistantly around a circle.";
+---
+
+<PageleteSection>
+  <PageTitle>{topics.overview.title}</PageTitle>
+
+  <Description>
+    Avaya builds user-centric experiences. Our foundation is a collective
+    approach to creating engaging, functional and reliable experiences through
+    innovation, design and technology. We focus on understanding our users’
+    workflows, needs and goals to create products that are easy to use,
+    exceeding user expectations across all platforms. The Avaya Design Strategy
+    is based on six foundational building blocks: Simple, Engaging, Effective,
+    Usable, Aligned and Inclusive.
+  </Description>
+
+  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image1.src} alt={image1Alt} />
+      </ImageWrapper>
+      <Caption title="Simple">
+        Natural, familiar, and discoverable. Dynamically and contextually
+        aligned to user needs.
+      </Caption>
+    </div>
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image2.src} alt={image2Alt} />
+      </ImageWrapper>
+      <Caption title="Engaging">
+        Creating emotional connections through thoughtful design of customer
+        interaction across products.
+      </Caption>
+    </div>
+
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image3.src} alt={image3Alt} />
+      </ImageWrapper>
+      <Caption title="Effective">
+        Trusted and reliable to facilitate teamwork, effective customer
+        interactions and meaningful outcomes.
+      </Caption>
+    </div>
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image4.src} alt={image4Alt} />
+      </ImageWrapper>
+      <Caption title="Usable">
+        Driven by user needs, consistent design standards, and usability testing
+        - not by opinions.
+      </Caption>
+    </div>
+
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image5.src} alt={image5Alt} />
+      </ImageWrapper>
+      <Caption title="Aligned">
+        Targeted to product strategy, user profiles and platform conventions.
+      </Caption>
+    </div>
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image6.src} alt={image6Alt} />
+      </ImageWrapper>
+      <Caption title="Inclusive">
+        Empathetic by design – accessible, demographic, cultural, situational.
+      </Caption>
+    </div>
+  </ColumnLayout>
+</PageleteSection>

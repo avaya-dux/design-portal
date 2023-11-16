@@ -1,0 +1,38 @@
+---
+import { Image } from "@avaya/neo-react";
+import { Description, SubHeader, ImageWrapper } from "components";
+import { topics } from "../../static";
+
+const { id } = topics.behavior;
+
+import DismissalImage1 from "../../imgs/modal-behavior-dismissal-1.svg";
+const dismissalImageAltText = "An image of a modal with action buttons";
+
+import DismissalImage2 from "../../imgs/modal-behavior-dismissal-2.svg";
+const dismissalImage2AltText =
+  "An image of a modal with a close button in the top-right corner";
+---
+
+<SubHeader id={`${id}-dismissal`}>Dismissal</SubHeader>
+
+<Description>
+  Non-dismissible modals do not allow the user to close the modal without
+  explicitly selecting one of the action buttons in the footer. Clicking on the
+  background does nothing. They should also provide clear and actionable
+  feedback to the user, such as displaying a success or error message when an
+  action is completed.
+</Description>
+
+<ImageWrapper padding="0" isRounded={false}>
+  <Image src={DismissalImage1.src} alt={dismissalImageAltText} />
+</ImageWrapper>
+
+<Description>
+  A modal can also be set to Dismissible. A dismissible modal allows the user to
+  close the modal by clicking anywhere outside the modal in addition to using
+  the close icon.
+</Description>
+
+<ImageWrapper padding="0" isRounded={false}>
+  <Image src={DismissalImage2.src} alt={dismissalImage2AltText} />
+</ImageWrapper>

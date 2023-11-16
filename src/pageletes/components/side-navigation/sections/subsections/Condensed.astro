@@ -1,0 +1,77 @@
+---
+import {
+  ColumnLayout,
+  Description,
+  PageleteSubSection,
+  StackedLayout,
+  SubHeader,
+} from "components/astro";
+
+import { DoAndDont } from "components/react";
+
+import { Image } from "@avaya/neo-react";
+
+import condensedImage1 from "../../imgs/sideNav-behavior-condensed-1.svg";
+import condensedImage2 from "../../imgs/sideNav-behavior-condensed-2.svg";
+
+import doImage1 from "../../imgs/sideNav-behavior-condensed-do-1.svg";
+import dontImage1 from "../../imgs/sideNav-behavior-condensed-dont-1.svg";
+
+const do1Instructions =
+  "Provide a condensed navigation option within applications that use icons.";
+const doImg1AltText =
+  "An image showing a condensed side navigation with icons on all top level items.";
+
+const dont1Instructions =
+  "Do not use condensed side navigation when only text is used.";
+const dontImg1AltText =
+  "An image showing a condensed side navigation where none of the top level items have icons.";
+---
+
+<PageleteSubSection>
+  <SubHeader id="sidenav-behavior-condensed">Condensed</SubHeader>
+
+  <Description>
+    A condensed side navigation, also known as a compact sidebar, is a user
+    interface element that takes up less space when compared to the normal view.
+    A condensed side navigation displays only the icons to reduce the width of
+    the sidebar. Items without icons will not appear in a condensed sidebar.
+  </Description>
+
+  <ColumnLayout bkgColor="#f1f1f1" numOfColumns={1} marginBottom="3rem">
+    <StackedLayout vPadding="0">
+      <Image
+        src={condensedImage1.src}
+        alt="Image showing side navigation with icons in top level items only."
+      />
+    </StackedLayout>
+  </ColumnLayout>
+
+  <Description>
+    In smaller screens, the side navigation can be expanded and appears in front
+    of the main page content.
+  </Description>
+
+  <ColumnLayout bkgColor="#f1f1f1" numOfColumns={1}>
+    <StackedLayout vPadding="0">
+      <Image
+        src={condensedImage2.src}
+        alt="Image showing side navigation without icons."
+      />
+    </StackedLayout>
+  </ColumnLayout>
+
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={do1Instructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage1.src} alt={doImg1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dont1Instructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage1.src} alt={dontImg1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+</PageleteSubSection>

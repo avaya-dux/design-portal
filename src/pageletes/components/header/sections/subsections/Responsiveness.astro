@@ -1,0 +1,74 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  DoAndDont,
+  ImageWrapper,
+  PageleteSubSection,
+  SubHeader,
+} from "components";
+
+import responsivenessImage1 from "../../imgs/header-behavior-responsiveness-1.svg";
+import responsivenessImage2 from "../../imgs/header-behavior-responsiveness-2.svg";
+import doImage from "../../imgs/header-behavior-responsiveness-do-1.svg";
+import dontImage from "../../imgs/header-behavior-responsiveness-dont-1.svg";
+
+const responsivenessImage1AltText =
+  "Image showing the seach field placed to the left of the utility items and the avatar.";
+const responsivenessImage2AltText =
+  "Image showing the seach field placed to the left of the utility items and the avatar.";
+
+const doInstructions =
+  "Use the responsive menu button to access the side navigation pane on smaller screen sizes.";
+const dontInstructions =
+  "Do not use a custom action to access the side navigation bar.";
+const doImgAltText =
+  "An image showing a hamburger menu button in the left side of the header.";
+const dontImgAltText =
+  "An image showing an embedded navigation menu inside the header.";
+---
+
+<PageleteSubSection>
+  <SubHeader id="header-responsiveness">Responsiveness</SubHeader>
+
+  <Description>
+    Items on the header wil be condensed on smaller browser sizes. Action items
+    and controls will be combined under an ellipsis menu (...). Tabs are
+    collapsed under a dropdown menu. The search icon will be reduced to a
+    magnifying icon until selected.
+  </Description>
+
+  <ImageWrapper isShaded marginBottom="3rem">
+    <Image src={responsivenessImage1.src} alt={responsivenessImage1AltText} />
+  </ImageWrapper>
+
+  <Description>
+    A header that includes a collapsible side navigation can be accessed by
+    clicking the hamburger menu to the left of the company logo. Clicking on the
+    hamburger menu opens the side navigation pane.
+  </Description>
+
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={doInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage.src} alt={doImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dontInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage.src} alt={dontImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+
+  <Description>
+    The search feature collapses into a magnifier icon. When selected, the
+    search bar returns to full size and overlays the header.
+  </Description>
+
+  <ImageWrapper isShaded>
+    <Image src={responsivenessImage2.src} alt={responsivenessImage2AltText} />
+  </ImageWrapper>
+</PageleteSubSection>

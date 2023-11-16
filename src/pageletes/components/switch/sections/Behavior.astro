@@ -27,12 +27,12 @@ const do1Instructions = "Use a switch for turning features on and off.";
 const doImg1AltText = "A toggled switch with the label 'Mute Audio'";
 
 const dont1Instructions =
-  "Do not use a switch for selecting items. Use the checkbox instead.";
+  "Do not use a switch for selecting items. Use the <a class='neo-link--inline' href='/components/checkbox'>Checkbox</a> instead.";
 const dontImg1AltText =
   "A toggled switch with the label 'I agree to the terms and conditions'";
 
 const do2Instructions =
-  "For a group of related switches, add a category label to connect them together.";
+  "Add a category label to a group of related switches to connect them together.";
 const doImg2AltText =
   "A group of related switches connected by the label 'Meeting defaults'";
 
@@ -52,30 +52,32 @@ const labelImage2AltText =
   </SectionHeader>
 
   <Description>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+    Switches are used to visually convey the state of a function and allow the
+    user to change the state of that function. This will change the way the
+    program operates, such as turning on dark mode or disabling notifications.
   </Description>
 
   <PageleteSubSection>
     <SubHeader id="switch-when-to-use">When To Use</SubHeader>
 
     <Description>
-      If you need to represent the switching between two states or on-off state.
-      The difference between Switch and Checkbox is that Switch will trigger a
-      state change directly when you toggle it, while Checkbox is generally used
-      for state marking, which should work in conjunction with submit operation.
+      Use a switch to toggle a function between two opposing states (e.g.
+      on/off). The difference between a Switch and a Checkbox is that a Switch
+      will trigger the change immediately when toggled. A Checkbox is part of a
+      two-step process where the operator sets the checkbox state, then selects
+      a submit function before the item becomes active.
     </Description>
 
     <DoAndDont>
       <DoAndDont.DoContainer instructions={do1Instructions}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={doImage1} alt={doImg1AltText} />
+          <Image src={doImage1.src} alt={doImg1AltText} />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DoContainer>
 
       <DoAndDont.DontContainer instructions={dont1Instructions}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={dontImage1} alt={dontImg1AltText} />
+          <Image src={dontImage1.src} alt={dontImg1AltText} />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DontContainer>
     </DoAndDont>
@@ -83,13 +85,13 @@ const labelImage2AltText =
     <DoAndDont>
       <DoAndDont.DoContainer instructions={do2Instructions}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={doImage2} alt={doImg2AltText} />
+          <Image src={doImage2.src} alt={doImg2AltText} />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DoContainer>
 
       <DoAndDont.DontContainer instructions={dont2Instructions}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={dontImage2} alt={dontImg2AltText} />
+          <Image src={dontImage2.src} alt={dontImg2AltText} />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DontContainer>
     </DoAndDont>
@@ -99,18 +101,17 @@ const labelImage2AltText =
     <SubHeader id="switch-label-location">Label Location</SubHeader>
 
     <Description>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam.
+      The switch should have a label that describes the function it controls.
+      The label can appear to the left or to the right of the track.
     </Description>
 
     <ColumnLayout bkgColor="white" numOfColumns={2}>
-      <StackedLayout label="Label on the right">
-        <Image src={labelImage1} alt={labelImage1AltText} />
+      <StackedLayout label="Right Label">
+        <Image src={labelImage1.src} alt={labelImage1AltText} />
       </StackedLayout>
 
-      <StackedLayout label="Label on the left">
-        <Image src={labelImage2} alt={labelImage2AltText} />
+      <StackedLayout label="left Label">
+        <Image src={labelImage2.src} alt={labelImage2AltText} />
       </StackedLayout>
     </ColumnLayout>
   </PageleteSubSection>

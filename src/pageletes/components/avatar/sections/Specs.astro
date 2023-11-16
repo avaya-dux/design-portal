@@ -1,0 +1,50 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  ColumnLayout,
+  Description,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+} from "components/astro";
+import { topics } from "../static";
+
+const { id, title } = topics.specs;
+
+import smallImage from "../imgs/avatar-specs-1.svg";
+import mediumImage from "../imgs/avatar-specs-2.svg";
+import largeImage from "../imgs/avatar-specs-3.svg";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    Avatars come in three sizes. Use the largest size that fits within the space
+    allowed by the application and location. Be consistent. Do not mix-and-match
+    different sizes on a single list or interaction.
+  </Description>
+
+  <ColumnLayout numOfColumns={3} bkgColor="white">
+    <StackedLayout>
+      <Image
+        src={smallImage.src}
+        alt="Image showing a small avatar dimensions"
+      />
+    </StackedLayout>
+    <StackedLayout>
+      <Image
+        src={mediumImage.src}
+        alt="Image showing a medium avatar dimensions"
+      />
+    </StackedLayout>
+    <StackedLayout>
+      <Image
+        src={largeImage.src}
+        alt="Image showing a large avatar dimensions"
+      />
+    </StackedLayout>
+  </ColumnLayout>
+</PageleteSection>

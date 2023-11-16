@@ -14,13 +14,13 @@ import {
 
 import { topics } from "../static";
 
-import StandaloneStateDefault from "../imgs/link-standalone-state-1.svg";
-import StandaloneStateHover from "../imgs/link-standalone-state-2.svg";
-import StandaloneStateDisabled from "../imgs/link-standalone-state-3.svg";
+import StandaloneStateDefault from "../imgs/link-type-standalone-1.svg";
+import StandaloneStateHover from "../imgs/link-type-standalone-2.svg";
+import StandaloneStateDisabled from "../imgs/link-type-standalone-3.svg";
 
-import InlineLinkStateDefault from "../imgs/link-inline-1.svg";
-import InlineLinkStateHover from "../imgs/link-inline-2.svg";
-import InlineLinkStateDisabled from "../imgs/link-inline-3.svg";
+import InlineLinkStateDefault from "../imgs/link-type-inline-1.svg";
+import InlineLinkStateHover from "../imgs/link-type-inline-2.svg";
+import InlineLinkStateDisabled from "../imgs/link-type-inline-3.svg";
 
 const { id, title } = topics.type;
 ---
@@ -29,50 +29,55 @@ const { id, title } = topics.type;
   <SectionHeader id={id}>
     {title}
   </SectionHeader>
-  <Description>Lorem ipsum</Description>
+  <Description>
+    There are 2 link type that can be used in your applications.
+  </Description>
   <PageleteSubSection>
     <SubHeader id="type-standalone">Standalone</SubHeader>
     <Description>
-      A Standalone Link can appear anywhere on the page that is not embedded
-      into text (in a sentence or paragraph). It exists independently, such as
-      in a table of contents, a list, or a directory.
+      Standalone Links are not embedded into the page’s text (e.g. in a sentence
+      or a paragraph). They are used on their own, such as in a table of
+      contents, a list, or a directory.
     </Description>
     <Description>
-      Standalone links are not underlined as that can make them difficult to
-      read when grouped together into tables of contents or lists, etc. Icons
-      cannot be attached to a Standalone link.
+      Standalone links are never underlined since that would make them difficult
+      to read when grouped with other standalone links. Icons may be attached to
+      Standalone links if it would help the user understand the link’s function.
     </Description>
 
     <ColumnLayout bkgColor="white" numOfColumns={3}>
       <StackedLayout label="Default" vPadding="2.8rem" gap="2.8rem">
-        <Image src={StandaloneStateDefault} alt="Standalone Default Link" />
+        <Image src={StandaloneStateDefault.src} alt="Standalone Default Link" />
       </StackedLayout>
 
       <StackedLayout label="Hover" vPadding="2.8rem" gap="2.8rem">
-        <Image src={StandaloneStateHover} alt="Standalone Hover Link" />
+        <Image src={StandaloneStateHover.src} alt="Standalone Hover Link" />
       </StackedLayout>
 
       <StackedLayout label="Disabled" vPadding="2.8rem" gap="2.8rem">
-        <Image src={StandaloneStateDisabled} alt="Standalone Disabled Link" />
+        <Image
+          src={StandaloneStateDisabled.src}
+          alt="Standalone Disabled Link"
+        />
       </StackedLayout>
     </ColumnLayout>
 
     <InfoList type="disc">
       <InfoListItem label="Default">
-        The default state of the Standalone link is blue text without any
-        underlining.
+        The default state of the Standalone link is blue text without
+        underlining. Use this type when the link does not have focus.
       </InfoListItem>
 
       <InfoListItem label="Hover">
-        When the user moves focus onto the link, it becomes underlined.
-        Selecting the link in this state will jump the user to the specified
-        location.
+        When the focus is on the link, it becomes underlined. Selecting the link
+        will take the user to the specified location.
       </InfoListItem>
 
       <InfoListItem label="Disabled">
-        A link that is disabled appears on the page, but is currently
-        unavailable. For example, when something has to happen (i.e. create a
-        user name, fill in a field) before the link becomes active.
+        A link that is disabled appears on the page but is inactive. This may
+        occur when the user is required to take some other action first (i.e.
+        create a user name, fill in a field, etc.) before the link becomes
+        active.
       </InfoListItem>
     </InfoList>
   </PageleteSubSection>
@@ -80,40 +85,40 @@ const { id, title } = topics.type;
   <PageleteSubSection>
     <SubHeader id="type-inline">Inline</SubHeader>
     <Description>
-      An Inline Link appears as part of the text. It is an active word or words
-      that are part of a sentence. Inline links are underlined as it helps to
-      make them easily visible among the other text.
+      An Inline Link is embedded into the text on the page. It is an active word
+      or words that are part of a sentence. Inline links are underlined as this
+      helps to make them stand out against the other text.
     </Description>
 
     <ColumnLayout bkgColor="white" numOfColumns={3}>
       <StackedLayout label="Default" vPadding="2.8rem" gap="2.8rem">
-        <Image src={InlineLinkStateDefault} alt="Inline Default Link" />
+        <Image src={InlineLinkStateDefault.src} alt="Inline Default Link" />
       </StackedLayout>
 
       <StackedLayout label="Hover" vPadding="2.8rem" gap="2.8rem">
-        <Image src={InlineLinkStateHover} alt="Inline Hover Link" />
+        <Image src={InlineLinkStateHover.src} alt="Inline Hover Link" />
       </StackedLayout>
 
       <StackedLayout label="Disabled" vPadding="2.8rem" gap="2.8rem">
-        <Image src={InlineLinkStateDisabled} alt="Inline Disabled Link" />
+        <Image src={InlineLinkStateDisabled.src} alt="Inline Disabled Link" />
       </StackedLayout>
     </ColumnLayout>
 
     <InfoList type="disc">
       <InfoListItem label="Default">
-        The default state of an Inline link is underlined blue text.
+        The default state of the Inline link is underlined blue text. Use this
+        type when the link does not have focus.
       </InfoListItem>
 
       <InfoListItem label="Hover">
-        When the user move focus onto the link, the underlining is removed.
-        Selecting the link in this state will jump the user to the specified
-        location.
+        When the focus is on the link, the underlining is removed. Selecting the
+        link will take the user to the specified location.
       </InfoListItem>
 
       <InfoListItem label="Disabled">
-        A link that is disabled appears on the page, but is currently
-        unavailable. For example, when something has to happen (i.e. create a
-        user name, fill in a field) before the link becomes active.
+        A link that is disabled appears on the page but is inactive. This may
+        occur when the user is required to take some other action first (i.e.
+        create a user name, fill in a field) before the link becomes active.
       </InfoListItem>
     </InfoList>
   </PageleteSubSection>

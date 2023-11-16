@@ -1,6 +1,8 @@
 ---
+import { Image } from "@avaya/neo-react";
 import {
   Description,
+  ImageWrapper,
   InfoList,
   InfoListItem,
   PageleteSection,
@@ -9,6 +11,10 @@ import {
 import { topics } from "../static";
 
 const { id, title } = topics.anatomy;
+
+import AnatomyImage from "../imgs/anatomy.svg";
+const anatomyImgAltText =
+  "Image showing the different parts that make up a toast, further explained in the text below";
 ---
 
 <PageleteSection>
@@ -18,6 +24,10 @@ const { id, title } = topics.anatomy;
     When you want to give feedback to your users about a action they take. Often
     this is in the form of creation or deletion.
   </Description>
+
+  <ImageWrapper>
+    <Image src={AnatomyImage.src} alt={anatomyImgAltText} />
+  </ImageWrapper>
 
   <InfoList type="decimal">
     <InfoListItem label="Container">Description</InfoListItem>

@@ -2,8 +2,8 @@
 import { Image } from "@avaya/neo-react";
 import { Description, SubHeader, DoAndDont } from "components";
 
-import colorDoImage from "./button-imgs/do-color1.svg";
-import colorDontImage from "./button-imgs/dont-color1.svg";
+import colorDoImage from "./button-imgs/button-behavior-text-color-do-1.svg";
+import colorDontImage from "./button-imgs/button-behavior-text-color-dont-1.svg";
 
 const colorDoInstructions =
   "Use colors to help convey the state where appropiate. Refer to the Colors guideline for additional information.";
@@ -33,20 +33,20 @@ const colorDontImgAltText =
 </Description>
 
 <Description>
-  Refer to the Accessibility section for more information on the proper use of
-  color.
+  Refer to the <a href="/accessibility">Accessibility section</a> for more
+  information on the proper use of color.
 </Description>
 
 <DoAndDont>
   <DoAndDont.DoContainer instructions={colorDoInstructions}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={colorDoImage} alt={colorDoImgAltText} />
+      <Image src={colorDoImage.src} alt={colorDoImgAltText} />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DoContainer>
 
   <DoAndDont.DontContainer instructions={colorDontInstructions}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={colorDontImage} alt={colorDontImgAltText} />
+      <Image src={colorDontImage.src} alt={colorDontImgAltText} />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DontContainer>
 </DoAndDont>

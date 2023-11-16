@@ -6,13 +6,12 @@ import { Layout } from "layouts";
 
 import {
   Intro,
-  NotificationsPlayground,
+  // NotificationsPlayground,
   Anatomy,
   Behavior,
   Specs,
   Type,
-  States,
-  RelatedContent,
+  Related,
   KeyboardInteractions,
 } from "pageletes/components/notifications";
 ---
@@ -20,11 +19,10 @@ import {
 <Layout title="Notifications">
   <Intro />
 
-  <NotificationsPlayground />
+  <!-- BUG: Notification component is out of date. Fix is being worked on. -->
+  <!-- <NotificationsPlayground /> -->
 
   <Anatomy />
-
-  <States />
 
   <Type />
 
@@ -34,5 +32,5 @@ import {
 
   <KeyboardInteractions />
 
-  <RelatedContent />
+  <Related />
 </Layout>

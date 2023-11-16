@@ -15,19 +15,19 @@ import { topics } from "../static";
 
 const { id, title } = topics.states;
 
-import image1 from "./imgs/states-1.svg";
+import image1 from "./imgs/select-states-1.svg";
 const img1AltText = "Image showing the default state of a select";
 
-import image2 from "./imgs/states-2.svg";
+import image2 from "./imgs/select-states-2.svg";
 const img2AltText = "Image showing the active state of a select";
 
-import image3 from "./imgs/states-3.svg";
+import image3 from "./imgs/select-states-3.svg";
 const img3AltText = "Image showing the hover state of a select";
 
-import image4 from "./imgs/states-4.svg";
+import image4 from "./imgs/select-states-4.svg";
 const img4AltText = "Image showing the disabled state of a select";
 
-import image5 from "./imgs/states-5.svg";
+import image5 from "./imgs/select-states-5.svg";
 const img5AltText = "Image showing the error state of a select";
 ---
 
@@ -35,15 +35,13 @@ const img5AltText = "Image showing the error state of a select";
   <SectionHeader id={id}>{title}</SectionHeader>
 
   <Description>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, explicabo
-    adipisci aperiam laboriosam excepturi illo sint iure vero perferendis
-    doloribus reiciendis veniam libero, ratione quia vel quas ex magnam
-    consequatur.
+    Select can have different states depending on user actions and the design of
+    the application or website.
   </Description>
 
   <ColumnLayout bkgColor="white" numOfColumns={1} marginBottom="0">
-    <StackedLayout label="Default">
-      <Image src={image1} alt={img1AltText} />
+    <StackedLayout label="Enabled">
+      <Image src={image1.src} alt={img1AltText} />
     </StackedLayout>
   </ColumnLayout>
 
@@ -54,31 +52,46 @@ const img5AltText = "Image showing the error state of a select";
     marginTop={"0"}
   >
     <StackedLayout label="Active">
-      <Image src={image2} alt={img2AltText} />
+      <Image src={image2.src} alt={img2AltText} />
     </StackedLayout>
 
     <StackedLayout label="Hover">
-      <Image src={image3} alt={img3AltText} />
+      <Image src={image3.src} alt={img3AltText} />
     </StackedLayout>
 
     <StackedLayout label="Disabled">
-      <Image src={image4} alt={img4AltText} />
+      <Image src={image4.src} alt={img4AltText} />
     </StackedLayout>
 
     <StackedLayout label="Error">
-      <Image src={image5} alt={img5AltText} />
+      <Image src={image5.src} alt={img5AltText} />
     </StackedLayout>
   </ColumnLayout>
 
   <InfoList type="disc">
-    <InfoListItem label="Default">Description</InfoListItem>
+    <InfoListItem label="Enabled">
+      This state is used when no other state is active. It is the rest state of
+      the select component.
+    </InfoListItem>
 
-    <InfoListItem label="Active">Description</InfoListItem>
+    <InfoListItem label="Active">
+      The user can click the field to open the dropdown list to select items.
+      The user can also start typing and matching items will appear.
+    </InfoListItem>
 
-    <InfoListItem label="Hover">Description</InfoListItem>
+    <InfoListItem label="Hover">
+      Moving the mouse over the field changes it to the Hover state. There is no
+      hover state when using keyboard navigation.
+    </InfoListItem>
 
-    <InfoListItem label="Disabled">Description</InfoListItem>
+    <InfoListItem label="Disabled">
+      If the field cannot be selected or modified, use the Disabled state.
+      Another action or setting must be made to enable the field.
+    </InfoListItem>
 
-    <InfoListItem label="Error">Description</InfoListItem>
+    <InfoListItem label="Error">
+      When the value entered into the field is incorrect, or if it is a required
+      field but it has been left blank, an error message is displayed.
+    </InfoListItem>
   </InfoList>
 </PageleteSection>

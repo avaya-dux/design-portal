@@ -1,0 +1,49 @@
+---
+import {
+  Description,
+  ImageWrapper,
+  InfoList,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+import { Image } from "@avaya/neo-react";
+
+const { id, title } = topics.anatomy;
+
+import image1 from "../imgs/tabs-anatomy-1.svg";
+const img1AltText =
+  "Image showing a tab item, there are three notes pointed out and described below";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Tabs appear horizontally across the top, or vertically down the left of the
+    panel. A tab bar is left justified or top justified according to the
+    direction of the bar.
+  </Description>
+
+  <ImageWrapper>
+    <Image src={image1.src} alt={img1AltText} />
+  </ImageWrapper>
+
+  <InfoList type="decimal">
+    <InfoListItem label="Icon (Optional)">
+      An icon can help users to quickly identify the purpose of the tab. Icons
+      should be used on all tabs or none. They should never be added purely for
+      decoration, but should convey information to the user.
+    </InfoListItem>
+
+    <InfoListItem label="Title">
+      This text field shows the purpose of the tab and it’s contents.
+    </InfoListItem>
+
+    <InfoListItem label="Line Details">
+      A line appears beneath or beside the currently active tab.
+    </InfoListItem>
+  </InfoList>
+</PageleteSection>

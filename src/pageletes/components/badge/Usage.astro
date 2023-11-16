@@ -36,16 +36,6 @@ const doImgAltText3 = "image showing an icon with badge with a white dot";
 const dontInstructions3 =
   "Do not hide the badge when the count cannot be determined.";
 const dontImgAltText3 = "image showing icon with no badge";
-
-import doImg4 from "./badge-imgs/do-usage4.svg";
-import dontImg4 from "./badge-imgs/dont-usage4.svg";
-const doInstructions4 =
-  "Show the total count of all notifications at the parent level.";
-const doImgAltText4 =
-  "image showing expandable category with badge showing total notification count of its children.";
-const dontInstructions4 = "Do not show one count per item at the parent level.";
-const dontImgAltText4 =
-  "image showing expandable category with badge with the wrong total count of its children.";
 ---
 
 <PageleteSection>
@@ -60,13 +50,13 @@ const dontImgAltText4 =
   <DoAndDont>
     <DoAndDont.DoContainer instructions={doInstructions1}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={doImg1} alt={doImgAltText1} />
+        <Image src={doImg1.src} alt={doImgAltText1} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DoContainer>
 
     <DoAndDont.DontContainer instructions={dontInstructions1}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={dontImg1} alt={dontImgAltText1} />
+        <Image src={dontImg1.src} alt={dontImgAltText1} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DontContainer>
   </DoAndDont>
@@ -74,13 +64,13 @@ const dontImgAltText4 =
   <DoAndDont>
     <DoAndDont.DoContainer instructions={doInstructions2}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={doImg2} alt={doImgAltText2} />
+        <Image src={doImg2.src} alt={doImgAltText2} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DoContainer>
 
     <DoAndDont.DontContainer instructions={dontInstructions2}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={dontImg2} alt={dontImgAltText2} />
+        <Image src={dontImg2.src} alt={dontImgAltText2} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DontContainer>
   </DoAndDont>
@@ -88,27 +78,13 @@ const dontImgAltText4 =
   <DoAndDont>
     <DoAndDont.DoContainer instructions={doInstructions3}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={doImg3} alt={doImgAltText3} />
+        <Image src={doImg3.src} alt={doImgAltText3} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DoContainer>
 
     <DoAndDont.DontContainer instructions={dontInstructions3}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={dontImg3} alt={dontImgAltText3} />
-      </DoAndDont.ImageExampleContainer>
-    </DoAndDont.DontContainer>
-  </DoAndDont>
-
-  <DoAndDont>
-    <DoAndDont.DoContainer instructions={doInstructions4}>
-      <DoAndDont.ImageExampleContainer>
-        <Image src={doImg4} alt={doImgAltText4} />
-      </DoAndDont.ImageExampleContainer>
-    </DoAndDont.DoContainer>
-
-    <DoAndDont.DontContainer instructions={dontInstructions4}>
-      <DoAndDont.ImageExampleContainer>
-        <Image src={dontImg4} alt={dontImgAltText4} />
+        <Image src={dontImg3.src} alt={dontImgAltText3} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DontContainer>
   </DoAndDont>

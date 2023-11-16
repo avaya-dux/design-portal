@@ -51,7 +51,7 @@ export const PlaygroundImplementation = () => {
       <MenuItem>Sub Option 3</MenuItem>
     </SubMenu>
 </Menu>
-`
+`,
     );
 
     const htmlCode = prettyPrintHtml(
@@ -92,7 +92,7 @@ export const PlaygroundImplementation = () => {
         </div>
       </div>
       </div>
-`
+`,
     );
 
     return isDefault ? [defaultReact, defaultHtml] : [reactCode, htmlCode];

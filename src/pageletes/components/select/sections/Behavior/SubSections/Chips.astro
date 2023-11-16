@@ -3,11 +3,11 @@ import { Image } from "@avaya/neo-react";
 
 import { Description, ImageWrapper, SubHeader } from "components";
 
-import img1 from "./imgs/behavior-chips-1.svg";
+import img1 from "./imgs/select-behavior-chips-1.svg";
 const img1Alt =
   "Image showing a multi select with several options chosen, all of them being indicated selection by a checkmark in the expanded view, and chips in the collapsed view";
 
-import img2 from "./imgs/behavior-chips-2.svg";
+import img2 from "./imgs/select-behavior-chips-2.svg";
 const img2Alt =
   "Image showing a multi select with several options chosen, and the collapsed view showing some of the chips and a single chip with a number indicating the number of additional options chosen, which are shown in a tooltip on hover";
 ---
@@ -15,19 +15,22 @@ const img2Alt =
 <SubHeader id="select-behavior-chips">Chips</SubHeader>
 
 <Description>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+  When multiple selections are allowed, and a combobox is being used, the
+  selected items appear as chips within the field. Clicking the X within a chip,
+  or deselecting the checkbox in the list will deselect that item.
 </Description>
 
-<ImageWrapper marginBottom={"3rem"}>
-  <Image src={img1} alt={img1Alt} />
+<ImageWrapper marginBottom={"3rem"} padding="0">
+  <Image src={img1.src} alt={img1Alt} />
 </ImageWrapper>
 
 <Description>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+  Where space allows, a combobox can be set to display the chips wrapped onto
+  multiple rows. If space is limited, chips can appear on a single row with a
+  chip specifying how many additional hidden items are selected. Clicking the
+  number opens the dropdown menu to display all of the selected items.
 </Description>
 
-<ImageWrapper>
-  <Image src={img2} alt={img2Alt} />
+<ImageWrapper padding="0">
+  <Image src={img2.src} alt={img2Alt} />
 </ImageWrapper>

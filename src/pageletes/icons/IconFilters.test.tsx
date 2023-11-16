@@ -118,7 +118,7 @@ describe("Icon filters panel", () => {
     const parentElement = container.querySelector("aside");
 
     expect(parentElement?.classList.toString()).not.toContain(
-      "icon-filters--active"
+      "icon-filters--active",
     );
 
     act(() => {
@@ -126,7 +126,7 @@ describe("Icon filters panel", () => {
     });
 
     expect(parentElement?.classList.toString()).toContain(
-      "icon-filters--active"
+      "icon-filters--active",
     );
 
     act(() => {
@@ -134,7 +134,7 @@ describe("Icon filters panel", () => {
     });
 
     expect(parentElement?.classList.toString()).toContain(
-      "icon-filters--hidden"
+      "icon-filters--hidden",
     );
 
     cleanStores(isLeftNavigationOpen);

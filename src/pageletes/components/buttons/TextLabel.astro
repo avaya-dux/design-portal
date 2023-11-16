@@ -1,14 +1,12 @@
 ---
 import { Image } from "@avaya/neo-react";
-import { Description, PageleteSection, SectionHeader } from "components/astro";
+import { Description, SubHeader } from "components/astro";
 import { DoAndDont } from "components/react";
 
-import { topics } from "./static";
-
-import TextLabel1Do from "./button-imgs/do-text-label1.svg";
-import TextLabel2Do from "./button-imgs/do-text-label-2.svg";
-import TextLabel1Dont from "./button-imgs/dont-text-label1.svg";
-import TextLabel2Dont from "./button-imgs/dont-text-label-2.svg";
+import TextLabel1Do from "./button-imgs/button-text-label-do-1.svg";
+import TextLabel2Do from "./button-imgs/button-text-label-do-2.svg";
+import TextLabel1Dont from "./button-imgs/button-text-label-dont-1.svg";
+import TextLabel2Dont from "./button-imgs/button-text-label-dont-2.svg";
 
 const textDoInstructions =
   "Use title case within the button text. Capitalize only the first letter of the button text unless it is a proper name. For example, Sign In.";
@@ -28,54 +26,40 @@ const colorDontImgAltText =
   "image showing a form confirmation dialog with a 'no' button and 'yes' button";
 ---
 
-<PageleteSection>
-  <SectionHeader id={topics.textLabel.id}>
-    {topics.textLabel.title}
-  </SectionHeader>
+<SubHeader id="text-label">Text Label</SubHeader>
 
-  <Description>
-    The text on a button tells the user what action will be performed when
-    activated. There is very little room, so whatever text you add must be
-    clear, direct, short, and descriptive.
-  </Description>
+<Description>
+  The text on a button tells the user what action will be performed when
+  activated. There is very little room, so whatever text you add must be clear,
+  direct, short, and descriptive.
+</Description>
 
-  <Description>
-    The text should not be a simple binary choice (e.g. Yes / No, True / False)
-    but should refer to the action being performed (e.g. Save, Delete, Cancel,
-    Restore, Continue).
-  </Description>
+<Description>
+  The text should not be a simple binary choice (e.g. Yes / No, True / False)
+  but should refer to the action being performed (e.g. Save, Delete, Cancel,
+  Restore, Continue).
+</Description>
 
-  <Description>
-    Icons may be added beside the button text if it will help the user.
-  </Description>
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={textDoInstructions}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={TextLabel1Do.src} alt={textDoImgAltText} width={400} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DoContainer>
 
-  <Description>
-    Where space limitations do not permit text on the button, an icon can be
-    used alone if the icon is sufficiently clear to communicate the action. All
-    icon buttons must include a Tooltip to replace the button text.
-  </Description>
+  <DoAndDont.DontContainer instructions={textDontInstructions}>
+    <DoAndDont.ImageExampleContainer>
+      <Image src={TextLabel1Dont.src} alt={textDontImgAltText} width={400} />
+    </DoAndDont.ImageExampleContainer>
+  </DoAndDont.DontContainer>
+</DoAndDont>
 
-  <DoAndDont>
-    <DoAndDont.DoContainer instructions={textDoInstructions}>
-      <DoAndDont.ImageExampleContainer>
-        <Image src={TextLabel1Do} alt={textDoImgAltText} width={400} />
-      </DoAndDont.ImageExampleContainer>
-    </DoAndDont.DoContainer>
+<DoAndDont>
+  <DoAndDont.DoContainer instructions={colorDoInstructions}>
+    <Image src={TextLabel2Do.src} alt={colorDoImgAltText} />
+  </DoAndDont.DoContainer>
 
-    <DoAndDont.DontContainer instructions={textDontInstructions}>
-      <DoAndDont.ImageExampleContainer>
-        <Image src={TextLabel1Dont} alt={textDontImgAltText} width={400} />
-      </DoAndDont.ImageExampleContainer>
-    </DoAndDont.DontContainer>
-  </DoAndDont>
-
-  <DoAndDont>
-    <DoAndDont.DoContainer instructions={colorDoInstructions}>
-      <Image src={TextLabel2Do} alt={colorDoImgAltText} />
-    </DoAndDont.DoContainer>
-
-    <DoAndDont.DontContainer instructions={colorDontInstructions}>
-      <Image src={TextLabel2Dont} alt={colorDontImgAltText} />
-    </DoAndDont.DontContainer>
-  </DoAndDont>
-</PageleteSection>
+  <DoAndDont.DontContainer instructions={colorDontInstructions}>
+    <Image src={TextLabel2Dont.src} alt={colorDontImgAltText} />
+  </DoAndDont.DontContainer>
+</DoAndDont>

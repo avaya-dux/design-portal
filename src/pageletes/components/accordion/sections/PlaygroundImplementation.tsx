@@ -211,7 +211,7 @@ export const PlaygroundImplementation = () => {
                 0,
                 stackedOpenIndexes,
                 setStackedOpenIndexes,
-                setOpen
+                setOpen,
               )
             }
           >
@@ -226,7 +226,7 @@ export const PlaygroundImplementation = () => {
                 1,
                 stackedOpenIndexes,
                 setStackedOpenIndexes,
-                setOpen
+                setOpen,
               )
             }
           >
@@ -241,7 +241,7 @@ export const PlaygroundImplementation = () => {
                 2,
                 stackedOpenIndexes,
                 setStackedOpenIndexes,
-                setOpen
+                setOpen,
               )
             }
           >
@@ -257,7 +257,7 @@ const handleStackClick = (
   index: number,
   stack: [boolean, boolean, boolean],
   setStack: React.Dispatch<SetStateAction<[boolean, boolean, boolean]>>,
-  setOpen: React.Dispatch<SetStateAction<boolean | "mixed" | undefined>>
+  setOpen: React.Dispatch<SetStateAction<boolean | "mixed" | undefined>>,
 ) => {
   const newStack: [boolean, boolean, boolean] = [...stack];
   newStack[index] = !newStack[index];

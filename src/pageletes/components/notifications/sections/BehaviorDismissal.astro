@@ -1,0 +1,41 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ImageWrapper,
+  PageleteSubSection,
+  SubHeader,
+} from "components/astro";
+
+import dismissalOne from "../imgs/notification-behavior-dismissal-1.svg";
+const dismissalOneAltText =
+  "Image showing user going to click on the upgrade button";
+
+import dismissalTwo from "../imgs/notification-behavior-dismissal-2.svg";
+const dismissalTwoAltText =
+  "Image showing user going to click on the close button";
+---
+
+<PageleteSubSection>
+  <SubHeader id="notifications-behavior-dismissal">Dismissal</SubHeader>
+
+  <Description>
+    Notifications do not dismiss automatically. They persist on the page until
+    the user dismisses them or takes action that resolves the notification.
+  </Description>
+
+  <ImageWrapper padding="0">
+    <Image src={dismissalOne.src} alt={dismissalOneAltText} />
+  </ImageWrapper>
+
+  <Description>
+    A small “x” is used to dismiss notifications. Including the close button is
+    optional and should not be included if it is critical for a user to read or
+    interact with the notification.
+  </Description>
+
+  <ImageWrapper padding="0">
+    <Image src={dismissalTwo.src} alt={dismissalTwoAltText} />
+  </ImageWrapper>
+</PageleteSubSection>

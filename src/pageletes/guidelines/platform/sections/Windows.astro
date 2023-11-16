@@ -1,0 +1,61 @@
+---
+import {
+  Description,
+  PageleteSection,
+  SectionHeader,
+  SubHeader,
+} from "components";
+
+import { topics } from "../static";
+const { id, title } = topics.windows;
+
+import { Link } from "@avaya/neo-react";
+
+import TwoColumnLayout from "./sections-frame-layout/TwoColumnLayout.astro";
+import Icons from "./sections-frame-layout/windows/frame-1/Icons.astro";
+import NativeElements from "./sections-frame-layout/windows/frame-1/NativeElements.astro";
+import KeyboardShortcuts from "./sections-frame-layout/windows/frame-2/KeyboardShortcuts.astro";
+import ResponsiveDisplay from "./sections-frame-layout/windows/frame-2/ResponsiveDisplay.astro";
+import Accessibility from "./sections-frame-layout/windows/frame-3/Accessibility.astro";
+import TouchTargets from "./sections-frame-layout/windows/frame-3/TouchTargets.astro";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Windows is a desktop operating system created by Microsoft that is used by
+    many computer systems. You can find an overview of their best practices on
+    the <Link inline>Microsoft Build site</Link>.
+  </Description>
+
+  <SubHeader id="user-interface" marginTop="64px">User Interface</SubHeader>
+
+  <Description>
+    The visual appearance for Windows applications should utilize a combination
+    of native elements and Neo styling.
+  </Description>
+
+  <TwoColumnLayout>
+    <NativeElements slot="left-frame" />
+    <Icons slot="right-frame" />
+  </TwoColumnLayout>
+
+  <SubHeader id="interactions" marginTop="64px">Interactions</SubHeader>
+
+  <Description>
+    Interactions such as display, responsiveness, accessibility and touch
+    targets should follow web standards, as well as the Neo guidelines found
+    throughout the portal.
+  </Description>
+
+  <TwoColumnLayout>
+    <KeyboardShortcuts slot="left-frame" />
+    <ResponsiveDisplay slot="right-frame" />
+  </TwoColumnLayout>
+
+  <TwoColumnLayout>
+    <Accessibility slot="left-frame" />
+    <TouchTargets slot="right-frame" />
+  </TwoColumnLayout>
+</PageleteSection>

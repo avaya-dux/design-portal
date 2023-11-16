@@ -1,0 +1,37 @@
+---
+import TypesLayout from "../TypesLayout.astro";
+
+import graphic from "../../../imgs/principles-types-6.svg";
+
+const altText = "An icon representing cognitive disabilities";
+const type = "Cognitive Disabilities";
+
+const firstDescription =
+  "Cognitive disabilities refer to a range of mental impairments including memory, problem solving, attention, reading, verbal, math and visual comprehension. These users interact with interfaces by relying on information remaining visible while completing tasks.";
+
+const secondDescription =
+  "These considerations will also help others, including those in busy environments who may experience heavier cognitive loads.";
+---
+
+<TypesLayout
+  graphicIcon={graphic.src}
+  graphicAltText={altText}
+  type={type}
+  firstDescription={firstDescription}
+  secondDescription={secondDescription}
+>
+  <li>Ensure language is simple and clear.</li>
+
+  <li>Ensure content is structured.</li>
+
+  <li>Avoid uncontrollable and flashing animations.</li>
+
+  <li>Avoid visual clutter.</li>
+
+  <li>
+    Offload tasks when possible (e.g. by showing previously entered info to
+    avoid recall).
+  </li>
+
+  <li>Ensure quick response times so users don’t lose track of their tasks.</li>
+</TypesLayout>

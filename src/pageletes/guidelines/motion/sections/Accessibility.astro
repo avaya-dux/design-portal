@@ -1,0 +1,64 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Caption,
+  Description,
+  ColumnLayout,
+  ImageWrapper,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import image1 from "../imgs/motion-accessibility-1.svg";
+import image2 from "../imgs/motion-accessibility-2.svg";
+
+const image1Alt =
+  "Image showing a complicated shape on the left vs a simple shape on the right.";
+const image2Alt =
+  "Image showing a placeholder image that replaces an animation.";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.accessibility.id}>
+    {topics.accessibility.title}
+  </SectionHeader>
+
+  <Description>
+    Some users may be motion sensitive. Ensure that applications respect the
+    user’s preferences, and avoid complicated and unnecessary animations.
+  </Description>
+
+  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image1.src} alt={image1Alt} />
+      </ImageWrapper>
+      <Caption title="Support Reduced Motion">
+        Users with motion sensitivities can activate a feature that requires
+        applications to minimize the use of non-essential motion. This includes
+        large page transitions and animated illustrations.
+      </Caption>
+    </div>
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image2.src} alt={image2Alt} />
+      </ImageWrapper>
+      <Caption title="Avoid Large Scale Animations">
+        Large animations, such as parallax scrolling, can trigger dizziness,
+        nausea and headaches for those with vestibular disorders. Avoid using
+        animations altogether. You must, at least, provide an option to turn the
+        animations off.
+      </Caption>
+    </div>
+  </ColumnLayout>
+</PageleteSection>

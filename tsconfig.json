@@ -4,7 +4,7 @@
     "baseUrl": "./src",
     "verbatimModuleSyntax": true,
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "Bundler",
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
@@ -13,6 +13,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
     "strict": true,
     "target": "ESNext"
   },

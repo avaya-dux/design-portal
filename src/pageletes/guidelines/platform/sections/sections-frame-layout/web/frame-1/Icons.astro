@@ -1,0 +1,22 @@
+---
+import SectionLayout from "../../SectionLayout.astro";
+
+import graphic from "../../../../imgs/user-interface-2.svg";
+
+import { Link } from "@avaya/neo-react";
+import { InfoListItem, Description } from "components";
+
+const altText = "Graphic representing icons";
+const type = "Icons";
+---
+
+<SectionLayout graphicIcon={graphic.src} graphicAltText={altText} type={type}>
+  <Description slot="description">
+    All icons used by web applications are available from the Neo icon page.
+  </Description>
+  <InfoListItem>
+    <Link href="https://design.avaya.com/components/icons/">
+      View Icon Library
+    </Link>
+  </InfoListItem>
+</SectionLayout>

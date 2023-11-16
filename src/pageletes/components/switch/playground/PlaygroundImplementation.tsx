@@ -11,6 +11,8 @@ import { useMemo, useState } from "react";
 import { Playground } from "components/react";
 import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
+import "./PlaygroundImplementation_shim.css";
+
 export const sandbox = "https://codesandbox.io/s/neo-react-switch-eeb2m1";
 export const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-switch--default";
@@ -28,31 +30,31 @@ export const PlaygroundImplementation = () => {
     const react = prettyPrintReact(
       `
     <Switch${!isDefault ? " " : ""}${clsx(
-        withLabel === "none" && 'aria-label="Option"',
-        withLabel === "left" && "dir='rtl'",
-        isDisabled && "disabled",
-        isSelected && "checked"
-      )}>${withLabel !== "none" ? "Option" : ""}</Switch>
-`
+      withLabel === "none" && 'aria-label="Option"',
+      withLabel === "left" && "dir='rtl'",
+      isDisabled && "disabled",
+      isSelected && "checked",
+    )}>${withLabel !== "none" ? "Option" : ""}</Switch>
+`,
     );
 
     const html = prettyPrintHtml(
       `<div class="neo-form-control" ${clsx(
-        withLabel === "left" && "dir='rtl'"
+        withLabel === "left" && "dir='rtl'",
       )}>
       <label class="${clsx(
         "neo-switch",
-        isDisabled && "neo-switch--disabled"
+        isDisabled && "neo-switch--disabled",
       )}" for="switch">
         <input id="switch" type="checkbox" role="switch" ${clsx(
           withLabel === "none" && 'aria-label="Option"',
           isSelected && "checked",
-          isDisabled && "disabled"
+          isDisabled && "disabled",
         )} />
         <i class="neo-switch__icon"></i>
         ${withLabel !== "none" ? "Option" : ""}
       </label>
-    </div>`
+    </div>`,
     );
 
     return [react, html];

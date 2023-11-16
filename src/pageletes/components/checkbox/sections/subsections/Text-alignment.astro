@@ -14,7 +14,7 @@ const doImg1AltText =
   "An imaging showing checkbox aligned with first line of label text";
 
 const dont1Instructions =
-  "Do not center align the all of the text with the checkbox.  Do not right align multiline text.";
+  "Do not center align all of the text with the checkbox.  Do not right align multiline text.";
 const dontImg1AltText =
   "An image showing checkbox center aligned with multiline text";
 ---
@@ -25,19 +25,19 @@ const dontImg1AltText =
   <Description>
     Center align the first line of text with the checkbox. Additional lines of
     text should be left-aligned with the first line of text. The heading should
-    be left aligned with the checkbox.
+    be left-aligned with the checkbox.
   </Description>
 
   <DoAndDont>
     <DoAndDont.DoContainer instructions={do1Instructions}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={doImage1} alt={doImg1AltText} />
+        <Image src={doImage1.src} alt={doImg1AltText} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DoContainer>
 
     <DoAndDont.DontContainer instructions={dont1Instructions}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={dontImage1} alt={dontImg1AltText} />
+        <Image src={dontImage1.src} alt={dontImg1AltText} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DontContainer>
   </DoAndDont>

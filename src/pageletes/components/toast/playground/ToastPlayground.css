@@ -8,6 +8,10 @@
   justify-content: center;
 }
 
+.playground-options-section-label {
+  padding-bottom: 5px;
+}
+
 .toast-playground__wrapper .neo-toast {
   position: absolute;
 }

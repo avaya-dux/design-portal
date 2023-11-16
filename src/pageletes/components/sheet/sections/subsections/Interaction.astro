@@ -1,0 +1,48 @@
+---
+import {
+  ColumnLayout,
+  Description,
+  PageleteSubSection,
+  StackedLayout,
+  SubHeader,
+} from "components/astro";
+
+import { Image } from "@avaya/neo-react";
+
+import interactionImage1 from "../../imgs/sheet-behavior-interaction-1.svg";
+import interactionImage2 from "../../imgs/sheet-behavior-interaction-2.svg";
+import interactionImage3 from "../../imgs/sheet-behavior-interaction-3.svg";
+---
+
+<PageleteSubSection>
+  <SubHeader id="sheet-behavior-interaction">Interaction</SubHeader>
+
+  <Description>
+    The sheet component appears on the right side of the screen and slides in
+    from right to left when activated. This is reversed when the sheet is
+    dismissed. This behavior is embedded into the code.
+  </Description>
+
+  <ColumnLayout bkgColor="#f1f1f1" numOfColumns={3}>
+    <StackedLayout>
+      <Image
+        src={interactionImage1.src}
+        alt="Image showing avatar with available state"
+      />
+    </StackedLayout>
+
+    <StackedLayout>
+      <Image
+        src={interactionImage2.src}
+        alt="Image showing avatar with away state"
+      />
+    </StackedLayout>
+
+    <StackedLayout>
+      <Image
+        src={interactionImage3.src}
+        alt="Image showing avatar with busy state"
+      />
+    </StackedLayout>
+  </ColumnLayout>
+</PageleteSubSection>

@@ -1,0 +1,186 @@
+---
+import {
+  Description,
+  PageleteSubSection,
+  SubHeader,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableCellHead,
+  InfoTableHead,
+  InfoTableRow,
+} from "components";
+---
+
+<PageleteSubSection>
+  <SubHeader id="localization-text-word-length">Formatting Fields</SubHeader>
+
+  <Description>
+    The formatting of date, time and numbers can vary significantly from
+    region-to-region. For native applications, use the system defaults and
+    preferences so the correct localized content is applied for each language
+    and region. For web applications, leverage existing APIs or follow W3C
+    guidelines.
+  </Description>
+
+  <InfoTable>
+    <InfoTableHead>
+      <InfoTableRow>
+        <InfoTableCellHead>Field Type</InfoTableCellHead>
+        <InfoTableCellHead>Principles/Examples</InfoTableCellHead>
+      </InfoTableRow>
+    </InfoTableHead>
+
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>Date - Short</InfoTableCell>
+        <InfoTableCell>
+          The order of day number, month and year can appear as MM/DD/YY,
+          DD/MM/YY, or YY/MM/DD.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Date - Long</InfoTableCell>
+        <InfoTableCell>
+          <p class="table-cell-intro">
+            The order of day number, month and year can vary. Some examples:
+          </p>
+          <ul>
+            <li>Canada: Saturday, July 1, 1967</li>
+            <li>Mexico: sábado 1 de julio de 1967</li>
+            <li>Japan: 1967年7月1日土曜日</li>
+          </ul>
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Time</InfoTableCell>
+        <InfoTableCell>
+          <p class="table-cell-intro">
+            The order and presentation of hours, minutes and seconds varies in
+            the following ways:
+          </p>
+          <ol>
+            <li>
+              <strong>12-hour vs 24-hour clock:</strong> The latter is used by
+              most European and Asian countries. AM/PM can also be translated in
+              the local language, and be placed before or after the time.
+            </li>
+            <li>
+              <strong> Separators between hours, minutes and seconds:</strong>
+               The colon (:) is used the most, though some Asian languages use
+              ideographic characters. Some also require ‘h’, ‘m’ and ’s’ as part
+              of the display.
+            </li>
+            <li>
+              <strong>Time zones:</strong> Time zones can be displayed with GMT
+              (Greenwich Mean Time) or UTC (Coordinated Universal Time). They
+              can also be displayed using local time zones, though this can vary
+              by region.
+            </li>
+          </ol>
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Phone Numbers</InfoTableCell>
+        <InfoTableCell>
+          <p class="table-cell-intro">
+            The presentation of phone numbers varies in the following ways:
+          </p>
+          <ol>
+            <li>
+              <strong>Separator characters:</strong> Different characters such
+              as hyphens (-), periods (.), commas (,) and spaces are used.
+            </li>
+            <li>
+              <strong>Groupings:</strong> Phone numbers can be parsed
+              differently by country and can be divided into groups of 2 to 6
+              digits.
+            </li>
+            <li>
+              <strong>Total number of digits:</strong> The ITU-T standard E.164
+              states that the maximum number of digits is 15, but this does not
+              include long distance access codes, extensions, passwords and
+              other extra fields.
+            </li>
+          </ol>
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Currency</InfoTableCell>
+        <InfoTableCell>
+          <p class="table-cell-intro">
+            Currency formatting varies in the following ways:
+          </p>
+          <ol>
+            <li>
+              <strong>Currency symbol:</strong> This can be either a symbol or
+              combinations of characters (e.g. USD).
+            </li>
+            <li>
+              <strong>Symbol placement:</strong> The currency symbol can appear
+              before or after the amount.
+            </li>
+            <li>
+              <strong>Negative amounts:</strong> Negative numbers can be shown
+              either using parentheses, or the negative sign which can appear
+              either before both the currency symbol and amount, after the
+              symbol and before the amount, or after the amount.
+            </li>
+          </ol>
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Numbers</InfoTableCell>
+        <InfoTableCell>
+          <p class="table-cell-intro">
+            The presentation of numbers varies in the following ways:
+          </p>
+          <ol>
+            <li>
+              <strong>Thousands separator:</strong> This can be displayed with
+              either a comma, period or space (e.g 1,999 1.999 or 1 999).
+            </li>
+            <li>
+              <strong>Decimal separator:</strong> This can be displayed with
+              either a comma or period (eg. 1,999.23 or 1.999,23).
+            </li>
+            <li>
+              <strong>Negative numbers:</strong> The negative sign can appear
+              before or after a number, or the value may be shown in
+              parentheses.
+            </li>
+            <li>
+              <strong>Digit groupings left of the decimal:</strong> Most
+              cultures use 3 digit groupings (e.g 123,456.00), athough some use
+              2 digits (e.g. 12,34,56.00).
+            </li>
+            <li>
+              <strong>Percent (%) sign:</strong> This can be displayed as
+              follows: 77%, 77 %, 77 pct or %77.
+            </li>
+          </ol>
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
+</PageleteSubSection>
+
+<style>
+  .table-cell-intro {
+    margin-bottom: 16px;
+  }
+
+  .table-cell-intro + ul {
+    list-style: none;
+    margin: 0;
+  }
+
+  .table-cell-intro + ol {
+    margin-inline-start: 1.2rem;
+  }
+</style>

@@ -14,10 +14,6 @@ import States from "./States.astro";
 
 export { States };
 
-import Positioning from "./Positioning.astro";
-
-export { Positioning };
-
 import Types from "./Types.astro";
 
 export { Types };
@@ -34,6 +30,6 @@ import KeyboardInteractions from "./KeyboardInteractions.astro";
 
 export { KeyboardInteractions };
 
-import RelatedContent from "./RelatedContent.astro";
+import Related from "./Related.astro";
 
-export { RelatedContent };
+export { Related };

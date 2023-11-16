@@ -60,7 +60,9 @@ export const PlaygroundImplementation = () => {
         aria-label={!hasVisibleLabel ? "Select a favorite food" : ""}
         disabled={isDisabled}
         errorList={hasError ? ["Invalid selection"] : []}
-        helperText={hasHelperText ? "Please select one" : undefined}
+        helperText={
+          hasHelperText && !hasError ? "Please select one" : undefined
+        }
         label={hasVisibleLabel ? "Select a favorite food" : undefined}
         multiple={multiple}
         size={size}

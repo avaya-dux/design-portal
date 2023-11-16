@@ -1,0 +1,42 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components";
+
+import TwoColumnLayout from "./types-frame-layout/TwoColumnLayout.astro";
+
+import TypeBlind from "./types-frame-layout/type-frame-1/TypeBlind.astro";
+import TypeLowVision from "./types-frame-layout/type-frame-1/TypeLowVision.astro";
+import TypeColor from "./types-frame-layout/type-frame-2/TypeColor.astro";
+import TypeDeaf from "./types-frame-layout/type-frame-2/TypeDeaf.astro";
+import TypePhysical from "./types-frame-layout/type-frame-3/TypePhysical.astro";
+import TypeCognitive from "./types-frame-layout/type-frame-3/TypeCognitive.astro";
+
+import { topics } from "../static";
+const { id, title } = topics.disabilities;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    To understand the types of accessibility barriers that can arise, it is
+    helpful to be aware of the range of disabilities that exist. Each group
+    faces different challenges that need to be resolved. Including these
+    considerations in the design and development process creates a better user
+    experience for everyone.
+  </Description>
+
+  <TwoColumnLayout>
+    <TypeBlind slot="left-frame" />
+    <TypeLowVision slot="right-frame" />
+  </TwoColumnLayout>
+
+  <TwoColumnLayout>
+    <TypeColor slot="left-frame" />
+    <TypeDeaf slot="right-frame" />
+  </TwoColumnLayout>
+
+  <TwoColumnLayout>
+    <TypeCognitive slot="left-frame" />
+    <TypePhysical slot="right-frame" />
+  </TwoColumnLayout>
+</PageleteSection>

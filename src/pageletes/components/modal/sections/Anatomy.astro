@@ -1,0 +1,65 @@
+---
+import {
+  Description,
+  ImageWrapper,
+  PageleteSection,
+  SectionHeader,
+  InfoList,
+  InfoListItem,
+} from "components/astro";
+
+import { topics } from "../static";
+import { Image } from "@avaya/neo-react";
+
+const { id, title } = topics.anatomy;
+
+import image1 from "../imgs/modal-anatomy-1.svg";
+const img1AltText =
+  "Modal with title, container, close button, content, buttons and transparent background pointed out";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    A modal includes a number of elements. Shown below are the common components
+    of a modal.
+  </Description>
+
+  <ImageWrapper padding="0" isRounded={false}>
+    <Image src={image1.src} alt={img1AltText} />
+  </ImageWrapper>
+
+  <InfoList type="decimal">
+    <InfoListItem label="Title">
+      The title of the modal contains information about its purpose and appears
+      at the top of the container. Additional supporting text and actions appear
+      inside the container.
+    </InfoListItem>
+
+    <InfoListItem label="Container">
+      This is the boundary box around the modal. All of the other modal elements
+      appear within the container.
+    </InfoListItem>
+
+    <InfoListItem label="Close Button">
+      The close button (X), located in the upper right corner of the container,
+      allows the user to dismiss the modal.
+    </InfoListItem>
+
+    <InfoListItem label="Content">
+      The close button (X), located in the upper right corner of the container,
+      allows the user to dismiss the modal.
+    </InfoListItem>
+
+    <InfoListItem label="Buttons (Optional)">
+      The close button (X), located in the upper right corner of the container,
+      allows the user to dismiss the modal.
+    </InfoListItem>
+
+    <InfoListItem label="Transparent Background">
+      The close button (X), located in the upper right corner of the container,
+      allows the user to dismiss the modal.
+    </InfoListItem>
+  </InfoList>
+</PageleteSection>

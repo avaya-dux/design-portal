@@ -1,0 +1,20 @@
+---
+import { Image } from "@avaya/neo-react";
+import { Description, SubHeader, ImageWrapper } from "components";
+import { topics } from "../static";
+
+const { id } = topics.specs;
+
+import SpecsImage1 from "../imgs/modal-specs-1.svg";
+const specsImageAltText = "An image of a modal with specifications in pixels";
+---
+
+<SubHeader id={`${id}-specs`}>Specs</SubHeader>
+
+<Description>
+  Shown below are the specifications for the modal component.
+</Description>
+
+<ImageWrapper>
+  <Image src={SpecsImage1.src} alt={specsImageAltText} />
+</ImageWrapper>

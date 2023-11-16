@@ -20,15 +20,21 @@ const anatomyImgAltText = "Image showing an still spinner";
 <PageleteSection>
   <SectionHeader id={id}>{title}</SectionHeader>
 
-  <Description>Anatomy Description.</Description>
+  <Description>
+    A spinner appears as an element without any labels or icons. It is displayed
+    in front of other layers in the affected region and remains until the
+    process is completed when the data is shown, or the program will allow
+    further input.
+  </Description>
 
   <ImageWrapper>
-    <Image src={AnatomyImage} alt={anatomyImgAltText} />
+    <Image src={AnatomyImage.src} alt={anatomyImgAltText} />
   </ImageWrapper>
 
   <InfoList type="decimal">
     <InfoListItem label="Spinner">
-      Spinning circluar icon. Turning clockwise.
+      A circular icon with a gap on one side. The icon turns clockwise to show
+      it is still processing.
     </InfoListItem>
   </InfoList>
 </PageleteSection>

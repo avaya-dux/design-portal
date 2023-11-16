@@ -1,0 +1,105 @@
+---
+import { Image, Link } from "@avaya/neo-react";
+import {
+  Caption,
+  ColumnLayout,
+  Description,
+  ImageWrapper,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import image1 from "../imgs/data-vis-common-guidelines-1.svg";
+import image2 from "../imgs/data-vis-common-guidelines-2.svg";
+import image3 from "../imgs/data-vis-common-guidelines-3.svg";
+import image4 from "../imgs/data-vis-common-guidelines-4.svg";
+import image5 from "../imgs/data-vis-common-guidelines-5.svg";
+
+const image1Alt = "Image showing a 3D chart crossed out.";
+const image2Alt = "Image showing a palette with different colors.";
+const image3Alt = "Image showing a tooltip over a line chart data point.";
+const image4Alt = "Image showing legends for each data series in a chart.";
+const image5Alt =
+  "Image showing a visual gap in a line chart to depict missing data.";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.guidelines.id}>
+    {topics.guidelines.title}
+  </SectionHeader>
+
+  <Description>
+    These guidelines apply to all data visualization presentation types.
+  </Description>
+
+  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
+    <div>
+      <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom="1.5rem">
+        <Image src={image1.src} alt={image1Alt} />
+      </ImageWrapper>
+
+      <Caption title="Avoid 3D Charts">
+        Using 3D charts reduces readability and provides no additional value.
+      </Caption>
+    </div>
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image2.src} alt={image2Alt} />
+      </ImageWrapper>
+
+      <Caption title="Use Neo's Color Palette">
+        Use the color palette provided by Neo to ensure data has sufficient
+        contrast and is accessible for all users. See
+        <Link inline href="/guidelines/color">Colors to learn more.</Link>
+      </Caption>
+    </div>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    marginTop="1.5rem"
+    gap="2rem"
+    numOfColumns={2}
+  >
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image3.src} alt={image3Alt} />
+      </ImageWrapper>
+
+      <Caption title="Use Tooltips">
+        Tooltips should be used to provide supplemental information on a chart
+        (e.g. date or data value). They should not be the only way to identify
+        the data.
+      </Caption>
+    </div>
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image4.src} alt={image4Alt} />
+      </ImageWrapper>
+
+      <Caption title="Include Legends">
+        Include legends when more than one data series is shown.
+      </Caption>
+    </div>
+  </ColumnLayout>
+
+  <ColumnLayout
+    showGridlines={false}
+    marginTop="1.5rem"
+    gap="2rem"
+    numOfColumns={2}
+  >
+    <div>
+      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
+        <Image src={image5.src} alt={image5Alt} />
+      </ImageWrapper>
+
+      <Caption title="Indicate When Data Is Missing">
+        When a set of data includes null or missing data, the chart should
+        reflect this with a space rather than using '0' or connecting points.
+      </Caption>
+    </div>
+  </ColumnLayout>
+</PageleteSection>

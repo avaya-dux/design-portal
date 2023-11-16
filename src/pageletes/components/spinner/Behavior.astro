@@ -1,0 +1,51 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  DoAndDont,
+  PageleteSection,
+  SectionHeader,
+} from "components";
+
+import doImage from "./imgs/usage-do.svg";
+import dontImage from "./imgs/usage-dont.svg";
+
+import { topics } from "./static";
+const { id, title } = topics.behavior;
+
+const doInstructions =
+  "Use a spinner to indicate loading states within components or actions.";
+const doImgAltText =
+  "Image showing a disabled primary button with a spinner beside the text: Downloading...";
+
+const dontInstructions =
+  "Do not use a spinner to indicate a section is loading. Use a <a class='neo-link--inline' href='/components/shimmer'>Shimmer</a> instead.";
+const dontImgAltText =
+  "Image showing a modal dialog in a loading state and the spinner in the middle of the dialog.";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    A spinner may be used on an entire page, on a region, or on a component to
+    show that it is busy processing or loading data. Multiple spinners may
+    appear on a page at the same time if multiple regions are busy. As it is an
+    icon, it can be combined with other components for added visibility.
+  </Description>
+
+  <DoAndDont size="no-ratio">
+    <DoAndDont.DoContainer instructions={doInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage.src} alt={doImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dontInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage.src} alt={dontImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+</PageleteSection>

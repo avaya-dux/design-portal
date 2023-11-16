@@ -1,0 +1,42 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ImageWrapper,
+  PageleteSubSection,
+  SubHeader,
+} from "components";
+
+import responsiveImage1 from "../../imgs/behavior-responsive-1.svg";
+const responsiveImage1AltText =
+  "Image showing a form with fields arranged in a 2 column layout.";
+
+import responsiveImage2 from "../../imgs/behavior-responsive-2.svg";
+const responsiveImage2AltText =
+  "Image showing a narrow form with fields arranged in a single column layout.";
+---
+
+<PageleteSubSection>
+  <SubHeader id="form-responsive-layouts">Responsive Layouts</SubHeader>
+
+  <Description>
+    Forms should be designed to with a single column. Horizontal stacking should
+    only occur when space is limited, or when there are 2 or more fields that
+    are related (e.g. city and zip code). When adding a form to a page, be sure
+    to follow the Layout guidelines for responsive breakpoints, margins and
+    gutters.
+  </Description>
+
+  <ImageWrapper padding="0" marginBottom="3rem">
+    <Image src={responsiveImage1.src} alt={responsiveImage1AltText} />
+  </ImageWrapper>
+
+  <Description>
+    On narrower screens where there isn’t enough space, stack forms vertically.
+  </Description>
+
+  <ImageWrapper padding="0" marginBottom="3rem">
+    <Image src={responsiveImage2.src} alt={responsiveImage2AltText} />
+  </ImageWrapper>
+</PageleteSubSection>

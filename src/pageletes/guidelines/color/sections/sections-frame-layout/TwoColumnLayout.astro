@@ -1,0 +1,21 @@
+---
+export interface Props {
+  marginBottom?: string;
+}
+const { marginBottom = "48px" } = Astro.props as Props;
+---
+
+<div class="two-column-layout">
+  <slot name="left-frame" />
+  <slot name="right-frame" />
+</div>
+
+<style define:vars={{ marginBottom }}>
+  .two-column-layout {
+    margin-top: 48px;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: var(--marginBottom);
+  }
+</style>

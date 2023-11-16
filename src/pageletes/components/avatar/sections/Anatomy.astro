@@ -1,0 +1,49 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  ColumnLayout,
+  Description,
+  InfoList,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import AnatomyImage from "../imgs/avatar-anatomy-1.svg";
+const anatomyImgAltText =
+  "Image showing the different parts that make up an avatar";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.anatomy.id}>{topics.anatomy.title}</SectionHeader>
+
+  <Description>
+    Avatars have standard components as shown below, all of which are required.
+    The number of items within the accordion list can vary.
+  </Description>
+
+  <ColumnLayout numOfColumns={1} bkgColor="white">
+    <StackedLayout>
+      <Image src={AnatomyImage.src} alt={anatomyImgAltText} />
+    </StackedLayout>
+  </ColumnLayout>
+
+  <InfoList type="decimal">
+    <InfoListItem label="Avatar Content">
+      The avatar can be an image, initials, a silhouette icon, or a bot icon.
+    </InfoListItem>
+
+    <InfoListItem label="Container">
+      The avatar is shown within a circle with constrasting background color.
+    </InfoListItem>
+
+    <InfoListItem label="Status Icon">
+      An icon can be included to show the current presence status of the
+      individual. The contact can be shown to be online or available, or offline
+      or unavailable. This indicator is optional.
+    </InfoListItem>
+  </InfoList>
+</PageleteSection>

@@ -1,5 +1,6 @@
 import { Icon } from "@avaya/neo-react";
 import clsx from "clsx";
+import parse from "html-react-parser";
 
 import "./DoAndDont.css";
 
@@ -10,7 +11,7 @@ export interface InstructionProps {
 
 export interface DoAndDontProps {
   children: React.ReactElement<InstructionProps>[];
-  size?: "normal" | "wide";
+  size?: "normal" | "no-ratio" | "wide";
 }
 
 /**
@@ -44,11 +45,12 @@ export interface DoAndDontProps {
  *
  * @see `DoAndDont/DoAndDont.stories.tsx` for more details and examples.
  */
-export const DoAndDont = ({ children, size = "normal" }: DoAndDontProps) => (
+export const DoAndDont = ({ children, size = "no-ratio" }: DoAndDontProps) => (
   <div
     className={clsx(
       "do-and-dont-container",
-      size === "wide" && "do-and-dont-container-wide"
+      size === "wide" && "do-and-dont-container-wide",
+      size == "no-ratio" && "do-and-dont-container-no-ratio",
     )}
   >
     {children}
@@ -69,7 +71,7 @@ const DoContainer = ({ children, instructions }: InstructionProps) => (
     </div>
 
     <p className="do-and-dont-paragraph">
-      <b>DO:</b> {instructions}
+      <b>DO:</b> <>{parse(instructions)}</>
     </p>
   </div>
 );
@@ -88,7 +90,7 @@ const DontContainer = ({ children, instructions }: InstructionProps) => (
     </div>
 
     <p className="do-and-dont-paragraph">
-      <b>DON'T:</b> {instructions}
+      <b>DON'T:</b> <>{parse(instructions)}</>
     </p>
   </div>
 );

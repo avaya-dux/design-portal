@@ -2,7 +2,7 @@ import type { TooltipPosition } from "@avaya/neo-react";
 
 // (mostly) copy-pasted from Tooltip/helpers.ts
 export const translatePositionToCSSName = (
-  position: TooltipPosition = "top"
+  position: TooltipPosition = "top",
 ): string => {
   let cssPosition;
 
@@ -42,7 +42,7 @@ export const translatePositionToCSSName = (
 
     default:
       console.error(
-        `Unexpected position encountered: ${position}. Defaulting to default "position='up'"`
+        `Unexpected position encountered: ${position}. Defaulting to default "position='up'"`,
       );
       cssPosition = "up";
   }

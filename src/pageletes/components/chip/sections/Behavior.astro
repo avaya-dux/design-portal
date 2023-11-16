@@ -12,21 +12,21 @@ import { Image } from "@avaya/neo-react";
 
 const { id, title } = topics.behavior;
 
-import doImage1 from "../imgs/chip-behavior-do-1.svg";
-import dontImage1 from "../imgs/chip-behavior-dont-1.svg";
-import doImage2 from "../imgs/chip-behavior-do-2.svg";
-import dontImage2 from "../imgs/chip-behavior-dont-2.svg";
-import doImage3 from "../imgs/chip-behavior-do-3.svg";
-import dontImage3 from "../imgs/chip-behavior-dont-3.svg";
+import doImage1 from "../imgs/chip-behavior-color-do-1.svg";
+import dontImage1 from "../imgs/chip-behavior-color-dont-1.svg";
+import doImage2 from "../imgs/chip-behavior-icon-do-1.svg";
+import dontImage2 from "../imgs/chip-behavior-icon-dont-1.svg";
+import doImage3 from "../imgs/chip-behavior-expandable-do-1.svg";
+import dontImage3 from "../imgs/chip-behavior-expandable-dont-1.svg";
 import { DoAndDont } from "components";
 
 const do1Instructions =
-  "Use the chip state that best fits the content. For example, use the Alert chip for errors. Learn more in Neo’s color guidelines.";
+  "Use the chip state that best fits the content. For example, use the Alert chip for errors. Learn more in Neo’s <a class='neo-link--inline' href='/guidelines/color'>color guidelines</a>.";
 const doImg1AltText =
   "An image of default, alert, warning, info and success chips";
 
 const dont1Instructions =
-  " Do not mix the type to achieve specific colors, or use the another state as the default.";
+  "Do not mix the type to achieve specific colors, or use the another state as the default.";
 const dontImg1AltText = "An image of three info chips arranged horizontally";
 
 const do2Instructions =
@@ -69,13 +69,13 @@ const dontImg3AltText = "An image of a chip used in place of a form element'";
     <DoAndDont>
       <DoAndDont.DoContainer instructions={do1Instructions}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={doImage1} alt={doImg1AltText} />
+          <Image src={doImage1.src} alt={doImg1AltText} />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DoContainer>
 
       <DoAndDont.DontContainer instructions={dont1Instructions}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={dontImage1} alt={dontImg1AltText} />
+          <Image src={dontImage1.src} alt={dontImg1AltText} />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DontContainer>
     </DoAndDont>
@@ -94,13 +94,13 @@ const dontImg3AltText = "An image of a chip used in place of a form element'";
     <DoAndDont>
       <DoAndDont.DoContainer instructions={do2Instructions}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={doImage2} alt={doImg2AltText} />
+          <Image src={doImage2.src} alt={doImg2AltText} />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DoContainer>
 
       <DoAndDont.DontContainer instructions={dont2Instructions}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={dontImage2} alt={dontImg2AltText} />
+          <Image src={dontImage2.src} alt={dontImg2AltText} />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DontContainer>
     </DoAndDont>
@@ -119,13 +119,13 @@ const dontImg3AltText = "An image of a chip used in place of a form element'";
     <DoAndDont>
       <DoAndDont.DoContainer instructions={do3Instructions}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={doImage3} alt={doImg3AltText} />
+          <Image src={doImage3.src} alt={doImg3AltText} />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DoContainer>
 
       <DoAndDont.DontContainer instructions={dont3Instructions}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={dontImage3} alt={dontImg3AltText} />
+          <Image src={dontImage3.src} alt={dontImg3AltText} />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DontContainer>
     </DoAndDont>

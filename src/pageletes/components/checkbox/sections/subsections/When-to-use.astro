@@ -7,8 +7,8 @@ import { Image } from "@avaya/neo-react";
 
 import doImage1 from "../../imgs/checkbox-behavior-when-do-1.svg";
 import dontImage1 from "../../imgs/checkbox-behavior-when-dont-1.svg";
-import doImage2 from "../../imgs/checkbox-behavior-when-do-1.svg";
-import dontImage2 from "../../imgs/checkbox-behavior-when-dont-1.svg";
+import doImage2 from "../../imgs/checkbox-behavior-when-do-2.svg";
+import dontImage2 from "../../imgs/checkbox-behavior-when-dont-2.svg";
 
 const do1Instructions =
   "Use checkboxes for selecting options, and for accepting one-time offers or terms.";
@@ -16,7 +16,7 @@ const doImg1AltText =
   "An image showing checkboxes used for selecting options, and for accepting one-time offers or terms.";
 
 const dont1Instructions =
-  "Do not use a checkbox when only one selection is allowed. Use a Radio instead.";
+  "Do not use a checkbox when only one selection is allowed. Use a <a class='neo-link--inline' href='/components/radio'>Radio</a> instead.";
 const dontImg1AltText =
   "An image showing incorrectly using a checkbox when only one selection is allowed.";
 
@@ -26,7 +26,7 @@ const doImg2AltText =
   "An image showing checkboxes used for selecting options, and for accepting one-time offers or terms.";
 
 const dont2Instructions =
-  "Do not use a checkbox for ongoing or repeating functions.  Use a Switch instead.";
+  "Do not use a checkbox for ongoing or repeating functions.  Use a <a class='neo-link--inline' href='/components/switch'>Switch</a> instead.";
 const dontImg2AltText =
   "An image showing incorrectly using a checkbox for ongoing or repeating functions.";
 ---
@@ -42,13 +42,13 @@ const dontImg2AltText =
   <DoAndDont>
     <DoAndDont.DoContainer instructions={do1Instructions}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={doImage1} alt={doImg1AltText} />
+        <Image src={doImage1.src} alt={doImg1AltText} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DoContainer>
 
     <DoAndDont.DontContainer instructions={dont1Instructions}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={dontImage1} alt={dontImg1AltText} />
+        <Image src={dontImage1.src} alt={dontImg1AltText} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DontContainer>
   </DoAndDont>
@@ -56,13 +56,13 @@ const dontImg2AltText =
   <DoAndDont>
     <DoAndDont.DoContainer instructions={do2Instructions}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={doImage2} alt={doImg2AltText} />
+        <Image src={doImage2.src} alt={doImg2AltText} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DoContainer>
 
     <DoAndDont.DontContainer instructions={dont2Instructions}>
       <DoAndDont.ImageExampleContainer>
-        <Image src={dontImage2} alt={dontImg2AltText} />
+        <Image src={dontImage2.src} alt={dontImg2AltText} />
       </DoAndDont.ImageExampleContainer>
     </DoAndDont.DontContainer>
   </DoAndDont>

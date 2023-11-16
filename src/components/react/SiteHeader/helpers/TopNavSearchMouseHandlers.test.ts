@@ -14,7 +14,7 @@ describe("TopNav Search Mouse Handlers", () => {
       mouseEvent as unknown as MouseEvent,
       true,
       openModal,
-      ref
+      ref,
     );
 
     expect(openModal).toHaveBeenCalled();
@@ -25,7 +25,7 @@ describe("TopNav Search Mouse Handlers", () => {
       mouseEvent as unknown as MouseEvent,
       true,
       openModal,
-      ref
+      ref,
     );
 
     expect(openModal).toHaveBeenCalledTimes(1);

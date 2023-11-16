@@ -1,0 +1,96 @@
+---
+import {
+  ColumnLayout,
+  Description,
+  PageleteSubSection,
+  StackedLayout,
+  SubHeader,
+} from "components/astro";
+
+import { DoAndDont } from "components/react";
+
+import { Image } from "@avaya/neo-react";
+
+import iconsImage1 from "../../imgs/sideNav-behavior-icons-1.svg";
+import iconsImage2 from "../../imgs/sideNav-behavior-icons-2.svg";
+
+import doImage1 from "../../imgs/sideNav-behavior-icons-do-1.svg";
+import dontImage1 from "../../imgs/sideNav-behavior-icons-dont-1.svg";
+import doImage2 from "../../imgs/sideNav-behavior-icons-do-2.svg";
+import dontImage2 from "../../imgs/sideNav-behavior-icons-dont-2.svg";
+
+const do1Instructions =
+  "Use consistent treatment within the side navigation. If a sidebar is to be condensable, then icons are required for the top-level items only.";
+const doImg1AltText =
+  "An image showing side navigation with icons on all top level items.";
+
+const dont1Instructions =
+  "Do not add icons to only some options, and do not use them solely for decoration.";
+const dontImg1AltText =
+  "An image showing side navigation where some but not all of the top level items have icons.";
+
+const do2Instructions =
+  "Use the correct styling for sub-menu items so the active indicator aligns with the main sections.";
+const doImg2AltText = "An image showing second level items properly indented.";
+
+const dont2Instructions = "Do not mix sub-menu item styles.";
+const dontImg2AltText =
+  "An image showing second level items not properly indented under first level menu.";
+---
+
+<PageleteSubSection>
+  <SubHeader id="sidenav-behavior-icons">Icons</SubHeader>
+
+  <Description>
+    This side navigation uses icons for the top-level items only. Do not add
+    icons to sub-menu items.
+  </Description>
+
+  <ColumnLayout bkgColor="#f1f1f1" numOfColumns={1} marginBottom="3rem">
+    <StackedLayout vPadding="1.5rem">
+      <Image
+        src={iconsImage1.src}
+        alt="Image showing side navigation with icons in top level items only."
+      />
+    </StackedLayout>
+  </ColumnLayout>
+
+  <Description>Here we show side navigation without icons.</Description>
+
+  <ColumnLayout bkgColor="#f1f1f1" numOfColumns={1}>
+    <StackedLayout vPadding="1.5rem">
+      <Image
+        src={iconsImage2.src}
+        alt="Image showing side navigation without icons."
+      />
+    </StackedLayout>
+  </ColumnLayout>
+
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={do1Instructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage1.src} alt={doImg1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dont1Instructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage1.src} alt={dontImg1AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={do2Instructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage2.src} alt={doImg2AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dont2Instructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage2.src} alt={dontImg2AltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+</PageleteSubSection>

@@ -1,0 +1,186 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Caption,
+  Description,
+  ColumnLayout,
+  ImageWrapper,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import image1 from "../imgs/principles-1.svg";
+import image2 from "../imgs/principles-2.svg";
+import image3 from "../imgs/principles-3.svg";
+import image4 from "../imgs/principles-4.svg";
+import image5 from "../imgs/principles-5.svg";
+import image6 from "../imgs/principles-6.svg";
+import image7 from "../imgs/principles-7.svg";
+import image8 from "../imgs/principles-8.svg";
+import image9 from "../imgs/principles-9.svg";
+import image10 from "../imgs/principles-10.svg";
+
+const image1Alt = "Image showing a traffic light.";
+const image2Alt = "Image showing two symbols with an equals sign between them.";
+const image3Alt =
+  "Image showing a set of three sliders in different positions.";
+const image4Alt =
+  "Image showing a circle with two arrows wrapping around it in opposite directions.";
+const image5Alt = "Image showing a stop sign.";
+const image6Alt =
+  "Image showing a circle, a square, a triangle with a single line running through them.";
+const image7Alt =
+  "Image showing a rectangle which is flexed around its center.";
+const image8Alt =
+  "Image showing a rectangle with a circle and two lines inside it.";
+const image9Alt =
+  "Image showing a medical cross with an arrow wrapping around it clockwise.";
+const image10Alt = "Image showing a circle with a dialogue box attached.";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.principles.id}>
+    {topics.principles.title}
+  </SectionHeader>
+
+  <Description>
+    Neo, Avaya's Design System, is supplemented by a set of core user-centered
+    principles to compose, implement, and evaluate user experiences. These
+    principles are based on user needs and industry best practices. We use these
+    principles to bring the foundational building blocks to life, leading to
+    designs across Avaya products that are consistent, effective, meaningful and
+    engaging.
+  </Description>
+
+  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image1.src} alt={image1Alt} />
+      </ImageWrapper>
+      <Caption title="Visibility">
+        Show system status and indicate what's happening.
+      </Caption>
+    </div>
+
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image2.src} alt={image2Alt} />
+      </ImageWrapper>
+      <Caption title="Commonality">
+        Accessible by design. Use familiar metaphors and language.
+      </Caption>
+    </div>
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image3.src} alt={image3Alt} />
+      </ImageWrapper>
+      <Caption title="Freedom">
+        Provide defaults and undos. Enable personalization.
+      </Caption>
+    </div>
+
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image4.src} alt={image4Alt} />
+      </ImageWrapper>
+      <Caption title="Consistency">
+        Provide a reliable and consistent experience throughout.
+      </Caption>
+    </div>
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image5.src} alt={image5Alt} />
+      </ImageWrapper>
+      <Caption title="Error Prevention">
+        Help users avoid making mistakes.
+      </Caption>
+    </div>
+
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image6.src} alt={image6Alt} />
+      </ImageWrapper>
+      <Caption title="Recognition">
+        Make information and workflows easy to discover.
+      </Caption>
+    </div>
+
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image7.src} alt={image7Alt} />
+      </ImageWrapper>
+      <Caption title="Flexibility">
+        Make advanced tasks fluid & efficient.
+      </Caption>
+    </div>
+
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image8.src} alt={image8Alt} />
+      </ImageWrapper>
+      <Caption title="Minimalism">
+        Provide only necessary info in an elegant way.
+      </Caption>
+    </div>
+
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image9.src} alt={image9Alt} />
+      </ImageWrapper>
+      <Caption title="Error Recovery">
+        Help users recognize, diagnose and recover from bad situations.
+      </Caption>
+    </div>
+
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image10.src} alt={image10Alt} />
+      </ImageWrapper>
+      <Caption title="Help">
+        Use proactive and in-place hints to guide users.
+      </Caption>
+    </div>
+  </ColumnLayout>
+</PageleteSection>

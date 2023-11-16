@@ -1,0 +1,55 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Description,
+  ImageWrapper,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  SubHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import image1 from "../imgs/tabs-type-1.svg";
+const img1AltText = "Image showing a horizontal tab";
+import image2 from "../imgs/tabs-type-2.svg";
+const img2AltText = "Image showing a vertical tab";
+
+const { id, title } = topics.type;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+  <Description>
+    Tabs can be arranged either horizontally across the panel, or stacked
+    vertically on the left side of the panel.
+  </Description>
+  <PageleteSubSection>
+    <SubHeader id="type-horizontal">Horizontal</SubHeader>
+    <Description>
+      Horizontal tabs appear across the top of the panel and are left-justified.
+      Click the text to switch to that tab. The currently displayed tab will be
+      underlined.
+    </Description>
+
+    <ImageWrapper padding="0">
+      <Image src={image1.src} alt={img1AltText} />
+    </ImageWrapper>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="type-vertical">Vertical</SubHeader>
+    <Description>
+      Vertical tabs appear down the left side of the panel and are
+      top-justified. Click the text to switch to that tab. The currently
+      displayed tab will have a line to the left of the text.
+    </Description>
+
+    <ImageWrapper padding="0">
+      <Image src={image2.src} alt={img2AltText} />
+    </ImageWrapper>
+  </PageleteSubSection>
+</PageleteSection>

@@ -1,0 +1,26 @@
+---
+import TypesLayout from "../TypesLayout.astro";
+
+import graphic from "../../../imgs/principles-types-4.svg";
+
+const altText = "An icon representing deaf and hearing impairment";
+const type = "Deaf and Hard of Hearing";
+
+const firstDescription =
+  "Deaf and hard of hearing refers to those with varying degree of hearing loss, from those who require assistance to hear to no functional hearing. These users interact with a UI by using hearing aids, or use captioning and other alternative representations of audio content.";
+
+const secondDescription =
+  "These considerations will also help others, including those in loud environments where they may experience similar difficulties if they cannot hear audio, or quiet environments where they cannot play audio.";
+---
+
+<TypesLayout
+  graphicIcon={graphic.src}
+  graphicAltText={altText}
+  type={type}
+  firstDescription={firstDescription}
+  secondDescription={secondDescription}
+>
+  <li>Ensure information is not conveyed with sound alone.</li>
+
+  <li>Transcribe and caption videos and multimedia elements.</li>
+</TypesLayout>

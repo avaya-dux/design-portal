@@ -1,0 +1,158 @@
+---
+import {
+  Description,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  InfoTable,
+  InfoTableHead,
+  InfoTableRow,
+  InfoTableCellHead,
+  InfoTableBody,
+  InfoTableCell,
+  DoAndDont,
+} from "components";
+
+import { Image } from "@avaya/neo-react";
+
+import { topics } from "../../static";
+
+const { title, id } = topics.behavior;
+
+import BehaviorDoImage1 from "../../imgs/modal-behavior-do-1.svg";
+import BehaviorDontImage1 from "../../imgs/modal-behavior-dont-1.svg";
+
+import BehaviorDoImage2 from "../../imgs/modal-behavior-do-2.svg";
+import BehaviorDontImage2 from "../../imgs/modal-behavior-dont-2.svg";
+
+const behaviorDo1Description =
+  "Use modals for items that disrupt the user flow, such as confirmation prompts, or actions that must be completed before continuing.";
+const behaviorDont1Description = "Do not display static content in a modal.";
+
+const behaviorDo2Description =
+  "Use actionable verbs to concisely describe the functions of buttons.";
+const behaviorDont2Description =
+  "Do not use generic terms to describe button actions.";
+
+import Alignment from "./Alignment.astro";
+import Dismissal from "./Dismissal.astro";
+import Overflow from "./Overflow.astro";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    Modals are used to convey the highest priority information and require the
+    user take an action before continuing. They provide important information
+    that the user must acknowledge.
+  </Description>
+
+  <Description>
+    Modals are similar in function to Toasts and Notifications. See the chart
+    below comparing the three options, and for guidance on when each should be
+    used.
+  </Description>
+
+  <InfoTable>
+    <InfoTableHead>
+      <InfoTableRow>
+        <InfoTableCellHead>Component</InfoTableCellHead>
+        <InfoTableCellHead>Priority</InfoTableCellHead>
+        <InfoTableCellHead>User Action</InfoTableCellHead>
+      </InfoTableRow>
+    </InfoTableHead>
+
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>
+          <a class="neo-link" href="/components/toast">Toast</a>
+        </InfoTableCell>
+        <InfoTableCell>Low priority</InfoTableCell>
+        <InfoTableCell>
+          Feedback that does not need to interrupt the user flow. They should be
+          used to confirm an action. Toasts disappear automatically.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>
+          <a class="neo-link" href="/components/notifications">Notification</a>
+        </InfoTableCell>
+        <InfoTableCell>Prominent priority</InfoTableCell>
+        <InfoTableCell>
+          Items that require immediate attention. They can be persistent or
+          dismissable depending upon context. Notifications remain until
+          dismissed by the user, or when the event that caused the notification
+          is resolved such as an inline Notification.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>
+          <a class="neo-link" href="/components/modal">Modal</a>
+        </InfoTableCell>
+        <InfoTableCell>Highest priority</InfoTableCell>
+        <InfoTableCell>
+          Modals contain the most important type of feedback for the user. A
+          modal blocks app usage until the user takes the required action, or
+          closes the dialog (if available).
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
+
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={behaviorDo1Description}>
+      <DoAndDont.ImageExampleContainer>
+        <Image
+          src={BehaviorDoImage1.src}
+          alt="An image of a Modal with a confirmation prompt"
+        />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={behaviorDont1Description}>
+      <DoAndDont.ImageExampleContainer>
+        <Image
+          src={BehaviorDontImage1.src}
+          alt="An image of a modal displaying static content"
+        />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+
+  <DoAndDont>
+    <DoAndDont.DoContainer instructions={behaviorDo2Description}>
+      <DoAndDont.ImageExampleContainer>
+        <Image
+          src={BehaviorDoImage2.src}
+          alt="A modal that uses action verbs in its text prompt"
+        />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={behaviorDont2Description}>
+      <DoAndDont.ImageExampleContainer>
+        <Image
+          src={BehaviorDontImage2.src}
+          alt="A modal using terms that are too generic"
+        />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+
+  <PageleteSubSection>
+    <Alignment />
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <Dismissal />
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <Overflow />
+  </PageleteSubSection>
+</PageleteSection>

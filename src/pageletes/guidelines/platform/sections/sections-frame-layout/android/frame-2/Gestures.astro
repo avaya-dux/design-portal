@@ -1,0 +1,18 @@
+---
+import SectionLayout from "../../SectionLayout.astro";
+
+import graphic from "../../../../imgs/interactions-2.svg";
+
+import { Description } from "components";
+
+const altText = "Graphic representing gesture interactions";
+const type = "Gestures";
+---
+
+<SectionLayout graphicIcon={graphic.src} graphicAltText={altText} type={type}>
+  <Description slot="description">
+    Allow users to quickly and easily interact with the device using touch.
+    Visual cues are provided in our products to indicate where a simple movement
+    of the hand can control and trigger certain actions.
+  </Description>
+</SectionLayout>

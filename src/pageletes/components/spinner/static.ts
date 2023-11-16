@@ -9,34 +9,36 @@ export const storybook =
 type SpinnerTopicNames =
   | "playground"
   | "anatomy"
-  | "usage"
+  | "behavior"
   | "specs"
   | "related";
+
+const component = "spinner";
 
 export const topics: TopicsDict<SpinnerTopicNames> = {
   playground: {
     order: 0,
-    id: "spinner-playground",
+    id: `${component}-playground`,
     title: "Interactive Playground",
   },
   anatomy: {
     order: 1,
-    id: "anatomy",
+    id: `${component}-anatomy`,
     title: "Anatomy",
   },
-  usage: {
+  behavior: {
     order: 2,
-    id: "usage",
-    title: "Usage",
+    id: `${component}-behavior`,
+    title: "Behavior",
   },
   specs: {
     order: 3,
-    id: "specs",
+    id: `${component}-specs`,
     title: "Specs",
   },
   related: {
     order: 4,
-    id: "related",
+    id: `${component}-related`,
     title: "Related Content",
   },
 };

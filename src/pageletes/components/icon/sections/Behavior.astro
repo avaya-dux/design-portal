@@ -5,6 +5,7 @@ import {
   ColumnLayout,
   Description,
   DoAndDont,
+  ImageWrapper,
   PageleteSection,
   PageleteSubSection,
   SectionHeader,
@@ -29,7 +30,7 @@ const dont1Instructions =
   "Do not use different colors on the icon and the label.";
 const dontImg1AltText = "An icon and label in different colors";
 
-const do2Instructions = "Add a label next to an icon whenever possible..";
+const do2Instructions = "Add a label next to an icon whenever possible.";
 const doImg2AltText = "Icons with corresponding labels used in a Table";
 
 const do3Instructions =
@@ -38,6 +39,22 @@ const doImg3AltText = "An icon without a label and a Tooltip being displayed";
 
 const alignmentImage1AltText =
   "A button and two icons aligned on the same horizontal axis";
+
+import statusIndicatorsImg from "../imgs/icons-status-indicator.svg";
+import statusIndicatorDoImage from "../imgs/icons-status-do-1.svg";
+import statusIndicatorDontImage from "../imgs/icons-status-dont-1.svg";
+
+const statusIndicatorsImgAltText =
+  "A visual representation of all status indicators";
+
+const statusIndicatorDoInstructions =
+  "Use the designated color associated with each status indicator";
+const statusIndcatorsDoImgAltText =
+  "An image of a phone icon with a green checkmark in the top right hand corner.";
+const statusIndicatorDontInstructions =
+  "Do not make the status indicator and the channel icon to be the in the same color or use a different color than its designated color.";
+const statusIndcatorsDontImgAltText =
+  "An image of a phone icon with a red checkmark in the top right hand corner.";
 ---
 
 <PageleteSection>
@@ -65,13 +82,13 @@ const alignmentImage1AltText =
     <DoAndDont>
       <DoAndDont.DoContainer instructions={do1Instructions}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={doImage1} alt={doImg1AltText} />
+          <Image src={doImage1.src} alt={doImg1AltText} />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DoContainer>
 
       <DoAndDont.DontContainer instructions={dont1Instructions}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={dontImage1} alt={dontImg1AltText} />
+          <Image src={dontImage1.src} alt={dontImg1AltText} />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DontContainer>
     </DoAndDont>
@@ -82,7 +99,7 @@ const alignmentImage1AltText =
 
     <Description>
       Whenever possible, icons should be accompanied by descriptive text since
-      this better communicates each element’s function than icons alone do. If
+      this better communicates each element's function than icons alone do. If
       there is not enough space for an icon to have text beside it, include a
       tooltip with the required text.
     </Description>
@@ -90,17 +107,51 @@ const alignmentImage1AltText =
     <DoAndDont>
       <DoAndDont.DoContainer instructions={do2Instructions}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={doImage2} alt={doImg2AltText} />
+          <Image src={doImage2.src} alt={doImg2AltText} />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DoContainer>
 
       <DoAndDont.DoContainer instructions={do3Instructions}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={doImage3} alt={doImg3AltText} />
+          <Image src={doImage3.src} alt={doImg3AltText} />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DoContainer>
     </DoAndDont>
   </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="icons-status-indicator">Status Indicator</SubHeader>
+
+    <Description>
+      Icon states are used to show the current status of a channel, device, or
+      function (e.g. Which device is active, Connected/Not Connected).
+    </Description>
+
+    <ImageWrapper>
+      <Image src={statusIndicatorsImg.src} alt={statusIndicatorsImgAltText} />
+    </ImageWrapper>
+
+    <DoAndDont>
+      <DoAndDont.DoContainer instructions={statusIndicatorDoInstructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image
+            src={statusIndicatorDoImage.src}
+            alt={statusIndcatorsDoImgAltText}
+          />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
+
+      <DoAndDont.DoContainer instructions={statusIndicatorDontInstructions}>
+        <DoAndDont.ImageExampleContainer>
+          <Image
+            src={statusIndicatorDontImage.src}
+            alt={statusIndcatorsDontImgAltText}
+          />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
+    </DoAndDont>
+  </PageleteSubSection>
+
   <PageleteSubSection>
     <SubHeader id="icons-alignment">Alignment</SubHeader>
 
@@ -112,7 +163,7 @@ const alignmentImage1AltText =
 
     <ColumnLayout bkgColor="white" numOfColumns={1}>
       <StackedLayout>
-        <Image src={alignmentImage1} alt={alignmentImage1AltText} />
+        <Image src={alignmentImage1.src} alt={alignmentImage1AltText} />
       </StackedLayout>
     </ColumnLayout>
   </PageleteSubSection>

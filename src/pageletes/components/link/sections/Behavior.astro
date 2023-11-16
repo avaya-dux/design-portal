@@ -4,8 +4,6 @@ import { Image } from "@avaya/neo-react";
 import {
   ColumnLayout,
   Description,
-  InfoList,
-  InfoListItem,
   PageleteSection,
   PageleteSubSection,
   SectionHeader,
@@ -17,51 +15,54 @@ import { DoAndDont } from "components/react";
 
 import { topics } from "../static";
 
-import StandaloneIconDefault from "../imgs/link-standalone-icon-1.svg";
-import StandaloneIconHover from "../imgs/link-standalone-icon-2.svg";
-import StandaloneIconDisabled from "../imgs/link-standalone-icon-3.svg";
+import StandaloneIconDefault from "../imgs/link-behavior-standalone-icon-1.svg";
+import StandaloneIconHover from "../imgs/link-behavior-standalone-icon-2.svg";
+import StandaloneIconDisabled from "../imgs/link-behavior-standalone-icon-3.svg";
 
-import InlineUsageImageDo from "../imgs/link-inline-do-1.svg";
-import InlineUsageImageDont from "../imgs/link-inline-dont-1.svg";
+import InlineUsageImageDo from "../imgs/link-behavior-inline-do-1.svg";
+import InlineUsageImageDont from "../imgs/link-behavior-inline-dont-1.svg";
 
-const inlineUsageImgDoAltText = "Use blue underlined text for inline links.";
+const inlineUsageImgDoAltText =
+  "Use blue underlined text for inline links to help it stand out.";
 
 const inlineUsageImgDontAltText =
-  "Do not include inline links that are not underlined. ";
+  "Do not include inline links that are not underlined regardless of their color as it can get lost.";
 
 const { id, title } = topics.behavior;
 
-import StandaloneUsageImageDo from "../imgs/link-standalone-do-1.svg";
-import StandaloneUsageImageDont from "../imgs/link-standalone-dont-1.svg";
+import StandaloneUsageImageDo from "../imgs/link-behavior-standalone-do-1.svg";
+import StandaloneUsageImageDont from "../imgs/link-behavior-standalone-dont-1.svg";
 
 const standaloneUsageImgDoAltText =
-  "Use links in a list or on their own without an underline.";
-const standaloneUsageImgDontAltText = "Do not underline standalone links.";
+  "Use standalone links when building a list or when used on their own. They are not underlined.";
+const standaloneUsageImgDontAltText =
+  "Do not underline standalone links in their default state.";
 ---
 
 <PageleteSection>
   <SectionHeader id={id}>
     {title}
   </SectionHeader>
-  <Description>Lorem ipsum</Description>
+  <Description>
+    Links are used to allow rapid navigation to other places within the same
+    application, to other applications, to sites on the internet, or to access
+    resources such as manuals or downloadable files.
+  </Description>
 
   <PageleteSubSection>
     <SubHeader id="behavior-standalone-link">Standalone Link</SubHeader>
     <Description>
       Use a Standalone link whenever you need to provide navigation options that
-      are not embedded into other text. Make sure that the link text is
-      descriptive of where the user will be taken once selected.
+      are not embedded into other text. The link text must be sufficiently
+      descriptive of the link’s function. Do not include only the URL as the
+      link text.
     </Description>
-    <Description>
-      For accessibility, aria-text must be included that explains where the link
-      goes, and also if there are associated actions, such as to download a PDF
-      file, or go to a data entry screen.
-    </Description>
+
     <DoAndDont>
       <DoAndDont.DoContainer instructions={standaloneUsageImgDoAltText}>
         <DoAndDont.ImageExampleContainer>
           <Image
-            src={StandaloneUsageImageDo}
+            src={StandaloneUsageImageDo.src}
             alt={standaloneUsageImgDoAltText}
           />
         </DoAndDont.ImageExampleContainer>
@@ -70,7 +71,7 @@ const standaloneUsageImgDontAltText = "Do not underline standalone links.";
       <DoAndDont.DontContainer instructions={standaloneUsageImgDontAltText}>
         <DoAndDont.ImageExampleContainer>
           <Image
-            src={StandaloneUsageImageDont}
+            src={StandaloneUsageImageDont.src}
             alt={standaloneUsageImgDontAltText}
           />
         </DoAndDont.ImageExampleContainer>
@@ -83,57 +84,34 @@ const standaloneUsageImgDontAltText = "Do not underline standalone links.";
       Standalone Link with Icon
     </SubHeader>
     <Description>
-      Standalone links can include an icon either in front of or at the end of
-      the text. Only use icons for links that are for functions rather than for
-      navigation. The icon must be representative of the action provided by the
-      link.
-    </Description>
-    <Description>
-      For accessibility, aria-text must be included that explains where the link
-      goes, and also if there are associated actions, such as to download a PDF
-      file, or go to a data entry screen.
+      Standalone links can include an icon either in front of or behind the
+      text. The icon is not underlined. Only use icons for links for functions
+      (i.e. downloading files, accessing data entry fields), never for
+      navigation. The icon must be representative of the action, never for
+      decoration.
     </Description>
     <ColumnLayout bkgColor="white" numOfColumns={3}>
       <StackedLayout label="Default" vPadding="2.8rem" gap="2.8rem">
         <Image
-          src={StandaloneIconDefault}
+          src={StandaloneIconDefault.src}
           alt="Standalone Default Link with Icon"
         />
       </StackedLayout>
 
       <StackedLayout label="Hover" vPadding="2.8rem" gap="2.8rem">
         <Image
-          src={StandaloneIconHover}
+          src={StandaloneIconHover.src}
           alt="Standalone Hover Link with Icon"
         />
       </StackedLayout>
 
       <StackedLayout label="Disabled" vPadding="2.8rem" gap="2.8rem">
         <Image
-          src={StandaloneIconDisabled}
+          src={StandaloneIconDisabled.src}
           alt="Standalone Disabled Link Icon"
         />
       </StackedLayout>
     </ColumnLayout>
-
-    <InfoList type="disc">
-      <InfoListItem label="Default">
-        The default state of the Standalone link is blue text without any
-        underlining.
-      </InfoListItem>
-
-      <InfoListItem label="Hover">
-        When the user moves focus onto the link, it becomes underlined.
-        Selecting the link in this state will jump the user to the specified
-        location.
-      </InfoListItem>
-
-      <InfoListItem label="Disabled">
-        A link that is disabled appears on the page, but is currently
-        unavailable. For example, when something has to happen (i.e. create a
-        user name, fill in a field) before the link becomes active.
-      </InfoListItem>
-    </InfoList>
   </PageleteSubSection>
 
   <PageleteSubSection>
@@ -141,28 +119,27 @@ const standaloneUsageImgDontAltText = "Do not underline standalone links.";
     <Description>
       Use an Inline link to offer navigation options to the user from within
       other text. Inline links are part of a sentence, rather than being
-      independent, and are colored blue and underlined to help them stand out
+      independent. They are colored blue and underlined to help them stand out
       against the other text.
     </Description>
     <Description>
-      Make sure that the link text is descriptive of where the user will be
-      taken once selected.
+      The link text must be descriptive of the link’s function, either the
+      location where they will be taken or the action connected to the link.
     </Description>
-    <Description>
-      For accessibility, aria-text must be included that explains where the link
-      goes, and also if there are associated actions, such as to download a PDF
-      file or go to a data entry screen.
-    </Description>
+
     <DoAndDont>
       <DoAndDont.DoContainer instructions={inlineUsageImgDoAltText}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={InlineUsageImageDo} alt={inlineUsageImgDoAltText} />
+          <Image src={InlineUsageImageDo.src} alt={inlineUsageImgDoAltText} />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DoContainer>
 
       <DoAndDont.DontContainer instructions={inlineUsageImgDontAltText}>
         <DoAndDont.ImageExampleContainer>
-          <Image src={InlineUsageImageDont} alt={inlineUsageImgDontAltText} />
+          <Image
+            src={InlineUsageImageDont.src}
+            alt={inlineUsageImgDontAltText}
+          />
         </DoAndDont.ImageExampleContainer>
       </DoAndDont.DontContainer>
     </DoAndDont>

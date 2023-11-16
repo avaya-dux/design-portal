@@ -8,19 +8,17 @@ import {
   InfoListItem,
   PageleteSection,
   SectionHeader,
+  StackedLayout,
 } from "components/astro";
 
 import { topics } from "../static";
 
-import { TypesImage, TypesDoImage, TypesDontImage } from "../imgs";
-import { DoAndDont } from "components";
-
-const TypesImageAltText =
-  "An image of default, selected, checkbox and grouped with titles dropdowns.";
-
-const DoAltText = "Use dividers to group related items.";
-
-const DontAltText = "Do not place dividers between each item.";
+import {
+  TypesCheckboxImage,
+  TypesDefaultImage,
+  TypesGroupImage,
+  TypesSelectedImage,
+} from "../imgs";
 ---
 
 <PageleteSection>
@@ -31,8 +29,31 @@ const DontAltText = "Do not place dividers between each item.";
     and formatting requirements of the action items.
   </Description>
 
-  <ColumnLayout bkgColor="white" numOfColumns={1}>
-    <Image src={TypesImage} alt={TypesImageAltText} />
+  <ColumnLayout showGridlines={true} bkgColor="white" numOfColumns={2}>
+    <StackedLayout label="Default">
+      <Image
+        src={TypesDefaultImage.src}
+        alt="Image showing default dropdown state"
+      />
+    </StackedLayout>
+    <StackedLayout label="Selected">
+      <Image
+        src={TypesSelectedImage.src}
+        alt="Image showing selected dropdown state"
+      />
+    </StackedLayout>
+    <StackedLayout label="Checkbox">
+      <Image
+        src={TypesCheckboxImage.src}
+        alt="Image showing dropdown with checkboxes"
+      />
+    </StackedLayout>
+    <StackedLayout label="Grouped">
+      <Image
+        src={TypesGroupImage.src}
+        alt="Image showing dropdown with grouped sections"
+      />
+    </StackedLayout>
   </ColumnLayout>
 
   <InfoList type="decimal">
@@ -57,18 +78,4 @@ const DontAltText = "Do not place dividers between each item.";
       sections. This makes it easier to find items in longer lists.
     </InfoListItem>
   </InfoList>
-
-  <DoAndDont>
-    <DoAndDont.DoContainer instructions={DoAltText}>
-      <DoAndDont.ImageExampleContainer>
-        <Image src={TypesDoImage} alt={DoAltText} />
-      </DoAndDont.ImageExampleContainer>
-    </DoAndDont.DoContainer>
-
-    <DoAndDont.DontContainer instructions={DontAltText}>
-      <DoAndDont.ImageExampleContainer>
-        <Image src={TypesDontImage} alt={DontAltText} />
-      </DoAndDont.ImageExampleContainer>
-    </DoAndDont.DontContainer>
-  </DoAndDont>
 </PageleteSection>

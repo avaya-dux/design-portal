@@ -8,85 +8,90 @@ import {
   InfoListItem,
   PageleteSection,
   SectionHeader,
-  StackedLayout,
 } from "components/astro";
 import { topics } from "../static";
 
-import StateActiveImage from "./imgs/text-input-states-active.svg";
-import StateDefaultImage from "./imgs/text-input-states-default.svg";
-import StateDisabledImage from "./imgs/text-input-states-disabled.svg";
-import StateHoverImage from "./imgs/text-input-states-hover.svg";
-import StateErrorImage from "./imgs/text-input-states-error.svg";
+import StateActiveImage from "./imgs/text-states-1.svg";
+import StateDefaultImage from "./imgs/text-states-2.svg";
+import StateDisabledImage from "./imgs/text-states-3.svg";
+import StateHoverImage from "./imgs/text-states-4.svg";
+import StateErrorImage from "./imgs/text-states-5.svg";
+
+import LayoutWrapper from "./subsections/components/LayoutWrapper.astro";
 ---
 
 <PageleteSection>
   <SectionHeader id={topics.states.id}>{topics.states.title}</SectionHeader>
 
-  <Description>
-    Each button can exist in one of 4 states. The button’s state will change as
-    the user moves around the screen.
-  </Description>
+  <Description>Text input fields can appear in one of five states.</Description>
 
-  <ColumnLayout marginBottom="0" bkgColor="white" numOfColumns={1}>
-    <StackedLayout label="Default">
+  <ColumnLayout bkgColor="white" numOfColumns={3} marginBottom="0">
+    <LayoutWrapper label="Default">
       <Image
-        src={StateDefaultImage}
+        src={StateActiveImage.src}
         alt="Text Input with default state looks like this"
       />
-    </StackedLayout>
-  </ColumnLayout>
-  <ColumnLayout showTopBorder={false} bkgColor="white" numOfColumns={2}>
-    <StackedLayout label="Hover">
+    </LayoutWrapper>
+
+    <LayoutWrapper label="Hover">
       <Image
-        src={StateHoverImage}
+        src={StateDefaultImage.src}
         alt="Text Input with hover state look like this"
       />
-    </StackedLayout>
-    <StackedLayout label="Active">
+    </LayoutWrapper>
+
+    <LayoutWrapper label="Active">
       <Image
-        src={StateActiveImage}
+        src={StateDisabledImage.src}
         alt="Text Input with active state look like this"
       />
-    </StackedLayout>
-
-    <StackedLayout label="Error">
+    </LayoutWrapper>
+  </ColumnLayout>
+  <ColumnLayout
+    bkgColor="white"
+    numOfColumns={2}
+    marginTop="0"
+    showTopBorder={false}
+  >
+    <LayoutWrapper label="Error">
       <Image
-        src={StateErrorImage}
+        src={StateHoverImage.src}
         alt="Text Input with error state look like this"
       />
-    </StackedLayout>
-    <StackedLayout label="Disabled">
+    </LayoutWrapper>
+
+    <LayoutWrapper label="Disabled">
       <Image
-        src={StateDisabledImage}
+        src={StateErrorImage.src}
         alt="Text Input with disabled state look like this"
       />
-    </StackedLayout>
+    </LayoutWrapper>
   </ColumnLayout>
 
   <InfoList type="disc">
     <InfoListItem label="Default">
-      The default state is the state that the button is in when the user first
-      sees it.
+      This is the default state for the field, and shows that it is ready to
+      receive data.
     </InfoListItem>
 
     <InfoListItem label="Hover">
-      The hover state is the state that the button is in when the user moves the
-      mouse over the button.
+      The field changes to Hover when the mouse is moved over the container.
     </InfoListItem>
 
     <InfoListItem label="Active">
-      The active state is the state that the button is in when the user clicks
-      the button.
+      While entering text in the field, it becomes Active.
     </InfoListItem>
 
     <InfoListItem label="Error">
-      The error state is the state that the button is in when the user has
-      entered invalid information into the button.
+      This state shows that something is wrong with the data entered. It may be
+      the wrong data type (e.g. text instead of a date), or it could be a
+      required field that has been left empty.
     </InfoListItem>
 
     <InfoListItem label="Disabled">
-      The disabled state is the state that the button is in when the user cannot
-      interact with the button.
+      When disabled, the field cannot be changed and new data cannot be entered.
+      It will remain locked until some other field is populated or a setting is
+      changed. The current value for the field is displayed.
     </InfoListItem>
   </InfoList>
 </PageleteSection>

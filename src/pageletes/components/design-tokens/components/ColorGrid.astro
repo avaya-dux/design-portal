@@ -1,0 +1,12 @@
+<section class="var-columns">
+  <slot />
+</section>
+
+<style>
+  .var-columns {
+    display: grid;
+    align-items: start;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem 1rem;
+  }
+</style>

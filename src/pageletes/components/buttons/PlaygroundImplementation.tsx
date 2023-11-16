@@ -1,6 +1,6 @@
 import {
   Button,
-  ButtonProps,
+  type ButtonProps,
   Checkbox,
   CheckboxGroup,
   Radio,
@@ -33,7 +33,7 @@ export const PlaygroundImplementation = () => {
       !icon &&
       size === "default" &&
       variant === "primary",
-    [animation, badge, dir, disabled, icon, size, variant]
+    [animation, badge, dir, disabled, icon, size, variant],
   );
 
   const react = useMemo(
@@ -49,7 +49,7 @@ export const PlaygroundImplementation = () => {
 >
   ${isDefault ? "default" : "custom"}
 </Button>`,
-    [animation, badge, dir, disabled, icon, isDefault, size, variant]
+    [animation, badge, dir, disabled, icon, isDefault, size, variant],
   );
   const html = useMemo(
     () =>
@@ -58,17 +58,17 @@ export const PlaygroundImplementation = () => {
     "neo-btn",
     `neo-btn-${variant} neo-btn-${variant}--${size}`,
     animation === "pulse" && "neo-pulse",
-    badge && "neo-badge"
+    badge && "neo-badge",
   )}"
   disabled={${disabled}}
   dir="${dir}"
   data-badge="${badge}"
 >
   ${animation === "spinner" ? `<div class="neo-spinner"></div> ` : ""}${
-        isDefault ? "default" : "custom"
-      }
+    isDefault ? "default" : "custom"
+  }
 </button>`,
-    [animation, badge, dir, disabled, isDefault, size, variant]
+    [animation, badge, dir, disabled, isDefault, size, variant],
   );
 
   return (

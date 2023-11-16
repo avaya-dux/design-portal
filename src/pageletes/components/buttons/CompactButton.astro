@@ -2,8 +2,8 @@
 import { Image } from "@avaya/neo-react";
 import { Description, SubHeader, DoAndDont } from "components";
 
-import compactButtonDoImage from "./button-imgs/do-compact1.svg";
-import compactButtonDontImage from "./button-imgs/dont-compact1.svg";
+import compactButtonDoImage from "./button-imgs/button-behavior-compact-do-1.svg";
+import compactButtonDontImage from "./button-imgs/button-behavior-compact-dont-1.svg";
 
 const compactButtonDoInstructions =
   "Use the default button size for most actions. Compact buttons can be used within text editors and message bubbles.";
@@ -11,7 +11,7 @@ const compactButtonDotImgAltText =
   "image showing toast notification with three buttons with long text";
 
 const compactButtonDontInstructions =
-  "Use compact buttons as the standard throughout the application.";
+  "Do not use compact buttons as the standard throughout the application.";
 const compactButtonDontImgAltText =
   "image showing two common cancel and save buttons in compact size";
 ---
@@ -26,13 +26,16 @@ const compactButtonDontImgAltText =
 <DoAndDont>
   <DoAndDont.DoContainer instructions={compactButtonDoInstructions}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={compactButtonDoImage} alt={compactButtonDotImgAltText} />
+      <Image src={compactButtonDoImage.src} alt={compactButtonDotImgAltText} />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DoContainer>
 
   <DoAndDont.DontContainer instructions={compactButtonDontInstructions}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={compactButtonDontImage} alt={compactButtonDontImgAltText} />
+      <Image
+        src={compactButtonDontImage.src}
+        alt={compactButtonDontImgAltText}
+      />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DontContainer>
 </DoAndDont>

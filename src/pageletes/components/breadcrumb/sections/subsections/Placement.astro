@@ -1,0 +1,47 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  DoAndDont,
+  PageleteSubSection,
+  SubHeader,
+} from "components";
+
+import doImage from "../../imgs/behavior-placement-do-1.svg";
+import dontImage from "../../imgs/behavior-placement-dont-1.svg";
+
+const doInstructions =
+  "Always place the breadcrumb on top of the panel above any other elements.";
+const doImgAltText =
+  "Image showing a breadcrumb at the top of the main content panel.";
+
+const dontInstructions =
+  "Do not place the breadcrumb trail below other elements or at the bottom of a page.";
+const dontImgAltText =
+  "Image showing a breadcrumb with other elements on top of it.";
+---
+
+<PageleteSubSection>
+  <SubHeader id="breadcrumb-placement">Placement</SubHeader>
+
+  <Description>
+    Breadcrumbs appear at the top of a page, just below the header. They display
+    links to the previous pages and sections the user visited that brought them
+    to the current page.
+  </Description>
+
+  <DoAndDont size="wide">
+    <DoAndDont.DoContainer instructions={doInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={doImage.src} alt={doImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DoContainer>
+
+    <DoAndDont.DontContainer instructions={dontInstructions}>
+      <DoAndDont.ImageExampleContainer>
+        <Image src={dontImage.src} alt={dontImgAltText} />
+      </DoAndDont.ImageExampleContainer>
+    </DoAndDont.DontContainer>
+  </DoAndDont>
+</PageleteSubSection>

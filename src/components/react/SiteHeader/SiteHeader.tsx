@@ -36,7 +36,7 @@ export const SiteHeader = ({
 }) => {
   const isActiveLink = useCallback(
     (link: string) => pathname.startsWith(link),
-    [pathname]
+    [pathname],
   );
 
   const isOpen = useStore(isLeftNavigationOpen);
@@ -83,11 +83,19 @@ export const SiteHeader = ({
       </TopNav.LinkButton>
 
       <TopNav.LinkButton
-        href="/guidelines"
+        href="/guidelines/overview"
         active={isActiveLink("/guidelines")}
         rel="prefetch"
       >
         Guidelines
+      </TopNav.LinkButton>
+
+      <TopNav.LinkButton
+        href="/accessibility/principles"
+        active={isActiveLink("/accessibility")}
+        rel="prefetch"
+      >
+        Accessibility
       </TopNav.LinkButton>
 
       <TopNav.LinkButton
@@ -113,19 +121,10 @@ const Logo = () => (
   <a href="/" aria-label="Homepage">
     <picture>
       <source
-        media="(max-width: 320px) and (prefers-color-scheme: dark)"
-        srcSet="/imgs/logo-condensed-dark.svg"
+        media="(max-width: 832px) and (prefers-color-scheme: dark)"
+        srcSet="/imgs/logo-mobile-dark.svg"
       />
-      <source
-        media="(max-width: 320px)"
-        srcSet="/imgs/logo-condensed-light.svg"
-      />
-
-      <source
-        media="(max-width: 799px) and (prefers-color-scheme: dark)"
-        srcSet="/imgs/logo-full-dark.svg"
-      />
-      <source media="(max-width: 799px)" srcSet="/imgs/logo-full-light.svg" />
+      <source media="(max-width: 832px)" srcSet="/imgs/logo-mobile-light.svg" />
 
       <source
         media="(max-width: 1279px) and (prefers-color-scheme: dark)"

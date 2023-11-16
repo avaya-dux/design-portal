@@ -1,0 +1,42 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ColumnLayout,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+} from "components/astro";
+
+import { topics } from "../static";
+
+const { id, title } = topics.specs;
+
+import SpecsImage1 from "../imgs/tabs-specs-1.svg";
+import SpecsImage2 from "../imgs/tabs-specs-2.svg";
+
+const specsImage1AltText =
+  "A horizontal tab with indicators for its dimensions in pixels";
+const specsImage2AltText =
+  "A verical tab withindicators for its dimensions in pixels";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Each tab has a height of 36 pixels with 8 pixels of padding above and below
+    the text.
+  </Description>
+
+  <ColumnLayout bkgColor="white" numOfColumns={2}>
+    <StackedLayout label="Vertical Tab">
+      <Image src={SpecsImage1.src} alt={specsImage1AltText} />
+    </StackedLayout>
+
+    <StackedLayout label="Horizontal Tab">
+      <Image src={SpecsImage2.src} alt={specsImage2AltText} />
+    </StackedLayout>
+  </ColumnLayout>
+</PageleteSection>

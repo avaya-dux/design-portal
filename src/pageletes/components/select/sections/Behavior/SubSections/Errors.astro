@@ -3,7 +3,7 @@ import { Image } from "@avaya/neo-react";
 
 import { Description, ImageWrapper, SubHeader } from "components";
 
-import img1 from "./imgs/behavior-errors-1.svg";
+import img1 from "./imgs/select-behavior-errors-1.svg";
 const img1Alt =
   "Image showing a select in an error state, which is described red helper text below the select.";
 ---
@@ -11,10 +11,12 @@ const img1Alt =
 <SubHeader id="select-behavior-errors">Errors</SubHeader>
 
 <Description>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+  When the data entered into a select field is incorrect, or if the field is
+  required but has been left empty, an error state is displayed. The field is
+  highlighted and helper text changes to provide information on what the problem
+  is and how to fix it.
 </Description>
 
-<ImageWrapper>
-  <Image src={img1} alt={img1Alt} />
+<ImageWrapper padding="0">
+  <Image src={img1.src} alt={img1Alt} />
 </ImageWrapper>

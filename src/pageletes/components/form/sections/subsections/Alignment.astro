@@ -1,0 +1,37 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ImageWrapper,
+  PageleteSubSection,
+  SubHeader,
+} from "components";
+
+import alignmentImage from "../../imgs/behavior-alignment.svg";
+
+const alignmentImageAltText =
+  "Image showing how different elements inside a form are vertically aligned.";
+---
+
+<PageleteSubSection>
+  <SubHeader id="form-alignment">Alignment</SubHeader>
+
+  <Description>
+    Alignment refers to the arrangement of input fields and labels on a form so
+    that they are visually consistent and easy to read. Proper form alignment is
+    important to create clear and intuitive visual designs that guide users
+    through a process.
+  </Description>
+
+  <Description>
+    Align forms and input components to the left side of the page layout keeping
+    all inputs the same width. Fields should be stacked vertically where
+    possible, but related items (e.g. Start Date, End Date) can be stacked
+    horizontally.
+  </Description>
+
+  <ImageWrapper isShaded={false}>
+    <Image src={alignmentImage.src} alt={alignmentImageAltText} />
+  </ImageWrapper>
+</PageleteSubSection>

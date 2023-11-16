@@ -3,16 +3,15 @@ import { Image } from "@avaya/neo-react";
 
 import { Description, DoAndDont, SubHeader } from "components";
 
-import doImage from "./imgs/behavior-do-1.svg";
-import dontImage from "./imgs/behavior-dont-1.svg";
+import doImage from "./imgs/select-behavior-labeling-do-1.svg";
+import dontImage from "./imgs/select-behavior-labeling-dont-1.svg";
 
-const doInstructions =
-  "Use labels by default unless the input is in a tight area (such as a navigation bar).";
+const doInstructions = "Always include labels unless there is limited space.";
 const doImgAltText =
   "Image showing a select with a short and descriptive label above it.";
 
 const dontInstructions =
-  "Do not rely on placeholders alone as they are not visible once content is added.";
+  "Do not rely on placeholder text as it disappears once content is added.";
 const dontImgAltText =
   "Image showing a disabled select with placeholder text instead of a label.";
 ---
@@ -20,22 +19,20 @@ const dontImgAltText =
 <SubHeader id="select-behavior-labeling">Labeling</SubHeader>
 
 <Description>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, explicabo
-  adipisci aperiam laboriosam excepturi illo sint iure vero perferendis
-  doloribus reiciendis veniam libero, ratione quia vel quas ex magnam
-  consequatur.
+  Labels help the user identify the information contained in or required by each
+  select field.
 </Description>
 
 <DoAndDont>
   <DoAndDont.DoContainer instructions={doInstructions}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={doImage} alt={doImgAltText} />
+      <Image src={doImage.src} alt={doImgAltText} />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DoContainer>
 
   <DoAndDont.DontContainer instructions={dontInstructions}>
     <DoAndDont.ImageExampleContainer>
-      <Image src={dontImage} alt={dontImgAltText} />
+      <Image src={dontImage.src} alt={dontImgAltText} />
     </DoAndDont.ImageExampleContainer>
   </DoAndDont.DontContainer>
 </DoAndDont>
