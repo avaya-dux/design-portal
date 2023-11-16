@@ -33,10 +33,7 @@ export const LeftNavMobile = ({
     >
       <LeftNav.NavCategory label="Docs">
         {docsPages.map((page, index) => (
-          <LeftNav.LinkItem
-            key={`doc-${index}`}
-            href={page.url as string}
-          >
+          <LeftNav.LinkItem key={`doc-${index}`} href={page.url as string}>
             {page.title}
           </LeftNav.LinkItem>
         ))}

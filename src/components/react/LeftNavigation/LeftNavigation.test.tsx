@@ -2,9 +2,7 @@ import { act, render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
 import { cleanStores, keepMount } from "nanostores";
 
-import {
-  isLeftNavigationOpen,
-} from "components/react/utils/layoutState";
+import { isLeftNavigationOpen } from "components/react/utils/layoutState";
 
 import { LeftNavigation } from ".";
 import {
