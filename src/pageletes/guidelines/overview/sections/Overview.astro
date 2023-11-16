@@ -1,6 +1,7 @@
 ---
 import { Image } from "@avaya/neo-react";
 import {
+  Caption,
   Description,
   ColumnLayout,
   ImageWrapper,
@@ -43,93 +44,83 @@ const image6Alt =
   </Description>
 
   <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image1.src} alt={image1Alt} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image2.src} alt={image2Alt} />
-    </ImageWrapper>
-  </ColumnLayout>
-
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
     <div>
-      <h4 class="image-header">Simple</h4>
-      <Description>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image1.src} alt={image1Alt} />
+      </ImageWrapper>
+      <Caption title="Simple">
         Natural, familiar, and discoverable. Dynamically and contextually
         aligned to user needs.
-      </Description>
+      </Caption>
     </div>
     <div>
-      <h4 class="image-header">Engaging</h4>
-      <Description>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image2.src} alt={image2Alt} />
+      </ImageWrapper>
+      <Caption title="Engaging">
         Creating emotional connections through thoughtful design of customer
         interaction across products.
-      </Description>
+      </Caption>
     </div>
-  </ColumnLayout>
 
-  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image3.src} alt={image3Alt} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image4.src} alt={image4Alt} />
-    </ImageWrapper>
-  </ColumnLayout>
-
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
     <div>
-      <h4 class="image-header">Effective</h4>
-      <Description>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image3.src} alt={image3Alt} />
+      </ImageWrapper>
+      <Caption title="Effective">
         Trusted and reliable to facilitate teamwork, effective customer
         interactions and meaningful outcomes.
-      </Description>
+      </Caption>
     </div>
     <div>
-      <h4 class="image-header">Usable</h4>
-      <Description>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image4.src} alt={image4Alt} />
+      </ImageWrapper>
+      <Caption title="Usable">
         Driven by user needs, consistent design standards, and usability testing
         - not by opinions.
-      </Description>
+      </Caption>
     </div>
-  </ColumnLayout>
 
-  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image5.src} alt={image5Alt} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image6.src} alt={image6Alt} />
-    </ImageWrapper>
-  </ColumnLayout>
-
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
     <div>
-      <h4 class="image-header">Aligned</h4>
-      <Description>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image5.src} alt={image5Alt} />
+      </ImageWrapper>
+      <Caption title="Aligned">
         Targeted to product strategy, user profiles and platform conventions.
-      </Description>
+      </Caption>
     </div>
     <div>
-      <h4 class="image-header">Inclusive</h4>
-      <Description>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image6.src} alt={image6Alt} />
+      </ImageWrapper>
+      <Caption title="Inclusive">
         Empathetic by design – accessible, demographic, cultural, situational.
-      </Description>
+      </Caption>
     </div>
   </ColumnLayout>
 </PageleteSection>
