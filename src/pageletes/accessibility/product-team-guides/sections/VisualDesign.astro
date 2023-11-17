@@ -1,0 +1,17 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components";
+
+import { topics } from "../static";
+
+const { id, title } = topics.visualdesign;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Visual designers create the environment where people interact with the
+    application. This designs must consider that some of the users will be
+    disabled and have different needs. Good designs are accessible to everyone.
+  </Description>
+</PageleteSection>

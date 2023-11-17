@@ -1,0 +1,16 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components";
+
+import { topics } from "../static";
+
+const { id, title } = topics.qualityassurance;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Applications need to be regularly tested to ensure they continue to be
+    accessible to all users.
+  </Description>
+</PageleteSection>
