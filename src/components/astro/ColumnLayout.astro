@@ -10,6 +10,7 @@ export interface Props {
   showGridlines?: boolean;
   showTopBorder?: boolean;
   showRightBorder?: boolean;
+  isRounded?: boolean;
 }
 
 const {
@@ -22,6 +23,7 @@ const {
   showGridlines = true,
   showTopBorder = true,
   showRightBorder = false,
+  isRounded = true,
 } = Astro.props as Props;
 
 const borderPatternClass = clsx(
@@ -30,6 +32,7 @@ const borderPatternClass = clsx(
   showRightBorder && "right-border",
   !showTopBorder && "no-top-border",
   isShaded && "column-layout--shaded",
+  !isRounded && "no-border-radius",
 );
 ---
 
@@ -93,5 +96,9 @@ const borderPatternClass = clsx(
 
   div.column-layout--shaded {
     background-color: var(--neo-color-base-100);
+  }
+
+  .no-border-radius :global(.neo-img) {
+    border-radius: 0;
   }
 </style>

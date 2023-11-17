@@ -1,0 +1,58 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  ColumnLayout,
+  Description,
+  InfoList,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import AnatomyImage from "../imgs/widget-anatomy-1.svg";
+const anatomyImgAltText =
+  "Image showing the different parts that make up a Widget";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.anatomy.id}>{topics.anatomy.title}</SectionHeader>
+
+  <Description>
+    The widget is a pop-up that contains the information or the action options required to resolve the current situation.
+  </Description>
+
+  <ColumnLayout numOfColumns={1} marginTop={"3rem"} isRounded={false}>
+    <StackedLayout vPadding="0">
+      <Image src={AnatomyImage.src} alt={anatomyImgAltText} />
+    </StackedLayout>
+  </ColumnLayout>
+
+  <InfoList type="decimal">
+    <InfoListItem label="Icon (optional)">
+      Add an icon to help identify to the user the function of the widget. The
+      icon should be closely associated with the function of the widget.
+    </InfoListItem>
+
+    <InfoListItem label="Header">
+      This is the title of the widget, briefly conveying the detail concerning
+      the function of the widget.
+    </InfoListItem>
+
+    <InfoListItem label="Actions">
+      These button provide functional actions to resolve the current situation.
+    </InfoListItem>
+
+    <InfoListItem label="Content">
+      The detailed description associated with the widget are included here. It
+      explains the problem or the available options.
+    </InfoListItem>
+
+    <InfoListItem label="Container">
+      The boundary of the widget is the container. All of the text and functions
+      are held inside this box.
+    </InfoListItem>
+  </InfoList>
+</PageleteSection>
