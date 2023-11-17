@@ -131,6 +131,17 @@ switch (pathname.split("/")[1]) {
         background-color: var(--global-background);
       }
 
+      .code {
+        background-color: var(--neo-color-base-100);
+        color: var(--neo-color-red-600);
+        font-family: monospace;
+      }
+
+      .neo-dark .code {
+        background-color: var(--neo-color-base-800);
+        color: var(--neo-color-red-200);
+      }
+
       /* mobile */
       @media screen and (max-width: 831px) {
         :root {

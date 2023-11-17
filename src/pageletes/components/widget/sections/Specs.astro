@@ -1,0 +1,30 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  ColumnLayout,
+  Description,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import SpecsImage from "../imgs/widget-specs-1.svg";
+const specsImgAltText = "Image showing the design specifications of a Widget";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.specs.id}>{topics.specs.title}</SectionHeader>
+
+  <Description>
+    Widgets have the size and padding shown here. The width of the container
+    adapts to the amount of text and other content.
+  </Description>
+
+  <ColumnLayout numOfColumns={1} marginTop={"3rem"} isRounded={false}>
+    <StackedLayout vPadding="0">
+      <Image src={SpecsImage.src} alt={specsImgAltText} />
+    </StackedLayout>
+  </ColumnLayout>
+</PageleteSection>
