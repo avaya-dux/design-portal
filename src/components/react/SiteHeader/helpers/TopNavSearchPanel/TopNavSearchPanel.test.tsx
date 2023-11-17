@@ -2,13 +2,13 @@ import { TextInput } from "@avaya/neo-react";
 import { act, render, screen, waitFor } from "@testing-library/react";
 import { axe } from "jest-axe";
 
-import { pagesMockData } from "../mocks";
+import { filteredPagesMockData } from "../mocks";
 import { TopNavSearchPanel } from "./TopNavSearchPanel";
 
 describe("TopNavSearchPanel", () => {
   it("renders without exploding", () => {
     render(
-      <TopNavSearchPanel open options={pagesMockData}>
+      <TopNavSearchPanel open options={filteredPagesMockData}>
         <TextInput aria-label="test text input" />
       </TopNavSearchPanel>,
     );
@@ -26,7 +26,7 @@ describe("TopNavSearchPanel", () => {
     });
 
     render(
-      <TopNavSearchPanel open options={pagesMockData}>
+      <TopNavSearchPanel open options={filteredPagesMockData}>
         <TextInput aria-label="test text input" />
       </TopNavSearchPanel>,
     );
@@ -50,7 +50,7 @@ describe("TopNavSearchPanel", () => {
 
   it("passes basic accessibility compliance", async () => {
     const { container } = render(
-      <TopNavSearchPanel open options={pagesMockData}>
+      <TopNavSearchPanel open options={filteredPagesMockData}>
         <TextInput aria-label="test text input" />
       </TopNavSearchPanel>,
     );

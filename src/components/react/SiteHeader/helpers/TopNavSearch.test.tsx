@@ -3,11 +3,11 @@ import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 
 import { TopNavSearch } from ".";
-import { pagesMockData } from "./mocks";
+import { filteredPagesMockData } from "./mocks";
 
 describe("TopNavSearch", () => {
   it("renders without exploding", () => {
-    render(<TopNavSearch pages={pagesMockData} />);
+    render(<TopNavSearch pages={filteredPagesMockData} />);
 
     const rootElement = screen.getByLabelText("Search Site");
 
@@ -15,7 +15,7 @@ describe("TopNavSearch", () => {
   });
 
   it("responds correctly to mouse click events", async () => {
-    render(<TopNavSearch pages={pagesMockData} />);
+    render(<TopNavSearch pages={filteredPagesMockData} />);
 
     const buttonElement = screen.getByRole("button");
 
@@ -37,7 +37,7 @@ describe("TopNavSearch", () => {
   });
 
   it("responds correctly to keyboard events", async () => {
-    render(<TopNavSearch pages={pagesMockData} />);
+    render(<TopNavSearch pages={filteredPagesMockData} />);
 
     const modal = screen.queryByRole("dialog");
 
@@ -59,7 +59,7 @@ describe("TopNavSearch", () => {
   });
 
   it("displays search results when typed into modal", async () => {
-    render(<TopNavSearch pages={pagesMockData} />);
+    render(<TopNavSearch pages={filteredPagesMockData} />);
 
     const buttonElement = screen.getByRole("button");
 
@@ -75,7 +75,9 @@ describe("TopNavSearch", () => {
   });
 
   it("passes basic axe compliance", async () => {
-    const { container } = render(<TopNavSearch pages={pagesMockData} />);
+    const { container } = render(
+      <TopNavSearch pages={filteredPagesMockData} />,
+    );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });

@@ -34,52 +34,43 @@ import { topics } from "../static";
     lost in a flurry of too many other important points.
   </Description>
 
-  <ColumnLayout numOfColumns={2} gap="2rem" showRightBorder>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={textFormatting1.src} alt={textFormatting1AltText} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={textFormatting2.src} alt={textFormatting2AltText} />
-    </ImageWrapper>
-  </ColumnLayout>
-
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
+  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
     <div>
+      <ImageWrapper
+        showBorders={false}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={textFormatting1.src} alt={textFormatting1AltText} />
+      </ImageWrapper>
       <h4 class="image-header neo-semibold">Bold</h4>
       <Description>
         Bold text is used to emphasize a particular item.
       </Description>
     </div>
     <div>
+      <ImageWrapper
+        showBorders={false}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={textFormatting2.src} alt={textFormatting2AltText} />
+      </ImageWrapper>
       <h4 class="image-header neo-semibold">Underline</h4>
       <Description>
         Underlining should be used only for text links (either for hover states
         or default).
       </Description>
     </div>
-  </ColumnLayout>
 
-  <ColumnLayout numOfColumns={2} gap="2rem" showRightBorder>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={textFormatting3.src} alt={textFormatting3AltText} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={textFormatting4.src} alt={textFormatting4AltText} />
-    </ImageWrapper>
-  </ColumnLayout>
-
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
     <div>
+      <ImageWrapper
+        showBorders={false}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={textFormatting3.src} alt={textFormatting3AltText} />
+      </ImageWrapper>
       <h4 class="image-header neo-semibold">Italic</h4>
       <Description>
         Italics are used for emphasizing a part of sentence. It’s also used for
@@ -88,6 +79,13 @@ import { topics } from "../static";
       </Description>
     </div>
     <div>
+      <ImageWrapper
+        showBorders={false}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={textFormatting4.src} alt={textFormatting4AltText} />
+      </ImageWrapper>
       <h4 class="image-header neo-semibold">Capitalization</h4>
       <Description>
         Uppercase text should be used sparingly (acronyms and short labels).

@@ -2,12 +2,12 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 
-import { pagesMockData } from "../mocks";
+import { filteredPagesMockData } from "../mocks";
 import { TopNavSearchResults } from "./TopNavSearchResults";
 
 describe("TopNavSearchResults", () => {
   it("renders without exploding", () => {
-    render(<TopNavSearchResults options={pagesMockData} />);
+    render(<TopNavSearchResults options={filteredPagesMockData} />);
 
     const allLinkElements = screen.getAllByRole("link");
     expect(allLinkElements).toBeTruthy();
@@ -15,7 +15,7 @@ describe("TopNavSearchResults", () => {
 
   it("responds correctly to keyboard navigation", async () => {
     const { getAllByRole } = render(
-      <TopNavSearchResults options={pagesMockData} />,
+      <TopNavSearchResults options={filteredPagesMockData} />,
     );
 
     const rootElement = getAllByRole("link");
@@ -31,7 +31,7 @@ describe("TopNavSearchResults", () => {
 
   it("passes basic accessibility compliance", async () => {
     const { container } = render(
-      <TopNavSearchResults options={pagesMockData} />,
+      <TopNavSearchResults options={filteredPagesMockData} />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

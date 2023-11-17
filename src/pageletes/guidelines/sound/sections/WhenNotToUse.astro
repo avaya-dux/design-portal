@@ -29,28 +29,32 @@ const image2Alt = "Image showing a mouse being clicked.";
   </Description>
 
   <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image1.src} alt={image1Alt} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image2.src} alt={image2Alt} />
-    </ImageWrapper>
-  </ColumnLayout>
-
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
-    <Caption title="User Request">
-      When the user requests not to have any unexpected interruptions, or
-      specifically turns off a setting that allows for sound notifications, no
-      audio should be played.
-    </Caption>
-    <Caption title="Frequent Actions">
-      Actions that are performed often, such as selections and keyboard clicks,
-      should not include audio feedback.
-    </Caption>
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image1.src} alt={image1Alt} />
+      </ImageWrapper>
+      <Caption title="User Request">
+        When the user requests not to have any unexpected interruptions, or
+        specifically turns off a setting that allows for sound notifications, no
+        audio should be played.
+      </Caption>
+    </div>
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image2.src} alt={image2Alt} />
+      </ImageWrapper>
+      <Caption title="Frequent Actions">
+        Actions that are performed often, such as selections and keyboard
+        clicks, should not include audio feedback.
+      </Caption>
+    </div>
   </ColumnLayout>
 </PageleteSection>

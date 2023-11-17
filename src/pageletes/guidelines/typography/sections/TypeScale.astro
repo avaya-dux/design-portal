@@ -1,17 +1,8 @@
 ---
-import {
-  Description,
-  InfoTable,
-  InfoTableBody,
-  InfoTableCell,
-  InfoTableCellHead,
-  InfoTableHead,
-  InfoTableRow,
-  PageleteSection,
-  SectionHeader,
-} from "components";
+import { Description, PageleteSection, SectionHeader } from "components";
 
 import { topics } from "../static";
+import { TypeScaleTable } from "./TypeScaleTable";
 ---
 
 <PageleteSection>
@@ -34,94 +25,5 @@ import { topics } from "../static";
     us for guidance.
   </Description>
 
-  <InfoTable>
-    <InfoTableHead>
-      <InfoTableRow>
-        <InfoTableCellHead>Type</InfoTableCellHead>
-        <InfoTableCellHead>Examples</InfoTableCellHead>
-      </InfoTableRow>
-    </InfoTableHead>
-
-    <InfoTableBody>
-      <InfoTableRow>
-        <InfoTableCell>H1 - Noto Sans, 44px (Regular and Bold)</InfoTableCell>
-        <InfoTableCell>
-          <h1>The quick brown fox...</h1>
-        </InfoTableCell>
-      </InfoTableRow>
-
-      <InfoTableRow>
-        <InfoTableCell>
-          H2 - Noto Sans, 32px (Regular, Bold and Underline)
-        </InfoTableCell>
-        <InfoTableCell>
-          <h2>The quick brown fox jumps over the lazy dog</h2>
-        </InfoTableCell>
-      </InfoTableRow>
-
-      <InfoTableRow>
-        <InfoTableCell>H3 - Noto Sans, 26px (Regular)</InfoTableCell>
-        <InfoTableCell>
-          <h3>The quick brown fox jumps over the lazy dog</h3>
-        </InfoTableCell>
-      </InfoTableRow>
-
-      <InfoTableRow>
-        <InfoTableCell>H4 - Noto Sans, 19px (Regular)</InfoTableCell>
-        <InfoTableCell>
-          <h4>The quick brown fox jumps over the lazy dog</h4>
-        </InfoTableCell>
-      </InfoTableRow>
-
-      <InfoTableRow>
-        <InfoTableCell>Large Body - Noto Sans, 16px (Regular)</InfoTableCell>
-        <InfoTableCell>
-          <p class="neo-body-large">
-            The quick brown fox jumps over the lazy dog
-          </p>
-        </InfoTableCell>
-      </InfoTableRow>
-
-      <InfoTableRow>
-        <InfoTableCell>
-          Body - Noto Sans, 14px (Regular, Italic, Underline and Semibold and
-          Uppercase)
-        </InfoTableCell>
-        <InfoTableCell>
-          <p>The quick brown fox jumps over the lazy dog</p>
-        </InfoTableCell>
-      </InfoTableRow>
-
-      <InfoTableRow>
-        <InfoTableCell>Body Code - Roboto Mono, 14px (Regular)</InfoTableCell>
-        <InfoTableCell>
-          <p style={{ fontFamily: "Roboto Mono" }}>
-            The quick brown fox jumps over the lazy dog
-          </p>
-        </InfoTableCell>
-      </InfoTableRow>
-
-      <InfoTableRow>
-        <InfoTableCell>
-          Small Body - Noto Sans, 12px (Regular and Light)
-        </InfoTableCell>
-        <InfoTableCell>
-          <p class="neo-body-small">
-            The quick brown fox jumps over the lazy dog
-          </p>
-        </InfoTableCell>
-      </InfoTableRow>
-
-      <InfoTableRow>
-        <InfoTableCell>
-          Tiny Body - Noto Sans, 10px (Regular and Light)
-        </InfoTableCell>
-        <InfoTableCell>
-          <p class="neo-body-tiny">
-            The quick brown fox jumps over the lazy dog
-          </p>
-        </InfoTableCell>
-      </InfoTableRow>
-    </InfoTableBody>
-  </InfoTable>
+  <TypeScaleTable client:load />
 </PageleteSection>

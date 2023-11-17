@@ -32,28 +32,18 @@ import { topics } from "../static";
     tokens embedded inside the components.
   </Description>
 
-  <ColumnLayout numOfColumns={2} showRightBorder gap="2rem">
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image
-        src={typographyComponents1.src}
-        alt={typographyComponents1AltText}
-      />
-    </ImageWrapper>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image
-        src={typographyComponents2.src}
-        alt={typographyComponents2AltText}
-      />
-    </ImageWrapper>
-  </ColumnLayout>
-
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
+  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
     <div>
+      <ImageWrapper
+        showBorders={false}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image
+          src={typographyComponents1.src}
+          alt={typographyComponents1AltText}
+        />
+      </ImageWrapper>
       <h4 class="image-header neo-semibold">Headings</h4>
       <Description>
         Headings are used to create visual hierarchies throughout the user
@@ -61,29 +51,33 @@ import { topics } from "../static";
       </Description>
     </div>
     <div>
+      <ImageWrapper
+        showBorders={false}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image
+          src={typographyComponents2.src}
+          alt={typographyComponents2AltText}
+        />
+      </ImageWrapper>
       <h4 class="image-header neo-semibold">Body</h4>
       <Description>
         The Body style is used in components and for blocks of text.
       </Description>
     </div>
-  </ColumnLayout>
 
-  <ColumnLayout numOfColumns={2} gap="2rem" showRightBorder>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image
-        src={typographyComponents3.src}
-        alt={typographyComponents3AltText}
-      />
-    </ImageWrapper>
-  </ColumnLayout>
-
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
     <div>
+      <ImageWrapper
+        showBorders={false}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image
+          src={typographyComponents3.src}
+          alt={typographyComponents3AltText}
+        />
+      </ImageWrapper>
       <h4 class="image-header neo-semibold">Captions</h4>
       <Description>
         Captions are used for adding extra information or smaller items in the
