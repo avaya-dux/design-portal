@@ -89,7 +89,7 @@ switch (pathname.split("/")[1]) {
         client:load
       />
       <div class="main__wrapper">
-        <LeftPanel pages={leftNavPages} />
+        <LeftPanel allPages={pages} filteredpages={leftNavPages} />
         {
           pathname.endsWith("icons") ? (
             <DynamicTheme client:only="react">
@@ -115,7 +115,7 @@ switch (pathname.split("/")[1]) {
 
         /*
         --mobile-small-max-breakpoint: 671px;
-        --mobile-max-breakpoint: 799px;
+        --mobile-max-breakpoint: 831px;
         --tablet-max-breakpoint: 1279px;
         */
       }
@@ -132,9 +132,9 @@ switch (pathname.split("/")[1]) {
       }
 
       /* mobile */
-      @media screen and (max-width: 799px) {
+      @media screen and (max-width: 831px) {
         :root {
-          --header-height: 48px;
+          --header-height: 49px;
           --footer-height: 48px;
         }
       }
@@ -199,7 +199,7 @@ switch (pathname.split("/")[1]) {
         );
       }
     }
-    @media screen and (max-width: 799px) {
+    @media screen and (max-width: 831px) {
       body main {
         /*
             NOTE: the footer and header both expand into a grid format, so we _do_ want the `var`s
