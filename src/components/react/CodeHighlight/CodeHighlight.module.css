@@ -18,7 +18,7 @@
   top: 4.5rem;
 }
 
-@media (max-width: 799px) {
+@media (max-width: 831px) {
   .code-container {
     flex-direction: column;
     padding-top: 51px;

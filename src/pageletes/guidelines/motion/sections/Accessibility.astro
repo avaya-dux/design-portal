@@ -1,6 +1,7 @@
 ---
 import { Image } from "@avaya/neo-react";
 import {
+  Caption,
   Description,
   ColumnLayout,
   ImageWrapper,
@@ -30,36 +31,34 @@ const image2Alt =
   </Description>
 
   <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image1.src} alt={image1Alt} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image2.src} alt={image2Alt} />
-    </ImageWrapper>
-  </ColumnLayout>
-
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
     <div>
-      <h4 class="image-header">Support Reduced Motion</h4>
-      <Description>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image1.src} alt={image1Alt} />
+      </ImageWrapper>
+      <Caption title="Support Reduced Motion">
         Users with motion sensitivities can activate a feature that requires
         applications to minimize the use of non-essential motion. This includes
         large page transitions and animated illustrations.
-      </Description>
+      </Caption>
     </div>
     <div>
-      <h4 class="image-header">Avoid Large Scale Animations</h4>
-      <Description>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image2.src} alt={image2Alt} />
+      </ImageWrapper>
+      <Caption title="Avoid Large Scale Animations">
         Large animations, such as parallax scrolling, can trigger dizziness,
         nausea and headaches for those with vestibular disorders. Avoid using
         animations altogether. You must, at least, provide an option to turn the
         animations off.
-      </Description>
+      </Caption>
     </div>
   </ColumnLayout>
 </PageleteSection>
