@@ -7,7 +7,7 @@ import { vi } from "vitest";
 import { isLeftNavigationOpen } from "components/react/utils/layoutState";
 
 import { SiteHeader } from ".";
-import { pagesMockData } from "./helpers/mocks";
+import { filteredPagesMockData } from "./helpers/mocks";
 
 describe("SiteHeader", () => {
   beforeEach(() => {
@@ -25,7 +25,9 @@ describe("SiteHeader", () => {
   });
 
   it("fully renders without exploding", () => {
-    render(<SiteHeader pathname="/" pages={pagesMockData} userAgent="" />);
+    render(
+      <SiteHeader pathname="/" pages={filteredPagesMockData} userAgent="" />,
+    );
 
     const rootElement = screen.getByRole("navigation");
     expect(rootElement).toBeInTheDocument();
@@ -38,7 +40,7 @@ describe("SiteHeader", () => {
     render(
       <SiteHeader
         pathname="/"
-        pages={pagesMockData}
+        pages={filteredPagesMockData}
         userAgent=""
         showToggleBtn
       />,
@@ -61,7 +63,7 @@ describe("SiteHeader", () => {
 
   it("passes basic axe compliance", async () => {
     const { container } = render(
-      <SiteHeader pathname="/" pages={pagesMockData} userAgent="" />,
+      <SiteHeader pathname="/" pages={filteredPagesMockData} userAgent="" />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

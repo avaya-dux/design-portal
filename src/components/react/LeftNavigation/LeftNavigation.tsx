@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef } from "react";
 import { LeftNav } from "@avaya/neo-react";
 import { useStore } from "@nanostores/react";
 import clsx from "clsx";
+import { breakpoints } from "components/react/utils/constants";
 
 import {
   isLeftNavigationOpen,
@@ -12,12 +13,15 @@ import type { PageAstroInstance } from "helpers/types";
 import { trapFocus, useWindowSize } from "../utils";
 
 import "./LeftNavigationStyleOverride.css";
+import { LeftNavMobile } from ".";
 
 export const LeftNavigation = ({
-  pages,
+  allPages,
+  filteredpages,
   currentUrl,
 }: {
-  pages: PageAstroInstance[];
+  allPages: PageAstroInstance[];
+  filteredpages: PageAstroInstance[];
   currentUrl: string;
 }) => {
   const handleNavigate = (_: string, url: string) => {
@@ -58,11 +62,11 @@ export const LeftNavigation = ({
     const lastFocusableElement = document
       .querySelector(".left-navigation")
       ?.querySelectorAll(
-        `[href="${pages[pages.length - 1]?.url}"]`,
+        `[href="${filteredpages[filteredpages.length - 1]?.url}"]`,
       )[0] as HTMLElement;
 
     const firstFocusableElement =
-      width > 799
+      width > breakpoints.mobileMax
         ? (closeButtonRef.current as HTMLElement)
         : ((toggleButtonRef as React.RefObject<HTMLButtonElement>)
             .current as HTMLElement);
@@ -76,7 +80,7 @@ export const LeftNavigation = ({
         handleKeyDown(event, firstFocusableElement, lastFocusableElement),
       );
     };
-  }, [handleKeyDown, isOpen, pages, toggleButtonRef, width]);
+  }, [handleKeyDown, isOpen, filteredpages, toggleButtonRef, width]);
 
   return (
     <>
@@ -95,23 +99,31 @@ export const LeftNavigation = ({
             toggleButtonRef as React.RefObject<HTMLButtonElement>
           }
         />
-        <LeftNav
-          aria-label="left-navigation"
-          currentUrl={currentUrl}
-          onNavigate={handleNavigate}
-          isActiveOverride
-        >
-          {pages.map((page, index) => (
-            <LeftNav.TopLinkItem
-              key={`${index}${page.title}`}
-              label={page.title}
-              href={page.url as string}
-              className={clsx(
-                currentUrl === page.url && "neo-leftnav__main--active",
-              )}
-            />
-          ))}
-        </LeftNav>
+        {width > breakpoints.mobileMax ? (
+          <LeftNav
+            aria-label="left-navigation"
+            currentUrl={currentUrl}
+            onNavigate={handleNavigate}
+            isActiveOverride
+          >
+            {filteredpages.map((page, index) => (
+              <LeftNav.TopLinkItem
+                key={`${index}${page.title}`}
+                label={page.title}
+                href={page.url as string}
+                className={clsx(
+                  currentUrl === page.url && "neo-leftnav__main--active",
+                )}
+              />
+            ))}
+          </LeftNav>
+        ) : (
+          <LeftNavMobile
+            currentUrl={currentUrl}
+            onNavigate={handleNavigate}
+            allPages={allPages}
+          />
+        )}
       </div>
       <div
         className="left-navigation-scrim"
