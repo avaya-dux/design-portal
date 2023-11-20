@@ -1,0 +1,31 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { Caption, ImageWrapper } from "../";
+
+export interface Props {
+  imgAlt: string;
+  imgSrc: string;
+  captionTitle: string;
+}
+
+const { imgAlt, imgSrc, captionTitle } = Astro.props as Props;
+---
+
+<div class="stack">
+  <ImageWrapper marginTop="0" marginBottom="0">
+    <Image src={imgSrc} alt={imgAlt} />
+  </ImageWrapper>
+
+  <Caption title={captionTitle}>
+    <slot />
+  </Caption>
+</div>
+
+<style>
+  div.stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+</style>

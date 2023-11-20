@@ -37,6 +37,7 @@ export { StackedLayout };
 import SubHeader from "./SubHeader.astro";
 export { SubHeader };
 
+export * from "./CollapsibleColumns";
 export * from "./InfoList";
 export * from "./InfoTable";
 export * from "./Topics";
