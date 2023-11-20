@@ -1,4 +1,4 @@
-import { Button, Checkbox, Icon, IconButton, Radio, RadioGroup, Switch, TextInput, Widget, WidgetAction, WidgetContent, WidgetHeader } from "@avaya/neo-react";
+import { Button, Icon, IconButton, Radio, RadioGroup, Switch, TextInput, Widget, WidgetAction, WidgetContent, WidgetHeader } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components";
