@@ -1,25 +1,8 @@
-import {
-  Button,
-  Checkbox,
-  Icon,
-  IconButton,
-  Radio,
-  RadioGroup,
-  Switch,
-  TextInput,
-  Widget,
-  WidgetAction,
-  WidgetContent,
-  WidgetHeader,
-} from "@avaya/neo-react";
-
+import { Button, Checkbox, Icon, IconButton, Radio, RadioGroup, Switch, TextInput, Widget, WidgetAction, WidgetContent, WidgetHeader } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components";
-import {
-  prettyPrintReactElementToHtml,
-  prettyPrintReactElementToString,
-} from "helpers";
+import { prettyPrintReactElementToHtml, prettyPrintReactElementToString } from "helpers";
 
 const sandbox = "https://codesandbox.io/s/neo-react-widget-5qlt65";
 const storybook =
@@ -31,8 +14,6 @@ export const PlaygroundImplementation = () => {
   const [withIcon, setWithIcon] = useState<string>("icon");
 
   const [rightSide, setRightSide] = useState<RightSideProps>("empty");
-
-  const [isDisabled, setIsDisabled] = useState<boolean>(false);
 
   const [element, react, html] = useMemo(() => {
     const getRightSideAction = (rightSide: RightSideProps) => {
@@ -53,7 +34,7 @@ export const PlaygroundImplementation = () => {
     };
 
     const element = (
-      <Widget disabled={isDisabled}>
+      <Widget>
         <WidgetHeader>
           {withIcon === "icon" && <Icon icon="chat" aria-label="chat" />}
           <p>Header of widget window</p>
@@ -72,7 +53,7 @@ export const PlaygroundImplementation = () => {
       prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
     ];
-  }, [withIcon, rightSide, isDisabled]);
+  }, [withIcon, rightSide]);
 
   return (
     <div>
@@ -101,17 +82,6 @@ export const PlaygroundImplementation = () => {
                 <Radio value="inputs">Inputs</Radio>
                 <Radio value="switch">Switch</Radio>
               </RadioGroup>
-            </Playground.OptionsSection>
-            <Playground.OptionsSection title="Variables">
-              <Checkbox
-                value="disabled"
-                checked={isDisabled}
-                onChange={() => {
-                  setIsDisabled(!isDisabled);
-                }}
-              >
-                Disabled
-              </Checkbox>
             </Playground.OptionsSection>
           </Playground.OptionsContainer>
         }
