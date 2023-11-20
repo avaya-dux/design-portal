@@ -61,17 +61,19 @@ const DoContainer = ({ children, instructions }: InstructionProps) => (
   <div className="do-and-dont-example-item">
     <div className="do-and-dont-example-content do-and-dont-example-content-do">
       <Icon
+        aria-hidden="true"
         aria-label="check mark icon"
         className="do-and-dont-check-mark"
         icon="available-filled"
         size="lg"
+
       />
 
       {children}
     </div>
 
     <p className="do-and-dont-paragraph">
-      <b>DO:</b> <>{parse(instructions)}</>
+      <b aria-hidden="true">DO:</b> <>{parse(instructions)}</>
     </p>
   </div>
 );
@@ -80,6 +82,7 @@ const DontContainer = ({ children, instructions }: InstructionProps) => (
   <div className="do-and-dont-example-item">
     <div className="do-and-dont-example-content do-and-dont-example-content-dont">
       <Icon
+        aria-hidden="true"
         className="do-and-dont-missed-filled"
         icon="missed-filled"
         aria-label="error icon"
@@ -90,7 +93,7 @@ const DontContainer = ({ children, instructions }: InstructionProps) => (
     </div>
 
     <p className="do-and-dont-paragraph">
-      <b>DON'T:</b> <>{parse(instructions)}</>
+      <b aria-hidden="true">DON'T:</b> <>{parse(instructions)}</>
     </p>
   </div>
 );

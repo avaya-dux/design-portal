@@ -92,7 +92,7 @@
   margin-top: -0.5px;
 }
 
-@media (max-width: 799px) {
+@media (max-width: 831px) {
   .link-container {
     min-height: 300px;
     height: calc(100vh - var(--header-height) - 90px);

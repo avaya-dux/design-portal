@@ -27,7 +27,7 @@
   font-size: 1rem;
 }
 
-@media (max-width: 799px) {
+@media (max-width: 831px) {
   .neo-navbar .neo-nav--right .search__button--content {
     display: none;
   }

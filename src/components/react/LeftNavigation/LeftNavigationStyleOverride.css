@@ -18,7 +18,7 @@
   .neo-leftnav__nav
   .neo-leftnav__main
   a {
-  padding: 1rem 2rem 1rem 2.5rem;
+  padding: 1rem 2rem 1rem 1rem;
 }
 
 .left-navigation + .left-navigation-scrim {
@@ -132,12 +132,11 @@
   }
 }
 
-@media (max-width: 799px) {
+@media (max-width: 831px) {
   .left-navigation {
-    position: fixed;
     transform: translate3d(-15rem, 0, 0);
     padding-top: 0;
-    top: calc(var(--header-height) * 2);
+    top: var(--header-height);
     bottom: 0;
     z-index: 100;
   }

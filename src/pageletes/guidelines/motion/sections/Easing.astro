@@ -30,53 +30,48 @@ const image3Alt =
   </Description>
 
   <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image1.src} alt={image1Alt} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image2.src} alt={image2Alt} />
-    </ImageWrapper>
-  </ColumnLayout>
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image1.src} alt={image1Alt} />
+      </ImageWrapper>
+      <Caption title="Ease">
+        Elements can slide in and out from the screen in any of the 4
+        directions. Motion is quickest at the edges and slows down toward the
+        middle of the screen.
+      </Caption>
+    </div>
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image2.src} alt={image2Alt} />
+      </ImageWrapper>
+      <Caption title="Ease-in">
+        When an element comes onto the screen, it can ease-in, either from the
+        right or the left of the screen. It starts by moving quickly, but
+        rapidly slows down as it reaches its final position.
+      </Caption>
+    </div>
 
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
-    <Caption title="Ease">
-      Elements can slide in and out from the screen in any of the 4 directions.
-      Motion is quickest at the edges and slows down toward the middle of the
-      screen.
-    </Caption>
-    <Caption title="Ease-in">
-      When an element comes onto the screen, it can ease-in, either from the
-      right or the left of the screen. It starts by moving quickly, but rapidly
-      slows down as it reaches its final position.
-    </Caption>
-  </ColumnLayout>
-
-  <ColumnLayout
-    showGridlines={false}
-    marginTop={"1.5rem"}
-    gap="2rem"
-    numOfColumns={2}
-  >
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image3.src} alt={image3Alt} />
-    </ImageWrapper>
-  </ColumnLayout>
-
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
-    <Caption title="Ease-out">
-      When an element leaves the screen, it can ease-out, either to the right or
-      the left of the screen. It starts by moving slowly, but rapidly speeds up
-      as it disappears off the edge.
-    </Caption>
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image3.src} alt={image3Alt} />
+      </ImageWrapper>
+      <Caption title="Ease-out">
+        When an element leaves the screen, it can ease-out, either to the right
+        or the left of the screen. It starts by moving slowly, but rapidly
+        speeds up as it disappears off the edge.
+      </Caption>
+    </div>
   </ColumnLayout>
 </PageleteSection>

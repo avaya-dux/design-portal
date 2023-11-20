@@ -1,6 +1,7 @@
 ---
 import { Image } from "@avaya/neo-react";
 import {
+  Caption,
   Description,
   ColumnLayout,
   ImageWrapper,
@@ -54,141 +55,132 @@ const image10Alt = "Image showing a circle with a dialogue box attached.";
   </Description>
 
   <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image1.src} alt={image1Alt} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image2.src} alt={image2Alt} />
-    </ImageWrapper>
-  </ColumnLayout>
-
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
     <div>
-      <h4 class="image-header">Visibility</h4>
-      <Description>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image1.src} alt={image1Alt} />
+      </ImageWrapper>
+      <Caption title="Visibility">
         Show system status and indicate what's happening.
-      </Description>
+      </Caption>
     </div>
+
     <div>
-      <h4 class="image-header">Commonality</h4>
-      <Description>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image2.src} alt={image2Alt} />
+      </ImageWrapper>
+      <Caption title="Commonality">
         Accessible by design. Use familiar metaphors and language.
-      </Description>
+      </Caption>
     </div>
-  </ColumnLayout>
-
-  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image3.src} alt={image3Alt} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image4.src} alt={image4Alt} />
-    </ImageWrapper>
-  </ColumnLayout>
-
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
     <div>
-      <h4 class="image-header">Freedom</h4>
-      <Description>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image3.src} alt={image3Alt} />
+      </ImageWrapper>
+      <Caption title="Freedom">
         Provide defaults and undos. Enable personalization.
-      </Description>
+      </Caption>
     </div>
+
     <div>
-      <h4 class="image-header">Consistency</h4>
-      <Description>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image4.src} alt={image4Alt} />
+      </ImageWrapper>
+      <Caption title="Consistency">
         Provide a reliable and consistent experience throughout.
-      </Description>
-    </div>
-  </ColumnLayout>
-
-  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image5.src} alt={image5Alt} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image6.src} alt={image6Alt} />
-    </ImageWrapper>
-  </ColumnLayout>
-
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
-    <div>
-      <h4 class="image-header">Error Prevention</h4>
-      <Description>Help users avoid making mistakes.</Description>
+      </Caption>
     </div>
     <div>
-      <h4 class="image-header">Recognition</h4>
-      <Description>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image5.src} alt={image5Alt} />
+      </ImageWrapper>
+      <Caption title="Error Prevention">
+        Help users avoid making mistakes.
+      </Caption>
+    </div>
+
+    <div>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image6.src} alt={image6Alt} />
+      </ImageWrapper>
+      <Caption title="Recognition">
         Make information and workflows easy to discover.
-      </Description>
+      </Caption>
     </div>
-  </ColumnLayout>
 
-  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image7.src} alt={image7Alt} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image8.src} alt={image8Alt} />
-    </ImageWrapper>
-  </ColumnLayout>
-
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop="1.5rem"
-  >
     <div>
-      <h4 class="image-header">Flexibility</h4>
-      <Description>Make advanced tasks fluid & efficient.</Description>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image7.src} alt={image7Alt} />
+      </ImageWrapper>
+      <Caption title="Flexibility">
+        Make advanced tasks fluid & efficient.
+      </Caption>
     </div>
+
     <div>
-      <h4 class="image-header">Minimalism</h4>
-      <Description>Provide only necessary info in an elegant way.</Description>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image8.src} alt={image8Alt} />
+      </ImageWrapper>
+      <Caption title="Minimalism">
+        Provide only necessary info in an elegant way.
+      </Caption>
     </div>
-  </ColumnLayout>
 
-  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image9.src} alt={image9Alt} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={image10.src} alt={image10Alt} />
-    </ImageWrapper>
-  </ColumnLayout>
-
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
     <div>
-      <h4 class="image-header">Error Recovery</h4>
-      <Description>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image9.src} alt={image9Alt} />
+      </ImageWrapper>
+      <Caption title="Error Recovery">
         Help users recognize, diagnose and recover from bad situations.
-      </Description>
+      </Caption>
     </div>
+
     <div>
-      <h4 class="image-header">Help</h4>
-      <Description>
+      <ImageWrapper
+        showBorders={true}
+        marginTop={"0rem"}
+        marginBottom={"1.5rem"}
+      >
+        <Image src={image10.src} alt={image10Alt} />
+      </ImageWrapper>
+      <Caption title="Help">
         Use proactive and in-place hints to guide users.
-      </Description>
+      </Caption>
     </div>
   </ColumnLayout>
 </PageleteSection>
