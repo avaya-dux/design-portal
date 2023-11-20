@@ -1,0 +1,191 @@
+---
+import { Link } from "@avaya/neo-react";
+
+import {
+  CollapsibleColumns,
+  Description,
+  Divider,
+  InfoList,
+  InfoListItem,
+  PageleteSubSection,
+  SubHeader,
+  ImageWithCaption,
+} from "components";
+
+import productVisualTextImage1 from "../imgs/product-visual-text-1.svg";
+import productVisualTextImage2 from "../imgs/product-visual-text-2.svg";
+import productVisualTextImage3 from "../imgs/product-visual-text-3.svg";
+import productVisualTextImage4 from "../imgs/product-visual-text-4.svg";
+import productVisualTextImage5 from "../imgs/product-visual-text-5.svg";
+import productVisualTextImage6 from "../imgs/product-visual-text-6.svg";
+---
+
+<PageleteSubSection>
+  <SubHeader id="ptg-visual-design-text">Text</SubHeader>
+
+  <Description>
+    The use of text is also an important consideration when designing for people
+    with visual impairment or cognitive disabilities (such as dyslexia).
+    Therefore, text should be used as follows.
+  </Description>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={productVisualTextImage1.src}
+      imgAlt="Image showing a capital 'i', lowercase 'l', lowercase 'i', and the number '1'"
+      captionTitle="Use Neo's Font Family"
+    >
+      Neo uses the Noto Sans JP font from Google. It uses individual strokes to
+      distinguish between similar looking characters and is available in many
+      languages. Use Noto Sans throughout your designs.
+    </ImageWithCaption>
+
+    <ImageWithCaption
+      imgSrc={productVisualTextImage2.src}
+      imgAlt="image showing text inside of a box that is partially cut off"
+      captionTitle="Allow for Text Spacing"
+    >
+      Some users may manually adjust line height, paragraph spacing, letter or
+      word spacing for increased readability. Ensure your designs are flexible
+      enough to prevent any content getting lost.
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={productVisualTextImage3.src}
+      imgAlt="image showing '16px = 1rem'"
+      captionTitle="Use relative units"
+    >
+      Relative units such as percentage, em, rem, and sp ensure that the
+      application scales responsively relative to window size or user
+      preference. If users configure their device or browser settings to use a
+      larger base font size, the application must be able to resize accordingly.
+    </ImageWithCaption>
+
+    <ImageWithCaption
+      imgSrc={productVisualTextImage4.src}
+      imgAlt="image showing the HTML heading hierarchy (h1 with a small h2 underneath it)"
+      captionTitle="Use a logical hierarchy"
+    >
+      When using headings, ensure that only one h1 tag is used per page, and
+      other tags are used without skipping levels. For example, h2 is followed
+      by an h3, not h4 or h6.
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={productVisualTextImage5.src}
+      imgAlt="image showing a representation of a short title followed by a short paragraph"
+      captionTitle="Write Content That is Simple to Understand"
+    >
+      Dividing content into smaller sections and using plain language helps
+      those with cognitive disabilities to understand and digest the content
+      more easily. This also helps those who struggle with complex words.
+      Wherever possible, you should always try to use:
+
+      <InfoList type="disc" fontSize="1rem">
+        <InfoListItem>Short sentences</InfoListItem>
+        <InfoListItem>Short sentences</InfoListItem>
+        <InfoListItem>Clear and descriptive headings</InfoListItem>
+        <InfoListItem>Descriptive and meaningful page titles</InfoListItem>
+        <InfoListItem>
+          Divide content into smaller, easily digestible sections
+        </InfoListItem>
+        <InfoListItem>
+          Avoiding acronyms and uncommon words unless they are standard or
+          common terms
+        </InfoListItem>
+      </InfoList>
+
+      <div class="spacing">
+        Refer to the <Link href="/guidelines/voice-tone" inline>
+          Voice & Tone guidelines
+        </Link> for more information.
+      </div>
+    </ImageWithCaption>
+
+    <ImageWithCaption
+      imgSrc={productVisualTextImage6.src}
+      imgAlt="image showing a computer monitor next to a mobile phone"
+      captionTitle="Use Neo's Text Sizing"
+    >
+      Neo employs a standard set of sizes for applications. On iOS and Android,
+      the device conventions are used together with the Noto Sans library to
+      provide consistency and flexibility for resizing screens.
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <Divider />
+
+  <CollapsibleColumns marginTop="1.5rem">
+    <div>
+      <b>Online Resources</b>
+
+      <InfoList type="disc">
+        <InfoListItem>
+          <Link href="https://webaim.org/techniques/fonts/">
+            WebAIM Typeface and Fonts
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/meaningful-sequence.html"
+          >
+            WCAG Requirement 1.3.2 - Meaningful Sequence
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html"
+          >
+            WCAG Requirement 1.4.12 - Text Spacing
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/headings-and-labels.html"
+          >
+            WCAG Requirement 2.4.6 - Headings and Labels
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/labels-or-instructions.html"
+          >
+            WCAG Requirement 3.3.2 - Labels or Instructions
+          </Link>
+        </InfoListItem>
+      </InfoList>
+    </div>
+
+    <div>
+      <b>Neo Resources</b>
+
+      <InfoList type="disc">
+        <InfoListItem>
+          <Link href="/guidelines/typography">Typography</Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link href="/guidelines/color">Color</Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link href="/guidelines/voice-tone">Voice and Tone</Link>
+        </InfoListItem>
+      </InfoList>
+    </div>
+  </CollapsibleColumns>
+</PageleteSubSection>
+
+<style>
+  .spacing {
+    margin-top: 2rem;
+  }
+</style>
