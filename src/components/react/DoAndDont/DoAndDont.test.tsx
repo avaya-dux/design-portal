@@ -28,7 +28,7 @@ describe("DoAndDont", () => {
   it("fully renders without exploding", () => {
     render(DefaultExample);
 
-    expect(screen.getAllByRole("img", {hidden: true})).toHaveLength(2); // hide icons per neo-1919
+    expect(screen.getAllByRole("img", { hidden: true })).toHaveLength(2); // hide icons per neo-1919
 
     const doContainer = screen.getByText(doInstructions);
     expect(doContainer).toBeDefined();
@@ -40,7 +40,7 @@ describe("DoAndDont", () => {
   it("allows the use of the `size=wide` prop", () => {
     render(DefaultExample);
 
-    expect(screen.getAllByRole("img", {hidden: true})).toHaveLength(2); // hide icons per neo-1919
+    expect(screen.getAllByRole("img", { hidden: true })).toHaveLength(2); // hide icons per neo-1919
 
     const doContainer = screen.getByText(doInstructions);
     expect(doContainer).toBeDefined();
