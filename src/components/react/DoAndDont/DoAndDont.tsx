@@ -66,7 +66,6 @@ const DoContainer = ({ children, instructions }: InstructionProps) => (
         className="do-and-dont-check-mark"
         icon="available-filled"
         size="lg"
-
       />
 
       {children}
