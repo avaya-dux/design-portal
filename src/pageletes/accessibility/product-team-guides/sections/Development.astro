@@ -1,6 +1,13 @@
 ---
 import { Description, PageleteSection, SectionHeader } from "components";
 
+import {
+  DevelopmentAdditionalConsiderations,
+  DevelopmentDeviceSettings,
+  DevelopmentKeyboard,
+  DevelopmentScreenReader,
+} from "./Development";
+
 import { topics } from "../static";
 
 const { id, title } = topics.development;
@@ -14,4 +21,12 @@ const { id, title } = topics.development;
     people with disabilities. Accessible design requires keyboard, screen reader
     output, device settings and other factors to be considered.
   </Description>
+
+  <DevelopmentKeyboard />
+
+  <DevelopmentScreenReader />
+
+  <DevelopmentDeviceSettings />
+
+  <DevelopmentAdditionalConsiderations />
 </PageleteSection>
