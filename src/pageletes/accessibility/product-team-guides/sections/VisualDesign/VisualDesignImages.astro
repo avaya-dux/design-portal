@@ -1,0 +1,130 @@
+---
+import { Link } from "@avaya/neo-react";
+
+import {
+  CollapsibleColumns,
+  Description,
+  Divider,
+  InfoList,
+  InfoListItem,
+  PageleteSubSection,
+  SubHeader,
+  ImageWithCaption,
+} from "components";
+
+import productVisualImagesImage1 from "../../imgs/product-visual-images-1.svg";
+import productVisualImagesImage2 from "../../imgs/product-visual-images-2.svg";
+import productVisualImagesImage3 from "../../imgs/product-visual-images-3.svg";
+---
+
+<PageleteSubSection>
+  <SubHeader id="ptg-visual-design-images">Images</SubHeader>
+
+  <Description>
+    Images that are used to convey information must have the content presented
+    in a manner useable by screen readers. This is known as alternative text (or
+    alt text). This must convey the meaning of the image and is shown in place
+    of the image if the file doesn’t load.
+  </Description>
+
+  <Description>
+    Iconography (that conveys information) and icon buttons should also include
+    alt text. This is done with either on-screen labels, tooltips, or back-end
+    labels depending on the use case.
+  </Description>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={productVisualImagesImage1.src}
+      imgAlt="image of a placehlder image with a short 'alt' description"
+      captionTitle="Be Descriptive and Brief"
+    >
+      Alternative text should describe the image in such a way that someone who
+      is unable to view the image can understand what is being shown. The
+      description should be a sentence or two as some screen readers may not
+      read the text together. Alt text does not need to begin with “image of …”
+      but describing the relevant content of the image is useful (e.g.
+      illustration of 3 students taking notes in a classroom).
+    </ImageWithCaption>
+
+    <ImageWithCaption
+      imgSrc={productVisualImagesImage2.src}
+      imgAlt="image of the word 'alt' with a red cross through it"
+      captionTitle="Don't Add Alt Text to Decorative Images"
+    >
+      Images, such as logos, help present the content in a visually pleasing
+      manner, but do not give any additional value to screen reader users. Alt
+      text should not be added to these images.
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={productVisualImagesImage3.src}
+      imgAlt="image of an image with a description and a caption and the word 'alt' with a red cross through it"
+      captionTitle="Avoid Repeating Information"
+    >
+      If the image includes a caption describing the image, alt text is not
+      necessary. Adding alt text in this case will cause assistive technology
+      tools to read it twice.
+    </ImageWithCaption>
+
+    <div></div>
+  </CollapsibleColumns>
+
+  <Divider />
+
+  <CollapsibleColumns marginTop="1.5rem">
+    <div>
+      <b>Online Resources</b>
+
+      <InfoList type="disc">
+        <InfoListItem>
+          <Link href="https://webaim.org/techniques/alttext/">
+            WebAIM Alternative Text
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link href="https://www.deque.com/blog/great-alt-text-introduction/">
+            Deque How to Design Great Alt Text
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html"
+          >
+            WCAG Requirement 1.1.1 - Non-text Content
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/images-of-text"
+          >
+            WCAG Requirement 1.4.5 - Images of Text
+          </Link>
+        </InfoListItem>
+      </InfoList>
+    </div>
+
+    <div>
+      <b>Neo Resources</b>
+
+      <InfoList type="disc">
+        <InfoListItem>
+          <Link href="/guidelines/typography">Typography</Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link href="/guidelines/color">Color</Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link href="/guidelines/voice-tone">Voice & Tone</Link>
+        </InfoListItem>
+      </InfoList>
+    </div>
+  </CollapsibleColumns>
+</PageleteSubSection>
