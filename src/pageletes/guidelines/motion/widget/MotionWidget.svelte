@@ -42,7 +42,6 @@
                 name="Select Option"
                 value="150"
                 id="fast"
-                role="radio"
                 aria-checked="false"
               >
               <label for="fast">
@@ -56,7 +55,6 @@
                 name="Select Option"
                 value="400"
                 id="medium"
-                role="radio"
                 aria-checked="false"
               >
               <label for="medium">
@@ -70,7 +68,6 @@
                 name="Select Option"
                 value="900"
                 id="slow"
-                role="radio"
                 aria-checked="false"
               >
               <label for="slow">
@@ -123,10 +120,6 @@
   border: 4px solid var(--neo-color-base-200);
   height: 100px;
   width: 100px;
-}
-
-#motion-select {
-  margin-top: 5px;
 }
 
 #start-btn {
