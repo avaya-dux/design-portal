@@ -1,10 +1,20 @@
 ---
+import { Link } from "@avaya/neo-react";
+
 import {
   CollapsibleColumns,
   Description,
+  Divider,
+  ImageWithCaption,
+  InfoList,
+  InfoListItem,
   PageleteSubSection,
   SubHeader,
 } from "components";
+
+import img1 from "../../imgs/product-development-additional-1.svg";
+import img2 from "../../imgs/product-development-additional-2.svg";
+import img3 from "../../imgs/product-development-additional-3.svg";
 ---
 
 <PageleteSubSection>
@@ -18,8 +28,89 @@ import {
   </Description>
 
   <CollapsibleColumns>
-    <div>one</div>
+    <ImageWithCaption
+      imgSrc={img1.src}
+      imgAlt="Image showing a placeholder with a play button next to it"
+      captionTitle="Avoid Auto Playing Media"
+    >
+      Media that begins playing automatically upon loading a page can be
+      confusing and distracting for users with cognitive disabilities. It can
+      also conflict with users who are using screen readers, and may trigger
+      seizures or other reactions for some conditions. Audio and video should
+      not be played by default if possible. If it is played for more than 3
+      seconds, there needs to be a mechanism for users to pause or stop the
+      media. The same applies for moving, blinking, scrolling and auto updating
+      information.
+    </ImageWithCaption>
 
-    <div>two</div>
+    <ImageWithCaption
+      imgSrc={img2.src}
+      imgAlt="Image showing showing an hourglass"
+      captionTitle="Allow For Extended Timing"
+    >
+      Content with time limits can pose a challenge for users with disabilities
+      who may require additional time to react. If the timer cannot be removed,
+      allow the timer to be adjusted or extended to provide sufficient time to
+      complete the action. For all timers, providing significant notice before
+      time runs out is also beneficial.
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={img3.src}
+      imgAlt="Image showing a blinking light"
+      captionTitle="Ensure Blinking or Flashing is Less Than 3 Times Per Second"
+    >
+      Items that flash more than 3 times per second can trigger seizures. Ensure
+      any animations or interactions stay below the threshold (e.g. flash no
+      more than once or twice per second).
+    </ImageWithCaption>
+
+    <div></div>
+  </CollapsibleColumns>
+
+  <Divider />
+
+  <CollapsibleColumns marginTop="1.5rem">
+    <div>
+      <b>Online Resources</b>
+
+      <InfoList type="disc">
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/audio-control.html"
+          >
+            WCAG Requirement 1.4.2 - Audio Control
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/timing-adjustable.html"
+          >
+            WCAG Requirement 2.2.1 - Timing Adjustable
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html"
+          >
+            WCAG Requirement 2.2.2 - Pause, Stop, Hide
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold.html"
+          >
+            WCAG Requirement 2.3.1 - Three Flashes or Below Threshold
+          </Link>
+        </InfoListItem>
+      </InfoList>
+    </div>
+
+    <div></div>
   </CollapsibleColumns>
 </PageleteSubSection>
