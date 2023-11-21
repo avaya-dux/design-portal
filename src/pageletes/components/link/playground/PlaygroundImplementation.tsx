@@ -29,49 +29,51 @@ export const PlaygroundImplementation = () => {
   }, [typeOption, disabled]);
 
   return (
-    <Playground
-      options={
-        <Playground.OptionsContainer>
-          <Playground.OptionsSection title="Type">
-            <RadioGroup
-              groupName="type-options"
-              selected={typeOption}
-              onChange={(e) => {
-                setTypeOption(e.target.value as TypeOption);
-              }}
-            >
-              <Radio value="standalone">Standalone</Radio>
-              <Radio value="inline">Inline</Radio>
-            </RadioGroup>
-          </Playground.OptionsSection>
-          <Playground.OptionsSection title="Variables" id="variables">
-            <CheckboxGroup
-              groupName="Variables"
-              aria-labelledby="variables"
-              onChange={(e) => {
-                const { value } = e.target as HTMLInputElement;
-                if (value === "disabled") {
-                  setDisabled(!disabled);
-                }
-              }}
-            >
-              <Checkbox value="disabled" checked={disabled}>
-                Disabled
-              </Checkbox>
-            </CheckboxGroup>
-          </Playground.OptionsSection>
-        </Playground.OptionsContainer>
-      }
-      examples={{
-        html,
-        react,
-        sandbox,
-        storybook,
-      }}
-    >
-      <Link href="#main" inline={typeOption === "inline"} disabled={disabled}>
-        Link
-      </Link>
-    </Playground>
+    <div id="component-link-playground">
+      <Playground
+        options={
+          <Playground.OptionsContainer>
+            <Playground.OptionsSection title="Type">
+              <RadioGroup
+                groupName="type-options"
+                selected={typeOption}
+                onChange={(e) => {
+                  setTypeOption(e.target.value as TypeOption);
+                }}
+              >
+                <Radio value="standalone">Standalone</Radio>
+                <Radio value="inline">Inline</Radio>
+              </RadioGroup>
+            </Playground.OptionsSection>
+            <Playground.OptionsSection title="Variables" id="variables">
+              <CheckboxGroup
+                groupName="Variables"
+                aria-labelledby="variables"
+                onChange={(e) => {
+                  const { value } = e.target as HTMLInputElement;
+                  if (value === "disabled") {
+                    setDisabled(!disabled);
+                  }
+                }}
+              >
+                <Checkbox value="disabled" checked={disabled}>
+                  Disabled
+                </Checkbox>
+              </CheckboxGroup>
+            </Playground.OptionsSection>
+          </Playground.OptionsContainer>
+        }
+        examples={{
+          html,
+          react,
+          sandbox,
+          storybook,
+        }}
+      >
+        <Link href="#main" inline={typeOption === "inline"} disabled={disabled}>
+          Link
+        </Link>
+      </Playground>
+    </div>
   );
 };
