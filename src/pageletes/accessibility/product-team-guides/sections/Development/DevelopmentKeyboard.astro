@@ -1,10 +1,20 @@
 ---
+import { Link } from "@avaya/neo-react";
 import {
   CollapsibleColumns,
   Description,
+  Divider,
+  ImageWithCaption,
+  InfoList,
+  InfoListItem,
   PageleteSubSection,
   SubHeader,
 } from "components";
+
+import img1 from "../../imgs/product-development-keyboard-1.svg";
+import img2 from "../../imgs/product-development-keyboard-2.svg";
+import img3 from "../../imgs/product-development-keyboard-3.svg";
+import img4 from "../../imgs/product-development-keyboard-4.svg";
 ---
 
 <PageleteSubSection>
@@ -19,8 +29,116 @@ import {
   </Description>
 
   <CollapsibleColumns>
-    <div>one</div>
+    <ImageWithCaption
+      imgSrc={img1.src}
+      imgAlt="Image showing the four arrow keys on a keyboard"
+      captionTitle="Ensure All Interactive Elements Can Be Reached and Triggered Using a Keyboard"
+    >
+      Interactive components, such as buttons, form elements, and modals need to
+      be reachable using the keyboard alone. They are activated using the
+      spacebar, enter or arrow keys. Common interaction patterns can be found in
+      the documentation for each Neo component, as well as in the Online
+      Resources included below.
+    </ImageWithCaption>
 
-    <div>two</div>
+    <ImageWithCaption
+      imgSrc={img2.src}
+      imgAlt="Image showing a top nav with navigable links followed by a paragraph of text and then a focusable element"
+      captionTitle="Use Logical Tab Order"
+    >
+      Users should be able to move between each item on the page in a logical
+      fashion. Ensure the tab sequence follows a natural reading order, and
+      touches each section in turn. Users must be able to navigate through all
+      sections without skipping or getting trapped.
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={img3.src}
+      imgAlt="Image showing a 'skip to main content' button"
+      captionTitle="Enable Skip Navigation"
+    >
+      To help users easily access each section of the page, provide Quick Links
+      (known as Skip Navigation) at the beginning of the tab order. However,
+      landmarks must be configured first. Refer to the Online Resources for
+      additional guidance.
+    </ImageWithCaption>
+
+    <ImageWithCaption
+      imgSrc={img4.src}
+      imgAlt="Image showing a visually focused element between two other elements"
+      captionTitle="Ensure Visible Focus For Interactive Elements"
+    >
+      Each item that receives focus should have a ring that provides a clear
+      visual indication of where the user currently is on the page. All Neo
+      components have a blue focus ring incorporated by default.
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <Divider />
+
+  <CollapsibleColumns marginTop="1.5rem">
+    <div>
+      <b>Online Resources</b>
+
+      <InfoList type="disc">
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/meaningful-sequence.html"
+          >
+            WCAG Requirement 1.3.2 - Meaningful Sequence
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/keyboard.html"
+          >
+            WCAG Requirement 2.1.1 - Keyboard
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/no-keyboard-trap.html"
+          >
+            WCAG Requirement 2.1.2 - No Keyboard Trap
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks"
+          >
+            WCAG Requirement 2.4.1 - Bypassing Blocks
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html"
+          >
+            WCAG Requirement 2.4.3 - Focus Order
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/focus-visible.html"
+          >
+            WCAG Requirement 2.4.7 - Focus Visible
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link href="https://webaim.org/techniques/skipnav/">
+            WebAIM Skip Navigation
+          </Link>
+        </InfoListItem>
+      </InfoList>
+    </div>
+
+    <div></div>
   </CollapsibleColumns>
 </PageleteSubSection>
