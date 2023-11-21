@@ -6,4 +6,3 @@ export { VisualDesignImages };
 
 import VisualDesignText from "./VisualDesignText.astro";
 export { VisualDesignText };
-
