@@ -1,10 +1,23 @@
 ---
+import { Link } from "@avaya/neo-react";
+
 import {
   CollapsibleColumns,
   Description,
+  Divider,
+  ImageWithCaption,
+  InfoList,
+  InfoListItem,
   PageleteSubSection,
   SubHeader,
 } from "components";
+
+import img1 from "../../imgs/product-development-screen-1.svg";
+import img2 from "../../imgs/product-development-screen-2.svg";
+import img3 from "../../imgs/product-development-screen-3.svg";
+import img4 from "../../imgs/product-development-screen-4.svg";
+import img5 from "../../imgs/product-development-screen-5.svg";
+import img6 from "../../imgs/product-development-screen-6.svg";
 ---
 
 <PageleteSubSection>
@@ -17,8 +30,176 @@ import {
   </Description>
 
   <CollapsibleColumns>
-    <div>one</div>
+    <ImageWithCaption
+      imgSrc={img1.src}
+      imgAlt="Image showing several elements with their role/name/value highlighted"
+      captionTitle="Ensure All Elements Have An Associated Name, Role, and Value"
+    >
+      Alt text should describe the image in such a way that someone who is
+      unable to view the image can understand the what is shown. The description
+      should be a sentence or two as some screen readers may not read the text
+      together. Alt text does not need to begin with “image of …” but describing
+      the type of image is useful (e.g. illustration of 3 students taking notes
+      in a classroom). The text should include all relevant information about
+      the image, so if the color of a shirt is not important, it doesn’t need to
+      be mentioned.
+    </ImageWithCaption>
 
-    <div>two</div>
+    <ImageWithCaption
+      imgSrc={img2.src}
+      imgAlt="Image showing a paragraph with a link highlighted"
+      captionTitle="Use Descriptive Link Text"
+    >
+      Links need to be descriptive so they can be understood out of context.
+      This is important for screen readers since they can read links
+      individually. Avoid using generic terms such as “learn more” or “click
+      here.” For example: “Our accessibility guidelines are now available.” If
+      this cannot be avoided, include the description using alt text.
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={img3.src}
+      imgAlt="Image showing 'lang=en'"
+      captionTitle="Include A Language Attribute on The Page"
+    >
+      Assistive technologies can best interpret content when the application
+      states the language used. Add this attribute to each page. If the page
+      contains multiple languages, specify the language that is primarily used
+      on the page. For sections that use different languages, these can also be
+      tagged appropriately.
+    </ImageWithCaption>
+
+    <ImageWithCaption
+      imgSrc={img4.src}
+      imgAlt="Image showing three sections of a page with the first section highlighted"
+      captionTitle="Identify Page Areas With Landmarks"
+    >
+      Landmarks identify regions on a page, such as headers, navigation
+      elements, and footers, so that screen reader users can easily determine
+      where they are. This also allows them to jump quickly into other sections.
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={img5.src}
+      imgAlt="Image showing an image with an alt tag with a description of the image"
+      captionTitle="Add Alternative Text to Images"
+    >
+      In addition to the content outlined in the visual design guidelines,
+      ensure that alternative text (alt text) is included with all images that
+      provide information so screen readers can describe it. For decorative
+      images, include alt=”” (or aria-hidden=”true” for svgs).
+    </ImageWithCaption>
+
+    <ImageWithCaption
+      imgSrc={img6.src}
+      imgAlt="Image showing two paragraphs with an h2 tag used directly above the paragraphs"
+      captionTitle="Use Headings Where Appropriate"
+    >
+      Headings need to be marked accordingly so screen reader users can quickly
+      identify the page structure. Refer to the visual checklist for additional
+      guidelines.
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <Divider />
+
+  <CollapsibleColumns marginTop="1.5rem">
+    <div>
+      <b>Online Resources</b>
+
+      <InfoList type="disc">
+        <InfoListItem>
+          <Link href="https://wcag.com/authors/1-1-1-non-text-content/">
+            WCAG Requirement 1.1.1 - Non-text Content
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://wcag.com/developers/1-3-1-info-and-relationships/"
+          >
+            WCAG Requirement 1.3.1 - Info and Relationships
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/link-purpose-in-context.html"
+          >
+            WCAG Requirement 2.4.4 - Link Purpose (In Context)
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link href="https://wcag.com/authors/2-4-6-headings-and-labels/">
+            WCAG Requirement 2.4.6 - Headings and Labels
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link href="https://wcag.com/developers/3-1-1-language-of-a-page/">
+            WCAG Requirement 3.1.1 - Language of Page
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link href="https://wcag.com/developers/3-1-2-language-of-parts/">
+            WCAG Requirement 3.1.2 - Language of Parts
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link href="https://wcag.com/developers/4-1-2-name-role-value/">
+            WCAG Requirement 4.1.2 - Name, Role, Value
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link href="https://www.w3.org/WAI/standards-guidelines/aria/">
+            WAI-ARIA Overview
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link href="https://www.w3.org/TR/wai-aria-1.1/">WAI-ARIA 1.1</Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link href="https://www.deque.com/blog/ios-traits/">
+            What iOS Traits Actually Do
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://developer.android.com/guide/topics/ui/accessibility"
+          >
+            Android Make Apps More Accessible
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/general-principles.html"
+          >
+            ARIA Landmarks Examples
+          </Link>
+        </InfoListItem>
+      </InfoList>
+    </div>
+
+    <div>
+      <b>Neo Resources</b>
+
+      <InfoList type="disc">
+        <InfoListItem>
+          <Link href="/accessibility/testing-tools">Testing Tools</Link>
+        </InfoListItem>
+      </InfoList>
+    </div>
   </CollapsibleColumns>
 </PageleteSubSection>
