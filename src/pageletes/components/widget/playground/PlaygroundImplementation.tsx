@@ -1,8 +1,23 @@
-import { Button, Icon, IconButton, Radio, RadioGroup, Switch, TextInput, Widget, WidgetAction, WidgetContent, WidgetHeader } from "@avaya/neo-react";
+import {
+  Button,
+  Icon,
+  IconButton,
+  Radio,
+  RadioGroup,
+  Switch,
+  TextInput,
+  Widget,
+  WidgetAction,
+  WidgetContent,
+  WidgetHeader,
+} from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components";
-import { prettyPrintReactElementToHtml, prettyPrintReactElementToString } from "helpers";
+import {
+  prettyPrintReactElementToHtml,
+  prettyPrintReactElementToString,
+} from "helpers";
 
 const sandbox = "https://codesandbox.io/s/neo-react-widget-5qlt65";
 const storybook =
