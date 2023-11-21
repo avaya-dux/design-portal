@@ -1,10 +1,22 @@
 ---
+import { Link } from "@avaya/neo-react";
+
 import {
   CollapsibleColumns,
   Description,
+  Divider,
+  ImageWithCaption,
+  InfoList,
+  InfoListItem,
   PageleteSubSection,
   SubHeader,
 } from "components";
+
+import img1 from "../../imgs/product-development-device-1.svg";
+import img2 from "../../imgs/product-development-device-2.svg";
+import img3 from "../../imgs/product-development-device-3.svg";
+import img4 from "../../imgs/product-development-device-4.svg";
+import img5 from "../../imgs/product-development-device-5.svg";
 ---
 
 <PageleteSubSection>
@@ -16,8 +28,184 @@ import {
   </Description>
 
   <CollapsibleColumns>
-    <div>one</div>
+    <ImageWithCaption
+      imgSrc={img1.src}
+      imgAlt="Image showing a set of many circles followed by a set of fewer circles"
+      captionTitle="Support Reduced Motion"
+    >
+      Users with motion sensitivities can turn on a feature that requests
+      applications minimize the use of non-essential movement. This includes
+      large page transitions and animated illustrations. In the Web, this can be
+      captured with the prefers-reduced-motion media query. iOS has the property
+      UIAccessibility.isReduceMotionEnabled.
+    </ImageWithCaption>
 
-    <div>two</div>
+    <ImageWithCaption
+      imgSrc={img2.src}
+      imgAlt="Image showing showing an element growing in scale"
+      captionTitle="Ensure Text and Components Can Scale"
+    >
+      Users may adjust their font size to be larger or smaller than the system
+      default. Your designs must accommodate resizing without cutting off any
+      content.
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={img3.src}
+      imgAlt="Image showing the keyboard keys 'command' plus 'a'"
+      captionTitle="Avoid Conflicting With System and Custom Shortcuts"
+    >
+      Shortcuts that use a single character can cause problems for screen input
+      users, or those who accidentally click the keys. Always use keystroke
+      combinations for navigation and control. Shortcuts should use one or more
+      non-printable keys (such as Ctrl and Alt).
+      <div>
+        Shortcuts must avoid duplicating any system-defined or screen reader
+        commands. A list of these can be found in the platform guidelines.
+        Additional rules related to international layouts can be found in the
+        internationalization guidelines.
+      </div>
+    </ImageWithCaption>
+
+    <ImageWithCaption
+      imgSrc={img4.src}
+      imgAlt="Image showing three horizontal elements becoming three vertical elements"
+      captionTitle="Ensure Context Is Retained In Magnified Views"
+    >
+      People that are visually impaired may increase the magnification on their
+      screens to view content more easily. Ensure content presented within
+      zoomed levels of up to 400% can still be viewed without losing context or
+      functionality.
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={img5.src}
+      imgAlt="Image showing a monitor in dark mode next a monitor in light mode"
+      captionTitle="Support Different Display Modes"
+    >
+      Display settings can enhance or reduce contrast levels. Do not allow
+      applications to override these settings. On Windows, a high contrast mode
+      is available that replaces all colors with a simplified palette. Mac and
+      iOS devices include several modes, including smart and classic invert,
+      which invert all colors in an application. Android includes similar
+      options such as dark theme, color inversion and high contrast text. For
+      color inverting modes, ensure images and other media items are excluded.
+    </ImageWithCaption>
+
+    <div></div>
+  </CollapsibleColumns>
+
+  <Divider />
+
+  <CollapsibleColumns marginTop="1.5rem">
+    <div>
+      <b>Online Resources</b>
+
+      <InfoList type="disc">
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html"
+          >
+            WCAG Requirement 1.4.4 - Resize Text
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">
+            WCAG Requirement 1.4.10 - Reflow
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/character-key-shortcuts.html"
+          >
+            WCAG Requirement 2.1.4 - Character Key Shortcuts
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/animation-from-interactions.html"
+          >
+            WCAG Requirement 2.2.3 - Animations from Interactions
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion"
+          >
+            Prefers Reduced Motion
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://developer.apple.com/documentation/uikit/uiaccessibility/1615133-isreducemotionenabled"
+          >
+            Is Reduced Motion Enabled
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://learn.microsoft.com/en-us/windows/apps/design/accessibility/high-contrast-themes"
+          >
+            Windows High Contrast Themes
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://developer.apple.com/documentation/swiftui/view/accessibilityignoresinvertcolors(_:)"
+          >
+            Apple Accessibility Ignores Invert Colors
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://support.google.com/accessibility/android/answer/6151800?hl=en"
+          >
+            Android Dark Theme and Color Inversion
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://support.apple.com/guide/iphone/zoom-in-iph3e2e367e/ios"
+          >
+            iOS Zoom
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://source.android.com/docs/core/display/window-magnifier"
+          >
+            Android Magnification
+          </Link>
+        </InfoListItem>
+      </InfoList>
+    </div>
+
+    <div>
+      <b>Neo Resources</b>
+
+      <InfoList type="disc">
+        <InfoListItem>
+          <Link href="/guidelines/platform">Platform</Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link href="/guidelines/localization">Internationalization</Link>
+        </InfoListItem>
+      </InfoList>
+    </div>
   </CollapsibleColumns>
 </PageleteSubSection>
