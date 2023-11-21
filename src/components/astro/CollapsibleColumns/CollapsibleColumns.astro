@@ -1,0 +1,21 @@
+---
+export interface Props {
+  marginTop?: string;
+}
+
+const { marginTop = "3rem" } = Astro.props as Props;
+---
+
+<div class="collapsible">
+  <slot />
+</div>
+
+<style define:vars={{ marginTop }}>
+  div.collapsible {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 40px;
+
+    margin-top: var(--marginTop);
+  }
+</style>

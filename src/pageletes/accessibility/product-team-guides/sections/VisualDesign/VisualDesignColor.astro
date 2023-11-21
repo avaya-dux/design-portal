@@ -1,0 +1,114 @@
+---
+import { Link } from "@avaya/neo-react";
+
+import {
+  CollapsibleColumns,
+  Description,
+  Divider,
+  InfoList,
+  InfoListItem,
+  PageleteSubSection,
+  SubHeader,
+  ImageWithCaption,
+} from "components";
+
+import productVisualColorImage1 from "../../imgs/product-visual-color-1.svg";
+import productVisualColorImage2 from "../../imgs/product-visual-color-2.svg";
+---
+
+<PageleteSubSection>
+  <SubHeader id="ptg-visual-design-color">Color</SubHeader>
+
+  <Description>
+    Each color has a set of uses to convey consistent meaning across our
+    products.
+  </Description>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={productVisualColorImage1.src}
+      imgAlt="Image showing a square text box with a caution sign inside of it"
+      captionTitle="Use Color with Other Visual Means of Communication"
+    >
+      Color alone should not be used to convey information since the content
+      will not be visible or understandable to some people. Color content should
+      be paired with other visual cues, such as text or shape. This not only
+      helps people with disabilities, but all users benefit from the better
+      design. For example, when presence appears on an avatar, use color as well
+      as an icon to display personal status.
+    </ImageWithCaption>
+
+    <ImageWithCaption
+      imgSrc={productVisualColorImage2.src}
+      imgAlt="Image showing multiple rectangles side by side"
+      captionTitle="Use Sufficient Contrast Between Elements"
+    >
+      To ensure the UI is clearly readable for low vision users, ensure that all
+      UI elements and large text (&gt;=24px) have a 3:1 ratio between the
+      foreground and background colors, and a 4.5:1 ratio for smaller text. Note
+      that decorative items (such as logos) are exempt.
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <Divider />
+
+  <CollapsibleColumns marginTop="1.5rem">
+    <div>
+      <b>Online Resources</b>
+
+      <InfoList type="disc">
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html"
+          >
+            WCAG Requirement 1.4.1 - Use of Color
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum"
+          >
+            WCAG Requirement 1.4.3 - Contract (Minimum)
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html"
+          >
+            WCAG Requirement 1.4.11 - Non Text Contrast
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance-enhanced"
+          >
+            WCAG Requirement 2.4.13 - Focus Appearance (Enhanced)
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link href="https://webaim.org/articles/contrast/">
+            Contrast and Color Accessibility
+          </Link>
+        </InfoListItem>
+      </InfoList>
+    </div>
+
+    <div>
+      <b>Neo Resources</b>
+
+      <InfoList type="disc">
+        <InfoListItem>
+          <Link href="/guidelines/color">Color</Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link href="/accessibility/testing-tools">Testing Tools</Link>
+        </InfoListItem>
+      </InfoList>
+    </div>
+  </CollapsibleColumns>
+</PageleteSubSection>

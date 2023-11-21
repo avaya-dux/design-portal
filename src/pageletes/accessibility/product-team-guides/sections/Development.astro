@@ -1,0 +1,17 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components";
+
+import { topics } from "../static";
+
+const { id, title } = topics.development;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Developers play a key role in ensuring that applications are usable by
+    people with disabilities. Accessible design requires keyboard, screen reader
+    output, device settings and other factors to be considered.
+  </Description>
+</PageleteSection>

@@ -1,0 +1,20 @@
+---
+import { Description, PageleteSection, PageTitle, Topics } from "components";
+
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <PageTitle>Product Team Guides</PageTitle>
+
+  <Description>
+    To help product teams understand their role in making Avaya’s products
+    accessible, these guidelines are provided for managers, designers,
+    developers and quality assurance personnel. These guidelines are not
+    comprehensive but serve as a starting point to understand what’s involved.
+    Links to additional reading and resources are provided to encourage a deeper
+    understanding of each area.
+  </Description>
+
+  <Topics topics={topics} />
+</PageleteSection>

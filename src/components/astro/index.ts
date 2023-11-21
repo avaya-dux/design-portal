@@ -7,6 +7,9 @@ export { ColumnLayout };
 import Description from "./Description.astro";
 export { Description };
 
+import Divider from "./Divider.astro";
+export { Divider };
+
 import ImageWrapper from "./ImageWrapper.astro";
 export { ImageWrapper };
 
@@ -34,6 +37,7 @@ export { StackedLayout };
 import SubHeader from "./SubHeader.astro";
 export { SubHeader };
 
+export * from "./CollapsibleColumns";
 export * from "./InfoList";
 export * from "./InfoTable";
 export * from "./Topics";
