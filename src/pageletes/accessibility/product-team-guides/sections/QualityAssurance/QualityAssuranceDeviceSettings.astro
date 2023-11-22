@@ -1,10 +1,20 @@
 ---
+import { Link } from "@avaya/neo-react";
+
 import {
   CollapsibleColumns,
   Description,
+  Divider,
+  ImageWithCaption,
+  InfoList,
+  InfoListItem,
   PageleteSubSection,
   SubHeader,
 } from "components";
+
+import img1 from "../../imgs/product-quality-device-1.svg";
+import img2 from "../../imgs/product-quality-device-2.svg";
+import img3 from "../../imgs/product-quality-device-3.svg";
 ---
 
 <PageleteSubSection>
@@ -12,11 +22,125 @@ import {
     Device Settings
   </SubHeader>
 
-  <Description>WIP</Description>
+  <Description>
+    Users can configure accessibility settings on their desktop and mobile
+    devices. Applications must respect these preferences. You can learn more
+    about these options in the development guide.
+  </Description>
 
   <CollapsibleColumns>
-    <div>one</div>
+    <ImageWithCaption
+      imgSrc={img1.src}
+      imgAlt="Image showing multiple rectangles side by side"
+      captionTitle="Ensure All Elements Have Sufficient Color Contrast"
+    >
+      To ensure the interface is clearly legible to users who are visually
+      impaired, all UI elements and large text (&gt;=24px) must have a 3:1 ratio
+      between the foreground and background colors, and a 4.5:1 ratio for other
+      text. Note that decorative items (such as branding images) are not
+      included in this requirement.
+    </ImageWithCaption>
 
-    <div>two</div>
+    <ImageWithCaption
+      imgSrc={img2.src}
+      imgAlt="Image showing three horizontal elements becoming three vertical elements"
+      captionTitle="Ensure Page  Can Zoom Without Losing Content"
+    >
+      Users may zoom to enlarge the application for easier reading. Ensure the
+      application can be presented up to 400% without losing content or
+      functionality. It should also not require vertical scrolling within 320px,
+      or horizontal scrolling within 256px.
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={img3.src}
+      imgAlt="Image showing a smaller box being magnified"
+      captionTitle="Ensure Language is Defined"
+    >
+      Assistive technologies can best interpret the content when the application
+      states which language the page uses. Add this as an attribute to each
+      page. Individual sections that use a different language can be tagged
+      locally to aid interpretation of that section.
+    </ImageWithCaption>
+
+    <div></div>
+  </CollapsibleColumns>
+
+  <Divider />
+
+  <CollapsibleColumns marginTop="1.5rem">
+    <div>
+      <b>Online Resources</b>
+
+      <InfoList type="disc">
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html"
+          >
+            WCAG Requirement 1.4.1 - Use of Color
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum"
+          >
+            WCAG Requirement 1.4.3 - Contrast (Minimum)
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html"
+          >
+            WCAG Requirement 1.4.4 - Resize Text
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">
+            WCAG Requirement 1.4.10 - Reflow
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html"
+          >
+            WCAG Requirement 1.4.11 - Non Text Contrast
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html"
+          >
+            WCAG Requirement 1.4.12 - Text Spacing
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link href="https://www.wuhcag.com/focus-appearance-enhanced/">
+            WCAG Requirement 2.4.12 - Focus Appearance (Enhanced)
+          </Link>
+        </InfoListItem>
+      </InfoList>
+    </div>
+
+    <div>
+      <b>Neo Resources</b>
+
+      <InfoList type="disc">
+        <InfoListItem>
+          <Link href="/guidelines/color">Color</Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link href="/accessibility/testing-tools">Testing Tools</Link>
+        </InfoListItem>
+      </InfoList>
+    </div>
   </CollapsibleColumns>
 </PageleteSubSection>
