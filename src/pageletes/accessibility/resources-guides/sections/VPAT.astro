@@ -1,13 +1,12 @@
 ---
 import {
   Description,
+  ExternalLink,
   PageleteSection,
   SectionHeader,
   InfoList,
   InfoListItem,
 } from "components";
-
-import { ExternalLink } from "../components";
 
 import { topics } from "../static";
 const { id, title } = topics.vpat;
@@ -40,12 +39,12 @@ const links = {
     the World Wide Web Consortium (W3C) and represent the worldwide standard for
     accessibility.
     <InfoList type="'- '">
-      <InfoListItem label="" isLink={true}>
+      <InfoListItem>
         To create a VPAT for a product, <ExternalLink href={links.vpat.link}>
           {links.vpat.title}
         </ExternalLink>.
       </InfoListItem>
-      <InfoListItem label="" isLink={true}>
+      <InfoListItem>
         To view the VPATs currently available for Avaya's products, visit <ExternalLink
           href={links.avaya.link}
         >

@@ -1,13 +1,12 @@
 ---
 import {
   Description,
+  ExternalLink,
   PageleteSection,
   SectionHeader,
   InfoList,
   InfoListItem,
 } from "components";
-
-import { ExternalLink } from "../components";
 
 import { topics } from "../static";
 import { Link } from "@avaya/neo-react";
@@ -24,10 +23,7 @@ const { id, title } = topics["getting-started"];
   </Description>
 
   <InfoList type="decimal">
-    <InfoListItem
-      label="Follow the development standards for your platform."
-      isLink
-    >
+    <InfoListItem label="Follow the development standards for your platform.">
       <p>
         All major platforms include tools to build for accessibility, and/or
         have it included in their native components. Refer to the following
@@ -35,7 +31,7 @@ const { id, title } = topics["getting-started"];
       </p>
 
       <InfoList type="disc">
-        <InfoListItem label="" isLink>
+        <InfoListItem>
           Web: <ExternalLink
             href="https://www.w3.org/WAI/standards-guidelines/wcag/"
           >
@@ -46,21 +42,21 @@ const { id, title } = topics["getting-started"];
             ARIA 1.1
           </ExternalLink>.
         </InfoListItem>
-        <InfoListItem label="" isLink>
+        <InfoListItem>
           iOS and Mac: <ExternalLink
             href="https://developer.apple.com/design/human-interface-guidelines/accessibility/overview/introduction/"
           >
             Apple Human Interface Guideliness
           </ExternalLink>.
         </InfoListItem>
-        <InfoListItem label="" isLink>
+        <InfoListItem>
           Android: <ExternalLink
             href="https://developer.android.com/guide/topics/ui/accessibility"
           >
             Developer Documentation Guide
           </ExternalLink>.
         </InfoListItem>
-        <InfoListItem label="" isLink>
+        <InfoListItem>
           Windows: <ExternalLink
             href="https://docs.microsoft.com/en-us/windows/uwp/design/accessibility/accessibility"
           >
@@ -72,24 +68,21 @@ const { id, title } = topics["getting-started"];
 
     <InfoListItem
       label="Ensure the application is compatible with assistive technologies."
-      isLink
     >
       <p>
         Users with disabilities may use one or more devices to interact with the
         application. These include:
       </p>
       <InfoList type="disc">
-        <InfoListItem label="" isLink>Screen readers</InfoListItem>
-        <InfoListItem label="" isLink>
-          Screen magnification software
-        </InfoListItem>
-        <InfoListItem label="" isLink>Text readers</InfoListItem>
-        <InfoListItem label="" isLink>Speech input software</InfoListItem>
-        <InfoListItem label="" isLink>
+        <InfoListItem>Screen readers</InfoListItem>
+        <InfoListItem>Screen magnification software</InfoListItem>
+        <InfoListItem>Text readers</InfoListItem>
+        <InfoListItem>Speech input software</InfoListItem>
+        <InfoListItem>
           Alternative input devices, such as head pointers, motion/eye tracking,
           and single switch entries
         </InfoListItem>
-        <InfoListItem label="" isLink>
+        <InfoListItem>
           Refer to <Link href="./principles">Principles</Link> to learn more
           about the different tools used, or Testing Tools to find resources for
           testing these devices.
@@ -97,7 +90,6 @@ const { id, title } = topics["getting-started"];
       </InfoList>
       <InfoListItem
         label="Use colors with sufficient contrast for text and UI elements."
-        isLink
       >
         <p>
           Sufficient color contrast ensures that users who are color-blind or
@@ -108,7 +100,6 @@ const { id, title } = topics["getting-started"];
       </InfoListItem>
       <InfoListItem
         label="Ensure all functional elements on a page are reachable by keyboard and/or gestures."
-        isLink
       >
         <p>
           Some users rely solely on the keyboard or other devices to interact
@@ -119,17 +110,13 @@ const { id, title } = topics["getting-started"];
       </InfoListItem>
       <InfoListItem
         label="Support personalization where possible.Some users may have accessibility preferences enabled on their devices."
-        isLink
       >
         <p>
           Respect these preferences within the application for a consistent
           experience (e.g. high contrast mode, increased font size, etc.).
         </p>
       </InfoListItem>
-      <InfoListItem
-        label="Audit and test the application for accessibility."
-        isLink
-      >
+      <InfoListItem label="Audit and test the application for accessibility.">
         <p>
           Incorporate accessibility testing into the product development process
           to ensure all UI elements and flows work for users with disabilities.

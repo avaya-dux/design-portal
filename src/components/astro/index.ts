@@ -10,6 +10,9 @@ export { Description };
 import Divider from "./Divider.astro";
 export { Divider };
 
+import ExternalLink from "./ExternalLink.astro";
+export { ExternalLink };
+
 import ImageWrapper from "./ImageWrapper.astro";
 export { ImageWrapper };
 
