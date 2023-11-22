@@ -1,20 +1,137 @@
 ---
+import { Link } from "@avaya/neo-react";
+
 import {
   CollapsibleColumns,
   Description,
+  Divider,
+  ImageWithCaption,
+  InfoList,
+  InfoListItem,
   PageleteSubSection,
   SubHeader,
 } from "components";
+
+import img1 from "../../imgs/product-quality-screen-1.svg";
+import img2 from "../../imgs/product-quality-screen-2.svg";
+import img3 from "../../imgs/product-quality-screen-3.svg";
+import img4 from "../../imgs/product-quality-screen-4.svg";
+import img5 from "../../imgs/product-quality-screen-5.svg";
 ---
 
 <PageleteSubSection>
   <SubHeader id="ptg-quality-assurance-screen-reader">Screen Reader</SubHeader>
 
-  <Description>WIP</Description>
+  <Description>
+    Users with visual impairment may use a screen reader to listen to the text
+    on the page. Testing with multiple screen readers is important to ensure
+    that all elements are accessible and are presented correctly to the users.
+  </Description>
 
   <CollapsibleColumns>
-    <div>one</div>
+    <ImageWithCaption
+      imgSrc={img1.src}
+      imgAlt="Image showing close button with the label 'close button' under it"
+      captionTitle="Ensure All Elements Are Read Correctly"
+    >
+      With each screen reader tool, test each page so that all elements are read
+      and are properly described. For example, a Close button should be read as
+      “Close Button” rather than just “button”.
+    </ImageWithCaption>
 
-    <div>two</div>
+    <ImageWithCaption
+      imgSrc={img2.src}
+      imgAlt="image showing the HTML heading hierarchy (h1 with a small h2 underneath it)"
+      captionTitle="Ensure Headings Are Not Skipped"
+    >
+      Headings are used in sequential order so screen readers can easily
+      navigate across the page. Make sure that heading tags do not skip any
+      levels. For example, a heading 2 tag should be followed by heading 3, not
+      heading 4.
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={img3.src}
+      imgAlt="Image showing a tooltip with a variable label tag under it"
+      captionTitle="Ensure Accessibility Tags Are Not Hardcoded"
+    >
+      Accessibility labels and alternative text should be coded with variables
+      that contain translations for all supported languages. Ensure no tags are
+      hardcoded into the application.
+    </ImageWithCaption>
+
+    <ImageWithCaption
+      imgSrc={img4.src}
+      imgAlt="Image showing flag icon with a tag under it that reads 'English'"
+      captionTitle="Ensure Language is Defined"
+    >
+      Assistive technologies can best interpret the content when the application
+      states which language the page uses. Add this as an attribute to each
+      page.
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={img5.src}
+      imgAlt="Image showing notification message"
+      captionTitle="Ensure errors are announced"
+    >
+      Whenever errors are presented on the interface, make sure the screen
+      readers announce this without users having to manually return to the
+      problematic field.
+    </ImageWithCaption>
+
+    <div></div>
+  </CollapsibleColumns>
+
+  <Divider />
+
+  <CollapsibleColumns marginTop="1.5rem">
+    <div>
+      <b>Online Resources</b>
+
+      <InfoList type="disc">
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/headings-and-labels.html"
+          >
+            WCAG Requirement 2.4.6 - Headings and Labels
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link href="https://wcag.com/developers/3-1-1-language-of-a-page/">
+            WCAG Requirement 3.1.1 - Language of Page
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/error-identification.html"
+          >
+            WCAG Requirement 3.3.1 - Error Identification
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link
+            href="https://www.w3.org/WAI/WCAG21/Understanding/error-suggestion"
+          >
+            WCAG Requirement 3.3.3 - Error Suggestion
+          </Link>
+        </InfoListItem>
+
+        <InfoListItem>
+          <Link href="https://wcag.com/developers/4-1-2-name-role-value/">
+            WCAG Requirement 4.1.2 - Name, Role, Value
+          </Link>
+        </InfoListItem>
+      </InfoList>
+    </div>
+
+    <div></div>
   </CollapsibleColumns>
 </PageleteSubSection>
