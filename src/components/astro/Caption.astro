@@ -9,12 +9,7 @@ const { title = "" } = Astro.props as Props;
 ---
 
 <div>
-  <h4 class="caption-title">{title}</h4>
+  <h4 class="image-header neo-semibold">{title}</h4>
+
   <Description><slot /></Description>
 </div>
-
-<style>
-  .caption-title {
-    margin-bottom: 0.5rem;
-  }
-</style>
