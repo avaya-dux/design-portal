@@ -10,6 +10,7 @@ import {
   PageleteSubSection,
   SubHeader,
   ImageWithCaption,
+  ExternalLink,
 } from "components";
 
 import productVisualTextImage1 from "../../imgs/product-visual-text-1.svg";
@@ -35,7 +36,7 @@ import productVisualTextImage6 from "../../imgs/product-visual-text-6.svg";
       imgAlt="Image showing a capital 'i', lowercase 'l', lowercase 'i', and the number '1'"
       captionTitle="Use Neo's Font Family"
     >
-      Neo uses the Noto Sans JP font from Google. It uses individual strokes to
+      Neo uses the Noto Sans font from Google. It uses individual strokes to
       distinguish between similar looking characters and is available in many
       languages. Use Noto Sans throughout your designs.
     </ImageWithCaption>
@@ -100,7 +101,11 @@ import productVisualTextImage6 from "../../imgs/product-visual-text-6.svg";
       </InfoList>
 
       <div class="spacing">
-        Refer to the <Link href="/guidelines/voice-tone" inline>
+        Refer to the <Link
+          href="/guidelines/voice-tone"
+          inline
+          style={{ display: "inline-block" }}
+        >
           Voice & Tone guidelines
         </Link> for more information.
       </div>
@@ -125,47 +130,57 @@ import productVisualTextImage6 from "../../imgs/product-visual-text-6.svg";
 
       <InfoList type="disc">
         <InfoListItem>
-          <Link href="https://webaim.org/techniques/fonts/">
+          <ExternalLink
+            href="https://webaim.org/techniques/fonts/"
+            inline={false}
+          >
             WebAIM Typeface and Fonts
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link href="https://www.w3.org/TR/css-values-4/">
+          <ExternalLink
+            href="https://www.w3.org/TR/css-values-4/"
+            inline={false}
+          >
             CSS Values and Units
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://www.w3.org/WAI/WCAG21/Understanding/meaningful-sequence.html"
+            inline={false}
           >
             WCAG Requirement 1.3.2 - Meaningful Sequence
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html"
+            inline={false}
           >
             WCAG Requirement 1.4.12 - Text Spacing
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://www.w3.org/WAI/WCAG21/Understanding/headings-and-labels.html"
+            inline={false}
           >
             WCAG Requirement 2.4.6 - Headings and Labels
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://www.w3.org/WAI/WCAG21/Understanding/labels-or-instructions.html"
+            inline={false}
           >
             WCAG Requirement 3.3.2 - Labels or Instructions
-          </Link>
+          </ExternalLink>
         </InfoListItem>
       </InfoList>
     </div>

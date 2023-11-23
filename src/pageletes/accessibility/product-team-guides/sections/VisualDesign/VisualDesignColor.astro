@@ -10,6 +10,7 @@ import {
   PageleteSubSection,
   SubHeader,
   ImageWithCaption,
+  ExternalLink,
 } from "components";
 
 import productVisualColorImage1 from "../../imgs/product-visual-color-1.svg";
@@ -58,41 +59,48 @@ import productVisualColorImage2 from "../../imgs/product-visual-color-2.svg";
 
       <InfoList type="disc">
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html"
+            inline={false}
           >
             WCAG Requirement 1.4.1 - Use of Color
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum"
+            inline={false}
           >
             WCAG Requirement 1.4.3 - Contract (Minimum)
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html"
+            inline={false}
           >
             WCAG Requirement 1.4.11 - Non Text Contrast
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance-enhanced"
+            inline={false}
           >
             WCAG Requirement 2.4.13 - Focus Appearance (Enhanced)
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link href="https://webaim.org/articles/contrast/">
+          <ExternalLink
+            href="https://webaim.org/articles/contrast/"
+            inline={false}
+          >
             Contrast and Color Accessibility
-          </Link>
+          </ExternalLink>
         </InfoListItem>
       </InfoList>
     </div>

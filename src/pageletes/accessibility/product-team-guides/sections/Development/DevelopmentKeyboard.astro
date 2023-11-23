@@ -1,9 +1,9 @@
 ---
-import { Link } from "@avaya/neo-react";
 import {
   CollapsibleColumns,
   Description,
   Divider,
+  ExternalLink,
   ImageWithCaption,
   InfoList,
   InfoListItem,
@@ -84,57 +84,66 @@ import img4 from "../../imgs/product-development-keyboard-4.svg";
 
       <InfoList type="disc">
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://www.w3.org/WAI/WCAG21/Understanding/meaningful-sequence.html"
+            inline={false}
           >
             WCAG Requirement 1.3.2 - Meaningful Sequence
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://www.w3.org/WAI/WCAG21/Understanding/keyboard.html"
+            inline={false}
           >
             WCAG Requirement 2.1.1 - Keyboard
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://www.w3.org/WAI/WCAG21/Understanding/no-keyboard-trap.html"
+            inline={false}
           >
             WCAG Requirement 2.1.2 - No Keyboard Trap
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks"
+            inline={false}
           >
             WCAG Requirement 2.4.1 - Bypassing Blocks
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html"
+            inline={false}
           >
             WCAG Requirement 2.4.3 - Focus Order
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://www.w3.org/WAI/WCAG21/Understanding/focus-visible.html"
+            inline={false}
           >
             WCAG Requirement 2.4.7 - Focus Visible
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link href="https://webaim.org/techniques/skipnav/">
+          <ExternalLink
+            href="https://webaim.org/techniques/skipnav/"
+            inline={false}
+          >
             WebAIM Skip Navigation
-          </Link>
+          </ExternalLink>
         </InfoListItem>
       </InfoList>
     </div>

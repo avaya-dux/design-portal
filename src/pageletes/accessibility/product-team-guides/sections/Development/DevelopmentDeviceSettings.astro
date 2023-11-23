@@ -5,6 +5,7 @@ import {
   CollapsibleColumns,
   Description,
   Divider,
+  ExternalLink,
   ImageWithCaption,
   InfoList,
   InfoListItem,
@@ -61,12 +62,12 @@ import img5 from "../../imgs/product-development-device-5.svg";
       users, or those who accidentally click the keys. Always use keystroke
       combinations for navigation and control. Shortcuts should use one or more
       non-printable keys (such as Ctrl and Alt).
-      <div>
+      <Description>
         Shortcuts must avoid duplicating any system-defined or screen reader
         commands. A list of these can be found in the platform guidelines.
         Additional rules related to international layouts can be found in the
         internationalization guidelines.
-      </div>
+      </Description>
     </ImageWithCaption>
 
     <ImageWithCaption
@@ -107,89 +108,102 @@ import img5 from "../../imgs/product-development-device-5.svg";
 
       <InfoList type="disc">
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html"
+            inline={false}
           >
             WCAG Requirement 1.4.4 - Resize Text
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">
+          <ExternalLink
+            href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html"
+            inline={false}
+          >
             WCAG Requirement 1.4.10 - Reflow
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://www.w3.org/WAI/WCAG21/Understanding/character-key-shortcuts.html"
+            inline={false}
           >
             WCAG Requirement 2.1.4 - Character Key Shortcuts
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://www.w3.org/WAI/WCAG21/Understanding/animation-from-interactions.html"
+            inline={false}
           >
             WCAG Requirement 2.2.3 - Animations from Interactions
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion"
+            inline={false}
           >
             Prefers Reduced Motion
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://developer.apple.com/documentation/uikit/uiaccessibility/1615133-isreducemotionenabled"
+            inline={false}
           >
             Is Reduced Motion Enabled
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://learn.microsoft.com/en-us/windows/apps/design/accessibility/high-contrast-themes"
+            inline={false}
           >
             Windows High Contrast Themes
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://developer.apple.com/documentation/swiftui/view/accessibilityignoresinvertcolors(_:)"
+            inline={false}
           >
             Apple Accessibility Ignores Invert Colors
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://support.google.com/accessibility/android/answer/6151800?hl=en"
+            inline={false}
           >
             Android Dark Theme and Color Inversion
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://support.apple.com/guide/iphone/zoom-in-iph3e2e367e/ios"
+            inline={false}
           >
             iOS Zoom
-          </Link>
+          </ExternalLink>
         </InfoListItem>
 
         <InfoListItem>
-          <Link
+          <ExternalLink
             href="https://source.android.com/docs/core/display/window-magnifier"
+            inline={false}
           >
             Android Magnification
-          </Link>
+          </ExternalLink>
         </InfoListItem>
       </InfoList>
     </div>
