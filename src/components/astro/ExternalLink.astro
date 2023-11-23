@@ -1,12 +1,13 @@
 ---
 export interface Props {
   href: string;
+  inline?: boolean;
 }
 import { Link } from "@avaya/neo-react";
 
-const { href } = Astro.props as Props;
+const { href, inline = true } = Astro.props as Props;
 ---
 
-<Link inline href={href} target="_blank" rel="noopener noreferrer">
+<Link inline={inline} href={href} target="_blank" rel="noopener noreferrer">
   <slot />
 </Link>
