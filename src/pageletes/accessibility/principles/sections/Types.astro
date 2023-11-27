@@ -1,17 +1,25 @@
 ---
-import { Description, PageleteSection, SectionHeader } from "components";
+import { Link } from "@avaya/neo-react";
 
-import TwoColumnLayout from "./types-frame-layout/TwoColumnLayout.astro";
-
-import TypeBlind from "./types-frame-layout/type-frame-1/TypeBlind.astro";
-import TypeLowVision from "./types-frame-layout/type-frame-1/TypeLowVision.astro";
-import TypeColor from "./types-frame-layout/type-frame-2/TypeColor.astro";
-import TypeDeaf from "./types-frame-layout/type-frame-2/TypeDeaf.astro";
-import TypePhysical from "./types-frame-layout/type-frame-3/TypePhysical.astro";
-import TypeCognitive from "./types-frame-layout/type-frame-3/TypeCognitive.astro";
+import {
+  CollapsibleColumns,
+  Description,
+  ImageWithCaption,
+  InfoList,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+} from "components";
 
 import { topics } from "../static";
 const { id, title } = topics.disabilities;
+
+import img1 from "../imgs/principles-types-1.svg";
+import img2 from "../imgs/principles-types-2.svg";
+import img3 from "../imgs/principles-types-3.svg";
+import img4 from "../imgs/principles-types-4.svg";
+import img5 from "../imgs/principles-types-5.svg";
+import img6 from "../imgs/principles-types-6.svg";
 ---
 
 <PageleteSection>
@@ -25,18 +33,234 @@ const { id, title } = topics.disabilities;
     experience for everyone.
   </Description>
 
-  <TwoColumnLayout>
-    <TypeBlind slot="left-frame" />
-    <TypeLowVision slot="right-frame" />
-  </TwoColumnLayout>
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={img1.src}
+      imgAlt="Image showing braille characters"
+      captionTitle="Blind"
+    >
+      Blindness refers to a large range of visual disabilities, from impairments
+      that interfere with completing tasks, to total blindness. Blind users
+      interact with interfaces by using screen readers, refreshable braille
+      displays, and other assistive technologies.
 
-  <TwoColumnLayout>
-    <TypeColor slot="left-frame" />
-    <TypeDeaf slot="right-frame" />
-  </TwoColumnLayout>
+      <Description>Things to consider:</Description>
 
-  <TwoColumnLayout>
-    <TypeCognitive slot="left-frame" />
-    <TypePhysical slot="right-frame" />
-  </TwoColumnLayout>
+      <InfoList type="disc" fontSize="1rem">
+        <InfoListItem>
+          Visual information should be also provided in text format (e.g. alt
+          text).
+        </InfoListItem>
+
+        <InfoListItem>
+          Functional elements should be controllable with a keyboard.
+        </InfoListItem>
+
+        <InfoListItem>
+          Content should be structured and simplified where possible.
+        </InfoListItem>
+
+        <InfoListItem>
+          Time limits should provide sufficient time or be extendable.
+        </InfoListItem>
+
+        <InfoListItem>Video should include audio narration.</InfoListItem>
+
+        <InfoListItem>
+          Test all designs with a <Link
+            inline
+            href="/accessibility/testing-tools"
+          >
+            screen reader
+          </Link> where possible.
+        </InfoListItem>
+      </InfoList>
+
+      <div class="margintop">
+        These considerations will also help others as audio interfaces, such as
+        Siri and Alexa, are increasingly popular for assisting with tasks.
+      </div>
+    </ImageWithCaption>
+
+    <ImageWithCaption
+      imgSrc={img2.src}
+      imgAlt="Image showing an eye icon with multiple lines through it"
+      captionTitle="Low Vision"
+    >
+      Low vision refers to those who are partially-sighted in one or both eyes,
+      and are able to view content with assistive technology. They interact with
+      an interface by using screen magnification tools, high contrast modes,
+      monochrome displays, or screen readers.
+
+      <Description>Things to consider:</Description>
+
+      <InfoList type="disc" fontSize="1rem">
+        <InfoListItem>
+          Maximize readability and visual clarity of content.
+        </InfoListItem>
+
+        <InfoListItem>
+          Consider how the proximity of information changes when a page is
+          magnified.
+        </InfoListItem>
+
+        <InfoListItem>
+          Time limits should provide sufficient time or be extendable.
+        </InfoListItem>
+
+        <InfoListItem>
+          Test all designs with a screen reader where possible.
+        </InfoListItem>
+
+        <InfoListItem>
+          Test with <Link inline href="/accessibility/testing-tools">
+            color contrast tools or color simulators
+          </Link> to ensure sufficient contrast.
+        </InfoListItem>
+      </InfoList>
+
+      <div class="margintop">
+        These considerations will also help other users, including those in poor
+        lighting conditions, or other environments where they may experience
+        similar difficulties.
+      </div>
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={img3.src}
+      imgAlt="Image showing three circles overlapping in two places"
+      captionTitle="Color Blindness"
+    >
+      Color blindness refers to those who are unable to see all colors. There
+      are three main forms of color blindness: red-green, blue-yellow, and total
+      color blindness. These users interact with an interface by relying on
+      non-color information to complete tasks, and may use adjusted display
+      settings or color filters to compensate.
+
+      <Description>Things to consider:</Description>
+
+      <InfoList type="disc" fontSize="1rem">
+        <InfoListItem>
+          Ensure information is not conveyed with color alone.
+        </InfoListItem>
+
+        <InfoListItem>
+          Test with <Link inline href="/accessibility/testing-tools">
+            color contrast tools or color simulators
+          </Link> to ensure sufficient contrast. to ensure sufficient contrast.
+        </InfoListItem>
+      </InfoList>
+
+      <div class="margintop">
+        These considerations will also help other users, including those in poor
+        lighting conditions, or other environments where they may experience
+        similar difficulties.
+      </div>
+    </ImageWithCaption>
+
+    <ImageWithCaption
+      imgSrc={img4.src}
+      imgAlt="Image showing the shape of an ear with a cross through it"
+      captionTitle="Deaf and Hard of Hearing"
+    >
+      Deaf and hard of hearing refers to those with varying degree of hearing
+      loss, from those who require assistance to hear to no functional hearing.
+      These users interact with a UI by using hearing aids, or use captioning
+      and other alternative representations of audio content.
+
+      <Description>Things to consider:</Description>
+
+      <InfoList type="disc" fontSize="1rem">
+        <InfoListItem>
+          Ensure information is not conveyed with sound alone.
+        </InfoListItem>
+
+        <InfoListItem>
+          Transcribe and caption videos and multimedia elements.
+        </InfoListItem>
+      </InfoList>
+
+      <div class="margintop">
+        These considerations will also help others, including those in loud
+        environments where they may experience similar difficulties if they
+        cannot hear audio, or quiet environments where they cannot play audio.
+      </div>
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={img5.src}
+      imgAlt="Image showing two puzzle pieces of different color fit together"
+      captionTitle="Cognitive Disabilities"
+    >
+      Cognitive disabilities refer to a range of mental impairments including
+      memory, problem solving, attention, reading, verbal, math and visual
+      comprehension. These users interact with interfaces by relying on
+      information remaining visible while completing tasks.
+
+      <Description>Things to consider:</Description>
+
+      <InfoList type="disc" fontSize="1rem">
+        <InfoListItem>Ensure language is simple and clear.</InfoListItem>
+
+        <InfoListItem>Ensure content is structured.</InfoListItem>
+
+        <InfoListItem>
+          Avoid uncontrollable and flashing animations.
+        </InfoListItem>
+
+        <InfoListItem>Avoid visual clutter.</InfoListItem>
+
+        <InfoListItem>
+          Offload tasks when possible (e.g. by showing previously entered info
+          to avoid recall).
+        </InfoListItem>
+
+        <InfoListItem>
+          Ensure quick response times so users don't lose track of their tasks.
+        </InfoListItem>
+      </InfoList>
+
+      <div class="margintop">
+        These considerations will also help others, including those in busy
+        environments who may experience heavier cognitive loads.
+      </div>
+    </ImageWithCaption>
+
+    <ImageWithCaption
+      imgSrc={img6.src}
+      imgAlt="Image showing a person with their arm in a sling"
+      captionTitle="Physical Disabilities"
+    >
+      Physical disabilities refer to impairments of mobility or dexterity. These
+      users interact with interfaces using keyboards, track balls, voice
+      recognition, or other assistive technologies.
+
+      <Description>Things to consider:</Description>
+
+      <InfoList type="disc" fontSize="1rem">
+        <InfoListItem>
+          Functional elements should be controllable with a keyboard.
+        </InfoListItem>
+
+        <InfoListItem>
+          Ensure clickable regions have sufficient target space.
+        </InfoListItem>
+      </InfoList>
+
+      <div class="margintop">
+        These considerations can also help others since keyboard navigation and
+        shortcuts are frequently used to perform tasks quickly.
+      </div>
+    </ImageWithCaption>
+  </CollapsibleColumns>
 </PageleteSection>
+
+<style>
+  div.margintop {
+    margin-top: 2rem;
+  }
+</style>
