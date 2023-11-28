@@ -1,4 +1,6 @@
 ---
+import { Link } from "@avaya/neo-react";
+
 import {
   Description,
   ExternalLink,
@@ -9,12 +11,12 @@ import {
 } from "components";
 
 import { topics } from "../static";
-import { Link } from "@avaya/neo-react";
 const { id, title } = topics["getting-started"];
 ---
 
 <PageleteSection>
   <SectionHeader id={id}>{title}</SectionHeader>
+
   <Description>
     There are many things to consider when creating accessible applications.
     Some important ones are listed below. Refer to

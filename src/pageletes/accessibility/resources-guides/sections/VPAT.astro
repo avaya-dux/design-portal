@@ -4,23 +4,13 @@ import {
   ExternalLink,
   PageleteSection,
   SectionHeader,
-  InfoList,
   InfoListItem,
 } from "components";
 
+import { A11yInfoList } from "../../helpers";
+
 import { topics } from "../static";
 const { id, title } = topics.vpat;
-
-const links = {
-  vpat: {
-    link: "https://www.itic.org/policy/accessibility/vpat",
-    title: "follow the link to complete the form",
-  },
-  avaya: {
-    link: "http://www.avaya.com/us-government-solutions/capabilities/accessibility/",
-    title: "Avaya Accessibility",
-  },
-};
 ---
 
 <PageleteSection>
@@ -38,19 +28,22 @@ const links = {
     The WCAG (Web Component Accessibility Guidelines) regulations are managed by
     the World Wide Web Consortium (W3C) and represent the worldwide standard for
     accessibility.
-    <InfoList type="'- '">
+    <A11yInfoList>
       <InfoListItem>
-        To create a VPAT for a product, <ExternalLink href={links.vpat.link}>
-          {links.vpat.title}
+        To create a VPAT for a product, <ExternalLink
+          href="https://www.itic.org/policy/accessibility/vpat"
+        >
+          follow the link to complete the form
         </ExternalLink>.
       </InfoListItem>
+
       <InfoListItem>
         To view the VPATs currently available for Avaya's products, visit <ExternalLink
-          href={links.avaya.link}
+          href="http://www.avaya.com/us-government-solutions/capabilities/accessibility/"
         >
-          {links.avaya.title}
+          Avaya Accessibility
         </ExternalLink>.
       </InfoListItem>
-    </InfoList>
+    </A11yInfoList>
   </Description>
 </PageleteSection>

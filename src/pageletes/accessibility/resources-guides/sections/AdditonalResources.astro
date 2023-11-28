@@ -1,25 +1,21 @@
 ---
-import { SectionLayout, TwoColumnLayout } from "../components";
-
-import image1 from "../imgs/resources-additional-1.svg";
-
-import image2 from "../imgs/resources-additional-2.svg";
-
 import {
-  InfoListItem,
+  CollapsibleColumns,
   Description,
   ExternalLink,
+  ImageWithCaption,
+  InfoListItem,
   PageleteSection,
   SectionHeader,
 } from "components";
 
+import { A11yInfoList } from "../../helpers";
+
 import { topics } from "../static";
 const { id, title } = topics.additionals;
 
-const image1AltText = "Image showing an accessibility checklist";
-const header1 = "Accessibility Checklists";
-const image2AltText = "Image on Web Accessibility";
-const header2 = "Web Accessibility Perspective Videos";
+import image1 from "../imgs/resources-additional-1.svg";
+import image2 from "../imgs/resources-additional-2.svg";
 ---
 
 <PageleteSection>
@@ -30,47 +26,48 @@ const header2 = "Web Accessibility Perspective Videos";
     accessible products.
   </Description>
 
-  <TwoColumnLayout>
-    <SectionLayout
-      graphicIcon={image1.src}
-      graphicAltText={image1AltText}
-      sectionHeader={header1}
-      slot="left-frame"
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image1.src}
+      imgAlt="Image showing three items of a checklist that are all marked as checked"
+      captionTitle="Accessibility Checklists"
     >
-      <Description slot="description">
-        The Not-Checklist acts as a guide to make sure you haven't missed
-        anything. If you're new to accessibility, it provides a foundation –
-        it's an overview of what you'll need to consider, but it won't teach you
-        WCAG from front to back.
-      </Description>
+      The Not-Checklist acts as a guide to make sure you haven't missed
+      anything. If you're new to accessibility, it provides a foundation - it's
+      an overview of what you'll need to consider, but it won't teach you WCAG
+      from front to back.
 
-      <InfoListItem>
-        <ExternalLink href="https://not-checklist.intopia.digital/">
-          Accessibility Not-Checklist
-        </ExternalLink>
-      </InfoListItem>
-      <InfoListItem>
-        <ExternalLink href="https://codepen.io/weboverhauls/full/zYvopYE">
-          WCAG 2.1 Checklist with Filter and Links
-        </ExternalLink>
-      </InfoListItem>
-    </SectionLayout>
-    <SectionLayout
-      graphicIcon={image2.src}
-      graphicAltText={image2AltText}
-      sectionHeader={header2}
-      slot="right-frame"
+      <A11yInfoList>
+        <InfoListItem>
+          <ExternalLink href="https://not-checklist.intopia.digital/">
+            Accessibility Not-Checklist
+          </ExternalLink>
+        </InfoListItem>
+
+        <InfoListItem>
+          <ExternalLink href="https://codepen.io/weboverhauls/full/zYvopYE">
+            WCAG 2.1 Checklist with Filter and Links
+          </ExternalLink>
+        </InfoListItem>
+      </A11yInfoList>
+    </ImageWithCaption>
+
+    <ImageWithCaption
+      imgSrc={image2.src}
+      imgAlt="Image showing a video with three options to the left of the video, the options are: captions, audio description and transcript"
+      captionTitle="Web Accessibility Perspective Videos"
     >
-      <Description slot="description">
-        Accessibility is essential for people with disabilities and useful for
-        all. Learn about the impact of accessibility and the benefits it
-        provides.
-      </Description>
-      <InfoListItem>
-        <ExternalLink href="https://www.w3.org/WAI/perspective-videos/">
-          View Videos
-        </ExternalLink>
-      </InfoListItem>
-    </SectionLayout>
-  </TwoColumnLayout>
+      Accessibility is essential for people with disabilities and useful for
+      all. Learn about the impact of accessibility and the benefits it provides.
+
+
+      <A11yInfoList>
+        <InfoListItem>
+          <ExternalLink href="https://www.w3.org/WAI/perspective-videos/">
+            View Videos
+          </ExternalLink>
+        </InfoListItem>
+      </A11yInfoList>
+    </ImageWithCaption>
+  </CollapsibleColumns>
 </PageleteSection>
