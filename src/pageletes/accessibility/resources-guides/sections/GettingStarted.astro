@@ -26,8 +26,11 @@ const { id, title } = topics["getting-started"];
   </Description>
 
   <InfoList type="decimal" fontSize="1rem">
-    <InfoListItem label="Follow the development standards for your platform.">
-      <p>
+    <InfoListItem
+      label="Follow the development standards for your platform."
+      removeColon
+    >
+      <p class="margin-top">
         All major platforms include tools to build for accessibility, and/or
         have it included in their native components. Refer to the following
         resources for guidance:
@@ -74,8 +77,9 @@ const { id, title } = topics["getting-started"];
 
     <InfoListItem
       label="Ensure the application is compatible with assistive technologies."
+      removeColon
     >
-      <p>
+      <p class="margin-top">
         Users with disabilities may use one or more devices to interact with the
         application. These include:
       </p>
@@ -100,43 +104,56 @@ const { id, title } = topics["getting-started"];
           resources for testing these devices.
         </InfoListItem>
       </BulletInfoList>
-      <InfoListItem
-        label="Use colors with sufficient contrast for text and UI elements."
-      >
-        <p>
-          Sufficient color contrast ensures that users who are color-blind or
-          have low vision can view the content. Refer to Colors to learn more
-          about accessible combinations with Neo's palette, and Testing Tools to
-          find resources on checking contrast levels.
-        </p>
-      </InfoListItem>
-      <InfoListItem
-        label="Ensure all functional elements on a page are reachable by keyboard and/or gestures."
-      >
-        <p>
-          Some users rely solely on the keyboard or other devices to interact
-          with the application. Make sure that all interactive areas can be
-          reached without a mouse, that hover states are also clearly shown, and
-          that keyboard focus states are included.
-        </p>
-      </InfoListItem>
-      <InfoListItem
-        label="Support personalization where possible.Some users may have accessibility preferences enabled on their devices."
-      >
-        <p>
-          Respect these preferences within the application for a consistent
-          experience (e.g. high contrast mode, increased font size, etc.).
-        </p>
-      </InfoListItem>
-      <InfoListItem label="Audit and test the application for accessibility.">
-        <p>
-          Incorporate accessibility testing into the product development process
-          to ensure all UI elements and flows work for users with disabilities.
-          Refer to Testing Tools for resources on testing the application. Also
-          include representative users into usability testing and other feedback
-          activities to gain understanding on real usage.
-        </p>
-      </InfoListItem>
+    </InfoListItem>
+
+    <InfoListItem
+      label="Use colors with sufficient contrast for text and UI elements."
+      removeColon
+    >
+      <p class="margin-top">
+        Sufficient color contrast ensures that users who are color-blind or have
+        low vision can view the content. Refer to Colors to learn more about
+        accessible combinations with Neo's palette, and Testing Tools to find
+        resources on checking contrast levels.
+      </p>
+    </InfoListItem>
+    <InfoListItem
+      label="Ensure all functional elements on a page are reachable by keyboard and/or gestures."
+      removeColon
+    >
+      <p class="margin-top">
+        Some users rely solely on the keyboard or other devices to interact with
+        the application. Make sure that all interactive areas can be reached
+        without a mouse, that hover states are also clearly shown, and that
+        keyboard focus states are included.
+      </p>
+    </InfoListItem>
+    <InfoListItem
+      label="Support personalization where possible.Some users may have accessibility preferences enabled on their devices."
+      removeColon
+    >
+      <p class="margin-top">
+        Respect these preferences within the application for a consistent
+        experience (e.g. high contrast mode, increased font size, etc.).
+      </p>
+    </InfoListItem>
+    <InfoListItem
+      label="Audit and test the application for accessibility."
+      removeColon
+    >
+      <p class="margin-top">
+        Incorporate accessibility testing into the product development process
+        to ensure all UI elements and flows work for users with disabilities.
+        Refer to Testing Tools for resources on testing the application. Also
+        include representative users into usability testing and other feedback
+        activities to gain understanding on real usage.
+      </p>
     </InfoListItem>
   </InfoList>
 </PageleteSection>
+
+<style>
+  p.margin-top {
+    margin-top: 0.2rem;
+  }
+</style>
