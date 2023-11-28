@@ -1,5 +1,6 @@
 ---
 import {
+  BulletInfoList,
   CollapsibleColumns,
   Description,
   ExternalLink,
@@ -8,8 +9,6 @@ import {
   PageleteSection,
   SectionHeader,
 } from "components";
-
-import { A11yInfoList } from "../../helpers";
 
 import { topics } from "../static";
 const { id, title } = topics.additionals;
@@ -37,7 +36,7 @@ import image2 from "../imgs/resources-additional-2.svg";
       an overview of what you'll need to consider, but it won't teach you WCAG
       from front to back.
 
-      <A11yInfoList>
+      <BulletInfoList>
         <InfoListItem>
           <ExternalLink href="https://not-checklist.intopia.digital/">
             Accessibility Not-Checklist
@@ -49,7 +48,7 @@ import image2 from "../imgs/resources-additional-2.svg";
             WCAG 2.1 Checklist with Filter and Links
           </ExternalLink>
         </InfoListItem>
-      </A11yInfoList>
+      </BulletInfoList>
     </ImageWithCaption>
 
     <ImageWithCaption
@@ -61,13 +60,13 @@ import image2 from "../imgs/resources-additional-2.svg";
       all. Learn about the impact of accessibility and the benefits it provides.
 
 
-      <A11yInfoList>
+      <BulletInfoList>
         <InfoListItem>
           <ExternalLink href="https://www.w3.org/WAI/perspective-videos/">
             View Videos
           </ExternalLink>
         </InfoListItem>
-      </A11yInfoList>
+      </BulletInfoList>
     </ImageWithCaption>
   </CollapsibleColumns>
 </PageleteSection>

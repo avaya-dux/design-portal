@@ -1,13 +1,12 @@
 ---
 import {
+  BulletInfoList,
   Description,
   ExternalLink,
+  InfoListItem,
   PageleteSection,
   SectionHeader,
-  InfoListItem,
 } from "components";
-
-import { A11yInfoList } from "../../helpers";
 
 import { topics } from "../static";
 const { id, title } = topics.vpat;
@@ -28,7 +27,7 @@ const { id, title } = topics.vpat;
     The WCAG (Web Component Accessibility Guidelines) regulations are managed by
     the World Wide Web Consortium (W3C) and represent the worldwide standard for
     accessibility.
-    <A11yInfoList>
+    <BulletInfoList>
       <InfoListItem>
         To create a VPAT for a product, <ExternalLink
           href="https://www.itic.org/policy/accessibility/vpat"
@@ -44,6 +43,6 @@ const { id, title } = topics.vpat;
           Avaya Accessibility
         </ExternalLink>.
       </InfoListItem>
-    </A11yInfoList>
+    </BulletInfoList>
   </Description>
 </PageleteSection>
