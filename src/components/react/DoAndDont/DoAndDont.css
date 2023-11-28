@@ -1,6 +1,6 @@
 .do-and-dont-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
