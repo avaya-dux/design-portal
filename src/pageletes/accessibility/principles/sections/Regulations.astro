@@ -1,6 +1,7 @@
 ---
 import {
   Description,
+  ExternalLink,
   PageleteSection,
   SectionHeader,
   InfoList,
@@ -9,23 +10,6 @@ import {
 
 import { topics } from "../static";
 const { id, title } = topics.regulations;
-
-import { Link } from "@avaya/neo-react";
-
-const standards = [
-  {
-    link: `https://www.w3.org/WAI/standards-guidelines/wcag/`,
-    title: "WCAG 2.1",
-  },
-  {
-    link: `https://www.w3.org/WAI/standards-guidelines/aria/`,
-    title: "ARIA 1.1",
-  },
-  {
-    link: `https://www.section508.gov/`,
-    title: "Section 508",
-  },
-];
 ---
 
 <PageleteSection>
@@ -33,26 +17,29 @@ const standards = [
 
   <Description>
     Neo targets Web Content Accessibility Guidelines (WCAG) 2.1 Level AA (used
-    in many <Link
-      inline
-      href="https://www.w3.org/WAI/policies/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    in many <ExternalLink inline href="https://www.w3.org/WAI/policies/">
       government regulations
-    </Link> internationally), as well as Section 508 regulations. More
+    </ExternalLink> internationally), as well as Section 508 regulations. More
     information can be found here.
   </Description>
 
-  <InfoList type="'- '">
-    {
-      standards.map((item) => (
-        <InfoListItem>
-          <a href={item.link} target="_blank" rel="noopener noreferrer">
-            {item.title}
-          </a>
-        </InfoListItem>
-      ))
-    }
+  <InfoList type="disc" fontSize="1rem">
+    <InfoListItem>
+      <ExternalLink href="https://www.w3.org/WAI/standards-guidelines/wcag/">
+        WCAG 2.1
+      </ExternalLink>
+    </InfoListItem>
+
+    <InfoListItem>
+      <ExternalLink href="https://www.w3.org/WAI/standards-guidelines/aria/">
+        ARIA 1.1
+      </ExternalLink>
+    </InfoListItem>
+
+    <InfoListItem>
+      <ExternalLink href="https://www.section508.gov/">
+        Section 508
+      </ExternalLink>
+    </InfoListItem>
   </InfoList>
 </PageleteSection>
