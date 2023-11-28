@@ -1,10 +1,9 @@
 ---
 export interface Props {
   label?: string;
-  removeColon?: boolean;
 }
 
-const { label = "", removeColon = false } = Astro.props as Props;
+const { label = "" } = Astro.props as Props;
 ---
 
 {
@@ -15,10 +14,7 @@ const { label = "", removeColon = false } = Astro.props as Props;
       </li>
     ) : (
       <li>
-        <b>
-          {label}
-          {removeColon ? "" : ": "}
-        </b>
+        <b>{label}:</b>
         <slot />
       </li>
     );
