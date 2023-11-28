@@ -2,12 +2,13 @@
 import { Link } from "@avaya/neo-react";
 
 import {
+  BulletInfoList,
   Description,
   ExternalLink,
-  PageleteSection,
-  SectionHeader,
   InfoList,
   InfoListItem,
+  PageleteSection,
+  SectionHeader,
 } from "components";
 
 import { topics } from "../static";
@@ -24,7 +25,7 @@ const { id, title } = topics["getting-started"];
      for more detailed information and recommendations.
   </Description>
 
-  <InfoList type="decimal">
+  <InfoList type="decimal" fontSize="1rem">
     <InfoListItem label="Follow the development standards for your platform.">
       <p>
         All major platforms include tools to build for accessibility, and/or
@@ -32,7 +33,7 @@ const { id, title } = topics["getting-started"];
         resources for guidance:
       </p>
 
-      <InfoList type="disc">
+      <BulletInfoList>
         <InfoListItem>
           Web: <ExternalLink
             href="https://www.w3.org/WAI/standards-guidelines/wcag/"
@@ -44,6 +45,7 @@ const { id, title } = topics["getting-started"];
             ARIA 1.1
           </ExternalLink>.
         </InfoListItem>
+
         <InfoListItem>
           iOS and Mac: <ExternalLink
             href="https://developer.apple.com/design/human-interface-guidelines/accessibility/overview/introduction/"
@@ -51,6 +53,7 @@ const { id, title } = topics["getting-started"];
             Apple Human Interface Guideliness
           </ExternalLink>.
         </InfoListItem>
+
         <InfoListItem>
           Android: <ExternalLink
             href="https://developer.android.com/guide/topics/ui/accessibility"
@@ -58,6 +61,7 @@ const { id, title } = topics["getting-started"];
             Developer Documentation Guide
           </ExternalLink>.
         </InfoListItem>
+
         <InfoListItem>
           Windows: <ExternalLink
             href="https://docs.microsoft.com/en-us/windows/uwp/design/accessibility/accessibility"
@@ -65,7 +69,7 @@ const { id, title } = topics["getting-started"];
             Windows Dev Center
           </ExternalLink>.
         </InfoListItem>
-      </InfoList>
+      </BulletInfoList>
     </InfoListItem>
 
     <InfoListItem
@@ -75,21 +79,27 @@ const { id, title } = topics["getting-started"];
         Users with disabilities may use one or more devices to interact with the
         application. These include:
       </p>
-      <InfoList type="disc">
+
+      <BulletInfoList>
         <InfoListItem>Screen readers</InfoListItem>
+
         <InfoListItem>Screen magnification software</InfoListItem>
+
         <InfoListItem>Text readers</InfoListItem>
+
         <InfoListItem>Speech input software</InfoListItem>
+
         <InfoListItem>
           Alternative input devices, such as head pointers, motion/eye tracking,
           and single switch entries
         </InfoListItem>
+
         <InfoListItem>
-          Refer to <Link href="./principles">Principles</Link> to learn more
-          about the different tools used, or Testing Tools to find resources for
-          testing these devices.
+          Refer to <Link href="/accessibility/principles">Principles</Link> to
+          learn more about the different tools used, or Testing Tools to find
+          resources for testing these devices.
         </InfoListItem>
-      </InfoList>
+      </BulletInfoList>
       <InfoListItem
         label="Use colors with sufficient contrast for text and UI elements."
       >
