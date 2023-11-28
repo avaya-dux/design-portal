@@ -21,7 +21,9 @@ const { id, title } = topics["getting-started"];
   <Description>
     There are many things to consider when creating accessible applications.
     Some important ones are listed below. Refer to
-    <ExternalLink href="https://www.w3.org/WAI/policies/">WCAG</ExternalLink>
+    <ExternalLink href="https://www.w3.org/WAI/policies/" inline>
+      WCAG
+    </ExternalLink>
      for more detailed information and recommendations.
   </Description>
 
@@ -40,10 +42,12 @@ const { id, title } = topics["getting-started"];
         <InfoListItem>
           Web: <ExternalLink
             href="https://www.w3.org/WAI/standards-guidelines/wcag/"
+            inline
           >
             WCAG 2.1
           </ExternalLink> and <ExternalLink
             href="https://www.w3.org/WAI/standards-guidelines/aria/"
+            inline
           >
             ARIA 1.1
           </ExternalLink>.
@@ -52,6 +56,7 @@ const { id, title } = topics["getting-started"];
         <InfoListItem>
           iOS and Mac: <ExternalLink
             href="https://developer.apple.com/design/human-interface-guidelines/accessibility/overview/introduction/"
+            inline
           >
             Apple Human Interface Guideliness
           </ExternalLink>.
@@ -60,6 +65,7 @@ const { id, title } = topics["getting-started"];
         <InfoListItem>
           Android: <ExternalLink
             href="https://developer.android.com/guide/topics/ui/accessibility"
+            inline
           >
             Developer Documentation Guide
           </ExternalLink>.
@@ -68,6 +74,7 @@ const { id, title } = topics["getting-started"];
         <InfoListItem>
           Windows: <ExternalLink
             href="https://docs.microsoft.com/en-us/windows/uwp/design/accessibility/accessibility"
+            inline
           >
             Windows Dev Center
           </ExternalLink>.
@@ -99,9 +106,15 @@ const { id, title } = topics["getting-started"];
         </InfoListItem>
 
         <InfoListItem>
-          Refer to <Link href="/accessibility/principles">Principles</Link> to
-          learn more about the different tools used, or Testing Tools to find
-          resources for testing these devices.
+          Refer to <Link href="/accessibility/principles" inline>
+            Principles
+          </Link> to learn more about the different tools used, or <Link
+            href="/accessibility/testing-tools"
+            inline
+          >
+            Testing Tools
+          </Link>
+           to find resources for testing these devices.
         </InfoListItem>
       </BulletInfoList>
     </InfoListItem>
@@ -113,8 +126,12 @@ const { id, title } = topics["getting-started"];
       <p class="margin-top">
         Sufficient color contrast ensures that users who are color-blind or have
         low vision can view the content. Refer to Colors to learn more about
-        accessible combinations with Neo's palette, and Testing Tools to find
-        resources on checking contrast levels.
+        accessible combinations with Neo's palette, and <Link
+          href="/accessibility/testing-tools"
+          inline
+        >
+          Testing Tools
+        </Link> to find resources on checking contrast levels.
       </p>
     </InfoListItem>
     <InfoListItem
@@ -144,8 +161,10 @@ const { id, title } = topics["getting-started"];
       <p class="margin-top">
         Incorporate accessibility testing into the product development process
         to ensure all UI elements and flows work for users with disabilities.
-        Refer to Testing Tools for resources on testing the application. Also
-        include representative users into usability testing and other feedback
+        Refer to <Link href="/accessibility/testing-tools" inline>
+          Testing Tools
+        </Link> for resources on testing the application. Also include
+        representative users into usability testing and other feedback
         activities to gain understanding on real usage.
       </p>
     </InfoListItem>
