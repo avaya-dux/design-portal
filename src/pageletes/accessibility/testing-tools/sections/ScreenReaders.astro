@@ -1,8 +1,14 @@
 ---
-import { Description, PageleteSection, SectionHeader } from "components";
+import {
+  CollapsibleColumns,
+  Description,
+  PageleteSection,
+  SectionHeader,
+} from "components";
+
+import { Card } from "../components";
 
 import { topics } from "../static";
-import { Card, ViewWebsite, TwoColumnGrid } from "../components";
 const { id, title } = topics.screenReaders;
 ---
 
@@ -22,36 +28,29 @@ const { id, title } = topics.screenReaders;
   <Description>
     These are the recommended free screen readers to test your designs.
   </Description>
-  <TwoColumnGrid>
-    <Card header="NVDA">
-      <p slot="description">
-        A free and open-source screen reader for the Microsoft Windows operating
-        system.
-      </p>
-      <ViewWebsite href="https://www.nvaccess.org/download/" slot="link" />
+
+  <CollapsibleColumns>
+    <Card header="NVDA" href="https://www.nvaccess.org/download/">
+      A free and open-source screen reader for the Microsoft Windows operating
+      system.
     </Card>
-    <Card header="VoiceOver">
-      <p slot="description">A screen reader built into Apple devices.</p>
-      <ViewWebsite
-        href="https://help.apple.com/voiceover/mac/10.15/"
-        slot="link"
-      />
+
+    <Card header="VoiceOver" href="https://help.apple.com/voiceover/mac/10.15/">
+      A screen reader built into Apple devices.
     </Card>
-    <Card header="ChromeVox">
-      <p slot="description">
-        An extension available for the Chrome web browser.
-      </p>
-      <ViewWebsite
-        href="https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en"
-        slot="link"
-      />
+
+    <Card
+      header="ChromeVox"
+      href="https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en"
+    >
+      An extension available for the Chrome web browser.
     </Card>
-    <Card header="Google TalkBack">
-      <p slot="description">Android’s built-in tool for accessibility.</p>
-      <ViewWebsite
-        href="https://developer.android.com/guide/topics/ui/accessibility/testing"
-        slot="link"
-      />
+
+    <Card
+      header="Google TalkBack"
+      href="https://developer.android.com/guide/topics/ui/accessibility/testing"
+    >
+      Android's built-in tool for accessibility.
     </Card>
-  </TwoColumnGrid>
+  </CollapsibleColumns>
 </PageleteSection>

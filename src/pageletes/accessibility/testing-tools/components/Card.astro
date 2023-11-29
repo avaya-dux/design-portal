@@ -1,18 +1,25 @@
 ---
+import { Button, Link } from "@avaya/neo-react";
+import { Description } from "components";
 export interface Props {
-  header?: string;
+  header: string;
+  href: string;
 }
-const { header = "please specify header" } = Astro.props as Props;
+const { header, href } = Astro.props as Props;
 ---
 
 <div class="card">
   <div class="card-top">
-    <h4 class="header">{header}</h4>
-    <p class="description">
-      <slot name="description" />
-    </p>
+    <h4 class="header neo-semibold">{header}</h4>
+
+    <Description>
+      <slot />
+    </Description>
   </div>
-  <slot name="link" />
+
+  <Button variant="secondary">
+    <Link href={href}>View Website</Link>
+  </Button>
 </div>
 
 <style>
@@ -20,29 +27,13 @@ const { header = "please specify header" } = Astro.props as Props;
     border: 1px solid var(--neo-color-base-200);
     padding: 2.5rem 2rem;
   }
+
   .card-top {
-    min-width: 392px;
     margin-top: 1rem;
     margin-bottom: 1.5rem;
-    border: 0;
   }
+
   .header {
-    border: 0;
-    color: var(--neo-color-base-900);
-    font-family: noto-sans, sans-serif;
-    font-size: 19px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 28px;
     margin-bottom: 8px;
-  }
-  .description {
-    border: 0;
-    font-family: noto-sans, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0em;
-    text-align: left;
   }
 </style>
