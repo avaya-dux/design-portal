@@ -101,17 +101,6 @@
     margin-right: 8px;
   }
 
-  .left-navigation
-    .neo-nav--left
-    .neo-badge__navbutton
-    .neo-badge__navbutton--content:before,
-  .left-navigation
-    .neo-nav--left
-    .neo-badge__navbutton
-    .neo-badge__navbutton--content:hover:before {
-    color: var(--neo-color-base-100);
-  }
-
   .left-navigation .neo-nav--left .neo-badge__navbutton .neo-btn {
     /* No equivalent to Avaya red in Neo design system */
     background-color: var(--global-background);
