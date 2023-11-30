@@ -1,8 +1,14 @@
 ---
-import { Description, PageleteSection, SectionHeader } from "components";
+import {
+  CollapsibleColumns,
+  Description,
+  PageleteSection,
+  SectionHeader,
+} from "components";
+
+import { Card } from "../components";
 
 import { topics } from "../static";
-import { Card, ViewWebsite, TwoColumnGrid } from "../components";
 const { id, title } = topics.colorCheckers;
 ---
 
@@ -16,45 +22,36 @@ const { id, title } = topics.colorCheckers;
     perceive the content on any given interface.
   </Description>
 
-  <TwoColumnGrid>
-    <Card header="WebAIM Contrast Checker">
-      <p slot="description">
-        Tests the foreground color against the background color.
-      </p>
-      <ViewWebsite
-        href="https://webaim.org/resources/contrastchecker/"
-        slot="link"
-      />
+  <CollapsibleColumns>
+    <Card
+      header="WebAIM Contrast Checker"
+      href="https://webaim.org/resources/contrastchecker/"
+    >
+      Tests the foreground color against the background color.
     </Card>
-    <Card header="Color Contrast Analyser">
-      <p slot="description">
-        TPGi’s free color contrast checker that allows you to easily determine
-        the contrast ratio between two colors by using the eyedropper tool.
-      </p>
-      <ViewWebsite
-        href="https://developer.paciellogroup.com/resources/contrastanalyser/"
-        slot="link"
-      />
+
+    <Card
+      header="Color Contrast Analyser"
+      href="https://developer.paciellogroup.com/resources/contrastanalyser/"
+    >
+      TPGi's free color contrast checker that allows you to easily determine the
+      contrast ratio between two colors by using the eyedropper tool.
     </Card>
-    <Card header="Chrome Dev Tools">
-      <p slot="description">
-        The most full-featured tool for manually testing contrast within a
-        webpage on Chrome.
-      </p>
-      <ViewWebsite
-        href="https://webaim.org/articles/contrast/devtools"
-        slot="link"
-      />
+
+    <Card
+      header="Chrome Dev Tools"
+      href="https://webaim.org/articles/contrast/devtools"
+    >
+      The most full-featured tool for manually testing contrast within a webpage
+      on Chrome.
     </Card>
-    <Card header="Color Blindness Simulator">
-      <p slot="description">
-        The Color Blindness Simulator shows what it is like to have a color
-        vision handicap.
-      </p>
-      <ViewWebsite
-        href="https://www.color-blindness.com/coblis-color-blindness-simulator/"
-        slot="link"
-      />
+
+    <Card
+      header="Color Blindness Simulator"
+      href="https://www.color-blindness.com/coblis-color-blindness-simulator/"
+    >
+      The Color Blindness Simulator shows what it is like to have a color vision
+      handicap.
     </Card>
-  </TwoColumnGrid>
+  </CollapsibleColumns>
 </PageleteSection>
