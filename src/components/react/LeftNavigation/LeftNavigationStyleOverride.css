@@ -7,6 +7,10 @@
   min-width: var(--left-navigation-width);
 }
 
+.left-navigation .neo-leftnav--wrapper {
+  background-color: var(--global-background);
+}
+
 [dir="rtl"] .left-navigation {
   border-right: none;
   border-left: 1px solid var(--navbar-border-bottom-color);
