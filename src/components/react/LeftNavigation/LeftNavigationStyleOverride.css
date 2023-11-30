@@ -7,6 +7,10 @@
   min-width: var(--left-navigation-width);
 }
 
+.left-navigation .neo-leftnav--wrapper {
+  background-color: var(--global-background);
+}
+
 [dir="rtl"] .left-navigation {
   border-right: none;
   border-left: 1px solid var(--navbar-border-bottom-color);
@@ -135,7 +139,11 @@
   }
 
   .left-navigation .neo-leftnav--wrapper {
-    height: calc(100vh - (var(--footer-height) * 2));
+    height: calc(100vh - var(--footer-height));
     overflow-y: scroll;
+  }
+
+  li.neo-leftnav__main.neo-leftnav__main--expand > ul.neo-leftnav__nav {
+    max-height: none;
   }
 }
