@@ -150,7 +150,7 @@
   }
 
   .left-navigation .neo-leftnav--wrapper {
-    height: calc(100vh - (var(--footer-height) * 2));
+    height: calc(100vh - var(--footer-height));
     overflow-y: scroll;
   }
 }
