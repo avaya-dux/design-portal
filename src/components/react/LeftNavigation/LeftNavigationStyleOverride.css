@@ -153,4 +153,8 @@
     height: calc(100vh - var(--footer-height));
     overflow-y: scroll;
   }
+
+  li.neo-leftnav__main.neo-leftnav__main--expand > ul.neo-leftnav__nav {
+    max-height: none;
+  }
 }
