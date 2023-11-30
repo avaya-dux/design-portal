@@ -1,11 +1,11 @@
 ---
 import {
+  BulletInfoList,
   Description,
   ExternalLink,
+  InfoListItem,
   PageleteSection,
   SectionHeader,
-  InfoList,
-  InfoListItem,
 } from "components";
 
 import { topics } from "../static";
@@ -23,7 +23,7 @@ const { id, title } = topics.regulations;
     information can be found here.
   </Description>
 
-  <InfoList type="disc" fontSize="1rem">
+  <BulletInfoList>
     <InfoListItem>
       <ExternalLink href="https://www.w3.org/WAI/standards-guidelines/wcag/">
         WCAG 2.1
@@ -41,5 +41,5 @@ const { id, title } = topics.regulations;
         Section 508
       </ExternalLink>
     </InfoListItem>
-  </InfoList>
+  </BulletInfoList>
 </PageleteSection>
