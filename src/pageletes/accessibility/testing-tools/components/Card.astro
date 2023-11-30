@@ -1,6 +1,6 @@
 ---
-import { Button, Link } from "@avaya/neo-react";
-import { Description } from "components";
+import { Button } from "@avaya/neo-react";
+import { Description, ExternalLink } from "components";
 export interface Props {
   header: string;
   href: string;
@@ -18,7 +18,7 @@ const { header, href } = Astro.props as Props;
   </div>
 
   <Button variant="secondary">
-    <Link href={href}>View Website</Link>
+    <ExternalLink href={href}>View Website</ExternalLink>
   </Button>
 </div>
 
