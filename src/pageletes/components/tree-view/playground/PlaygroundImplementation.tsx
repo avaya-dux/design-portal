@@ -12,6 +12,8 @@ const storybook =
 const sandbox =
   "https://codesandbox.io/s/neo-react-tree-gxwrvs?file=/src/App.js";
 
+import "./PlaygroundImplementation.css";
+
 export const PlaygroundImplementation = () => {
   const [nested, setNested] = useState(true);
 
@@ -77,7 +79,7 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      {element}
+      <div className="treeview-playground-implementation">{element}</div>
     </Playground>
   );
 };
