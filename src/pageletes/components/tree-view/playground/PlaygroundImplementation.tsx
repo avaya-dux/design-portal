@@ -19,7 +19,7 @@ export const PlaygroundImplementation = () => {
 
   const [element, react, html] = useMemo(() => {
     const implementation = nested ? (
-      <Tree label="Nested Tree">
+      <Tree aria-label="Nested Tree">
         <Branch title="Branch One (string)">
           <Leaf>leaf one</Leaf>
         </Branch>
@@ -41,7 +41,7 @@ export const PlaygroundImplementation = () => {
         </Branch>
       </Tree>
     ) : (
-      <Tree label="Flat Tree">
+      <Tree aria-label="Flat Tree">
         <Leaf>leaf one</Leaf>
 
         <Leaf>leaf two</Leaf>
