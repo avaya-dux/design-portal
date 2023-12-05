@@ -36,20 +36,21 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
 let leftNavPages: PageAstroInstance[] = [];
 switch (pathname.split("/")[1]) {
   case "accessibility":
-    const a11yPages = pages.filter((page) =>
-      page.url?.includes("accessibility"),
-    );
+    {
+      const a11yPages = pages.filter((page) =>
+        page.url?.includes("accessibility"),
+      );
 
-    const customOrder = [
-      "principles",
-      "resources-guides",
-      "product-team-guides",
-      "testing-tools",
-      "keyboard-interactions",
-    ];
+      const customOrder = [
+        "principles",
+        "resources-guides",
+        "product-team-guides",
+        "testing-tools",
+        "keyboard-interactions",
+      ];
 
-    leftNavPages = getAccessibilityPagesInOrder(a11yPages, customOrder);
-
+      leftNavPages = getAccessibilityPagesInOrder(a11yPages, customOrder);
+    }
     break;
 
   case "components":
