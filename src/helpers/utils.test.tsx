@@ -1,5 +1,6 @@
 import type { PageAstroInstance } from "./types";
 import {
+  getAccessibilityPagesInOrder,
   prettyPrintHtml,
   prettyPrintReactElementToHtml,
   prettyPrintReactElementToString,
@@ -30,6 +31,7 @@ describe("moveToStart", () => {
     expect(moveToStart([], "b")).toEqual([]);
   });
 });
+
 describe(prettyPrintReactElementToString.name, () => {
   it("prettyPrint CheckboxGroup to react ", () => {
     const element = (
@@ -119,6 +121,7 @@ describe(prettyPrintReactElementToString.name, () => {
     `);
   });
 });
+
 describe(prettyPrintReactElementToHtml.name, () => {
   it("pretty print CheckboxGroup to html", () => {
     const element = (
@@ -285,5 +288,47 @@ describe("prettyPrintHtml", () => {
   });
   it("void element br has no ending tag per html spec", () => {
     expect(prettyPrintHtml("<br />")).toMatchInlineSnapshot('"<br>"');
+  });
+});
+
+describe("getAccessibilityPagesInOrder", () => {
+  const customOrder = [
+    "principles",
+    "resources-guides",
+    "product-team-guides",
+    "testing-tools",
+    "keyboard-interactions",
+  ];
+  const a11yPages = [
+    { url: "/accessibility/keyboard-interactions" },
+    { url: "/accessibility/principles" },
+    { url: "/accessibility/product-team-guides" },
+    { url: "/accessibility/resources-guides" },
+    { url: "/accessibility/testing-tools" },
+  ] as PageAstroInstance[];
+
+  it("should return pages in custom order", () => {
+    const result = getAccessibilityPagesInOrder(a11yPages, customOrder);
+
+    for (let i = 0; i < customOrder.length; i++) {
+      expect(result[i]?.url?.includes(customOrder[i] as string)).toBeTruthy();
+    }
+  });
+
+  it("should fail if custom order is not valid", () => {
+    expect(() =>
+      getAccessibilityPagesInOrder(
+        [{ url: "/accessbility/new-page" }] as PageAstroInstance[],
+        customOrder,
+      ),
+    ).toThrow();
+  });
+
+  it("should fail if array lengths mismatch", () => {
+    expect(() =>
+      getAccessibilityPagesInOrder(a11yPages, ["principles"]),
+    ).toThrow();
+
+    expect(() => getAccessibilityPagesInOrder([], ["principles"])).toThrow();
   });
 });

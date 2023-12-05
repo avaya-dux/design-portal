@@ -11,7 +11,7 @@ import LeftPanel from "./LeftPanel.astro";
 
 import type { PageAstroInstance } from "helpers/types";
 
-import { moveToStart } from "helpers";
+import { getAccessibilityPagesInOrder, moveToStart } from "helpers";
 
 import "@avaya/neo-react/avaya-neo-react.css";
 
@@ -36,7 +36,20 @@ const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
 let leftNavPages: PageAstroInstance[] = [];
 switch (pathname.split("/")[1]) {
   case "accessibility":
-    leftNavPages = pages.filter((page) => page.url?.includes("accessibility"));
+    const a11yPages = pages.filter((page) =>
+      page.url?.includes("accessibility"),
+    );
+
+    const customOrder = [
+      "principles",
+      "resources-guides",
+      "product-team-guides",
+      "testing-tools",
+      "keyboard-interactions",
+    ];
+
+    leftNavPages = getAccessibilityPagesInOrder(a11yPages, customOrder);
+
     break;
 
   case "components":
@@ -45,6 +58,7 @@ switch (pathname.split("/")[1]) {
 
   case "docs":
     leftNavPages = pages.filter((page) => page.url?.includes("docs"));
+    leftNavPages = moveToStart(leftNavPages, "setup");
     break;
 
   case "guidelines":

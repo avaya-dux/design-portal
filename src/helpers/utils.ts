@@ -49,3 +49,35 @@ export const moveToStart = (
     return data;
   }
 };
+
+export const getAccessibilityPagesInOrder = (
+  accessibilityPages: Array<PageAstroInstance>,
+  customOrder: Array<string>,
+) => {
+  if (accessibilityPages.length !== customOrder.length) {
+    throw new Error(
+      "The number of pages in the `accessibility` section does not match the number of pages in the `customOrder` array.",
+    );
+  }
+
+  const doArraysConflict = accessibilityPages.filter((page) =>
+    customOrder.includes(page.url as string),
+  ).length;
+
+  if (doArraysConflict) {
+    throw new Error("The expected pages do not match the actual pages.");
+  }
+
+  /**
+   * NOTE: I'm using the above `if`s to ensure that the custom order matches
+   * the existing pages, thus, forcing TypeScript to assume that `page.url`
+   * and the `find` result always exist is safe.
+   * This does look a bit hacky, but I couldn't find a cleaner way to do it.
+   */
+  return customOrder.map(
+    (pageName) =>
+      accessibilityPages.find((page) =>
+        (page.url as string).includes(pageName),
+      ) as PageAstroInstance,
+  );
+};
