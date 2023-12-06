@@ -9,3 +9,7 @@
 #btn-submit-inline {
   margin-right: 8px;
 }
+
+#form-playground-implementation .neo-form.neo-form--inline {
+  flex-wrap: wrap;
+}
