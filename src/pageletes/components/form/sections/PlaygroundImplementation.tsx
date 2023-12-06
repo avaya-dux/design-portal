@@ -1,6 +1,7 @@
-import { useState, useMemo } from "react";
-import { Playground } from "components/react";
 import { Button, Form, Radio, RadioGroup, TextInput } from "@avaya/neo-react";
+import { useMemo, useState } from "react";
+
+import { Playground } from "components/react";
 import {
   prettyPrintReactElementToHtml,
   prettyPrintReactElementToString,
@@ -80,7 +81,7 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      {element}
+      <div id="form-playground-implementation">{element}</div>
     </Playground>
   );
 };
