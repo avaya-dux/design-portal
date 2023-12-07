@@ -66,7 +66,7 @@ const sortPages = (pages: Array<PageAstroInstance>) => {
   if (pages.length === 0 || pages.filter((page) => page.order).length === 0)
     return pages;
 
-  return pages.toSorted((a, b) => {
+  return [...pages].sort((a, b) => {
     if (a.order && b.order) {
       return a.order - b.order;
     } else if (a.order) {
