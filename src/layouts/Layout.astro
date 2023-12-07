@@ -28,10 +28,11 @@ const { pathname } = Astro.url;
 const pages = getPagesInOrder(
   (await Astro.glob<PageAstroInstance>("../**/*.astro"))
     .filter((page) => page.title)
-    .map(({ title, keywords, ...rest }) => ({
+    .map(({ title, keywords, order, ...rest }) => ({
       ...rest,
       title,
       keywords,
+      order,
     })),
 );
 
