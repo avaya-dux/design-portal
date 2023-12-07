@@ -62,19 +62,20 @@ export const getPagesInOrder = (pages: Array<PageAstroInstance>) => {
 
   return result;
 };
+// TODO: test method for: full order (a11y), partial order (docs+guidelines), no order (components)
 const sortPages = (pages: Array<PageAstroInstance>) => {
-  if (pages.length !== 0 && pages.filter((page) => page.order).length !== 0) {
-    pages.toSorted((a, b) => {
-      if (a.order && b.order) {
-        return a.order - b.order;
-      } else if (a.order) {
-        return -1;
-      } else if (b.order) {
-        return 1;
-      } else {
-        return 0;
-      }
-    });
-  }
-  return pages;
+  if (pages.length === 0 || pages.filter((page) => page.order).length === 0)
+    return pages;
+
+  return pages.toSorted((a, b) => {
+    if (a.order && b.order) {
+      return a.order - b.order;
+    } else if (a.order) {
+      return -1;
+    } else if (b.order) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
 };
