@@ -1,8 +1,8 @@
 import {
   Avatar,
-  Button,
   IconButton,
   Menu,
+  MenuButton,
   MenuItem,
   Radio,
   RadioGroup,
@@ -59,7 +59,7 @@ export const PlaygroundImplementation = () => {
       <div class="neo-dropdown${
         parentMenuIsOpen ? " neo-dropdown--active" : ""
       }">
-      <button aria-expanded=${parentMenuIsOpen} class="neo-btn neo-btn-primary neo-btn-primary--primary neo-dropdown__link-header">Action</button>
+      <button aria-expanded=${parentMenuIsOpen} class="neo-btn neo-btn--default neo-btn-primary neo-btn-primary--default neo-dropdown__link-header">Action</button>
       <div class="neo-dropdown__content" role="menu">
         <a class="neo-dropdown__link${
           dropdownType === "icon" ? " neo-icon-error-filled" : ""
@@ -127,9 +127,9 @@ export const PlaygroundImplementation = () => {
     >
       <Menu
         menuRootElement={
-          <Button onClick={() => setParentMenuIsOpen(!parentMenuIsOpen)}>
+          <MenuButton onClick={() => setParentMenuIsOpen(!parentMenuIsOpen)}>
             Action
-          </Button>
+          </MenuButton>
         }
         closeOnSelect={false}
         onMenuClose={() => {
