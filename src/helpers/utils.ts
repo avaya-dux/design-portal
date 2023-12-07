@@ -4,7 +4,7 @@ import toDiffableHtml from "diffable-html";
 import type { ReactElement } from "react";
 import type { Options } from "react-element-to-jsx-string";
 import reactElementToJSXString from "react-element-to-jsx-string";
-import type { PageAstroInstance } from "./types";
+import type { PageAstroInstance, SitePages } from "./types";
 
 export const prettyPrintReactElementToHtml = (element: ReactElement) => {
   return elementToStaticHtml(element);
@@ -34,50 +34,47 @@ export const prettyPrintReact = (react: string) => {
   return react.trim();
 };
 
-export const moveToStart = (
-  data: Array<PageAstroInstance>,
-  element: string,
-) => {
-  const index = data.findIndex(
-    (value) => value.url && value.url.indexOf(element) > -1,
+export const getPagesInOrder = (pages: Array<PageAstroInstance>) => {
+  const result: SitePages = {
+    accessibility: [],
+    components: [],
+    docs: [],
+    guidelines: [],
+  };
+
+  const accessibilityPages = pages.filter(
+    (page) => page.url?.includes("accessibility"),
   );
-  if (index !== -1) {
-    const ret = data.filter((_, i) => index !== i);
-    ret.unshift(data[index]!);
-    return ret;
-  } else {
-    return data;
-  }
+  result.accessibility = sortPages(accessibilityPages);
+
+  const componentPages = pages.filter(
+    (page) => page.url?.includes("components"),
+  );
+  result.components = sortPages(componentPages);
+
+  const docsPages = pages.filter((page) => page.url?.includes("docs"));
+  result.docs = sortPages(docsPages);
+
+  const guidelinesPages = pages.filter(
+    (page) => page.url?.includes("guidelines"),
+  );
+  result.guidelines = sortPages(guidelinesPages);
+
+  return result;
 };
-
-export const getAccessibilityPagesInOrder = (
-  accessibilityPages: Array<PageAstroInstance>,
-  customOrder: Array<string>,
-) => {
-  if (accessibilityPages.length !== customOrder.length) {
-    throw new Error(
-      "The number of pages in the `accessibility` section does not match the number of pages in the `customOrder` array.",
-    );
+const sortPages = (pages: Array<PageAstroInstance>) => {
+  if (pages.length !== 0 && pages.filter((page) => page.order).length !== 0) {
+    pages.toSorted((a, b) => {
+      if (a.order && b.order) {
+        return a.order - b.order;
+      } else if (a.order) {
+        return -1;
+      } else if (b.order) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
   }
-
-  const doArraysConflict = accessibilityPages.filter((page) =>
-    customOrder.includes(page.url as string),
-  ).length;
-
-  if (doArraysConflict) {
-    throw new Error("The expected pages do not match the actual pages.");
-  }
-
-  /**
-   * NOTE: I'm using the above `if`s to ensure that the custom order matches
-   * the existing pages, thus, forcing TypeScript to assume that `page.url`
-   * and the `find` result always exist is safe.
-   * This does look a bit hacky, but I couldn't find a cleaner way to do it.
-   */
-  return customOrder.map(
-    (pageName) =>
-      accessibilityPages.find((page) =>
-        (page.url as string).includes(pageName),
-      ) as PageAstroInstance,
-  );
+  return pages;
 };

@@ -11,7 +11,7 @@ import LeftPanel from "./LeftPanel.astro";
 
 import type { PageAstroInstance } from "helpers/types";
 
-import { getAccessibilityPagesInOrder, moveToStart } from "helpers";
+import { getPagesInOrder } from "helpers";
 
 import "@avaya/neo-react/avaya-neo-react.css";
 
@@ -25,46 +25,32 @@ const { title } = Astro.props as Props;
 
 const { pathname } = Astro.url;
 
-const pages = (await Astro.glob<PageAstroInstance>("../**/*.astro"))
-  .filter((page) => page.title)
-  .map(({ title, keywords, ...rest }) => ({
-    ...rest,
-    title,
-    keywords,
-  }));
+const pages = getPagesInOrder(
+  (await Astro.glob<PageAstroInstance>("../**/*.astro"))
+    .filter((page) => page.title)
+    .map(({ title, keywords, ...rest }) => ({
+      ...rest,
+      title,
+      keywords,
+    })),
+);
 
 let leftNavPages: PageAstroInstance[] = [];
 switch (pathname.split("/")[1]) {
   case "accessibility":
-    {
-      const a11yPages = pages.filter((page) =>
-        page.url?.includes("accessibility"),
-      );
-
-      const customOrder = [
-        "principles",
-        "resources-guides",
-        "product-team-guides",
-        "testing-tools",
-        "keyboard-interactions",
-      ];
-
-      leftNavPages = getAccessibilityPagesInOrder(a11yPages, customOrder);
-    }
+    leftNavPages = pages.accessibility;
     break;
 
   case "components":
-    leftNavPages = pages.filter((page) => page.url?.includes("components"));
+    leftNavPages = pages.components;
     break;
 
   case "docs":
-    leftNavPages = pages.filter((page) => page.url?.includes("docs"));
-    leftNavPages = moveToStart(leftNavPages, "setup");
+    leftNavPages = pages.docs;
     break;
 
   case "guidelines":
-    leftNavPages = pages.filter((page) => page.url?.includes("guidelines"));
-    leftNavPages = moveToStart(leftNavPages, "overview");
+    leftNavPages = pages.guidelines;
     break;
 
   default:
@@ -104,7 +90,7 @@ switch (pathname.split("/")[1]) {
         client:load
       />
       <div class="main__wrapper">
-        <LeftPanel allPages={pages} filteredpages={leftNavPages} />
+        <LeftPanel allPages={pages} leftNavPages={leftNavPages} />
         {
           pathname.endsWith("icons") ? (
             <DynamicTheme client:only="react">
