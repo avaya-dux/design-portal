@@ -1,17 +1,26 @@
 import {
+  Checkbox,
+  CheckboxGroup,
+  Icon,
+  IconButton,
+  List,
+  ListItem,
+} from "@avaya/neo-react";
+
+import {
+  allActualPagesFlattenedUnsorted,
+  allActualPagesSorted,
+} from "components/react/utils/shared-mocks";
+
+import {
+  getPagesInOrder,
   prettyPrintHtml,
   prettyPrintReactElementToHtml,
   prettyPrintReactElementToString,
 } from "./utils";
 
-import {
-  Checkbox,
-  CheckboxGroup,
-  List,
-  ListItem,
-  IconButton,
-  Icon,
-} from "@avaya/neo-react";
+import type { SitePages } from "./types";
+import { beforeAll } from "vitest";
 
 describe(prettyPrintReactElementToString.name, () => {
   it("prettyPrint CheckboxGroup to react ", () => {
@@ -269,5 +278,56 @@ describe("prettyPrintHtml", () => {
   });
   it("void element br has no ending tag per html spec", () => {
     expect(prettyPrintHtml("<br />")).toMatchInlineSnapshot('"<br>"');
+  });
+});
+
+describe("getPagesInOrder", () => {
+  let sorted: SitePages = {} as SitePages;
+  beforeAll(() => {
+    sorted = getPagesInOrder(allActualPagesFlattenedUnsorted);
+  });
+
+  it("should be sorting a unsorted list", () => {
+    expect(allActualPagesFlattenedUnsorted.length).toBeTruthy();
+    expect(Object.keys(sorted).length).toBeTruthy();
+
+    expect(
+      allActualPagesFlattenedUnsorted[0]?.url?.includes("accessibility"),
+    ).toBeTruthy();
+    expect(allActualPagesFlattenedUnsorted[0]?.title).toBe("Testing Tools");
+    expect(allActualPagesFlattenedUnsorted[0]?.order).toBe(4);
+  });
+
+  it("should sort all of the accessibility pages", () => {
+    expect(sorted.accessibility).toHaveLength(
+      allActualPagesSorted.accessibility.length,
+    );
+    expect(sorted.accessibility[0]?.order).toEqual(1);
+    expect(sorted.accessibility[1]?.order).toEqual(2);
+  });
+
+  it("should not sort the components pages", () => {
+    expect(sorted.components).toHaveLength(
+      allActualPagesSorted.components.length,
+    );
+
+    for (const page of sorted.components) {
+      expect(page.order).toBeUndefined();
+    }
+  });
+
+  it("should sort all of the docs pages", () => {
+    expect(sorted.docs).toHaveLength(allActualPagesSorted.docs.length);
+    expect(sorted.docs[0]?.order).toEqual(1);
+    expect(sorted.docs[1]?.order).toEqual(2);
+    expect(sorted.docs[2]?.order).toEqual(3);
+  });
+
+  it("should sort only the first element of the guidelines pages", () => {
+    expect(sorted.guidelines).toHaveLength(
+      allActualPagesSorted.guidelines.length,
+    );
+    expect(sorted.guidelines[0]?.order).toEqual(1);
+    expect(sorted.guidelines[1]?.order).toBeUndefined();
   });
 });

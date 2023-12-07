@@ -34,7 +34,7 @@ export const prettyPrintReact = (react: string) => {
   return react.trim();
 };
 
-export const getPagesInOrder = (pages: Array<PageAstroInstance>) => {
+export const getPagesInOrder = (pages: Array<PageAstroInstance> = []) => {
   const result: SitePages = {
     accessibility: [],
     components: [],
@@ -62,7 +62,6 @@ export const getPagesInOrder = (pages: Array<PageAstroInstance>) => {
 
   return result;
 };
-// TODO: test method for: full order (a11y), partial order (docs+guidelines), no order (components)
 const sortPages = (pages: Array<PageAstroInstance>) => {
   if (pages.length === 0 || pages.filter((page) => page.order).length === 0)
     return pages;
