@@ -1,12 +1,12 @@
 import { TopNav } from "@avaya/neo-react";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 
 import {
   isLeftNavigationOpen,
   leftNavToggleButtonRef,
 } from "components/react/utils/layoutState";
 
-import type { PageAstroInstance } from "helpers/types";
+import type { SitePages } from "helpers/types";
 
 import { TopNavSearch } from "./helpers";
 
@@ -31,7 +31,7 @@ export const SiteHeader = ({
 }: {
   pathname: string;
   userAgent: string;
-  pages: PageAstroInstance[];
+  pages: SitePages;
   showToggleBtn?: boolean;
 }) => {
   const isActiveLink = useCallback(
@@ -49,10 +49,17 @@ export const SiteHeader = ({
     }
   }, []);
 
+  const flattenedPages = useMemo(() => {
+    return Object.values(pages).reduce(
+      (acc, page) => [...acc, ...page],
+      [] as SitePages[keyof SitePages],
+    );
+  }, [pages]);
+
   return (
     <TopNav
       logo={<Logo />}
-      search={<TopNavSearch pages={pages} userAgent={userAgent} />}
+      search={<TopNavSearch pages={flattenedPages} userAgent={userAgent} />}
       skipNav={
         <TopNav.SkipNav href="#main-content">
           Skip To Main Content

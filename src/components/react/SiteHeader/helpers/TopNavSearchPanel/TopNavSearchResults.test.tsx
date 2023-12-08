@@ -2,7 +2,8 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 
-import { filteredPagesMockData } from "../mocks";
+import { filteredPagesMockData } from "components/react/utils/shared-mocks";
+
 import { TopNavSearchResults } from "./TopNavSearchResults";
 
 describe("TopNavSearchResults", () => {

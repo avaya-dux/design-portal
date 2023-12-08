@@ -1,15 +1,15 @@
 ---
-import type { PageAstroInstance } from "helpers/types";
+import type { PageAstroInstance, SitePages } from "helpers/types";
 
 import { LeftNavigation } from "components";
 
 import { IconFilters, iconCategories } from "pageletes/icons";
 
 export interface Props {
-  allPages: PageAstroInstance[];
-  filteredpages: PageAstroInstance[];
+  allPages: SitePages;
+  leftNavPages: PageAstroInstance[];
 }
-const { allPages, filteredpages } = Astro.props;
+const { allPages, leftNavPages } = Astro.props;
 const { pathname } = Astro.url;
 
 // HACK: logic specific to the Icons page should exist in Icons page
@@ -18,10 +18,10 @@ const isIconPage = pathname.includes("icons");
 
 {isIconPage && <IconFilters categories={iconCategories} client:load />}
 {
-  filteredpages.length > 0 && (
+  leftNavPages.length > 0 && (
     <LeftNavigation
       allPages={allPages}
-      filteredpages={filteredpages}
+      leftNavPages={leftNavPages}
       currentUrl={pathname}
       client:load
     />

@@ -1,29 +1,16 @@
 import { LeftNav } from "@avaya/neo-react";
-import type { PageAstroInstance } from "helpers/types";
+
+import type { SitePages } from "helpers/types";
 
 export const LeftNavMobile = ({
   allPages,
   currentUrl,
   onNavigate,
 }: {
-  allPages: PageAstroInstance[];
+  allPages: SitePages;
   currentUrl: string;
   onNavigate?: (id: string, url: string) => void;
 }) => {
-  const accessibilityPages = allPages.filter(
-    (page) => page.url?.includes("accessibility"),
-  );
-
-  const componentPages = allPages.filter(
-    (page) => page.url?.includes("components"),
-  );
-
-  const docsPages = allPages.filter((page) => page.url?.includes("docs"));
-
-  const guidelinesPages = allPages.filter(
-    (page) => page.url?.includes("guidelines"),
-  );
-
   return (
     <LeftNav
       aria-label="left-navigation"
@@ -32,7 +19,7 @@ export const LeftNavMobile = ({
       isActiveOverride
     >
       <LeftNav.NavCategory label="Docs">
-        {docsPages.map((page, index) => (
+        {allPages.docs.map((page, index) => (
           <LeftNav.LinkItem key={`doc-${index}`} href={page.url as string}>
             {page.title}
           </LeftNav.LinkItem>
@@ -40,7 +27,7 @@ export const LeftNavMobile = ({
       </LeftNav.NavCategory>
 
       <LeftNav.NavCategory label="Guidelines">
-        {guidelinesPages.map((page, index) => (
+        {allPages.guidelines.map((page, index) => (
           <LeftNav.LinkItem
             key={`guidelines-${index}`}
             href={page.url as string}
@@ -51,7 +38,7 @@ export const LeftNavMobile = ({
       </LeftNav.NavCategory>
 
       <LeftNav.NavCategory label="Accessibility">
-        {accessibilityPages.map((page, index) => (
+        {allPages.accessibility.map((page, index) => (
           <LeftNav.LinkItem
             key={`accessibility-${index}`}
             href={page.url as string}
@@ -62,7 +49,7 @@ export const LeftNavMobile = ({
       </LeftNav.NavCategory>
 
       <LeftNav.NavCategory label="Components">
-        {componentPages.map((page, index) => (
+        {allPages.components.map((page, index) => (
           <LeftNav.LinkItem
             key={`${index}${page.title}`}
             href={page.url as string}
