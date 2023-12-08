@@ -1,130 +1,192 @@
 ---
+import { Link } from "@avaya/neo-react";
+
 import {
+  BulletInfoList,
   Description,
   ExternalLink,
-  PageleteSection,
-  SectionHeader,
   InfoList,
   InfoListItem,
+  PageleteSection,
+  SectionHeader,
 } from "components";
 
 import { topics } from "../static";
-import { Link } from "@avaya/neo-react";
 const { id, title } = topics["getting-started"];
 ---
 
 <PageleteSection>
   <SectionHeader id={id}>{title}</SectionHeader>
+
   <Description>
     There are many things to consider when creating accessible applications.
     Some important ones are listed below. Refer to
-    <ExternalLink href="https://www.w3.org/WAI/policies/">WCAG</ExternalLink>
+    <ExternalLink href="https://www.w3.org/WAI/policies/" inline>
+      WCAG
+    </ExternalLink>
      for more detailed information and recommendations.
   </Description>
 
-  <InfoList type="decimal">
-    <InfoListItem label="Follow the development standards for your platform.">
-      <p>
+  <InfoList type="decimal" fontSize="1rem">
+    <InfoListItem>
+      <p><b>Follow the development standards for your platform.</b></p>
+
+      <p class="margin">
         All major platforms include tools to build for accessibility, and/or
         have it included in their native components. Refer to the following
         resources for guidance:
       </p>
 
-      <InfoList type="disc">
+      <BulletInfoList>
         <InfoListItem>
           Web: <ExternalLink
             href="https://www.w3.org/WAI/standards-guidelines/wcag/"
+            inline
           >
             WCAG 2.1
           </ExternalLink> and <ExternalLink
             href="https://www.w3.org/WAI/standards-guidelines/aria/"
+            inline
           >
             ARIA 1.1
           </ExternalLink>.
         </InfoListItem>
+
         <InfoListItem>
           iOS and Mac: <ExternalLink
             href="https://developer.apple.com/design/human-interface-guidelines/accessibility/overview/introduction/"
+            inline
           >
             Apple Human Interface Guideliness
           </ExternalLink>.
         </InfoListItem>
+
         <InfoListItem>
           Android: <ExternalLink
             href="https://developer.android.com/guide/topics/ui/accessibility"
+            inline
           >
             Developer Documentation Guide
           </ExternalLink>.
         </InfoListItem>
+
         <InfoListItem>
           Windows: <ExternalLink
             href="https://docs.microsoft.com/en-us/windows/uwp/design/accessibility/accessibility"
+            inline
           >
             Windows Dev Center
           </ExternalLink>.
         </InfoListItem>
-      </InfoList>
+      </BulletInfoList>
     </InfoListItem>
 
-    <InfoListItem
-      label="Ensure the application is compatible with assistive technologies."
-    >
+    <InfoListItem>
       <p>
+        <b>Ensure the application is compatible with assistive technologies.</b>
+      </p>
+
+      <p class="margin">
         Users with disabilities may use one or more devices to interact with the
         application. These include:
       </p>
-      <InfoList type="disc">
+
+      <BulletInfoList>
         <InfoListItem>Screen readers</InfoListItem>
+
         <InfoListItem>Screen magnification software</InfoListItem>
+
         <InfoListItem>Text readers</InfoListItem>
+
         <InfoListItem>Speech input software</InfoListItem>
+
         <InfoListItem>
           Alternative input devices, such as head pointers, motion/eye tracking,
           and single switch entries
         </InfoListItem>
+
         <InfoListItem>
-          Refer to <Link href="./principles">Principles</Link> to learn more
-          about the different tools used, or Testing Tools to find resources for
-          testing these devices.
+          Refer to <Link href="/accessibility/principles" inline>
+            Principles
+          </Link>
+           to learn more about the different tools used, or <Link
+            href="/accessibility/testing-tools"
+            inline
+          >
+            Testing Tools
+          </Link>
+           to find resources for testing these devices.
         </InfoListItem>
-      </InfoList>
-      <InfoListItem
-        label="Use colors with sufficient contrast for text and UI elements."
-      >
-        <p>
-          Sufficient color contrast ensures that users who are color-blind or
-          have low vision can view the content. Refer to Colors to learn more
-          about accessible combinations with Neo's palette, and Testing Tools to
-          find resources on checking contrast levels.
-        </p>
-      </InfoListItem>
-      <InfoListItem
-        label="Ensure all functional elements on a page are reachable by keyboard and/or gestures."
-      >
-        <p>
-          Some users rely solely on the keyboard or other devices to interact
-          with the application. Make sure that all interactive areas can be
-          reached without a mouse, that hover states are also clearly shown, and
-          that keyboard focus states are included.
-        </p>
-      </InfoListItem>
-      <InfoListItem
-        label="Support personalization where possible.Some users may have accessibility preferences enabled on their devices."
-      >
-        <p>
-          Respect these preferences within the application for a consistent
-          experience (e.g. high contrast mode, increased font size, etc.).
-        </p>
-      </InfoListItem>
-      <InfoListItem label="Audit and test the application for accessibility.">
-        <p>
-          Incorporate accessibility testing into the product development process
-          to ensure all UI elements and flows work for users with disabilities.
-          Refer to Testing Tools for resources on testing the application. Also
-          include representative users into usability testing and other feedback
-          activities to gain understanding on real usage.
-        </p>
-      </InfoListItem>
+      </BulletInfoList>
+    </InfoListItem>
+
+    <InfoListItem>
+      <p>
+        <b>Use colors with sufficient contrast for text and UI elements.</b>
+      </p>
+
+      <p class="margin">
+        Sufficient color contrast ensures that users who are color-blind or have
+        low vision can view the content. Refer to <Link
+          href="/guidelines/color"
+          inline
+        >
+          Colors
+        </Link> to learn more about accessible combinations with Neo's palette,
+        and <Link href="/accessibility/testing-tools" inline>
+          Testing Tools
+        </Link> to find resources on checking contrast levels.
+      </p>
+    </InfoListItem>
+
+    <InfoListItem>
+      <p>
+        <b>
+          Ensure all functional elements on a page are reachable by keyboard
+          and/or gestures.
+        </b>
+      </p>
+
+      <p class="margin">
+        Some users rely solely on the keyboard or other devices to interact with
+        the application. Make sure that all interactive areas can be reached
+        without a mouse, that hover states are also clearly shown, and that
+        keyboard focus states are included.
+      </p>
+    </InfoListItem>
+
+    <InfoListItem>
+      <p>
+        <b> Support personalization where possible.</b>
+      </p>
+
+      <p class="margin">
+        Some users may have accessibility preferences enabled on their devices.
+        Respect these preferences within the application for a consistent
+        experience (e.g. high contrast mode, increased font size, etc.).
+      </p>
+    </InfoListItem>
+
+    <InfoListItem>
+      <p><b>Audit and test the application for accessibility.</b></p>
+
+      <p class="margin">
+        Incorporate accessibility testing into the product development process
+        to ensure all UI elements and flows work for users with disabilities.
+        Refer to <Link href="/accessibility/testing-tools" inline>
+          Testing Tools
+        </Link>
+         for resources on testing the application. Also include representative
+        users into usability testing and other feedback activities to gain
+        understanding on real usage.
+      </p>
     </InfoListItem>
   </InfoList>
+
+  <style>
+    p.margin {
+      margin-top: 0.2rem;
+      margin-bottom: 0.2rem;
+    }
+  </style>
 </PageleteSection>
