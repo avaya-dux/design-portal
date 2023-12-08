@@ -5,17 +5,14 @@ import { cleanStores, keepMount } from "nanostores";
 import { isLeftNavigationOpen } from "components/react/utils/layoutState";
 
 import { LeftNavigation } from ".";
-import {
-  allPagesMockData,
-  filteredPagesMockData,
-} from "../SiteHeader/helpers/mocks";
+import { allPagesMockData, filteredPagesMockData } from "../utils/shared-mocks";
 
 describe("Left Navigation", () => {
   it("renders without exploding", () => {
     render(
       <LeftNavigation
         allPages={allPagesMockData}
-        filteredpages={filteredPagesMockData}
+        leftNavPages={filteredPagesMockData}
         currentUrl="/"
       />,
     );
@@ -31,7 +28,7 @@ describe("Left Navigation", () => {
     const { rerender } = render(
       <LeftNavigation
         allPages={allPagesMockData}
-        filteredpages={filteredPagesMockData}
+        leftNavPages={filteredPagesMockData}
         currentUrl="/"
       />,
     );
@@ -47,7 +44,7 @@ describe("Left Navigation", () => {
       rerender(
         <LeftNavigation
           allPages={allPagesMockData}
-          filteredpages={filteredPagesMockData}
+          leftNavPages={filteredPagesMockData}
           currentUrl="/"
         />,
       );
@@ -60,7 +57,7 @@ describe("Left Navigation", () => {
       rerender(
         <LeftNavigation
           allPages={allPagesMockData}
-          filteredpages={filteredPagesMockData}
+          leftNavPages={filteredPagesMockData}
           currentUrl="/"
         />,
       );
@@ -75,7 +72,7 @@ describe("Left Navigation", () => {
     const { container } = render(
       <LeftNavigation
         allPages={allPagesMockData}
-        filteredpages={filteredPagesMockData}
+        leftNavPages={filteredPagesMockData}
         currentUrl="/"
       />,
     );

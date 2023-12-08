@@ -2,12 +2,13 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 
+import { filteredPagesMockData } from "components/react/utils/shared-mocks";
+
 import { TopNavSearch } from ".";
-import { filteredPagesMockData } from "./mocks";
 
 describe("TopNavSearch", () => {
   it("renders without exploding", () => {
-    render(<TopNavSearch pages={filteredPagesMockData} />);
+    render(<TopNavSearch pages={filteredPagesMockData} userAgent="macos" />);
 
     const rootElement = screen.getByLabelText("Search Site");
 
@@ -15,7 +16,7 @@ describe("TopNavSearch", () => {
   });
 
   it("responds correctly to mouse click events", async () => {
-    render(<TopNavSearch pages={filteredPagesMockData} />);
+    render(<TopNavSearch pages={filteredPagesMockData} userAgent="macos" />);
 
     const buttonElement = screen.getByRole("button");
 
@@ -37,7 +38,7 @@ describe("TopNavSearch", () => {
   });
 
   it("responds correctly to keyboard events", async () => {
-    render(<TopNavSearch pages={filteredPagesMockData} />);
+    render(<TopNavSearch pages={filteredPagesMockData} userAgent="macos" />);
 
     const modal = screen.queryByRole("dialog");
 
@@ -59,7 +60,7 @@ describe("TopNavSearch", () => {
   });
 
   it("displays search results when typed into modal", async () => {
-    render(<TopNavSearch pages={filteredPagesMockData} />);
+    render(<TopNavSearch pages={filteredPagesMockData} userAgent="macos" />);
 
     const buttonElement = screen.getByRole("button");
 
@@ -76,7 +77,7 @@ describe("TopNavSearch", () => {
 
   it("passes basic axe compliance", async () => {
     const { container } = render(
-      <TopNavSearch pages={filteredPagesMockData} />,
+      <TopNavSearch pages={filteredPagesMockData} userAgent="macos" />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

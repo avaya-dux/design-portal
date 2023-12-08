@@ -1,27 +1,29 @@
-import { useCallback, useEffect, useRef } from "react";
 import { LeftNav } from "@avaya/neo-react";
 import { useStore } from "@nanostores/react";
 import clsx from "clsx";
-import { breakpoints } from "components/react/utils/constants";
+import { useCallback, useEffect, useRef } from "react";
 
+import { breakpoints } from "components/react/utils/constants";
 import {
   isLeftNavigationOpen,
   leftNavToggleButtonRef,
 } from "components/react/utils/layoutState";
-import type { PageAstroInstance } from "helpers/types";
+
+import type { PageAstroInstance, SitePages } from "helpers/types";
 
 import { trapFocus, useWindowSize } from "../utils";
 
-import "./LeftNavigationStyleOverride.css";
 import { LeftNavMobile } from ".";
+
+import "./LeftNavigationStyleOverride.css";
 
 export const LeftNavigation = ({
   allPages,
-  filteredpages,
+  leftNavPages,
   currentUrl,
 }: {
-  allPages: PageAstroInstance[];
-  filteredpages: PageAstroInstance[];
+  allPages: SitePages;
+  leftNavPages: PageAstroInstance[];
   currentUrl: string;
 }) => {
   const handleNavigate = (_: string, url: string) => {
@@ -62,7 +64,7 @@ export const LeftNavigation = ({
     const lastFocusableElement = document
       .querySelector(".left-navigation")
       ?.querySelectorAll(
-        `[href="${filteredpages[filteredpages.length - 1]?.url}"]`,
+        `[href="${leftNavPages[leftNavPages.length - 1]?.url}"]`,
       )[0] as HTMLElement;
 
     const firstFocusableElement =
@@ -80,7 +82,7 @@ export const LeftNavigation = ({
         handleKeyDown(event, firstFocusableElement, lastFocusableElement),
       );
     };
-  }, [handleKeyDown, isOpen, filteredpages, toggleButtonRef, width]);
+  }, [handleKeyDown, isOpen, leftNavPages, toggleButtonRef, width]);
 
   return (
     <>
@@ -106,7 +108,7 @@ export const LeftNavigation = ({
             onNavigate={handleNavigate}
             isActiveOverride
           >
-            {filteredpages.map((page, index) => (
+            {leftNavPages.map((page, index) => (
               <LeftNav.TopLinkItem
                 key={`${index}${page.title}`}
                 label={page.title}

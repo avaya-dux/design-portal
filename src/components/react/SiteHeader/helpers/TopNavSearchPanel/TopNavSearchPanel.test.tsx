@@ -2,7 +2,8 @@ import { TextInput } from "@avaya/neo-react";
 import { act, render, screen, waitFor } from "@testing-library/react";
 import { axe } from "jest-axe";
 
-import { filteredPagesMockData } from "../mocks";
+import { filteredPagesMockData } from "components/react/utils/shared-mocks";
+
 import { TopNavSearchPanel } from "./TopNavSearchPanel";
 
 describe("TopNavSearchPanel", () => {
