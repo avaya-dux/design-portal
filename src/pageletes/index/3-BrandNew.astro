@@ -1,0 +1,56 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { Description, LinkButton } from "components";
+
+import img1 from "./images/brand-new.svg";
+---
+
+<div class="brand-new-container">
+  <div class="brand-new-left-section">
+    <div class="red-left-border-section">
+      <h2 class="neo-bold">Brand. New.</h2>
+
+      <Description>
+        Neo provides extensive guides that help you build consistent and
+        engaging customer experiences for all applications.
+      </Description>
+    </div>
+
+    <LinkButton href="/components/accordion">Component Libraries</LinkButton>
+  </div>
+
+  <div class="brand-new-right-section">
+    <Image
+      src={img1.src}
+      alt="image of a phone with a video call on the screen"
+    />
+  </div>
+</div>
+
+<style>
+  .brand-new-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 100px 0;
+
+    .brand-new-left-section {
+      max-width: 25rem;
+
+      .red-left-border-section {
+        border-left: solid red 5px;
+        padding-left: 2rem;
+
+        h2.neo-bold {
+          line-height: unset;
+          margin-bottom: 2rem;
+        }
+      }
+
+      a {
+        margin-left: 2.4rem;
+      }
+    }
+  }
+</style>
