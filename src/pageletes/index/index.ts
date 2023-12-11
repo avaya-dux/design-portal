@@ -1,2 +1,2 @@
-import NeoIntro from "./NeoIntro.astro";
+import NeoIntro from "./1-NeoIntro.astro";
 export { NeoIntro };
