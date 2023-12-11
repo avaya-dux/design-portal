@@ -185,8 +185,9 @@ switch (pathname.split("/")[1]) {
     }
 
     body main {
-      /* plus `1px` for border */
       --body-main-margin-top: 3rem;
+
+      /* plus `1px` for border */
       --body-main-height: calc(
         100vh - var(--header-height) - var(--footer-height) -
           var(--body-main-margin-top) - 1px
@@ -197,6 +198,13 @@ switch (pathname.split("/")[1]) {
       padding: 0 1rem 2rem 1rem;
       margin: auto;
       margin-top: var(--body-main-margin-top);
+    }
+    body main:has(.homepage-intro-container) {
+      --body-main-margin-top: 0;
+
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
     }
 
     .main__wrapper {
