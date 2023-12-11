@@ -1,19 +1,11 @@
 ---
-import {
-  Description,
-  PageleteSection,
-  PageleteSubSection,
-  SectionHeader,
-  SubHeader,
-} from "components";
+import { Description, PageleteSection, SectionHeader } from "components";
 
 import { topics } from "../static";
 import TwoColumnLayout from "./sections-frame-layout/TwoColumnLayout.astro";
 import Categorical from "./sections-frame-layout/data-colors/frame-1/Categorical.astro";
 import Sequential from "./sections-frame-layout/data-colors/frame-1/Sequential.astro";
 import Diverging from "./sections-frame-layout/data-colors/frame-2/Diverging.astro";
-
-import InteractiveTool from "./data-colors-tool/InteractiveTool.astro";
 
 const { id, title } = topics.data;
 ---
@@ -34,15 +26,4 @@ const { id, title } = topics.data;
   <TwoColumnLayout>
     <Diverging slot="left-frame" />
   </TwoColumnLayout>
-
-  <PageleteSubSection marginTop="32px">
-    <SubHeader id="interactive-tool">Interactive Tool</SubHeader>
-
-    <Description>
-      This interactive tool allows you to experiment with various color styles
-      and combinations.
-    </Description>
-
-    <InteractiveTool />
-  </PageleteSubSection>
 </PageleteSection>
