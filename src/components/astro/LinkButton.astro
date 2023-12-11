@@ -1,14 +1,12 @@
 ---
-import { Icon } from "@avaya/neo-react";
 import clsx from "clsx";
 
 export interface Props {
   href: string;
-  hasArrow?: boolean;
   variant?: "primary" | "secondary" | "tertiary";
 }
 
-const { href, hasArrow = false, variant = "primary" } = Astro.props as Props;
+const { href, variant = "primary" } = Astro.props as Props;
 ---
 
 <a
@@ -21,15 +19,4 @@ const { href, hasArrow = false, variant = "primary" } = Astro.props as Props;
   href={href}
 >
   <slot />
-
-  {
-    hasArrow && (
-      <Icon
-        icon="arrow-right"
-        aria-label="right arrow"
-        size="md"
-        style={{ marginLeft: "0.5rem" }}
-      />
-    )
-  }
 </a>
