@@ -69,7 +69,11 @@ import img3 from "./images/icon-library.svg";
     display: flex;
     justify-content: center;
     margin-top: -5rem;
-    margin-bottom: 0rem;
+    margin-bottom: 5rem;
+
+    .neo-sheet.links-container {
+      z-index: 1; /* override sheet's z-index */
+    }
 
     .links-container {
       flex-direction: row;
