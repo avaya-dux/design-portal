@@ -1,0 +1,35 @@
+---
+import { Icon } from "@avaya/neo-react";
+import clsx from "clsx";
+
+export interface Props {
+  href: string;
+  hasArrow?: boolean;
+  variant?: "primary" | "secondary" | "tertiary";
+}
+
+const { href, hasArrow = false, variant = "primary" } = Astro.props as Props;
+---
+
+<a
+  class={clsx(
+    "neo-nav-link-btn neo-btn",
+    variant === "primary" && "neo-btn-primary neo-btn-primary--default",
+    variant === "secondary" && "neo-btn-secondary neo-btn-secondary--default",
+    variant === "tertiary" && "neo-btn-tertiary neo-btn-tertiary--default",
+  )}
+  href={href}
+>
+  <slot />
+
+  {
+    hasArrow && (
+      <Icon
+        icon="arrow-right"
+        aria-label="right arrow"
+        size="md"
+        style={{ marginLeft: "0.5rem" }}
+      />
+    )
+  }
+</a>
