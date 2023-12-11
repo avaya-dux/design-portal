@@ -1,0 +1,88 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { Description, ImageWrapper } from "components";
+
+import img1 from "./images/design-foundation.svg";
+import img2 from "./images/ui-component-libraries.svg";
+import img3 from "./images/icon-library.svg";
+---
+
+<div class="important-links-spacing-offset">
+  <div class="neo-sheet links-container">
+    <div class="important-link-container">
+      <ImageWrapper marginTop="0" marginBottom="0">
+        <Image
+          src={img1.src}
+          alt="image showing a traingle in a circle in a square"
+        />
+      </ImageWrapper>
+
+      <h4 class="image-header neo-semibold">
+        <a href="/guidelines/overview">Design Foundations</a>
+      </h4>
+
+      <Description>
+        A UX Design System that helps developers build consistent and
+        exceptional user experiences.
+      </Description>
+    </div>
+
+    <div class="important-link-container">
+      <ImageWrapper marginTop="0" marginBottom="0">
+        <Image
+          src={img2.src}
+          alt="image showing a traingle in a circle in a square"
+        />
+      </ImageWrapper>
+
+      <h4 class="image-header neo-semibold">
+        <a href="/components/accordion">UI Component Libraries</a>
+      </h4>
+
+      <Description>
+        A UX Design System that helps developers build consistent and
+        exceptional user experiences.
+      </Description>
+    </div>
+
+    <div class="important-link-container">
+      <ImageWrapper marginTop="0" marginBottom="0">
+        <Image
+          src={img3.src}
+          alt="image showing a traingle in a circle in a square"
+        />
+      </ImageWrapper>
+
+      <h4 class="image-header neo-semibold">
+        <a href="/icons">Icon Library</a>
+      </h4>
+
+      <Description>
+        A UX Design System that helps developers build consistent and
+        exceptional user experiences.
+      </Description>
+    </div>
+  </div>
+</div>
+
+<style>
+  .important-links-spacing-offset {
+    display: flex;
+    justify-content: center;
+    margin-top: -5rem;
+    margin-bottom: 0rem;
+
+    .links-container {
+      flex-direction: row;
+      @media screen and (max-width: 1279px) {
+        flex-direction: column;
+      }
+    }
+
+    .important-link-container {
+      margin: 3rem 3rem 0 3rem;
+      width: 13rem;
+    }
+  }
+</style>
