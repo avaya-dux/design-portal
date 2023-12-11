@@ -63,6 +63,7 @@ export const TopNavSearchResults = ({ options }: TopNavSearchResultsProps) => {
           key={i}
           ref={anchorRefs[i]}
           className="search-result"
+          tabIndex={0}
           // HACK: The below code reconciles navigation with Tab & Arrow Keys
           // May not be needed pending feedback from Matt
           onFocus={(event) => {
