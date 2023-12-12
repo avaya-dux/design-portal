@@ -43,8 +43,11 @@ import img1 from "./images/brand-new.svg";
       max-width: 25rem;
 
       .red-left-border-section {
-        border-left: solid red 5px;
+        border-left: solid var(--neo-color-red-500) 5px;
         padding-left: 2rem;
+        @media (prefers-color-scheme: dark) {
+          border-color: var(--neo-color-red-600);
+        }
 
         h2.neo-bold {
           line-height: unset;
