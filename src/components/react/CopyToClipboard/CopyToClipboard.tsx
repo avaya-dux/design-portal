@@ -2,13 +2,13 @@ import { IconButton, Notification } from "@avaya/neo-react";
 import { copyTextToClipboard } from "../utils";
 import { useState } from "react";
 
-import styles from "./SectionLink.module.css";
+import styles from "./CopyToClipboard.module.css";
 
 export interface SectionLinkProps {
   url: string;
 }
 
-export const SectionLink = ({ url }: SectionLinkProps) => {
+export const CopyToClipboard = ({ url }: SectionLinkProps) => {
   const [showNotification, setShowNotification] = useState<boolean>(false);
 
   const handleClick = () => {
@@ -42,4 +42,4 @@ export const SectionLink = ({ url }: SectionLinkProps) => {
   );
 };
 
-SectionLink.displayName = "Section Link";
+CopyToClipboard.displayName = "Section Link";
