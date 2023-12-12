@@ -11,14 +11,14 @@ import img3 from "./images/icon-library.svg";
 <div class="important-links-spacing-offset">
   <div class="neo-sheet links-container">
     <div class="important-link-container">
-      <ImageWrapper marginTop="0" marginBottom="0">
+      <ImageWrapper marginTop="0" marginBottom="0" isShaded>
         <Image
           src={img1.src}
           alt="image showing a traingle in a circle in a square"
         />
       </ImageWrapper>
 
-      <h4 class="image-header neo-semibold">
+      <h4 class="image-header">
         <a href="/guidelines/overview">Design Foundations</a>
       </h4>
 
@@ -29,14 +29,14 @@ import img3 from "./images/icon-library.svg";
     </div>
 
     <div class="important-link-container">
-      <ImageWrapper marginTop="0" marginBottom="0">
+      <ImageWrapper marginTop="0" marginBottom="0" isShaded>
         <Image
           src={img2.src}
           alt="image showing a traingle in a circle in a square"
         />
       </ImageWrapper>
 
-      <h4 class="image-header neo-semibold">
+      <h4 class="image-header">
         <a href="/components/accordion">UI Component Libraries</a>
       </h4>
 
@@ -46,14 +46,14 @@ import img3 from "./images/icon-library.svg";
     </div>
 
     <div class="important-link-container">
-      <ImageWrapper marginTop="0" marginBottom="0">
+      <ImageWrapper marginTop="0" marginBottom="0" isShaded>
         <Image
           src={img3.src}
           alt="image showing a traingle in a circle in a square"
         />
       </ImageWrapper>
 
-      <h4 class="image-header neo-semibold">
+      <h4 class="image-header">
         <a href="/icons">Icon Library</a>
       </h4>
 
@@ -73,6 +73,7 @@ import img3 from "./images/icon-library.svg";
 
     .neo-sheet.links-container {
       z-index: 1; /* override sheet's z-index */
+      background-color: var(--neo-color-base-0);
     }
 
     .links-container {
@@ -80,11 +81,20 @@ import img3 from "./images/icon-library.svg";
       @media screen and (max-width: 1279px) {
         flex-direction: column;
       }
-    }
 
-    .important-link-container {
-      margin: 3rem 3rem 0 3rem;
-      width: 13rem;
+      .important-link-container {
+        margin: 3rem 3rem 0 3rem;
+        width: 13rem;
+
+        h4.image-header {
+          margin-top: 2rem;
+          margin-bottom: 0.5rem;
+        }
+
+        > p.description {
+          color: var(--neo-color-base-1000);
+        }
+      }
     }
   }
 </style>
