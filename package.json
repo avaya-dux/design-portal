@@ -22,7 +22,7 @@
     "@astrojs/react": "3.0.6",
     "@astrojs/svelte": "4.0.4",
     "@astrojs/vue": "3.0.4",
-    "@avaya/neo-icons": "1.6.0",
+    "@avaya/neo-icons": "1.8.0",
     "@testing-library/jest-dom": "6.1.5",
     "@testing-library/react": "14.1.2",
     "@testing-library/user-event": "14.5.1",
@@ -57,7 +57,7 @@
   "dependencies": {
     "@astrojs/netlify": "3.0.4",
     "@astrojs/prefetch": "0.4.1",
-    "@avaya/neo-react": "1.0.4",
+    "@avaya/neo-react": "1.0.7",
     "@nanostores/react": "0.7.1",
     "clsx": "2.0.0",
     "diffable-html": "5.0.0",

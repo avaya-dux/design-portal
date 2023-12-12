@@ -224,10 +224,7 @@ describe(prettyPrintReactElementToHtml.name, () => {
               data-testid=\\"neo-button-add-call\\"
               id=\\"btn-add-call\\"
             >
-              <span
-                class=\\"neo-icon-call-add\\"
-                style=\\"font-size:20px\\"
-              >
+              <span class=\\"neo-icon-call-add\\">
               </span>
             </button>
           </div>
@@ -252,10 +249,7 @@ describe(prettyPrintReactElementToHtml.name, () => {
               data-testid=\\"neo-button-add-call\\"
               id=\\"btn-add-call\\"
             >
-              <span
-                class=\\"neo-icon-call-add\\"
-                style=\\"font-size:20px\\"
-              >
+              <span class=\\"neo-icon-call-add\\">
               </span>
             </button>
           </div>
