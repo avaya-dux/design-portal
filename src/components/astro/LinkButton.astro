@@ -1,0 +1,22 @@
+---
+import clsx from "clsx";
+
+export interface Props {
+  href: string;
+  variant?: "primary" | "secondary" | "tertiary";
+}
+
+const { href, variant = "primary" } = Astro.props as Props;
+---
+
+<a
+  class={clsx(
+    "neo-nav-link-btn neo-btn",
+    variant === "primary" && "neo-btn-primary neo-btn-primary--default",
+    variant === "secondary" && "neo-btn-secondary neo-btn-secondary--default",
+    variant === "tertiary" && "neo-btn-tertiary neo-btn-tertiary--default",
+  )}
+  href={href}
+>
+  <slot />
+</a>
