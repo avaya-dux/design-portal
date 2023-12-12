@@ -1,0 +1,88 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { Description, LinkButton } from "components";
+
+import img1 from "./images/inclusive-design.svg";
+---
+
+<div class="inclusive-design-container">
+  <Image
+    src={img1.src}
+    alt="image of a four stick figures, one with glasses, one in a wheelchair, one with a hearing aid, one with a cane"
+  />
+
+  <div class="inclusive-design-content">
+    <div class="red-border-section">
+      <h2 class="neo-bold">Inclusive Design</h2>
+
+      <Description>
+        Building innovative frameworks that reach the widest possible audience,
+        regardless of culture, background and physical or cognitive ability.
+        Explore the possibilities to find the source of great experience and
+        success for all users.
+      </Description>
+    </div>
+
+    <div class="inclusive-design-buttons">
+      <LinkButton href="/accessibility/principles">
+        Accessibility Guidelines
+      </LinkButton>
+
+      <LinkButton href="/guidelines/localization">
+        Internationalization Guidelines
+      </LinkButton>
+    </div>
+  </div>
+</div>
+
+<style>
+  .inclusive-design-container {
+    background-color: var(--neo-color-teal-500);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 2rem;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 0 100px 0;
+    gap: 1rem;
+    @media screen and (max-width: 831px) {
+      flex-direction: column;
+      gap: 5rem;
+    }
+
+    > img {
+      max-width: 30rem;
+      @media screen and (max-width: 831px) {
+        max-width: 25rem;
+      }
+    }
+
+    .inclusive-design-content {
+      max-width: 30rem;
+
+      .red-border-section {
+        border-left: 5px solid var(--neo-color-red-500);
+        padding-left: 2rem;
+        @media (prefers-color-scheme: dark) {
+          border-color: var(--neo-color-red-400);
+        }
+
+        h2.neo-bold {
+          margin-bottom: 1rem;
+        }
+      }
+
+      .inclusive-design-buttons {
+        padding-left: 2.4rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+  }
+</style>
