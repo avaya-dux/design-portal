@@ -1,4 +1,4 @@
-import { IconButton, removePopupManagerContainer, usePopup } from "@avaya/neo-react";
+import { IconButton, removePopupManagerContainer, Tooltip, usePopup } from "@avaya/neo-react";
 import { copyTextToClipboard } from "../utils";
 import { useEffect } from "react";
 
@@ -33,14 +33,17 @@ export const CopyToClipboard = ({
 
   return (
     <>
-      {mounted && <IconButton
-        variant="tertiary"
-        shape="circle"
-        icon="link"
-        aria-label="copy link to clipboard"
-        onClick={handleClick}
-      />
-    }
+      {mounted && (
+        <Tooltip label="Copy link" position="right">
+          <IconButton
+            variant="tertiary"
+            shape="circle"
+            icon="link"
+            aria-label="copy link to clipboard"
+            onClick={handleClick}
+          />
+        </Tooltip>
+      )}
     </>
   );
 };
