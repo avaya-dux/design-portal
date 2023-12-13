@@ -14,7 +14,7 @@ const fullSectionURL = `${url}#${id}`;
 
 <div class="section-header__wrapper">
   <h3 id={id}><slot /></h3>
-  <CopyToClipboard url={fullSectionURL} client:load />
+  <CopyToClipboard text={fullSectionURL} client:load />
 </div>
 
 <style is:global define:vars={{ marginTop }}>

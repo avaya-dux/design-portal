@@ -13,7 +13,7 @@ const fullSectionURL = `${url}#${id}`;
 
 <div class="section-header__wrapper">
   <h2 class="neo-bold" id={id}><slot /></h2>
-    <CopyToClipboard url={fullSectionURL} client:load />
+    <CopyToClipboard text={fullSectionURL} client:load />
 </div>
 
 <style>

@@ -1,22 +1,23 @@
-import { IconButton, Notification } from "@avaya/neo-react";
+import { IconButton, Toast } from "@avaya/neo-react";
 import { copyTextToClipboard } from "../utils";
 import { useState } from "react";
 
 import styles from "./CopyToClipboard.module.css";
+import type { Duration } from "pageletes/guidelines/motion";
 
-export interface SectionLinkProps {
-  url: string;
+export interface CopyToClipbardProps {
+  text: string;
+  duration?: number;
+  message?: string;
 }
 
-export const CopyToClipboard = ({ url }: SectionLinkProps) => {
+export const CopyToClipboard = ({ text, duration, message }: CopyToClipbardProps) => {
   const [showNotification, setShowNotification] = useState<boolean>(false);
+  const toastMessage = message || "Link copied to clipboard";
 
   const handleClick = () => {
-    copyTextToClipboard(url);
+    copyTextToClipboard(text);
     setShowNotification(true);
-    setTimeout(() => {
-      setShowNotification(false);
-    }, 1500);
   };
 
   return (
@@ -30,13 +31,9 @@ export const CopyToClipboard = ({ url }: SectionLinkProps) => {
       />
 
       {showNotification && (
-        <div className={styles["section-link__notification-wrapper"]}>
-          <Notification
-            icon="copy"
-            type="event"
-            header="Link copied to clipboard"
-          />
-        </div>
+        <Toast icon="copy" duration={duration || 5000}>
+          {toastMessage}
+        </Toast>
       )}
     </>
   );
