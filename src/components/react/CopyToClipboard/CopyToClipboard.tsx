@@ -2,9 +2,6 @@ import { IconButton, Toast } from "@avaya/neo-react";
 import { copyTextToClipboard } from "../utils";
 import { useState } from "react";
 
-import styles from "./CopyToClipboard.module.css";
-import type { Duration } from "pageletes/guidelines/motion";
-
 export interface CopyToClipbardProps {
   text: string;
   duration?: number;
