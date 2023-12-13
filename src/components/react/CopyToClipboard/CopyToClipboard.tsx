@@ -1,4 +1,9 @@
-import { IconButton, removePopupManagerContainer, Tooltip, usePopup } from "@avaya/neo-react";
+import {
+  IconButton,
+  removePopupManagerContainer,
+  Tooltip,
+  usePopup,
+} from "@avaya/neo-react";
 import { copyTextToClipboard } from "../utils";
 import { useEffect } from "react";
 
