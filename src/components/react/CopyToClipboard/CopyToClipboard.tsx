@@ -13,7 +13,6 @@ export const CopyToClipboard = ({
   duration = 2000,
   message = "Link copied to clipboard",
 }: CopyToClipbardProps) => {
-
   const { mounted, toast } = usePopup("interactive-toast");
   useEffect(() => {
     return () => {
