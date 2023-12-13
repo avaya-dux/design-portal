@@ -25,12 +25,8 @@ import img1 from "./images/inclusive-design.svg";
     </div>
 
     <div class="inclusive-design-buttons">
-      <LinkButton href="/accessibility/principles">
+      <LinkButton href="/accessibility/principles" variant="secondary">
         Accessibility Guidelines
-      </LinkButton>
-
-      <LinkButton href="/guidelines/localization">
-        Internationalization Guidelines
       </LinkButton>
     </div>
   </div>
@@ -67,6 +63,7 @@ import img1 from "./images/inclusive-design.svg";
       .red-border-section {
         border-left: 5px solid var(--neo-color-red-500);
         padding-left: 2rem;
+        color: var(--neo-color-base-0);
         @media (prefers-color-scheme: dark) {
           border-color: var(--neo-color-red-400);
         }
@@ -78,10 +75,6 @@ import img1 from "./images/inclusive-design.svg";
 
       .inclusive-design-buttons {
         padding-left: 2.4rem;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 1rem;
       }
     }
   }
