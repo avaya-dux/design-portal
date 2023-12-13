@@ -3,10 +3,11 @@ import clsx from "clsx";
 
 export interface Props {
   href: string;
+  external?: boolean;
   variant?: "primary" | "secondary" | "tertiary";
 }
 
-const { href, variant = "primary" } = Astro.props as Props;
+const { href, external = false, variant = "primary" } = Astro.props as Props;
 ---
 
 <a
@@ -17,6 +18,8 @@ const { href, variant = "primary" } = Astro.props as Props;
     variant === "tertiary" && "neo-btn-tertiary neo-btn-tertiary--default",
   )}
   href={href}
+  target={external ? "_blank" : undefined}
+  rel={external ? "noopener noreferrer" : undefined}
 >
   <slot />
 </a>
