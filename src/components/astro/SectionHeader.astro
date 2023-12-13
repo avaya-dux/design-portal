@@ -1,5 +1,5 @@
 ---
-import { SectionLink } from "components/react";
+import { CopyToClipboard } from "components/react";
 
 export interface Props {
   id: string;
@@ -13,9 +13,7 @@ const fullSectionURL = `${url}#${id}`;
 
 <div class="section-header__wrapper">
   <h2 class="neo-bold" id={id}><slot /></h2>
-  <a href={`#${id}`} class="section-header__link" tabindex="-1">
-    <SectionLink url={fullSectionURL} client:load />
-  </a>
+  <CopyToClipboard text={fullSectionURL} client:load />
 </div>
 
 <style>
