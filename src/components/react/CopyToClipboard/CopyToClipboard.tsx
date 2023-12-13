@@ -1,6 +1,6 @@
-import { IconButton, Toast } from "@avaya/neo-react";
+import { IconButton, removePopupManagerContainer, usePopup } from "@avaya/neo-react";
 import { copyTextToClipboard } from "../utils";
-import { useState } from "react";
+import { useEffect } from "react";
 
 export interface CopyToClipbardProps {
   text: string;
@@ -8,32 +8,41 @@ export interface CopyToClipbardProps {
   message?: string;
 }
 
-export const CopyToClipboard = ({ text, duration, message }: CopyToClipbardProps) => {
-  const [showNotification, setShowNotification] = useState<boolean>(false);
-  const toastMessage = message || "Link copied to clipboard";
+export const CopyToClipboard = ({
+  text,
+  duration = 2000,
+  message = "Link copied to clipboard",
+}: CopyToClipbardProps) => {
+
+  const { mounted, toast } = usePopup("interactive-toast");
+  useEffect(() => {
+    return () => {
+      removePopupManagerContainer();
+    };
+  }, []);
 
   const handleClick = () => {
     copyTextToClipboard(text);
-    setShowNotification(true);
+    toast({
+      message: message,
+      duration: duration,
+      position: "top",
+      icon: "copy",
+    });
   };
 
   return (
     <>
-      <IconButton
+      {mounted && <IconButton
         variant="tertiary"
         shape="circle"
         icon="link"
-        aria-label="hyperlink icon"
+        aria-label="copy link to clipboard"
         onClick={handleClick}
       />
-
-      {showNotification && (
-        <Toast icon="copy" duration={duration || 5000}>
-          {toastMessage}
-        </Toast>
-      )}
+    }
     </>
   );
 };
 
-CopyToClipboard.displayName = "Section Link";
+CopyToClipboard.displayName = "CopyToClipboard";
