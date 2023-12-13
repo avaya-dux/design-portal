@@ -11,6 +11,7 @@ import {
 import alignmentImage from "../../imgs/localization-text-alignment-1.svg";
 
 import { topics } from "../../static";
+const topicURL = `# ${topics.bidirectionality.id}`
 
 const alignmentImageAltText =
   "Image showing text alignment for both right-to-left and left-to-right languages";
@@ -24,7 +25,7 @@ const alignmentImageAltText =
     displayed with characters that go from right-to-left. Alignments for these
     systems must be adjusted accordingly. Visit the <a
       class="neo-link neo-link__inline"
-      href="#{topics.bidirectionality.id}">bidirectionality</a
+      href={topicURL}>bidirectionality</a
     > section to learn more.
   </Description>
 
