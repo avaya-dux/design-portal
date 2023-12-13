@@ -16,7 +16,7 @@ export const topics: TopicsDict<PlatformTopicNames> = {
   },
   android: {
     order: 3,
-    id: `${component}-andriod`,
+    id: `${component}-android`,
     title: "Android",
   },
   windows: {

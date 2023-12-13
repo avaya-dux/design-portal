@@ -7,7 +7,7 @@ export const topics: TopicsDict<PrinciplesTopicNames> = {
   vpat: {
     order: 0,
     id: `${component}-vpat`,
-    title: "What is VPAT?",
+    title: "What is a VPAT? What is an ACR?",
   },
   "getting-started": {
     order: 1,
