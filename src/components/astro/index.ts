@@ -16,6 +16,9 @@ export { ExternalLink };
 import ImageWrapper from "./ImageWrapper.astro";
 export { ImageWrapper };
 
+import LinkButton from "./LinkButton.astro";
+export { LinkButton };
+
 import PageleteSection from "./PageleteSection.astro";
 export { PageleteSection };
 
