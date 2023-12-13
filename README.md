@@ -21,11 +21,23 @@ As this is an Astro project, it should adhere to the following Astro best practi
 ```
 /
 ├── public/
+│   └── imgs
 │   └── favicon.ico
 ├── src/
 │   ├── components/
+│   │   └── astro
+│   │   |   └── Description.astro
+│   │   |   └── index.ts
+│   │   └── react
+│   │   |   └── DynamnicTheme.astro
+│   │   |   └── index.ts
+│   ├── layouts/
 │   │   └── Layout.astro
+│   └── pageletes/
+│       └── accessibility
+│       └── icons
 │   └── pages/
+│       └── accessibility
 │       └── index.astro
 └── package.json
 ```
@@ -47,3 +59,4 @@ See [this readme](./readmes/periphery-tech.md) for notes on tech specific to thi
 ## other notes
 
 [CodeSee Diagram](https://app.codesee.io/maps/public/1cb8aa50-346c-11ed-8880-add58adad48c)
+[Design Portal Site Traffic and Analytics](https://cronitor.io/reports/33f96a476d0d28a08bf9672d07a36a9e)
