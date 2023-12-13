@@ -1,7 +1,7 @@
 ---
 import { Image } from "@avaya/neo-react";
 
-import { Description, ImageWrapper } from "components";
+import { ImageWrapper } from "components";
 
 import img1 from "./images/design-foundation.svg";
 import img2 from "./images/ui-component-libraries.svg";
@@ -22,10 +22,10 @@ import img3 from "./images/icon-library.svg";
         <a href="/guidelines/overview">Design Foundations</a>
       </h4>
 
-      <Description>
+      <p class="description">
         A UX Design System that helps build consistent and exceptional user
         experiences.
-      </Description>
+      </p>
     </div>
 
     <div class="important-link-container">
@@ -40,9 +40,9 @@ import img3 from "./images/icon-library.svg";
         <a href="/components/accordion">UI Component Libraries</a>
       </h4>
 
-      <Description>
+      <p class="description">
         Code components for all of your most commonly used elements.
-      </Description>
+      </p>
     </div>
 
     <div class="important-link-container">
@@ -57,9 +57,9 @@ import img3 from "./images/icon-library.svg";
         <a href="/icons">Icon Library</a>
       </h4>
 
-      <Description>
+      <p class="description">
         An extensive collection of icons for almost every occasion.
-      </Description>
+      </p>
     </div>
   </div>
 </div>
@@ -95,7 +95,10 @@ import img3 from "./images/icon-library.svg";
           margin-bottom: 0.5rem;
         }
 
-        > p.description {
+        p.description {
+          font-size: 1rem;
+          line-height: 1.5rem;
+          margin-bottom: 2rem;
           color: var(--neo-color-base-1000);
         }
       }
