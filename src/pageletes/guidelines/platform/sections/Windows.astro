@@ -9,7 +9,7 @@ import {
 import { topics } from "../static";
 const { id, title } = topics.windows;
 
-import { Link } from "@avaya/neo-react";
+import { ExternalLink } from "@avaya/neo-react";
 
 import TwoColumnLayout from "./sections-frame-layout/TwoColumnLayout.astro";
 import Icons from "./sections-frame-layout/windows/frame-1/Icons.astro";
@@ -26,12 +26,12 @@ import TouchTargets from "./sections-frame-layout/windows/frame-3/TouchTargets.a
   <Description>
     Windows is a desktop operating system created by Microsoft that is used by
     many computer systems. You can find an overview of their best practices on
-    the <Link
+    the <ExternalLink
       href="https://learn.microsoft.com/en-us/windows/apps/get-started/best-practices"
       inline
     >
       Microsoft Build site
-    </Link>.
+    </ExternalLink>.
   </Description>
 
   <SubHeader id="user-interface" marginTop="64px">User Interface</SubHeader>

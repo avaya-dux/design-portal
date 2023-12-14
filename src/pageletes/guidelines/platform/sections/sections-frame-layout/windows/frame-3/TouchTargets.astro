@@ -3,7 +3,7 @@ import SectionLayout from "../../SectionLayout.astro";
 
 import graphic from "../../../../imgs/interactions-4.svg";
 
-import { Link } from "@avaya/neo-react";
+import { ExternalLink } from "@avaya/neo-react";
 import { Description } from "components";
 
 const altText = "Graphic representing interactive control widths and heights";
@@ -14,11 +14,11 @@ const type = "Touch Targets";
   <Description slot="description">
     Interactive controls, such as buttons, should have a minimum 40px x 40px
     tappable area making them easy to see and use, and to meet
-    <Link
+    <ExternalLink
       href="https://learn.microsoft.com/en-us/windows/apps/design/input/guidelines-for-targeting"
       inline
     >
       Window's specifications
-    </Link>.
+    </ExternalLink>.
   </Description>
 </SectionLayout>

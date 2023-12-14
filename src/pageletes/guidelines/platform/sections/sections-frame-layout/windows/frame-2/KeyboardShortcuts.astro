@@ -3,7 +3,7 @@ import SectionLayout from "../../SectionLayout.astro";
 
 import graphic from "../../../../imgs/interactions-5.svg";
 
-import { Link } from "@avaya/neo-react";
+import { Link, ExternalLink } from "@avaya/neo-react";
 import { Description, InfoListItem } from "components";
 
 const altText = "Graphic representing keyboard keys";
@@ -13,24 +13,24 @@ const type = "Keyboard Shortcuts";
 <SectionLayout graphicIcon={graphic.src} graphicAltText={altText} type={type}>
   <Description slot="description">
     Shortcuts created for Windows applications must not conflict with existing
-    browser and desktop shortcuts. Refer to the <Link
+    browser and desktop shortcuts. Refer to the <ExternalLink
       href="https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec"
       inline
     >
       Microsoft documentation
-    </Link>
-     as well as <Link
+    </ExternalLink>
+     as well as <ExternalLink
       href="https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1"
       inline
     >
       Narrator
-    </Link>, <Link
+    </ExternalLink>, <ExternalLink
       href="https://www.freedomscientific.com/products/software/jaws/"
       inline
     >
       JAWS
-    </Link>
-     and <Link href="https://www.nvaccess.org/" inline>NVDA</Link> sites for the
+    </ExternalLink>
+     and <ExternalLink href="https://www.nvaccess.org/" inline>NVDA</ExternalLink> sites for the
     complete list.
   </Description>
   <InfoListItem>

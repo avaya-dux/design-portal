@@ -3,7 +3,7 @@ import SectionLayout from "../../SectionLayout.astro";
 
 import graphic from "../../../../imgs/interactions-5.svg";
 
-import { Link } from "@avaya/neo-react";
+import { Link, ExternalLink } from "@avaya/neo-react";
 import { Description, InfoListItem } from "components";
 
 const altText = "Graphic representing keyboard keys";
@@ -13,18 +13,18 @@ const type = "Keyboard Shortcuts";
 <SectionLayout graphicIcon={graphic.src} graphicAltText={altText} type={type}>
   <Description slot="description">
     Shortcuts created for MacOS applications must not conflict with existing OS
-    or screen reader shortcuts. Refer to the <Link
+    or screen reader shortcuts. Refer to the <ExternalLink
       href="https://support.apple.com/en-us/HT201236"
       inline
     >
-      general Apple
-    </Link>
-     and <Link
+      Apple keyboard shortcuts
+    </ExternalLink>
+     and <ExternalLink
       href="https://support.apple.com/guide/voiceover/welcome/mac"
       inline
     >
       Voiceover documentation
-    </Link> for the complete list.
+    </ExternalLink> for the complete list.
   </Description>
   <InfoListItem>
     <Link href="/accessibility/keyboard-interactions">
