@@ -43,6 +43,6 @@ export const topics: TopicsDict<TooltipTopicNames> = {
   relatedComponents: {
     order: 6,
     id: "tooltip-related-components",
-    title: "Related Components",
+    title: "Related Content",
   },
 };
