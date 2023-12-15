@@ -17,9 +17,11 @@ import img1 from "./images/build-together.svg";
       </Description>
     </div>
 
-    <LinkButton href="https://careers.avaya.com/" external>
-      Join Our Team
-    </LinkButton>
+    <div class="build-together-buttons">
+      <LinkButton href="https://careers.avaya.com/" external>
+        Join Our Team
+      </LinkButton>
+    </div>
   </div>
 
   <Image
@@ -38,34 +40,39 @@ import img1 from "./images/build-together.svg";
       flex-direction: column-reverse;
       gap: 5rem;
     }
+  }
 
-    .build-together-left-section {
+  .build-together-container > img {
+    max-width: 30rem;
+    margin-top: -10rem;
+    @media screen and (max-width: 831px) {
       max-width: 25rem;
-
-      .red-left-border-section {
-        border-left: 5px solid var(--neo-color-red-500);
-        padding-left: 2rem;
-        @media (prefers-color-scheme: dark) {
-          border-color: var(--neo-color-red-400);
-        }
-
-        h2.neo-bold {
-          margin-bottom: 1rem;
-        }
-      }
-
-      > a {
-        margin-left: 2.4rem;
-      }
+      margin-top: 0;
     }
+  }
 
-    > img {
-      max-width: 30rem;
-      margin-top: -10rem;
-      @media screen and (max-width: 831px) {
-        max-width: 25rem;
-        margin-top: 0;
-      }
+  .build-together-container .build-together-left-section {
+    max-width: 25rem;
+  }
+
+  .build-together-container .build-together-buttons {
+    margin-left: 2.4rem;
+  }
+
+  .build-together-container
+    .build-together-left-section
+    .red-left-border-section {
+    border-left: 5px solid var(--neo-color-red-500);
+    padding-left: 2rem;
+    @media (prefers-color-scheme: dark) {
+      border-color: var(--neo-color-red-400);
     }
+  }
+
+  .build-together-container
+    .build-together-left-section
+    .red-left-border-section
+    h2.neo-bold {
+    margin-bottom: 1rem;
   }
 </style>
