@@ -1,0 +1,95 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import { LinkButton } from "components";
+
+import img1 from "./images/inclusive-design.svg";
+---
+
+<div class="inclusive-design-container">
+  <Image
+    src={img1.src}
+    alt="image of a four stick figures, one with glasses, one in a wheelchair, one with a hearing aid, one with a cane"
+  />
+
+  <div class="inclusive-design-content">
+    <div class="white-border-section">
+      <h2 class="neo-bold">Inclusive Design</h2>
+
+      <p class="description">
+        Building innovative frameworks that reach the widest possible audience,
+        regardless of culture, background and physical or cognitive ability.
+        Explore the possibilities to find the source of great experience and
+        success for all users.
+      </p>
+    </div>
+
+    <div class="inclusive-design-buttons">
+      <LinkButton href="/accessibility/principles" variant="secondary-light">
+        Accessibility Guidelines
+      </LinkButton>
+    </div>
+  </div>
+</div>
+
+<style>
+  .inclusive-design-container {
+    background-color: var(--neo-color-teal-500);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 2rem;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 0 100px 0;
+    gap: 1rem;
+    @media screen and (max-width: 831px) {
+      flex-direction: column;
+      gap: 5rem;
+    }
+  }
+
+  .inclusive-design-container > img {
+    max-width: 30rem;
+    @media screen and (max-width: 831px) {
+      max-width: 25rem;
+    }
+  }
+
+  .inclusive-design-container .inclusive-design-content {
+    max-width: 30rem;
+  }
+
+  .inclusive-design-container .inclusive-design-content .white-border-section {
+    color: var(--neo-color-base-0);
+    border-left: 5px solid var(--neo-color-base-0);
+    padding-left: 2rem;
+  }
+
+  .inclusive-design-container
+    .inclusive-design-content
+    .white-border-section
+    h2,
+  .inclusive-design-container
+    .inclusive-design-content
+    .white-border-section
+    p.description {
+    color: var(--neo-color-base-0);
+    margin-bottom: 2rem;
+  }
+
+  .inclusive-design-container
+    .inclusive-design-content
+    .white-border-section
+    h2.neo-bold {
+    margin-bottom: 1rem;
+  }
+
+  .inclusive-design-container
+    .inclusive-design-content
+    .inclusive-design-buttons {
+    padding-left: 2.4rem;
+  }
+</style>

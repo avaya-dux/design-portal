@@ -101,7 +101,10 @@ switch (pathname.split("/")[1]) {
               </main>
             </DynamicTheme>
           ) : (
-            <main id="main-content">
+            <main
+              id="main-content"
+              class:list={[pathname === "/" && "ishomepage"]}
+            >
               <slot />
             </main>
           )
@@ -124,6 +127,7 @@ switch (pathname.split("/")[1]) {
       }
 
       body {
+        margin: 0;
         font-size: 1rem;
         color: var(--global-font-color);
       }
@@ -180,10 +184,6 @@ switch (pathname.split("/")[1]) {
   </body>
 
   <style>
-    body {
-      margin: 0;
-    }
-
     body main {
       --body-main-margin-top: 3rem;
 
@@ -199,7 +199,7 @@ switch (pathname.split("/")[1]) {
       margin: auto;
       margin-top: var(--body-main-margin-top);
     }
-    body main:has(.homepage-intro-container) {
+    body main.ishomepage {
       --body-main-margin-top: 0;
 
       width: 100%;
