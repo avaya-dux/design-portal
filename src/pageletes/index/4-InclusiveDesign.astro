@@ -49,35 +49,46 @@ import img1 from "./images/inclusive-design.svg";
       flex-direction: column;
       gap: 5rem;
     }
+  }
 
-    > img {
-      max-width: 30rem;
-      @media screen and (max-width: 831px) {
-        max-width: 25rem;
-      }
+  .inclusive-design-container > img {
+    max-width: 30rem;
+    @media screen and (max-width: 831px) {
+      max-width: 25rem;
     }
+  }
 
-    .inclusive-design-content {
-      max-width: 30rem;
+  .inclusive-design-container .inclusive-design-content {
+    max-width: 30rem;
+  }
 
-      .white-border-section {
-        color: var(--neo-color-base-0);
-        border-left: 5px solid var(--neo-color-base-0);
-        padding-left: 2rem;
+  .inclusive-design-container .inclusive-design-content .white-border-section {
+    color: var(--neo-color-base-0);
+    border-left: 5px solid var(--neo-color-base-0);
+    padding-left: 2rem;
+  }
 
-        h2,
-        p {
-          color: var(--neo-color-base-0);
-        }
+  .inclusive-design-container
+    .inclusive-design-content
+    .white-border-section
+    h2,
+  .inclusive-design-container
+    .inclusive-design-content
+    .white-border-section
+    p {
+    color: var(--neo-color-base-0);
+  }
 
-        h2.neo-bold {
-          margin-bottom: 1rem;
-        }
-      }
+  .inclusive-design-container
+    .inclusive-design-content
+    .white-border-section
+    h2.neo-bold {
+    margin-bottom: 1rem;
+  }
 
-      .inclusive-design-buttons {
-        padding-left: 2.4rem;
-      }
-    }
+  .inclusive-design-container
+    .inclusive-design-content
+    .inclusive-design-buttons {
+    padding-left: 2.4rem;
   }
 </style>
