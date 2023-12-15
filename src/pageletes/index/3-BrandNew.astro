@@ -3,7 +3,8 @@ import { Image } from "@avaya/neo-react";
 
 import { Description, LinkButton } from "components";
 
-import img1 from "./images/brand-new.svg";
+import img1 from "./images/brand-new-light.svg";
+import img2 from "./images/brand-new-dark.svg";
 ---
 
 <div class="brand-new-container">
@@ -22,10 +23,13 @@ import img1 from "./images/brand-new.svg";
     </div>
   </div>
 
-  <Image
-    src={img1.src}
-    alt="image of a phone with a video call on the screen"
-  />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset={img2.src} />
+    <Image
+      alt="image of a phone with a video call on the screen"
+      src={img1.src}
+    />
+  </picture>
 </div>
 
 <style>
