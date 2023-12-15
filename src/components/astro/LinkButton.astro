@@ -4,7 +4,7 @@ import clsx from "clsx";
 export interface Props {
   href: string;
   external?: boolean;
-  variant?: "primary" | "secondary" | "tertiary";
+  variant?: "primary" | "secondary" | "secondary-light" | "tertiary";
 }
 
 const { href, external = false, variant = "primary" } = Astro.props as Props;
@@ -15,6 +15,8 @@ const { href, external = false, variant = "primary" } = Astro.props as Props;
     "neo-nav-link-btn neo-btn",
     variant === "primary" && "neo-btn-primary neo-btn-primary--default",
     variant === "secondary" && "neo-btn-secondary neo-btn-secondary--default",
+    variant === "secondary-light" &&
+      "neo-btn-secondary neo-btn-secondary--light neo-btn-secondary--default",
     variant === "tertiary" && "neo-btn-tertiary neo-btn-tertiary--default",
   )}
   href={href}
@@ -33,5 +35,28 @@ const { href, external = false, variant = "primary" } = Astro.props as Props;
   }
   a.neo-nav-link-btn.neo-btn.neo-btn-tertiary.neo-btn-tertiary--default:hover {
     color: var(--button-hover-color-default-info);
+  }
+
+  a.neo-nav-link-btn.neo-btn-secondary--light {
+    color: var(--neo-color-blue-500);
+    background-color: var(--neo-color-base-100);
+    background-image: linear-gradient(
+      50deg,
+      var(--neo-color-base-100) 0%,
+      var(--neo-color-base-100) 50%,
+      var(--neo-color-base-0) 50%,
+      var(--neo-color-base-0) 100%
+    );
+  }
+  a.neo-nav-link-btn.neo-btn-secondary--light:hover {
+    color: var(--neo-color-blue-600);
+    background-color: var(--neo-color-base-100);
+    background-image: linear-gradient(
+      50deg,
+      var(--neo-color-base-100) 0%,
+      var(--neo-color-base-100) 50%,
+      var(--neo-color-base-0) 50%,
+      var(--neo-color-base-0) 100%
+    );
   }
 </style>
