@@ -25,16 +25,13 @@ const { href, external = false, variant = "primary" } = Astro.props as Props;
 </a>
 
 <style>
-  a.neo-nav-link-btn.neo-btn {
-    &:hover {
-      text-decoration: none;
-    }
-
-    &.neo-btn-primary.neo-btn-primary--default:hover {
-      color: var(--button-text-color);
-    }
-    &.neo-btn-tertiary.neo-btn-tertiary--default:hover {
-      color: var(--button-hover-color-default-info);
-    }
+  a.neo-nav-link-btn.neo-btn:hover {
+    text-decoration: none;
+  }
+  a.neo-nav-link-btn.neo-btn.neo-btn-primary.neo-btn-primary--default:hover {
+    color: var(--button-text-color);
+  }
+  a.neo-nav-link-btn.neo-btn.neo-btn-tertiary.neo-btn-tertiary--default:hover {
+    color: var(--button-hover-color-default-info);
   }
 </style>
