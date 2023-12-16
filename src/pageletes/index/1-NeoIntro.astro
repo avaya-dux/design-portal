@@ -1,5 +1,5 @@
 ---
-import { Description, LinkButton, PageTitle } from "components/astro";
+import { LinkButton } from "components/astro";
 
 import backgroundImg from "./images/intro-background.svg";
 const background = `url(${backgroundImg.src})`;
@@ -9,16 +9,16 @@ const backgroundCondensed = `url(${backgroundCondensedImg.src})`;
 ---
 
 <div class="homepage-intro-container">
-  <PageTitle>Welcome to Neo</PageTitle>
+  <h1 class="neo-bold">Welcome to Neo</h1>
 
   <h2>Avaya's design system</h2>
 
-  <Description>
+  <p class="description">
     Neo is a library of flexible guidelines and components built upon our core
     design principles, ready to be assembled into any digital products.
-  </Description>
+  </p>
 
-  <LinkButton href="/docs/setup" variant="secondary">
+  <LinkButton href="/docs/setup" variant="secondary-light">
     Getting Started
   </LinkButton>
 </div>
@@ -33,15 +33,28 @@ const backgroundCondensed = `url(${backgroundCondensedImg.src})`;
     flex-direction: column;
     align-items: center;
     padding-top: 5rem;
-    gap: 1rem;
     text-align: center;
+  }
 
-    > h1,
-    h2,
-    p {
-      max-width: 35rem;
-      color: var(--neo-color-base-0);
-    }
+  .homepage-intro-container p.description {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: 8rem;
+  }
+
+  .homepage-intro-container > h1,
+  .homepage-intro-container > h2,
+  .homepage-intro-container > p {
+    max-width: 35rem;
+    color: var(--neo-color-base-0);
+  }
+
+  .homepage-intro-container > h1 {
+    margin-bottom: 0;
+    line-height: 3rem;
+  }
+  .homepage-intro-container > h2 {
+    margin-bottom: 2rem;
   }
 
   @media (max-width: 768px) {
