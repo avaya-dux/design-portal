@@ -43,7 +43,7 @@ export const SiteHeader = ({
   );
 
   const isOpen = useStore(isLeftNavigationOpen);
-    const { width } = useWindowSize();
+  const { width } = useWindowSize();
   const shouldShowHomepageMobileMenu =
     pathname === "/" && width < breakpoints.mobileMax;
 
