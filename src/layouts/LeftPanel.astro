@@ -8,8 +8,9 @@ import { IconFilters, iconCategories } from "pageletes/icons";
 export interface Props {
   allPages: SitePages;
   leftNavPages: PageAstroInstance[];
+  isHomePage: boolean;
 }
-const { allPages, leftNavPages } = Astro.props;
+const { allPages, leftNavPages, isHomePage } = Astro.props;
 const { pathname } = Astro.url;
 
 // HACK: logic specific to the Icons page should exist in Icons page
@@ -18,7 +19,7 @@ const isIconPage = pathname.includes("icons");
 
 {isIconPage && <IconFilters categories={iconCategories} client:load />}
 {
-  leftNavPages.length > 0 && (
+  (leftNavPages.length > 0 || isHomePage) && (
     <LeftNavigation
       allPages={allPages}
       leftNavPages={leftNavPages}
