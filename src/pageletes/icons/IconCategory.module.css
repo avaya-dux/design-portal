@@ -49,6 +49,10 @@
   align-items: center;
 }
 
+.icon-category__icons__card p {
+  text-align: center;
+}
+
 .icon-category__no-icons {
   display: block;
   color: var(--button-color-alert);
