@@ -4,7 +4,7 @@ export interface Props {
   fontSize?: string;
 }
 
-const { type = "none", fontSize = "14px" } = Astro.props as Props;
+const { type = "none", fontSize = "1rem" } = Astro.props as Props;
 const marginLeft = type === "none" ? 0 : "1rem";
 ---
 

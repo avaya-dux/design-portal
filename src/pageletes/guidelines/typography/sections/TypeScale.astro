@@ -1,5 +1,10 @@
 ---
-import { Description, PageleteSection, SectionHeader } from "components";
+import {
+  Description,
+  ExternalLink,
+  PageleteSection,
+  SectionHeader,
+} from "components";
 
 import { topics } from "../static";
 import { TypeScaleTable } from "./TypeScaleTable";
@@ -12,10 +17,15 @@ import { TypeScaleTable } from "./TypeScaleTable";
 
   <Description>
     Neo uses a different font depending on the language. For Avaya’s officially
-    supported languages, Neo uses the Noto Sans JP font provided by Google. This
-    ensures that the font is legible to all users, and provides a character set
-    for various languages for free. Noto Sans JP has been tested for use in
-    multiple languages, and satisfies the WCAG regulations for accessibility.
+    supported languages, Neo uses the <ExternalLink
+      inline
+      href="https://fonts.google.com/noto/specimen/Noto+Sans"
+     >
+      Noto Sans font
+    </ExternalLink> provided by Google. This ensures that the font is legible
+    to all users, and provides a character set for various languages for free.
+    Noto Sans has been tested for use in multiple languages, and satisfies the
+    WCAG regulations for accessibility.
   </Description>
 
   <Description>

@@ -4,12 +4,12 @@ import {
   PageleteSection,
   SectionHeader,
   SubHeader,
+  ExternalLink,
 } from "components";
 
 import { topics } from "../static";
 const { id, title } = topics.android;
 
-import { Link } from "@avaya/neo-react";
 
 import TwoColumnLayout from "./sections-frame-layout/TwoColumnLayout.astro";
 import Icons from "./sections-frame-layout/android/frame-1/Icons.astro";
@@ -26,12 +26,12 @@ import Gestures from "./sections-frame-layout/android/frame-2/Gestures.astro";
   <Description>
     Android is a mobile operating system created by Google. It is used in many
     devices, such as phones and tablets. An overview of their best practices can
-    be found at the <Link
+    be found at the <ExternalLink
       href="https://developer.android.com/topic/security/best-practices"
       inline
     >
       Android Developers site
-    </Link>.
+    </ExternalLink>.
   </Description>
 
   <SubHeader id="user-interface" marginTop="64px">User Interface</SubHeader>

@@ -44,7 +44,7 @@ export const TypeScaleTable = () => {
       },
       {
         id: "3",
-        type: "H3 - Noto Sans, 26px (Regular))",
+        type: "H3 - Noto Sans, 26px (Regular)",
         example: <h3>{TypeScaleTranslations[language]}</h3>,
       },
       {
@@ -61,7 +61,7 @@ export const TypeScaleTable = () => {
       },
       {
         id: "6",
-        type: "Body - Noto Sans, 14px (Regular, Italic, Underline and Semibold and Uppercase)",
+        type: "Body - Noto Sans, 14px (Regular, Italic, Underline, Semibold and Uppercase)",
         example: <p>{TypeScaleTranslations[language]}</p>,
       },
       {
