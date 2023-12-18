@@ -19,10 +19,10 @@ const behaviorDoAltText =
   "Use the message state that best fits the content. For example, alert for errors. Learn more in color guidelines.";
 const behaviorDontAltText = "Do not mix the states to achieve specific colors.";
 
-import infoImg from "../imgs/notification-behavior-color-1.svg";
-import successImg from "../imgs/notification-behavior-color-2.svg";
-import alertImg from "../imgs/notification-behavior-color-3.svg";
-import warningImg from "../imgs/notification-behavior-color-4.svg";
+import alertImg from "../imgs/notification-behavior-color-1.svg";
+import warningImg from "../imgs/notification-behavior-color-2.svg";
+import successImg from "../imgs/notification-behavior-color-3.svg";
+import infoImg from "../imgs/notification-behavior-color-4.svg";
 import eventImg from "../imgs/notification-behavior-color-5.svg";
 ---
 
@@ -35,8 +35,8 @@ import eventImg from "../imgs/notification-behavior-color-5.svg";
   </Description>
 
   <ColumnLayout bkgColor="white" numOfColumns={1} marginBottom="0">
-    <StackedLayout label="Information">
-      <Image src={infoImg.src} alt="Standalone Default Link" />
+    <StackedLayout label="Alert">
+      <Image src={alertImg.src} alt="Standalone Default Link" />
     </StackedLayout>
   </ColumnLayout>
 
@@ -47,12 +47,12 @@ import eventImg from "../imgs/notification-behavior-color-5.svg";
     marginBottom="0"
     showTopBorder={false}
   >
-    <StackedLayout label="Success">
-      <Image src={successImg.src} alt="Standalone Default Link" />
+    <StackedLayout label="Warning">
+      <Image src={warningImg.src} alt="Standalone Default Link" />
     </StackedLayout>
 
-    <StackedLayout label="Alert">
-      <Image src={alertImg.src} alt="Standalone Hover Link" />
+    <StackedLayout label="Success">
+      <Image src={successImg.src} alt="Standalone Hover Link" />
     </StackedLayout>
   </ColumnLayout>
 
@@ -62,8 +62,8 @@ import eventImg from "../imgs/notification-behavior-color-5.svg";
     marginTop="0"
     showTopBorder={false}
   >
-    <StackedLayout label="Warning">
-      <Image src={warningImg.src} alt="Standalone Default Link" />
+    <StackedLayout label="Information">
+      <Image src={infoImg.src} alt="Standalone Default Link" />
     </StackedLayout>
 
     <StackedLayout label="Event">
@@ -72,11 +72,25 @@ import eventImg from "../imgs/notification-behavior-color-5.svg";
   </ColumnLayout>
 
   <InfoList type="disc">
-    <InfoListItem label="Information (Blue)">Description</InfoListItem>
-    <InfoListItem label="Success (Green)">Description</InfoListItem>
-    <InfoListItem label="Alert (Red)">Description</InfoListItem>
-    <InfoListItem label="Warning (Orange)">Description</InfoListItem>
-    <InfoListItem label="Event (Gray)">Description</InfoListItem>
+    <InfoListItem label="Alert (Red)">
+      Whenever the notification message is severe and likely caused the process
+      to fail.
+    </InfoListItem>
+    <InfoListItem label="Warning (Orange)">
+      When an operation has encountered a problem and the process may not have
+      been completed successfully.
+    </InfoListItem>
+    <InfoListItem label="Success (Green)">
+      Used to show that an operation was completed without any issues or errors.
+    </InfoListItem>
+    <InfoListItem label="Information (Blue)">
+      Provides feedback on the current state of something, or about what is
+      happening.
+    </InfoListItem>
+    <InfoListItem label="Event (Gray)">
+      When the notification do not conform to one of the other types (Info,
+      Success, Warning, Alert), use the Event type.
+    </InfoListItem>
   </InfoList>
 
   <DoAndDont>

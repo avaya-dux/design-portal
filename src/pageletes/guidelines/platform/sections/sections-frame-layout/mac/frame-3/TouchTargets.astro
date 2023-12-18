@@ -3,8 +3,7 @@ import SectionLayout from "../../SectionLayout.astro";
 
 import graphic from "../../../../imgs/interactions-4.svg";
 
-import { Link } from "@avaya/neo-react";
-import { Description } from "components";
+import { Description, ExternalLink } from "components";
 
 const altText = "Graphic representing interactive control widths and heights";
 const type = "Touch Targets";
@@ -14,11 +13,11 @@ const type = "Touch Targets";
   <Description slot="description">
     Interactive controls, such as buttons, should have a minimum 44pt x 44pt
     tappable area making them easy to see and use, and to meet
-    <Link
+    <ExternalLink
       href="https://developer.apple.com/design/human-interface-guidelines/accessibility"
       inline
     >
       Apple's specifications
-    </Link>.
+    </ExternalLink>.
   </Description>
 </SectionLayout>

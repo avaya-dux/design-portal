@@ -4,12 +4,11 @@ import {
   PageleteSection,
   SectionHeader,
   SubHeader,
+  ExternalLink,
 } from "components";
 
 import { topics } from "../static";
 const { id, title } = topics.mac;
-
-import { Link } from "@avaya/neo-react";
 
 import TwoColumnLayout from "./sections-frame-layout/TwoColumnLayout.astro";
 import Icons from "./sections-frame-layout/mac/frame-1/Icons.astro";
@@ -26,12 +25,12 @@ import TouchTargets from "./sections-frame-layout/mac/frame-3/TouchTargets.astro
   <Description>
     MacOS is a desktop operating system created by Apple that is used on their
     computer systems. An overview of Apple's best practices can be found in
-    their <Link
+    their <ExternalLink
       href="https://developer.apple.com/design/human-interface-guidelines"
       inline
     >
       Human Interface Guidelines
-    </Link>.
+    </ExternalLink>.
   </Description>
 
   <SubHeader id="user-interface" marginTop="64px">User Interface</SubHeader>

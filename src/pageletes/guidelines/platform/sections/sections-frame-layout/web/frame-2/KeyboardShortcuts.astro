@@ -4,7 +4,7 @@ import SectionLayout from "../../SectionLayout.astro";
 import graphic from "../../../../imgs/interactions-5.svg";
 
 import { Link } from "@avaya/neo-react";
-import { InfoListItem, Description } from "components";
+import { InfoListItem, Description, ExternalLink } from "components";
 
 const altText = "Graphic representing keyboard keys";
 const type = "Keyboard Shortcuts";
@@ -48,13 +48,13 @@ const type = "Keyboard Shortcuts";
     </Link>
   </InfoListItem>
   <InfoListItem>
-    <Link
+    <ExternalLink
       href="https://support.microsoft.com/en-us/microsoft-edge/keyboard-shortcuts-in-microsoft-edge-50d3edab-30d9-c7e4-21ce-37fe2713cfad"
       target="_blank"
       rel="noopener noreferrer"
     >
       Microsoft Edge shortcuts
-    </Link>
+    </ExternalLink>
   </InfoListItem>
   <InfoListItem>
     <Link

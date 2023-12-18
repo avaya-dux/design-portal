@@ -75,7 +75,7 @@ export const PlaygroundImplementation = () => {
             >
               <Radio value="sm">Small</Radio>
               <Radio value="md">Medium</Radio>
-              <Radio value="lg">large</Radio>
+              <Radio value="lg">Large</Radio>
             </RadioGroup>
           </Playground.OptionsSection>
 
