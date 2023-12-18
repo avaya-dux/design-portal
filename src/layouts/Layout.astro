@@ -15,8 +15,6 @@ import { getPagesInOrder } from "helpers";
 
 import "@avaya/neo-react/avaya-neo-react.css";
 
-import { breakpoints } from "components/react/utils";
-
 const userAgentString = Astro.request.headers.get("user-agent");
 
 const userAgent = userAgentString?.toLowerCase().includes("mac")
@@ -28,7 +26,6 @@ const userAgent = userAgentString?.toLowerCase().includes("mac")
 const { title } = Astro.props as Props;
 
 const { pathname } = Astro.url;
-console.log({pathname});
 
 const pages = getPagesInOrder(
   (await Astro.glob<PageAstroInstance>("../**/*.astro"))
@@ -41,10 +38,7 @@ const pages = getPagesInOrder(
     })),
 );
 
-console.log("pages ->", pages);
-
 let leftNavPages: PageAstroInstance[] = [];
-let isHomePage = false;
 switch (pathname.split("/")[1]) {
   case "accessibility":
     leftNavPages = pages.accessibility;
@@ -62,11 +56,7 @@ switch (pathname.split("/")[1]) {
     leftNavPages = pages.guidelines;
     break;
 
-  case "":
-    isHomePage = true;
-    break;
-
-  default: // icons
+  default: // icons and homepage
     break;
 }
 ---
@@ -99,12 +89,12 @@ switch (pathname.split("/")[1]) {
         pathname={pathname}
         pages={pages}
         userAgent={userAgent}
-        showToggleBtn={leftNavPages.length > 0 || (isHomePage)}
+        showToggleBtn={leftNavPages.length > 0}
         client:load
       />
 
       <div class="main__wrapper">
-        <LeftPanel allPages={pages} leftNavPages={leftNavPages} isHomePage={isHomePage} />
+        <LeftPanel allPages={pages} leftNavPages={leftNavPages} isHomePage={pathname === "/"} />
         {
           pathname.endsWith("icons") ? (
             <DynamicTheme client:only="react">
