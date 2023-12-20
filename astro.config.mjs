@@ -9,9 +9,7 @@ import { defineConfig } from "astro/config"
 
 export default defineConfig({
   site: "https://design.avayacloud.com/",
-  adapter: netlify({
-    cacheOnDemandPages: true,
-  }),
+  adapter: netlify(),
   output: "server",
   integrations: [react(), svelte(), vue(), prefetch()],
   vite: {
