@@ -90,6 +90,7 @@ export const LeftNavigation = ({
         className={clsx(
           "left-navigation",
           isOpen ? "left-navigation--active" : "left-navigation--hidden",
+          currentUrl === "/" && "left-navigation-homepage"
         )}
         id="left-navigation"
       >

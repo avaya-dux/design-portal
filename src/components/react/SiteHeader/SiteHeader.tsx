@@ -6,6 +6,9 @@ import {
   leftNavToggleButtonRef,
 } from "components/react/utils/layoutState";
 
+import { useWindowSize } from "../utils";
+import { breakpoints } from "components/react/utils/constants";
+
 import type { SitePages } from "helpers/types";
 
 import { TopNavSearch } from "./helpers";
@@ -40,6 +43,9 @@ export const SiteHeader = ({
   );
 
   const isOpen = useStore(isLeftNavigationOpen);
+  const { width } = useWindowSize();
+  const shouldShowHomepageMobileMenu =
+    pathname === "/" && width < breakpoints.mobileMax;
 
   const toggleButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -66,7 +72,7 @@ export const SiteHeader = ({
         </TopNav.SkipNav>
       }
       menuToggleBtn={
-        showToggleBtn ? (
+        showToggleBtn || shouldShowHomepageMobileMenu ? (
           <TopNav.IconButton
             id="topnav-menu-toggle"
             aria-label={

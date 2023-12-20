@@ -82,7 +82,6 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
   }
   nav.neo-navbar {
     overflow: visible;
-    margin-bottom: 3rem;
   }
   nav.neo-navbar .neo-nav--right {
     display: flex;

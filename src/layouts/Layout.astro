@@ -54,7 +54,7 @@ switch (pathname.split("/")[1]) {
     leftNavPages = pages.guidelines;
     break;
 
-  default:
+  default: // icons and homepage
     break;
 }
 ---
@@ -92,7 +92,11 @@ switch (pathname.split("/")[1]) {
       />
 
       <div class="main__wrapper">
-        <LeftPanel allPages={pages} leftNavPages={leftNavPages} />
+        <LeftPanel
+          allPages={pages}
+          leftNavPages={leftNavPages}
+          isHomePage={pathname === "/"}
+        />
         {
           pathname.endsWith("icons") ? (
             <DynamicTheme client:only="react">
