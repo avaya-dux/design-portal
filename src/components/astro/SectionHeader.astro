@@ -1,19 +1,26 @@
 ---
 import { CopyToClipboard } from "components/react";
+import { Button } from "@avaya/neo-react";
 
 export interface Props {
   id: string;
+  link?: string;
 }
 
-const { id } = Astro.props as Props;
+const { id, link } = Astro.props as Props;
 const { url } = Astro.request;
 
 const fullSectionURL = `${url}#${id}`;
+
+const handleLinkClick = ()=> {
+  link && Astro.redirect(link); // I'm not sure redirect() is the right api to use here.
+}
 ---
 
 <div class="section-header__wrapper">
   <h2 class="neo-bold" id={id}><slot /></h2>
   <CopyToClipboard text={fullSectionURL} client:load />
+  {link && <Button onClick={handleLinkClick}>Go to component page</Button>}
 </div>
 
 <style>

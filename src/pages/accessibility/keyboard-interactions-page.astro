@@ -1,4 +1,13 @@
 ---
+export const title = "Keyboard Interactions";
+export const keywords = "keyboard ";
+export const order = 5;
+
+import { Layout } from "layouts";
+
+import {
+  Intro,
+} from "pageletes/accessibility/keyboard-interactions";
 import {
   Description,
   InfoTable,
@@ -10,29 +19,18 @@ import {
   PageleteSection,
   SectionHeader,
 } from "components/astro";
-import { topics } from "../static";
-
-export interface Props {
-  link?: string;
-}
-
-const { link } = Astro.props as Props;
-
 ---
 
-<PageleteSection>
-  <SectionHeader link={link} id={topics.keyboard.id}>{topics.keyboard.title}</SectionHeader>
 
-  <Description>
-    Accessibility requires that each item on the screen is reachable using the
-    keyboard alone. The mouse is not always an option for some users.
-  </Description>
+<Layout title="Principles">
+  <Intro />
 
-  <Description>
-    Keyboard navigation employs the following shortcuts.
-  </Description>
+  <!-- TODO: Modify SectionHeader component that renders Header and button that can be reused in all KeyboardInteraction sections.
+  Perhaps use some conditional rendering for the header title?
 
-  <InfoTable>
+  TODO: Refactor all KeyboarInteraction sections in pageletes so that the InfoTable sections can be shared,
+  thus avoiding to duplicate code here -->
+   <InfoTable>
     <InfoTableHead>
       <InfoTableRow>
         <InfoTableCellHead>Keystrokes</InfoTableCellHead>
@@ -61,4 +59,4 @@ const { link } = Astro.props as Props;
       </InfoTableRow>
     </InfoTableBody>
   </InfoTable>
-</PageleteSection>
+</Layout>
