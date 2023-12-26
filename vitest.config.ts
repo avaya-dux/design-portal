@@ -9,6 +9,16 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: "./src/test/setup.ts",
     coverage: {
+      include: ["src/**/*.{ts,tsx}"],
+      exclude: [
+        "src/index.ts",
+        "src/components/index.ts",
+        "src/layouts/index.ts",
+        "src/components/astro/**",
+        "src/pageletes/**",
+        "**/test/**",
+        "**/*.d.ts",
+      ],
       reporter: ["text", "json", "json-summary", "html", "lcov"],
     },
   },
