@@ -1,5 +1,9 @@
 ---
 import {
+  DropdownKeyboardInteractions,
+} from "pageletes/accessibility/keyboard-interactions";
+
+import {
   Description,
   InfoTable,
   InfoTableHead,
@@ -32,6 +36,8 @@ const { link } = Astro.props as Props;
     Keyboard navigation employs the following shortcuts.
   </Description>
 
+  <DropdownKeyboardInteractions />
+  <!--
   <InfoTable>
     <InfoTableHead>
       <InfoTableRow>
@@ -61,4 +67,5 @@ const { link } = Astro.props as Props;
       </InfoTableRow>
     </InfoTableBody>
   </InfoTable>
+   -->
 </PageleteSection>

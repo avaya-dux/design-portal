@@ -1,0 +1,54 @@
+---
+import {
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableCellHead,
+  InfoTableHead,
+  InfoTableRow,
+} from "components";
+---
+
+<InfoTable>
+  <InfoTableHead>
+    <InfoTableRow>
+      <InfoTableCellHead>Keystrokes</InfoTableCellHead>
+      <InfoTableCellHead>Interaction</InfoTableCellHead>
+    </InfoTableRow>
+  </InfoTableHead>
+  <InfoTableBody>
+    <InfoTableRow>
+      <InfoTableCell>Enter or Space</InfoTableCell>
+      <InfoTableCell>
+        Opens menu or submenu and moves focus into first item
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>← and →</InfoTableCell>
+      <InfoTableCell>
+        Opens or closes a submenu list, and moves focus into first item.
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>↑ and ↓</InfoTableCell>
+      <InfoTableCell>
+        Moves between menu or submenu items.
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>Enter</InfoTableCell>
+      <InfoTableCell>
+        Activates the menu item..
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>Esc</InfoTableCell>
+      <InfoTableCell>Close the menu.</InfoTableCell>
+    </InfoTableRow>
+  </InfoTableBody>
+</InfoTable>
+
