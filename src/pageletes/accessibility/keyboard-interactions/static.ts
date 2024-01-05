@@ -6,7 +6,7 @@ type KeyboardInteractionsTopicNames =
   | "breadcrumb"
   | "checkbox"
   | "chip"
-  | "dropbown"
+  | "dropdown"
   | "header"
   | "list"
   | "modal"
@@ -51,10 +51,10 @@ export const topics: TopicsDict<KeyboardInteractionsTopicNames> = {
     id: `${component}-chip`,
     title: "Chip",
   },
-  dropbown: {
+  dropdown: {
     order: 5,
-    id: `${component}-dropbown`,
-    title: "Dropbown",
+    id: `${component}-dropdown`,
+    title: "Dropdown",
   },
   header: {
     order: 6,
