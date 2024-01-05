@@ -1,16 +1,10 @@
 ---
 import {
-  DropdownKeyboardInteractions,
-} from "pageletes/accessibility/keyboard-interactions";
+  KeyboardInteractionsTable,
+} from ".";
 
 import {
   Description,
-  InfoTable,
-  InfoTableHead,
-  InfoTableCellHead,
-  InfoTableBody,
-  InfoTableCell,
-  InfoTableRow,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -36,36 +30,5 @@ const { link } = Astro.props as Props;
     Keyboard navigation employs the following shortcuts.
   </Description>
 
-  <DropdownKeyboardInteractions />
-  <!--
-  <InfoTable>
-    <InfoTableHead>
-      <InfoTableRow>
-        <InfoTableCellHead>Keystrokes</InfoTableCellHead>
-        <InfoTableCellHead>Interaction</InfoTableCellHead>
-      </InfoTableRow>
-    </InfoTableHead>
-    <InfoTableBody>
-      <InfoTableRow>
-        <InfoTableCell>Tab</InfoTableCell>
-        <InfoTableCell>
-          Move forward to the next interactive element. Appears when element
-          receives focus.
-        </InfoTableCell>
-      </InfoTableRow>
-
-      <InfoTableRow>
-        <InfoTableCell>Shift + Tab</InfoTableCell>
-        <InfoTableCell>
-          Move backward to the previous interactive element.
-        </InfoTableCell>
-      </InfoTableRow>
-
-      <InfoTableRow>
-        <InfoTableCell>Esc</InfoTableCell>
-        <InfoTableCell>Dismiss the tooltip.</InfoTableCell>
-      </InfoTableRow>
-    </InfoTableBody>
-  </InfoTable>
-   -->
+  <KeyboardInteractionsTable />
 </PageleteSection>

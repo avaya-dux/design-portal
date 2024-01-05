@@ -1,0 +1,45 @@
+---
+import {
+  Description,
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableCellHead,
+  InfoTableHead,
+  InfoTableRow,
+  PageleteSection,
+  SectionHeader,
+} from "components";
+---
+
+<InfoTable>
+  <InfoTableHead>
+    <InfoTableRow>
+      <InfoTableCellHead>Keystrokes</InfoTableCellHead>
+      <InfoTableCellHead>Interaction</InfoTableCellHead>
+    </InfoTableRow>
+  </InfoTableHead>
+  <InfoTableBody>
+    <InfoTableRow>
+      <InfoTableCell>Tab</InfoTableCell>
+      <InfoTableCell>
+        Move forward into and out of the radio button in the group.
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>Shift + Tab</InfoTableCell>
+      <InfoTableCell>
+        Move backward to the previous radio button in the group.
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>Spacebar</InfoTableCell>
+      <InfoTableCell>
+        Toggle the radio button between the selected and not selected states.
+      </InfoTableCell>
+    </InfoTableRow>
+  </InfoTableBody>
+</InfoTable>
+

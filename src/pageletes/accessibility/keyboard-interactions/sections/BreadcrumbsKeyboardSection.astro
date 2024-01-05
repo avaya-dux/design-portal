@@ -1,0 +1,15 @@
+---
+import {
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static"
+
+import { KeyboardInteractionsTable } from "../../../components/breadcrumbs/sections";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.breadcrumbs.id}>{topics.breadcrumbs.title}</SectionHeader>
+  <KeyboardInteractionsTable />
+</PageleteSection>

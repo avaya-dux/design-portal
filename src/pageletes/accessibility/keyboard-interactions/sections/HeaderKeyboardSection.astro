@@ -1,0 +1,15 @@
+---
+import {
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static"
+
+import { KeyboardInteractionsTable } from "../../../components/header/sections";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.header.id}>{topics.header.title}</SectionHeader>
+  <KeyboardInteractionsTable />
+</PageleteSection>

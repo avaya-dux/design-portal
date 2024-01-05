@@ -18,7 +18,7 @@ type KeyboardInteractionsTopicNames =
   | "sidenavigation"
   | "stepper"
   | "switch"
-  | "tables"
+  | "table"
   | "tabs"
   | "textinput"
   | "tooltip"
@@ -102,20 +102,20 @@ export const topics: TopicsDict<KeyboardInteractionsTopicNames> = {
     id: `${component}-sidenavigation`,
     title: "Side Navigation",
   },
-  stepper: {
-    order: 15,
-    id: `${component}-stepper`,
-    title: "Stepper",
-  },
+  // stepper: {
+  //   order: 15,
+  //   id: `${component}-stepper`,
+  //   title: "Stepper",
+  // },
   switch: {
     order: 16,
     id: `${component}-switch`,
     title: "Switch",
   },
-  tables: {
+  table: {
     order: 17,
-    id: `${component}-tables`,
-    title: "Tables",
+    id: `${component}-table`,
+    title: "Table",
   },
   tabs: {
     order: 18,

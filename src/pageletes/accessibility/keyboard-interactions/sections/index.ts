@@ -1,71 +1,71 @@
 import Intro from "./Intro.astro";
 export { Intro };
 
-import AccordionKeyboardInteractions from "./AccordionKeyboardInteractions.astro";
-export { AccordionKeyboardInteractions };
+import AccordionKeyboardSection from "./AccordionKeyboardSection.astro";
+export { AccordionKeyboardSection };
 
-import ButtonsKeyboardInteractions from "./ButtonsKeyboardInteractions.astro";
-export { ButtonsKeyboardInteractions };
+import BreadcrumbsKeyboardSection from "./BreadcrumbsKeyboardSection.astro";
+export { BreadcrumbsKeyboardSection };
 
-import BreadcrumbsKeyboardInteractions from "./BreadcrumbsKeyboardInteractions";
-export { BreadcrumbsKeyboardInteractions };
+import ButtonsKeyboardSection from "./ButtonsKeyboardSection.astro";
+export { ButtonsKeyboardSection };
 
-import CheckboxKeyboardInteractions from "./CheckboxKeyboardInteractions";
-export { CheckboxKeyboardInteractions };
+import CheckboxKeyboardSection from "./CheckboxKeyboardSection.astro";
+export { CheckboxKeyboardSection };
 
-import ChipKeyboardInteractions from "./ChipKeyboardInteractions";
-export { ChipKeyboardInteractions };
+import ChipKeyboardSection from "./ChipKeyboardSection.astro";
+export { ChipKeyboardSection };
 
-import DropbownKeyboardInteractions from "./DropbownKeyboardInteractions";
-export { DropbownKeyboardInteractions };
+import DropdownKeyboardSection from "./DropdownKeyboardSection.astro";
+export { DropdownKeyboardSection };
 
-import HeaderKeyboardInteractions from "./HeaderKeyboardInteractions";
-export { HeaderKeyboardInteractions };
+import HeaderKeyboardSection from "./HeaderKeyboardSection.astro";
+export { HeaderKeyboardSection };
 
-import ListKeyboardInteractions from "./ListKeyboardInteractions";
-export { ListKeyboardInteractions };
+import ListKeyboardSection from "./ListKeyboardSection.astro";
+export { ListKeyboardSection };
 
-import ModalKeyboardInteractions from "./ModalKeyboardInteractions";
-export { ModalKeyboardInteractions };
+import ModalKeyboardSection from "./ModalKeyboardSection.astro";
+export { ModalKeyboardSection };
 
-import NotificationsKeyboardInteractions from "./NotificationsKeyboardInteractions";
-export { NotificationsKeyboardInteractions };
+import NotificationsKeyboardSection from "./NotificationsKeyboardSection.astro";
+export { NotificationsKeyboardSection };
 
-import PaginationKeyboardInteractions from "./PaginationKeyboardInteractions";
-export { PaginationKeyboardInteractions };
+import PaginationKeyboardSection from "./PaginationKeyboardSection.astro";
+export { PaginationKeyboardSection };
 
-import RadioKeyboardInteractions from "./RadioKeyboardInteractions";
-export {RadioKeyboardInteractions  };
+import RadioKeyboardSection from "./RadioKeyboardSection.astro";
+export {RadioKeyboardSection  };
 
-import SelectKeyboardInteractions from "./SelectKeyboardInteractions";
-export {SelectKeyboardInteractions  };
+import SelectKeyboardSection from "./SelectKeyboardSection.astro";
+export {SelectKeyboardSection  };
 
-import SheetKeyboardInteractions from "./SheetKeyboardInteractions";
-export {SheetKeyboardInteractions  };
+import SheetKeyboardSection from "./SheetKeyboardSection.astro";
+export {SheetKeyboardSection  };
 
-import SidenavigationKeyboardInteractions from "./SidenavigationKeyboardInteractions";
-export {SidenavigationKeyboardInteractions  };
+import SideNavKeyboardSection from "./SideNavKeyboardSection.astro";
+export {SideNavKeyboardSection  };
 
-import StepperKeyboardInteractions from "./StepperKeyboardInteractions";
-export {StepperKeyboardInteractions  };
+// import StepperKeyboardSection from "./StepperKeyboardSection.astro";
+// export {StepperKeyboardSection  };
 
-import SwitchKeyboardInteractions from "./SwitchKeyboardInteractions";
-export {SwitchKeyboardInteractions  };
+import SwitchKeyboardSection from "./SwitchKeyboardSection.astro";
+export {SwitchKeyboardSection  };
 
-import TablesKeyboardInteractions from "./TablesKeyboardInteractions";
-export {TablesKeyboardInteractions  };
+import TableKeyboardSection from "./TableKeyboardSection.astro";
+export {TableKeyboardSection  };
 
-import TabsKeyboardInteractions from "./TabsKeyboardInteractions";
-export {TabsKeyboardInteractions  };
+import TabsKeyboardSection from "./TabsKeyboardSection.astro";
+export {TabsKeyboardSection  };
 
-import TextinputKeyboardInteractions from "./TextinputKeyboardInteractions";
-export {TextinputKeyboardInteractions  };
+import TextKeyboardSection from "./TextKeyboardSection.astro";
+export {TextKeyboardSection  };
 
-import TooltipKeyboardInteractions from "./TooltipKeyboardInteractions";
-export {TooltipKeyboardInteractions  };
+import TooltipKeyboardSection from "./TooltipKeyboardSection.astro";
+export {TooltipKeyboardSection  };
 
-import TreeviewKeyboardInteractions from "./TreeviewKeyboardInteractions";
-export {TreeviewKeyboardInteractions  };
+import TreeViewKeyboardSection from "./TreeViewKeyboardSection.astro";
+export {TreeViewKeyboardSection  };
 
-import WidgetKeyboardInteractions from "./WidgetKeyboardInteractions";
-export {WidgetKeyboardInteractions  };
+import WidgetKeyboardSection from "./WidgetKeyboardSection.astro";
+export {WidgetKeyboardSection  };

@@ -1,0 +1,15 @@
+---
+import {
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static"
+
+import { KeyboardInteractionsTable } from "../../../components/accordion/sections";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.accordion.id}>{topics.accordion.title}</SectionHeader>
+  <KeyboardInteractionsTable />
+</PageleteSection>

@@ -7,29 +7,28 @@ import { Layout } from "layouts";
 
 import {
   Intro,
-  AccordionKeyboardInteractions,
-  ButtonsKeyboardInteractions,
-  BreadcrumbsKeyboardInteractions,
-  CheckboxKeyboardInteractions,
-  ChipKeyboardInteractions,
-  DropbownKeyboardInteractions,
-  HeaderKeyboardInteractions,
-  ListKeyboardInteractions,
-  ModalKeyboardInteractions,
-  NotificationsKeyboardInteractions,
-  PaginationKeyboardInteractions,
-  RadioKeyboardInteractions,
-  SelectKeyboardInteractions,
-  SheetKeyboardInteractions,
-  SidenavigationKeyboardInteractions,
-  StepperKeyboardInteractions,
-  SwitchKeyboardInteractions,
-  TablesKeyboardInteractions,
-  TabsKeyboardInteractions,
-  TextinputKeyboardInteractions,
-  TooltipKeyboardInteractions,
-  TreeviewKeyboardInteractions,
-  WidgetKeyboardInteractions,
+  AccordionKeyboardSection,
+  ButtonsKeyboardSection,
+  BreadcrumbsKeyboardSection,
+  CheckboxKeyboardSection,
+  ChipKeyboardSection,
+  DropdownKeyboardSection,
+  HeaderKeyboardSection,
+  ListKeyboardSection,
+  ModalKeyboardSection,
+  NotificationsKeyboardSection,
+  PaginationKeyboardSection,
+  RadioKeyboardSection,
+  SelectKeyboardSection,
+  SheetKeyboardSection,
+  SideNavKeyboardSection,
+  SwitchKeyboardSection,
+  TableKeyboardSection,
+  TabsKeyboardSection,
+  TextKeyboardSection,
+  TooltipKeyboardSection,
+  TreeViewKeyboardSection,
+  WidgetKeyboardSection,
 } from "pageletes/accessibility/keyboard-interactions";
 ---
 
@@ -37,56 +36,48 @@ import {
 <Layout title="KeyBoard Interactions">
   <Intro />
 
-  <!-- TODO: Modify SectionHeader component that renders Header and button that can be reused in all KeyboardInteraction sections.
-  Perhaps use some conditional rendering for the header title?
+  <AccordionKeyboardSection />
 
-  TODO: Refactor all KeyboarInteraction sections in pageletes so that the InfoTable sections can be shared,
-  thus avoiding to duplicate code here -->
+  <ButtonsKeyboardSection />
 
-  <AccordionKeyboardInteractions>Accordion</AccordionKeyboardInteractions>
+  <BreadcrumbsKeyboardSection />
 
-  <ButtonsKeyboardInteractions />
+  <CheckboxKeyboardSection />
 
-  <BreadcrumbsKeyboardInteractions />
+  <ChipKeyboardSection />
 
-  <CheckboxKeyboardInteractions />
+  <DropdownKeyboardSection />
 
-  <ChipKeyboardInteractions />
+  <HeaderKeyboardSection />
 
-  <DropbownKeyboardInteractions />
+  <ListKeyboardSection />
 
-  <HeaderKeyboardInteractions />
+  <ModalKeyboardSection />
 
-  <ListKeyboardInteractions />
+  <NotificationsKeyboardSection />
 
-  <ModalKeyboardInteractions />
+  <PaginationKeyboardSection />
 
-  <NotificationsKeyboardInteractions />
+  <RadioKeyboardSection />
 
-  <PaginationKeyboardInteractions />
+  <SelectKeyboardSection />
 
-  <RadioKeyboardInteractions />
+  <SheetKeyboardSection />
 
-  <SelectKeyboardInteractions />
+  <SideNavKeyboardSection />
 
-  <SheetKeyboardInteractions />
+  <SwitchKeyboardSection />
 
-  <SidenavigationKeyboardInteractions />
+  <TableKeyboardSection />
 
-  <StepperKeyboardInteractions />
+  <TabsKeyboardSection />
 
-  <SwitchKeyboardInteractions />
+  <TextKeyboardSection />
 
-  <TablesKeyboardInteractions />
+  <TooltipKeyboardSection />
 
-  <TabsKeyboardInteractions />
+  <TreeViewKeyboardSection />
 
-  <TextinputKeyboardInteractions />
-
-  <TooltipKeyboardInteractions />
-
-  <TreeviewKeyboardInteractions />
-
-  <WidgetKeyboardInteractions />
+  <WidgetKeyboardSection />
 
 </Layout>

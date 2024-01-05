@@ -1,0 +1,15 @@
+---
+import {
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static"
+
+import { KeyboardInteractionsTable } from "../../../components/notifications/sections";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.checkbox.id}>{topics.checkbox.title}</SectionHeader>
+  <KeyboardInteractionsTable />
+</PageleteSection>
