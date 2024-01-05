@@ -4,8 +4,8 @@ export { Intro };
 import AccordionKeyboardSection from "./AccordionKeyboardSection.astro";
 export { AccordionKeyboardSection };
 
-import BreadcrumbsKeyboardSection from "./BreadcrumbsKeyboardSection.astro";
-export { BreadcrumbsKeyboardSection };
+import BreadcrumbKeyboardSection from "./BreadcrumbKeyboardSection.astro";
+export { BreadcrumbKeyboardSection };
 
 import ButtonsKeyboardSection from "./ButtonsKeyboardSection.astro";
 export { ButtonsKeyboardSection };

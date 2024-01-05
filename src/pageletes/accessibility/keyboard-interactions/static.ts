@@ -3,7 +3,7 @@ import type { TopicsDict } from "components";
 type KeyboardInteractionsTopicNames =
   | "accordion"
   | "buttons"
-  | "breadcrumbs"
+  | "breadcrumb"
   | "checkbox"
   | "chip"
   | "dropbown"
@@ -37,10 +37,10 @@ export const topics: TopicsDict<KeyboardInteractionsTopicNames> = {
     id: `${component}-buttons`,
     title: "Buttons",
   },
-  breadcrumbs: {
+  breadcrumb: {
     order: 2,
-    id: `${component}-breadcrumbs`,
-    title: "Breadcrumbs",
+    id: `${component}-breadcrumb`,
+    title: "Breadcrumb",
   },
   checkbox: {
     order: 3,
