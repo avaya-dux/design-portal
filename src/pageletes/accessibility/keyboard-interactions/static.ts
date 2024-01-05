@@ -24,7 +24,7 @@ type KeyboardInteractionsTopicNames =
   | "treeview"
   | "widget";
 
-const component = "testing-tools";
+const component = "kb";
 export const topics: TopicsDict<KeyboardInteractionsTopicNames> = {
   accordion: {
     order: 0,
