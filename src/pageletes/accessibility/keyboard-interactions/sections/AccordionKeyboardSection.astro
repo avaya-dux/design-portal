@@ -7,9 +7,10 @@ import {
 import { topics } from "../static"
 
 import { KeyboardInteractionsTable } from "../../../components/accordion/sections";
+import type Accordion from "pages/components/accordion.astro";
 ---
 
 <PageleteSection>
-  <SectionHeader id={topics.accordion.id}>{topics.accordion.title}</SectionHeader>
+  <SectionHeader link="accordion" id={topics.accordion.id}>{topics.accordion.title}</SectionHeader>
   <KeyboardInteractionsTable />
 </PageleteSection>

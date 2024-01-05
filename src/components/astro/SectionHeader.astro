@@ -11,16 +11,18 @@ const { id, link } = Astro.props as Props;
 const { url } = Astro.request;
 
 const fullSectionURL = `${url}#${id}`;
+const componentLink = `components/${link}`;
 
 const handleLinkClick = ()=> {
-  link && Astro.redirect(link); // I'm not sure redirect() is the right api to use here.
-}
+  console.log("navigating...");
+  link && Astro.redirect(componentLink); // I'm not sure redirect() is the right api to use here.
+};
 ---
 
 <div class="section-header__wrapper">
   <h2 class="neo-bold" id={id}><slot /></h2>
   <CopyToClipboard text={fullSectionURL} client:load />
-  {link && <Button onClick={handleLinkClick}>Go to component page</Button>}
+  {componentLink && <Button size="compact" variant="secondary" onClick={handleLinkClick}>Visit <slot /> component</Button>}
 </div>
 
 <style>
