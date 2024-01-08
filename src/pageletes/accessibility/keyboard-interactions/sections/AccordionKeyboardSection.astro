@@ -1,5 +1,6 @@
 ---
 import {
+  HeaderWithLinkButton,
   LinkButton,
   PageleteSection,
   SectionHeader,
@@ -11,17 +12,9 @@ import { KeyboardInteractionsTable } from "../../../components/accordion/section
 
 ---
 <PageleteSection>
-  <div class="header-with-linkbutton">
+  <HeaderWithLinkButton>
     <SectionHeader id={topics.accordion.id}>{topics.accordion.title} </SectionHeader>
     <LinkButton href="/components/accordion" variant="secondary" size="compact">Visit Accordion component</LinkButton>
-  </div>
+  </HeaderWithLinkButton>
   <KeyboardInteractionsTable />
 </PageleteSection>
-
-<style>
-  .header-with-linkbutton {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-</style>

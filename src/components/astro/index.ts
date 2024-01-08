@@ -13,6 +13,9 @@ export { Divider };
 import ExternalLink from "./ExternalLink.astro";
 export { ExternalLink };
 
+import HeaderWithLinkButton from "./HeaderWithLinkButton.astro";
+export { HeaderWithLinkButton };
+
 import ImageWrapper from "./ImageWrapper.astro";
 export { ImageWrapper };
 
