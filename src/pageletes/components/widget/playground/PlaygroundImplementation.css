@@ -3,6 +3,18 @@
   .neo-widget__header
   .neo-widget__header-right
   .neo-input
+  + button[class^="neo-icon-"]:not([class^="neo-btn"]):focus-within,
+.playground-element
+  .neo-widget__content
+  .neo-widget__header
+  .neo-widget__header-right
+  .neo-input
+  + button[class*="neo-icon-"]:not([class*="neo-btn"]):focus-within,
+.playground-element
+  .neo-widget__content
+  .neo-widget__header
+  .neo-widget__header-right
+  .neo-input
   + button[class^="neo-icon-"]:not([class^="neo-btn"]):hover,
 .playground-element
   .neo-widget__content
@@ -10,6 +22,18 @@
   .neo-widget__header-right
   .neo-input
   + button[class*="neo-icon-"]:not([class*="neo-btn"]):hover,
+.playground-element
+  .neo-widget__content
+  .neo-widget__header
+  .neo-widget__header-right
+  .neo-input:focus-within
+  + button[class^="neo-icon-"]:not([class^="neo-btn"]),
+.playground-element
+  .neo-widget__content
+  .neo-widget__header
+  .neo-widget__header-right
+  .neo-input:focus-within
+  + button[class*="neo-icon-"]:not([class*="neo-btn"]),
 .playground-element
   .neo-widget__content
   .neo-widget__header
