@@ -24,7 +24,7 @@ const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/docs/components-widget--docs";
 
 type RightSideProps = "empty" | "button" | "iconbutton" | "inputs" | "switch";
-
+import "./PlaygroundImplementation.css";
 export const PlaygroundImplementation = () => {
   const [withIcon, setWithIcon] = useState<string>("icon");
 
