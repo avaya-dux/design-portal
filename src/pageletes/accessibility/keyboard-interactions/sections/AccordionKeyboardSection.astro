@@ -1,5 +1,6 @@
 ---
 import {
+  LinkButton,
   PageleteSection,
   SectionHeader,
 } from "../../../../components/astro";
@@ -7,9 +8,20 @@ import {
 import { topics } from "../static"
 
 import { KeyboardInteractionsTable } from "../../../components/accordion/sections";
----
 
+---
 <PageleteSection>
-  <SectionHeader link="accordion" id={topics.accordion.id}>{topics.accordion.title}</SectionHeader>
+  <div class="header-with-linkbutton">
+    <SectionHeader id={topics.accordion.id}>{topics.accordion.title} </SectionHeader>
+    <LinkButton href="/components/accordion" variant="secondary" size="compact">Visit Accordion component</LinkButton>
+  </div>
   <KeyboardInteractionsTable />
 </PageleteSection>
+
+<style>
+  .header-with-linkbutton {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+</style>
