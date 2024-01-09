@@ -1,5 +1,7 @@
 ---
 import {
+  HeaderWithLinkButton,
+  LinkButton,
   PageleteSection,
   SectionHeader,
 } from "../../../../components/astro";
@@ -10,6 +12,9 @@ import { KeyboardInteractionsTable } from "../../../components/notifications/sec
 ---
 
 <PageleteSection>
-  <SectionHeader link="notifications" id={topics.notifications.id}>{topics.notifications.title}</SectionHeader>
+  <HeaderWithLinkButton>
+    <SectionHeader id={topics.notifications.id}>{topics.notifications.title} </SectionHeader>
+    <LinkButton href="/components/notifications" variant="secondary" size="compact">Visit Notifications Component</LinkButton>
+  </HeaderWithLinkButton>
   <KeyboardInteractionsTable />
 </PageleteSection>

@@ -1,5 +1,7 @@
 ---
 import {
+HeaderWithLinkButton,
+LinkButton,
   PageleteSection,
   SectionHeader,
 } from "../../../../components/astro";
@@ -10,6 +12,9 @@ import { KeyboardInteractionsTable } from "../../../components/checkbox/sections
 ---
 
 <PageleteSection>
-  <SectionHeader link="checkbox" id={topics.checkbox.id}>{topics.checkbox.title}</SectionHeader>
+  <HeaderWithLinkButton>
+    <SectionHeader id={topics.checkbox.id}>{topics.checkbox.title} </SectionHeader>
+    <LinkButton href="/components/checkbox" variant="secondary" size="compact">Visit Checkbox Component</LinkButton>
+  </HeaderWithLinkButton>
   <KeyboardInteractionsTable />
 </PageleteSection>

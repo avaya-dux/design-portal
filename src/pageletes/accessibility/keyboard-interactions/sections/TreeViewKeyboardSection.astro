@@ -1,5 +1,7 @@
 ---
 import {
+  HeaderWithLinkButton,
+  LinkButton,
   PageleteSection,
   SectionHeader,
 } from "../../../../components/astro";
@@ -10,6 +12,9 @@ import { KeyboardInteractionsTable } from "../../../components/tree-view/section
 ---
 
 <PageleteSection>
-  <SectionHeader link="tree-view" id={topics.treeview.id}>{topics.treeview.title}</SectionHeader>
+  <HeaderWithLinkButton>
+    <SectionHeader id={topics.treeview.id}>{topics.treeview.title} </SectionHeader>
+    <LinkButton href="/components/tree-view" variant="secondary" size="compact">Visit Tree View Component</LinkButton>
+  </HeaderWithLinkButton>
   <KeyboardInteractionsTable />
 </PageleteSection>

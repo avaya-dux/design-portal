@@ -22,6 +22,9 @@ export { DropdownKeyboardSection };
 import HeaderKeyboardSection from "./HeaderKeyboardSection.astro";
 export { HeaderKeyboardSection };
 
+import LinkKeyboardSection from "./LinkKeyboardSection.astro";
+export { LinkKeyboardSection };
+
 import ListKeyboardSection from "./ListKeyboardSection.astro";
 export { ListKeyboardSection };
 

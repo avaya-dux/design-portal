@@ -1,5 +1,7 @@
 ---
 import {
+  HeaderWithLinkButton,
+  LinkButton,
   PageleteSection,
   SectionHeader,
 } from "../../../../components/astro";
@@ -10,6 +12,9 @@ import { KeyboardInteractionsTable } from "../../../components/modal/sections";
 ---
 
 <PageleteSection>
-  <SectionHeader link="modal" id={topics.modal.id}>{topics.modal.title}</SectionHeader>
+  <HeaderWithLinkButton>
+    <SectionHeader id={topics.modal.id}>{topics.modal.title} </SectionHeader>
+    <LinkButton href="/components/modal" variant="secondary" size="compact">Visit Modal Component</LinkButton>
+  </HeaderWithLinkButton>
   <KeyboardInteractionsTable />
 </PageleteSection>

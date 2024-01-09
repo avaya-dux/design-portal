@@ -1,5 +1,7 @@
 ---
 import {
+  HeaderWithLinkButton,
+  LinkButton,
   PageleteSection,
   SectionHeader,
 } from "../../../../components/astro";
@@ -10,6 +12,9 @@ import { KeyboardInteractionsTable } from "../../../components/breadcrumb/sectio
 ---
 
 <PageleteSection>
-  <SectionHeader link="breadcrumb" id={topics.breadcrumb.id}>{topics.breadcrumb.title}</SectionHeader>
+  <HeaderWithLinkButton>
+    <SectionHeader id={topics.breadcrumb.id}>{topics.breadcrumb.title} </SectionHeader>
+    <LinkButton href="/components/breadcrumb" variant="secondary" size="compact">Visit Breadcrumb Component</LinkButton>
+  </HeaderWithLinkButton>
   <KeyboardInteractionsTable />
 </PageleteSection>
