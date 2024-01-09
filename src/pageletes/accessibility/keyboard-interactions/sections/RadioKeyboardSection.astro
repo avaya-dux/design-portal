@@ -1,6 +1,6 @@
 ---
 import {
-  HeaderWithLinkButton,
+  RowAlignmentContainer,
   LinkButton,
   PageleteSection,
   SectionHeader,
@@ -12,9 +12,9 @@ import { KeyboardInteractionsTable } from "pageletes/components/radio";
 ---
 
 <PageleteSection>
-  <HeaderWithLinkButton>
+  <RowAlignmentContainer>
     <SectionHeader id={topics.radio.id}>{topics.radio.title} </SectionHeader>
     <LinkButton href="/components/radio" variant="secondary" size="compact">Visit Radio Component</LinkButton>
-  </HeaderWithLinkButton>
+  </RowAlignmentContainer>
   <KeyboardInteractionsTable />
 </PageleteSection>
