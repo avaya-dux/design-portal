@@ -49,9 +49,6 @@ export {SheetKeyboardSection  };
 import SideNavKeyboardSection from "./SideNavKeyboardSection.astro";
 export {SideNavKeyboardSection  };
 
-// import StepperKeyboardSection from "./StepperKeyboardSection.astro";
-// export {StepperKeyboardSection  };
-
 import SwitchKeyboardSection from "./SwitchKeyboardSection.astro";
 export {SwitchKeyboardSection  };
 
