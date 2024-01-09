@@ -120,13 +120,13 @@ export const LeftNavigation = ({
               />
             ))}
           </LeftNav>
-        ) : (
+        ) : width > 0 ? (
           <LeftNavMobile
             currentUrl={currentUrl}
             onNavigate={handleNavigate}
             allPages={allPages}
           />
-        )}
+        ) : null}
       </div>
       <div
         className="left-navigation-scrim"

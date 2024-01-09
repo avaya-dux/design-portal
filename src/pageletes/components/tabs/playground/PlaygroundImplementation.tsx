@@ -39,9 +39,7 @@ export const PlaygroundImplementation = () => {
       if (withIcon) {
         props.icon = icons[parseInt(id)];
       }
-      if (id === "3") {
-        props.disabled = true;
-      }
+
       return <Tab {...props}></Tab>;
     },
     [withIcon],
@@ -61,10 +59,10 @@ export const PlaygroundImplementation = () => {
   );
 
   const [component, react, html] = useMemo(() => {
-    const panels = [1, 2, 3].map((i) => createTabPanel(i.toString()));
+    const panels = [1, 2].map((i) => createTabPanel(i.toString()));
     const element = (
       <Tabs defaultIndex={0} orientation={orientation}>
-        <TabList>{[1, 2, 3].map((i) => createTab(i.toString()))}</TabList>
+        <TabList>{[1, 2].map((i) => createTab(i.toString()))}</TabList>
         <TabPanels>{panels}</TabPanels>
       </Tabs>
     );
