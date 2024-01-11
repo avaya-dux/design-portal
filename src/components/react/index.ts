@@ -6,3 +6,4 @@ export * from "./CopyToClipboard";
 export * from "./LeftNavigation";
 export * from "./DynamicTheme";
 export * from "./TabMenu";
+export * from "./ChangelogNotes";

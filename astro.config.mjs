@@ -18,6 +18,7 @@ export default defineConfig({
         "avaya-neo-react",
         "prism-react-renderer",
         "react-element-to-jsx-string",
+        "octokit",
       ],
     },
   },
