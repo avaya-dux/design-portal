@@ -1,20 +1,26 @@
 ---
 import { CopyToClipboard } from "components/react";
 
+import { RowAlignmentContainer, LinkButton } from"components/astro";
+
 export interface Props {
   id: string;
+  buttonLink?: string;
 }
 
-const { id } = Astro.props as Props;
+const { id, buttonLink } = Astro.props as Props;
 const { url } = Astro.request;
 
 const fullSectionURL = `${url}#${id}`;
 ---
 
-<div class="section-header__wrapper">
-  <h2 class="neo-bold" id={id}><slot /></h2>
-  <CopyToClipboard text={fullSectionURL} client:load />
-</div>
+<RowAlignmentContainer>
+  <div class="section-header__wrapper">
+    <h2 class="neo-bold" id={id}><slot /></h2>
+    <CopyToClipboard text={fullSectionURL} client:load />
+  </div>
+  { buttonLink && <LinkButton href="/components/accordion" variant="secondary" size="compact">Visit Accordion Component</LinkButton> }
+</RowAlignmentContainer>
 
 <style>
   h2.neo-bold {

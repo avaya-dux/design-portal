@@ -1,11 +1,21 @@
+---
+export interface Props {
+  marginTop?: string;
+}
+
+const { marginTop = "0px" } = Astro.props as Props;
+
+---
 <div class="row-alignment-container">
   <slot />
 </div>
 
-<style>
+<style define:vars={{ marginTop }}>
   .row-alignment-container {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    margin-top: var(--marginTop);
+    margin-bottom: 1rem;
   }
 </style>

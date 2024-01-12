@@ -1,7 +1,5 @@
 ---
 import {
-  RowAlignmentContainer,
-  LinkButton,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -12,9 +10,6 @@ import { KeyboardInteractionsTable } from "pageletes/components/accordion";
 
 ---
 <PageleteSection>
-  <RowAlignmentContainer>
-    <SectionHeader id={topics.accordion.id}>{topics.accordion.title} </SectionHeader>
-    <LinkButton href="/components/accordion" variant="secondary" size="compact">Visit Accordion Component</LinkButton>
-  </RowAlignmentContainer>
+  <SectionHeader buttonLink="bla" id={topics.accordion.id}>{topics.accordion.title} </SectionHeader>
   <KeyboardInteractionsTable />
 </PageleteSection>

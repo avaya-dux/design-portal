@@ -12,19 +12,19 @@ const { url } = Astro.request;
 const fullSectionURL = `${url}#${id}`;
 ---
 
-<div class="section-header__wrapper">
+<div class="section-sub-header__wrapper">
   <h3 id={id}><slot /></h3>
   <CopyToClipboard text={fullSectionURL} client:load />
 </div>
 
-<style is:global define:vars={{ marginTop }}>
-  .section-header__wrapper {
+<style define:vars={{ marginTop }}>
+  .section-sub-header__wrapper {
     display: flex;
     align-items: center;
     padding-bottom: 1rem;
     margin-top: var(--marginTop);
   }
-  .section-header__wrapper > h3 {
+  .section-sub-header__wrapper > h3 {
     scroll-margin-top: 4rem;
   }
   .section-header__link {
