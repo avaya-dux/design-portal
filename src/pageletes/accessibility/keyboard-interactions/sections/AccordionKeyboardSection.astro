@@ -1,5 +1,6 @@
 ---
 import {
+  LinkButton,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -10,6 +11,9 @@ import { KeyboardInteractionsTable } from "pageletes/components/accordion";
 
 ---
 <PageleteSection>
-  <SectionHeader buttonLink="bla" id={topics.accordion.id}>{topics.accordion.title} </SectionHeader>
+  <SectionHeader id={topics.accordion.id}>
+    {topics.accordion.title}
+    <LinkButton slot="right-content" href="/components/accordion" variant="secondary" size="compact">Visit Accordion Component</LinkButton>
+  </SectionHeader>
   <KeyboardInteractionsTable />
 </PageleteSection>

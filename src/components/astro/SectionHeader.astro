@@ -5,10 +5,9 @@ import { RowAlignmentContainer, LinkButton } from"components/astro";
 
 export interface Props {
   id: string;
-  buttonLink?: string;
 }
 
-const { id, buttonLink } = Astro.props as Props;
+const { id } = Astro.props as Props;
 const { url } = Astro.request;
 
 const fullSectionURL = `${url}#${id}`;
@@ -19,7 +18,7 @@ const fullSectionURL = `${url}#${id}`;
     <h2 class="neo-bold" id={id}><slot /></h2>
     <CopyToClipboard text={fullSectionURL} client:load />
   </div>
-  { buttonLink && <LinkButton href="/components/accordion" variant="secondary" size="compact">Visit Accordion Component</LinkButton> }
+  <slot name="right-content" />
 </RowAlignmentContainer>
 
 <style>

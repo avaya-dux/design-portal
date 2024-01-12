@@ -1,6 +1,5 @@
 ---
 import {
-  RowAlignmentContainer,
   LinkButton,
   PageleteSection,
   SectionHeader,
@@ -12,9 +11,9 @@ import { KeyboardInteractionsTable } from "pageletes/components/breadcrumb";
 ---
 
 <PageleteSection>
-  <RowAlignmentContainer>
-    <SectionHeader id={topics.breadcrumb.id}>{topics.breadcrumb.title} </SectionHeader>
-    <LinkButton href="/components/breadcrumb" variant="secondary" size="compact">Visit Breadcrumb Component</LinkButton>
-  </RowAlignmentContainer>
+  <SectionHeader id={topics.breadcrumb.id}>
+    {topics.breadcrumb.title}
+    <LinkButton slot="right-content" href="/components/breadcrumb" variant="secondary" size="compact">Visit Breadcrumb Component</LinkButton>
+  </SectionHeader>
   <KeyboardInteractionsTable />
 </PageleteSection>
