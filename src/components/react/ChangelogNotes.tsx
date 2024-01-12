@@ -12,8 +12,7 @@ export const ChangelogNotes = ({
 
     useEffect(() => {
         async function retrieveCSSLibraryGitHubReleaseNotes(tagName: string) {
-            const key = "";
-            const octokit = getOctokit(key);
+            const octokit = getOctokit();
             const result = await retrieveGitHubReleaseNotes(octokit, tagName);
             // replace host address, e.g. http://design.avaya.com/, with /
             setReleaseNotes(result.replaceAll(/https:\/\/.*com\//gi, "/"));

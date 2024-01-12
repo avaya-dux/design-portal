@@ -4,8 +4,7 @@ import chip from "../imgs/chip.svg";
 import { Image } from "@avaya/neo-react";
 import { getGithubReleases, getOctokit } from "helpers";
 import { ChangelogNotes } from "components/react";
-const key = ""
-const octokit = getOctokit(key);
+const octokit = getOctokit();
 const releases = await getGithubReleases(octokit)
   .then((response) =>
     // valid tag name should start with v and followed by at least one digit
