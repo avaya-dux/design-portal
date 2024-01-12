@@ -9,6 +9,7 @@ const key =
 const octokit = getOctokit(key);
 const releases = await getGithubReleases(octokit)
   .then((response) =>
+    // valid tag name should start with v and followed by at least one digit
     response.filter((response) => /^[vV]\d+/.test(response.tag)),
   )
   .catch((error) => {

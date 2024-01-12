@@ -16,8 +16,8 @@ export const ChangelogNotes = ({
         "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";
       const octokit = getOctokit(key);
       const result = await retrieveGitHubReleaseNotes(octokit, tagName);
-
-      setReleaseNotes(result);
+      // replace host address, e.g. http://design.avaya.com/, with /
+      setReleaseNotes(result.replaceAll(/https:\/\/.*com\//gi, "/"));
     }
     if (githubReleaseTag) {
       retrieveCSSLibraryGitHubReleaseNotes(githubReleaseTag);

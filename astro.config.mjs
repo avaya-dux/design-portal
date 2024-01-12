@@ -12,6 +12,16 @@ export default defineConfig({
   adapter: netlify(),
   output: "server",
   integrations: [react(), svelte(), vue(), prefetch()],
+  redirects: {
+    '/components/web/navbar-web': '/components/header',
+    '/components/web/tables-web': '/components/table',
+    '/components/web/switch-web': '/components/switch',
+    '/components/web/widget-web': '/components/widget',
+    '/components/icons': '/components/icon',
+    '/components/web/dropdown-web': '/components/dropdown',
+    '/components/web/checkbox-web': '/components/checkbox',
+    '/components/web/pagination-web': '/components/pagination'
+  },
   vite: {
     ssr: {
       noExternal: [
