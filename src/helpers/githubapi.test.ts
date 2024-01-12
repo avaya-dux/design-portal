@@ -11,8 +11,8 @@ describe.skip("integretion test", () => {
     const octokit = getOctokit(key);
     const releases = await getGithubReleases(octokit);
     console.log(releases);
-    // The page size of the api is 30 by default
-    expect(releases).toHaveLength(30);
+    // The page size of the api is 20 by default
+    expect(releases).toHaveLength(20);
   });
 
   test(retrieveGitHubReleaseNotes.name, async () => {

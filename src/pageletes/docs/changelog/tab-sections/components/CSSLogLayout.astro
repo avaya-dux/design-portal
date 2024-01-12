@@ -1,5 +1,5 @@
 ---
-import { PageleteSection, SectionHeader } from "components/astro";
+import { PageleteSection, SectionHeader, ExternalLink } from "components/astro";
 import chip from "../imgs/chip.svg";
 import { Image } from "@avaya/neo-react";
 import { getGithubReleases, getOctokit } from "helpers";
@@ -34,6 +34,15 @@ const releases = await getGithubReleases(octokit)
       </PageleteSection>
     ))
   }
+  <p class="changelog-extra">
+    Click
+    <ExternalLink
+      inline
+      href="https://github.com/avaya-dux/neo-css-library/releases?page=3"
+    >
+      here
+    </ExternalLink> to see release notes of old versions.
+  </p>
 </div>
 
 <style>
@@ -41,5 +50,10 @@ const releases = await getGithubReleases(octokit)
     width: 100%;
     height: 1px;
     background-color: var(--neo-color-base-200);
+  }
+  .changelog-extra {
+    margin-top: 3rem;
+    font-size: 32px;
+    line-height: 48px;
   }
 </style>
