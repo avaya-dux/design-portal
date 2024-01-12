@@ -4,8 +4,7 @@ import chip from "../imgs/chip.svg";
 import { Image } from "@avaya/neo-react";
 import { getGithubReleases, getOctokit } from "helpers";
 import { ChangelogNotes } from "components/react";
-const key =
-  "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";
+const key = ""
 const octokit = getOctokit(key);
 const releases = await getGithubReleases(octokit)
   .then((response) =>
@@ -28,7 +27,7 @@ const releases = await getGithubReleases(octokit)
         marginTop={index === 0 ? "48px" : "32px"}
       >
         <SectionHeader id={`${release.date}-css-update`}>
-          {`${release.version} ${release.date} `}
+          {`${release.version} (${release.date}) `}
           {index === 0 && <Image src={chip.src} alt="Newest version chip" />}
         </SectionHeader>
 
