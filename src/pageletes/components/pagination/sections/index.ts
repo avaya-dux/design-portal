@@ -18,3 +18,6 @@ export { Behavior };
 
 import KeyboardInteractions from "./KeyboardInteractions.astro";
 export { KeyboardInteractions };
+
+import KeyboardInteractionsTable from "./KeyboardInteractionsTable.astro";
+export { KeyboardInteractionsTable };

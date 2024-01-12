@@ -1,0 +1,42 @@
+---
+import {
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableCellHead,
+  InfoTableHead,
+  InfoTableRow,
+} from "components";
+---
+
+<InfoTable>
+  <InfoTableHead>
+    <InfoTableRow>
+      <InfoTableCellHead>Keystrokes</InfoTableCellHead>
+      <InfoTableCellHead>Interaction</InfoTableCellHead>
+    </InfoTableRow>
+  </InfoTableHead>
+  <InfoTableBody>
+    <InfoTableRow>
+      <InfoTableCell>Tab</InfoTableCell>
+      <InfoTableCell>
+        Moves forward to the next page number.
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>Shift + Tab</InfoTableCell>
+      <InfoTableCell>
+        Moves backward to the previous page number.
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>Enter or Spacebar</InfoTableCell>
+      <InfoTableCell>
+        Opens the selected page or opens the dropdown.
+      </InfoTableCell>
+    </InfoTableRow>
+  </InfoTableBody>
+</InfoTable>
+

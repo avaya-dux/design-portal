@@ -13,6 +13,9 @@ export { Divider };
 import ExternalLink from "./ExternalLink.astro";
 export { ExternalLink };
 
+import RowAlignmentContainer from "./RowAlignmentContainer.astro";
+export { RowAlignmentContainer };
+
 import ImageWrapper from "./ImageWrapper.astro";
 export { ImageWrapper };
 

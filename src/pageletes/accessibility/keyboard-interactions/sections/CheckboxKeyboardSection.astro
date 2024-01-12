@@ -1,0 +1,21 @@
+---
+import {
+  LinkButton,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static"
+
+import { KeyboardInteractionsTable } from "pageletes/components/checkbox";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.checkbox.id}>
+    {topics.checkbox.title}
+    <LinkButton slot="right-content" href="/components/checkbox" variant="secondary" size="compact">
+      Visit Checkbox Component
+    </LinkButton>
+  </SectionHeader>
+  <KeyboardInteractionsTable />
+</PageleteSection>

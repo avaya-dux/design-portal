@@ -1,0 +1,63 @@
+---
+import {
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableCellHead,
+  InfoTableHead,
+  InfoTableRow,
+} from "components";
+---
+
+<InfoTable>
+  <InfoTableHead>
+    <InfoTableRow>
+      <InfoTableCellHead>Keystrokes</InfoTableCellHead>
+      <InfoTableCellHead>Interaction</InfoTableCellHead>
+    </InfoTableRow>
+  </InfoTableHead>
+  <InfoTableBody>
+    <InfoTableRow>
+      <InfoTableCell>Tab</InfoTableCell>
+      <InfoTableCell>
+        Moves forward into and out of the list group.
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>Shift + Tab</InfoTableCell>
+      <InfoTableCell>
+        Moves backward to the previous interactive element.
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>↑ Up Arror and ↓ Down Arrow</InfoTableCell>
+      <InfoTableCell>
+        Moves between the previous or next list item. Moves directly to the
+        actions if the item is not interactive
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>← Left Arrow and → Right Arrow</InfoTableCell>
+      <InfoTableCell>
+        Moves between the buttons in the list (if more than one is available).
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>Enter or Spacebar</InfoTableCell>
+      <InfoTableCell>Activates the button.</InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>Spacebar</InfoTableCell>
+      <InfoTableCell>
+        Activates the list item and toggles the switch between on and off
+        states.
+      </InfoTableCell>
+    </InfoTableRow>
+  </InfoTableBody>
+</InfoTable>
+

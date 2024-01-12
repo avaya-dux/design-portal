@@ -5,9 +5,10 @@ export interface Props {
   href: string;
   external?: boolean;
   variant?: "primary" | "secondary" | "secondary-light" | "tertiary";
+  size?: "compact" | "default" | "wide";
 }
 
-const { href, external = false, variant = "primary" } = Astro.props as Props;
+const { href, external = false, variant = "primary", size = "default" } = Astro.props as Props;
 ---
 
 <a
@@ -18,6 +19,9 @@ const { href, external = false, variant = "primary" } = Astro.props as Props;
     variant === "secondary-light" &&
       "neo-btn-secondary neo-btn-secondary--light neo-btn-secondary--default",
     variant === "tertiary" && "neo-btn-tertiary neo-btn-tertiary--default",
+    size === "compact" && "neo-btn--compact",
+    size === "wide" && "neo-btn--wide",
+    size === "default" && "neo-btn--default",
   )}
   href={href}
   target={external ? "_blank" : undefined}

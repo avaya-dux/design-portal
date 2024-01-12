@@ -1,0 +1,51 @@
+---
+import {
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableCellHead,
+  InfoTableHead,
+  InfoTableRow,
+} from "components";
+---
+
+<InfoTable>
+  <InfoTableHead>
+    <InfoTableRow>
+      <InfoTableCellHead>Keystrokes</InfoTableCellHead>
+      <InfoTableCellHead>Interaction</InfoTableCellHead>
+    </InfoTableRow>
+  </InfoTableHead>
+  <InfoTableBody>
+    <InfoTableRow>
+      <InfoTableCell>Tab</InfoTableCell>
+      <InfoTableCell>
+        Moves forward into and out of the radio button in the group.
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>Shift + Tab</InfoTableCell>
+      <InfoTableCell>
+        Moves backward to the previous radio button in the group.
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>← Left Arrow and → Right Arrow</InfoTableCell>
+      <InfoTableCell>
+        Moves between the horizontal radio options and select the next option
+        in focus.
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>↑ Up Arror and ↓ Down Arrow</InfoTableCell>
+      <InfoTableCell>
+        Moves between the vertical radio options and select the next option
+        in focus.
+      </InfoTableCell>
+    </InfoTableRow>
+  </InfoTableBody>
+</InfoTable>
+
