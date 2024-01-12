@@ -15,7 +15,6 @@
 }
 .changes__wrapper em {
   font-family: monospace !important;
-  color: red;
-  font-style: normal;
-  background: var(--neo-color-base-100);
+  font-style: italic;
+  font-weight: 400;
 }
