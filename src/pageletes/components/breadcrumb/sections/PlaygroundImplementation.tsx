@@ -13,7 +13,7 @@ import {
 } from "helpers";
 
 const storybook =
-  "https://neo-react-library-storybook.netlify.app/?path=/story/components-breadcrumb";
+  "https://neo-react-library-storybook.netlify.app/?path=/story/components-breadcrumbs";
 
 const sandbox =
   "https://codesandbox.io/s/neo-react-breadcrumbs-tqvmzp?file=/src/App.js";
