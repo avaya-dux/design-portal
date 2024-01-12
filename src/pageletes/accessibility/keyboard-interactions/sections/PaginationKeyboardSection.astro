@@ -1,6 +1,5 @@
 ---
 import {
-  RowAlignmentContainer,
   LinkButton,
   PageleteSection,
   SectionHeader,
@@ -12,9 +11,11 @@ import { KeyboardInteractionsTable } from "pageletes/components/pagination";
 ---
 
 <PageleteSection>
-  <RowAlignmentContainer>
-    <SectionHeader id={topics.pagination.id}>{topics.pagination.title} </SectionHeader>
-    <LinkButton href="/components/pagination" variant="secondary" size="compact">Visit Pagination Component</LinkButton>
-  </RowAlignmentContainer>
+  <SectionHeader id={topics.pagination.id}>
+    {topics.pagination.title}
+    <LinkButton slot="right-content" href="/components/pagination" variant="secondary" size="compact">
+      Visit Pagination Component
+    </LinkButton>
+  </SectionHeader>
   <KeyboardInteractionsTable />
 </PageleteSection>

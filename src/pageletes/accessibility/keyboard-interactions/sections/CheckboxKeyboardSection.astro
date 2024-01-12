@@ -1,7 +1,6 @@
 ---
 import {
-RowAlignmentContainer,
-LinkButton,
+  LinkButton,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -12,9 +11,11 @@ import { KeyboardInteractionsTable } from "pageletes/components/checkbox";
 ---
 
 <PageleteSection>
-  <RowAlignmentContainer>
-    <SectionHeader id={topics.checkbox.id}>{topics.checkbox.title} </SectionHeader>
-    <LinkButton href="/components/checkbox" variant="secondary" size="compact">Visit Checkbox Component</LinkButton>
-  </RowAlignmentContainer>
+  <SectionHeader id={topics.checkbox.id}>
+    {topics.checkbox.title}
+    <LinkButton slot="right-content" href="/components/checkbox" variant="secondary" size="compact">
+      Visit Checkbox Component
+    </LinkButton>
+  </SectionHeader>
   <KeyboardInteractionsTable />
 </PageleteSection>

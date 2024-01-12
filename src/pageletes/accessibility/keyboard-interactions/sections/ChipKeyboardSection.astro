@@ -1,6 +1,5 @@
 ---
 import {
-  RowAlignmentContainer,
   LinkButton,
   PageleteSection,
   SectionHeader,
@@ -12,9 +11,11 @@ import { KeyboardInteractionsTable } from "pageletes/components/chip";
 ---
 
 <PageleteSection>
-  <RowAlignmentContainer>
-    <SectionHeader id={topics.chip.id}>{topics.chip.title} </SectionHeader>
-    <LinkButton href="/components/chip" variant="secondary" size="compact">Visit Chip Component</LinkButton>
-  </RowAlignmentContainer>
+  <SectionHeader id={topics.chip.id}>
+    {topics.chip.title}
+    <LinkButton slot="right-content" href="/components/chip" variant="secondary" size="compact">
+      Visit Chip Component
+    </LinkButton>
+  </SectionHeader>
   <KeyboardInteractionsTable />
 </PageleteSection>

@@ -1,6 +1,5 @@
 ---
 import {
-  RowAlignmentContainer,
   LinkButton,
   PageleteSection,
   SectionHeader,
@@ -12,9 +11,11 @@ import { KeyboardInteractionsTable } from "pageletes/components/dropdown";
 ---
 
 <PageleteSection>
-  <RowAlignmentContainer>
-    <SectionHeader id={topics.dropdown.id}>{topics.dropdown.title} </SectionHeader>
-    <LinkButton href="/components/dropdown" variant="secondary" size="compact">Visit Dropdown Component</LinkButton>
-  </RowAlignmentContainer>
+  <SectionHeader id={topics.dropdown.id}>
+    {topics.dropdown.title}
+    <LinkButton slot="right-content" href="/components/dropdown" variant="secondary" size="compact">
+      Visit Dropdown Component
+    </LinkButton>
+  </SectionHeader>
   <KeyboardInteractionsTable />
 </PageleteSection>
