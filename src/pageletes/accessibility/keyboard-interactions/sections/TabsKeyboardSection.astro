@@ -1,0 +1,21 @@
+---
+import {
+  LinkButton,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static"
+
+import { KeyboardInteractionsTable } from "pageletes/components/tabs";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.tabs.id}>
+    {topics.tabs.title}
+    <LinkButton slot="right-content" href="/components/tabs" variant="secondary" size="compact">
+      Visit Tabs Component
+    </LinkButton>
+  </SectionHeader>
+  <KeyboardInteractionsTable />
+</PageleteSection>
