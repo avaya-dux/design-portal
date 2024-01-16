@@ -5,6 +5,7 @@ import {
 } from "./githubapi";
 
 const key = "put in personal access key";
+// These tests are integration tests, thus they are skipped during pipeline runs.
 // To run these tests manually, make sure key is valid and remove .skip from describe.skip
 describe.skip("integretion test", () => {
   test(getGithubReleases.name, async () => {

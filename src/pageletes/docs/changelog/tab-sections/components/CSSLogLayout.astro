@@ -34,7 +34,7 @@ const releases = await getGithubReleases(octokit)
       </PageleteSection>
     ))
   }
-  <p class="changelog-extra">
+  <p class="changelog-older-releases neo-body-large">
     Click
     <ExternalLink
       inline
@@ -50,10 +50,9 @@ const releases = await getGithubReleases(octokit)
     width: 100%;
     height: 1px;
     background-color: var(--neo-color-base-200);
+    margin-bottom: 2rem;
   }
-  .changelog-extra {
+  .changelog-older-releases {
     margin-top: 3rem;
-    font-size: 32px;
-    line-height: 48px;
   }
 </style>
