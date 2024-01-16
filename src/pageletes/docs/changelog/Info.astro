@@ -1,16 +1,14 @@
 ---
 import { PageleteSection, TabMenu } from "components";
 
-const tabNames = ["Design Updates", "CSS", "React"];
+const tabNames = ["CSS", "React"];
 
-import DesignUpdateLogLayout from "./tab-sections/components/DesignUpdateLogLayout.astro";
 import CSSLogLayout from "./tab-sections/components/CSSLogLayout.astro";
 import ReactLogLayout from "./tab-sections/components/ReactLogLayout.astro";
 ---
 
 <PageleteSection>
   <TabMenu client:only="react" panels={tabNames}>
-    <DesignUpdateLogLayout slot="design updates" />
     <CSSLogLayout slot="css" />
     <ReactLogLayout slot="react" />
   </TabMenu>
