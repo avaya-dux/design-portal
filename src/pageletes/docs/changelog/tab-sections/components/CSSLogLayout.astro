@@ -5,7 +5,7 @@ import { Image } from "@avaya/neo-react";
 import { getGithubReleases, getOctokit } from "helpers";
 import { ChangelogNotes } from "components/react";
 const octokit = getOctokit();
-const releases = await getGithubReleases(octokit)
+const releases = await getGithubReleases(octokit, "neo-css-library")
   .then((response) =>
     // valid tag name should start with v and followed by at least one digit
     response.filter((response) => /^[vV]\d+/.test(response.tag)),
@@ -30,7 +30,11 @@ const releases = await getGithubReleases(octokit)
           {index === 0 && <Image src={chip.src} alt="Newest version chip" />}
         </SectionHeader>
 
-        <ChangelogNotes githubReleaseTag={release.tag} client:load />
+        <ChangelogNotes
+          githubReleaseTag={release.tag}
+          repo="neo-css-library"
+          client:load
+        />
       </PageleteSection>
     ))
   }
