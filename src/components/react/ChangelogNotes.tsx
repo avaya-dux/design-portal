@@ -1,7 +1,7 @@
 import { getOctokit, retrieveGitHubReleaseNotes } from "helpers";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import "./ChangelogNotes.css";
+import styles from "./ChangelogNotes.module.css";
 
 export const ChangelogNotes = ({
   githubReleaseTag,
@@ -23,7 +23,7 @@ export const ChangelogNotes = ({
   }, [githubReleaseTag]);
 
   return (
-    <div className="changes__wrapper">
+    <div className={styles.changes__wrapper}>
       <ReactMarkdown>{releaseNotes}</ReactMarkdown>
     </div>
   );
