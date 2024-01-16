@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import { Octokit } from "octokit";
 
-export type Repo = "neo-react-library" | "neo-css-library"
+export type Repo = "neo-react-library" | "neo-css-library";
 
 export interface GithubRelease {
   version: string;

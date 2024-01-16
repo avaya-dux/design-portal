@@ -26,7 +26,7 @@ describe.skip("integretion test", () => {
       );
       expect(result).not.toBeNull();
     });
-  })
+  });
 
   describe("neo-react-libary test", () => {
     test(getGithubReleases.name, async () => {
@@ -46,5 +46,5 @@ describe.skip("integretion test", () => {
       );
       expect(result).not.toBeNull();
     });
-  })
+  });
 });

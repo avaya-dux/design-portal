@@ -1,11 +1,7 @@
 ---
-import {
-  LinkButton,
-  PageleteSection,
-  SectionHeader,
-} from "components/astro";
+import { LinkButton, PageleteSection, SectionHeader } from "components/astro";
 
-import { topics } from "../static"
+import { topics } from "../static";
 
 import { KeyboardInteractionsTable } from "pageletes/components/tooltip";
 ---
@@ -13,7 +9,12 @@ import { KeyboardInteractionsTable } from "pageletes/components/tooltip";
 <PageleteSection>
   <SectionHeader id={topics.tooltip.id}>
     {topics.tooltip.title}
-    <LinkButton slot="right-content" href="/components/tooltip" variant="secondary" size="compact">
+    <LinkButton
+      slot="right-content"
+      href="/components/tooltip"
+      variant="secondary"
+      size="compact"
+    >
       Visit Tooltip Component
     </LinkButton>
   </SectionHeader>

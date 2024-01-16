@@ -8,7 +8,7 @@ export const ChangelogNotes = ({
   repo,
 }: {
   githubReleaseTag: string;
-  repo:Repo;
+  repo: Repo;
 }) => {
   const [releaseNotes, setReleaseNotes] = useState<string>();
 

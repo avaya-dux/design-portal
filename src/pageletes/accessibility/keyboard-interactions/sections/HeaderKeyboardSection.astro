@@ -1,11 +1,7 @@
 ---
-import {
-  LinkButton,
-  PageleteSection,
-  SectionHeader,
-} from "components/astro";
+import { LinkButton, PageleteSection, SectionHeader } from "components/astro";
 
-import { topics } from "../static"
+import { topics } from "../static";
 
 import { KeyboardInteractionsTable } from "pageletes/components/header";
 ---
@@ -13,7 +9,12 @@ import { KeyboardInteractionsTable } from "pageletes/components/header";
 <PageleteSection>
   <SectionHeader id={topics.header.id}>
     {topics.header.title}
-    <LinkButton slot="right-content" href="/components/header" variant="secondary" size="compact">
+    <LinkButton
+      slot="right-content"
+      href="/components/header"
+      variant="secondary"
+      size="compact"
+    >
       Visit Header Component
     </LinkButton>
   </SectionHeader>
