@@ -38,34 +38,34 @@ import PaginationKeyboardSection from "./PaginationKeyboardSection.astro";
 export { PaginationKeyboardSection };
 
 import RadioKeyboardSection from "./RadioKeyboardSection.astro";
-export {RadioKeyboardSection  };
+export { RadioKeyboardSection };
 
 import SelectKeyboardSection from "./SelectKeyboardSection.astro";
-export {SelectKeyboardSection  };
+export { SelectKeyboardSection };
 
 import SheetKeyboardSection from "./SheetKeyboardSection.astro";
-export {SheetKeyboardSection  };
+export { SheetKeyboardSection };
 
 import SideNavKeyboardSection from "./SideNavKeyboardSection.astro";
-export {SideNavKeyboardSection  };
+export { SideNavKeyboardSection };
 
 import SwitchKeyboardSection from "./SwitchKeyboardSection.astro";
-export {SwitchKeyboardSection  };
+export { SwitchKeyboardSection };
 
 import TableKeyboardSection from "./TableKeyboardSection.astro";
-export {TableKeyboardSection  };
+export { TableKeyboardSection };
 
 import TabsKeyboardSection from "./TabsKeyboardSection.astro";
-export {TabsKeyboardSection  };
+export { TabsKeyboardSection };
 
 import TextKeyboardSection from "./TextKeyboardSection.astro";
-export {TextKeyboardSection  };
+export { TextKeyboardSection };
 
 import TooltipKeyboardSection from "./TooltipKeyboardSection.astro";
-export {TooltipKeyboardSection  };
+export { TooltipKeyboardSection };
 
 import TreeViewKeyboardSection from "./TreeViewKeyboardSection.astro";
-export {TreeViewKeyboardSection  };
+export { TreeViewKeyboardSection };
 
 import WidgetKeyboardSection from "./WidgetKeyboardSection.astro";
-export {WidgetKeyboardSection  };
+export { WidgetKeyboardSection };

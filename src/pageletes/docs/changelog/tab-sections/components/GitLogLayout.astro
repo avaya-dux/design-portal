@@ -1,0 +1,66 @@
+---
+import { PageleteSection, SectionHeader, ExternalLink } from "components/astro";
+import chip from "../imgs/chip.svg";
+import { Image } from "@avaya/neo-react";
+import { getGithubReleases, getOctokit, type Repo } from "helpers";
+import { ChangelogNotes } from "components/react";
+export interface Props {
+  repo: Repo;
+}
+const { repo } = Astro.props as Props;
+const octokit = getOctokit();
+const releases = await getGithubReleases(octokit, repo)
+  .then((response) =>
+    // valid tag name should start with v and followed by at least one digit
+    response.filter((response) => /^[vV]\d+/.test(response.tag)),
+  )
+  .catch((error) => {
+    console.error(error);
+    return [];
+  });
+---
+
+<div class="changelog-separator"></div>
+
+<div>
+  {
+    releases.map((release, index) => (
+      <PageleteSection
+        marginBottom="0"
+        marginTop={index === 0 ? "48px" : "32px"}
+      >
+        <SectionHeader id={`${release.date}-css-update`}>
+          {`${release.version} (${release.date}) `}
+          {index === 0 && <Image src={chip.src} alt="Newest version chip" />}
+        </SectionHeader>
+
+        <ChangelogNotes
+          githubReleaseTag={release.tag}
+          repo={repo}
+          client:load
+        />
+      </PageleteSection>
+    ))
+  }
+  <p class="changelog-older-releases neo-body-large">
+    Click
+    <ExternalLink
+      inline
+      href={`https://github.com/avaya-dux/${repo}/releases?page=3`}
+    >
+      here
+    </ExternalLink> to see release notes of old versions.
+  </p>
+</div>
+
+<style>
+  .changelog-separator {
+    width: 100%;
+    height: 1px;
+    background-color: var(--neo-color-base-200);
+    margin-bottom: 2rem;
+  }
+  .changelog-older-releases {
+    margin-top: 3rem;
+  }
+</style>
