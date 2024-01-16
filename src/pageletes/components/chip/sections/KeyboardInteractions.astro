@@ -1,12 +1,10 @@
 ---
 import {
+  KeyboardInteractionsTable,
+} from ".";
+
+import {
   Description,
-  InfoTable,
-  InfoTableHead,
-  InfoTableBody,
-  InfoTableCellHead,
-  InfoTableCell,
-  InfoTableRow,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -24,33 +22,5 @@ const { id, title } = topics.keyboard;
     navigation employs the following shortcuts.
   </Description>
 
-  <InfoTable>
-    <InfoTableHead>
-      <InfoTableRow>
-        <InfoTableCellHead>Keystrokes</InfoTableCellHead>
-        <InfoTableCellHead>Interaction</InfoTableCellHead>
-      </InfoTableRow>
-    </InfoTableHead>
-
-    <InfoTableBody>
-      <InfoTableRow>
-        <InfoTableCell>Tab</InfoTableCell>
-        <InfoTableCell>
-          Moves forward to the next interactive element
-        </InfoTableCell>
-      </InfoTableRow>
-
-      <InfoTableRow>
-        <InfoTableCell>Shift + Tab</InfoTableCell>
-        <InfoTableCell>
-          Moves backward to the previous interactive element
-        </InfoTableCell>
-      </InfoTableRow>
-
-      <InfoTableRow>
-        <InfoTableCell>Spacebar</InfoTableCell>
-        <InfoTableCell>Activate the chip</InfoTableCell>
-      </InfoTableRow>
-    </InfoTableBody>
-  </InfoTable>
+  <KeyboardInteractionsTable />
 </PageleteSection>

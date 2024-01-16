@@ -1,0 +1,54 @@
+---
+import {
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableCellHead,
+  InfoTableHead,
+  InfoTableRow,
+} from "components";
+---
+
+<InfoTable>
+  <InfoTableHead>
+    <InfoTableRow>
+      <InfoTableCellHead>Keystrokes</InfoTableCellHead>
+      <InfoTableCellHead>Interaction</InfoTableCellHead>
+    </InfoTableRow>
+  </InfoTableHead>
+
+  <InfoTableBody>
+    <InfoTableRow>
+      <InfoTableCell>Spacebar or &uarr; Up Arrow and &darr; Down Arrow</InfoTableCell>
+      <InfoTableCell>
+        Opens the selected options in the dropdown menu.
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>Enter or Spacebar</InfoTableCell>
+      <InfoTableCell>
+        Select the option in focus and close the list.
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>&uarr; Up Arrow and &darr; Down Arrow</InfoTableCell>
+      <InfoTableCell>
+        Moves between the previous or next option.
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>Esc</InfoTableCell>
+      <InfoTableCell>
+        Closes the dropdown menu without changing the selected option.
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>Spacebare (for multiple select)</InfoTableCell>
+      <InfoTableCell>Move between the previous or next option.</InfoTableCell>
+    </InfoTableRow>
+  </InfoTableBody>
+</InfoTable>
