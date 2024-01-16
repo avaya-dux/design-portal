@@ -1,13 +1,7 @@
 ---
-import {
-  KeyboardInteractionsTable,
-} from ".";
+import { KeyboardInteractionsTable } from ".";
 
-import {
-  Description,
-  PageleteSection,
-  SectionHeader,
-} from "components/astro";
+import { Description, PageleteSection, SectionHeader } from "components/astro";
 import { topics } from "../static";
 
 export interface Props {
@@ -15,11 +9,12 @@ export interface Props {
 }
 
 const { link } = Astro.props as Props;
-
 ---
 
 <PageleteSection>
-  <SectionHeader link={link} id={topics.keyboard.id}>{topics.keyboard.title}</SectionHeader>
+  <SectionHeader link={link} id={topics.keyboard.id}>
+    {topics.keyboard.title}
+  </SectionHeader>
 
   <Description>
     Accessibility requires that each item on the screen is reachable using the

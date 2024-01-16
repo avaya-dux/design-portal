@@ -1,6 +1,8 @@
 import dayjs from "dayjs";
 import { Octokit } from "octokit";
 
+export type Repo = "neo-react-library" | "neo-css-library";
+
 export interface GithubRelease {
   version: string;
   tag: string;
@@ -15,12 +17,13 @@ export function getOctokit(apiKey?: string) {
 
 export async function getGithubReleases(
   okto: Octokit,
+  repo: Repo,
 ): Promise<GithubRelease[]> {
   const gitHubRequest = await okto.request(
     "GET /repos/{owner}/{repo}/releases?per_page=20",
     {
       owner: "avaya-dux",
-      repo: "neo-css-library",
+      repo,
     },
   );
 
@@ -39,12 +42,13 @@ export async function getGithubReleases(
 
 export async function retrieveGitHubReleaseNotes(
   okto: Octokit,
+  repo: Repo,
   tagName: string,
 ) {
   return await okto
     .request("GET /repos/{owner}/{repo}/releases/tags/{tag}", {
       owner: "avaya-dux",
-      repo: "neo-css-library",
+      repo,
       tag: tagName,
     })
     .then((response) => {

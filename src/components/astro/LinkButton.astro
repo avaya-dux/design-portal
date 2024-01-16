@@ -8,7 +8,12 @@ export interface Props {
   size?: "compact" | "default" | "wide";
 }
 
-const { href, external = false, variant = "primary", size = "default" } = Astro.props as Props;
+const {
+  href,
+  external = false,
+  variant = "primary",
+  size = "default",
+} = Astro.props as Props;
 ---
 
 <a

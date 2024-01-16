@@ -1,19 +1,20 @@
 ---
-import {
-  LinkButton,
-  PageleteSection,
-  SectionHeader,
-} from "components/astro";
+import { LinkButton, PageleteSection, SectionHeader } from "components/astro";
 
-import { topics } from "../static"
+import { topics } from "../static";
 
 import { KeyboardInteractionsTable } from "pageletes/components/modal";
 ---
 
 <PageleteSection>
   <SectionHeader id={topics.modal.id}>
-  {topics.modal.title}
-    <LinkButton slot="right-content" href="/components/modal" variant="secondary" size="compact">
+    {topics.modal.title}
+    <LinkButton
+      slot="right-content"
+      href="/components/modal"
+      variant="secondary"
+      size="compact"
+    >
       Visit Modal Component
     </LinkButton>
   </SectionHeader>
