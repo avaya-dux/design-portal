@@ -2,10 +2,14 @@
 import { PageleteSection, SectionHeader, ExternalLink } from "components/astro";
 import chip from "../imgs/chip.svg";
 import { Image } from "@avaya/neo-react";
-import { getGithubReleases, getOctokit } from "helpers";
+import { getGithubReleases, getOctokit, type Repo } from "helpers";
 import { ChangelogNotes } from "components/react";
+export interface Props {
+  repo: Repo;
+}
+const { repo } = Astro.props as Props;
 const octokit = getOctokit();
-const releases = await getGithubReleases(octokit, "neo-css-library")
+const releases = await getGithubReleases(octokit, repo)
   .then((response) =>
     // valid tag name should start with v and followed by at least one digit
     response.filter((response) => /^[vV]\d+/.test(response.tag)),
@@ -32,7 +36,7 @@ const releases = await getGithubReleases(octokit, "neo-css-library")
 
         <ChangelogNotes
           githubReleaseTag={release.tag}
-          repo="neo-css-library"
+          repo={repo}
           client:load
         />
       </PageleteSection>
@@ -42,7 +46,7 @@ const releases = await getGithubReleases(octokit, "neo-css-library")
     Click
     <ExternalLink
       inline
-      href="https://github.com/avaya-dux/neo-css-library/releases?page=3"
+      href={`https://github.com/avaya-dux/${repo}/releases?page=3`}
     >
       here
     </ExternalLink> to see release notes of old versions.
