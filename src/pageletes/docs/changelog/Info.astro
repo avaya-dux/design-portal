@@ -1,18 +1,15 @@
 ---
 import { PageleteSection, TabMenu } from "components";
 
-const tabNames = ["Design Updates", "CSS", "React"];
+const tabNames = ["CSS", "React"];
 
-import DesignUpdateLogLayout from "./tab-sections/components/DesignUpdateLogLayout.astro";
-import CSSLogLayout from "./tab-sections/components/CSSLogLayout.astro";
-import ReactLogLayout from "./tab-sections/components/ReactLogLayout.astro";
+import GitLogLayout from "./tab-sections/components/GitLogLayout.astro";
 ---
 
 <PageleteSection>
   <TabMenu client:only="react" panels={tabNames}>
-    <DesignUpdateLogLayout slot="design updates" />
-    <CSSLogLayout slot="css" />
-    <ReactLogLayout slot="react" />
+    <GitLogLayout repo="neo-css-library" slot="css" />
+    <GitLogLayout repo="neo-react-library" slot="react" />
   </TabMenu>
 
   <div class="changelog-spacer"></div>

@@ -42,21 +42,21 @@ export const getPagesInOrder = (pages: Array<PageAstroInstance> = []) => {
     guidelines: [],
   };
 
-  const accessibilityPages = pages.filter(
-    (page) => page.url?.includes("accessibility"),
+  const accessibilityPages = pages.filter((page) =>
+    page.url?.includes("accessibility"),
   );
   result.accessibility = sortPages(accessibilityPages);
 
-  const componentPages = pages.filter(
-    (page) => page.url?.includes("components"),
+  const componentPages = pages.filter((page) =>
+    page.url?.includes("components"),
   );
   result.components = sortPages(componentPages);
 
   const docsPages = pages.filter((page) => page.url?.includes("docs"));
   result.docs = sortPages(docsPages);
 
-  const guidelinesPages = pages.filter(
-    (page) => page.url?.includes("guidelines"),
+  const guidelinesPages = pages.filter((page) =>
+    page.url?.includes("guidelines"),
   );
   result.guidelines = sortPages(guidelinesPages);
 

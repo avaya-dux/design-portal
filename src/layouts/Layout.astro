@@ -5,6 +5,8 @@ export interface Props {
 
 import { NeoThemeProvider } from "@avaya/neo-react";
 
+import { ViewTransitions } from 'astro:transitions';
+
 import { SiteHeader, SiteFooter, DynamicTheme } from "components";
 
 import LeftPanel from "./LeftPanel.astro";
@@ -79,6 +81,7 @@ switch (pathname.split("/")[1]) {
     </script>
 
     <title>{title}</title>
+    <ViewTransitions />
   </head>
 
   <body id="body-content-wrapper">
