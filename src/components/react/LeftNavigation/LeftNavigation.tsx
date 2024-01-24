@@ -26,9 +26,6 @@ export const LeftNavigation = ({
   leftNavPages: PageAstroInstance[];
   currentUrl: string;
 }) => {
-  const handleNavigate = (_: string, url: string) => {
-    window.location.href = url;
-  };
 
   const isOpen = useStore(isLeftNavigationOpen);
 
@@ -106,7 +103,6 @@ export const LeftNavigation = ({
           <LeftNav
             aria-label="left-navigation"
             currentUrl={currentUrl}
-            onNavigate={handleNavigate}
             isActiveOverride
           >
             {leftNavPages.map((page, index) => (
@@ -121,11 +117,7 @@ export const LeftNavigation = ({
             ))}
           </LeftNav>
         ) : width > 0 ? (
-          <LeftNavMobile
-            currentUrl={currentUrl}
-            onNavigate={handleNavigate}
-            allPages={allPages}
-          />
+          <LeftNavMobile currentUrl={currentUrl} allPages={allPages} />
         ) : null}
       </div>
       <div
