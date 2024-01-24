@@ -17,6 +17,7 @@ import { DoAndDont } from "components/react";
 
 import Color from "./BehaviorColor.astro";
 import Dismissal from "./BehaviorDismissal.astro";
+import Overflow from "./BehaviorOverflow.astro";
 import List from "./BehaviorList.astro";
 import Elevation from "./BehaviorElevation.astro";
 
@@ -28,7 +29,7 @@ import behaviorDont from "../imgs/notification-behavior-dont-1.svg";
 const behaviorDoAltText =
   "Use notifications for priority items that need immediate attention.";
 const behaviorDontAltText =
-  "Do not use notifications for frequent actions. Use a toast instead.";
+  "Do not use notifications for frequent actions. Use a <a class='neo-link--inline' href='/components/toast'>Toast</a> instead."; // Need to add a link to the Toast page.
 
 const { id, title } = topics.behavior;
 ---
@@ -99,6 +100,8 @@ const { id, title } = topics.behavior;
   </DoAndDont>
 
   <Color />
+
+  <Overflow />
 
   <Dismissal />
 

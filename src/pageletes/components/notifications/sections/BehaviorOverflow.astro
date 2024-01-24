@@ -1,0 +1,40 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  Description,
+  ImageWrapper,
+  PageleteSubSection,
+  SubHeader,
+} from "components/astro";
+
+import dismissalOne from "../imgs/notification-behavior-overflow-1.svg";// need image
+const dismissalOneAltText =
+  "Image showing notification with truncated text";
+
+import dismissalTwo from "../imgs/notification-behavior-overflow-2.svg";// need image
+const dismissalTwoAltText =
+  "Image showing full text after the chevron has been activated";
+---
+
+<PageleteSubSection>
+  <SubHeader id="notifications-behavior-overflow">Overflow</SubHeader>
+
+  <Description>
+    For General Notifications, by default, the text on the header and the body
+    copy will be truncated after two lines of text.
+  </Description>
+
+  <ImageWrapper padding="0">
+    <Image src={dismissalOne.src} alt={dismissalOneAltText} />
+  </ImageWrapper>
+
+  <Description>
+    Clicking on the chevron icon expands the notification to show the rest of
+    the hidden content.
+  </Description>
+
+  <ImageWrapper padding="0">
+    <Image src={dismissalTwo.src} alt={dismissalTwoAltText} />
+  </ImageWrapper>
+</PageleteSubSection>
