@@ -1,8 +1,4 @@
-import {
-  Notification,
-  Radio,
-  RadioGroup,
-} from "@avaya/neo-react";
+import { Notification, Radio, RadioGroup } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components";
@@ -19,34 +15,37 @@ export const storybook =
 
 type TypeOption = "general" | "inline";
 
-
 export const PlaygroundImplementation = () => {
   const [typeOption, setType] = useState<TypeOption>("general");
 
   const [element, react, html] = useMemo(() => {
-    const inLine = typeOption === "inline"
-    const description = typeOption === "inline" ? "This is inline implementation"
-      : "This is general implementation"
-    const element = <Notification
-    type="info"
-    header="Info"
-    description={description}
-    isInline={inLine}
-    actions={{
-      actionButtons: {
-        buttons: [
-          {
-            children: 'Edit',
-            onClick: () => {}
+    const inLine = typeOption === "inline";
+    const description =
+      typeOption === "inline"
+        ? "This is inline implementation"
+        : "This is general implementation";
+    const element = (
+      <Notification
+        type="info"
+        header="Info"
+        description={description}
+        isInline={inLine}
+        actions={{
+          actionButtons: {
+            buttons: [
+              {
+                children: "Edit",
+                onClick: () => {},
+              },
+              {
+                children: "Alert",
+                onClick: () => {},
+              },
+            ],
           },
-          {
-            children: 'Alert',
-            onClick: () => {}
-          }
-        ]
-      }
-    }}
-  />;
+        }}
+      />
+    );
     return [
       element,
       prettyPrintReactElementToString(element),
@@ -63,13 +62,13 @@ export const PlaygroundImplementation = () => {
               groupName="type"
               aria-label="Notification Type"
               selected={typeOption}
-              onChange={(e: { target: {value: string } }) => {
+              onChange={(e: { target: { value: string } }) => {
                 setType(e.target.value as TypeOption);
               }}
             >
               <Radio value="general">General</Radio>
               <Radio value="inline">Inline</Radio>
-           </RadioGroup>
+            </RadioGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
       }
@@ -80,7 +79,7 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      <div style={{ width: "100%" }}>{ element}</div>
+      <div style={{ width: "100%" }}>{element}</div>
     </Playground>
   );
 };
