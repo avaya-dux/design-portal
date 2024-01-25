@@ -2,9 +2,11 @@
 import { Image } from "@avaya/neo-react";
 
 import {
+ColumnLayout,
   Description,
   ImageWrapper,
   PageleteSubSection,
+  StackedLayout,
   SubHeader,
 } from "components/astro";
 
@@ -25,7 +27,7 @@ const dismissalTwoAltText =
     copy will be truncated after two lines of text.
   </Description>
 
-  <ImageWrapper padding="0">
+  <ImageWrapper padding="0" marginBottom="3rem">
     <Image src={dismissalOne.src} alt={dismissalOneAltText} />
   </ImageWrapper>
 
