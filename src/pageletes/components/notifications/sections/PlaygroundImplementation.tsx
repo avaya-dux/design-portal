@@ -21,35 +21,38 @@ type TypeOption = "general" | "inline";
 
 
 export const PlaygroundImplementation = () => {
-  const [type, setType] = useState<TypeOption>("inline");
-  const isInline = type ==="inline"
+  const [typeOption, setType] = useState<TypeOption>("general");
 
   const [element, react, html] = useMemo(() => {
+    const inLine = typeOption === "inline"
+    const description = typeOption === "inline" ? "This is inline implimentation"
+      : "This is general implimentation"
     const element = <Notification
-      type="info"
-      header="Info"
-      description="This is the general implementation"
-      actions={{
-        actionButtons: {
-          buttons: [
-            {
-              children: 'Edit',
-              onClick: () => {}
-            },
-            {
-              children: 'Alert',
-              onClick: () => {}
-            }
-          ]
-        }
-      }}
-        />;
+    type="info"
+    header="Info"
+    description={description}
+    isInline={inLine}
+    actions={{
+      actionButtons: {
+        buttons: [
+          {
+            children: 'Edit',
+            onClick: () => {}
+          },
+          {
+            children: 'Alert',
+            onClick: () => {}
+          }
+        ]
+      }
+    }}
+  />;
     return [
       element,
       prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
     ];
-  }, [type]);
+  }, [typeOption]);
 
   return (
     <Playground
@@ -59,7 +62,7 @@ export const PlaygroundImplementation = () => {
             <RadioGroup
               groupName="type"
               aria-label="Notification Type"
-              selected={type}
+              selected={typeOption}
               onChange={(e: { target: {value: string } }) => {
                 setType(e.target.value as TypeOption);
               }}
@@ -77,27 +80,7 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      <div style={{ width: "100%" }}>{
-      isInline ? <Notification
-            type="info"
-            header="Info"
-            description="This is inline implimentation"
-            isInline
-            actions={{
-              actionButtons: {
-                buttons: [
-                  {
-                    children: 'Edit',
-                    onClick: () => {}
-                  },
-                  {
-                    children: 'Alert',
-                    onClick: () => {}
-                  }
-                ]
-              }
-            }}
-      /> : element}</div>
+      <div style={{ width: "100%" }}>{ element}</div>
     </Playground>
   );
 };
