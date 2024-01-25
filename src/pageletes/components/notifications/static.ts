@@ -1,6 +1,7 @@
 import type { TopicsDict } from "components";
 
 type NotificationsTopicNames =
+  | "playground"
   | "anatomy"
   | "type"
   | "behavior"
@@ -11,6 +12,11 @@ type NotificationsTopicNames =
 const component = "notifications";
 
 export const topics: TopicsDict<NotificationsTopicNames> = {
+  playground: {
+    order: 0,
+    id: `${component}-playground`,
+    title: "Interactive Playground",
+  },
   anatomy: {
     order: 1,
     id: `${component}-anatomy`,
