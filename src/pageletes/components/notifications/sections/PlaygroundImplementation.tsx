@@ -25,8 +25,8 @@ export const PlaygroundImplementation = () => {
 
   const [element, react, html] = useMemo(() => {
     const inLine = typeOption === "inline"
-    const description = typeOption === "inline" ? "This is inline implimentation"
-      : "This is general implimentation"
+    const description = typeOption === "inline" ? "This is inline implementation"
+      : "This is general implementation"
     const element = <Notification
     type="info"
     header="Info"
