@@ -34,11 +34,11 @@ export const PlaygroundImplementation = () => {
           buttons: [
             {
               children: 'Edit',
-              onClick: function Ga(){}
+              onClick: () => foo()
             },
             {
               children: 'Alert',
-              onClick: function Ga(){}
+              onClick: () => foo()
             }
           ]
         }
@@ -89,11 +89,11 @@ export const PlaygroundImplementation = () => {
                 buttons: [
                   {
                     children: 'Edit',
-                    onClick: function Ga(){}
+                    onClick: () => foo()
                   },
                   {
                     children: 'Alert',
-                    onClick: function Ga(){}
+                    onClick: () => foo()
                   }
                 ]
               }
