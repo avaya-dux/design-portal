@@ -22,30 +22,29 @@ type TypeOption = "general" | "inline";
 
 export const PlaygroundImplementation = () => {
   const [type, setType] = useState<TypeOption>("inline");
+  const isInline = type ==="inline"
 
-  const [isInline, element, react, html] = useMemo(() => {
-    const isInline = type ==="inline"
+  const [element, react, html] = useMemo(() => {
     const element = <Notification
       type="info"
       header="Info"
-      description="This is the general inplementation"
+      description="This is the general implementation"
       actions={{
         actionButtons: {
           buttons: [
             {
               children: 'Edit',
-              onClick: () => foo()
+              onClick: () => {}
             },
             {
               children: 'Alert',
-              onClick: () => foo()
+              onClick: () => {}
             }
           ]
         }
       }}
         />;
     return [
-      isInline,
       element,
       prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
@@ -82,18 +81,18 @@ export const PlaygroundImplementation = () => {
       isInline ? <Notification
             type="info"
             header="Info"
-            description="This is inline inplimentation"
+            description="This is inline implimentation"
             isInline
             actions={{
               actionButtons: {
                 buttons: [
                   {
                     children: 'Edit',
-                    onClick: () => foo()
+                    onClick: () => {}
                   },
                   {
                     children: 'Alert',
-                    onClick: () => foo()
+                    onClick: () => {}
                   }
                 ]
               }
