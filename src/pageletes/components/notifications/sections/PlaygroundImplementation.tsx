@@ -1,12 +1,5 @@
-import {
-  Notification,
-  Radio,
-  RadioGroup,
-  Select,
-  type NotificationProps,
-  SelectOption,
-} from "@avaya/neo-react";
-import { useMemo, useState, type Dispatch, type SetStateAction } from "react";
+import { Notification, Radio, RadioGroup } from "@avaya/neo-react";
+import { useMemo, useState } from "react";
 
 import { Playground } from "components";
 
@@ -20,144 +13,61 @@ export const sandbox =
 export const storybook =
   "https://neo-react-library-storybook.netlify.app/?path=/story/components-notification";
 
-type TypeOption = "info" | "success" | "warning" | "alert" | "event";
-type LineOption = "one" | "two";
-type RightSideOption = "close" | "timer" | "button";
-
-const getIcon = (type: TypeOption) => {
-  switch (type) {
-    case "event":
-      return "copy";
-    case "success":
-      return "check";
-    default:
-      return type;
-  }
-};
-
-const getHeader = (type: TypeOption) => {
-  const s = type as string;
-  return s.charAt(0).toUpperCase() + s.slice(1);
-};
-const getDescription = (type: TypeOption, rightSideOption: RightSideOption) => {
-  if (rightSideOption == "timer") {
-    return "A timer display";
-  }
-
-  if (rightSideOption == "button") {
-    return "Two custom actions";
-  }
-
-  switch (type) {
-    case "info":
-      return "An info with close action";
-    case "success":
-      return "A success with close action";
-    case "warning":
-      return "A warning with close action";
-    case "alert":
-      return "An alert with close action";
-    case "event":
-      return "An event with close action";
-    default:
-      return "";
-  }
-};
-
-const getAction = (
-  rightSideOption: RightSideOption,
-  setClosed: Dispatch<SetStateAction<boolean>>,
-) => {
-  switch (rightSideOption) {
-    case "close":
-      return {
-        onClick: () => {
-          alert("Close Clicked");
-          setClosed(true);
-        },
-      };
-    case "timer":
-      return { count: "12:34:56" };
-    default:
-      return {
-        buttons: [
-          { children: "Edit", onClick: () => alert("Edit Clicked") },
-          { children: "Alert", onClick: () => alert("Alert Clicked") },
-        ],
-      };
-  }
-};
+type TypeOption = "general" | "inline";
 
 export const PlaygroundImplementation = () => {
-  const [type, setType] = useState<TypeOption>("info");
-  const [lineOption, setLineOption] = useState<LineOption>("one");
-  const [rightSideOption, setRightSideOption] =
-    useState<RightSideOption>("close");
-  const [closed, setClosed] = useState(false);
+  const [typeOption, setType] = useState<TypeOption>("general");
 
   const [element, react, html] = useMemo(() => {
-    const icon = getIcon(type);
-    const action = getAction(rightSideOption, setClosed);
-    const description = getDescription(type, rightSideOption);
-    let props: NotificationProps = { type, icon, description, action };
-    const header = getHeader(type);
-    if (lineOption == "two") {
-      props = { ...props, header };
-    }
-    const element = <Notification {...props} />;
+    const inLine = typeOption === "inline";
+    const description =
+      typeOption === "inline"
+        ? "This is inline implementation"
+        : "This is general implementation";
+    const element = (
+      <Notification
+        type="info"
+        header="Info"
+        description={description}
+        isInline={inLine}
+        actions={{
+          actionButtons: {
+            buttons: [
+              {
+                children: "Edit",
+                onClick: () => {},
+              },
+              {
+                children: "Alert",
+                onClick: () => {},
+              },
+            ],
+          },
+        }}
+      />
+    );
     return [
       element,
       prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
     ];
-  }, [type, lineOption, rightSideOption, setClosed]);
+  }, [typeOption]);
 
   return (
     <Playground
       options={
         <Playground.OptionsContainer>
           <Playground.OptionsSection title="Type">
-            <Select
+            <RadioGroup
+              groupName="type"
               aria-label="Notification Type"
-              value={type}
-              onChange={(value: string) => {
-                setType(value as TypeOption);
-                setClosed(false);
-              }}
-            >
-              <SelectOption value="info">Info</SelectOption>
-              <SelectOption value="success">Success</SelectOption>
-              <SelectOption value="warning">Warning</SelectOption>
-              <SelectOption value="alert">Alert</SelectOption>
-              <SelectOption value="event">Event</SelectOption>
-            </Select>
-          </Playground.OptionsSection>
-          <Playground.OptionsSection title="Line of texts">
-            <RadioGroup
-              groupName="line-of-texts"
-              selected={lineOption}
+              selected={typeOption}
               onChange={(e: { target: { value: string } }) => {
-                setLineOption(e.target.value as LineOption);
-                setClosed(false);
+                setType(e.target.value as TypeOption);
               }}
             >
-              <Radio value="one">1</Radio>
-              <Radio value="two">2</Radio>
-            </RadioGroup>
-          </Playground.OptionsSection>
-
-          <Playground.OptionsSection title="Right Side">
-            <RadioGroup
-              groupName="right-side-options"
-              selected={rightSideOption}
-              onChange={(e: { target: { value: string } }) => {
-                setRightSideOption(e.target.value as RightSideOption);
-                setClosed(false);
-              }}
-            >
-              <Radio value="button">Button</Radio>
-              <Radio value="timer">Timer</Radio>
-              <Radio value="close">Close</Radio>
+              <Radio value="general">General</Radio>
+              <Radio value="inline">Inline</Radio>
             </RadioGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
@@ -169,7 +79,7 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      <div style={{ width: "100%" }}>{closed ? null : element}</div>
+      <div style={{ width: "100%" }}>{element}</div>
     </Playground>
   );
 };
