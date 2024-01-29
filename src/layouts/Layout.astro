@@ -5,7 +5,7 @@ export interface Props {
 
 import { NeoThemeProvider } from "@avaya/neo-react";
 
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 
 import { SiteHeader, SiteFooter, DynamicTheme } from "components";
 
@@ -188,64 +188,63 @@ switch (pathname.split("/")[1]) {
         margin-bottom: 0.5rem;
       }
     </style>
-  </body>
-
-  <style>
-    body main {
-      --body-main-margin-top: 3rem;
-
-      /* plus `1px` for border */
-      --body-main-height: calc(
-        100vh - var(--header-height) - var(--footer-height) -
-          var(--body-main-margin-top) - 1px
-      );
-
-      min-height: var(--body-main-height);
-      max-width: 60rem;
-      padding: 0 1rem 2rem 1rem;
-      margin: auto;
-      margin-top: var(--body-main-margin-top);
-    }
-    body main.ishomepage {
-      --body-main-margin-top: 0;
-
-      width: 100%;
-      max-width: 100%;
-      padding: 0;
-    }
-
-    .main__wrapper {
-      display: flex;
-    }
-
-    @media screen and (max-width: 1279px) {
+    <style>
       body main {
-        /*
-            `LeftNavigationStyleOverride.css` adds `margin-bottom: 3rem;` at `@media (max-width: 1279px)`
-          */
+        --body-main-margin-top: 3rem;
+
+        /* plus `1px` for border */
         --body-main-height: calc(
           100vh - var(--header-height) - var(--footer-height) -
-            var(--body-main-margin-top) - 3rem - 1px
+            var(--body-main-margin-top) - 1px
         );
+
+        min-height: var(--body-main-height);
+        max-width: 60rem;
+        padding: 0 1rem 2rem 1rem;
+        margin: auto;
+        margin-top: var(--body-main-margin-top);
       }
-    }
-    @media screen and (max-width: 831px) {
-      body main {
-        /*
-            NOTE: the footer and header both expand into a grid format, so we _do_ want the `var`s
-            to remain as they are, thus why we need this "special/tribal knowledge" implementation
-          */
-        --body-main-height: calc(
-          100vh - var(--header-height) - (var(--footer-height) * 3) - 1px -
-            (var(--body-main-margin-top) * 2) - 1px
-        );
+      body main.ishomepage {
+        --body-main-margin-top: 0;
+
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
       }
 
       .main__wrapper {
-        display: block;
-        position: relative;
-        overflow-x: hidden;
+        display: flex;
       }
-    }
-  </style>
+
+      @media screen and (max-width: 1279px) {
+        body main {
+          /*
+            `LeftNavigationStyleOverride.css` adds `margin-bottom: 3rem;` at `@media (max-width: 1279px)`
+          */
+          --body-main-height: calc(
+            100vh - var(--header-height) - var(--footer-height) -
+              var(--body-main-margin-top) - 3rem - 1px
+          );
+        }
+      }
+      @media screen and (max-width: 831px) {
+        body main {
+          /*
+            NOTE: the footer and header both expand into a grid format, so we _do_ want the `var`s
+            to remain as they are, thus why we need this "special/tribal knowledge" implementation
+          */
+          --body-main-height: calc(
+            100vh - var(--header-height) - (var(--footer-height) * 3) - 1px -
+              (var(--body-main-margin-top) * 2) - 1px
+          );
+        }
+
+        .main__wrapper {
+          display: block;
+          position: relative;
+          overflow-x: hidden;
+        }
+      }
+    </style>
+  </body>
 </html>
