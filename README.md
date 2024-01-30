@@ -1,6 +1,6 @@
 > CI/CD status
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/92612954-34e1-49f3-8d76-fa663b5a54a5/deploy-status)](https://app.netlify.com/sites/design-portal-vnext/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/29f59259-50b6-4442-8822-c0bccaca785c/deploy-status)](https://app.netlify.com/sites/design-portal-main/deploys)
 [![DigitalFlavio](https://github.com/avaya-dux/design-portal/actions/workflows/run-yarn.yml/badge.svg)](https://github.com/avaya-dux/design-portal/actions/workflows/run-yarn.yml)
 
 > react unit test code coverage

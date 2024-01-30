@@ -9,6 +9,7 @@ div#component-link-playground a.neo-link.neo-link__inline {
 }
 
 div#component-link-playground a.neo-link:hover:not([class*="disabled"]) {
+  text-decoration: underline;
   color: var(--neo-color-blue-600);
 }
 div#component-link-playground

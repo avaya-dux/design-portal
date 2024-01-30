@@ -13,7 +13,7 @@ import {
 } from "helpers";
 
 const storybook =
-  "https://neo-react-library-storybook.netlify.app/?path=/story/components-breadcrumb";
+  "https://neo-react-library-storybook.netlify.app/?path=/story/components-breadcrumbs";
 
 const sandbox =
   "https://codesandbox.io/s/neo-react-breadcrumbs-tqvmzp?file=/src/App.js";
@@ -51,9 +51,7 @@ export const PlaygroundImplementation = () => {
     }
 
     const element = (
-      <div style={{ width: "100%", height: "38px" }}>
-        <Breadcrumbs aria-label="Path to current page" {...props} />
-      </div>
+      <Breadcrumbs aria-label="Path to current page" {...props} />
     );
 
     return [
@@ -88,7 +86,7 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      {element}
+      <div style={{ width: "100%", height: "38px" }}>{element}</div>
     </Playground>
   );
 };
