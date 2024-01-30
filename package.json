@@ -55,7 +55,7 @@
     "vue": "3.4.15"
   },
   "dependencies": {
-    "@astrojs/netlify": "4.1.1",
+    "@astrojs/netlify": "5.0.0",
     "@astrojs/prefetch": "0.4.1",
     "@avaya/neo-react": "1.0.10",
     "@nanostores/react": "0.7.1",
