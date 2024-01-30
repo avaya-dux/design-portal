@@ -44,7 +44,7 @@
     "html-react-parser": "5.1.1",
     "jest-axe": "8.0.0",
     "jest-coverage-badges": "1.1.2",
-    "jsdom": "23.2.0",
+    "jsdom": "24.0.0",
     "prettier": "3.2.4",
     "prettier-plugin-astro": "0.13.0",
     "react": "18.2.0",
