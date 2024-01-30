@@ -25,14 +25,21 @@ export const PlaygroundImplementation = () => {
   const [disabled, setDisabled] = useState(false);
 
   const [element, react, html] = useMemo(() => {
-    const element = (
-      typeOption === "inline"
-      ?
-        <Link href="#main" inline disabled={disabled}>Link</Link>
-      :
-        <Link href="#main" disabled={disabled}>Link</Link>
-    );
-    return [element, reactCode(typeOption, disabled), htmlCode(typeOption, disabled)];
+    const element =
+      typeOption === "inline" ? (
+        <Link href="#main" inline disabled={disabled}>
+          Link
+        </Link>
+      ) : (
+        <Link href="#main" disabled={disabled}>
+          Link
+        </Link>
+      );
+    return [
+      element,
+      reactCode(typeOption, disabled),
+      htmlCode(typeOption, disabled),
+    ];
   }, [typeOption, disabled]);
 
   return (
