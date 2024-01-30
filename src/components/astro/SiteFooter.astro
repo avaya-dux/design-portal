@@ -1,5 +1,13 @@
 ---
 import { Image } from "@avaya/neo-react";
+
+export interface Props {
+  leftMargin?: string;
+}
+
+const {
+  leftMargin = "15rem",
+} = Astro.props as Props;
 ---
 
 <footer class="footer--wrapper">
@@ -12,6 +20,10 @@ import { Image } from "@avaya/neo-react";
   </div>
 
   <div class="footer__links--wrapper">
+    <a target="_blank" href="https://www.avaya.com">
+      Avaya.com
+    </a>
+
     <a target="_blank" href="https://www.avaya.com/en/termsofuse/">
       Terms of Use
     </a>
@@ -34,7 +46,7 @@ import { Image } from "@avaya/neo-react";
 
     <a
       target="_blank"
-      href="https://spaces.avayacloud.com/spaces/63d91605385d4693560107ca"
+      href="https://teams.microsoft.com/l/channel/19%3A0c670e994bea49d3b3fd053761191c8c%40thread.tacv2/Neo%20-%20New%20Requests?groupId=172efbe2-ae64-4652-8f08-de11e90b9230&tenantId="
     >
       Feedback
     </a>
@@ -54,7 +66,11 @@ import { Image } from "@avaya/neo-react";
   </div>
 </footer>
 
-<style>
+<style
+  define:vars={{
+    leftMargin,
+  }}>
+
   .footer--wrapper {
     border-top: 1px solid var(--navbar-border-bottom-color);
     display: grid;
@@ -65,7 +81,7 @@ import { Image } from "@avaya/neo-react";
   }
   @media (min-width: 1280px) {
     :global(.main__wrapper:has(.left-navigation) + .footer--wrapper) {
-      margin-left: var(--left-navigation-width);
+      margin-left: var(--leftMargin);
     }
   }
 

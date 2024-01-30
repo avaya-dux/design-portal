@@ -27,6 +27,11 @@ const { title } = Astro.props as Props;
 
 const { pathname } = Astro.url;
 
+let leftMargin = "15rem";
+  if (pathname === "/") {
+    leftMargin = "2px";
+  }
+
 const pages = getPagesInOrder(
   (await Astro.glob<PageAstroInstance>("../**/*.astro"))
     .filter((page) => page.title)
@@ -118,7 +123,7 @@ switch (pathname.split("/")[1]) {
         }
       </div>
 
-      <SiteFooter />
+      <SiteFooter leftMargin={leftMargin} />
     </NeoThemeProvider>
 
     <style is:global>
