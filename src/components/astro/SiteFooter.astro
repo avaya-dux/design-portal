@@ -71,9 +71,9 @@ const { leftMargin = "15rem" } = Astro.props as Props;
   .footer--wrapper {
     border-top: 1px solid var(--navbar-border-bottom-color);
     display: grid;
-    gap: 1rem;
+    gap: 0;
     grid-auto-rows: var(--footer-height);
-    grid-template-areas: "a . b . c";
+    grid-template-areas: "a b c";
     padding: 0 1rem;
   }
   @media (min-width: 1280px) {
@@ -114,7 +114,7 @@ const { leftMargin = "15rem" } = Astro.props as Props;
     line-height: var(--neo-body-small-line-height);
   }
 
-  @media (max-width: 831px) {
+  @media (max-width: 1000px) {
     .footer--wrapper {
       grid-template-areas:
         "a b"
