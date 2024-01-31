@@ -1,13 +1,12 @@
 ---
+// this section needs to be refactored as part of NEO-2104
 import { Image } from "@avaya/neo-react";
 
 export interface Props {
   leftMargin?: string;
 }
 
-const {
-  leftMargin = "15rem",
-} = Astro.props as Props;
+const { leftMargin = "15rem" } = Astro.props as Props;
 ---
 
 <footer class="footer--wrapper">
@@ -20,9 +19,7 @@ const {
   </div>
 
   <div class="footer__links--wrapper">
-    <a target="_blank" href="https://www.avaya.com">
-      Avaya.com
-    </a>
+    <a target="_blank" href="https://www.avaya.com"> Avaya.com</a>
 
     <a target="_blank" href="https://www.avaya.com/en/termsofuse/">
       Terms of Use
@@ -69,8 +66,8 @@ const {
 <style
   define:vars={{
     leftMargin,
-  }}>
-
+  }}
+>
   .footer--wrapper {
     border-top: 1px solid var(--navbar-border-bottom-color);
     display: grid;
