@@ -148,7 +148,7 @@ const LeftNavigationTopElement = ({
         document
           .querySelector(".left-navigation")
           ?.querySelectorAll(".neo-leftnav__main a")[0] as HTMLElement
-      ).focus();
+      )?.focus();
     }
 
     if (
