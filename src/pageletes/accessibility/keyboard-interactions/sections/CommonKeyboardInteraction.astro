@@ -1,0 +1,71 @@
+---
+import {
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableCellHead,
+  InfoTableHead,
+  InfoTableRow,
+PageleteSection,
+SectionHeader,
+} from "components";
+import { topics } from "../static";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.common.id}>
+    {topics.common.title}
+  </SectionHeader>
+  <InfoTable>
+    <InfoTableHead>
+      <InfoTableRow>
+        <InfoTableCellHead>Keystrokes</InfoTableCellHead>
+        <InfoTableCellHead>Interaction</InfoTableCellHead>
+      </InfoTableRow>
+    </InfoTableHead>
+
+    <InfoTableBody>
+      <InfoTableRow>
+        <InfoTableCell>Tab</InfoTableCell>
+        <InfoTableCell>
+          Moves to the next interactive element.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Shift + Tab</InfoTableCell>
+        <InfoTableCell>
+          Moves to the previous interactive element.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Enter or Spacebar</InfoTableCell>
+        <InfoTableCell>
+          Executes the highlighted action, toggles between states (on/off), or opens a menu / list /accordion.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Esc</InfoTableCell>
+        <InfoTableCell>
+          Exits and closes the current element: sheet, accordion, notification, etc.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Arrows</InfoTableCell>
+        <InfoTableCell>
+          Navigate within an element (up/down/left/right): menu, list of items, accordion, etc.
+        </InfoTableCell>
+      </InfoTableRow>
+
+      <InfoTableRow>
+        <InfoTableCell>Delete</InfoTableCell>
+        <InfoTableCell>
+          Closes the element.
+        </InfoTableCell>
+      </InfoTableRow>
+    </InfoTableBody>
+  </InfoTable>
+</PageleteSection>

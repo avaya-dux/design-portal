@@ -1,6 +1,9 @@
 import Intro from "./Intro.astro";
 export { Intro };
 
+import CommonKeyboardInteraction from "./CommonKeyboardInteraction.astro";
+export { CommonKeyboardInteraction };
+
 import AccordionKeyboardSection from "./AccordionKeyboardSection.astro";
 export { AccordionKeyboardSection };
 
