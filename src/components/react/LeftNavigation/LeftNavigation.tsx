@@ -26,6 +26,7 @@ export const LeftNavigation = ({
   leftNavPages: PageAstroInstance[];
   currentUrl: string;
 }) => {
+
   const isOpen = useStore(isLeftNavigationOpen);
 
   const toggleButtonRef = useStore(leftNavToggleButtonRef);
@@ -147,7 +148,7 @@ const LeftNavigationTopElement = ({
         document
           .querySelector(".left-navigation")
           ?.querySelectorAll(".neo-leftnav__main a")[0] as HTMLElement
-      ).focus();
+      )?.focus();
     }
 
     if (
