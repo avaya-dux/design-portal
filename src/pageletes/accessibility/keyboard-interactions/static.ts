@@ -121,7 +121,7 @@ export const topics: TopicsDict<KeyboardInteractionsTopicNames> = {
   table: {
     order: 18,
     id: `${component}-table`,
-    title: "Table",
+    title: "Tables",
   },
   tabs: {
     order: 19,
