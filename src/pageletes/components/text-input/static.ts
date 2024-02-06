@@ -7,7 +7,6 @@ type TextInputTopicNames =
   | "types"
   | "behavior"
   | "specs"
-  | "interactions"
   | "related";
 
 export const topics: TopicsDict<TextInputTopicNames> = {
