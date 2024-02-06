@@ -61,9 +61,6 @@ export { TableKeyboardSection };
 import TabsKeyboardSection from "./TabsKeyboardSection.astro";
 export { TabsKeyboardSection };
 
-import TextKeyboardSection from "./TextKeyboardSection.astro";
-export { TextKeyboardSection };
-
 import TooltipKeyboardSection from "./TooltipKeyboardSection.astro";
 export { TooltipKeyboardSection };
 
