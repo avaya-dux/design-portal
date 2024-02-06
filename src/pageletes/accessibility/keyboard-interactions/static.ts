@@ -21,7 +21,6 @@ type KeyboardInteractionsTopicNames =
   | "switch"
   | "table"
   | "tabs"
-  | "textinput"
   | "tooltip"
   | "treeview"
   | "widget";
@@ -128,23 +127,18 @@ export const topics: TopicsDict<KeyboardInteractionsTopicNames> = {
     id: `${component}-tabs`,
     title: "Tabs",
   },
-  textinput: {
-    order: 20,
-    id: `${component}-textinput`,
-    title: "Text Input",
-  },
   tooltip: {
-    order: 21,
+    order: 20,
     id: `${component}-tooltip`,
     title: "Tooltip",
   },
   treeview: {
-    order: 22,
+    order: 21,
     id: `${component}-treeview`,
     title: "Tree View",
   },
   widget: {
-    order: 23,
+    order: 22,
     id: `${component}-widget`,
     title: "Widget",
   },
