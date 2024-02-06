@@ -5,17 +5,14 @@ import type { SitePages } from "helpers/types";
 export const LeftNavMobile = ({
   allPages,
   currentUrl,
-  onNavigate,
 }: {
   allPages: SitePages;
   currentUrl: string;
-  onNavigate?: (id: string, url: string) => void;
 }) => {
   return (
     <LeftNav
       aria-label="left-navigation"
       currentUrl={currentUrl}
-      onNavigate={onNavigate}
       isActiveOverride
     >
       <LeftNav.NavCategory label="Docs">
