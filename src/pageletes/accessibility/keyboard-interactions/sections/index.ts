@@ -1,6 +1,9 @@
 import Intro from "./Intro.astro";
 export { Intro };
 
+import CommonKeyboardInteraction from "./CommonKeyboardInteraction.astro";
+export { CommonKeyboardInteraction };
+
 import AccordionKeyboardSection from "./AccordionKeyboardSection.astro";
 export { AccordionKeyboardSection };
 
@@ -57,9 +60,6 @@ export { TableKeyboardSection };
 
 import TabsKeyboardSection from "./TabsKeyboardSection.astro";
 export { TabsKeyboardSection };
-
-import TextKeyboardSection from "./TextKeyboardSection.astro";
-export { TextKeyboardSection };
 
 import TooltipKeyboardSection from "./TooltipKeyboardSection.astro";
 export { TooltipKeyboardSection };

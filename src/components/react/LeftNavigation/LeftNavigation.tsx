@@ -26,7 +26,6 @@ export const LeftNavigation = ({
   leftNavPages: PageAstroInstance[];
   currentUrl: string;
 }) => {
-
   const isOpen = useStore(isLeftNavigationOpen);
 
   const toggleButtonRef = useStore(leftNavToggleButtonRef);
