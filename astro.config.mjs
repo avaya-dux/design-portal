@@ -1,4 +1,4 @@
-import netlify from "@astrojs/netlify/functions"
+import netlify from "@astrojs/netlify"
 import prefetch from "@astrojs/prefetch"
 import react from "@astrojs/react"
 import svelte from "@astrojs/svelte"
