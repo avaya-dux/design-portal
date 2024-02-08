@@ -3,6 +3,8 @@ import { Image } from "@avaya/neo-react";
 import {
   Description,
   ColumnLayout,
+  InfoList,
+  InfoListItem,
   PageleteSection,
   SectionHeader,
   StackedLayout,
@@ -50,46 +52,42 @@ const image4Alt =
   </ColumnLayout>
 
   <ColumnLayout numOfColumns={4} marginTop={"1.5rem"}>
-    <ul>
-      <li><strong>1. Primary Button</strong></li>
-      <li>A. Text Label</li>
-      <li>B. Container</li>
-      <li>C. Icon (optional)</li>
-    </ul>
+    <InfoList type="none">
+      <InfoListItem label=" 1. Primary Button">
+        <InfoList type="none">
+          <InfoListItem>A. Text Label</InfoListItem>
+          <InfoListItem>B. Container</InfoListItem>
+          <InfoListItem>C. Icon (optional)</InfoListItem>
+        </InfoList>
+      </InfoListItem>
+    </InfoList>
 
-    <ul>
-      <li><strong>2. Secondary Button</strong></li>
-      <li>A. Text Label</li>
-      <li>B. Container</li>
-      <li>C. Icon (optional)</li>
-    </ul>
+    <InfoList type="none">
+      <InfoListItem label="2. Secondary Button">
+        <InfoList type="none">
+          <InfoListItem>A. Text Label</InfoListItem>
+          <InfoListItem>B. Container</InfoListItem>
+          <InfoListItem>C. Icon (optional)</InfoListItem>
+        </InfoList>
+      </InfoListItem>
+    </InfoList>
 
-    <ul>
-      <li><strong>3. Tertiary Button</strong></li>
-      <li>A. Text Label</li>
-      <li>B. Icon (optional)</li>
-    </ul>
+    <InfoList type="none">
+      <InfoListItem label="3. Tertiary Button">
+        <InfoList type="none">
+          <InfoListItem>A. Text Label</InfoListItem>
+          <InfoListItem>B. Icon (optional)</InfoListItem>
+        </InfoList>
+      </InfoListItem>
+    </InfoList>
 
-    <ul>
-      <li><strong>4. Icon Button</strong></li>
-      <li>A. Container</li>
-      <li>B. Icon</li>
-    </ul>
+    <InfoList type="none">
+      <InfoListItem label="4. Icon Button">
+        <InfoList type="none">
+          <InfoListItem>A. Container</InfoListItem>
+          <InfoListItem>B. Icon</InfoListItem>
+        </InfoList>
+      </InfoListItem>
+    </InfoList>
   </ColumnLayout>
 </PageleteSection>
-
-<style>
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  ul li {
-    font-size: 14px;
-  }
-
-  ul li strong {
-    font-weight: 600;
-  }
-</style>
