@@ -70,9 +70,8 @@ const { leftMargin = "15rem" } = Astro.props as Props;
     border-top: 1px solid var(--navbar-border-bottom-color);
     display: grid;
     gap: 0;
-    grid-auto-rows: var(--footer-height);
     grid-template-areas: "a b c";
-    padding: 0 1rem;
+    padding: 1rem;
   }
   @media (min-width: 1280px) {
     :global(.main__wrapper:has(.left-navigation) + .footer--wrapper) {
@@ -82,10 +81,6 @@ const { leftMargin = "15rem" } = Astro.props as Props;
 
   .footer-logo {
     grid-area: a;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
   }
   .footer-logo img.small-logo-img {
     height: calc(var(--footer-height) / 2);
@@ -122,16 +117,9 @@ const { leftMargin = "15rem" } = Astro.props as Props;
     .footer--wrapper {
       grid-template-areas:
         "a b"
-        "c b"
-        ". b";
+        "a b"
+        "c b";
       padding: 1rem;
-    }
-
-    .footer-logo {
-      display: unset;
-      flex-direction: unset;
-      justify-content: unset;
-      align-items: unset;
     }
 
     .footer__links--wrapper {
