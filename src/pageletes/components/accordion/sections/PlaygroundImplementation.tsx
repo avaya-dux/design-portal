@@ -1,21 +1,24 @@
+import type { CheckboxProps } from "@avaya/neo-react";
 import {
   Accordion,
   Checkbox,
   CheckboxGroup,
-  type CheckboxProps,
   Radio,
   RadioGroup,
+  AccordionGroup,
 } from "@avaya/neo-react";
-import { type SetStateAction, useMemo, useState } from "react";
+import type { SetStateAction } from "react";
+import { useMemo, useState } from "react";
 
 import { Playground } from "components";
-import { prettyPrintHtml, prettyPrintReact } from "helpers";
+import {
+  prettyPrintReactElementToHtml,
+  prettyPrintReactElementToString,
+} from "helpers";
 
 import { sandbox, storybook } from "../static";
 
 type TypeOption = "single" | "stacked";
-
-import "./PlaygroundImplementation.css";
 
 export const PlaygroundImplementation = () => {
   const [typeOption, setTypeOption] = useState<TypeOption>("single");
@@ -25,110 +28,72 @@ export const PlaygroundImplementation = () => {
   >([false, false, false]);
   const [disabled, setDisabled] = useState(false);
 
-  const [react, html] = useMemo(() => {
-    const reactCode =
-      typeOption === "single"
-        ? prettyPrintReact(`
-<Accordion
-  header="Single Accordion Example"
-  disabled={${disabled}}
-  isOpen={${open}}
-  onClick={() => setOpen(!open)}
->
-  Inner content of Accordion example
-</Accordion>`)
-        : prettyPrintReact(`
-<div>
-  <Accordion header="Accordion 1" disabled={${disabled}}>
-    Inner content of Accordion example
-  </Accordion>
-  <Accordion header="Accordion 2" disabled={${disabled}}>
-    Inner content of Accordion example
-  </Accordion>
-  <Accordion header="Accordion 3" disabled={${disabled}}>
-    Inner content of Accordion example
-  </Accordion>
-</div>
-      `);
-
-    const htmlCode =
-      typeOption === "single"
-        ? prettyPrintHtml(`
-<div class="neo-accordion">
-  <div class="neo-accordion__item">
-    <div
-      class="neo-accordion__header"
-      role="heading"
-      aria-label="Accordion Heading"
-      aria-level="2"
-    >
-      <button
-        class="neo-accordion__header-text"
-        aria-expanded="${open}"
-        aria-controls="accordion-control-accordion-button"
-        id="accordion-button"
-      >
-        Single Accordion Example
-      </button>
-    </div>
-
-    ${
-      open
-        ? `
-    <div id="accordion-control-accordion-button" class="neo-accordion__body">
-      <div class="neo-accordion__content">
-        Inner content of Accordion example
-      </div>
-    </div>
-    `
-        : ""
-    }
-  </div>
-</div>
-      `)
-        : prettyPrintHtml(`
-<div class="neo-accordion-group">
-  <p>Accordion Group Example</p>
-
-  <div class="neo-accordion">
-    <div class="neo-accordion__item">
-      <div class="neo-accordion__header" role="heading" aria-label="Accordion Heading" aria-level="2">
-        <button class="neo-accordion__header-text" aria-expanded="${stackedOpenIndexes[0]}" aria-controls="accordion-control-accordion-one" id="accordion-one" aria-disabled="${stackedOpenIndexes[0]}">
-          Accordion 1
-        </button>
-      </div>
-    /div>
-  </div>
-
-  <div class="neo-accordion">
-    <div class="neo-accordion__item neo-accordion__item--active">
-      <div class="neo-accordion__header" role="heading" aria-label="Accordion Heading" aria-level="2">
-        <button class="neo-accordion__header-text" aria-expanded="${stackedOpenIndexes[1]}" aria-controls="accordion-control-accordion-two" id="accordion-two" aria-disabled="${stackedOpenIndexes[1]}">
-          Accordion 2
-        </button>
-      </div>
-
-      <div id="accordion-control-accordion-two" class="neo-accordion__body">
-        <div class="neo-accordion__content">
+  const [element, react, html] = useMemo(() => {
+    const element =
+      typeOption === "single" ? (
+        <Accordion
+          header="Accordion Example"
+          disabled={disabled}
+          isOpen={open === true}
+          onClick={() => setOpen(!open)}
+        >
           Inner content of Accordion example
-        </div>
-      </div>
-    </div>
-  </div>
+        </Accordion>
+      ) : (
+        <AccordionGroup>
+          <Accordion
+            header="Accordion 1"
+            disabled={disabled}
+            isOpen={stackedOpenIndexes[0]}
+            onClick={() =>
+              handleStackClick(
+                0,
+                stackedOpenIndexes,
+                setStackedOpenIndexes,
+                setOpen,
+              )
+            }
+          >
+            Inner content of Accordion example
+          </Accordion>
+          <Accordion
+            header="Accordion 2"
+            disabled={disabled}
+            isOpen={stackedOpenIndexes[1]}
+            onClick={() =>
+              handleStackClick(
+                1,
+                stackedOpenIndexes,
+                setStackedOpenIndexes,
+                setOpen,
+              )
+            }
+          >
+            Inner content of Accordion example
+          </Accordion>
+          <Accordion
+            header="Accordion 3"
+            disabled={disabled}
+            isOpen={stackedOpenIndexes[2]}
+            onClick={() =>
+              handleStackClick(
+                2,
+                stackedOpenIndexes,
+                setStackedOpenIndexes,
+                setOpen,
+              )
+            }
+          >
+            Inner content of Accordion example
+          </Accordion>
+        </AccordionGroup>
+      );
 
-  <div class="neo-accordion">
-    <div class="neo-accordion__item">
-      <div class="neo-accordion__header" role="heading" aria-label="Accordion Heading" aria-level="2">
-        <button class="neo-accordion__header-text" aria-expanded="${stackedOpenIndexes[2]}" aria-controls="accordion-control-accordion-three" id="accordion-three" aria-disabled="${stackedOpenIndexes[2]}">
-          Accordion 3
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-        `);
-
-    return [reactCode, htmlCode];
+    return [
+      element,
+      prettyPrintReactElementToString(element),
+      prettyPrintReactElementToHtml(element),
+    ];
   }, [typeOption, open, disabled, stackedOpenIndexes]);
 
   return (
@@ -191,64 +156,7 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      {typeOption === "single" ? (
-        <Accordion
-          header="Single Accordion Example"
-          disabled={disabled}
-          isOpen={open === true}
-          onClick={() => setOpen(!open)}
-        >
-          Inner content of Accordion example
-        </Accordion>
-      ) : (
-        <div className="dpv3-accordion-stack">
-          <Accordion
-            header="Accordion 1"
-            disabled={disabled}
-            isOpen={stackedOpenIndexes[0]}
-            onClick={() =>
-              handleStackClick(
-                0,
-                stackedOpenIndexes,
-                setStackedOpenIndexes,
-                setOpen,
-              )
-            }
-          >
-            Inner content of Accordion example
-          </Accordion>
-          <Accordion
-            header="Accordion 2"
-            disabled={disabled}
-            isOpen={stackedOpenIndexes[1]}
-            onClick={() =>
-              handleStackClick(
-                1,
-                stackedOpenIndexes,
-                setStackedOpenIndexes,
-                setOpen,
-              )
-            }
-          >
-            Inner content of Accordion example
-          </Accordion>
-          <Accordion
-            header="Accordion 3"
-            disabled={disabled}
-            isOpen={stackedOpenIndexes[2]}
-            onClick={() =>
-              handleStackClick(
-                2,
-                stackedOpenIndexes,
-                setStackedOpenIndexes,
-                setOpen,
-              )
-            }
-          >
-            Inner content of Accordion example
-          </Accordion>
-        </div>
-      )}
+      <div style={{ width: "100%" }}>{element}</div>
     </Playground>
   );
 };
