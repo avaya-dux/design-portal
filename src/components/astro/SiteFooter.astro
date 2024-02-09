@@ -112,6 +112,12 @@ const { leftMargin = "15rem" } = Astro.props as Props;
   .footer__links--wrapper a {
     font-size: var(--neo-body-small-font-size);
     line-height: var(--neo-body-small-line-height);
+    color: var(--neo-color-base-800);
+  }
+  @media (prefers-color-scheme: dark) {
+    .footer__links--wrapper a {
+      color: var(--neo-color-base-100);
+    }
   }
 
   @media (max-width: 1000px) {
