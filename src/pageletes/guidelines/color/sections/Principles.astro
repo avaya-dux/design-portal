@@ -1,11 +1,16 @@
 ---
-import { Description, PageleteSection, SectionHeader } from "components";
+import {
+  CollapsibleColumns,
+  Description,
+  ImageWithCaption,
+  PageleteSection,
+  SectionHeader,
+} from "components";
 
-import TwoColumnLayout from "./sections-frame-layout/TwoColumnLayout.astro";
-import Flexible from "./sections-frame-layout/principles/frame-1/Flexible.astro";
-import Accessible from "./sections-frame-layout/principles/frame-1/Accessible.astro";
-import Purposeful from "./sections-frame-layout/principles/frame-2/Purposeful.astro";
-import Hierarchical from "./sections-frame-layout/principles/frame-2/Hierarchical.astro";
+import image1 from "../imgs/color-principles-1.svg";
+import image2 from "../imgs/color-principles-2.svg";
+import image3 from "../imgs/color-principles-3.svg";
+import image4 from "../imgs/color-principles-4.svg";
 
 import { topics } from "../static";
 const { id, title } = topics.principles;
@@ -18,13 +23,43 @@ const { id, title } = topics.principles;
     The color palette was created with the following principles in mind.
   </Description>
 
-  <TwoColumnLayout>
-    <Flexible slot="left-frame" />
-    <Accessible slot="right-frame" />
-  </TwoColumnLayout>
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image1.src}
+      imgAlt="Graphic representing the same color with different shades ranging from light to dark."
+      captionTitle="Flexible"
+    >
+      Each color is provided in a range of variants to allow for design
+      flexibility, as well as light and dark mode themes.
+    </ImageWithCaption>
 
-  <TwoColumnLayout>
-    <Purposeful slot="left-frame" />
-    <Hierarchical slot="right-frame" />
-  </TwoColumnLayout>
+    <ImageWithCaption
+      imgSrc={image2.src}
+      imgAlt="Graphic representing components with color constrast."
+      captionTitle="Accessible"
+    >
+      Color combinations meet WCAG 2.2 AA standards to ensure legibility for
+      color-blind and low vision users.
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image3.src}
+      imgAlt="Graphic representing color and visual clarity."
+      captionTitle="Purposeful"
+    >
+      Color should not compromise communication. It should be used purposefully
+      to support the content.
+    </ImageWithCaption>
+
+    <ImageWithCaption
+      imgSrc={image4.src}
+      imgAlt="Graphic representing the role colors plays when determining importance."
+      captionTitle="Hierarchical"
+    >
+      Color should indicate which elements are interactive, as well as their
+      level of prominence.
+    </ImageWithCaption>
+  </CollapsibleColumns>
 </PageleteSection>
