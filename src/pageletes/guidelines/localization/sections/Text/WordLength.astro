@@ -1,9 +1,8 @@
 ---
-import { Image } from "@avaya/neo-react";
-
 import {
+  CollapsibleColumns,
   Description,
-  ImageWrapper,
+  ImageWithCaption,
   PageleteSubSection,
   SubHeader,
   InfoTable,
@@ -12,15 +11,10 @@ import {
   InfoTableCellHead,
   InfoTableHead,
   InfoTableRow,
-  ColumnLayout,
 } from "components";
 
-import smallHeaderImage from "../../imgs/localization-text-length-1.svg";
-import buttonImage from "../../imgs/localization-text-length-2.svg";
-
-const smallHeaderImageAltText =
-  "Image showing average text expansion for small headers";
-const buttonImageAltText = "Image showing average text expansion for buttons";
+import image1 from "../../imgs/localization-text-length-1.svg";
+import image2 from "../../imgs/localization-text-length-2.svg";
 ---
 
 <PageleteSubSection>
@@ -83,28 +77,20 @@ const buttonImageAltText = "Image showing average text expansion for buttons";
     </InfoTableBody>
   </InfoTable>
 
-  <ColumnLayout numOfColumns={2} gap="2rem" showRightBorder>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={smallHeaderImage.src} alt={smallHeaderImageAltText} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={buttonImage.src} alt={buttonImageAltText} />
-    </ImageWrapper>
-  </ColumnLayout>
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image1.src}
+      imgAlt="Image showing average text expansion for small headers."
+      captionTitle="Small header"
+    >
+      Average text expansion of 140-160%.
+    </ImageWithCaption>
 
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
-    <div>
-      <h4 class="image-header neo-semibold">Small header</h4>
-      <Description>Average text expansion of 140-160%.</Description>
-    </div>
-    <div>
-      <h4 class="image-header neo-semibold">Button</h4>
-      <Description>Average text expansion of 200 - 300%.</Description>
-    </div>
-  </ColumnLayout>
+    <ImageWithCaption
+      imgSrc={image2.src}
+      imgAlt="Image showing average text expansion for buttons."
+      captionTitle="Button"
+      >Average text expansion of 200 - 300%.
+    </ImageWithCaption>
+  </CollapsibleColumns>
 </PageleteSubSection>

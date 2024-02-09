@@ -1,23 +1,16 @@
 ---
-import { Image } from "@avaya/neo-react";
-
 import {
+  CollapsibleColumns,
   Description,
-  ImageWrapper,
+  ImageWithCaption,
   PageleteSubSection,
   SubHeader,
-  ColumnLayout,
 } from "components";
 
-import notMirroring1 from "../../imgs/localization-bidirectionality-not-mirroring-1.svg";
-import notMirroring2 from "../../imgs/localization-bidirectionality-not-mirroring-2.svg";
-import notMirroring3 from "../../imgs/localization-bidirectionality-not-mirroring-3.svg";
-import notMirroring4 from "../../imgs/localization-bidirectionality-not-mirroring-4.svg";
-
-const notMirroring1AltText = "Image showing numbers";
-const notMirroring2AltText = "Image showing untranslated text";
-const notMirroring3AltText = "Image showing icons that do not convey direction";
-const notMirroring4AltText = "Image showing passage of time";
+import image1 from "../../imgs/localization-bidirectionality-not-mirroring-1.svg";
+import image2 from "../../imgs/localization-bidirectionality-not-mirroring-2.svg";
+import image3 from "../../imgs/localization-bidirectionality-not-mirroring-3.svg";
+import image4 from "../../imgs/localization-bidirectionality-not-mirroring-4.svg";
 ---
 
 <PageleteSubSection>
@@ -29,59 +22,39 @@ const notMirroring4AltText = "Image showing passage of time";
     In some situations, content should not be mirrored. These include:
   </Description>
 
-  <ColumnLayout numOfColumns={2} gap="2rem" showRightBorder>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={notMirroring1.src} alt={notMirroring1AltText} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={notMirroring2.src} alt={notMirroring2AltText} />
-    </ImageWrapper>
-  </ColumnLayout>
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image1.src}
+      imgAlt="Image showing numbers."
+      captionTitle="Numbers"
+    >
+      For example clocks and phone numbers.
+    </ImageWithCaption>
 
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
-    <div>
-      <h4 class="image-header neo-semibold">Numbers</h4>
-      <Description>For example clocks and phone numbers.</Description>
-    </div>
-    <div>
-      <h4 class="image-header neo-semibold">Untranslated Text</h4>
-      <Description>
-        This is true even if it is part of a phrase that is in an RTL language.
-      </Description>
-    </div>
-  </ColumnLayout>
+    <ImageWithCaption
+      imgSrc={image2.src}
+      imgAlt="Image showing untranslated text."
+      captionTitle="Untranslated Text"
+    >
+      This is true even if it is part of a phrase that is in an RTL language.
+    </ImageWithCaption>
+  </CollapsibleColumns>
 
-  <ColumnLayout numOfColumns={2} gap="2rem" showRightBorder>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={notMirroring3.src} alt={notMirroring3AltText} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={notMirroring4.src} alt={notMirroring4AltText} />
-    </ImageWrapper>
-  </ColumnLayout>
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image3.src}
+      imgAlt="Image showing icons that do not convey direction."
+      captionTitle="Icons that do not convey direction"
+    >
+      Icons that do not show direction or flow should not be flipped.
+    </ImageWithCaption>
 
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
-    <div>
-      <h4 class="image-header neo-semibold">
-        Icons that do not convey direction
-      </h4>
-      <Description>
-        Icons that do not show direction or flow should not be flipped.
-      </Description>
-    </div>
-    <div>
-      <h4 class="image-header neo-semibold">Passage of Time</h4>
-      <Description>This includes components such as media players.</Description>
-    </div>
-  </ColumnLayout>
+    <ImageWithCaption
+      imgSrc={image4.src}
+      imgAlt="Image showing passage of time."
+      captionTitle="Passage of Time"
+    >
+      This includes components such as media players.
+    </ImageWithCaption>
+  </CollapsibleColumns>
 </PageleteSubSection>
