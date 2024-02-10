@@ -1,29 +1,19 @@
 ---
-import { Image } from "@avaya/neo-react";
-
 import {
+  CollapsibleColumns,
   Description,
-  ImageWrapper,
+  ImageWithCaption,
   PageleteSubSection,
   SubHeader,
-  ColumnLayout,
 } from "components";
 
-import mirroring1 from "../../imgs/localization-bidirectionality-mirroring-1.svg";
-import mirroring2 from "../../imgs/localization-bidirectionality-mirroring-2.svg";
-import mirroring3 from "../../imgs/localization-bidirectionality-mirroring-3.svg";
-import mirroring4 from "../../imgs/localization-bidirectionality-mirroring-4.svg";
-import mirroring5 from "../../imgs/localization-bidirectionality-mirroring-5.svg";
-import mirroring6 from "../../imgs/localization-bidirectionality-mirroring-6.svg";
-import mirroring7 from "../../imgs/localization-bidirectionality-mirroring-7.svg";
-
-const mirroring1AltText = "Image showing mirrored text";
-const mirroring2AltText = "Image showing mirrored icons";
-const mirroring3AltText = "Image showing mirrored directional flow";
-const mirroring4AltText = "Image showing mirrored images and icons";
-const mirroring5AltText = "Image showing mirrored navigation";
-const mirroring6AltText = "Image showing mirrored gestures";
-const mirroring7AltText = "Image showing mirrored symbols";
+import image1 from "../../imgs/localization-bidirectionality-mirroring-1.svg";
+import image2 from "../../imgs/localization-bidirectionality-mirroring-2.svg";
+import image3 from "../../imgs/localization-bidirectionality-mirroring-3.svg";
+import image4 from "../../imgs/localization-bidirectionality-mirroring-4.svg";
+import image5 from "../../imgs/localization-bidirectionality-mirroring-5.svg";
+import image6 from "../../imgs/localization-bidirectionality-mirroring-6.svg";
+import image7 from "../../imgs/localization-bidirectionality-mirroring-7.svg";
 ---
 
 <PageleteSubSection>
@@ -36,111 +26,70 @@ const mirroring7AltText = "Image showing mirrored symbols";
     and images. Content that is mirrored includes:
   </Description>
 
-  <ColumnLayout numOfColumns={2} gap="2rem" showRightBorder>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={mirroring1.src} alt={mirroring1AltText} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={mirroring2.src} alt={mirroring2AltText} />
-    </ImageWrapper>
-  </ColumnLayout>
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image1.src}
+      imgAlt="Image showing mirrored text."
+      captionTitle="Text"
+    >
+      For languages that read RTL, right-align the text within each component.
+    </ImageWithCaption>
 
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
-    <div>
-      <h4 class="image-header neo-semibold">Text</h4>
-      <Description>
-        For languages that read RTL, right-align the text within each component.
-      </Description>
-    </div>
-    <div>
-      <h4 class="image-header neo-semibold">Icon Placement</h4>
-      <Description>
-        Order of icons should match the way content is read (RTL).
-      </Description>
-    </div>
-  </ColumnLayout>
+    <ImageWithCaption
+      imgSrc={image2.src}
+      imgAlt="Image showing mirrored icons."
+      captionTitle="Icon Placement"
+    >
+      Order of icons should match the way content is read (RTL).
+    </ImageWithCaption>
+  </CollapsibleColumns>
 
-  <ColumnLayout numOfColumns={2} gap="2rem" showRightBorder>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={mirroring3.src} alt={mirroring3AltText} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={mirroring4.src} alt={mirroring4AltText} />
-    </ImageWrapper>
-  </ColumnLayout>
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image3.src}
+      imgAlt="Image showing mirrored directional flow."
+      captionTitle="Directional Flow"
+    >
+      Any sequence of events should be shown RTL.
+    </ImageWithCaption>
 
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
-    <div>
-      <h4 class="image-header neo-semibold">Directional Flow</h4>
-      <Description>Any sequence of events should be shown RTL.</Description>
-    </div>
-    <div>
-      <h4 class="image-header neo-semibold">Images & Icons</h4>
-      <Description>
-        Icons should match the direction that content is read (RTL).
-      </Description>
-    </div>
-  </ColumnLayout>
+    <ImageWithCaption
+      imgSrc={image4.src}
+      imgAlt="Image showing mirrored images and icons."
+      captionTitle="Images & Icons"
+    >
+      Icons should match the direction that content is read (RTL).
+    </ImageWithCaption>
+  </CollapsibleColumns>
 
-  <ColumnLayout numOfColumns={2} gap="2rem" showRightBorder>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={mirroring5.src} alt={mirroring5AltText} />
-    </ImageWrapper>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={mirroring6.src} alt={mirroring6AltText} />
-    </ImageWrapper>
-  </ColumnLayout>
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image5.src}
+      imgAlt="Image showing mirrored navigation."
+      captionTitle="Navigation"
+    >
+      Buttons and tabs should be shown in reverse order to match RTL reading
+      pattern.
+    </ImageWithCaption>
 
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
-    <div>
-      <h4 class="image-header neo-semibold">Navigation</h4>
-      <Description>
-        Buttons and tabs should be shown in reverse order to match RTL reading
-        pattern.
-      </Description>
-    </div>
-    <div>
-      <h4 class="image-header neo-semibold">Gestures</h4>
-      <Description>
-        Interactions that contain forward or backward motion should be mirrored
-        in RTL languages.
-      </Description>
-    </div>
-  </ColumnLayout>
+    <ImageWithCaption
+      imgSrc={image6.src}
+      imgAlt="Image showing mirrored gestures."
+      captionTitle="Gestures"
+    >
+      Interactions that contain forward or backward motion should be mirrored in
+      RTL languages.
+    </ImageWithCaption>
+  </CollapsibleColumns>
 
-  <ColumnLayout numOfColumns={2} gap="2rem" showRightBorder>
-    <ImageWrapper showBorders={false} marginTop={"0rem"} marginBottom={"0rem"}>
-      <Image src={mirroring7.src} alt={mirroring7AltText} />
-    </ImageWrapper>
-  </ColumnLayout>
-
-  <ColumnLayout
-    showGridlines={false}
-    gap="2rem"
-    numOfColumns={2}
-    marginTop={"1.5rem"}
-  >
-    <div>
-      <h4 class="image-header neo-semibold">Symbols</h4>
-      <Description>
-        Question marks are shown flipped for most RTL languages (with the
-        exception of Hebrew).
-      </Description>
-    </div>
-  </ColumnLayout>
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image7.src}
+      imgAlt="Image showing mirrored symbols."
+      captionTitle="Symbols"
+    >
+      Question marks are shown flipped for most RTL languages (with the
+      exception of Hebrew).
+    </ImageWithCaption>
+  </CollapsibleColumns>
 </PageleteSubSection>

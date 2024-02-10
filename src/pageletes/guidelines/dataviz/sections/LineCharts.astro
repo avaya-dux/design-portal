@@ -1,10 +1,8 @@
 ---
-import { Image } from "@avaya/neo-react";
 import {
-  Caption,
-  ColumnLayout,
+  CollapsibleColumns,
   Description,
-  ImageWrapper,
+  ImageWithCaption,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -15,13 +13,6 @@ import image1 from "../imgs/data-vis-line-charts-1.svg";
 import image2 from "../imgs/data-vis-line-charts-2.svg";
 import image3 from "../imgs/data-vis-line-charts-3.svg";
 import image4 from "../imgs/data-vis-line-charts-4.svg";
-
-const image1Alt = "Image showing a standard linechart.";
-const image2Alt = "Image showing a sparkline.";
-const image3Alt =
-  "Image showing an solid line chart as actual data and dotted line as predicted.";
-const image4Alt =
-  "Image showing line chart with datapoints that don't line up in the increments in the x and y axis.";
 ---
 
 <PageleteSection>
@@ -34,53 +25,42 @@ const image4Alt =
     data over time.
   </Description>
 
-  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <div>
-      <ImageWrapper showBorders={true} marginTop={"0rem"} marginBottom="1.5rem">
-        <Image src={image1.src} alt={image1Alt} />
-      </ImageWrapper>
-      <Caption title="Standard Line Chart">
-        Displays one or more lines to reflect changes over time.
-      </Caption>
-    </div>
-    <div>
-      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
-        <Image src={image2.src} alt={image2Alt} />
-      </ImageWrapper>
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image1.src}
+      imgAlt="Image showing a standard linechart."
+      captionTitle="Standard Line Chart"
+    >
+      Displays one or more lines to reflect changes over time.
+    </ImageWithCaption>
 
-      <Caption title="Sparkline">
-        Provides a compact representation of trends next to data values.
-      </Caption>
-    </div>
-  </ColumnLayout>
+    <ImageWithCaption
+      imgSrc={image2.src}
+      imgAlt="Image showing a sparkline."
+      captionTitle="Sparkline"
+    >
+      Provides a compact representation of trends next to data values.
+    </ImageWithCaption>
+  </CollapsibleColumns>
 
-  <ColumnLayout
-    showGridlines={false}
-    marginTop="1.5rem"
-    gap="2rem"
-    numOfColumns={2}
-  >
-    <div>
-      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
-        <Image src={image3.src} alt={image3Alt} />
-      </ImageWrapper>
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image3.src}
+      imgAlt="Image showing an solid line chart as actual data and dotted line as predicted."
+      captionTitle="Actual Versus Predicted Data"
+    >
+      Use solid lines to display real data, and dashed lines for predicted data.
+      Avoid smoothing the lines as it will obscure the data points.
+    </ImageWithCaption>
 
-      <Caption title="Actual Versus Predicted Data">
-        Use solid lines to display real data, and dashed lines for predicted
-        data. Avoid smoothing the lines as it will obscure the data points.
-      </Caption>
-    </div>
-
-    <div>
-      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
-        <Image src={image4.src} alt={image4Alt} />
-      </ImageWrapper>
-
-      <Caption title="Data Points On Uneven Increments">
-        Data points can be useful when displaying information that isn't
-        collected in even increments. Avoid displaying these points when they
-        become too dense.
-      </Caption>
-    </div>
-  </ColumnLayout>
+    <ImageWithCaption
+      imgSrc={image4.src}
+      imgAlt="Image showing line chart with datapoints that don't line up in the increments in the x and y axis."
+      captionTitle="Data Points On Uneven Increments"
+    >
+      Data points can be useful when displaying information that isn't collected
+      in even increments. Avoid displaying these points when they become too
+      dense.
+    </ImageWithCaption>
+  </CollapsibleColumns>
 </PageleteSection>

@@ -1,23 +1,28 @@
 ---
+import { Link } from "@avaya/neo-react";
+
 import {
+  CollapsibleColumns,
   Description,
+  ExternalLink,
+  ImageWithCaption,
+  InfoList,
+  InfoListItem,
   PageleteSection,
+  PageleteSubSection,
   SectionHeader,
   SubHeader,
 } from "components";
 
+import image1 from "../imgs/user-interface-1.svg";
+import image2 from "../imgs/user-interface-2.svg";
+import image3 from "../imgs/interactions-5.svg";
+import image4 from "../imgs/interactions-1.svg";
+import image5 from "../imgs/interactions-3.svg";
+import image6 from "../imgs/interactions-4.svg";
+
 import { topics } from "../static";
 const { id, title } = topics.web;
-
-import { Link } from "@avaya/neo-react";
-
-import TwoColumnLayout from "./sections-frame-layout/TwoColumnLayout.astro";
-import Icons from "./sections-frame-layout/web/frame-1/Icons.astro";
-import NativeElements from "./sections-frame-layout/web/frame-1/NativeElements.astro";
-import KeyboardShortcuts from "./sections-frame-layout/web/frame-2/KeyboardShortcuts.astro";
-import ResponsiveDisplay from "./sections-frame-layout/web/frame-2/ResponsiveDisplay.astro";
-import Accessibility from "./sections-frame-layout/web/frame-3/Accessibility.astro";
-import TouchTargets from "./sections-frame-layout/web/frame-3/TouchTargets.astro";
 ---
 
 <PageleteSection>
@@ -26,68 +31,182 @@ import TouchTargets from "./sections-frame-layout/web/frame-3/TouchTargets.astro
   <Description>
     The development of web pages and web-based applications involves supporting
     the major platforms, including
-    <Link
-      inline
-      href="https://developer.chrome.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <ExternalLink inline href="https://developer.chrome.com/">
       Chrome
-    </Link>,
-    <Link
-      inline
-      href="https://developer.mozilla.org/en-US/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    </ExternalLink>,
+    <ExternalLink inline href="https://developer.mozilla.org/en-US/">
       Firefox
-    </Link>,
-    <Link
+    </ExternalLink>,
+    <ExternalLink
       inline
       href="https://learn.microsoft.com/en-us/microsoft-edge/#microsoft-edge-for-developers"
-      target="_blank"
-      rel="noopener noreferrer"
     >
       Edge
-    </Link>, and
-    <Link
-      inline
-      href="https://developer.apple.com/safari/resources/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    </ExternalLink>, and
+    <ExternalLink inline href="https://developer.apple.com/safari/resources/">
       Safari
-    </Link>. Refer to each browser's development site for associated best
-    practices.
+    </ExternalLink>. Refer to each browser's development site for associated
+    best practices.
   </Description>
 
-  <SubHeader id="user-interface" marginTop="64px">User Interface</SubHeader>
+  <PageleteSubSection>
+    <SubHeader id="web-user-interface">User Interface</SubHeader>
 
-  <Description>
-    The visual appearance for web applications should use Neo design elements,
-    such as components, icons and typography.
-  </Description>
+    <Description>
+      The visual appearance for web applications should use Neo design elements,
+      such as components, icons and typography.
+    </Description>
 
-  <TwoColumnLayout>
-    <NativeElements slot="left-frame" />
-    <Icons slot="right-frame" />
-  </TwoColumnLayout>
+    <CollapsibleColumns>
+      <ImageWithCaption
+        imgSrc={image1.src}
+        imgAlt="Graphic representing various elements."
+        captionTitle="Native Elements"
+      >
+        Applications built for the web should use Neo components and styles
+        everywhere to ensure consistency across Avaya products.
 
-  <SubHeader id="interactions" marginTop="64px">Interactions</SubHeader>
+        <InfoList>
+          <InfoListItem>
+            <Link href="/components/accordion">View Components</Link>
+          </InfoListItem>
+        </InfoList>
+      </ImageWithCaption>
 
-  <Description>
-    Interactions such as display, responsiveness, accessibility and touch
-    targets should conform to web standards, as well as the Neo guidelines found
-    throughout this portal.
-  </Description>
+      <ImageWithCaption
+        imgSrc={image2.src}
+        imgAlt="Graphic representing icons."
+        captionTitle="Icons"
+      >
+        All icons used by web applications are available from the Neo icon page.
 
-  <TwoColumnLayout>
-    <KeyboardShortcuts slot="left-frame" />
-    <ResponsiveDisplay slot="right-frame" />
-  </TwoColumnLayout>
+        <InfoList>
+          <InfoListItem>
+            <Link href="/icons">View Icon Library</Link>
+          </InfoListItem>
+        </InfoList>
+      </ImageWithCaption>
+    </CollapsibleColumns>
+  </PageleteSubSection>
 
-  <TwoColumnLayout>
-    <Accessibility slot="left-frame" />
-    <TouchTargets slot="right-frame" />
-  </TwoColumnLayout>
+  <PageleteSubSection>
+    <SubHeader id="web-interactions">Interactions</SubHeader>
+
+    <Description>
+      Interactions such as display, responsiveness, accessibility and touch
+      targets should conform to web standards, as well as the Neo guidelines
+      found throughout this portal.
+    </Description>
+
+    <CollapsibleColumns>
+      <ImageWithCaption
+        imgSrc={image3.src}
+        imgAlt="Graphic representing keyboard keys."
+        captionTitle="Keyboard Shortcuts"
+      >
+        Shortcuts created for applications must not conflict with existing
+        browser and desktop shortcuts. Refer to the browser sites, and the <ExternalLink
+          inline
+          href="https://support.apple.com/en-us/HT201236"
+        >
+          MacOS
+        </ExternalLink> and <ExternalLink
+          inline
+          href="https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec"
+        >
+          Windows
+        </ExternalLink> pages for a complete list.
+
+        <InfoList>
+          <InfoListItem>
+            <ExternalLink
+              href="https://support.google.com/chrome/answer/157179?co=GENIE.Platform%3DDesktop&hl=en"
+            >
+              Chrome shortcuts
+            </ExternalLink>
+          </InfoListItem>
+
+          <InfoListItem>
+            <ExternalLink
+              href="https://support.mozilla.org/en-US/kb/keyboard-shortcuts-perform-firefox-tasks-quickly"
+            >
+              Firefox shortcuts
+            </ExternalLink>
+          </InfoListItem>
+
+          <InfoListItem>
+            <ExternalLink
+              href="https://support.microsoft.com/en-us/microsoft-edge/keyboard-shortcuts-in-microsoft-edge-50d3edab-30d9-c7e4-21ce-37fe2713cfad"
+            >
+              Microsoft Edge shortcuts
+            </ExternalLink>
+          </InfoListItem>
+
+          <InfoListItem>
+            <ExternalLink
+              href="https://support.apple.com/en-ca/guide/safari/cpsh003/mac"
+            >
+              Safari shortcuts
+            </ExternalLink>
+          </InfoListItem>
+
+          <InfoListItem>
+            <ExternalLink
+              href="https://design.avaya.com/guidelines/keyboard_interaction"
+            >
+              View Keyboard interactions
+            </ExternalLink>
+          </InfoListItem>
+        </InfoList>
+      </ImageWithCaption>
+
+      <ImageWithCaption
+        imgSrc={image4.src}
+        imgAlt="Graphic representing responsive display sizes."
+        captionTitle="Display and Responsive Size"
+      >
+        Layouts need to be flexible and responsive, with scaling to match
+        different screen sizes. Accurate proportions improve the composition and
+        hierarchy. This ensures consistency and a common user experience across
+        all platforms..
+
+        <InfoList>
+          <InfoListItem>
+            <Link href="/guidelines/layout-grid">View Layout and Grid</Link>
+          </InfoListItem>
+        </InfoList>
+      </ImageWithCaption>
+    </CollapsibleColumns>
+
+    <CollapsibleColumns>
+      <ImageWithCaption
+        imgSrc={image5.src}
+        imgAlt="Graphic representing accessibility."
+        captionTitle="Accessibility"
+      >
+        Web applications must be accessible to all users. Learn more with our
+        accessibility guidelines.
+
+        <InfoList>
+          <InfoListItem>
+            <Link href="/guidelines/accessibility">View Accessibility</Link>
+          </InfoListItem>
+        </InfoList>
+      </ImageWithCaption>
+
+      <ImageWithCaption
+        imgSrc={image6.src}
+        imgAlt="Graphic representing touch targets."
+        captionTitle="Touch Targets"
+      >
+        Interactive controls, such as buttons, should have a minimum 24px x 24px
+        tappable area making them easy to see and use, and to meet <ExternalLink
+          inline
+          href="https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html"
+        >
+          WCAG specifications
+        </ExternalLink>.
+      </ImageWithCaption>
+    </CollapsibleColumns>
+  </PageleteSubSection>
 </PageleteSection>

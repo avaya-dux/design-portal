@@ -1,10 +1,8 @@
 ---
-import { Image } from "@avaya/neo-react";
 import {
-  Caption,
+  CollapsibleColumns,
   Description,
-  ColumnLayout,
-  ImageWrapper,
+  ImageWithCaption,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -21,23 +19,6 @@ import image7 from "../imgs/principles-7.svg";
 import image8 from "../imgs/principles-8.svg";
 import image9 from "../imgs/principles-9.svg";
 import image10 from "../imgs/principles-10.svg";
-
-const image1Alt = "Image showing a traffic light.";
-const image2Alt = "Image showing two symbols with an equals sign between them.";
-const image3Alt =
-  "Image showing a set of three sliders in different positions.";
-const image4Alt =
-  "Image showing a circle with two arrows wrapping around it in opposite directions.";
-const image5Alt = "Image showing a stop sign.";
-const image6Alt =
-  "Image showing a circle, a square, a triangle with a single line running through them.";
-const image7Alt =
-  "Image showing a rectangle which is flexed around its center.";
-const image8Alt =
-  "Image showing a rectangle with a circle and two lines inside it.";
-const image9Alt =
-  "Image showing a medical cross with an arrow wrapping around it clockwise.";
-const image10Alt = "Image showing a circle with a dialogue box attached.";
 ---
 
 <PageleteSection>
@@ -53,133 +34,93 @@ const image10Alt = "Image showing a circle with a dialogue box attached.";
     products that are consistent, effective, meaningful and engaging.
   </Description>
 
-  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <div>
-      <ImageWrapper
-        showBorders={true}
-        marginTop={"0rem"}
-        marginBottom={"1.5rem"}
-      >
-        <Image src={image1.src} alt={image1Alt} />
-      </ImageWrapper>
-      <Caption title="Visibility">
-        Show system status and indicate what's happening.
-      </Caption>
-    </div>
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image1.src}
+      imgAlt="Image showing a traffic light."
+      captionTitle="Visibility"
+    >
+      Show system status and indicate what's happening.
+    </ImageWithCaption>
 
-    <div>
-      <ImageWrapper
-        showBorders={true}
-        marginTop={"0rem"}
-        marginBottom={"1.5rem"}
-      >
-        <Image src={image2.src} alt={image2Alt} />
-      </ImageWrapper>
-      <Caption title="Commonality">
-        Accessible by design. Use familiar metaphors and language.
-      </Caption>
-    </div>
-    <div>
-      <ImageWrapper
-        showBorders={true}
-        marginTop={"0rem"}
-        marginBottom={"1.5rem"}
-      >
-        <Image src={image3.src} alt={image3Alt} />
-      </ImageWrapper>
-      <Caption title="Freedom">
-        Provide defaults and undos. Enable personalization.
-      </Caption>
-    </div>
+    <ImageWithCaption
+      imgSrc={image2.src}
+      imgAlt="Image showing two symbols with an equals sign between them."
+      captionTitle="Commonality"
+    >
+      Accessible by design. Use familiar metaphors and language.
+    </ImageWithCaption>
+  </CollapsibleColumns>
 
-    <div>
-      <ImageWrapper
-        showBorders={true}
-        marginTop={"0rem"}
-        marginBottom={"1.5rem"}
-      >
-        <Image src={image4.src} alt={image4Alt} />
-      </ImageWrapper>
-      <Caption title="Consistency">
-        Provide a reliable and consistent experience throughout.
-      </Caption>
-    </div>
-    <div>
-      <ImageWrapper
-        showBorders={true}
-        marginTop={"0rem"}
-        marginBottom={"1.5rem"}
-      >
-        <Image src={image5.src} alt={image5Alt} />
-      </ImageWrapper>
-      <Caption title="Error Prevention">
-        Help users avoid making mistakes.
-      </Caption>
-    </div>
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image3.src}
+      imgAlt="Image showing a set of three sliders in different positions."
+      captionTitle="Freedom"
+    >
+      Provide defaults and undos. Enable personalization.
+    </ImageWithCaption>
 
-    <div>
-      <ImageWrapper
-        showBorders={true}
-        marginTop={"0rem"}
-        marginBottom={"1.5rem"}
-      >
-        <Image src={image6.src} alt={image6Alt} />
-      </ImageWrapper>
-      <Caption title="Recognition">
-        Make information and workflows easy to discover.
-      </Caption>
-    </div>
+    <ImageWithCaption
+      imgSrc={image4.src}
+      imgAlt="Image showing a circle with two arrows wrapping around it in opposite directions."
+      captionTitle="Consistency"
+    >
+      Provide a reliable and consistent experience throughout.
+    </ImageWithCaption>
+  </CollapsibleColumns>
 
-    <div>
-      <ImageWrapper
-        showBorders={true}
-        marginTop={"0rem"}
-        marginBottom={"1.5rem"}
-      >
-        <Image src={image7.src} alt={image7Alt} />
-      </ImageWrapper>
-      <Caption title="Flexibility">
-        Make advanced tasks fluid & efficient.
-      </Caption>
-    </div>
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image5.src}
+      imgAlt="Image showing a stop sign."
+      captionTitle="Error Prevention"
+    >
+      Help users avoid making mistakes.
+    </ImageWithCaption>
 
-    <div>
-      <ImageWrapper
-        showBorders={true}
-        marginTop={"0rem"}
-        marginBottom={"1.5rem"}
-      >
-        <Image src={image8.src} alt={image8Alt} />
-      </ImageWrapper>
-      <Caption title="Minimalism">
-        Provide only necessary info in an elegant way.
-      </Caption>
-    </div>
+    <ImageWithCaption
+      imgSrc={image6.src}
+      imgAlt="Image showing a circle, a square, a triangle with a single line running through them."
+      captionTitle="Recognition"
+    >
+      Make information and workflows easy to discover.
+    </ImageWithCaption>
+  </CollapsibleColumns>
 
-    <div>
-      <ImageWrapper
-        showBorders={true}
-        marginTop={"0rem"}
-        marginBottom={"1.5rem"}
-      >
-        <Image src={image9.src} alt={image9Alt} />
-      </ImageWrapper>
-      <Caption title="Error Recovery">
-        Help users recognize, diagnose and recover from bad situations.
-      </Caption>
-    </div>
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image7.src}
+      imgAlt="Image showing a rectangle which is flexed around its center."
+      captionTitle="Flexibility"
+    >
+      Make advanced tasks fluid & efficient.
+    </ImageWithCaption>
 
-    <div>
-      <ImageWrapper
-        showBorders={true}
-        marginTop={"0rem"}
-        marginBottom={"1.5rem"}
-      >
-        <Image src={image10.src} alt={image10Alt} />
-      </ImageWrapper>
-      <Caption title="Help">
-        Use proactive and in-place hints to guide users.
-      </Caption>
-    </div>
-  </ColumnLayout>
+    <ImageWithCaption
+      imgSrc={image8.src}
+      imgAlt="Image showing a rectangle with a circle and two lines inside it."
+      captionTitle="Minimalism"
+    >
+      Provide only necessary info in an elegant way.
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image9.src}
+      imgAlt="Image showing a medical cross with an arrow wrapping around it clockwise."
+      captionTitle="Error Recovery"
+    >
+      Help users recognize, diagnose and recover from bad situations.
+    </ImageWithCaption>
+
+    <ImageWithCaption
+      imgSrc={image10.src}
+      imgAlt="Image showing a circle with a dialogue box attached."
+      captionTitle="Help"
+    >
+      Use proactive and in-place hints to guide users.
+    </ImageWithCaption>
+  </CollapsibleColumns>
 </PageleteSection>

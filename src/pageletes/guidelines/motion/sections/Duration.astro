@@ -1,10 +1,8 @@
 ---
-import { Image } from "@avaya/neo-react";
 import {
-  Caption,
+  CollapsibleColumns,
   Description,
-  ColumnLayout,
-  ImageWrapper,
+  ImageWithCaption,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -14,10 +12,6 @@ import { topics } from "../static";
 import image1 from "../imgs/motion-duration-1.svg";
 import image2 from "../imgs/motion-duration-2.svg";
 import image3 from "../imgs/motion-duration-3.svg";
-
-const image1Alt = "Image showing a speed gauge with its marker on slow.";
-const image2Alt = "Image showing a speed gauge with its marker on medium.";
-const image3Alt = "Image showing a speed gauge with its marker on fast.";
 ---
 
 <PageleteSection>
@@ -30,53 +24,34 @@ const image3Alt = "Image showing a speed gauge with its marker on fast.";
     change takes.
   </Description>
 
-  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <div>
-      <ImageWrapper
-        showBorders={true}
-        marginTop={"0rem"}
-        marginBottom={"1.5rem"}
-      >
-        <Image src={image1.src} alt={image1Alt} />
-      </ImageWrapper>
-      <Caption title="Slow">
-        Use this for transitions that take 0.9 seconds to occur.
-      </Caption>
-    </div>
-    <div>
-      <ImageWrapper
-        showBorders={true}
-        marginTop={"0rem"}
-        marginBottom={"1.5rem"}
-      >
-        <Image src={image2.src} alt={image2Alt} />
-      </ImageWrapper>
-      <Caption title="Medium">
-        These transitions are 0.4 seconds in length. This is the primary speed
-        used throughout Neo. It is used for hover states, opening and closing,
-        sheets sliding in and out of the page, etc.
-      </Caption>
-    </div>
-  </ColumnLayout>
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image1.src}
+      imgAlt="Image showing a speed gauge with its marker on slow."
+      captionTitle="Slow"
+    >
+      Use this for transitions that take 0.9 seconds to occur.
+    </ImageWithCaption>
 
-  <ColumnLayout
-    showGridlines={false}
-    marginTop={"1.5rem"}
-    gap="2rem"
-    numOfColumns={2}
-  >
-    <div>
-      <ImageWrapper
-        showBorders={true}
-        marginTop={"0rem"}
-        marginBottom={"1.5rem"}
-      >
-        <Image src={image3.src} alt={image3Alt} />
-      </ImageWrapper>
-      <Caption title="Fast">
-        The quickest transitions are 0.15 seconds in length. This is
-        occasionally used in Neo for expanding table rows.
-      </Caption>
-    </div>
-  </ColumnLayout>
+    <ImageWithCaption
+      imgSrc={image2.src}
+      imgAlt="Image showing a speed gauge with its marker on medium."
+      captionTitle="Medium"
+    >
+      These transitions are 0.4 seconds in length. This is the primary speed
+      used throughout Neo. It is used for hover states, opening and closing,
+      sheets sliding in and out of the page, etc.
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image3.src}
+      imgAlt="Image showing a speed gauge with its marker on fast."
+      captionTitle="Fast"
+    >
+      The quickest transitions are 0.15 seconds in length. This is occasionally
+      used in Neo for expanding table rows.
+    </ImageWithCaption>
+  </CollapsibleColumns>
 </PageleteSection>

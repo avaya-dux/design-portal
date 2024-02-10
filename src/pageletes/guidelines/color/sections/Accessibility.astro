@@ -1,15 +1,16 @@
 ---
 import {
+  CollapsibleColumns,
   Description,
+  ImageWithCaption,
   InfoList,
   InfoListItem,
   PageleteSection,
   SectionHeader,
 } from "components";
 
-import TwoColumnLayout from "./sections-frame-layout/TwoColumnLayout.astro";
-import ColorBlindness from "./sections-frame-layout/accessibility/ColorBlindness.astro";
-import LowVision from "./sections-frame-layout/accessibility/LowVision.astro";
+import image1 from "../imgs/color-accessibility-1.svg";
+import image2 from "../imgs/color-accessibility-2.svg";
 
 import { topics } from "../static";
 const { id, title } = topics.accessibility;
@@ -25,10 +26,35 @@ const { id, title } = topics.accessibility;
     interface.
   </Description>
 
-  <TwoColumnLayout marginBottom="16px">
-    <ColorBlindness slot="left-frame" />
-    <LowVision slot="right-frame" />
-  </TwoColumnLayout>
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image1.src}
+      imgAlt="Graphic demonstrating various types of color blindess."
+      captionTitle="Color Blindness"
+    >
+      Color blindness (also known as Color Vision Deficiency) affects
+      approximately 1 in 12 men and 1 in 200 women. There are different forms of
+      color blindness in which people have difficulty distinguishing certain
+      colors, with extremely rare cases of those who cannot see color at all.
+      The most common forms of color blindness are Deuteranomaly/Deuteranopia
+      (green weak/blind), which affects 6% of men, and Protanomaly/Protanopia
+      (red weak/blind), which affects another 2%. Tritanomaly/Tritanopia (blue
+      weak/blind) is very rare, affecting less than 0.001% of men.
+    </ImageWithCaption>
+
+    <ImageWithCaption
+      imgSrc={image2.src}
+      imgAlt="Graphic demonstrating low vision."
+      captionTitle="Low Vision"
+    >
+      Low vision is often referred to as "partially sighted" and “sight
+      impaired.” It is estimated that approximately 246 million people worldwide
+      have some level of vision impairment. The level of impairment varies from
+      person-to-person and can include: visual acuity (clarity/sharpness of
+      vision), light sensitivity, contrast sensitivity, and field of vision (the
+      area one can see when their eyes are focused in one place).
+    </ImageWithCaption>
+  </CollapsibleColumns>
 
   <Description>
     To help people with these issues, colors should be used as follows.

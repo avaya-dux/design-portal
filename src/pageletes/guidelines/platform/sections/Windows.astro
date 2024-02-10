@@ -1,22 +1,28 @@
 ---
+import { Link } from "@avaya/neo-react";
+
 import {
+  CollapsibleColumns,
   Description,
+  ExternalLink,
+  ImageWithCaption,
+  InfoList,
+  InfoListItem,
   PageleteSection,
+  PageleteSubSection,
   SectionHeader,
   SubHeader,
-  ExternalLink,
 } from "components";
+
+import image1 from "../imgs/user-interface-1.svg";
+import image2 from "../imgs/user-interface-2.svg";
+import image3 from "../imgs/interactions-5.svg";
+import image4 from "../imgs/interactions-1.svg";
+import image5 from "../imgs/interactions-3.svg";
+import image6 from "../imgs/interactions-4.svg";
 
 import { topics } from "../static";
 const { id, title } = topics.windows;
-
-import TwoColumnLayout from "./sections-frame-layout/TwoColumnLayout.astro";
-import Icons from "./sections-frame-layout/windows/frame-1/Icons.astro";
-import NativeElements from "./sections-frame-layout/windows/frame-1/NativeElements.astro";
-import KeyboardShortcuts from "./sections-frame-layout/windows/frame-2/KeyboardShortcuts.astro";
-import ResponsiveDisplay from "./sections-frame-layout/windows/frame-2/ResponsiveDisplay.astro";
-import Accessibility from "./sections-frame-layout/windows/frame-3/Accessibility.astro";
-import TouchTargets from "./sections-frame-layout/windows/frame-3/TouchTargets.astro";
 ---
 
 <PageleteSection>
@@ -33,33 +39,141 @@ import TouchTargets from "./sections-frame-layout/windows/frame-3/TouchTargets.a
     </ExternalLink>.
   </Description>
 
-  <SubHeader id="user-interface" marginTop="64px">User Interface</SubHeader>
+  <PageleteSubSection>
+    <SubHeader id="win-user-interface">User Interface</SubHeader>
 
-  <Description>
-    The visual appearance for Windows applications should utilize a combination
-    of native elements and Neo styling.
-  </Description>
+    <Description>
+      The visual appearance for Windows applications should utilize a
+      combination of native elements and Neo styling.
+    </Description>
 
-  <TwoColumnLayout>
-    <NativeElements slot="left-frame" />
-    <Icons slot="right-frame" />
-  </TwoColumnLayout>
+    <CollapsibleColumns>
+      <ImageWithCaption
+        imgSrc={image1.src}
+        imgAlt="Graphic representing various elements."
+        captionTitle="Native Elements"
+      >
+        Applications built for Windows should use native components wherever
+        possible to ensure consistency across platforms, while leveraging
+        built-in accessibility. Neo fonts, colors, and icons should be applied
+        at the design token level where possible.
+      </ImageWithCaption>
 
-  <SubHeader id="interactions" marginTop="64px">Interactions</SubHeader>
+      <ImageWithCaption
+        imgSrc={image2.src}
+        imgAlt="Graphic representing icons."
+        captionTitle="Icons"
+      >
+        All non-system icons used by Windows applications are available on the
+        icons page.
 
-  <Description>
-    Interactions such as display, responsiveness, accessibility and touch
-    targets should follow web standards, as well as the Neo guidelines found
-    throughout the portal.
-  </Description>
+        <InfoList>
+          <InfoListItem>
+            <Link href="/icons">View Icon Library</Link>
+          </InfoListItem>
+        </InfoList>
+      </ImageWithCaption>
+    </CollapsibleColumns>
+  </PageleteSubSection>
 
-  <TwoColumnLayout>
-    <KeyboardShortcuts slot="left-frame" />
-    <ResponsiveDisplay slot="right-frame" />
-  </TwoColumnLayout>
+  <PageleteSubSection>
+    <SubHeader id="win-interactions">Interactions</SubHeader>
 
-  <TwoColumnLayout>
-    <Accessibility slot="left-frame" />
-    <TouchTargets slot="right-frame" />
-  </TwoColumnLayout>
+    <Description>
+      Interactions such as display, responsiveness, accessibility and touch
+      targets should follow web standards, as well as the Neo guidelines found
+      throughout the portal.
+    </Description>
+
+    <CollapsibleColumns>
+      <ImageWithCaption
+        imgSrc={image3.src}
+        imgAlt="Graphic representing keyboard keys."
+        captionTitle="Keyboard Shortcuts"
+      >
+        Shortcuts created for Windows applications must not conflict with
+        existing browser and desktop shortcuts. Refer to the <ExternalLink
+          href="https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec"
+          inline
+        >
+          Microsoft documentation
+        </ExternalLink>
+        as well as <ExternalLink
+          href="https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1"
+          inline
+        >
+          Narrator
+        </ExternalLink>, <ExternalLink
+          href="https://www.freedomscientific.com/products/software/jaws/"
+          inline
+        >
+          JAWS
+        </ExternalLink>
+        and <ExternalLink href="https://www.nvaccess.org/" inline>
+          NVDA
+        </ExternalLink> sites for the complete list.
+
+        <InfoList>
+          <InfoListItem>
+            <Link href="/accessibility/keyboard-interactions">
+              View Keyboard interactions
+            </Link>
+          </InfoListItem>
+        </InfoList>
+      </ImageWithCaption>
+
+      <ImageWithCaption
+        imgSrc={image4.src}
+        imgAlt="Graphic representing responsive display sizes."
+        captionTitle="Display and Responsive Size"
+      >
+        Layouts need to be flexible and responsive, with scaling to match
+        different screen sizes. Accurate proportions improve the composition and
+        hierarchy. This ensures consistency and a common user experience across
+        all platforms.
+
+        <InfoList>
+          <InfoListItem>
+            <Link href="/guidelines/layout-grid">View Layout and Grid</Link>
+          </InfoListItem>
+        </InfoList>
+      </ImageWithCaption>
+    </CollapsibleColumns>
+
+    <CollapsibleColumns>
+      <ImageWithCaption
+        imgSrc={image5.src}
+        imgAlt="Graphic representing accessibility."
+        captionTitle="Accessibility"
+      >
+        Windows applications must be accessible to all users. Learn more with <ExternalLink
+          href="https://learn.microsoft.com/en-us/windows/apps/design/accessibility/accessibility"
+          inline
+        >
+          Microsoft's documentation
+        </ExternalLink> and our accessibility guidelines.
+
+        <InfoList>
+          <InfoListItem>
+            <Link href="/guidelines/accessibility">View Accessibility</Link>
+          </InfoListItem>
+        </InfoList>
+      </ImageWithCaption>
+
+      <ImageWithCaption
+        imgSrc={image6.src}
+        imgAlt="Graphic representing touch targets."
+        captionTitle="Touch Targets"
+      >
+        Interactive controls, such as buttons, should have a minimum 40px x 40px
+        tappable area making them easy to see and use, and to meet
+        <ExternalLink
+          href="https://learn.microsoft.com/en-us/windows/apps/design/input/guidelines-for-targeting"
+          inline
+        >
+          Window's specifications
+        </ExternalLink>.
+      </ImageWithCaption>
+    </CollapsibleColumns>
+  </PageleteSubSection>
 </PageleteSection>

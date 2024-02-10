@@ -1,10 +1,8 @@
 ---
-import { Image } from "@avaya/neo-react";
 import {
-  Caption,
-  ColumnLayout,
+  CollapsibleColumns,
   Description,
-  ImageWrapper,
+  ImageWithCaption,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -13,10 +11,6 @@ import { topics } from "../static";
 
 import image1 from "../imgs/data-vis-pie-charts-1.svg";
 import image2 from "../imgs/data-vis-pie-charts-2.svg";
-
-const image1Alt = "Image showing a pie chart with 5 slices.";
-const image2Alt =
-  "Image showing a pie chart slices with a clear gap between them.";
 ---
 
 <PageleteSection>
@@ -28,27 +22,23 @@ const image2Alt =
     Pie charts are used to show percentages and proportional data.
   </Description>
 
-  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <div>
-      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
-        <Image src={image1.src} alt={image1Alt} />
-      </ImageWrapper>
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image1.src}
+      imgAlt="Image showing a pie chart with 5 slices."
+      captionTitle="Use Minimal Categories"
+    >
+      Avoid using more that 5 categories in a pie chart as the data will become
+      difficult to digest. If more categories are required, use a bar chart
+      instead.
+    </ImageWithCaption>
 
-      <Caption title="Use Minimal Categories">
-        Avoid using more that 5 categories in a pie chart as the data will
-        become difficult to digest. If more categories are required, use a bar
-        chart instead.
-      </Caption>
-    </div>
-    <div>
-      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
-        <Image src={image2.src} alt={image2Alt} />
-      </ImageWrapper>
-
-      <Caption title="Provide Whitespace Between Values">
-        Use whitespace between slices to provide clear contrast between
-        elements.
-      </Caption>
-    </div>
-  </ColumnLayout>
+    <ImageWithCaption
+      imgSrc={image2.src}
+      imgAlt="Image showing a pie chart slices with a clear gap between them."
+      captionTitle="Provide Whitespace Between Values"
+    >
+      Use whitespace between slices to provide clear contrast between elements.
+    </ImageWithCaption>
+  </CollapsibleColumns>
 </PageleteSection>
