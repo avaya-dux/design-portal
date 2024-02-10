@@ -1,23 +1,16 @@
 ---
 import {
+  CollapsibleColumns,
   Description,
-  ImageWrapper,
-  ColumnLayout,
+  ImageWithCaption,
   PageleteSection,
   SectionHeader,
 } from "components";
 
-import { Image } from "@avaya/neo-react";
-import textFormatting1 from "../imgs/typography-formatting-1.svg";
-import textFormatting2 from "../imgs/typography-formatting-2.svg";
-import textFormatting3 from "../imgs/typography-formatting-3.svg";
-import textFormatting4 from "../imgs/typography-formatting-4.svg";
-
-const textFormatting1AltText = "Image showing icon top represent bold text";
-const textFormatting2AltText =
-  "Image showing icon to represent underlined text";
-const textFormatting3AltText = "Image showing icon to represent italic text";
-const textFormatting4AltText = "Image showing icon to represent capitalization";
+import image1 from "../imgs/typography-formatting-1.svg";
+import image2 from "../imgs/typography-formatting-2.svg";
+import image3 from "../imgs/typography-formatting-3.svg";
+import image4 from "../imgs/typography-formatting-4.svg";
 
 import { topics } from "../static";
 ---
@@ -34,47 +27,43 @@ import { topics } from "../static";
     lost in a flurry of too many other important points.
   </Description>
 
-  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <div>
-      <ImageWrapper marginTop="0rem" marginBottom="1.5rem">
-        <Image src={textFormatting1.src} alt={textFormatting1AltText} />
-      </ImageWrapper>
-      <h4 class="image-header neo-semibold">Bold</h4>
-      <Description>
-        Bold text is used to emphasize a particular item.
-      </Description>
-    </div>
-    <div>
-      <ImageWrapper marginTop="0rem" marginBottom="1.5rem">
-        <Image src={textFormatting2.src} alt={textFormatting2AltText} />
-      </ImageWrapper>
-      <h4 class="image-header neo-semibold">Underline</h4>
-      <Description>
-        Underlining should be used only for text links (either for hover states
-        or default).
-      </Description>
-    </div>
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image1.src}
+      imgAlt="Image showing a bold capital letter B."
+      captionTitle="Bold"
+    >
+      Bold text is used to emphasize a particular item.
+    </ImageWithCaption>
 
-    <div>
-      <ImageWrapper marginTop="0rem" marginBottom="1.5rem">
-        <Image src={textFormatting3.src} alt={textFormatting3AltText} />
-      </ImageWrapper>
-      <h4 class="image-header neo-semibold">Italic</h4>
-      <Description>
-        Italics are used for emphasizing a part of sentence. It’s also used for
-        placeholder text and image captions. Italics are not used for Chinese,
-        Japanese, Korean, and Arabic.
-      </Description>
-    </div>
-    <div>
-      <ImageWrapper marginTop="0rem" marginBottom="1.5rem">
-        <Image src={textFormatting4.src} alt={textFormatting4AltText} />
-      </ImageWrapper>
-      <h4 class="image-header neo-semibold">Capitalization</h4>
-      <Description>
-        Uppercase text should be used sparingly (acronyms and short labels).
-        Title case is used in labels for titles, controls, and other components.
-      </Description>
-    </div>
-  </ColumnLayout>
+    <ImageWithCaption
+      imgSrc={image2.src}
+      imgAlt="Image showing an undelrined U."
+      captionTitle="Underline"
+    >
+      Underlining should be used only for text links (either for hover states or
+      default).
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image3.src}
+      imgAlt="Image showing an italicized I."
+      captionTitle="Italic"
+    >
+      Italics are used for emphasizing a part of sentence. It’s also used for
+      placeholder text and image captions. Italics are not used for Chinese,
+      Japanese, Korean, and Arabic.
+    </ImageWithCaption>
+
+    <ImageWithCaption
+      imgSrc={image4.src}
+      imgAlt="Image showing a capital letter A."
+      captionTitle="Capitalization"
+    >
+      Uppercase text should be used sparingly (acronyms and short labels). Title
+      case is used in labels for titles, controls, and other components.
+    </ImageWithCaption>
+  </CollapsibleColumns>
 </PageleteSection>

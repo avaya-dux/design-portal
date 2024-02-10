@@ -1,22 +1,15 @@
 ---
 import {
+  CollapsibleColumns,
   Description,
-  ImageWrapper,
-  ColumnLayout,
+  ImageWithCaption,
   PageleteSection,
   SectionHeader,
 } from "components";
 
-import { Image } from "@avaya/neo-react";
-import typographyComponents1 from "../imgs/typography-components-1.svg";
-import typographyComponents2 from "../imgs/typography-components-2.svg";
-import typographyComponents3 from "../imgs/typography-components-3.svg";
-
-const typographyComponents1AltText =
-  "Image showing icon top represent headings";
-const typographyComponents2AltText =
-  "Image showing icon to represent body text";
-const typographyComponents3AltText = "Image showing icon to represent captions";
+import image1 from "../imgs/typography-components-1.svg";
+import image2 from "../imgs/typography-components-2.svg";
+import image3 from "../imgs/typography-components-3.svg";
 
 import { topics } from "../static";
 ---
@@ -32,45 +25,35 @@ import { topics } from "../static";
     tokens embedded inside the components.
   </Description>
 
-  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <div>
-      <ImageWrapper marginTop="0rem" marginBottom="1.5rem">
-        <Image
-          src={typographyComponents1.src}
-          alt={typographyComponents1AltText}
-        />
-      </ImageWrapper>
-      <h4 class="image-header neo-semibold">Headings</h4>
-      <Description>
-        Headings are used to create visual hierarchies throughout the user
-        interface. Heading 1 should only be used once per page.
-      </Description>
-    </div>
-    <div>
-      <ImageWrapper marginTop="0rem" marginBottom="1.5rem">
-        <Image
-          src={typographyComponents2.src}
-          alt={typographyComponents2AltText}
-        />
-      </ImageWrapper>
-      <h4 class="image-header neo-semibold">Body</h4>
-      <Description>
-        The Body style is used in components and for blocks of text.
-      </Description>
-    </div>
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image1.src}
+      imgAlt="Image showing icon top represent headings."
+      captionTitle="Headings"
+    >
+      Headings are used to create visual hierarchies throughout the user
+      interface. Heading 1 should only be used once per page.
+    </ImageWithCaption>
 
-    <div>
-      <ImageWrapper marginTop="0rem" marginBottom="1.5rem">
-        <Image
-          src={typographyComponents3.src}
-          alt={typographyComponents3AltText}
-        />
-      </ImageWrapper>
-      <h4 class="image-header neo-semibold">Captions</h4>
-      <Description>
-        Captions are used for adding extra information or smaller items in the
-        hierarchy of text.
-      </Description>
-    </div>
-  </ColumnLayout>
+    <ImageWithCaption
+      imgSrc={image2.src}
+      imgAlt="Image showing icon to represent body text."
+      captionTitle="Body"
+    >
+      The Body style is used in components and for blocks of text.
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image3.src}
+      imgAlt="Image showing icon to represent captions."
+      captionTitle="Captions"
+    >
+      Captions are used for adding extra information or smaller items in the
+      hierarchy of text.
+    </ImageWithCaption>
+
+    <div></div>
+  </CollapsibleColumns>
 </PageleteSection>
