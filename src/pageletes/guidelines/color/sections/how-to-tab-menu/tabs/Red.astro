@@ -4,12 +4,12 @@ import { PageleteSubSection } from "components";
 import ThreeColumnLayout from "../ThreeColumnLayout.astro";
 import InfoBlockLayout from "../InfoBlockLayout.astro";
 
-import errorImage from "../../../imgs/how-to-images/red-errors.svg";
-import negativeImage from "../../../imgs/how-to-images/red-negative.svg";
-import destructiveImage from "../../../imgs/how-to-images/red-destructive.svg";
-import priorityImage from "../../../imgs/how-to-images/red-high-priorty.svg";
-import overdueImage from "../../../imgs/how-to-images/red-missing-overdue.svg";
-import endActionImage from "../../../imgs/how-to-images/red-end-directions.svg";
+import errorImage from "../../../imgs/how-to-images/color-use-red-1.svg";
+import negativeImage from "../../../imgs/how-to-images/color-use-red-2.svg";
+import destructiveImage from "../../../imgs/how-to-images/color-use-red-3.svg";
+import priorityImage from "../../../imgs/how-to-images/color-use-red-4.svg";
+import overdueImage from "../../../imgs/how-to-images/color-use-red-5.svg";
+import endActionImage from "../../../imgs/how-to-images/color-use-red-6.svg";
 
 const errorBlock = {
   image: errorImage.src,
@@ -59,7 +59,6 @@ const endActionBlock = {
 <PageleteSubSection marginTop="0" marginBottom="0">
   <ThreeColumnLayout>
     <InfoBlockLayout
-      slot="left-frame"
       graphicIcon={errorBlock.image}
       graphicAltText={errorBlock.altText}
       header={errorBlock.header}
@@ -67,7 +66,6 @@ const endActionBlock = {
     />
 
     <InfoBlockLayout
-      slot="middle-frame"
       graphicIcon={negativeBlock.image}
       graphicAltText={negativeBlock.altText}
       header={negativeBlock.header}
@@ -75,17 +73,13 @@ const endActionBlock = {
     />
 
     <InfoBlockLayout
-      slot="right-frame"
       graphicIcon={destructiveBlock.image}
       graphicAltText={destructiveBlock.altText}
       header={destructiveBlock.header}
       description={destructiveBlock.description}
     />
-  </ThreeColumnLayout>
 
-  <ThreeColumnLayout>
     <InfoBlockLayout
-      slot="left-frame"
       graphicIcon={priorityBlock.image}
       graphicAltText={priorityBlock.altText}
       header={priorityBlock.header}
@@ -93,7 +87,6 @@ const endActionBlock = {
     />
 
     <InfoBlockLayout
-      slot="middle-frame"
       graphicIcon={overdueBlock.image}
       graphicAltText={overdueBlock.altText}
       header={overdueBlock.header}
@@ -101,7 +94,6 @@ const endActionBlock = {
     />
 
     <InfoBlockLayout
-      slot="right-frame"
       graphicIcon={endActionBlock.image}
       graphicAltText={endActionBlock.altText}
       header={endActionBlock.header}
