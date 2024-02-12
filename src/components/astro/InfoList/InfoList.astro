@@ -1,10 +1,14 @@
 ---
 export interface Props {
-  type?: "disc" | "decimal" | "'- '" | "none";
+  type?:
+    | "disc"
+    | "decimal"
+    | "'– '" // "'– '" === "'&ndash; '" === U+2013
+    | "none";
   fontSize?: string;
 }
 
-const { type = "none", fontSize = "1rem" } = Astro.props as Props;
+const { type = "'– '", fontSize = "1rem" } = Astro.props as Props;
 const marginLeft = type === "none" ? 0 : "1rem";
 ---
 
