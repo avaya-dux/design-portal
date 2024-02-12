@@ -4,9 +4,9 @@ import { PageleteSubSection } from "components";
 import ThreeColumnLayout from "../ThreeColumnLayout.astro";
 import InfoBlockLayout from "../InfoBlockLayout.astro";
 
-import textImage from "../../../imgs/how-to-images/base-text.svg";
-import disabledImage from "../../../imgs/how-to-images/base-disabled-states.svg";
-import containersImage from "../../../imgs/how-to-images/base-containers.svg";
+import textImage from "../../../imgs/how-to-images/color-use-base-1.svg";
+import disabledImage from "../../../imgs/how-to-images/color-use-base-2.svg";
+import containersImage from "../../../imgs/how-to-images/color-use-base-3.svg";
 
 const textBlock = {
   image: textImage.src,
@@ -35,21 +35,18 @@ const containersBlock = {
 <PageleteSubSection marginTop="0" marginBottom="0">
   <ThreeColumnLayout>
     <InfoBlockLayout
-      slot="left-frame"
       graphicIcon={textBlock.image}
       graphicAltText={textBlock.altText}
       header={textBlock.header}
       description={textBlock.description}
     />
     <InfoBlockLayout
-      slot="middle-frame"
       graphicIcon={disabledBlock.image}
       graphicAltText={disabledBlock.altText}
       header={disabledBlock.header}
       description={disabledBlock.description}
     />
     <InfoBlockLayout
-      slot="right-frame"
       graphicIcon={containersBlock.image}
       graphicAltText={containersBlock.altText}
       header={containersBlock.header}
