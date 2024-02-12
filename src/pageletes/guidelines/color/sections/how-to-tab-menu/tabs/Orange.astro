@@ -42,7 +42,6 @@ const upcomingBlock = {
 <PageleteSubSection marginTop="0" marginBottom="0">
   <ThreeColumnLayout>
     <InfoBlockLayout
-      slot="left-frame"
       graphicIcon={warningBlock.image}
       graphicAltText={warningBlock.altText}
       header={warningBlock.header}
@@ -50,7 +49,6 @@ const upcomingBlock = {
     />
 
     <InfoBlockLayout
-      slot="middle-frame"
       graphicIcon={pendingBlock.image}
       graphicAltText={pendingBlock.altText}
       header={pendingBlock.header}
@@ -58,17 +56,13 @@ const upcomingBlock = {
     />
 
     <InfoBlockLayout
-      slot="right-frame"
       graphicIcon={priorityBlock.image}
       graphicAltText={priorityBlock.altText}
       header={priorityBlock.header}
       description={priorityBlock.description}
     />
-  </ThreeColumnLayout>
 
-  <ThreeColumnLayout>
     <InfoBlockLayout
-      slot="left-frame"
       graphicIcon={upcomingBlock.image}
       graphicAltText={upcomingBlock.altText}
       header={upcomingBlock.header}
