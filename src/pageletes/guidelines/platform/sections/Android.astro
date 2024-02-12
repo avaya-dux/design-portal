@@ -1,22 +1,28 @@
 ---
+import { Link } from "@avaya/neo-react";
+
 import {
+  CollapsibleColumns,
   Description,
+  ExternalLink,
+  ImageWithCaption,
+  InfoList,
+  InfoListItem,
   PageleteSection,
+  PageleteSubSection,
   SectionHeader,
   SubHeader,
-  ExternalLink,
 } from "components";
+
+import image1 from "../imgs/user-interface-1.svg";
+import image2 from "../imgs/user-interface-2.svg";
+import image3 from "../imgs/interactions-2.svg";
+import image4 from "../imgs/interactions-1.svg";
+import image5 from "../imgs/interactions-3.svg";
+import image6 from "../imgs/interactions-4.svg";
 
 import { topics } from "../static";
 const { id, title } = topics.android;
-
-import TwoColumnLayout from "./sections-frame-layout/TwoColumnLayout.astro";
-import Icons from "./sections-frame-layout/android/frame-1/Icons.astro";
-import NativeElements from "./sections-frame-layout/android/frame-1/NativeElements.astro";
-import ResponsiveDisplay from "./sections-frame-layout/android/frame-2/ResponsiveDisplay.astro";
-import Accessibility from "./sections-frame-layout/android/frame-3/Accessibility.astro";
-import TouchTargets from "./sections-frame-layout/android/frame-3/TouchTargets.astro";
-import Gestures from "./sections-frame-layout/android/frame-2/Gestures.astro";
 ---
 
 <PageleteSection>
@@ -33,33 +39,114 @@ import Gestures from "./sections-frame-layout/android/frame-2/Gestures.astro";
     </ExternalLink>.
   </Description>
 
-  <SubHeader id="user-interface" marginTop="64px">User Interface</SubHeader>
+  <PageleteSubSection>
+    <SubHeader id="android-user-interface">User Interface</SubHeader>
 
-  <Description>
-    The visual appearance for Android applications should utilize a combination
-    of native elements and Neo styling.
-  </Description>
+    <Description>
+      The visual appearance for Android applications should utilize a
+      combination of native elements and Neo styling.
+    </Description>
 
-  <TwoColumnLayout>
-    <NativeElements slot="left-frame" />
-    <Icons slot="right-frame" />
-  </TwoColumnLayout>
+    <CollapsibleColumns>
+      <ImageWithCaption
+        imgSrc={image1.src}
+        imgAlt="Graphic representing various elements."
+        captionTitle="Native Elements"
+      >
+        Applications built for Android should use native components wherever
+        possible to ensure consistency across platforms, while leveraging
+        built-in accessibility. Neo fonts, colors, and icons should be applied
+        at the design token level where possible.
+      </ImageWithCaption>
 
-  <SubHeader id="interactions" marginTop="64px">Interactions</SubHeader>
+      <ImageWithCaption
+        imgSrc={image2.src}
+        imgAlt="Graphic representing icons."
+        captionTitle="Icons"
+      >
+        All non-system icons used by Android applications are available on the
+        icons page.
 
-  <Description>
-    Interactions such as display, responsiveness, accessibility and touch
-    targets should follow web standards, as well as the Neo guidelines found
-    throughout the portal.
-  </Description>
+        <InfoList>
+          <InfoListItem>
+            <Link href="/icons">View Icon Library</Link>
+          </InfoListItem>
+        </InfoList>
+      </ImageWithCaption>
+    </CollapsibleColumns>
+  </PageleteSubSection>
 
-  <TwoColumnLayout>
-    <Gestures slot="left-frame" />
-    <ResponsiveDisplay slot="right-frame" />
-  </TwoColumnLayout>
+  <PageleteSubSection>
+    <SubHeader id="android-interactions">Interactions</SubHeader>
 
-  <TwoColumnLayout>
-    <Accessibility slot="left-frame" />
-    <TouchTargets slot="right-frame" />
-  </TwoColumnLayout>
+    <Description>
+      Interactions such as display, responsiveness, accessibility and touch
+      targets should follow web standards, as well as the Neo guidelines found
+      throughout the portal.
+    </Description>
+
+    <CollapsibleColumns>
+      <ImageWithCaption
+        imgSrc={image3.src}
+        imgAlt="Graphic representing gesture interactions."
+        captionTitle="Gestures"
+      >
+        Allow users to quickly and easily interact with the device using touch.
+        Visual cues are provided in our products to indicate where a simple
+        movement of the hand can control and trigger certain actions.
+      </ImageWithCaption>
+
+      <ImageWithCaption
+        imgSrc={image4.src}
+        imgAlt="Graphic representing responsive display sizes."
+        captionTitle="Display and Responsive Size"
+      >
+        Layouts need to be flexible and responsive, with scaling to match
+        different screen sizes. Accurate proportions improve the composition and
+        hierarchy. This ensures consistency and a common user experience across
+        all platforms.
+
+        <InfoList>
+          <InfoListItem>
+            <Link href="/guidelines/layout-grid">View Layout and Grid</Link>
+          </InfoListItem>
+        </InfoList>
+      </ImageWithCaption>
+    </CollapsibleColumns>
+
+    <CollapsibleColumns>
+      <ImageWithCaption
+        imgSrc={image5.src}
+        imgAlt="Graphic representing accessibility."
+        captionTitle="Accessibility"
+      >
+        Android applications must be accessible to all users. Learn more with <ExternalLink
+          inline
+          href="https://developer.android.com/guide/topics/ui/accessibility/"
+        >
+          Android's documentation
+        </ExternalLink> and our accessibility guidelines.
+
+        <InfoList>
+          <InfoListItem>
+            <Link href="/guidelines/accessibility">View Accessibility</Link>
+          </InfoListItem>
+        </InfoList>
+      </ImageWithCaption>
+
+      <ImageWithCaption
+        imgSrc={image6.src}
+        imgAlt="Graphic representing touch targets."
+        captionTitle="Touch Targets"
+      >
+        Interactive controls, such as buttons, should have a minimum 48px x 48px
+        tappable area making them easy to see and use, and to meet <ExternalLink
+          href="https://support.google.com/accessibility/android/answer/7101858?hl=en#:~:text=Consider%20making%20touch%20targets%20at,touchscreen%20objects%20is%207%2D10mm"
+          inline
+        >
+          Android's specifications
+        </ExternalLink>.
+      </ImageWithCaption>
+    </CollapsibleColumns>
+  </PageleteSubSection>
 </PageleteSection>

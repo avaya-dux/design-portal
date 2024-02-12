@@ -1,12 +1,17 @@
 ---
-import { Description, PageleteSection, SectionHeader } from "components";
+import {
+  CollapsibleColumns,
+  Description,
+  ImageWithCaption,
+  PageleteSection,
+  SectionHeader,
+} from "components";
+
+import image1 from "../imgs/color-data-1.svg";
+import image2 from "../imgs/color-data-2.svg";
+import image3 from "../imgs/color-data-3.svg";
 
 import { topics } from "../static";
-import TwoColumnLayout from "./sections-frame-layout/TwoColumnLayout.astro";
-import Categorical from "./sections-frame-layout/data-colors/frame-1/Categorical.astro";
-import Sequential from "./sections-frame-layout/data-colors/frame-1/Sequential.astro";
-import Diverging from "./sections-frame-layout/data-colors/frame-2/Diverging.astro";
-
 const { id, title } = topics.data;
 ---
 
@@ -18,12 +23,37 @@ const { id, title } = topics.data;
     colors to use are defined by the data type.
   </Description>
 
-  <TwoColumnLayout>
-    <Categorical slot="left-frame" />
-    <Sequential slot="right-frame" />
-  </TwoColumnLayout>
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image1.src}
+      imgAlt="Graphic representing categorical color visualization with a number of distinct colors related to different animals."
+      captionTitle="Categorical"
+    >
+      Data that does not have numeric meaning should be communicated with a
+      categorical color scheme. This scheme contains individual hues designed to
+      be visually distinct from one another, while also being color-blind safe.
+    </ImageWithCaption>
 
-  <TwoColumnLayout>
-    <Diverging slot="left-frame" />
-  </TwoColumnLayout>
+    <ImageWithCaption
+      imgSrc={image2.src}
+      imgAlt="Graphic representing sequantial color visualization with blue color swatches ranging from light to dark."
+      captionTitle="Sequential"
+    >
+      Data that has numeric meaning and progresses from low to high (i.e.
+      sequentially) should be displayed with a sequential color scheme. This
+      scheme employs a continuous range of colors from light to dark.
+    </ImageWithCaption>
+  </CollapsibleColumns>
+
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image3.src}
+      imgAlt="Graphic representing diverging colors with dark green color swatches slowly fading into red color swatches."
+      captionTitle="Diverging"
+    >
+      Data that has numeric meaning and includes negative values, or ranges
+      within 2 extremes, should be displayed with a diverging color scheme. This
+      scheme contains 2 ranges of colors that meet in the center.
+    </ImageWithCaption>
+  </CollapsibleColumns>
 </PageleteSection>

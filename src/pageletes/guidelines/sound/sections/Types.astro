@@ -1,10 +1,8 @@
 ---
-import { Image } from "@avaya/neo-react";
 import {
-  Caption,
-  ColumnLayout,
+  CollapsibleColumns,
   Description,
-  ImageWrapper,
+  ImageWithCaption,
   PageleteSection,
   SectionHeader,
 } from "components/astro";
@@ -13,10 +11,6 @@ import { topics } from "../static";
 
 import image1 from "../imgs/sound-types-1.svg";
 import image2 from "../imgs/sound-types-2.svg";
-
-const image1Alt =
-  "Image showing a microphone in front of a box with lines meant to represent on-screen text.";
-const image2Alt = "Image showing an audio equalizer at different levels.";
 ---
 
 <PageleteSection>
@@ -28,25 +22,24 @@ const image2Alt = "Image showing an audio equalizer at different levels.";
     the context.
   </Description>
 
-  <ColumnLayout showGridlines={false} gap="2rem" numOfColumns={2}>
-    <div>
-      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
-        <Image src={image1.src} alt={image1Alt} />
-      </ImageWrapper>
-      <Caption title="Speech">
-        Speech output can communicate information that tones alone cannot, such
-        as conversations. For example, the Avaya Spaces® dial-in menu when
-        joining a space via telephone.
-      </Caption>
-    </div>
-    <div>
-      <ImageWrapper showBorders={true} marginTop="0rem" marginBottom="1.5rem">
-        <Image src={image2.src} alt={image2Alt} />
-      </ImageWrapper>
-      <Caption title="Audio Tones">
-        Shorter sounds, such as notification alerts and dial tones, are used
-        most frequently in applications.
-      </Caption>
-    </div>
-  </ColumnLayout>
+  <CollapsibleColumns>
+    <ImageWithCaption
+      imgSrc={image1.src}
+      imgAlt="Image showing a microphone in front of a box with lines meant to represent on-screen text."
+      captionTitle="Speech"
+    >
+      Speech output can communicate information that tones alone cannot, such as
+      conversations. For example, the Avaya Spaces® dial-in menu when joining a
+      space via telephone.
+    </ImageWithCaption>
+
+    <ImageWithCaption
+      imgSrc={image2.src}
+      imgAlt="Image showing an audio equalizer at different levels."
+      captionTitle="Audio Tones"
+    >
+      Shorter sounds, such as notification alerts and dial tones, are used most
+      frequently in applications.
+    </ImageWithCaption>
+  </CollapsibleColumns>
 </PageleteSection>

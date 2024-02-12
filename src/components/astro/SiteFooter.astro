@@ -19,13 +19,11 @@ const { leftMargin = "15rem" } = Astro.props as Props;
   </div>
 
   <div class="footer__links--wrapper">
-    <a target="_blank" href="https://www.avaya.com"> Avaya.com</a>
+    <a target="_blank" href="https://www.avaya.com">Avaya.com</a>
 
     <a target="_blank" href="https://www.avaya.com/en/termsofuse/">
       Terms of Use
     </a>
-
-    <a href="https://design.avayacloud.com/license" target="_blank">License</a>
 
     <a target="_blank" href="https://www.avaya.com/en/privacy/commitment/">
       Privacy
@@ -72,9 +70,8 @@ const { leftMargin = "15rem" } = Astro.props as Props;
     border-top: 1px solid var(--navbar-border-bottom-color);
     display: grid;
     gap: 0;
-    grid-auto-rows: var(--footer-height);
     grid-template-areas: "a b c";
-    padding: 0 1rem;
+    padding: 1rem;
   }
   @media (min-width: 1280px) {
     :global(.main__wrapper:has(.left-navigation) + .footer--wrapper) {
@@ -84,10 +81,6 @@ const { leftMargin = "15rem" } = Astro.props as Props;
 
   .footer-logo {
     grid-area: a;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
   }
   .footer-logo img.small-logo-img {
     height: calc(var(--footer-height) / 2);
@@ -112,22 +105,21 @@ const { leftMargin = "15rem" } = Astro.props as Props;
   .footer__links--wrapper a {
     font-size: var(--neo-body-small-font-size);
     line-height: var(--neo-body-small-line-height);
+    color: var(--neo-color-base-800);
+  }
+  @media (prefers-color-scheme: dark) {
+    .footer__links--wrapper a {
+      color: var(--neo-color-base-100);
+    }
   }
 
   @media (max-width: 1000px) {
     .footer--wrapper {
       grid-template-areas:
         "a b"
-        "c b"
-        ". b";
+        "a b"
+        "c b";
       padding: 1rem;
-    }
-
-    .footer-logo {
-      display: unset;
-      flex-direction: unset;
-      justify-content: unset;
-      align-items: unset;
     }
 
     .footer__links--wrapper {
