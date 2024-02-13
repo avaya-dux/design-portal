@@ -9,6 +9,8 @@ import {
   InfoTableCellHead,
   InfoTableHead,
   InfoTableRow,
+  InfoList,
+  InfoListItem,
 } from "components";
 ---
 
@@ -46,11 +48,13 @@ import {
           <p class="table-cell-intro">
             The order of day number, month and year can vary. Some examples:
           </p>
-          <ul>
-            <li>Canada: Saturday, July 1, 1967</li>
-            <li>Mexico: sábado 1 de julio de 1967</li>
-            <li>Japan: 1967年7月1日土曜日</li>
-          </ul>
+          <InfoList type="none" fontSize="14px">
+            <InfoListItem label="Canada"> Saturday, July 1, 1967</InfoListItem>
+            <InfoListItem label="Mexico">
+              sábado 1 de julio de 1967</InfoListItem
+            >
+            <InfoListItem label="Japan"> 1967年7月1日土曜日</InfoListItem>
+          </InfoList>
         </InfoTableCell>
       </InfoTableRow>
 
@@ -61,23 +65,23 @@ import {
             The order and presentation of hours, minutes and seconds varies in
             the following ways:
           </p>
-          <ol>
-            <li>
-              <strong>12-hour vs 24-hour clock:</strong> The latter is used by most
-              European and Asian countries. AM/PM can also be translated in the local
-              language, and be placed before or after the time.
-            </li>
-            <li>
-              <strong> Separators between hours, minutes and seconds:</strong>
-              The colon (:) is used the most, though some Asian languages use ideographic
-              characters. Some also require ‘h’, ‘m’ and ’s’ as part of the display.
-            </li>
-            <li>
-              <strong>Time zones:</strong> Time zones can be displayed with GMT (Greenwich
-              Mean Time) or UTC (Coordinated Universal Time). They can also be displayed
-              using local time zones, though this can vary by region.
-            </li>
-          </ol>
+          <InfoList type="decimal" fontSize="14px">
+            <InfoListItem label="12-hour vs 24-hour clock">
+              The latter is used by most European and Asian countries. AM/PM can
+              also be translated in the local language, and be placed before or
+              after the time.
+            </InfoListItem>
+            <InfoListItem label="Separators between hours, minutes and seconds">
+              The colon (:) is used the most, though some Asian languages use
+              ideographic characters. Some also require ‘h’, ‘m’ and ’s’ as part
+              of the display.
+            </InfoListItem>
+            <InfoListItem label="Time zones">
+              Time zones can be displayed with GMT (Greenwich Mean Time) or UTC
+              (Coordinated Universal Time). They can also be displayed using
+              local time zones, though this can vary by region.
+            </InfoListItem>
+          </InfoList>
         </InfoTableCell>
       </InfoTableRow>
 
@@ -87,21 +91,21 @@ import {
           <p class="table-cell-intro">
             The presentation of phone numbers varies in the following ways:
           </p>
-          <ol>
-            <li>
-              <strong>Separator characters:</strong> Different characters such as
-              hyphens (-), periods (.), commas (,) and spaces are used.
-            </li>
-            <li>
-              <strong>Groupings:</strong> Phone numbers can be parsed differently
-              by country and can be divided into groups of 2 to 6 digits.
-            </li>
-            <li>
-              <strong>Total number of digits:</strong> The ITU-T standard E.164 states
-              that the maximum number of digits is 15, but this does not include
-              long distance access codes, extensions, passwords and other extra fields.
-            </li>
-          </ol>
+          <InfoList type="decimal" fontSize="14px">
+            <InfoListItem label="Separator characters">
+              Different characters such as hyphens (-), periods (.), commas (,)
+              and spaces are used.
+            </InfoListItem>
+            <InfoListItem label="Groupings">
+              Phone numbers can be parsed differently by country and can be
+              divided into groups of 2 to 6 digits.
+            </InfoListItem>
+            <InfoListItem label="Total number of digits">
+              The ITU-T standard E.164 states that the maximum number of digits
+              is 15, but this does not include long distance access codes,
+              extensions, passwords and other extra fields.
+            </InfoListItem>
+          </InfoList>
         </InfoTableCell>
       </InfoTableRow>
 
@@ -111,22 +115,21 @@ import {
           <p class="table-cell-intro">
             Currency formatting varies in the following ways:
           </p>
-          <ol>
-            <li>
-              <strong>Currency symbol:</strong> This can be either a symbol or combinations
-              of characters (e.g. USD).
-            </li>
-            <li>
-              <strong>Symbol placement:</strong> The currency symbol can appear before
-              or after the amount.
-            </li>
-            <li>
-              <strong>Negative amounts:</strong> Negative numbers can be shown either
-              using parentheses, or the negative sign which can appear either before
-              both the currency symbol and amount, after the symbol and before the
-              amount, or after the amount.
-            </li>
-          </ol>
+          <InfoList type="decimal" fontSize="14px">
+            <InfoListItem label="Currency symbol">
+              This can be either a symbol or combinations of characters (e.g.
+              USD).
+            </InfoListItem>
+            <InfoListItem label="Symbol placement">
+              The currency symbol can appear before or after the amount.
+            </InfoListItem>
+            <InfoListItem label="Negative amounts">
+              Negative numbers can be shown either using parentheses, or the
+              negative sign which can appear either before both the currency
+              symbol and amount, after the symbol and before the amount, or
+              after the amount.
+            </InfoListItem>
+          </InfoList>
         </InfoTableCell>
       </InfoTableRow>
 
@@ -136,29 +139,27 @@ import {
           <p class="table-cell-intro">
             The presentation of numbers varies in the following ways:
           </p>
-          <ol>
-            <li>
-              <strong>Thousands separator:</strong> This can be displayed with either
-              a comma, period or space (e.g 1,999 1.999 or 1 999).
-            </li>
-            <li>
-              <strong>Decimal separator:</strong> This can be displayed with either
-              a comma or period (eg. 1,999.23 or 1.999,23).
-            </li>
-            <li>
-              <strong>Negative numbers:</strong> The negative sign can appear before
-              or after a number, or the value may be shown in parentheses.
-            </li>
-            <li>
-              <strong>Digit groupings left of the decimal:</strong> Most cultures
-              use 3 digit groupings (e.g 123,456.00), athough some use 2 digits (e.g.
-              12,34,56.00).
-            </li>
-            <li>
-              <strong>Percent (%) sign:</strong> This can be displayed as follows:
-              77%, 77 %, 77 pct or %77.
-            </li>
-          </ol>
+          <InfoList type="decimal" fontSize="14px">
+            <InfoListItem label="Thousands separator">
+              This can be displayed with either a comma, period or space (e.g
+              1,999 1.999 or 1 999).
+            </InfoListItem>
+            <InfoListItem label="Decimal separator">
+              This can be displayed with either a comma or period (eg. 1,999.23
+              or 1.999,23).
+            </InfoListItem>
+            <InfoListItem label="Negative numbers">
+              The negative sign can appear before or after a number, or the
+              value may be shown in parentheses.
+            </InfoListItem>
+            <InfoListItem label="Digit groupings left of the decimal">
+              Most cultures use 3 digit groupings (e.g 123,456.00), athough some
+              use 2 digits (e.g. 12,34,56.00).
+            </InfoListItem>
+            <InfoListItem label="Percent (%) sign">
+              This can be displayed as follows: 77%, 77 %, 77 pct or %77.
+            </InfoListItem>
+          </InfoList>
         </InfoTableCell>
       </InfoTableRow>
     </InfoTableBody>
