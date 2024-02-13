@@ -1,5 +1,5 @@
 ---
-import { Description, ImageWithCaption } from "components";
+import { ImageWithCaption } from "components";
 
 export interface Props {
   graphicIcon?: string;
@@ -20,5 +20,5 @@ const {
   imgAlt={graphicAltText}
   captionTitle={header}
 >
-  <Description>{description}</Description>
+  {description}
 </ImageWithCaption>
