@@ -1,5 +1,10 @@
 ---
-import { PageleteSection, SectionHeader } from "components";
+import {
+  InfoList,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+} from "components";
 import { DesignChangelog } from "./changelog/design";
 import chip from "../imgs/chip.svg";
 import { Image } from "@avaya/neo-react";
@@ -22,11 +27,11 @@ import { Image } from "@avaya/neo-react";
         {releases.sections.map((section) => (
           <>
             <h4 class="changelog-header">{section.header}</h4>
-            <ul>
+            <InfoList>
               {section.points.map((point) => (
-                <li set:html={point} />
+                <InfoListItem>{point}</InfoListItem>
               ))}
-            </ul>
+            </InfoList>
           </>
         ))}
       </PageleteSection>
@@ -46,17 +51,6 @@ import { Image } from "@avaya/neo-react";
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
-    line-height: 24px;
-  }
-
-  ul {
-    padding-top: 8px;
-    margin-left: 8px;
-    margin-bottom: 16px;
-  }
-
-  li {
-    list-style-position: inside;
     line-height: 24px;
   }
 </style>
