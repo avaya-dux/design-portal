@@ -1,0 +1,54 @@
+---
+import {
+  InfoTable,
+  InfoTableBody,
+  InfoTableCell,
+  InfoTableCellHead,
+  InfoTableHead,
+  InfoTableRow,
+} from "components/astro";
+---
+
+<InfoTable>
+  <InfoTableHead>
+    <InfoTableRow>
+      <InfoTableCellHead>Component</InfoTableCellHead>
+      <InfoTableCellHead>Priority</InfoTableCellHead>
+      <InfoTableCellHead>User Action</InfoTableCellHead>
+    </InfoTableRow>
+  </InfoTableHead>
+
+  <InfoTableBody>
+    <InfoTableRow>
+      <InfoTableCell><a href="/components/toast">Toast</a></InfoTableCell>
+      <InfoTableCell>Low priority</InfoTableCell>
+      <InfoTableCell>
+        Feedback (Alert) that does not interrupt the user flow. They should be
+        used for confirmation in response to an action. Toasts are timed to
+        disappear automatically without user involvement.
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell>
+        <a href="/components/notifications">Notification</a>
+      </InfoTableCell>
+      <InfoTableCell>Prominent priority</InfoTableCell>
+      <InfoTableCell>
+        Items that require immediate attention. They can be persistent or
+        dismissible depending on the context. Dismissible notifications remain
+        until closed by the user, or if the state that cause the notification is
+        resolved. (Notification inline)
+      </InfoTableCell>
+    </InfoTableRow>
+
+    <InfoTableRow>
+      <InfoTableCell><a href="/components/modal">Modal</a></InfoTableCell>
+      <InfoTableCell>Highest priority</InfoTableCell>
+      <InfoTableCell>
+        Modals block any further use of the app until the user acknowledges the
+        message or resolves the issue.
+      </InfoTableCell>
+    </InfoTableRow>
+  </InfoTableBody>
+</InfoTable>
