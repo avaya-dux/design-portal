@@ -1,4 +1,6 @@
 ---
+import { Link } from "@avaya/neo-react";
+
 import {
   InfoTable,
   InfoTableBody,
@@ -20,7 +22,7 @@ import {
 
   <InfoTableBody>
     <InfoTableRow>
-      <InfoTableCell><a href="/components/toast">Toast</a></InfoTableCell>
+      <InfoTableCell><Link href="/components/toast">Toast</Link></InfoTableCell>
       <InfoTableCell>Low priority</InfoTableCell>
       <InfoTableCell>
         Feedback (Alert) that does not interrupt the user flow. They should be
@@ -31,7 +33,7 @@ import {
 
     <InfoTableRow>
       <InfoTableCell>
-        <a href="/components/notifications">Notification</a>
+        <Link href="/components/notifications">Notification</Link>
       </InfoTableCell>
       <InfoTableCell>Prominent priority</InfoTableCell>
       <InfoTableCell>
@@ -43,7 +45,7 @@ import {
     </InfoTableRow>
 
     <InfoTableRow>
-      <InfoTableCell><a href="/components/modal">Modal</a></InfoTableCell>
+      <InfoTableCell><Link href="/components/modal">Modal</Link></InfoTableCell>
       <InfoTableCell>Highest priority</InfoTableCell>
       <InfoTableCell>
         Modals block any further use of the app until the user acknowledges the
