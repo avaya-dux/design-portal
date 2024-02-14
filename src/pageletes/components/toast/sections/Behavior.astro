@@ -1,21 +1,18 @@
 ---
 import { Image } from "@avaya/neo-react";
+
 import {
   ColumnLayout,
   Description,
   DoAndDont,
-  InfoTable,
-  InfoTableBody,
-  InfoTableCell,
-  InfoTableCellHead,
-  InfoTableHead,
-  InfoTableRow,
   PageleteSection,
   PageleteSubSection,
   SectionHeader,
   StackedLayout,
   SubHeader,
 } from "components";
+
+import { NotificationInfoTable } from "pageletes/shared-pageletes";
 
 import { topics } from "../static";
 
@@ -50,47 +47,7 @@ const dont2Instructions =
     this is in the form of creation or deletion.
   </Description>
 
-  <InfoTable>
-    <InfoTableHead>
-      <InfoTableRow>
-        <InfoTableCellHead>Component</InfoTableCellHead>
-        <InfoTableCellHead>Priority</InfoTableCellHead>
-        <InfoTableCellHead>User Action</InfoTableCellHead>
-      </InfoTableRow>
-    </InfoTableHead>
-
-    <InfoTableBody>
-      <InfoTableRow>
-        <InfoTableCell>Toast</InfoTableCell>
-        <InfoTableCell>Low priority</InfoTableCell>
-        <InfoTableCell>
-          Feedback (Alert) that do not need to interrupt the user flow. They
-          should be used for confirmation in response to an action. Toasts
-          disappear automatically
-        </InfoTableCell>
-      </InfoTableRow>
-
-      <InfoTableRow>
-        <InfoTableCell>Notification</InfoTableCell>
-        <InfoTableCell>Prominent priority</InfoTableCell>
-        <InfoTableCell>
-          Items that require immediate attention. They can be persistent or
-          dismissable depending on the context. Remain until dismissed by the
-          user, or if the state that cause the notification is resolved.
-          (Notification inline)
-        </InfoTableCell>
-      </InfoTableRow>
-
-      <InfoTableRow>
-        <InfoTableCell>Modal</InfoTableCell>
-        <InfoTableCell>Highest priority</InfoTableCell>
-        <InfoTableCell>
-          Modal block app usage until the user a modal action or exits the
-          dialog (If available)
-        </InfoTableCell>
-      </InfoTableRow>
-    </InfoTableBody>
-  </InfoTable>
+  <NotificationInfoTable />
 
   <PageleteSubSection>
     <SubHeader id="toast-behavior-placement">Placement</SubHeader>
