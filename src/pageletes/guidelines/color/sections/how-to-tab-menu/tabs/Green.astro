@@ -1,14 +1,14 @@
 ---
-import { PageleteSubSection } from "components";
+import { PageleteSubSection, SubHeader } from "components";
 
 import ThreeColumnLayout from "../ThreeColumnLayout.astro";
 import InfoBlockLayout from "../InfoBlockLayout.astro";
 
-import successImage from "../../../imgs/how-to-images/green-success.svg";
-import positiveImage from "../../../imgs/how-to-images/green-positive.svg";
-import activeStatesImage from "../../../imgs/how-to-images/green-active-states.svg";
-import activeItemsImage from "../../../imgs/how-to-images/green-active-items.svg";
-import startImage from "../../../imgs/how-to-images/green-start-interactions.svg";
+import successImage from "../../../imgs/how-to-images/color-use-green-1.svg";
+import positiveImage from "../../../imgs/how-to-images/color-use-green-2.svg";
+import activeStatesImage from "../../../imgs/how-to-images/color-use-green-3.svg";
+import activeItemsImage from "../../../imgs/how-to-images/color-use-green-4.svg";
+import startImage from "../../../imgs/how-to-images/color-use-green-5.svg";
 
 const successBlock = {
   image: successImage.src,
@@ -48,10 +48,11 @@ const startBlock = {
 };
 ---
 
-<PageleteSubSection marginTop="0" marginBottom="0">
+<PageleteSubSection>
+  <SubHeader id="guidelies-color-howto-green">Green Color</SubHeader>
+
   <ThreeColumnLayout>
     <InfoBlockLayout
-      slot="left-frame"
       graphicIcon={successBlock.image}
       graphicAltText={successBlock.altText}
       header={successBlock.header}
@@ -59,7 +60,6 @@ const startBlock = {
     />
 
     <InfoBlockLayout
-      slot="middle-frame"
       graphicIcon={positiveBlock.image}
       graphicAltText={positiveBlock.altText}
       header={positiveBlock.header}
@@ -67,25 +67,18 @@ const startBlock = {
     />
 
     <InfoBlockLayout
-      slot="right-frame"
       graphicIcon={activeStatesBlock.image}
       graphicAltText={activeStatesBlock.altText}
       header={activeStatesBlock.header}
       description={activeStatesBlock.description}
     />
-  </ThreeColumnLayout>
-
-  <ThreeColumnLayout>
     <InfoBlockLayout
-      slot="left-frame"
       graphicIcon={activeItemsBlock.image}
       graphicAltText={activeItemsBlock.altText}
       header={activeItemsBlock.header}
       description={activeItemsBlock.description}
     />
-
     <InfoBlockLayout
-      slot="middle-frame"
       graphicIcon={startBlock.image}
       graphicAltText={startBlock.altText}
       header={startBlock.header}

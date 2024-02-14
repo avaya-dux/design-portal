@@ -1,12 +1,12 @@
 ---
-import { PageleteSubSection } from "components";
+import { PageleteSubSection, SubHeader } from "components";
 
 import ThreeColumnLayout from "../ThreeColumnLayout.astro";
 import InfoBlockLayout from "../InfoBlockLayout.astro";
 
-import informImage from "../../../imgs/how-to-images/blue-information.svg";
-import interactiveImage from "../../../imgs/how-to-images/blue-interactive-items.svg";
-import hoverImage from "../../../imgs/how-to-images/blue-hover-states.svg";
+import informImage from "../../../imgs/how-to-images/color-use-blue-1.svg";
+import interactiveImage from "../../../imgs/how-to-images/color-use-blue-2.svg";
+import hoverImage from "../../../imgs/how-to-images/color-use-blue-3.svg";
 
 const informBlock = {
   image: informImage.src,
@@ -32,10 +32,11 @@ const hoverBlock = {
 };
 ---
 
-<PageleteSubSection marginTop="0" marginBottom="0">
+<PageleteSubSection>
+  <SubHeader id="guidelies-color-howto-blue">Blue Color</SubHeader>
+
   <ThreeColumnLayout>
     <InfoBlockLayout
-      slot="left-frame"
       graphicIcon={informBlock.image}
       graphicAltText={informBlock.altText}
       header={informBlock.header}
@@ -43,7 +44,6 @@ const hoverBlock = {
     />
 
     <InfoBlockLayout
-      slot="middle-frame"
       graphicIcon={interactiveBlock.image}
       graphicAltText={interactiveBlock.altText}
       header={interactiveBlock.header}
@@ -51,7 +51,6 @@ const hoverBlock = {
     />
 
     <InfoBlockLayout
-      slot="right-frame"
       graphicIcon={hoverBlock.image}
       graphicAltText={hoverBlock.altText}
       header={hoverBlock.header}

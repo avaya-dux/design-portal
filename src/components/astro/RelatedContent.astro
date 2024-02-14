@@ -1,5 +1,10 @@
 ---
-import { PageleteSection, SectionHeader } from "components/astro";
+import {
+  InfoList,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
 
 export interface PageLink {
   title: string;
@@ -28,13 +33,13 @@ const { id, title, sections } = Astro.props as Props;
       <>
         <h3 class="neo-semibold neo-body-large">{section.title}</h3>
 
-        <ul class="dash-list">
+        <InfoList>
           {section.links.map((link) => (
-            <li>
+            <InfoListItem>
               <a href={link.href}>{link.title}</a>
-            </li>
+            </InfoListItem>
           ))}
-        </ul>
+        </InfoList>
       </>
     ))
   }

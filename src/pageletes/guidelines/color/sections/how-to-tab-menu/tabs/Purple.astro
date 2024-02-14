@@ -1,10 +1,10 @@
 ---
-import { PageleteSubSection } from "components";
+import { PageleteSubSection, SubHeader } from "components";
 
 import ThreeColumnLayout from "../ThreeColumnLayout.astro";
 import InfoBlockLayout from "../InfoBlockLayout.astro";
 
-import observingImage from "../../../imgs/how-to-images/purple-supervisor-observing.svg";
+import observingImage from "../../../imgs/how-to-images/color-use-purple-1.svg";
 
 const observingBlock = {
   image: observingImage.src,
@@ -14,14 +14,18 @@ const observingBlock = {
 };
 ---
 
-<PageleteSubSection marginTop="0" marginBottom="0">
+<PageleteSubSection>
+  <SubHeader id="guidelies-color-howto-purple">Purple Color</SubHeader>
+
   <ThreeColumnLayout>
     <InfoBlockLayout
-      slot="left-frame"
       graphicIcon={observingBlock.image}
       graphicAltText={observingBlock.altText}
       header={observingBlock.header}
       description={observingBlock.description}
     />
+
+    <div></div>
+    <div></div>
   </ThreeColumnLayout>
 </PageleteSubSection>

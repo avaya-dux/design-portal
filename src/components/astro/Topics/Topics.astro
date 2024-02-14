@@ -1,6 +1,7 @@
 ---
-import TopicLink from "./TopicLink.astro";
-import { Topic, TopicsDict, topicsSortedByOrder } from "./TopicHelpers";
+import type { Topic, TopicsDict } from "./TopicHelpers";
+import { topicsSortedByOrder } from "./TopicHelpers";
+import { InfoList, InfoListItem } from "../InfoList";
 
 export interface Props {
   topics: TopicsDict<string>; // TODO: should be able to use generic type: `TopicsDict<T>`
@@ -10,6 +11,12 @@ const { topics } = Astro.props as Props;
 const links: Topic[] = topicsSortedByOrder(topics) || [];
 ---
 
-<ul class="dash-list">
-  {links.map((link) => <TopicLink topicId={link.id}>{link.title}</TopicLink>)}
-</ul>
+<InfoList>
+  {
+    links.map((link) => (
+      <InfoListItem>
+        <a href={`#${link.id}`}>{link.title}</a>
+      </InfoListItem>
+    ))
+  }
+</InfoList>

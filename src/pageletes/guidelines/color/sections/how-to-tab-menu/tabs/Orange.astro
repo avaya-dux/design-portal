@@ -1,13 +1,13 @@
 ---
-import { PageleteSubSection } from "components";
+import { PageleteSubSection, SubHeader } from "components";
 
 import ThreeColumnLayout from "../ThreeColumnLayout.astro";
 import InfoBlockLayout from "../InfoBlockLayout.astro";
 
-import warningImage from "../../../imgs/how-to-images/orange-warnings.svg";
-import pendingImage from "../../../imgs/how-to-images/orange-pendings.svg";
-import priorityImage from "../../../imgs/how-to-images/orange-medium-priority.svg";
-import upcomingImage from "../../../imgs/how-to-images/orange-upcoming-due.svg";
+import warningImage from "../../../imgs/how-to-images/color-use-orange-1.svg";
+import pendingImage from "../../../imgs/how-to-images/color-use-orange-2.svg";
+import priorityImage from "../../../imgs/how-to-images/color-use-orange-3.svg";
+import upcomingImage from "../../../imgs/how-to-images/color-use-orange-4.svg";
 
 const warningBlock = {
   image: warningImage.src,
@@ -39,10 +39,11 @@ const upcomingBlock = {
 };
 ---
 
-<PageleteSubSection marginTop="0" marginBottom="0">
+<PageleteSubSection>
+  <SubHeader id="guidelies-color-howto-orange">Orange Color</SubHeader>
+
   <ThreeColumnLayout>
     <InfoBlockLayout
-      slot="left-frame"
       graphicIcon={warningBlock.image}
       graphicAltText={warningBlock.altText}
       header={warningBlock.header}
@@ -50,7 +51,6 @@ const upcomingBlock = {
     />
 
     <InfoBlockLayout
-      slot="middle-frame"
       graphicIcon={pendingBlock.image}
       graphicAltText={pendingBlock.altText}
       header={pendingBlock.header}
@@ -58,17 +58,13 @@ const upcomingBlock = {
     />
 
     <InfoBlockLayout
-      slot="right-frame"
       graphicIcon={priorityBlock.image}
       graphicAltText={priorityBlock.altText}
       header={priorityBlock.header}
       description={priorityBlock.description}
     />
-  </ThreeColumnLayout>
 
-  <ThreeColumnLayout>
     <InfoBlockLayout
-      slot="left-frame"
       graphicIcon={upcomingBlock.image}
       graphicAltText={upcomingBlock.altText}
       header={upcomingBlock.header}
