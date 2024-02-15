@@ -16,7 +16,11 @@ const { code, tooltipId } = Astro.props as Props;
   </div>
 </div>
 
-<style is:global>
+<style>
+  p {
+    margin-bottom: 0.5rem;
+  }
+
   .code-highlight-container {
     /*
       the original CodeHighlight is written specifically for
@@ -25,7 +29,9 @@ const { code, tooltipId } = Astro.props as Props;
     */
     transform: translateZ(0);
   }
+</style>
 
+<style is:global>
   .code-highlight-container div.neo-tooltip {
     top: 1.5rem; /* HACK: couldn't figure out a cleaner solution */
   }
