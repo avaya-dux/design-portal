@@ -9,17 +9,10 @@
   list-style-position: inside;
   padding-top: 8px;
 }
-.changes__wrapper ul {
+.changes__wrapper ul li {
   font-size: 16px;
   line-height: 24px;
-  margin: 0 0 0 0;
 }
-.changes__wrapper li {
-  font-size: 16px;
-  line-height: 24px;
-  margin: 0 0 0 1rem;
-}
-
 .changes__wrapper em {
   font-weight: 400;
 }
