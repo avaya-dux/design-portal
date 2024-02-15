@@ -6,3 +6,6 @@ export { GettingStarted };
 
 import NeoReactFramework from "./NeoReactFramework.astro";
 export { NeoReactFramework };
+
+import OtherFrameworks from "./OtherFrameworks.astro";
+export { OtherFrameworks };

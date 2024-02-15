@@ -1,0 +1,74 @@
+---
+import {
+  CollapsibleColumns,
+  Description,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  SubHeader,
+} from "components/astro";
+
+import DescriptionWithCode from "../DescriptionWithCode.astro";
+
+import { topics } from "../static";
+const { id, title } = topics.otherframeworks;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Use these steps to install a version of Neo for frameworks other than React.
+  </Description>
+
+  <PageleteSubSection>
+    <SubHeader id={`${id}-step1`}>Step 1</SubHeader>
+
+    <Description>
+      Run one of the following command lines. The package contains both compiled
+      and minified versions of the Neo .css file, as well as separate
+      stylesheets for both icons and multilingual font support.
+    </Description>
+
+    <CollapsibleColumns>
+      <DescriptionWithCode
+        tooltipId="npm-install-neo-css"
+        code="npm install @avaya/neo"
+      >
+        Option 1 - With NPM
+      </DescriptionWithCode>
+
+      <DescriptionWithCode
+        tooltipId="yarn-add-neo-css"
+        code="yarn add @avaya/neo"
+      >
+        Option 2 - With Yarn
+      </DescriptionWithCode>
+
+      <DescriptionWithCode
+        tooltipId="pnpm-add-neo-css"
+        code="pnpm add @avaya/neo"
+      >
+        Option 3 - With PNPM
+      </DescriptionWithCode>
+    </CollapsibleColumns>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id={`${id}-step2`}>Step 2</SubHeader>
+
+    <Description>
+      After installing neo-css to your project, add the compiled or compressed
+      CSS to the head element of your HTML5 document.
+    </Description>
+
+    <DescriptionWithCode
+      tooltipId="add-neo-css-to-head"
+      code={`<link rel="stylesheet" type="text/css" href="dist/css/neo/neo.min.css" />`}
+    />
+
+    <Description>
+      <b>NOTE:</b> The Neo CSS Library includes design tokens, icons and CSS classes.
+    </Description>
+  </PageleteSubSection>
+</PageleteSection>
