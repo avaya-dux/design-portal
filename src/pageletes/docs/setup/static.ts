@@ -1,7 +1,5 @@
 import type { TopicsDict } from "components";
 
-export const storybook = "https://neo-react-library-storybook.netlify.app/";
-
 type SetupTopicNames =
   | "gettingstarted"
   | "neoreact"

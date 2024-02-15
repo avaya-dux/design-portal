@@ -1,0 +1,25 @@
+---
+import {
+  Description,
+  ExternalLink,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+const { id, title } = topics.projectexamples;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    We have created some example projects that we host in our <ExternalLink
+      href="https://github.com/avaya-dux/"
+      inline
+    >
+      GitHub organization
+    </ExternalLink> and you can also view any of the example in our Component Playgrounds
+    by clicking the CodeSandbox link.
+  </Description>
+</PageleteSection>

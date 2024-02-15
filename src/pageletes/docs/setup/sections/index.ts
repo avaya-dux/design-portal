@@ -9,3 +9,9 @@ export { NeoReactFramework };
 
 import OtherFrameworks from "./OtherFrameworks.astro";
 export { OtherFrameworks };
+
+import UsageExamples from "./UsageExamples.astro";
+export { UsageExamples };
+
+import ProjectExamples from "./ProjectExamples.astro";
+export { ProjectExamples };
