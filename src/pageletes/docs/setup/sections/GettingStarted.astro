@@ -1,0 +1,43 @@
+---
+import { Link } from "@avaya/neo-react";
+
+import {
+  Description,
+  InfoList,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+const { id, title } = topics.gettingstarted;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    Select either the React framework and another framework depending upon your
+    preferred working environment.
+  </Description>
+
+  <InfoList type="decimal">
+    <InfoListItem>
+      If you are working with React, use the <Link
+        href={`#${topics.neoreact.id}`}
+        inline
+      >
+        Neo React Framework
+      </Link>.
+    </InfoListItem>
+
+    <InfoListItem>
+      If you are working with any other framework, skip to the section <Link
+        href={`#${topics.otherframeworks.id}`}
+        inline
+      >
+        Other Frameworks below for installation instructions.
+      </Link>
+    </InfoListItem>
+  </InfoList>
+</PageleteSection>
