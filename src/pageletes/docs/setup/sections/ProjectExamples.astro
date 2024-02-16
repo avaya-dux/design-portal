@@ -1,0 +1,29 @@
+---
+import { Link } from "@avaya/neo-react";
+
+import {
+  Description,
+  ExternalLink,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+const { id, title } = topics.projectexamples;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    There are several example projects that we host in our <ExternalLink
+      href="https://github.com/avaya-dux/"
+      inline
+    >
+      GitHub organization
+    </ExternalLink>. You can also view any of the examples in the Interactive
+    Playground of our <Link href="/components/accordion/" inline>
+      Components
+    </Link> by clicking the CodeSandbox link.
+  </Description>
+</PageleteSection>

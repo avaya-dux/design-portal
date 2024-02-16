@@ -1,0 +1,88 @@
+---
+import {
+  CollapsibleColumns,
+  Description,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  SubHeader,
+} from "components/astro";
+
+import DescriptionWithCode from "../DescriptionWithCode.astro";
+
+import { topics } from "../static";
+const { id, title } = topics.neoreact;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    This package contains both compiled and minified versions of the Neo .css
+    file, as well as separate stylesheets for both icons and multilingual font
+    support.
+  </Description>
+
+  <Description>
+    Versioning recommendations for React: React version 18+ required. Previous
+    versions are not supported and you will run into issues.
+  </Description>
+
+  <Description>
+    To install the Neo React framework, follow the two step process shown below.
+    Then, import the component(s) that you'd like to use.
+  </Description>
+
+  <PageleteSubSection>
+    <SubHeader id={`${id}-step1`}>Step 1</SubHeader>
+
+    <Description>
+      Select one of these three command lines according to your preferred
+      platform.
+    </Description>
+
+    <CollapsibleColumns>
+      <DescriptionWithCode
+        tooltipId="npm-install-neo-react"
+        code="npm install @avaya/neo-react"
+      >
+        Option 1 - With NPM
+      </DescriptionWithCode>
+
+      <DescriptionWithCode
+        tooltipId="yarn-add-neo-react"
+        code="yarn add @avaya/neo-react"
+      >
+        Option 2 - With Yarn
+      </DescriptionWithCode>
+
+      <DescriptionWithCode
+        tooltipId="pnpm-add-neo-react"
+        code="pnpm add @avaya/neo-react"
+      >
+        Option 3 - With PNPM
+      </DescriptionWithCode>
+    </CollapsibleColumns>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id={`${id}-step2`}>Step 2</SubHeader>
+
+    <Description>
+      Import the CSS styles at the root of your project using this command line.
+    </Description>
+
+    <PageleteSubSection>
+      <DescriptionWithCode
+        tooltipId="neo-react-css-import"
+        code={`import "@avaya/neo-react/avaya-neo-react.css";`}
+      />
+
+      <Description>
+        <b>NOTE:</b> The Neo CSS Library is included with the Neo React Library.
+        If you install the Neo React Library, you do not need to install or import
+        from the CSS Library.
+      </Description>
+    </PageleteSubSection>
+  </PageleteSubSection>
+</PageleteSection>

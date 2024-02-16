@@ -1,0 +1,29 @@
+---
+import {
+  Description,
+  ExternalLink,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+const { id, title } = topics.usageexamples;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    To see more examples and recommendations, please visit our <ExternalLink
+      href="https://github.com/avaya-dux/neo-react-library"
+      inline
+    >
+      GitHub page
+    </ExternalLink> or our <ExternalLink
+      href="https://neo-react-library-storybook.netlify.app/?path=/docs/introduction--docs"
+      inline
+    >
+      Storybook
+    </ExternalLink>.
+  </Description>
+</PageleteSection>
