@@ -1,0 +1,19 @@
+---
+import { InfoList } from "components";
+
+export interface Props {
+  type?:
+    | "upper-alpha"
+    | "disc"
+    | "decimal"
+    | "'– '" // "'– '" === "'&ndash; '" === U+2013
+    | "none";
+  fontSize?: string;
+}
+
+const { type = "decimal", fontSize = "14px" } = Astro.props as Props;
+---
+
+<InfoList type={type} fontSize={fontSize}>
+  <slot />
+</InfoList>

@@ -3,7 +3,7 @@ import { Image } from "@avaya/neo-react";
 import {
   ColumnLayout,
   Description,
-  InfoList,
+  CaptionInfoList,
   InfoListItem,
   PageleteSection,
   SectionHeader,
@@ -38,7 +38,7 @@ const statesImgAltText = "Image showing the different states of an accordion";
     </StackedLayout>
   </ColumnLayout>
 
-  <InfoList type="decimal" fontSize="14px">
+  <CaptionInfoList>
     <InfoListItem label="Default">
       When the accordion does not have focus, it is in the Default state.
     </InfoListItem>
@@ -51,5 +51,5 @@ const statesImgAltText = "Image showing the different states of an accordion";
       If the accordion is not available, it is displayed in the Disabled state
       and is inactive.
     </InfoListItem>
-  </InfoList>
+  </CaptionInfoList>
 </PageleteSection>

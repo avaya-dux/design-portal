@@ -3,7 +3,7 @@ import { Image } from "@avaya/neo-react";
 import {
   ColumnLayout,
   Description,
-  InfoList,
+  CaptionInfoList,
   InfoListItem,
   PageleteSection,
   SectionHeader,
@@ -31,7 +31,7 @@ const anatomyImgAltText =
     </StackedLayout>
   </ColumnLayout>
 
-  <InfoList type="decimal" fontSize="14px">
+  <CaptionInfoList>
     <InfoListItem label="Collapsed Accordion">
       The default state of the accordion. It occupies one line on the page.
     </InfoListItem>
@@ -55,5 +55,5 @@ const anatomyImgAltText =
       This is the content within the accordion: instructions, links,
       descriptions, etc.
     </InfoListItem>
-  </InfoList>
+  </CaptionInfoList>
 </PageleteSection>
