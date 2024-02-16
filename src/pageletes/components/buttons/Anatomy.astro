@@ -3,6 +3,8 @@ import { Image } from "@avaya/neo-react";
 import {
   Description,
   ColumnLayout,
+  CaptionInfoList,
+  InfoListItem,
   PageleteSection,
   SectionHeader,
   StackedLayout,
@@ -50,46 +52,42 @@ const image4Alt =
   </ColumnLayout>
 
   <ColumnLayout numOfColumns={4} marginTop={"1.5rem"}>
-    <ul>
-      <li><strong>1. Primary Button</strong></li>
-      <li>A. Text Label</li>
-      <li>B. Container</li>
-      <li>C. Icon (optional)</li>
-    </ul>
+    <CaptionInfoList type="none" fontSize="14px">
+      <InfoListItem label="1. Primary Button">
+        <CaptionInfoList type="upper-alpha" fontSize="14px">
+          <InfoListItem> Text Label</InfoListItem>
+          <InfoListItem> Container</InfoListItem>
+          <InfoListItem> Icon (optional)</InfoListItem>
+        </CaptionInfoList>
+      </InfoListItem>
+    </CaptionInfoList>
 
-    <ul>
-      <li><strong>2. Secondary Button</strong></li>
-      <li>A. Text Label</li>
-      <li>B. Container</li>
-      <li>C. Icon (optional)</li>
-    </ul>
+    <CaptionInfoList type="none" fontSize="14px">
+      <InfoListItem label="2. Secondary Button">
+        <CaptionInfoList type="upper-alpha" fontSize="14px">
+          <InfoListItem> Text Label</InfoListItem>
+          <InfoListItem> Container</InfoListItem>
+          <InfoListItem> Icon (optional)</InfoListItem>
+        </CaptionInfoList>
+      </InfoListItem>
+    </CaptionInfoList>
 
-    <ul>
-      <li><strong>3. Tertiary Button</strong></li>
-      <li>A. Text Label</li>
-      <li>B. Icon (optional)</li>
-    </ul>
+    <CaptionInfoList type="none" fontSize="14px">
+      <InfoListItem label="3. Tertiary Button">
+        <CaptionInfoList type="upper-alpha" fontSize="14px">
+          <InfoListItem> Text Label</InfoListItem>
+          <InfoListItem> Icon (optional)</InfoListItem>
+        </CaptionInfoList>
+      </InfoListItem>
+    </CaptionInfoList>
 
-    <ul>
-      <li><strong>4. Icon Button</strong></li>
-      <li>A. Container</li>
-      <li>B. Icon</li>
-    </ul>
+    <CaptionInfoList type="none" fontSize="14px">
+      <InfoListItem label="4. Icon Button">
+        <CaptionInfoList type="upper-alpha" fontSize="14px">
+          <InfoListItem> Container</InfoListItem>
+          <InfoListItem> Icon</InfoListItem>
+        </CaptionInfoList>
+      </InfoListItem>
+    </CaptionInfoList>
   </ColumnLayout>
 </PageleteSection>
-
-<style>
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  ul li {
-    font-size: 14px;
-  }
-
-  ul li strong {
-    font-weight: 600;
-  }
-</style>

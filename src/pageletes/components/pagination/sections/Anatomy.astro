@@ -4,7 +4,7 @@ import { Image } from "@avaya/neo-react";
 import {
   Description,
   ImageWrapper,
-  InfoList,
+  CaptionInfoList,
   InfoListItem,
   PageleteSection,
   SectionHeader,
@@ -29,7 +29,7 @@ const anatomyImgAltText1 =
     <Image src={anatomyImage1.src} alt={anatomyImgAltText1} />
   </ImageWrapper>
 
-  <InfoList type="decimal">
+  <CaptionInfoList>
     <InfoListItem label="Page Count">
       Shows the range of items (rows) displayed compared to the total number of
       items in the table.
@@ -75,5 +75,5 @@ const anatomyImgAltText1 =
       Displays the number of rows to display. This is user configurable in
       increments of 20, 50, or 100.
     </InfoListItem>
-  </InfoList>
+  </CaptionInfoList>
 </PageleteSection>

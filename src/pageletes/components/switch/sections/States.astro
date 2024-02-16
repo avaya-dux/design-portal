@@ -4,7 +4,7 @@ import { Image } from "@avaya/neo-react";
 import {
   ColumnLayout,
   Description,
-  InfoList,
+  CaptionInfoList,
   InfoListItem,
   PageleteSection,
   SectionHeader,
@@ -55,7 +55,7 @@ const unselectedDisabledImageAltText = "Unselected switch with disabled state";
     </StackedLayout>
   </ColumnLayout>
 
-  <InfoList type="disc">
+  <CaptionInfoList type="disc">
     <InfoListItem label="Off">
       With the switch in this position (left) the function is disabled/inactive.
     </InfoListItem>
@@ -73,5 +73,5 @@ const unselectedDisabledImageAltText = "Unselected switch with disabled state";
       This switch is unavailable and the function is currently
       disabled/inactive.
     </InfoListItem>
-  </InfoList>
+  </CaptionInfoList>
 </PageleteSection>

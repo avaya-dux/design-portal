@@ -4,7 +4,7 @@ import { Image } from "@avaya/neo-react";
 import {
   ColumnLayout,
   Description,
-  InfoList,
+  CaptionInfoList,
   InfoListItem,
   PageleteSection,
   SectionHeader,
@@ -56,7 +56,7 @@ import StateDisabledImage from "../imgs/sideNav-states-4.svg";
     </StackedLayout>
   </ColumnLayout>
 
-  <InfoList type="disc">
+  <CaptionInfoList type="disc">
     <InfoListItem label="Default">
       This is the rest state for side navigation items. When nothing else is
       happening, it adopts this state (sometimes called "Up").
@@ -78,5 +78,5 @@ import StateDisabledImage from "../imgs/sideNav-states-4.svg";
       This shows that the side navigation item cannot be used. It may require an
       action to be taken first before it becomes actionable.
     </InfoListItem>
-  </InfoList>
+  </CaptionInfoList>
 </PageleteSection>

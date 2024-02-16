@@ -4,7 +4,7 @@ import { Image } from "@avaya/neo-react";
 import {
   ColumnLayout,
   Description,
-  InfoList,
+  CaptionInfoList,
   InfoListItem,
   PageleteSection,
   SectionHeader,
@@ -93,7 +93,7 @@ import LayoutWrapper from "./subsections/components/LayoutWrapper.astro";
     </LayoutWrapper>
   </ColumnLayout>
 
-  <InfoList type="disc">
+  <CaptionInfoList type="disc">
     <InfoListItem label="Default">
       This is the simplest type with no added features.
     </InfoListItem>
@@ -134,5 +134,5 @@ import LayoutWrapper from "./subsections/components/LayoutWrapper.astro";
     <InfoListItem label="Read Only">
       This field is for display purposes only and the data cannot be changed.
     </InfoListItem>
-  </InfoList>
+  </CaptionInfoList>
 </PageleteSection>

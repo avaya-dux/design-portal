@@ -4,7 +4,7 @@ import {
   ImageWrapper,
   PageleteSection,
   SectionHeader,
-  InfoList,
+  CaptionInfoList,
   InfoListItem,
 } from "components/astro";
 
@@ -30,7 +30,7 @@ const img1AltText =
     <Image src={image1.src} alt={img1AltText} />
   </ImageWrapper>
 
-  <InfoList type="decimal">
+  <CaptionInfoList>
     <InfoListItem label="Title">
       The title of the modal contains information about its purpose and appears
       at the top of the container. Additional supporting text and actions appear
@@ -61,5 +61,5 @@ const img1AltText =
       The close button (X), located in the upper right corner of the container,
       allows the user to dismiss the modal.
     </InfoListItem>
-  </InfoList>
+  </CaptionInfoList>
 </PageleteSection>

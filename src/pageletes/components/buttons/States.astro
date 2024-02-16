@@ -4,7 +4,7 @@ import { Image } from "@avaya/neo-react";
 import {
   ColumnLayout,
   Description,
-  InfoList,
+  CaptionInfoList,
   InfoListItem,
   PageleteSection,
   SectionHeader,
@@ -55,7 +55,7 @@ const defaultImageText = "Buttons with default state look like this";
     </StackedLayout>
   </ColumnLayout>
 
-  <InfoList type="disc">
+  <CaptionInfoList type="disc">
     <InfoListItem label="Default">
       This is the default state for the button. When nothing else is happening,
       it adopts the Normal state (sometimes called “Up”).
@@ -79,5 +79,5 @@ const defaultImageText = "Buttons with default state look like this";
       been filled in, or this action is not allowed with the currently selected
       options.
     </InfoListItem>
-  </InfoList>
+  </CaptionInfoList>
 </PageleteSection>

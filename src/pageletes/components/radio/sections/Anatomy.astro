@@ -2,7 +2,7 @@
 import {
   Description,
   ImageWrapper,
-  InfoList,
+  CaptionInfoList,
   InfoListItem,
   PageleteSection,
   SectionHeader,
@@ -31,7 +31,7 @@ const img1AltText =
     <Image src={image1.src} alt={img1AltText} />
   </ImageWrapper>
 
-  <InfoList type="decimal">
+  <CaptionInfoList>
     <InfoListItem label="Radio Group Label (optional)">
       Identifies the common factor for this group of buttons.
     </InfoListItem>
@@ -48,5 +48,5 @@ const img1AltText =
     <InfoListItem label="Unselected Radio Button">
       The radio button is an empty circle while not selected.
     </InfoListItem>
-  </InfoList>
+  </CaptionInfoList>
 </PageleteSection>

@@ -4,7 +4,7 @@ import { Image } from "@avaya/neo-react";
 import {
   ColumnLayout,
   Description,
-  InfoList,
+  CaptionInfoList,
   InfoListItem,
   PageleteSubSection,
   StackedLayout,
@@ -71,7 +71,7 @@ import eventImg from "../imgs/notification-behavior-color-5.svg";
     </StackedLayout>
   </ColumnLayout>
 
-  <InfoList type="disc">
+  <CaptionInfoList type="disc">
     <InfoListItem label="Alert (Red)">
       Whenever the notification message is severe and likely caused the process
       to fail.
@@ -91,7 +91,7 @@ import eventImg from "../imgs/notification-behavior-color-5.svg";
       When the notification do not conform to one of the other types (Info,
       Success, Warning, Alert), use the Event type.
     </InfoListItem>
-  </InfoList>
+  </CaptionInfoList>
 
   <DoAndDont>
     <DoAndDont.DoContainer instructions={behaviorDoAltText}>

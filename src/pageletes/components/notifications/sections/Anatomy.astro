@@ -4,7 +4,7 @@ import { Image } from "@avaya/neo-react";
 import {
   Description,
   ImageWrapper,
-  InfoList,
+  CaptionInfoList,
   InfoListItem,
   PageleteSection,
   SectionHeader,
@@ -30,7 +30,7 @@ const anatomyImgAltText =
     <Image src={AnatomyImage.src} alt={anatomyImgAltText} />
   </ImageWrapper>
 
-  <InfoList type="decimal">
+  <CaptionInfoList>
     <InfoListItem label="Horizontal Color Bar">
       The horizontal color bar accentuates the type of notification.
     </InfoListItem>
@@ -75,5 +75,5 @@ const anatomyImgAltText =
       Allow the user to take action based on the notification. Another way to
       acknowledge and close the notification message.
     </InfoListItem>
-  </InfoList>
+  </CaptionInfoList>
 </PageleteSection>

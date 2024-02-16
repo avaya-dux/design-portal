@@ -3,7 +3,7 @@ import { Image } from "@avaya/neo-react";
 import {
   ColumnLayout,
   Description,
-  InfoList,
+  CaptionInfoList,
   InfoListItem,
   PageleteSection,
   PageleteSubSection,
@@ -62,7 +62,7 @@ const { id, title } = topics.type;
       </StackedLayout>
     </ColumnLayout>
 
-    <InfoList type="disc">
+    <CaptionInfoList type="disc">
       <InfoListItem label="Default">
         The default state of the Standalone link is blue text without
         underlining. Use this type when the link does not have focus.
@@ -79,7 +79,7 @@ const { id, title } = topics.type;
         create a user name, fill in a field, etc.) before the link becomes
         active.
       </InfoListItem>
-    </InfoList>
+    </CaptionInfoList>
   </PageleteSubSection>
 
   <PageleteSubSection>
@@ -104,7 +104,7 @@ const { id, title } = topics.type;
       </StackedLayout>
     </ColumnLayout>
 
-    <InfoList type="disc">
+    <CaptionInfoList type="disc">
       <InfoListItem label="Default">
         The default state of the Inline link is underlined blue text. Use this
         type when the link does not have focus.
@@ -120,6 +120,6 @@ const { id, title } = topics.type;
         occur when the user is required to take some other action first (i.e.
         create a user name, fill in a field) before the link becomes active.
       </InfoListItem>
-    </InfoList>
+    </CaptionInfoList>
   </PageleteSubSection>
 </PageleteSection>

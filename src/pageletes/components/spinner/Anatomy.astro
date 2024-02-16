@@ -4,7 +4,7 @@ import { Image } from "@avaya/neo-react";
 import {
   Description,
   ImageWrapper,
-  InfoList,
+  CaptionInfoList,
   InfoListItem,
   PageleteSection,
   SectionHeader,
@@ -31,10 +31,10 @@ const anatomyImgAltText = "Image showing an still spinner";
     <Image src={AnatomyImage.src} alt={anatomyImgAltText} />
   </ImageWrapper>
 
-  <InfoList type="decimal">
+  <CaptionInfoList>
     <InfoListItem label="Spinner">
       A circular icon with a gap on one side. The icon turns clockwise to show
       it is still processing.
     </InfoListItem>
-  </InfoList>
+  </CaptionInfoList>
 </PageleteSection>

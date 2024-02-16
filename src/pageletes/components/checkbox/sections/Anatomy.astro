@@ -3,7 +3,7 @@ import { Image } from "@avaya/neo-react";
 import {
   Description,
   ImageWrapper,
-  InfoList,
+  CaptionInfoList,
   InfoListItem,
   PageleteSection,
   SectionHeader,
@@ -29,7 +29,7 @@ const img1AltText =
     <Image src={image1.src} alt={img1AltText} />
   </ImageWrapper>
 
-  <InfoList type="decimal">
+  <CaptionInfoList>
     <InfoListItem label="Checkbox Heading">
       This is the title of the list of options. It identifies what the list
       items control and how they are related.
@@ -44,5 +44,5 @@ const img1AltText =
       The label identifies the function attached to each checkbox. Selecting a
       checkbox activates the connected option.
     </InfoListItem>
-  </InfoList>
+  </CaptionInfoList>
 </PageleteSection>

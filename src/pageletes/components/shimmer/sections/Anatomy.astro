@@ -1,7 +1,7 @@
 ---
 import { Image } from "@avaya/neo-react";
 import {
-  InfoList,
+  CaptionInfoList,
   InfoListItem,
   ImageWrapper,
   PageleteSection,
@@ -25,7 +25,7 @@ const anatomyImgAltText =
     <Image src={AnatomyImage.src} alt={anatomyImgAltText} />
   </ImageWrapper>
 
-  <InfoList type="decimal">
+  <CaptionInfoList>
     <InfoListItem label="Shape">
       This replaces page elements that are still loading, such as text and text
       fields, avatars, icons, and images. Use the correct shape for the type of
@@ -36,5 +36,5 @@ const anatomyImgAltText =
       This is a moving shaded band that travels from Left to Right to show that
       the object is still loading.
     </InfoListItem>
-  </InfoList>
+  </CaptionInfoList>
 </PageleteSection>

@@ -4,7 +4,7 @@ import { Image } from "@avaya/neo-react";
 import {
   ColumnLayout,
   Description,
-  InfoList,
+  CaptionInfoList,
   InfoListItem,
   PageleteSection,
   SectionHeader,
@@ -78,7 +78,7 @@ import LayoutWrapper from "./subsections/components/LayoutWrapper.astro";
     </LayoutWrapper>
   </ColumnLayout>
 
-  <InfoList type="disc">
+  <CaptionInfoList type="disc">
     <InfoListItem label="Enabled">
       This is the default state. The item can be selected or expanded.
     </InfoListItem>
@@ -106,5 +106,5 @@ import LayoutWrapper from "./subsections/components/LayoutWrapper.astro";
     <InfoListItem label="Active - Disabled">
       The field is active but cannot be unselected or modified.
     </InfoListItem>
-  </InfoList>
+  </CaptionInfoList>
 </PageleteSection>

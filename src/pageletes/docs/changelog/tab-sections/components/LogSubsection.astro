@@ -1,4 +1,6 @@
 ---
+import { InfoList, InfoListItem } from "components";
+
 export interface Props {
   title: string;
   points: string[];
@@ -8,31 +10,21 @@ const { title = "no Title", points = [] } = Astro.props as Props;
 ---
 
 <h4 class="changelog-header">{title}</h4>
-<ul>
+<InfoList>
   {
     points.length > 0 ? (
-      points.map((point) => <li set:html={point} />)
+      points.map((point) => <InfoListItem>{point}</InfoListItem>)
     ) : (
-      <li>N/A</li>
+      <InfoListItem>N/A</InfoListItem>
     )
   }
-</ul>
+</InfoList>
 
 <style>
   .changelog-header {
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
-    line-height: 24px;
-  }
-
-  ul {
-    padding-top: 8px;
-    margin-left: 1.5rem;
-    margin-bottom: 16px;
-  }
-
-  li {
     line-height: 24px;
   }
 </style>

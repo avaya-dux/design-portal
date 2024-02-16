@@ -2,7 +2,7 @@
 import {
   Description,
   ImageWrapper,
-  InfoList,
+  CaptionInfoList,
   InfoListItem,
   PageleteSection,
   SectionHeader,
@@ -31,7 +31,7 @@ const img1AltText =
     <Image src={image1.src} alt={img1AltText} />
   </ImageWrapper>
 
-  <InfoList type="decimal">
+  <CaptionInfoList>
     <InfoListItem label="Icon (Optional)">
       An icon can help users to quickly identify the purpose of the tab. Icons
       should be used on all tabs or none. They should never be added purely for
@@ -45,5 +45,5 @@ const img1AltText =
     <InfoListItem label="Line Details">
       A line appears beneath or beside the currently active tab.
     </InfoListItem>
-  </InfoList>
+  </CaptionInfoList>
 </PageleteSection>
