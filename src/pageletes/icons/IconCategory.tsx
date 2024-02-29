@@ -1,20 +1,17 @@
-import { Icon } from "@avaya/neo-react";
+import type { IconType } from "@avaya/neo-react";
+import { Icon, NeoIcons } from "@avaya/neo-react";
 import { useStore } from "@nanostores/react";
 import { useEffect, useMemo, useState } from "react";
 
 import { searchFor, variationsToFilterFor } from "./helpers/iconPageState";
-import { icons } from "./helpers/icons";
-
-import type { IconProps } from "./helpers/iconType";
 import { filterIconsWithVariations, findIcons } from "./helpers/iconPageUtils";
-
 import styles from "./IconCategory.module.css";
 
 export const IconCategory = ({ category }: { category: string }) => {
   const searchIconNameFor = useStore(searchFor);
 
   const allIconsInCategory = useMemo(() => {
-    const iconSearchResults = findIcons(icons, searchIconNameFor);
+    const iconSearchResults = findIcons(NeoIcons, searchIconNameFor);
 
     return iconSearchResults
       .filter((icon) => icon.category === category)
@@ -22,7 +19,7 @@ export const IconCategory = ({ category }: { category: string }) => {
   }, [category, searchIconNameFor]);
 
   const [iconsToDisplay, setIconsToDisplay] =
-    useState<IconProps[]>(allIconsInCategory);
+    useState<IconType[]>(allIconsInCategory);
 
   const filteredVariations = useStore(variationsToFilterFor);
 
@@ -32,7 +29,7 @@ export const IconCategory = ({ category }: { category: string }) => {
       return;
     }
 
-    const filteredIcons: IconProps[] = filterIconsWithVariations(
+    const filteredIcons: IconType[] = filterIconsWithVariations(
       allIconsInCategory,
       filteredVariations,
     );

@@ -1,9 +1,9 @@
 ---
-import type { PageAstroInstance, SitePages } from "helpers/types";
+import { IconCategories } from "@avaya/neo-react";
 
 import { LeftNavigation } from "components";
-
-import { IconFilters, iconCategories } from "pageletes/icons";
+import type { PageAstroInstance, SitePages } from "helpers/types";
+import { IconFilters } from "pageletes/icons";
 
 export interface Props {
   allPages: SitePages;
@@ -17,7 +17,7 @@ const { pathname } = Astro.url;
 const isIconPage = pathname.includes("icons");
 ---
 
-{isIconPage && <IconFilters categories={iconCategories} client:load />}
+{isIconPage && <IconFilters categories={IconCategories} client:load />}
 {
   (leftNavPages.length > 0 || isHomePage) && (
     <LeftNavigation
