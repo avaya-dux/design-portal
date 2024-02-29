@@ -1,9 +1,9 @@
+import { NeoIcons } from "@avaya/neo-react";
 import { act, render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
 import { cleanStores, keepMount } from "nanostores";
 
 import { variationsToFilterFor } from "./helpers/iconPageState";
-import { icons } from "./helpers/icons";
 import { IconCategory } from "./IconCategory";
 
 describe("IconCategory", () => {
@@ -22,7 +22,7 @@ describe("IconCategory", () => {
 
     render(<IconCategory category={exampleCategory} />);
 
-    const allIconsInCategory = icons.filter(
+    const allIconsInCategory = NeoIcons.filter(
       (icon) => icon.category === exampleCategory,
     );
 

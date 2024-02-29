@@ -1,20 +1,16 @@
-import { IconCategory } from "./IconCategory";
-
-import { icons } from "./helpers/icons";
-import { filterIconsWithVariations, findIcons } from "./helpers/iconPageUtils";
-
+import { Chip, NeoIcons } from "@avaya/neo-react";
+import { useStore } from "@nanostores/react";
 import clsx from "clsx";
+import { useEffect, useState } from "react";
 
 import {
   categoriesToFilterFor,
   variationsToFilterFor,
 } from "./helpers/iconPageState";
-import { useStore } from "@nanostores/react";
-import { useEffect, useState } from "react";
 import { searchFor } from "./helpers/iconPageState";
-
+import { filterIconsWithVariations, findIcons } from "./helpers/iconPageUtils";
+import { IconCategory } from "./IconCategory";
 import styles from "./IconLibrary.module.css";
-import { Chip } from "@avaya/neo-react";
 
 const NoIconsFoundMessage = () => (
   <p className={clsx(styles["icon-library__no-icons"], "neo-icon-error")}>
@@ -27,7 +23,7 @@ export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
     useState<string[]>(allCategories);
 
   const [totalNumberOfIconsDisplayed, setTotalNumberOfIconsDisplayed] =
-    useState<number>(icons.length);
+    useState<number>(NeoIcons.length);
 
   const filteredCategories = useStore(categoriesToFilterFor);
 
@@ -49,7 +45,7 @@ export const IconLibrary = ({ allCategories }: { allCategories: string[] }) => {
 
   useEffect(() => {
     const iconsWithVariations = filterIconsWithVariations(
-      icons,
+      NeoIcons,
       filteredVariations,
     );
 

@@ -1,16 +1,16 @@
+import { IconCategories, NeoIcons } from "@avaya/neo-react";
 import { act, render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
 import { cleanStores, keepMount } from "nanostores";
 
 import { categoriesToFilterFor, searchFor } from "./helpers/iconPageState";
-import { iconCategories, icons } from "./helpers/icons";
-import { IconLibrary } from "./IconLibrary";
 import { findIcons } from "./helpers/iconPageUtils";
 import { testIcons } from "./helpers/testIcons";
+import { IconLibrary } from "./IconLibrary";
 
 describe("IconLibrary", () => {
   it("renders without exploding", () => {
-    render(<IconLibrary allCategories={iconCategories} />);
+    render(<IconLibrary allCategories={IconCategories} />);
 
     const iconLibraryChipElement = screen.getByRole("alert");
 
@@ -20,9 +20,9 @@ describe("IconLibrary", () => {
   it("updates number of icons displayed in chip based on filters", () => {
     keepMount(categoriesToFilterFor);
 
-    render(<IconLibrary allCategories={iconCategories} />);
+    render(<IconLibrary allCategories={IconCategories} />);
 
-    const allIconsLength = icons.length;
+    const allIconsLength = NeoIcons.length;
 
     const iconLibraryChipElement = screen.getByRole("alert");
 
@@ -34,7 +34,7 @@ describe("IconLibrary", () => {
       categoriesToFilterFor.set(["navigation"]);
     });
 
-    const iconsInCategoryLength = icons.filter(
+    const iconsInCategoryLength = NeoIcons.filter(
       (icon) => icon.category === "navigation",
     ).length;
 
@@ -48,7 +48,7 @@ describe("IconLibrary", () => {
   it("updates number of icons displayed in chip based on seach by icon name", () => {
     keepMount(searchFor);
 
-    render(<IconLibrary allCategories={iconCategories} />);
+    render(<IconLibrary allCategories={IconCategories} />);
 
     const iconLibraryChipElement = screen.getByRole("alert");
 
@@ -56,7 +56,7 @@ describe("IconLibrary", () => {
       searchFor.set("chevron");
     });
 
-    const searchIconsLength = findIcons(icons, "chevron").length;
+    const searchIconsLength = findIcons(NeoIcons, "chevron").length;
 
     expect(iconLibraryChipElement).toHaveTextContent(
       `${searchIconsLength} icons displayed`,
@@ -75,7 +75,7 @@ describe("IconLibrary", () => {
 
   it("passes basic axe compliance", async () => {
     const { container } = render(
-      <IconLibrary allCategories={iconCategories} />,
+      <IconLibrary allCategories={IconCategories} />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

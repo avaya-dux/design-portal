@@ -13,7 +13,3 @@ export { IconActions };
 import { IconFilters } from "./IconFilters";
 
 export { IconFilters };
-
-import { iconCategories, icons } from "./helpers/icons";
-
-export { iconCategories, icons };

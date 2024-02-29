@@ -1,23 +1,23 @@
+import { IconCategories } from "@avaya/neo-react";
 import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import { cleanStores, keepMount } from "nanostores";
 
 import {
-  themesToFilterFor,
   isLeftNavigationOpen,
+  themesToFilterFor,
 } from "components/react/utils/layoutState";
 
 import {
   categoriesToFilterFor,
   variationsToFilterFor,
 } from "./helpers/iconPageState";
-import { iconCategories } from "./helpers/icons";
 import { IconFilters } from "./IconFilters";
 
 describe("Icon filters panel", () => {
   it("renders without exploding", () => {
-    render(<IconFilters categories={iconCategories} />);
+    render(<IconFilters categories={IconCategories} />);
 
     const iconFilterPanelElement = screen.getByRole("presentation");
 
@@ -26,7 +26,7 @@ describe("Icon filters panel", () => {
 
   describe("filtering works correctly", () => {
     beforeEach(() => {
-      render(<IconFilters categories={iconCategories} />);
+      render(<IconFilters categories={IconCategories} />);
     });
 
     it("filters categories correctly", async () => {
@@ -36,7 +36,7 @@ describe("Icon filters panel", () => {
 
       expect(categories.length).toBe(0);
 
-      const categoryToFilterFor = iconCategories[0];
+      const categoryToFilterFor = IconCategories[0];
 
       const categoryCheckbox = screen.getByText(categoryToFilterFor as string);
 
@@ -113,7 +113,7 @@ describe("Icon filters panel", () => {
   it("toggles classes in response to isOpen state", () => {
     keepMount(isLeftNavigationOpen);
 
-    const { container } = render(<IconFilters categories={iconCategories} />);
+    const { container } = render(<IconFilters categories={IconCategories} />);
 
     const parentElement = container.querySelector("aside");
 
@@ -141,7 +141,7 @@ describe("Icon filters panel", () => {
   });
 
   it("passes basic axe compliance", async () => {
-    const { container } = render(<IconFilters categories={iconCategories} />);
+    const { container } = render(<IconFilters categories={IconCategories} />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
