@@ -8,6 +8,7 @@
   width: 15rem;
   border-right: 1px solid var(--navbar-border-bottom-color);
   height: calc(100vh - var(--header-height));
+  overflow: auto;
   position: fixed;
   top: var(--header-height);
   background-color: var(--leftnav-background-color);
