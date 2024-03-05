@@ -26,11 +26,6 @@ const userAgent = userAgentString?.toLowerCase().includes("mac")
 const { title } = Astro.props as Props;
 
 const { pathname } = Astro.url;
-// This code should be refactored as part of NEO-2104
-let leftMargin = "15rem";
-if (pathname === "/") {
-  leftMargin = "2px";
-}
 
 const pages = getPagesInOrder(
   (await Astro.glob<PageAstroInstance>("../**/*.astro"))
@@ -123,7 +118,7 @@ switch (pathname.split("/")[1]) {
         }
       </div>
 
-      <SiteFooter leftMargin={leftMargin} />
+      <SiteFooter />
     </NeoThemeProvider>
 
     <style is:global>

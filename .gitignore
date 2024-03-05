@@ -19,4 +19,6 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# user-specific files
 .netlify/functions-internal/
+.astro/

@@ -5,7 +5,7 @@
 .icon-filters {
   display: flex;
   flex-direction: column;
-  min-width: 15rem;
+  width: 15rem;
   border-right: 1px solid var(--navbar-border-bottom-color);
   position: sticky;
   left: 0;
@@ -36,9 +36,8 @@
     bottom: 0;
     background-color: var(--leftnav-background-color);
     z-index: 100;
-    transition: min-width 0.35s;
-    min-width: 4rem;
-    max-width: 4rem;
+    transition: width 0.35s;
+    width: 4rem;
     overflow-x: hidden;
   }
 
@@ -55,8 +54,8 @@
   }
 
   .icon-filters.icon-filters--active {
-    transition: min-width 0.35s;
-    min-width: 15rem;
+    transition: width 0.35s;
+    width: 15rem;
   }
 
   .icon-filters.icon-filters--active .icon-filters__section {
@@ -74,7 +73,7 @@
   }
 
   .icon-filters.icon-filters--hidden {
-    transition: min-width 0.35s;
+    transition: width 0.35s;
   }
 
   .icon-filters.icon-filters--active + .icon-filters__scrim {
@@ -113,6 +112,9 @@
 .icon-filters__section {
   padding: 1rem 0px 0.75rem 1.25rem;
   border-bottom: 1px solid var(--navbar-border-bottom-color);
+}
+.icon-filters__section:last-of-type {
+  border-bottom: 0;
 }
 
 .icon-filters__section__label {

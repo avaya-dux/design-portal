@@ -1,12 +1,5 @@
 ---
 import { Image } from "@avaya/neo-react";
-
-// this section needs to be refactored as part of NEO-2104
-export interface Props {
-  leftMargin?: string;
-}
-
-const { leftMargin = "15rem" } = Astro.props as Props;
 ---
 
 <footer class="footer--wrapper">
@@ -61,22 +54,30 @@ const { leftMargin = "15rem" } = Astro.props as Props;
   </div>
 </footer>
 
-<style
-  define:vars={{
-    leftMargin,
-  }}
->
+<style is:global>
+  :root {
+    --footer-margin-left: 15rem;
+  }
+
+  .main__wrapper:has(.ishomepage) + .footer--wrapper {
+    --footer-margin-left: 0;
+  }
+
+  @media screen and (max-width: 1279px) {
+    :root {
+      --footer-margin-left: 0;
+    }
+  }
+</style>
+
+<style>
   .footer--wrapper {
     border-top: 1px solid var(--navbar-border-bottom-color);
     display: grid;
     gap: 0;
     grid-template-areas: "a b c";
     padding: 1rem;
-  }
-  @media (min-width: 1280px) {
-    :global(.main__wrapper:has(.left-navigation) + .footer--wrapper) {
-      margin-left: var(--leftMargin);
-    }
+    margin-left: var(--footer-margin-left);
   }
 
   .footer-logo {
