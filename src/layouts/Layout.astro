@@ -103,7 +103,7 @@ switch (pathname.split("/")[1]) {
         {
           pathname.endsWith("icons") ? (
             <DynamicTheme client:only="react">
-              <main id="main-content">
+              <main id="main-content" class="isicons">
                 <slot />
               </main>
             </DynamicTheme>
