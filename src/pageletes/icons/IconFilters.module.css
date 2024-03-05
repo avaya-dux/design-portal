@@ -34,6 +34,7 @@
 
 @media (max-width: 1279px) {
   .icon-filters {
+    z-index: 100;
     transition: width 0.35s;
     width: 4rem;
   }
@@ -53,8 +54,6 @@
   .icon-filters.icon-filters--active {
     transition: width 0.35s;
     width: 15rem;
-
-    z-index: 100;
   }
 
   .icon-filters.icon-filters--active .icon-filters__section {
