@@ -36,7 +36,6 @@
   .icon-filters {
     transition: width 0.35s;
     width: 4rem;
-    z-index: 100;
   }
 
   .icon-filters__toggle {
@@ -54,6 +53,8 @@
   .icon-filters.icon-filters--active {
     transition: width 0.35s;
     width: 15rem;
+
+    z-index: 100;
   }
 
   .icon-filters.icon-filters--active .icon-filters__section {
