@@ -54,7 +54,7 @@
 
 @media (max-width: 1279px) {
   .left-navigation .neo-leftnav--wrapper {
-    height: calc(100vh - var(--footer-height));
+    height: calc(100vh - var(--header-height));
     overflow-y: scroll;
   }
 
