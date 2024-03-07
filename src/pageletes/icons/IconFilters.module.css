@@ -7,11 +7,11 @@
   flex-direction: column;
   width: 15rem;
   border-right: 1px solid var(--navbar-border-bottom-color);
-  position: sticky;
-  left: 0;
-  top: var(--header-height);
   height: calc(100vh - var(--header-height));
   overflow: auto;
+  position: fixed;
+  top: var(--header-height);
+  background-color: var(--leftnav-background-color);
 }
 
 .icon-filters .icon-filters__toggle p {
@@ -26,19 +26,17 @@
   .icon-filters__toggle button span::before {
     content: var(--neo-icon-preferences);
   }
+
+  .icon-filters .icon-filters__toggle {
+    display: none;
+  }
 }
 
 @media (max-width: 1279px) {
   .icon-filters {
-    position: fixed;
-    padding-top: 0;
-    top: var(--header-height);
-    bottom: 0;
-    background-color: var(--leftnav-background-color);
     z-index: 100;
     transition: width 0.35s;
     width: 4rem;
-    overflow-x: hidden;
   }
 
   .icon-filters__toggle {

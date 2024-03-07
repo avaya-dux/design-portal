@@ -55,17 +55,25 @@ import { Image } from "@avaya/neo-react";
 </footer>
 
 <style is:global>
+  /* desktop mode, all screens except homepage */
   :root {
     --footer-margin-left: 15rem;
   }
 
+  /* the aforementioned homepage exception */
   .main__wrapper:has(.ishomepage) + .footer--wrapper {
     --footer-margin-left: 0;
   }
 
+  /* table+mobile mode, all screens */
   @media screen and (max-width: 1279px) {
     :root {
       --footer-margin-left: 0;
+    }
+
+    /* icons page is unique and does need left margin */
+    .main__wrapper:has(.isicons) + .footer--wrapper {
+      --footer-margin-left: 5rem;
     }
   }
 </style>
