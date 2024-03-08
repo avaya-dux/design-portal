@@ -9,10 +9,7 @@ import { useStore } from "@nanostores/react";
 import clsx from "clsx";
 import { useCallback, useEffect, useState } from "react";
 
-import {
-  isLeftNavigationOpen,
-  themesToFilterFor,
-} from "components/react/utils/layoutState";
+import { themesToFilterFor } from "components/react/utils/layoutState";
 
 import {
   categoriesToFilterFor,
@@ -40,18 +37,18 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
 
   const filteredTheme = useStore(themesToFilterFor);
 
-  const isOpen = useStore(isLeftNavigationOpen);
+  const [isIconFiltersOpen, setIsIconFiltersOpen] = useState(false);
 
   const [showAllCategories, setShowAllCategories] =
     useState<string>("selectAll");
 
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
-      if (isOpen && event.key === "Escape") {
-        isLeftNavigationOpen.set(false);
+      if (isIconFiltersOpen && event.key === "Escape") {
+        setIsIconFiltersOpen(false);
       }
     },
-    [isOpen],
+    [isIconFiltersOpen],
   );
 
   useEffect(() => {
@@ -89,7 +86,7 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
       <aside
         className={clsx(
           styles["icon-filters"],
-          isOpen
+          isIconFiltersOpen
             ? styles["icon-filters--active"]
             : styles["icon-filters--hidden"],
         )}
@@ -97,9 +94,9 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
         <div className={styles["icon-filters__toggle"]}>
           <IconButton
             aria-label="Toggle filters"
-            icon={isOpen ? "close" : "preferences"}
+            icon={isIconFiltersOpen ? "close" : "preferences"}
             variant="tertiary"
-            onClick={() => isLeftNavigationOpen.set(!isOpen)}
+            onClick={() => setIsIconFiltersOpen(!isIconFiltersOpen)}
           />
           <p className="neo-body-regular">Filter</p>
         </div>
@@ -205,7 +202,7 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
       <div
         className={styles["icon-filters__scrim"]}
         id="icon-filter-scrim"
-        onClick={() => isLeftNavigationOpen.set(false)}
+        onClick={() => setIsIconFiltersOpen(false)}
         role="presentation"
       ></div>
     </>
