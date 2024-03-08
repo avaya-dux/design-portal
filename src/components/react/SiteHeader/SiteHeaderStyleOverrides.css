@@ -48,6 +48,13 @@ nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
   cursor: pointer;
   background-color: var(--global-background);
 }
+nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:focus,
+nav.neo-navbar
+  .neo-nav--left
+  .neo-badge__navbutton
+  .topnav-menu-toggle:focus-visible {
+  outline-offset: -2px;
+}
 
 @media (max-width: 1279px) {
   body nav.neo-navbar .neo-nav--left a img {

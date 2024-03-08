@@ -110,8 +110,9 @@ describe("Icon filters panel", () => {
     });
   });
 
-  it("toggles classes in response to isOpen state", () => {
+  it("toggles classes in response to isOpen state", async () => {
     keepMount(isLeftNavigationOpen);
+    const user = userEvent.setup();
 
     const { container } = render(<IconFilters categories={IconCategories} />);
 
@@ -121,18 +122,14 @@ describe("Icon filters panel", () => {
       "icon-filters--active",
     );
 
-    act(() => {
-      isLeftNavigationOpen.set(true);
-    });
+    const btn = screen.getByLabelText("Toggle filters");
 
+    await user.click(btn);
     expect(parentElement?.classList.toString()).toContain(
       "icon-filters--active",
     );
 
-    act(() => {
-      isLeftNavigationOpen.set(false);
-    });
-
+    await user.click(btn);
     expect(parentElement?.classList.toString()).toContain(
       "icon-filters--hidden",
     );
