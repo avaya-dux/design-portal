@@ -44,8 +44,9 @@ export const SiteHeader = ({
 
   const isOpen = useStore(isLeftNavigationOpen);
   const { width } = useWindowSize();
-  const shouldShowHomepageMobileMenu =
-    pathname === "/" && width < breakpoints.mobileMax;
+  const isMobileViewWithoutSubPages =
+    (pathname === "/" || pathname === "/icons") &&
+    width < breakpoints.mobileMax;
 
   const toggleButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -72,7 +73,7 @@ export const SiteHeader = ({
         </TopNav.SkipNav>
       }
       menuToggleBtn={
-        showToggleBtn || shouldShowHomepageMobileMenu ? (
+        showToggleBtn || isMobileViewWithoutSubPages ? (
           <TopNav.IconButton
             id="topnav-menu-toggle"
             aria-label={
