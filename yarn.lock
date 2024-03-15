@@ -132,15 +132,15 @@
   resolved "https://registry.yarnpkg.com/@atomic-layout/core/-/core-0.14.1.tgz#3d69be5f79775f11b8008f18bc603b04a2141ccd"
   integrity sha512-o5nhk/1djuKzB20C2LSOuetTDytsbGg4c0UfxXkq1pqoaN3hKJcHPYF9nV+p6+P5CWqNBaaJddZ32OsFSppULQ==
 
-"@avaya/neo-react@1.1.7":
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-1.1.7.tgz#b2106db3eee6bbddbc75e253e62e3dac6742cbe6"
-  integrity sha512-qyFP0h9WF6L+9QhuMte0V0vERyzDw8vi1SSuHDwEdnj5QOW+NtJSnr7wUv4eoQiXxOCr31hn9GMMgMzQ5p8HnA==
+"@avaya/neo-react@1.1.8":
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-1.1.8.tgz#0a2982b63dcbd7c4ad3a8f9498952cdfea0c13db"
+  integrity sha512-G67tzdIfiI8cGWxqCXw5CROK2yYeQo4/f4IGiWuiY0gz3Fvz/GgU09VD31AsqApzWJs60L++fvI+CgnlPHktIw==
   dependencies:
     atomic-layout "0.16.2"
     loglevel "1.9.1"
     react-click-away-listener "2.2.3"
-    react-focus-lock "2.11.1"
+    react-focus-lock "2.11.2"
     react-input-autosize "3.0.0"
     styled-components "6.1.8"
 
@@ -6553,10 +6553,10 @@ react-element-to-jsx-string@15.0.0:
     is-plain-object "5.0.0"
     react-is "18.1.0"
 
-react-focus-lock@2.11.1:
-  version "2.11.1"
-  resolved "https://registry.yarnpkg.com/react-focus-lock/-/react-focus-lock-2.11.1.tgz#9d532b29107c760c68ddadc1baff1a36e69c1fe0"
-  integrity sha512-IXLwnTBrLTlKTpASZXqqXJ8oymWrgAlOfuuDYN4XCuN1YJ72dwX198UCaF1QqGUk5C3QOnlMik//n3ufcfe8Ig==
+react-focus-lock@2.11.2:
+  version "2.11.2"
+  resolved "https://registry.yarnpkg.com/react-focus-lock/-/react-focus-lock-2.11.2.tgz#dcc9a0dde630f0b9c694b823066f1b954c024422"
+  integrity sha512-DDTbEiov0+RthESPVSTIdAWPPKic+op3sCcP+icbMRobvQNt7LuAlJ3KoarqQv5sCgKArru3kXmlmFTa27/CdQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
     focus-lock "^1.3.2"
