@@ -56,7 +56,7 @@
   "dependencies": {
     "@astrojs/netlify": "5.2.0",
     "@astrojs/prefetch": "0.4.1",
-    "@avaya/neo-react": "1.1.10",
+    "@avaya/neo-react": "1.1.11",
     "@nanostores/react": "0.7.2",
     "clsx": "2.1.0",
     "dayjs": "1.11.10",
