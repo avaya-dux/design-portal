@@ -12,6 +12,7 @@
   position: fixed;
   top: var(--header-height);
   background-color: var(--leftnav-background-color);
+  z-index: 100;
 }
 
 .icon-filters .icon-filters__toggle p {
@@ -34,7 +35,6 @@
 
 @media (max-width: 1279px) {
   .icon-filters {
-    z-index: 100;
     transition: width 0.35s;
     width: 4rem;
   }
