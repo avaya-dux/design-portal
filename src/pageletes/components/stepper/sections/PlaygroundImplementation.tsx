@@ -115,7 +115,9 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      {element}
+      <div style={{ width: orientation === "horizontal" ? "100%" : undefined }}>
+        {element}
+      </div>
     </Playground>
   );
 };
