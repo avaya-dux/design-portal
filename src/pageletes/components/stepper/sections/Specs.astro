@@ -1,0 +1,28 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Description,
+  ImageWrapper,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import image1 from "../imgs/stepper-specs-1.svg";
+
+import { topics } from "../static";
+const { id, title } = topics.specs;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    The size and padding of the stepper component is shown below.
+  </Description>
+
+  <ImageWrapper>
+    <Image src={image1.src} alt="Stepper specs" />
+  </ImageWrapper>
+</PageleteSection>

@@ -1,0 +1,17 @@
+---
+import { Description, PageleteSection, SectionHeader } from "components/astro";
+import { topics } from "../static";
+
+const { id, title } = topics.behavior;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <Description>
+    The behavior of the stepper is governed by how it is displayed and how it
+    responds to user input.
+  </Description>
+</PageleteSection>

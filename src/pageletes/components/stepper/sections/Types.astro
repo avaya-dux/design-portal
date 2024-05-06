@@ -1,0 +1,79 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Description,
+  PageleteSection,
+  SectionHeader,
+  PageleteSubSection,
+  SubHeader,
+  ImageWrapper,
+} from "components/astro";
+import { DoAndDont } from "components";
+
+import { topics } from "../static";
+const { id, title } = topics.types;
+
+import image1 from "../imgs/stepper-type-1.svg";
+import image2 from "../imgs/stepper-non-editable-1.svg";
+
+import imageDo from "../imgs/stepper-type-non-editable-do-1.svg";
+const imageDoAltText =
+  "Indicate the user's progress through the stepper with the appropriate state icons and connectors.";
+
+import imageDont from "../imgs/stepper-type-non-editable-dont-1.svg";
+const imageDontAltText =
+  "Do not use any other icons or visual elements that may distract or confuse the user.";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>
+    A stepper component can be configured as Editable or Non-editable.
+  </Description>
+
+  <PageleteSubSection>
+    <SubHeader id="stepper-types-editable"> Editable </SubHeader>
+
+    <Description>
+      An editable stepper allows the user to jump to previous stages to verify
+      and modify the data or actions. This type of stepper component is commonly
+      used in forms where users need to add information, change their answers or
+      correct errors.
+    </Description>
+
+    <ImageWrapper>
+      <Image src={image1.src} alt="Editable stepper" />
+    </ImageWrapper>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="stepper-types-non-editable"> Non-editable </SubHeader>
+
+    <Description>
+      A non-editable stepper component does not allow users to return to the
+      stage. Once the user has completed a step, they cannot later return to
+      edit their input or change their actions. This type of stepper is commonly
+      used in linear processes where the steps must be completed in a specific
+      order.
+    </Description>
+
+    <ImageWrapper>
+      <Image src={image2.src} alt="Editable stepper" />
+    </ImageWrapper>
+
+    <DoAndDont>
+      <DoAndDont.DoContainer instructions={imageDoAltText}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={imageDo.src} alt={imageDoAltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
+
+      <DoAndDont.DontContainer instructions={imageDontAltText}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={imageDont.src} alt={imageDontAltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DontContainer>
+    </DoAndDont>
+  </PageleteSubSection>
+</PageleteSection>

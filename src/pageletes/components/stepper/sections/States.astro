@@ -1,0 +1,81 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+  CaptionInfoList,
+  ColumnLayout,
+  Description,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+  StackedLayout,
+} from "components";
+
+import image1 from "../imgs/stepper-states-1.svg";
+const image1AltText = "green checkmark";
+
+import image2 from "../imgs/stepper-states-2.svg";
+const image2AltText = "pencil";
+
+import image3 from "../imgs/stepper-states-3.svg";
+const image3AltText = "open green circle";
+
+import image4 from "../imgs/stepper-states-4.svg";
+const image4AltText = "empty circle";
+
+import { topics } from "../static";
+const { title, id } = topics.states;
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>
+    {title}
+  </SectionHeader>
+
+  <ColumnLayout bkgColor="white" numOfColumns={2}>
+    <StackedLayout label="Complete">
+      <Image src={image1.src} alt={image1AltText} />
+    </StackedLayout>
+
+    <StackedLayout label="Editable">
+      <Image src={image2.src} alt={image2AltText} />
+    </StackedLayout>
+  </ColumnLayout>
+
+  <ColumnLayout bkgColor="white" numOfColumns={2}>
+    <StackedLayout label="Active">
+      <Image src={image3.src} alt={image3AltText} />
+    </StackedLayout>
+
+    <StackedLayout label="Inactive">
+      <Image src={image4.src} alt={image4AltText} />
+    </StackedLayout>
+  </ColumnLayout>
+
+  <Description>
+    The step indicator can appear in several states depending upon how much of
+    each step has been completed.
+  </Description>
+
+  <CaptionInfoList type="disc">
+    <InfoListItem label="Complete">
+      This step in the process has been completed. All required information has
+      been entered and all required actions taken. The user cannot return to
+      this page to make changes.
+    </InfoListItem>
+
+    <InfoListItem label="Editable">
+      Some or all of the elements of this step have been completed. The user can
+      click the icon to return to the step to make changes.
+    </InfoListItem>
+
+    <InfoListItem label="Active">
+      Shows the currently displayed step.
+    </InfoListItem>
+
+    <InfoListItem label="Inactive">
+      These stages have not yet had any actions taken or details entered by the
+      user.
+    </InfoListItem>
+  </CaptionInfoList>
+</PageleteSection>
