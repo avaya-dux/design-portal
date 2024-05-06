@@ -74,7 +74,7 @@ export const PlaygroundImplementation = () => {
               }}
             >
               <Radio value="editable">Editable</Radio>
-              <Radio value="non-editable">Non-editable</Radio>
+              <Radio value="linear">Non-editable</Radio>
             </RadioGroup>
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
