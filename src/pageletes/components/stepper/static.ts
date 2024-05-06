@@ -7,8 +7,7 @@ type StepperTopicNames =
   | "types"
   | "behavior"
   | "specs"
-  | "keyboard"
-  | "related";
+  | "keyboard";
 
 export const topics: TopicsDict<StepperTopicNames> = {
   playground: {
@@ -29,10 +28,5 @@ export const topics: TopicsDict<StepperTopicNames> = {
     order: 6,
     id: "stepper-keyboard",
     title: "Keyboard Interactions",
-  },
-  related: {
-    order: 7,
-    id: "stepper-related-content",
-    title: "Related Content",
   },
 };
