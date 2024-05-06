@@ -17,7 +17,7 @@ export const topics: TopicsDict<StepperTopicNames> = {
   },
   anatomy: { order: 1, id: "stepper-anatomy", title: "Anatomy" },
   states: { order: 2, id: "stepper-states", title: "States" },
-  types: { order: 3, id: "stepper-type", title: "Type" },
+  types: { order: 3, id: "stepper-type", title: "Types" },
   behavior: { order: 4, id: "stepper-behavior", title: "Behavior" },
   specs: {
     order: 5,
