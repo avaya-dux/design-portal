@@ -1,7 +1,30 @@
 ---
-import { Description, PageleteSection, SectionHeader } from "components/astro";
-import { topics } from "../static";
+import { Image } from "@avaya/neo-react";
 
+import {
+  Description,
+  ImageWrapper,
+  PageleteSection,
+  PageleteSubSection,
+  SectionHeader,
+  SubHeader,
+} from "components/astro";
+
+import image1 from "../imgs/stepper-behavior-horizontal-1.svg";
+import image2 from "../imgs/stepper-behavior-vertical-1.svg";
+import image3 from "../imgs/stepper-labels-1.svg";
+import image4 from "../imgs/stepper-labels-2.svg";
+import image5 from "../imgs/stepper-behavior-truncation-1.svg";
+import image6 from "../imgs/stepper-behavior-truncation-2.svg";
+
+import imageDo from "../imgs/stepper-behavior-labels-do-1.svg";
+const imageDoAltText = "Be consistent. Add labels on all or none of the steps.";
+
+import imageDont from "../imgs/stepper-behavior-labels-dont-1.svg";
+const imageDontAltText = "Do not have a labels for some steps and not others.";
+
+import { topics } from "../static";
+import { DoAndDont } from "components";
 const { id, title } = topics.behavior;
 ---
 
@@ -14,4 +37,91 @@ const { id, title } = topics.behavior;
     The behavior of the stepper is governed by how it is displayed and how it
     responds to user input.
   </Description>
+
+  <PageleteSubSection>
+    <SubHeader id="stepper-behavior-horizontal-alignment">
+      Horizontal Alignment
+    </SubHeader>
+
+    <Description>
+      A horizontal stepper component displays the stages from left-to-right
+      across the pane. It is center-justified.
+    </Description>
+
+    <Image src={image1.src} alt="horizontally aligned stepper" />
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="stepper-behavior-vertical-alignment">
+      Vertical Alignment
+    </SubHeader>
+
+    <Description>
+      A vertical stepper component displays stages from top-to-bottom down the
+      left side of the pane.
+    </Description>
+
+    <Image src={image2.src} alt="vertically aligned stepper" />
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="stepper-behavior-title">Title</SubHeader>
+
+    <Description>
+      Steppers have the option to include a title and an additional short line
+      of descriptive text beneath.
+    </Description>
+
+    <ImageWrapper padding="0">
+      <Image src={image3.src} alt="stepper with labels" />
+    </ImageWrapper>
+
+    <Description>
+      Steppers can be built without labels to make viewing progress easier,
+      although it may be harder to understand what is happening at each step.
+    </Description>
+
+    <Image src={image4.src} alt="stepper without labels" />
+
+    <DoAndDont>
+      <DoAndDont.DoContainer instructions={imageDoAltText}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={imageDo.src} alt={imageDoAltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DoContainer>
+
+      <DoAndDont.DontContainer instructions={imageDontAltText}>
+        <DoAndDont.ImageExampleContainer>
+          <Image src={imageDont.src} alt={imageDontAltText} />
+        </DoAndDont.ImageExampleContainer>
+      </DoAndDont.DontContainer>
+    </DoAndDont>
+  </PageleteSubSection>
+
+  <PageleteSubSection>
+    <SubHeader id="stepper-behavior-truncation"> Truncation </SubHeader>
+
+    <Description>
+      When there are too many stages to show the stepper within a single pane,
+      add arrow icons to allow navigation to the steps that are not currently
+      visible (e.g. Previous, Next).
+    </Description>
+
+    <ImageWrapper padding="0">
+      <Image
+        src={image5.src}
+        alt="truncated stepper with directional arrows on each side"
+      />
+    </ImageWrapper>
+
+    <Description>
+      Using arrow icons, similar to a carousel, a user can access all of the
+      steps in the process.
+    </Description>
+
+    <Image
+      src={image6.src}
+      alt="truncated stepper with directional arrows and a mouse pointer clicking the rightmost one"
+    />
+  </PageleteSubSection>
 </PageleteSection>
