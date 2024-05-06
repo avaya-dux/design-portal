@@ -5,6 +5,7 @@ import {
   RadioGroup,
   Select,
   SelectOption,
+  Switch,
 } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
@@ -31,12 +32,24 @@ const steps: Steps[] = [
 export const PlaygroundImplementation = () => {
   const [orientation, setOrientation] = useState<TypeOption>("horizontal");
   const [type, setType] = useState<StepperProps["type"]>("editable");
-  // TODO: title and description
+  const [showTitle, setShowTitle] = useState<boolean>(true);
+  const [showDescription, setShowDescription] = useState<boolean>(true);
 
   const [element, react, html] = useMemo(() => {
+    const filteredSteps = steps.map((step) => {
+      const newStep = { ...step };
+      if (!showTitle) {
+        delete newStep.title;
+      }
+      if (!showDescription) {
+        delete newStep.description;
+      }
+      return newStep;
+    });
+
     const element = (
       <Stepper
-        steps={steps}
+        steps={filteredSteps}
         activeStep={1}
         direction={orientation}
         type={type}
@@ -48,7 +61,7 @@ export const PlaygroundImplementation = () => {
       prettyPrintReactElementToString(element),
       prettyPrintReactElementToHtml(element),
     ];
-  }, [orientation, type]);
+  }, [orientation, showDescription, showTitle, type]);
 
   return (
     <Playground
@@ -76,6 +89,22 @@ export const PlaygroundImplementation = () => {
               <Radio value="editable">Editable</Radio>
               <Radio value="linear">Non-editable</Radio>
             </RadioGroup>
+          </Playground.OptionsSection>
+
+          <Playground.OptionsSection title="Title">
+            <Switch
+              defaultChecked
+              onChange={() => setShowTitle(!showTitle)}
+              aria-label="Show title"
+            />
+          </Playground.OptionsSection>
+
+          <Playground.OptionsSection title="Description">
+            <Switch
+              defaultChecked
+              onChange={() => setShowDescription(!showDescription)}
+              aria-label="Show description"
+            />
           </Playground.OptionsSection>
         </Playground.OptionsContainer>
       }
