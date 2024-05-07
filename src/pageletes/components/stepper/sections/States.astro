@@ -37,7 +37,7 @@ const { title, id } = topics.states;
     each step has been completed.
   </Description>
 
-  <ColumnLayout bkgColor="white" numOfColumns={2}>
+  <ColumnLayout bkgColor="white" numOfColumns={2} marginBottom="0">
     <StackedLayout label="Complete">
       <Image src={image1.src} alt={image1AltText} />
     </StackedLayout>
@@ -46,8 +46,12 @@ const { title, id } = topics.states;
       <Image src={image2.src} alt={image2AltText} />
     </StackedLayout>
   </ColumnLayout>
-
-  <ColumnLayout bkgColor="white" numOfColumns={2}>
+  <ColumnLayout
+    bkgColor="white"
+    numOfColumns={2}
+    marginTop="0"
+    showTopBorder={false}
+  >
     <StackedLayout label="Active">
       <Image src={image3.src} alt={image3AltText} />
     </StackedLayout>
@@ -56,11 +60,6 @@ const { title, id } = topics.states;
       <Image src={image4.src} alt={image4AltText} />
     </StackedLayout>
   </ColumnLayout>
-
-  <Description>
-    The step indicator can appear in several states depending upon how much of
-    each step has been completed.
-  </Description>
 
   <CaptionInfoList type="disc">
     <InfoListItem label="Complete">
