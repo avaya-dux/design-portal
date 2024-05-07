@@ -94,14 +94,22 @@ export const PlaygroundImplementation = () => {
           <Playground.OptionsSection title="Title">
             <Switch
               defaultChecked
-              onChange={() => setShowTitle(!showTitle)}
+              onChange={() => {
+                setShowTitle(!showTitle);
+
+                // if showTitle is being turned off, turn off showDescription
+                if (showTitle === true) {
+                  setShowDescription(false);
+                }
+              }}
               aria-label="Show title"
             />
           </Playground.OptionsSection>
 
           <Playground.OptionsSection title="Description">
             <Switch
-              defaultChecked
+              checked={showDescription}
+              disabled={!showTitle}
               onChange={() => setShowDescription(!showDescription)}
               aria-label="Show description"
             />
