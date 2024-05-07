@@ -6,6 +6,7 @@ import {
   SectionHeader,
   PageleteSubSection,
   SubHeader,
+  ImageWrapper,
 } from "components/astro";
 import { DoAndDont } from "components";
 
@@ -41,7 +42,9 @@ const imageDontAltText =
       correct errors.
     </Description>
 
-    <Image src={image1.src} alt="Editable stepper" />
+    <ImageWrapper padding="0" isShaded>
+      <Image src={image1.src} alt="Editable stepper" />
+    </ImageWrapper>
   </PageleteSubSection>
 
   <PageleteSubSection>
@@ -55,7 +58,9 @@ const imageDontAltText =
       order.
     </Description>
 
-    <Image src={image2.src} alt="Editable stepper" />
+    <ImageWrapper padding="0" isShaded>
+      <Image src={image2.src} alt="Editable stepper" />
+    </ImageWrapper>
 
     <DoAndDont>
       <DoAndDont.DoContainer instructions={imageDoAltText}>

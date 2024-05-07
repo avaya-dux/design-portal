@@ -48,7 +48,9 @@ const { id, title } = topics.behavior;
       across the pane. It is center-justified.
     </Description>
 
-    <Image src={image1.src} alt="horizontally aligned stepper" />
+    <ImageWrapper padding="0" isShaded>
+      <Image src={image1.src} alt="horizontally aligned stepper" />
+    </ImageWrapper>
   </PageleteSubSection>
 
   <PageleteSubSection>
@@ -61,7 +63,9 @@ const { id, title } = topics.behavior;
       left side of the pane.
     </Description>
 
-    <Image src={image2.src} alt="vertically aligned stepper" />
+    <ImageWrapper padding="0" isShaded>
+      <Image src={image2.src} alt="vertically aligned stepper" />
+    </ImageWrapper>
   </PageleteSubSection>
 
   <PageleteSubSection>
@@ -72,7 +76,7 @@ const { id, title } = topics.behavior;
       of descriptive text beneath.
     </Description>
 
-    <ImageWrapper padding="0">
+    <ImageWrapper padding="0" isShaded>
       <Image src={image3.src} alt="stepper with labels" />
     </ImageWrapper>
 
@@ -81,7 +85,9 @@ const { id, title } = topics.behavior;
       although it may be harder to understand what is happening at each step.
     </Description>
 
-    <Image src={image4.src} alt="stepper without labels" />
+    <ImageWrapper padding="0" isShaded>
+      <Image src={image4.src} alt="stepper without labels" />
+    </ImageWrapper>
 
     <DoAndDont>
       <DoAndDont.DoContainer instructions={imageDoAltText}>
@@ -107,7 +113,7 @@ const { id, title } = topics.behavior;
       visible (e.g. Previous, Next).
     </Description>
 
-    <ImageWrapper padding="0">
+    <ImageWrapper padding="0" isShaded>
       <Image
         src={image5.src}
         alt="truncated stepper with directional arrows on each side"

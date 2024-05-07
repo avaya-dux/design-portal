@@ -3,11 +3,10 @@ import { Image } from "@avaya/neo-react";
 import {
   Description,
   CaptionInfoList,
+  ImageWrapper,
   InfoListItem,
   PageleteSection,
   SectionHeader,
-  ColumnLayout,
-  StackedLayout,
 } from "components/astro";
 
 import { topics } from "../static";
@@ -26,11 +25,9 @@ const image1AltText =
     stepper can be designed with or without labels.
   </Description>
 
-  <ColumnLayout numOfColumns={1} bkgColor="white">
-    <StackedLayout>
-      <Image src={image1.src} alt={image1AltText} />
-    </StackedLayout>
-  </ColumnLayout>
+  <ImageWrapper>
+    <Image src={image1.src} alt={image1AltText} />
+  </ImageWrapper>
 
   <CaptionInfoList>
     <InfoListItem label="Completed Step">
