@@ -16,6 +16,8 @@ import {
   prettyPrintReactElementToString,
 } from "helpers";
 
+import "./PlaygroundImplementation.css";
+
 export const sandbox =
   "https://codesandbox.io/p/sandbox/neo-react-stepper-wny8j6?file=%2Fsrc%2FApp.js";
 export const storybook =
@@ -129,7 +131,13 @@ export const PlaygroundImplementation = () => {
         storybook,
       }}
     >
-      <div style={{ width: orientation === "horizontal" ? "100%" : undefined }}>
+      <div
+        className={
+          orientation === "horizontal"
+            ? "stepper-playground-wrapper-horizontal"
+            : "stepper-playground-wrapper-vertical"
+        }
+      >
         {element}
       </div>
     </Playground>
