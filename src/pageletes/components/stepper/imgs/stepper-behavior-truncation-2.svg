@@ -1,8 +1,8 @@
 <svg width="952" height="217" viewBox="0 0 952 217" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_9474_632675)">
 <rect width="952" height="217" fill="#F1F1F1"/>
-<g clip-path="url(#clip1_9474_632675)" filter="url(#filter0_d_9474_632675)">
-<g clip-path="url(#clip2_9474_632675)">
+<g filter="url(#filter0_d_9474_632675)">
+<g clip-path="url(#clip1_9474_632675)">
 <g filter="url(#filter1_i_9474_632675)">
 <rect width="56" height="516" transform="translate(76 98)" fill="white"/>
 <rect width="56" height="48" transform="translate(76 98)" fill="white"/>
@@ -26,7 +26,7 @@
 <path d="M735 79.5C729.201 79.5 724.5 74.799 724.5 69C724.5 63.201 729.201 58.5 735 58.5C740.799 58.5 745.5 63.201 745.5 69C745.5 74.799 740.799 79.5 735 79.5Z" fill="#C9C9C9"/>
 <path d="M783 79.5C777.201 79.5 772.5 74.799 772.5 69C772.5 63.201 777.201 58.5 783 58.5C788.799 58.5 793.5 63.201 793.5 69C793.5 74.799 788.799 79.5 783 79.5Z" fill="#C9C9C9"/>
 <circle cx="840" cy="69" r="20" fill="white"/>
-<g clip-path="url(#clip3_9474_632675)">
+<g clip-path="url(#clip2_9474_632675)">
 <path d="M828.571 85.413V83.0845C828.571 80.0534 829.776 77.1465 831.919 75.0032C834.062 72.86 836.969 71.6559 840 71.6559C843.031 71.6559 845.938 72.86 848.081 75.0032C850.224 77.1465 851.429 80.0534 851.429 83.0845V85.413C854.923 82.98 857.549 79.4952 858.926 75.466C860.303 71.4368 860.357 67.0734 859.082 63.0109C857.807 58.9484 855.269 55.3988 851.837 52.8789C848.405 50.3589 844.258 49 840 49C835.742 49 831.595 50.3589 828.163 52.8789C824.731 55.3988 822.193 58.9484 820.918 63.0109C819.643 67.0734 819.697 71.4368 821.074 75.466C822.451 79.4952 825.077 82.98 828.571 85.413ZM840 55.6273C841.297 55.6273 842.565 56.0119 843.643 56.7324C844.721 57.4529 845.562 58.477 846.058 59.6752C846.554 60.8733 846.684 62.1917 846.431 63.4637C846.178 64.7357 845.554 65.904 844.637 66.8211C843.72 67.7381 842.551 68.3626 841.279 68.6156C840.007 68.8686 838.689 68.7388 837.491 68.2425C836.293 67.7462 835.268 66.9057 834.548 65.8274C833.827 64.7491 833.443 63.4813 833.443 62.1845C833.447 60.4466 834.139 58.7809 835.368 57.552C836.596 56.3231 838.262 55.6311 840 55.6273Z" fill="#C9C9C9"/>
 </g>
 </g>
@@ -63,7 +63,7 @@
 </g>
 </g>
 <defs>
-<filter id="filter0_d_9474_632675" x="68" y="36" width="816" height="192" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d_9474_632675" x="68" y="36" width="816" height="590" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="4"/>
@@ -107,12 +107,9 @@
 <rect width="952" height="217" fill="white"/>
 </clipPath>
 <clipPath id="clip1_9474_632675">
-<rect width="800" height="176" fill="white" transform="translate(76 40)"/>
-</clipPath>
-<clipPath id="clip2_9474_632675">
 <rect x="76" y="40" width="800" height="574" rx="8" fill="white"/>
 </clipPath>
-<clipPath id="clip3_9474_632675">
+<clipPath id="clip2_9474_632675">
 <rect width="40.0001" height="36.6667" fill="white" transform="translate(820 49)"/>
 </clipPath>
 </defs>
