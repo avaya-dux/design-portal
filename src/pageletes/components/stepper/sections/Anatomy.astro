@@ -1,0 +1,67 @@
+---
+import { Image } from "@avaya/neo-react";
+import {
+  Description,
+  CaptionInfoList,
+  ImageWrapper,
+  InfoListItem,
+  PageleteSection,
+  SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+import image1 from "../imgs/stepper-anatomy-1.svg";
+const image1AltText =
+  "Image showing the different parts that make up an avatar";
+---
+
+<PageleteSection>
+  <SectionHeader id={topics.anatomy.id}>{topics.anatomy.title}</SectionHeader>
+
+  <Description>
+    The stepper flows from left-to-right, or from top-to-bottom, with a series
+    of icons representing the user’s progress and success through a procedure. A
+    stepper can be designed with or without labels.
+  </Description>
+
+  <ImageWrapper>
+    <Image src={image1.src} alt={image1AltText} />
+  </ImageWrapper>
+
+  <CaptionInfoList>
+    <InfoListItem label="Completed Step">
+      This step has been partially or fully completed. It can display the
+      editable, error, or complete state.
+    </InfoListItem>
+
+    <InfoListItem label="Active Connector">
+      The heavier line shows that the attached steps have been fully or
+      partially completed.
+    </InfoListItem>
+
+    <InfoListItem label="Current Step">
+      Shows the stage reached in the procedure. The details for this step are
+      currently on the screen.
+    </InfoListItem>
+
+    <InfoListItem label="Inactive Connector">
+      The thinner line shows the attached steps have not yet been completed.
+    </InfoListItem>
+
+    <InfoListItem label="Inactive Step">
+      These stages have not yet had any actions taken or details entered by the
+      user.
+    </InfoListItem>
+
+    <InfoListItem label="Title">
+      Labels for each step are not required but do provide additional guidance
+      to the user regarding their progress.
+    </InfoListItem>
+
+    <InfoListItem label="Description">
+      If titles are used, a brief explanation of each stage can also be included
+      to further clarify the step.
+    </InfoListItem>
+  </CaptionInfoList>
+</PageleteSection>
