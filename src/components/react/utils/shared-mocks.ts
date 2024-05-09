@@ -388,10 +388,10 @@ export const allActualPagesUnsorted: SitePages = {
       order: undefined,
     } as PageAstroInstance,
     {
-      file: "/Users/jsebast/dev/avaya/design-portal/src/pages/guidelines/localization.astro",
-      url: "/guidelines/localization",
-      title: "Localization",
-      keywords: "localization",
+      file: "/Users/jsebast/dev/avaya/design-portal/src/pages/guidelines/internationalization.astro",
+      url: "/guidelines/internationalization",
+      title: "Internationalization",
+      keywords: "internationalization",
       order: undefined,
     } as PageAstroInstance,
     {
@@ -757,10 +757,10 @@ export const allActualPagesSorted: SitePages = {
       order: undefined,
     } as PageAstroInstance,
     {
-      file: "/Users/jsebast/dev/avaya/design-portal/src/pages/guidelines/localization.astro",
-      url: "/guidelines/localization",
-      title: "Localization",
-      keywords: "localization",
+      file: "/Users/jsebast/dev/avaya/design-portal/src/pages/guidelines/internationalization.astro",
+      url: "/guidelines/internationalization",
+      title: "Internationalization",
+      keywords: "internationalization",
       order: undefined,
     } as PageAstroInstance,
     {
@@ -1118,10 +1118,10 @@ export const allActualPagesFlattenedUnsorted = [
     order: undefined,
   } as PageAstroInstance,
   {
-    file: "/Users/jsebast/dev/avaya/design-portal/src/pages/guidelines/localization.astro",
-    url: "/guidelines/localization",
-    title: "Localization",
-    keywords: "localization",
+    file: "/Users/jsebast/dev/avaya/design-portal/src/pages/guidelines/internationalization.astro",
+    url: "/guidelines/internationalization",
+    title: "Internationalization",
+    keywords: "internationalization",
     order: undefined,
   } as PageAstroInstance,
   {

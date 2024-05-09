@@ -5,13 +5,13 @@ type LocalizationTopicNames = "text" | "content" | "bidirectionality";
 export const topics: TopicsDict<LocalizationTopicNames> = {
   text: {
     order: 0,
-    id: "localization-text",
+    id: "internationalization-text",
     title: "Text",
   },
-  content: { order: 1, id: "localization-content", title: "Content" },
+  content: { order: 1, id: "internationalization-content", title: "Content" },
   bidirectionality: {
     order: 2,
-    id: "localization-bidirectionality",
+    id: "internationalization-bidirectionality",
     title: "Bidirectionality",
   },
 };
