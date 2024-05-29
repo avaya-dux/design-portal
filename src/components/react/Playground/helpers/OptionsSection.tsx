@@ -44,26 +44,26 @@ import clsx from "clsx";
   </Playground>
  */
 export const OptionsSection = ({
-  title,
-  children,
-  className,
-  id,
-  style,
+	title,
+	children,
+	className,
+	id,
+	style,
 }: {
-  title: string;
-  children: React.ReactNode;
-  className?: string;
-  id?: string;
-  style?: React.CSSProperties;
+	title: string;
+	children: React.ReactNode;
+	className?: string;
+	id?: string;
+	style?: React.CSSProperties;
 }) => (
-  <section
-    className={clsx("playground-options-section", className)}
-    style={style}
-  >
-    <label className="playground-options-section-label" id={id}>
-      {title}
-    </label>
+	<section
+		className={clsx("playground-options-section", className)}
+		style={style}
+	>
+		<label className="playground-options-section-label" id={id}>
+			{title}
+		</label>
 
-    {children}
-  </section>
+		{children}
+	</section>
 );

@@ -1,10 +1,10 @@
 ---
 import {
-  Description,
-  PageleteSection,
-  PageleteSubSection,
-  SectionHeader,
-  SubHeader,
+	Description,
+	PageleteSection,
+	PageleteSubSection,
+	SectionHeader,
+	SubHeader,
 } from "components/astro";
 import { topics } from "../static";
 
@@ -12,38 +12,38 @@ import { Image } from "@avaya/neo-react";
 
 const { id, title } = topics.behavior;
 
+import { DoAndDont } from "components";
 import doImage1 from "../imgs/chip-behavior-color-do-1.svg";
 import dontImage1 from "../imgs/chip-behavior-color-dont-1.svg";
-import doImage2 from "../imgs/chip-behavior-icon-do-1.svg";
-import dontImage2 from "../imgs/chip-behavior-icon-dont-1.svg";
 import doImage3 from "../imgs/chip-behavior-expandable-do-1.svg";
 import dontImage3 from "../imgs/chip-behavior-expandable-dont-1.svg";
-import { DoAndDont } from "components";
+import doImage2 from "../imgs/chip-behavior-icon-do-1.svg";
+import dontImage2 from "../imgs/chip-behavior-icon-dont-1.svg";
 
 const do1Instructions =
-  "Use the chip state that best fits the content. For example, use the Alert chip for errors. Learn more in Neo’s <a class='neo-link--inline' href='/guidelines/color'>color guidelines</a>.";
+	"Use the chip state that best fits the content. For example, use the Alert chip for errors. Learn more in Neo’s <a class='neo-link--inline' href='/guidelines/color'>color guidelines</a>.";
 const doImg1AltText =
-  "An image of default, alert, warning, info and success chips";
+	"An image of default, alert, warning, info and success chips";
 
 const dont1Instructions =
-  "Do not mix the type to achieve specific colors, or use the another state as the default.";
+	"Do not mix the type to achieve specific colors, or use the another state as the default.";
 const dontImg1AltText = "An image of three info chips arranged horizontally";
 
 const do2Instructions =
-  "Add an icon to a chip if it will help the user to understand the attached function.";
+	"Add an icon to a chip if it will help the user to understand the attached function.";
 const doImg2AltText = "An image of three chips with icons";
 
 const dont2Instructions =
-  "Do not use icons for decoration. If it has no value, leave it out.";
+	"Do not use icons for decoration. If it has no value, leave it out.";
 const dontImg2AltText = "An image of chips with icons used for decoration";
 
 const do3Instructions =
-  "Use expandable chips to allow the user to change the value of the chip.";
+	"Use expandable chips to allow the user to change the value of the chip.";
 const doImg3AltText =
-  "An image of an expandable chip triggering a dropdown menu";
+	"An image of an expandable chip triggering a dropdown menu";
 
 const dont3Instructions =
-  "Do not use expandable chips in place of form fields or buttons.";
+	"Do not use expandable chips in place of form fields or buttons.";
 const dontImg3AltText = "An image of a chip used in place of a form element'";
 ---
 

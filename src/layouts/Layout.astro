@@ -1,13 +1,13 @@
 ---
 export interface Props {
-  title: string;
+	title: string;
 }
 
 import { NeoThemeProvider } from "@avaya/neo-react";
 
 import { ViewTransitions } from "astro:transitions";
 
-import { SiteHeader, SiteFooter, DynamicTheme } from "components";
+import { DynamicTheme, SiteFooter, SiteHeader } from "components";
 
 import LeftPanel from "./LeftPanel.astro";
 
@@ -20,44 +20,44 @@ import "@avaya/neo-react/avaya-neo-react.css";
 const userAgentString = Astro.request.headers.get("user-agent");
 
 const userAgent = userAgentString?.toLowerCase().includes("mac")
-  ? "macos"
-  : "windows";
+	? "macos"
+	: "windows";
 
 const { title } = Astro.props as Props;
 
 const { pathname } = Astro.url;
 
 const pages = getPagesInOrder(
-  (await Astro.glob<PageAstroInstance>("../**/*.astro"))
-    .filter((page) => page.title)
-    .map(({ title, keywords, order, ...rest }) => ({
-      ...rest,
-      title,
-      keywords,
-      order,
-    })),
+	(await Astro.glob<PageAstroInstance>("../**/*.astro"))
+		.filter((page) => page.title)
+		.map(({ title, keywords, order, ...rest }) => ({
+			...rest,
+			title,
+			keywords,
+			order,
+		})),
 );
 
 let leftNavPages: PageAstroInstance[] = [];
 switch (pathname.split("/")[1]) {
-  case "accessibility":
-    leftNavPages = pages.accessibility;
-    break;
+	case "accessibility":
+		leftNavPages = pages.accessibility;
+		break;
 
-  case "components":
-    leftNavPages = pages.components;
-    break;
+	case "components":
+		leftNavPages = pages.components;
+		break;
 
-  case "docs":
-    leftNavPages = pages.docs;
-    break;
+	case "docs":
+		leftNavPages = pages.docs;
+		break;
 
-  case "guidelines":
-    leftNavPages = pages.guidelines;
-    break;
+	case "guidelines":
+		leftNavPages = pages.guidelines;
+		break;
 
-  default: // icons and homepage
-    break;
+	default: // icons and homepage
+		break;
 }
 ---
 
@@ -76,7 +76,6 @@ switch (pathname.split("/")[1]) {
         function () {
           (window.cronitor.q = window.cronitor.q || []).push(arguments);
         };
-      // eslint-disable-next-line no-undef
       cronitor("config", { clientKey: "7a4551f7269f527ea46053a3f21302fa" });
     </script>
 

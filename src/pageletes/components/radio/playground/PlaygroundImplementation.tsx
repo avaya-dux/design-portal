@@ -8,7 +8,7 @@ import { prettyPrintHtml, prettyPrintReact } from "helpers";
 
 const sandbox = "https://codesandbox.io/s/neo-react-radio-group-d5l4uz";
 const storybook =
-  "https://neo-react-library-storybook.netlify.app/?path=/story/components-radio-group";
+	"https://neo-react-library-storybook.netlify.app/?path=/story/components-radio-group";
 
 const defaultHtml = prettyPrintHtml(`
 <form class="neo-form">
@@ -66,25 +66,25 @@ const defaultReact = prettyPrintReact(`
   `);
 
 export const PlaygroundImplementation = () => {
-  const [withLabel, setWithLabel] = useState<string>("withLabel");
+	const [withLabel, setWithLabel] = useState<string>("withLabel");
 
-  const [isVertical, setIsVertical] = useState<string>("isVertical");
+	const [isVertical, setIsVertical] = useState<string>("isVertical");
 
-  const [selectedExampleRadio, setSelectedExampleRadio] = useState<string>("");
+	const [selectedExampleRadio, setSelectedExampleRadio] = useState<string>("");
 
-  const [react, html] = useMemo(() => {
-    const isDefault =
-      withLabel === "withLabel" &&
-      isVertical === "isVertical" &&
-      selectedExampleRadio === "";
+	const [react, html] = useMemo(() => {
+		const isDefault =
+			withLabel === "withLabel" &&
+			isVertical === "isVertical" &&
+			selectedExampleRadio === "";
 
-    const labelAttr =
-      withLabel === "withLabel" ? "label='Select Option'" : undefined;
+		const labelAttr =
+			withLabel === "withLabel" ? "label='Select Option'" : undefined;
 
-    const inlineAttr = isVertical === "isNotVertical" ? "inline" : undefined;
+		const inlineAttr = isVertical === "isNotVertical" ? "inline" : undefined;
 
-    const reactCode = prettyPrintReact(
-      `
+		const reactCode = prettyPrintReact(
+			`
 <Form id="radio-form">
   <RadioGroup
     ${clsx("groupName='Default Radio Group'", labelAttr, inlineAttr)}
@@ -97,20 +97,20 @@ export const PlaygroundImplementation = () => {
   </RadioGroup>
 </Form>
 `,
-    );
+		);
 
-    const htmlCode = prettyPrintHtml(
-      `
+		const htmlCode = prettyPrintHtml(
+			`
       <form class="neo-form">
   <div class="neo-form-control">
     <div class="neo-input-group${
-      isVertical === "isNotVertical" ? "neo-input-group--inline" : ""
-    }">
+			isVertical === "isNotVertical" ? "neo-input-group--inline" : ""
+		}">
       ${
-        withLabel === "withLabel"
-          ? '<label for="Default Radio Group">Select Option</label>'
-          : ""
-      }
+				withLabel === "withLabel"
+					? '<label for="Default Radio Group">Select Option</label>'
+					: ""
+			}
       <input
         class="neo-radio"
         type="radio"
@@ -145,61 +145,61 @@ export const PlaygroundImplementation = () => {
   </div>
 </form>
 `,
-    );
+		);
 
-    return isDefault ? [defaultReact, defaultHtml] : [reactCode, htmlCode];
-  }, [isVertical, withLabel, selectedExampleRadio]);
+		return isDefault ? [defaultReact, defaultHtml] : [reactCode, htmlCode];
+	}, [isVertical, withLabel, selectedExampleRadio]);
 
-  return (
-    <Playground
-      options={
-        <Playground.OptionsContainer>
-          <Playground.OptionsSection title="Label">
-            <RadioGroup
-              groupName="label"
-              selected={withLabel}
-              onChange={(e) => {
-                setWithLabel(e.target.value);
-              }}
-            >
-              <Radio value="withLabel">With Label</Radio>
-              <Radio value="withoutLabel">Without Label</Radio>
-            </RadioGroup>
-          </Playground.OptionsSection>
-          <Playground.OptionsSection title="Orientation">
-            <RadioGroup
-              groupName="options"
-              selected={isVertical}
-              onChange={(e) => {
-                setIsVertical(e.target.value);
-              }}
-            >
-              <Radio value="isVertical">Vertical</Radio>
-              <Radio value="isNotVertical">Horizontal</Radio>
-            </RadioGroup>
-          </Playground.OptionsSection>
-        </Playground.OptionsContainer>
-      }
-      examples={{
-        html,
-        react,
-        sandbox,
-        storybook,
-      }}
-    >
-      <Form id="radio-form">
-        <RadioGroup
-          groupName="Select Option"
-          label={withLabel === "withLabel"}
-          inline={isVertical === "isNotVertical"}
-          selected={selectedExampleRadio}
-          onChange={(e) => setSelectedExampleRadio(e.target.value)}
-        >
-          <Radio value="Calendar">Calendar</Radio>
-          <Radio value="Calculator">Calculator</Radio>
-          <Radio value="Notes">Notes</Radio>
-        </RadioGroup>
-      </Form>
-    </Playground>
-  );
+	return (
+		<Playground
+			options={
+				<Playground.OptionsContainer>
+					<Playground.OptionsSection title="Label">
+						<RadioGroup
+							groupName="label"
+							selected={withLabel}
+							onChange={(e) => {
+								setWithLabel(e.target.value);
+							}}
+						>
+							<Radio value="withLabel">With Label</Radio>
+							<Radio value="withoutLabel">Without Label</Radio>
+						</RadioGroup>
+					</Playground.OptionsSection>
+					<Playground.OptionsSection title="Orientation">
+						<RadioGroup
+							groupName="options"
+							selected={isVertical}
+							onChange={(e) => {
+								setIsVertical(e.target.value);
+							}}
+						>
+							<Radio value="isVertical">Vertical</Radio>
+							<Radio value="isNotVertical">Horizontal</Radio>
+						</RadioGroup>
+					</Playground.OptionsSection>
+				</Playground.OptionsContainer>
+			}
+			examples={{
+				html,
+				react,
+				sandbox,
+				storybook,
+			}}
+		>
+			<Form id="radio-form">
+				<RadioGroup
+					groupName="Select Option"
+					label={withLabel === "withLabel"}
+					inline={isVertical === "isNotVertical"}
+					selected={selectedExampleRadio}
+					onChange={(e) => setSelectedExampleRadio(e.target.value)}
+				>
+					<Radio value="Calendar">Calendar</Radio>
+					<Radio value="Calculator">Calculator</Radio>
+					<Radio value="Notes">Notes</Radio>
+				</RadioGroup>
+			</Form>
+		</Playground>
+	);
 };

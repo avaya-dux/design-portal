@@ -7,34 +7,34 @@ import { filteredPagesMockData } from "components/react/utils/shared-mocks";
 import { TopNavSearchResults } from "./TopNavSearchResults";
 
 describe("TopNavSearchResults", () => {
-  it("renders without exploding", () => {
-    render(<TopNavSearchResults options={filteredPagesMockData} />);
+	it("renders without exploding", () => {
+		render(<TopNavSearchResults options={filteredPagesMockData} />);
 
-    const allLinkElements = screen.getAllByRole("link");
-    expect(allLinkElements).toBeTruthy();
-  });
+		const allLinkElements = screen.getAllByRole("link");
+		expect(allLinkElements).toBeTruthy();
+	});
 
-  it("responds correctly to keyboard navigation", async () => {
-    const { getAllByRole } = render(
-      <TopNavSearchResults options={filteredPagesMockData} />,
-    );
+	it("responds correctly to keyboard navigation", async () => {
+		const { getAllByRole } = render(
+			<TopNavSearchResults options={filteredPagesMockData} />,
+		);
 
-    const rootElement = getAllByRole("link");
+		const rootElement = getAllByRole("link");
 
-    await userEvent.keyboard("{arrowdown}");
+		await userEvent.keyboard("{arrowdown}");
 
-    expect(rootElement[0]).toHaveFocus();
+		expect(rootElement[0]).toHaveFocus();
 
-    await userEvent.keyboard("{arrowup}");
+		await userEvent.keyboard("{arrowup}");
 
-    expect(rootElement[rootElement.length - 1]).toHaveFocus();
-  });
+		expect(rootElement[rootElement.length - 1]).toHaveFocus();
+	});
 
-  it("passes basic accessibility compliance", async () => {
-    const { container } = render(
-      <TopNavSearchResults options={filteredPagesMockData} />,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
+	it("passes basic accessibility compliance", async () => {
+		const { container } = render(
+			<TopNavSearchResults options={filteredPagesMockData} />,
+		);
+		const results = await axe(container);
+		expect(results).toHaveNoViolations();
+	});
 });

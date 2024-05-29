@@ -2,29 +2,29 @@
 export const title = "Tooltip";
 export const keywords = "Tooltip components";
 
-import { Layout } from "layouts";
 import { RelatedContent } from "components/astro";
+import { Layout } from "layouts";
 import {
-  Anatomy,
-  Behavior,
-  Intro,
-  KeyboardInteractions,
-  Playground,
-  Positioning,
-  Specs,
+	Anatomy,
+	Behavior,
+	Intro,
+	KeyboardInteractions,
+	Playground,
+	Positioning,
+	Specs,
 } from "pageletes/components/tooltip";
 
-import { topics } from "pageletes/components/tooltip/static";
 import type { SectionWithLinks } from "components/astro/RelatedContent.astro";
+import { topics } from "pageletes/components/tooltip/static";
 
 const sections: SectionWithLinks[] = [
-  {
-    title: "Components",
-    links: [
-      { title: "Button", href: "/components/buttons" },
-      { title: "Header", href: "/components/header" },
-    ],
-  },
+	{
+		title: "Components",
+		links: [
+			{ title: "Button", href: "/components/buttons" },
+			{ title: "Header", href: "/components/header" },
+		],
+	},
 ];
 ---
 

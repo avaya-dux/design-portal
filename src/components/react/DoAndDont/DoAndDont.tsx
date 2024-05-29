@@ -5,13 +5,13 @@ import parse from "html-react-parser";
 import "./DoAndDont.css";
 
 export interface InstructionProps {
-  children: React.ReactNode;
-  instructions: string;
+	children: React.ReactNode;
+	instructions: string;
 }
 
 export interface DoAndDontProps {
-  children: React.ReactElement<InstructionProps>[];
-  size?: "normal" | "no-ratio" | "wide";
+	children: React.ReactElement<InstructionProps>[];
+	size?: "normal" | "no-ratio" | "wide";
 }
 
 /**
@@ -46,59 +46,59 @@ export interface DoAndDontProps {
  * @see `DoAndDont/DoAndDont.stories.tsx` for more details and examples.
  */
 export const DoAndDont = ({ children, size = "no-ratio" }: DoAndDontProps) => (
-  <div
-    className={clsx(
-      "do-and-dont-container",
-      size === "wide" && "do-and-dont-container-wide",
-      size == "no-ratio" && "do-and-dont-container-no-ratio",
-    )}
-  >
-    {children}
-  </div>
+	<div
+		className={clsx(
+			"do-and-dont-container",
+			size === "wide" && "do-and-dont-container-wide",
+			size == "no-ratio" && "do-and-dont-container-no-ratio",
+		)}
+	>
+		{children}
+	</div>
 );
 
 const DoContainer = ({ children, instructions }: InstructionProps) => (
-  <div className="do-and-dont-example-item">
-    <div className="do-and-dont-example-content do-and-dont-example-content-do">
-      <Icon
-        aria-hidden="true"
-        aria-label="check mark icon"
-        className="do-and-dont-check-mark"
-        icon="available-filled"
-        size="lg"
-      />
+	<div className="do-and-dont-example-item">
+		<div className="do-and-dont-example-content do-and-dont-example-content-do">
+			<Icon
+				aria-hidden="true"
+				aria-label="check mark icon"
+				className="do-and-dont-check-mark"
+				icon="available-filled"
+				size="lg"
+			/>
 
-      {children}
-    </div>
+			{children}
+		</div>
 
-    <p className="do-and-dont-paragraph">
-      <b aria-hidden="true">DO:</b> <>{parse(instructions)}</>
-    </p>
-  </div>
+		<p className="do-and-dont-paragraph">
+			<b aria-hidden="true">DO:</b> <>{parse(instructions)}</>
+		</p>
+	</div>
 );
 
 const DontContainer = ({ children, instructions }: InstructionProps) => (
-  <div className="do-and-dont-example-item">
-    <div className="do-and-dont-example-content do-and-dont-example-content-dont">
-      <Icon
-        aria-hidden="true"
-        className="do-and-dont-missed-filled"
-        icon="missed-filled"
-        aria-label="error icon"
-        size="lg"
-      />
+	<div className="do-and-dont-example-item">
+		<div className="do-and-dont-example-content do-and-dont-example-content-dont">
+			<Icon
+				aria-hidden="true"
+				className="do-and-dont-missed-filled"
+				icon="missed-filled"
+				aria-label="error icon"
+				size="lg"
+			/>
 
-      {children}
-    </div>
+			{children}
+		</div>
 
-    <p className="do-and-dont-paragraph">
-      <b aria-hidden="true">DON'T:</b> <>{parse(instructions)}</>
-    </p>
-  </div>
+		<p className="do-and-dont-paragraph">
+			<b aria-hidden="true">DON'T:</b> <>{parse(instructions)}</>
+		</p>
+	</div>
 );
 
 const ImageExampleContainer = ({ children }: { children: React.ReactNode }) => (
-  <div className="do-and-dont-example-content-image">{children}</div>
+	<div className="do-and-dont-example-content-image">{children}</div>
 );
 
 DoAndDont.DoContainer = DoContainer;

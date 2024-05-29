@@ -5,141 +5,141 @@ import { axe } from "jest-axe";
 import { cleanStores, keepMount } from "nanostores";
 
 import {
-  isLeftNavigationOpen,
-  themesToFilterFor,
+	isLeftNavigationOpen,
+	themesToFilterFor,
 } from "components/react/utils/layoutState";
 
-import {
-  categoriesToFilterFor,
-  variationsToFilterFor,
-} from "./helpers/iconPageState";
 import { IconFilters } from "./IconFilters";
+import {
+	categoriesToFilterFor,
+	variationsToFilterFor,
+} from "./helpers/iconPageState";
 
 describe("Icon filters panel", () => {
-  it("renders without exploding", () => {
-    render(<IconFilters categories={IconCategories} />);
+	it("renders without exploding", () => {
+		render(<IconFilters categories={IconCategories} />);
 
-    const iconFilterPanelElement = screen.getByRole("presentation");
+		const iconFilterPanelElement = screen.getByRole("presentation");
 
-    expect(iconFilterPanelElement).toBeInTheDocument();
-  });
+		expect(iconFilterPanelElement).toBeInTheDocument();
+	});
 
-  describe("filtering works correctly", () => {
-    beforeEach(() => {
-      render(<IconFilters categories={IconCategories} />);
-    });
+	describe("filtering works correctly", () => {
+		beforeEach(() => {
+			render(<IconFilters categories={IconCategories} />);
+		});
 
-    it("filters categories correctly", async () => {
-      keepMount(categoriesToFilterFor);
+		it("filters categories correctly", async () => {
+			keepMount(categoriesToFilterFor);
 
-      let categories = categoriesToFilterFor.get();
+			let categories = categoriesToFilterFor.get();
 
-      expect(categories.length).toBe(0);
+			expect(categories.length).toBe(0);
 
-      const categoryToFilterFor = IconCategories[0];
+			const categoryToFilterFor = IconCategories[0];
 
-      const categoryCheckbox = screen.getByText(categoryToFilterFor as string);
+			const categoryCheckbox = screen.getByText(categoryToFilterFor as string);
 
-      await userEvent.click(categoryCheckbox);
+			await userEvent.click(categoryCheckbox);
 
-      categories = categoriesToFilterFor.get();
+			categories = categoriesToFilterFor.get();
 
-      expect(categories).toContain(categoryToFilterFor);
+			expect(categories).toContain(categoryToFilterFor);
 
-      cleanStores(categoriesToFilterFor);
-    });
+			cleanStores(categoriesToFilterFor);
+		});
 
-    it("filters variations correctly", async () => {
-      keepMount(variationsToFilterFor);
+		it("filters variations correctly", async () => {
+			keepMount(variationsToFilterFor);
 
-      const variationToFilterFor = "Animated";
+			const variationToFilterFor = "Animated";
 
-      let filteredVariations = variationsToFilterFor.get();
+			let filteredVariations = variationsToFilterFor.get();
 
-      expect(filteredVariations.length).toBe(0);
+			expect(filteredVariations.length).toBe(0);
 
-      const variationCheckbox = screen.getByText(variationToFilterFor);
+			const variationCheckbox = screen.getByText(variationToFilterFor);
 
-      await userEvent.click(variationCheckbox);
+			await userEvent.click(variationCheckbox);
 
-      filteredVariations = variationsToFilterFor.get();
+			filteredVariations = variationsToFilterFor.get();
 
-      expect(filteredVariations).toContain(variationToFilterFor.toLowerCase());
+			expect(filteredVariations).toContain(variationToFilterFor.toLowerCase());
 
-      cleanStores(variationsToFilterFor);
-    });
+			cleanStores(variationsToFilterFor);
+		});
 
-    it("filters themes correctly", async () => {
-      keepMount(themesToFilterFor);
+		it("filters themes correctly", async () => {
+			keepMount(themesToFilterFor);
 
-      const themeToFilterFor = "Light";
+			const themeToFilterFor = "Light";
 
-      const themeCheckbox = screen.getByText(themeToFilterFor);
+			const themeCheckbox = screen.getByText(themeToFilterFor);
 
-      await userEvent.click(themeCheckbox);
+			await userEvent.click(themeCheckbox);
 
-      const filteredThemes = themesToFilterFor.get();
+			const filteredThemes = themesToFilterFor.get();
 
-      expect(filteredThemes).toContain(themeToFilterFor.toLowerCase());
+			expect(filteredThemes).toContain(themeToFilterFor.toLowerCase());
 
-      cleanStores(themesToFilterFor);
-    });
+			cleanStores(themesToFilterFor);
+		});
 
-    it("resets filtered categories correctly", async () => {
-      keepMount(categoriesToFilterFor);
+		it("resets filtered categories correctly", async () => {
+			keepMount(categoriesToFilterFor);
 
-      const categoryToFilterFor = "navigation";
+			const categoryToFilterFor = "navigation";
 
-      act(() => {
-        categoriesToFilterFor.set([categoryToFilterFor]);
-      });
+			act(() => {
+				categoriesToFilterFor.set([categoryToFilterFor]);
+			});
 
-      let categories = categoriesToFilterFor.get();
+			let categories = categoriesToFilterFor.get();
 
-      expect(categories).toContain(categoryToFilterFor);
+			expect(categories).toContain(categoryToFilterFor);
 
-      const selectAllRadio = screen.getByText("Select All");
+			const selectAllRadio = screen.getByText("Select All");
 
-      await userEvent.click(selectAllRadio);
+			await userEvent.click(selectAllRadio);
 
-      categories = categoriesToFilterFor.get();
+			categories = categoriesToFilterFor.get();
 
-      expect(categories.length).toBe(0);
+			expect(categories.length).toBe(0);
 
-      cleanStores(categoriesToFilterFor);
-    });
-  });
+			cleanStores(categoriesToFilterFor);
+		});
+	});
 
-  it("toggles classes in response to isOpen state", async () => {
-    keepMount(isLeftNavigationOpen);
-    const user = userEvent.setup();
+	it("toggles classes in response to isOpen state", async () => {
+		keepMount(isLeftNavigationOpen);
+		const user = userEvent.setup();
 
-    const { container } = render(<IconFilters categories={IconCategories} />);
+		const { container } = render(<IconFilters categories={IconCategories} />);
 
-    const parentElement = container.querySelector("aside");
+		const parentElement = container.querySelector("aside");
 
-    expect(parentElement?.classList.toString()).not.toContain(
-      "icon-filters--active",
-    );
+		expect(parentElement?.classList.toString()).not.toContain(
+			"icon-filters--active",
+		);
 
-    const btn = screen.getByLabelText("Toggle filters");
+		const btn = screen.getByLabelText("Toggle filters");
 
-    await user.click(btn);
-    expect(parentElement?.classList.toString()).toContain(
-      "icon-filters--active",
-    );
+		await user.click(btn);
+		expect(parentElement?.classList.toString()).toContain(
+			"icon-filters--active",
+		);
 
-    await user.click(btn);
-    expect(parentElement?.classList.toString()).toContain(
-      "icon-filters--hidden",
-    );
+		await user.click(btn);
+		expect(parentElement?.classList.toString()).toContain(
+			"icon-filters--hidden",
+		);
 
-    cleanStores(isLeftNavigationOpen);
-  });
+		cleanStores(isLeftNavigationOpen);
+	});
 
-  it("passes basic axe compliance", async () => {
-    const { container } = render(<IconFilters categories={IconCategories} />);
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
+	it("passes basic axe compliance", async () => {
+		const { container } = render(<IconFilters categories={IconCategories} />);
+		const results = await axe(container);
+		expect(results).toHaveNoViolations();
+	});
 });

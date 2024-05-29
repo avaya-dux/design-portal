@@ -1,9 +1,9 @@
 import { createHtmlString, createReactString } from "./helper";
 
 describe("helper functions", () => {
-  describe("createHtmlString", () => {
-    it("should have correct output", () => {
-      expect(createHtmlString(true, "rectangle", "md")).toMatchInlineSnapshot(`
+	describe("createHtmlString", () => {
+		it("should have correct output", () => {
+			expect(createHtmlString(true, "rectangle", "md")).toMatchInlineSnapshot(`
         "<div
           aria-busy="true"
           aria-live="polite"
@@ -12,13 +12,13 @@ describe("helper functions", () => {
         >
         </div>"
       `);
-    });
-  });
-  describe("createReactString", () => {
-    it("should have correct output", () => {
-      expect(createReactString(true, "rectangle", "md")).toMatchInlineSnapshot(
-        '"<Shimmer loopInfinitely />"',
-      );
-    });
-  });
+		});
+	});
+	describe("createReactString", () => {
+		it("should have correct output", () => {
+			expect(createReactString(true, "rectangle", "md")).toMatchInlineSnapshot(
+				'"<Shimmer loopInfinitely />"',
+			);
+		});
+	});
 });

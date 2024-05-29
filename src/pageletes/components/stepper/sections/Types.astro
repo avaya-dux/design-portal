@@ -1,28 +1,28 @@
 ---
 import { Image } from "@avaya/neo-react";
-import {
-  Description,
-  PageleteSection,
-  SectionHeader,
-  PageleteSubSection,
-  SubHeader,
-  ImageWrapper,
-} from "components/astro";
 import { DoAndDont } from "components";
+import {
+	Description,
+	ImageWrapper,
+	PageleteSection,
+	PageleteSubSection,
+	SectionHeader,
+	SubHeader,
+} from "components/astro";
 
 import { topics } from "../static";
 const { id, title } = topics.types;
 
-import image1 from "../imgs/stepper-type-1.svg";
 import image2 from "../imgs/stepper-non-editable-1.svg";
+import image1 from "../imgs/stepper-type-1.svg";
 
 import imageDo from "../imgs/stepper-type-non-editable-do-1.svg";
 const imageDoAltText =
-  "Indicate the user's progress through the stepper with the appropriate state icons and connectors.";
+	"Indicate the user's progress through the stepper with the appropriate state icons and connectors.";
 
 import imageDont from "../imgs/stepper-type-non-editable-dont-1.svg";
 const imageDontAltText =
-  "Do not use any other icons or visual elements that may distract or confuse the user.";
+	"Do not use any other icons or visual elements that may distract or confuse the user.";
 ---
 
 <PageleteSection>

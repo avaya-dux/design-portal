@@ -1,12 +1,12 @@
 ---
 export interface Props {
-  type?:
-    | "upper-alpha"
-    | "disc"
-    | "decimal"
-    | "'– '" // "'– '" === "'&ndash; '" === U+2013
-    | "none";
-  fontSize?: string;
+	type?:
+		| "upper-alpha"
+		| "disc"
+		| "decimal"
+		| "'– '" // "'– '" === "'&ndash; '" === U+2013
+		| "none";
+	fontSize?: string;
 }
 
 const { type = "'– '", fontSize = "1rem" } = Astro.props as Props;

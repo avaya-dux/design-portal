@@ -1,20 +1,20 @@
 ---
 import clsx from "clsx";
 export interface Props {
-  showBorders?: boolean;
-  isShaded?: boolean;
-  marginTop?: string;
-  marginBottom?: string;
-  padding?: string;
-  isRounded?: boolean;
+	showBorders?: boolean;
+	isShaded?: boolean;
+	marginTop?: string;
+	marginBottom?: string;
+	padding?: string;
+	isRounded?: boolean;
 }
 const {
-  isShaded = false,
-  showBorders = true,
-  marginTop = "3rem",
-  marginBottom = "1.5rem",
-  padding = "2.5rem 1.5rem",
-  isRounded = true,
+	isShaded = false,
+	showBorders = true,
+	marginTop = "3rem",
+	marginBottom = "1.5rem",
+	padding = "2.5rem 1.5rem",
+	isRounded = true,
 } = Astro.props as Props;
 ---
 

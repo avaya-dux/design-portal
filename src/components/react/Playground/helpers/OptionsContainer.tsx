@@ -51,41 +51,41 @@ import "./Options.css";
   </Playground>
  */
 export const OptionsContainer = ({
-  children,
-  onReset,
+	children,
+	onReset,
 }: {
-  children: React.ReactNode;
-  onReset?: () => void;
+	children: React.ReactNode;
+	onReset?: () => void;
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
+	const [isOpen, setIsOpen] = useState(false);
 
-  return (
-    <aside className="options-container">
-      <IconButton
-        aria-label="Toggle Playground Options"
-        className="toggle-all-options"
-        icon={isOpen ? "close" : "preferences"}
-        onClick={() => setIsOpen(!isOpen)}
-        variant="tertiary"
-      />
+	return (
+		<aside className="options-container">
+			<IconButton
+				aria-label="Toggle Playground Options"
+				className="toggle-all-options"
+				icon={isOpen ? "close" : "preferences"}
+				onClick={() => setIsOpen(!isOpen)}
+				variant="tertiary"
+			/>
 
-      <section
-        className="playground-options"
-        style={isOpen ? { display: "flex" } : undefined}
-      >
-        {children}
+			<section
+				className="playground-options"
+				style={isOpen ? { display: "flex" } : undefined}
+			>
+				{children}
 
-        {onReset && (
-          <Button
-            className="playground-options-reset-btn"
-            variant="secondary"
-            icon="undo"
-            onClick={onReset}
-          >
-            Reset
-          </Button>
-        )}
-      </section>
-    </aside>
-  );
+				{onReset && (
+					<Button
+						className="playground-options-reset-btn"
+						variant="secondary"
+						icon="undo"
+						onClick={onReset}
+					>
+						Reset
+					</Button>
+				)}
+			</section>
+		</aside>
+	);
 };

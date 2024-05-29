@@ -6,9 +6,9 @@ import type { PageAstroInstance, SitePages } from "helpers/types";
 import { IconFilters } from "pageletes/icons";
 
 export interface Props {
-  allPages: SitePages;
-  leftNavPages: PageAstroInstance[];
-  isHomePage: boolean;
+	allPages: SitePages;
+	leftNavPages: PageAstroInstance[];
+	isHomePage: boolean;
 }
 const { allPages, leftNavPages, isHomePage } = Astro.props;
 const { pathname } = Astro.url;
