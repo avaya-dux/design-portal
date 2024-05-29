@@ -48,7 +48,7 @@ export const PlaygroundImplementation = () => {
 		<Playground
 			options={
 				<Playground.OptionsContainer>
-					<Playground.OptionsSection title="Pagination Options"></Playground.OptionsSection>
+					<Playground.OptionsSection title="Pagination Options" />
 				</Playground.OptionsContainer>
 			}
 			examples={{

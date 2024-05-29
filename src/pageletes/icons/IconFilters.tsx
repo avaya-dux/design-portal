@@ -204,7 +204,7 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
 				id="icon-filter-scrim"
 				onClick={() => setIsIconFiltersOpen(false)}
 				role="presentation"
-			></div>
+			/>
 		</>
 	);
 };

@@ -21,10 +21,7 @@ export const PlaygroundImplementation = () => {
 	const [formStyle, setFormStyle] = useState<InlineType>("normal");
 	const [element, react, html] = useMemo(() => {
 		const element = (
-			<Form
-				aria-label="Playground form"
-				inline={formStyle === "inline" ? true : false}
-			>
+			<Form aria-label="Playground form" inline={formStyle === "inline"}>
 				<TextInput
 					label="Name"
 					clearable

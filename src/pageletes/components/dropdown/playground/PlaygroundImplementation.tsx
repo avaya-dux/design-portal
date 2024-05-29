@@ -150,7 +150,8 @@ export const PlaygroundImplementation = () => {
 				)}
 				{dropdownType === "avatar" ? (
 					<MenuItem>
-						<Avatar size="sm"></Avatar>Option 3
+						<Avatar size="sm" />
+						Option 3
 					</MenuItem>
 				) : (
 					<MenuItem>Option 3</MenuItem>

@@ -124,7 +124,7 @@ export const LeftNavigation = ({
 				id="left-navigation-scrim"
 				onClick={() => isLeftNavigationOpen.set(false)}
 				role="presentation"
-			></div>
+			/>
 		</>
 	);
 };
@@ -169,7 +169,7 @@ const LeftNavigationTopElement = ({
 					aria-label="close left navigation"
 					onClick={() => isLeftNavigationOpen.set(false)}
 					ref={closeButtonRef}
-				></button>
+				/>
 			</div>
 		</div>
 	);

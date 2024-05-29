@@ -26,9 +26,11 @@ export const filterIconsWithVariations = (
 		filteredVariations.includes("animated")
 	) {
 		return icons.filter((icon) => icon.bidirectional && icon.animated);
-	} else if (filteredVariations.includes("animated")) {
+	}
+	if (filteredVariations.includes("animated")) {
 		return icons.filter((icon) => icon.animated);
-	} else if (filteredVariations.includes("bidirectional")) {
+	}
+	if (filteredVariations.includes("bidirectional")) {
 		return icons.filter((icon) => icon.bidirectional);
 	}
 

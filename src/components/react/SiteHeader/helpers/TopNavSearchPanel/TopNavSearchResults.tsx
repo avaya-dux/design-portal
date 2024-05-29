@@ -68,9 +68,9 @@ export const TopNavSearchResults = ({ options }: TopNavSearchResultsProps) => {
 					// May not be needed pending feedback from Matt
 					onFocus={(event) => {
 						if (
-							indexToFocus != undefined &&
+							indexToFocus !== undefined &&
 							anchorRefs[indexToFocus] &&
-							event.target != anchorRefs[indexToFocus]?.current
+							event.target !== anchorRefs[indexToFocus]?.current
 						)
 							setIndexToFocus(i);
 

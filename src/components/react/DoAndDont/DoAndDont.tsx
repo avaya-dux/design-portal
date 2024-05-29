@@ -50,7 +50,7 @@ export const DoAndDont = ({ children, size = "no-ratio" }: DoAndDontProps) => (
 		className={clsx(
 			"do-and-dont-container",
 			size === "wide" && "do-and-dont-container-wide",
-			size == "no-ratio" && "do-and-dont-container-no-ratio",
+			size === "no-ratio" && "do-and-dont-container-no-ratio",
 		)}
 	>
 		{children}
@@ -72,7 +72,7 @@ const DoContainer = ({ children, instructions }: InstructionProps) => (
 		</div>
 
 		<p className="do-and-dont-paragraph">
-			<b aria-hidden="true">DO:</b> <>{parse(instructions)}</>
+			<b>DO:</b> {parse(instructions)}
 		</p>
 	</div>
 );
@@ -92,7 +92,7 @@ const DontContainer = ({ children, instructions }: InstructionProps) => (
 		</div>
 
 		<p className="do-and-dont-paragraph">
-			<b aria-hidden="true">DON'T:</b> <>{parse(instructions)}</>
+			<b>DON'T:</b> {parse(instructions)}
 		</p>
 	</div>
 );

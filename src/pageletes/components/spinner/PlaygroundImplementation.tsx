@@ -53,7 +53,7 @@ export const PlaygroundImplementation = () => {
 					storybook,
 				}}
 			>
-				<Spinner size={size || "md"}></Spinner>
+				<Spinner size={size || "md"} />
 			</Playground>
 		</div>
 	);

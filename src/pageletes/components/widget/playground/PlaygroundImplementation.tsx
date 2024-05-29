@@ -38,11 +38,11 @@ export const PlaygroundImplementation = () => {
 				case "button":
 					return <Button>Button</Button>;
 				case "iconbutton":
-					return <IconButton aria-label="add item" icon="add"></IconButton>;
+					return <IconButton aria-label="add item" icon="add" />;
 				case "inputs":
 					return <TextInput aria-label="widget input" />;
 				case "switch":
-					return <Switch aria-label="switch input"></Switch>;
+					return <Switch aria-label="switch input" />;
 				default:
 					return "";
 			}

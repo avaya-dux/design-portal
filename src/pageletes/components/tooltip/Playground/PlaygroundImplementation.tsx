@@ -88,9 +88,6 @@ export const PlaygroundImplementation = () => {
 									case "right":
 										setTypeOption("multiline");
 										break;
-
-									case "top":
-									case "bottom":
 									default:
 										setTypeOption("default");
 										break;

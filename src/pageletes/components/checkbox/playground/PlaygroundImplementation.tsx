@@ -27,15 +27,14 @@ export const PlaygroundImplementation = () => {
 					<Checkbox value="three">Checkbox Label</Checkbox>
 				</>
 			);
-		} else {
-			return (
-				<>
-					<Checkbox value="one" aria-label="Checkbox Label" />
-					<Checkbox value="two" aria-label="Checkbox Label" />
-					<Checkbox value="three" aria-label="Checkbox Label" />
-				</>
-			);
 		}
+		return (
+			<>
+				<Checkbox value="one" aria-label="Checkbox Label" />
+				<Checkbox value="two" aria-label="Checkbox Label" />
+				<Checkbox value="three" aria-label="Checkbox Label" />
+			</>
+		);
 	}, [labelOption]);
 
 	const element = (

@@ -40,7 +40,7 @@ export const PlaygroundImplementation = () => {
 				props.icon = icons[Number.parseInt(id)];
 			}
 
-			return <Tab {...props}></Tab>;
+			return <Tab {...props} />;
 		},
 		[withIcon],
 	);
@@ -53,7 +53,7 @@ export const PlaygroundImplementation = () => {
 			} else {
 				props.children = <p style={{ marginLeft: "1rem" }}>content {id}</p>;
 			}
-			return <TabPanel key={id} {...props}></TabPanel>;
+			return <TabPanel key={id} {...props} />;
 		},
 		[orientation],
 	);

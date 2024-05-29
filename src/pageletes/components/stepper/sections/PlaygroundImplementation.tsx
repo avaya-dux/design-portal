@@ -41,10 +41,10 @@ export const PlaygroundImplementation = () => {
 		const filteredSteps = steps.map((step) => {
 			const newStep = { ...step };
 			if (!showTitle) {
-				delete newStep.title;
+				newStep.title = undefined;
 			}
 			if (!showDescription) {
-				delete newStep.description;
+				newStep.description = undefined;
 			}
 			return newStep;
 		});

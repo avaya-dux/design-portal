@@ -17,7 +17,7 @@ export const PlaygroundImplementation = () => {
 	const badgeContent = useMemo(() => {
 		if (badgeType === "icon")
 			return <Icon icon="customer" aria-label="customer icon" />;
-		else return "Badge with Text";
+		return "Badge with Text";
 	}, [badgeType]);
 
 	const [isWithIcon, reactWithIcon, reactWithText, htmlWithIcon, htmlWithText] =

@@ -83,13 +83,13 @@ export const PlaygroundImplementation = () => {
 					</Button>
 					{showToast && (
 						<div
-							className={clsx("neo-toast", `toast-playground__position--top`)}
+							className={clsx("neo-toast", "toast-playground__position--top")}
 							role="alert"
 							aria-live="polite"
 						>
-							{icon && <span className="neo-toast__icon neo-icon-info"></span>}
+							{icon && <span className="neo-toast__icon neo-icon-info" />}
 							<div className="neo-toast__message">
-								{icon ? `This is a toast with an icon` : `This is a toast`}
+								{icon ? "This is a toast with an icon" : "This is a toast"}
 							</div>
 						</div>
 					)}
