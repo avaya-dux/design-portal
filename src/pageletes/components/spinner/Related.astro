@@ -4,27 +4,27 @@ import type { SectionWithLinks } from "components/astro/RelatedContent.astro";
 
 import { topics } from "./static";
 const {
-  related: { id, title },
+	related: { id, title },
 } = topics;
 
 const sections: SectionWithLinks[] = [
-  {
-    title: "Components",
-    links: [
-      {
-        title: "Button",
-        href: "/components/buttons",
-      },
-      {
-        title: "Select",
-        href: "/components/select",
-      },
-      {
-        title: "Shimmer",
-        href: "/components/shimmer",
-      },
-    ],
-  },
+	{
+		title: "Components",
+		links: [
+			{
+				title: "Button",
+				href: "/components/buttons",
+			},
+			{
+				title: "Select",
+				href: "/components/select",
+			},
+			{
+				title: "Shimmer",
+				href: "/components/shimmer",
+			},
+		],
+	},
 ];
 ---
 

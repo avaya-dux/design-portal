@@ -1,14 +1,14 @@
 ---
 import {
-  PageleteSection,
-  PageleteSubSection,
-  SectionHeader,
+	PageleteSection,
+	PageleteSubSection,
+	SectionHeader,
 } from "components/astro";
-import Intro from "./Intro.astro";
-import ContentOverflow from "./ContentOverflow.astro";
-import TextAlignment from "./TextAlignment.astro";
 import CategoryLabels from "./CategoryLabels.astro";
-import Error from "./Error.astro";
+import ContentOverflow from "./ContentOverflow.astro";
+import ErrorComponent from "./Error.astro";
+import Intro from "./Intro.astro";
+import TextAlignment from "./TextAlignment.astro";
 
 import { topics } from "../../static";
 
@@ -16,23 +16,23 @@ const { id, title } = topics.behavior;
 ---
 
 <PageleteSection>
-  <SectionHeader id={id}>{title}</SectionHeader>
+	<SectionHeader id={id}>{title}</SectionHeader>
 
-  <Intro />
+	<Intro />
 
-  <PageleteSubSection>
-    <ContentOverflow />
-  </PageleteSubSection>
+	<PageleteSubSection>
+		<ContentOverflow />
+	</PageleteSubSection>
 
-  <PageleteSubSection>
-    <TextAlignment />
-  </PageleteSubSection>
+	<PageleteSubSection>
+		<TextAlignment />
+	</PageleteSubSection>
 
-  <PageleteSubSection>
-    <CategoryLabels />
-  </PageleteSubSection>
+	<PageleteSubSection>
+		<CategoryLabels />
+	</PageleteSubSection>
 
-  <PageleteSubSection>
-    <Error />
-  </PageleteSubSection>
+	<PageleteSubSection>
+		<ErrorComponent />
+	</PageleteSubSection>
 </PageleteSection>

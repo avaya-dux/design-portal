@@ -7,79 +7,79 @@ import { filteredPagesMockData } from "components/react/utils/shared-mocks";
 import { TopNavSearch } from ".";
 
 describe("TopNavSearch", () => {
-  it("renders without exploding", () => {
-    render(<TopNavSearch pages={filteredPagesMockData} userAgent="macos" />);
+	it("renders without exploding", () => {
+		render(<TopNavSearch pages={filteredPagesMockData} userAgent="macos" />);
 
-    const rootElement = screen.getByLabelText("Search Site");
+		const rootElement = screen.getByLabelText("Search Site");
 
-    expect(rootElement).toBeInTheDocument();
-  });
+		expect(rootElement).toBeInTheDocument();
+	});
 
-  it("responds correctly to mouse click events", async () => {
-    render(<TopNavSearch pages={filteredPagesMockData} userAgent="macos" />);
+	it("responds correctly to mouse click events", async () => {
+		render(<TopNavSearch pages={filteredPagesMockData} userAgent="macos" />);
 
-    const buttonElement = screen.getByRole("button");
+		const buttonElement = screen.getByRole("button");
 
-    const modal = screen.queryByRole("dialog");
+		const modal = screen.queryByRole("dialog");
 
-    expect(modal).not.toBeInTheDocument();
+		expect(modal).not.toBeInTheDocument();
 
-    await userEvent.click(buttonElement);
+		await userEvent.click(buttonElement);
 
-    const modalAfterClick = await screen.findByRole("dialog");
+		const modalAfterClick = await screen.findByRole("dialog");
 
-    expect(modalAfterClick).toBeInTheDocument();
+		expect(modalAfterClick).toBeInTheDocument();
 
-    await userEvent.click(document.body);
+		await userEvent.click(document.body);
 
-    const modalAfterClickAway = screen.queryByRole("dialog");
+		const modalAfterClickAway = screen.queryByRole("dialog");
 
-    expect(modalAfterClickAway).not.toBeInTheDocument();
-  });
+		expect(modalAfterClickAway).not.toBeInTheDocument();
+	});
 
-  it("responds correctly to keyboard events", async () => {
-    render(<TopNavSearch pages={filteredPagesMockData} userAgent="macos" />);
+	it("responds correctly to keyboard events", async () => {
+		render(<TopNavSearch pages={filteredPagesMockData} userAgent="macos" />);
 
-    const modal = screen.queryByRole("dialog");
+		const modal = screen.queryByRole("dialog");
 
-    expect(modal).not.toBeInTheDocument();
+		expect(modal).not.toBeInTheDocument();
 
-    await userEvent.keyboard("{Control>}");
+		await userEvent.keyboard("{Control>}");
 
-    await userEvent.keyboard("{K}");
+		await userEvent.keyboard("{K}");
 
-    const modalAfterKeydown = await screen.findByRole("dialog");
+		const modalAfterKeydown = await screen.findByRole("dialog");
 
-    expect(modalAfterKeydown).toBeInTheDocument();
+		expect(modalAfterKeydown).toBeInTheDocument();
 
-    await userEvent.keyboard("{Escape}");
+		await userEvent.keyboard("{Escape}");
 
-    const modalAfterEscapeKeyPress = screen.queryByRole("dialog");
+		const modalAfterEscapeKeyPress = screen.queryByRole("dialog");
 
-    expect(modalAfterEscapeKeyPress).not.toBeInTheDocument();
-  });
+		expect(modalAfterEscapeKeyPress).not.toBeInTheDocument();
+	});
 
-  it("displays search results when typed into modal", async () => {
-    render(<TopNavSearch pages={filteredPagesMockData} userAgent="macos" />);
+	it("displays search results when typed into modal", async () => {
+		render(<TopNavSearch pages={filteredPagesMockData} userAgent="macos" />);
 
-    const buttonElement = screen.getByRole("button");
+		const buttonElement = screen.getByRole("button");
 
-    await userEvent.click(buttonElement);
+		await userEvent.click(buttonElement);
 
-    const textInput = screen.getByRole("textbox");
+		const textInput = screen.getByRole("textbox");
 
-    await userEvent.type(textInput, "About");
+		await userEvent.type(textInput, "About");
 
-    const link = screen.getByRole("link");
+		const link = screen.getByRole("link");
 
-    expect(link).toBeInTheDocument();
-  });
+		expect(link).toBeInTheDocument();
+	});
 
-  it("passes basic axe compliance", async () => {
-    const { container } = render(
-      <TopNavSearch pages={filteredPagesMockData} userAgent="macos" />,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
+	it("passes basic axe compliance", async () => {
+		const { container } = render(
+			<TopNavSearch pages={filteredPagesMockData} userAgent="macos" />,
+		);
+		const results = await axe(container);
+		expect(results).toHaveNoViolations();
+	});
 });

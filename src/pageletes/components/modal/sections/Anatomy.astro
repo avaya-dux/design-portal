@@ -1,21 +1,21 @@
 ---
 import {
-  Description,
-  ImageWrapper,
-  PageleteSection,
-  SectionHeader,
-  CaptionInfoList,
-  InfoListItem,
+	CaptionInfoList,
+	Description,
+	ImageWrapper,
+	InfoListItem,
+	PageleteSection,
+	SectionHeader,
 } from "components/astro";
 
-import { topics } from "../static";
 import { Image } from "@avaya/neo-react";
+import { topics } from "../static";
 
 const { id, title } = topics.anatomy;
 
 import image1 from "../imgs/modal-anatomy-1.svg";
 const img1AltText =
-  "Modal with title, container, close button, content, buttons and transparent background pointed out";
+	"Modal with title, container, close button, content, buttons and transparent background pointed out";
 ---
 
 <PageleteSection>

@@ -3,65 +3,65 @@ import { act, render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
 import { cleanStores, keepMount } from "nanostores";
 
-import { variationsToFilterFor } from "./helpers/iconPageState";
 import { IconCategory } from "./IconCategory";
+import { variationsToFilterFor } from "./helpers/iconPageState";
 
 describe("IconCategory", () => {
-  const exampleCategory = "content";
+	const exampleCategory = "content";
 
-  it("renders without exploding", () => {
-    render(<IconCategory category={exampleCategory} />);
+	it("renders without exploding", () => {
+		render(<IconCategory category={exampleCategory} />);
 
-    const iconCategoryElement = screen.getByText(exampleCategory);
+		const iconCategoryElement = screen.getByText(exampleCategory);
 
-    expect(iconCategoryElement).toBeInTheDocument();
-  });
+		expect(iconCategoryElement).toBeInTheDocument();
+	});
 
-  it("responds correctly when variants are filtered for", () => {
-    keepMount(variationsToFilterFor);
+	it("responds correctly when variants are filtered for", () => {
+		keepMount(variationsToFilterFor);
 
-    render(<IconCategory category={exampleCategory} />);
+		render(<IconCategory category={exampleCategory} />);
 
-    const allIconsInCategory = NeoIcons.filter(
-      (icon) => icon.category === exampleCategory,
-    );
+		const allIconsInCategory = NeoIcons.filter(
+			(icon) => icon.category === exampleCategory,
+		);
 
-    const bidirectionalIconsInCategory = allIconsInCategory.filter(
-      (icon) => icon.bidirectional,
-    );
+		const bidirectionalIconsInCategory = allIconsInCategory.filter(
+			(icon) => icon.bidirectional,
+		);
 
-    const nonBidirectionalIconsInCategory = allIconsInCategory.filter(
-      (icon) => !icon.bidirectional,
-    );
+		const nonBidirectionalIconsInCategory = allIconsInCategory.filter(
+			(icon) => !icon.bidirectional,
+		);
 
-    allIconsInCategory.forEach((icon) => {
-      const renderedIcon = screen.queryByText(icon.name);
+		allIconsInCategory.forEach((icon) => {
+			const renderedIcon = screen.queryByText(icon.name);
 
-      expect(renderedIcon).toBeInTheDocument();
-    });
+			expect(renderedIcon).toBeInTheDocument();
+		});
 
-    act(() => {
-      variationsToFilterFor.set(["bidirectional"]);
-    });
+		act(() => {
+			variationsToFilterFor.set(["bidirectional"]);
+		});
 
-    bidirectionalIconsInCategory.forEach((icon) => {
-      const renderedIcon = screen.queryByText(icon.name);
+		bidirectionalIconsInCategory.forEach((icon) => {
+			const renderedIcon = screen.queryByText(icon.name);
 
-      expect(renderedIcon).toBeInTheDocument();
-    });
+			expect(renderedIcon).toBeInTheDocument();
+		});
 
-    nonBidirectionalIconsInCategory.forEach((icon) => {
-      const renderedIcon = screen.queryByText(icon.name);
+		nonBidirectionalIconsInCategory.forEach((icon) => {
+			const renderedIcon = screen.queryByText(icon.name);
 
-      expect(renderedIcon).not.toBeInTheDocument();
-    });
+			expect(renderedIcon).not.toBeInTheDocument();
+		});
 
-    cleanStores(variationsToFilterFor);
-  });
+		cleanStores(variationsToFilterFor);
+	});
 
-  it("passes basic axe compliance", async () => {
-    const { container } = render(<IconCategory category={exampleCategory} />);
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
+	it("passes basic axe compliance", async () => {
+		const { container } = render(<IconCategory category={exampleCategory} />);
+		const results = await axe(container);
+		expect(results).toHaveNoViolations();
+	});
 });

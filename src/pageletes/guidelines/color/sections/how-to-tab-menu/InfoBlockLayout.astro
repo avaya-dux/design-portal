@@ -2,16 +2,16 @@
 import { ImageWithCaption } from "components";
 
 export interface Props {
-  graphicIcon?: string;
-  graphicAltText?: string;
-  header?: string;
-  description?: string;
+	graphicIcon?: string;
+	graphicAltText?: string;
+	header?: string;
+	description?: string;
 }
 const {
-  graphicIcon = "no data found",
-  graphicAltText = "no data found",
-  header = "no data found",
-  description = "no data found",
+	graphicIcon = "no data found",
+	graphicAltText = "no data found",
+	header = "no data found",
+	description = "no data found",
 } = Astro.props as Props;
 ---
 

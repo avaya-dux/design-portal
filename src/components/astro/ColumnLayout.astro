@@ -1,38 +1,38 @@
 ---
 import clsx from "clsx";
 export interface Props {
-  bkgColor?: string;
-  gap?: string;
-  isShaded?: boolean;
-  marginBottom?: string;
-  marginTop?: string;
-  numOfColumns: 1 | 2 | 3 | 4;
-  showGridlines?: boolean;
-  showTopBorder?: boolean;
-  showRightBorder?: boolean;
-  isRounded?: boolean;
+	bkgColor?: string;
+	gap?: string;
+	isShaded?: boolean;
+	marginBottom?: string;
+	marginTop?: string;
+	numOfColumns: 1 | 2 | 3 | 4;
+	showGridlines?: boolean;
+	showTopBorder?: boolean;
+	showRightBorder?: boolean;
+	isRounded?: boolean;
 }
 
 const {
-  bkgColor = "transparent",
-  gap = "0",
-  isShaded = false,
-  marginTop = "3rem",
-  marginBottom = "1.5rem",
-  numOfColumns = 1,
-  showGridlines = true,
-  showTopBorder = true,
-  showRightBorder = false,
-  isRounded = true,
+	bkgColor = "transparent",
+	gap = "0",
+	isShaded = false,
+	marginTop = "3rem",
+	marginBottom = "1.5rem",
+	numOfColumns = 1,
+	showGridlines = true,
+	showTopBorder = true,
+	showRightBorder = false,
+	isRounded = true,
 } = Astro.props as Props;
 
 const borderPatternClass = clsx(
-  "variable-grid-columns",
-  showGridlines && `gridlines-enabled grid-borders-${numOfColumns}-columns`,
-  showRightBorder && "right-border",
-  !showTopBorder && "no-top-border",
-  isShaded && "column-layout--shaded",
-  !isRounded && "no-border-radius",
+	"variable-grid-columns",
+	showGridlines && `gridlines-enabled grid-borders-${numOfColumns}-columns`,
+	showRightBorder && "right-border",
+	!showTopBorder && "no-top-border",
+	isShaded && "column-layout--shaded",
+	!isRounded && "no-border-radius",
 );
 ---
 

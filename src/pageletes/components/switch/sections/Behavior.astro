@@ -2,14 +2,14 @@
 import { Image } from "@avaya/neo-react";
 
 import {
-  ColumnLayout,
-  Description,
-  DoAndDont,
-  PageleteSection,
-  PageleteSubSection,
-  SectionHeader,
-  StackedLayout,
-  SubHeader,
+	ColumnLayout,
+	Description,
+	DoAndDont,
+	PageleteSection,
+	PageleteSubSection,
+	SectionHeader,
+	StackedLayout,
+	SubHeader,
 } from "components";
 
 import { topics } from "../static";
@@ -17,8 +17,8 @@ import { topics } from "../static";
 const { id, title } = topics.behavior;
 
 import doImage1 from "../imgs/switch-behavior-do-1.svg";
-import dontImage1 from "../imgs/switch-behavior-dont-1.svg";
 import doImage2 from "../imgs/switch-behavior-do-2.svg";
+import dontImage1 from "../imgs/switch-behavior-dont-1.svg";
 import dontImage2 from "../imgs/switch-behavior-dont-2.svg";
 import labelImage1 from "../imgs/switch-behavior-label-1.svg";
 import labelImage2 from "../imgs/switch-behavior-label-2.svg";
@@ -27,23 +27,23 @@ const do1Instructions = "Use a switch for turning features on and off.";
 const doImg1AltText = "A toggled switch with the label 'Mute Audio'";
 
 const dont1Instructions =
-  "Do not use a switch for selecting items. Use the <a class='neo-link--inline' href='/components/checkbox'>Checkbox</a> instead.";
+	"Do not use a switch for selecting items. Use the <a class='neo-link--inline' href='/components/checkbox'>Checkbox</a> instead.";
 const dontImg1AltText =
-  "A toggled switch with the label 'I agree to the terms and conditions'";
+	"A toggled switch with the label 'I agree to the terms and conditions'";
 
 const do2Instructions =
-  "Add a category label to a group of related switches to connect them together.";
+	"Add a category label to a group of related switches to connect them together.";
 const doImg2AltText =
-  "A group of related switches connected by the label 'Meeting defaults'";
+	"A group of related switches connected by the label 'Meeting defaults'";
 
 const dont2Instructions = "Do not add category labels to unrelated switches.";
 const dontImg2AltText =
-  "A group of unrelated switches connected by the label 'Features Enabled'";
+	"A group of unrelated switches connected by the label 'Features Enabled'";
 
 const labelImage1AltText =
-  "A toggled switch with the label 'Option' positioned to the right";
+	"A toggled switch with the label 'Option' positioned to the right";
 const labelImage2AltText =
-  "A toggled switch with the label 'Option' positioned to the left";
+	"A toggled switch with the label 'Option' positioned to the left";
 ---
 
 <PageleteSection>

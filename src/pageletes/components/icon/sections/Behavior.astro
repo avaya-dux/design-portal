@@ -2,59 +2,59 @@
 import { Image } from "@avaya/neo-react";
 
 import {
-  ColumnLayout,
-  Description,
-  DoAndDont,
-  ImageWrapper,
-  PageleteSection,
-  PageleteSubSection,
-  SectionHeader,
-  StackedLayout,
-  SubHeader,
+	ColumnLayout,
+	Description,
+	DoAndDont,
+	ImageWrapper,
+	PageleteSection,
+	PageleteSubSection,
+	SectionHeader,
+	StackedLayout,
+	SubHeader,
 } from "components";
 
 import { topics } from "../static";
 
 const { id, title } = topics.behavior;
 
+import alignmentImage1 from "../imgs/icons-alignment-1.svg";
 import doImage1 from "../imgs/icons-color-do-1.svg";
 import dontImage1 from "../imgs/icons-color-dont-1.svg";
 import doImage2 from "../imgs/icons-label-do-1.svg";
 import doImage3 from "../imgs/icons-label-do-2.svg";
-import alignmentImage1 from "../imgs/icons-alignment-1.svg";
 
 const do1Instructions = "Use a single color for the icon and its label.";
 const doImg1AltText = "An icon and label in a single color";
 
 const dont1Instructions =
-  "Do not use different colors on the icon and the label.";
+	"Do not use different colors on the icon and the label.";
 const dontImg1AltText = "An icon and label in different colors";
 
 const do2Instructions = "Add a label next to an icon whenever possible.";
 const doImg2AltText = "Icons with corresponding labels used in a Table";
 
 const do3Instructions =
-  "If there is insufficient space to add a label, put the text into a tooltip.";
+	"If there is insufficient space to add a label, put the text into a tooltip.";
 const doImg3AltText = "An icon without a label and a Tooltip being displayed";
 
 const alignmentImage1AltText =
-  "A button and two icons aligned on the same horizontal axis";
+	"A button and two icons aligned on the same horizontal axis";
 
-import statusIndicatorsImg from "../imgs/icons-status-indicator.svg";
 import statusIndicatorDoImage from "../imgs/icons-status-do-1.svg";
 import statusIndicatorDontImage from "../imgs/icons-status-dont-1.svg";
+import statusIndicatorsImg from "../imgs/icons-status-indicator.svg";
 
 const statusIndicatorsImgAltText =
-  "A visual representation of all status indicators";
+	"A visual representation of all status indicators";
 
 const statusIndicatorDoInstructions =
-  "Use the designated color associated with each status indicator";
+	"Use the designated color associated with each status indicator";
 const statusIndcatorsDoImgAltText =
-  "An image of a phone icon with a green checkmark in the top right hand corner.";
+	"An image of a phone icon with a green checkmark in the top right hand corner.";
 const statusIndicatorDontInstructions =
-  "Do not make the status indicator and the channel icon to be the in the same color or use a different color than its designated color.";
+	"Do not make the status indicator and the channel icon to be the in the same color or use a different color than its designated color.";
 const statusIndcatorsDontImgAltText =
-  "An image of a phone icon with a red checkmark in the top right hand corner.";
+	"An image of a phone icon with a red checkmark in the top right hand corner.";
 ---
 
 <PageleteSection>

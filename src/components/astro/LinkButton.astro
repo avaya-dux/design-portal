@@ -2,17 +2,17 @@
 import clsx from "clsx";
 
 export interface Props {
-  href: string;
-  external?: boolean;
-  variant?: "primary" | "secondary" | "secondary-light" | "tertiary";
-  size?: "compact" | "default" | "wide";
+	href: string;
+	external?: boolean;
+	variant?: "primary" | "secondary" | "secondary-light" | "tertiary";
+	size?: "compact" | "default" | "wide";
 }
 
 const {
-  href,
-  external = false,
-  variant = "primary",
-  size = "default",
+	href,
+	external = false,
+	variant = "primary",
+	size = "default",
 } = Astro.props as Props;
 ---
 

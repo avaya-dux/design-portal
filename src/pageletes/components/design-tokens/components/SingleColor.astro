@@ -2,14 +2,14 @@
 import clsx from "clsx";
 
 export interface Props {
-  token?: string;
-  rgb?: string;
-  labelColor?: string;
+	token?: string;
+	rgb?: string;
+	labelColor?: string;
 }
 const {
-  token = "please specify token",
-  rgb = "please specify rgb",
-  labelColor = "#ff0000",
+	token = "please specify token",
+	rgb = "please specify rgb",
+	labelColor = "#ff0000",
 } = Astro.props as Props;
 
 const hasBorder = token.endsWith("base-0");

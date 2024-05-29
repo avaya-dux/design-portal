@@ -1,5 +1,5 @@
 export const copyTextToClipboard = async (text: string) =>
-  await navigator.clipboard.writeText(text);
+	await navigator.clipboard.writeText(text);
 
 /**
  * Disables scrolling on the window if screen size is less than mobile max
@@ -10,31 +10,31 @@ export const copyTextToClipboard = async (text: string) =>
  */
 
 export const disableScrollOnMobile = (
-  isOpen: boolean,
-  currentWidth: number,
-  mobileMaxWidth: number,
+	isOpen: boolean,
+	currentWidth: number,
+	mobileMaxWidth: number,
 ) => {
-  if (isOpen && currentWidth < mobileMaxWidth) {
-    window.scroll(0, 0);
-  }
+	if (isOpen && currentWidth < mobileMaxWidth) {
+		window.scroll(0, 0);
+	}
 };
 
 export const trapFocus = (
-  event: KeyboardEvent,
-  firstFocusableItem: HTMLElement,
-  lastFocusableItem: HTMLElement,
+	event: KeyboardEvent,
+	firstFocusableItem: HTMLElement,
+	lastFocusableItem: HTMLElement,
 ) => {
-  if (event.key !== "Tab") {
-    return;
-  }
+	if (event.key !== "Tab") {
+		return;
+	}
 
-  if (event.shiftKey && document.activeElement === firstFocusableItem) {
-    event.preventDefault();
-    lastFocusableItem?.focus();
-  }
+	if (event.shiftKey && document.activeElement === firstFocusableItem) {
+		event.preventDefault();
+		lastFocusableItem?.focus();
+	}
 
-  if (!event.shiftKey && document.activeElement === lastFocusableItem) {
-    event.preventDefault();
-    firstFocusableItem?.focus();
-  }
+	if (!event.shiftKey && document.activeElement === lastFocusableItem) {
+		event.preventDefault();
+		firstFocusableItem?.focus();
+	}
 };

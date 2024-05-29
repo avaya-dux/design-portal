@@ -1,25 +1,25 @@
 ---
 import {
-  InfoList,
-  InfoListItem,
-  PageleteSection,
-  SectionHeader,
+	InfoList,
+	InfoListItem,
+	PageleteSection,
+	SectionHeader,
 } from "components/astro";
 
 export interface PageLink {
-  title: string;
-  href: string;
+	title: string;
+	href: string;
 }
 
 export interface SectionWithLinks {
-  title: string;
-  links: PageLink[];
+	title: string;
+	links: PageLink[];
 }
 
 export interface Props {
-  id: string;
-  title: string;
-  sections: SectionWithLinks[];
+	id: string;
+	title: string;
+	sections: SectionWithLinks[];
 }
 
 const { id, title, sections } = Astro.props as Props;

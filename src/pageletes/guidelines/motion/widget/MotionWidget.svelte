@@ -1,26 +1,26 @@
 <script>
-  import { fade, fly, slide } from "svelte/transition";
-  import { quintIn, quintOut } from "svelte/easing";
+import { quintIn, quintOut } from "svelte/easing";
+import { fade, fly, slide } from "svelte/transition";
 
-  let inMotion = true;
-  let buttonLabel = "Ease Out";
-  let easingFunc = quintIn;
-  let speed = 150;
+let inMotion = true;
+let buttonLabel = "Ease Out";
+let easingFunc = quintIn;
+let speed = 150;
 
-  const onMotionChange = () => {
-    inMotion = !inMotion;
-    if (inMotion) {
-      easingFunc = quintOut;
-      buttonLabel = "Ease Out";
-    } else {
-      easingFunc = quintIn;
-      buttonLabel = "Ease In";
-    }
-  };
+const onMotionChange = () => {
+	inMotion = !inMotion;
+	if (inMotion) {
+		easingFunc = quintOut;
+		buttonLabel = "Ease Out";
+	} else {
+		easingFunc = quintIn;
+		buttonLabel = "Ease In";
+	}
+};
 
-  const onSpeedChange = (event) => {
-    speed = event.currentTarget.value;
-  };
+const onSpeedChange = (event) => {
+	speed = event.currentTarget.value;
+};
 </script>
 
 <div class="widget-container">

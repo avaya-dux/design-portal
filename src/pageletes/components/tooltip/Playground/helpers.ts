@@ -2,53 +2,53 @@ import type { TooltipPosition } from "@avaya/neo-react";
 
 // (mostly) copy-pasted from Tooltip/helpers.ts
 export const translatePositionToCSSName = (
-  position: TooltipPosition = "top",
+	position: TooltipPosition = "top",
 ): string => {
-  let cssPosition;
+	let cssPosition: string;
 
-  switch (position) {
-    case "left":
-      cssPosition = "left";
-      break;
+	switch (position) {
+		case "left":
+			cssPosition = "left";
+			break;
 
-    case "right":
-      cssPosition = "right";
-      break;
+		case "right":
+			cssPosition = "right";
+			break;
 
-    case "bottom":
-      cssPosition = "down";
-      break;
+		case "bottom":
+			cssPosition = "down";
+			break;
 
-    case "top":
-    case "auto":
-      cssPosition = "up";
-      break;
+		case "top":
+		case "auto":
+			cssPosition = "up";
+			break;
 
-    case "top-left":
-      cssPosition = "up-left";
-      break;
+		case "top-left":
+			cssPosition = "up-left";
+			break;
 
-    case "top-right":
-      cssPosition = "up-right";
-      break;
+		case "top-right":
+			cssPosition = "up-right";
+			break;
 
-    case "bottom-left":
-      cssPosition = "down-left";
-      break;
+		case "bottom-left":
+			cssPosition = "down-left";
+			break;
 
-    case "bottom-right":
-      cssPosition = "down-right";
-      break;
+		case "bottom-right":
+			cssPosition = "down-right";
+			break;
 
-    default:
-      console.error(
-        `Unexpected position encountered: ${position}. Defaulting to default "position='up'"`,
-      );
-      cssPosition = "up";
-  }
+		default:
+			console.error(
+				`Unexpected position encountered: ${position}. Defaulting to default "position='up'"`,
+			);
+			cssPosition = "up";
+	}
 
-  return `neo-tooltip--${cssPosition}`;
+	return `neo-tooltip--${cssPosition}`;
 };
 
 export const upperCaseFirstLetter = (string: string) =>
-  string.charAt(0).toUpperCase() + string.slice(1);
+	string.charAt(0).toUpperCase() + string.slice(1);

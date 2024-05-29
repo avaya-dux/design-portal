@@ -10,60 +10,60 @@ import { SiteHeader } from ".";
 import { allPagesMockData } from "../utils/shared-mocks";
 
 describe("SiteHeader", () => {
-  beforeEach(() => {
-    // for the `Logo` component, need to mock `window.matchMedia`
-    vi.stubGlobal(
-      "matchMedia",
-      vi.fn(() => ({
-        matches: false,
-      })),
-    );
+	beforeEach(() => {
+		// for the `Logo` component, need to mock `window.matchMedia`
+		vi.stubGlobal(
+			"matchMedia",
+			vi.fn(() => ({
+				matches: false,
+			})),
+		);
 
-    return () => {
-      vi.resetAllMocks();
-    };
-  });
+		return () => {
+			vi.resetAllMocks();
+		};
+	});
 
-  it("fully renders without exploding", () => {
-    render(<SiteHeader pathname="/" pages={allPagesMockData} userAgent="" />);
+	it("fully renders without exploding", () => {
+		render(<SiteHeader pathname="/" pages={allPagesMockData} userAgent="" />);
 
-    const rootElement = screen.getByRole("navigation");
-    expect(rootElement).toBeInTheDocument();
-  });
+		const rootElement = screen.getByRole("navigation");
+		expect(rootElement).toBeInTheDocument();
+	});
 
-  it("updates whether Left Navigation is open correctly in layout state", async () => {
-    const user = userEvent.setup();
-    keepMount(isLeftNavigationOpen);
+	it("updates whether Left Navigation is open correctly in layout state", async () => {
+		const user = userEvent.setup();
+		keepMount(isLeftNavigationOpen);
 
-    render(
-      <SiteHeader
-        pathname="/"
-        pages={allPagesMockData}
-        userAgent=""
-        showToggleBtn
-      />,
-    );
+		render(
+			<SiteHeader
+				pathname="/"
+				pages={allPagesMockData}
+				userAgent=""
+				showToggleBtn
+			/>,
+		);
 
-    expect(isLeftNavigationOpen.get()).toEqual(undefined);
+		expect(isLeftNavigationOpen.get()).toEqual(undefined);
 
-    const toggleButton = screen.getAllByRole("button")[0];
+		const toggleButton = screen.getAllByRole("button")[0];
 
-    await user.click(toggleButton as Element);
+		await user.click(toggleButton as Element);
 
-    expect(isLeftNavigationOpen.get()).toEqual(true);
+		expect(isLeftNavigationOpen.get()).toEqual(true);
 
-    await user.click(toggleButton as Element);
+		await user.click(toggleButton as Element);
 
-    expect(isLeftNavigationOpen.get()).toEqual(false);
+		expect(isLeftNavigationOpen.get()).toEqual(false);
 
-    cleanStores(isLeftNavigationOpen);
-  });
+		cleanStores(isLeftNavigationOpen);
+	});
 
-  it("passes basic axe compliance", async () => {
-    const { container } = render(
-      <SiteHeader pathname="/" pages={allPagesMockData} userAgent="" />,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
+	it("passes basic axe compliance", async () => {
+		const { container } = render(
+			<SiteHeader pathname="/" pages={allPagesMockData} userAgent="" />,
+		);
+		const results = await axe(container);
+		expect(results).toHaveNoViolations();
+	});
 });

@@ -1,23 +1,23 @@
 ---
-import { PageleteSection, SectionHeader, ExternalLink } from "components/astro";
-import chip from "../imgs/chip.svg";
 import { Image } from "@avaya/neo-react";
-import { getGithubReleases, getOctokit, type Repo } from "helpers";
+import { ExternalLink, PageleteSection, SectionHeader } from "components/astro";
 import { ChangelogNotes } from "components/react";
+import { type Repo, getGithubReleases, getOctokit } from "helpers";
+import chip from "../imgs/chip.svg";
 export interface Props {
-  repo: Repo;
+	repo: Repo;
 }
 const { repo } = Astro.props as Props;
 const octokit = getOctokit();
 const releases = await getGithubReleases(octokit, repo)
-  .then((response) =>
-    // valid tag name should start with v and followed by at least one digit
-    response.filter((response) => /^[vV]\d+/.test(response.tag)),
-  )
-  .catch((error) => {
-    console.error(error);
-    return [];
-  });
+	.then((response) =>
+		// valid tag name should start with v and followed by at least one digit
+		response.filter((response) => /^[vV]\d+/.test(response.tag)),
+	)
+	.catch((error) => {
+		console.error(error);
+		return [];
+	});
 ---
 
 <div class="changelog-separator"></div>

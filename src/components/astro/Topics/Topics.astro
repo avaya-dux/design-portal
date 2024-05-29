@@ -1,10 +1,10 @@
 ---
+import { InfoList, InfoListItem } from "../InfoList";
 import type { Topic, TopicsDict } from "./TopicHelpers";
 import { topicsSortedByOrder } from "./TopicHelpers";
-import { InfoList, InfoListItem } from "../InfoList";
 
 export interface Props {
-  topics: TopicsDict<string>; // TODO: should be able to use generic type: `TopicsDict<T>`
+	topics: TopicsDict<string>; // TODO: should be able to use generic type: `TopicsDict<T>`
 }
 
 const { topics } = Astro.props as Props;
