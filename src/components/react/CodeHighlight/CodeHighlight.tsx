@@ -98,7 +98,7 @@ export const Highlighter = ({
 						<div key={`highlight-${i}`} {...getLineProps({ line, key: i })}>
 							{line.map((token, key) => (
 								<span
-									key={`highlight-${i}`}
+									key={`highlight-span-${i}`}
 									{...getTokenProps({ token, key })}
 								/>
 							))}
