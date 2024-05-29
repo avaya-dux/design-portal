@@ -6,6 +6,5 @@
   schedule: ["on monday before 5am"],
   ignoreDeps: [
     "astro", // see this PR for why: https://github.com/avaya-dux/design-portal/pull/488
-    "eslint",
   ],
 }
