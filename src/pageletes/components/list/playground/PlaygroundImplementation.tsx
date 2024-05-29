@@ -29,6 +29,7 @@ type ListRightOption = "button" | "empty" | "switch";
 
 const iconButton = [
 	<IconButton
+		key="add-call"
 		aria-label="add call"
 		icon="call-add"
 		shape="circle"
@@ -36,7 +37,9 @@ const iconButton = [
 	/>,
 ];
 
-const basicSwitch = [<Switch aria-label="Activate" defaultChecked />];
+const basicSwitch = [
+	<Switch key="active" aria-label="Activate" defaultChecked />,
+];
 
 const getAction = (option: ListRightOption) => {
 	switch (option) {
@@ -47,7 +50,7 @@ const getAction = (option: ListRightOption) => {
 		case "empty":
 			return [];
 		default:
-			return [];
+			return <></>;
 	}
 };
 
