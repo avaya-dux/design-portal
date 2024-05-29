@@ -68,6 +68,7 @@ export const TopNavSearch = ({
 		};
 	}, []);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		openSearchModal(shortcutKeysPressed, setIsOpen, setShortcutKeysPressed);
 	}, [userAgent, shortcutKeysPressed]);
@@ -117,6 +118,7 @@ export const TopNavSearch = ({
 					clearable={false}
 					endAddon={
 						<button
+							type="button"
 							onClick={() => setIsOpen(false)}
 							className="search-panel__button"
 						>
