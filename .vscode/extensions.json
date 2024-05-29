@@ -1,19 +1,18 @@
 {
-  "recommendations": [
-    "editorconfig.editorconfig",
-    "alfnielsen.vsc-organize-imports",
-    "astro-build.astro-vscode",
-    "deque-systems.vscode-axe-linter",
-    "eamodio.gitlens",
-    "esbenp.prettier-vscode",
-    "formulahendry.auto-rename-tag",
-    "henriiik.vscode-sort",
-    "ms-vscode.vscode-typescript-next",
-    "shardulm94.trailing-spaces",
-    "visualstudioexptteam.vscodeintellicode",
-    "vscode-icons-team.vscode-icons",
-    "wayou.vscode-todo-highlight",
-    "unifiedjs.vscode-mdx"
-  ],
-  "unwantedRecommendations": []
+	"recommendations": [
+		"editorconfig.editorconfig",
+		"alfnielsen.vsc-organize-imports",
+		"astro-build.astro-vscode",
+		"deque-systems.vscode-axe-linter",
+		"eamodio.gitlens",
+		"formulahendry.auto-rename-tag",
+		"henriiik.vscode-sort",
+		"ms-vscode.vscode-typescript-next",
+		"shardulm94.trailing-spaces",
+		"visualstudioexptteam.vscodeintellicode",
+		"vscode-icons-team.vscode-icons",
+		"wayou.vscode-todo-highlight",
+		"unifiedjs.vscode-mdx",
+		"biomejs.biome"
+	]
 }
