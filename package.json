@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "all": "yarn && yarn clean && yarn style-check && yarn lint && yarn build && yarn test:badges",
+    "all": "yarn && yarn clean && yarn style-check && yarn build && yarn test:badges",
     "github": "yarn && yarn clean && yarn lint && yarn build && yarn test",
     "clean": "rm -rf coverage dist",
     "format": "biome format --write ./src",
