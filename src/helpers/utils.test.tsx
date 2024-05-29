@@ -59,6 +59,7 @@ describe(prettyPrintReactElementToString.name, () => {
 				<ListItem
 					actions={[
 						<IconButton
+							key="btn-add-call"
 							aria-label="add call"
 							data-testid="neo-button-add-call"
 							icon="call-add"
@@ -75,6 +76,7 @@ describe(prettyPrintReactElementToString.name, () => {
 				<ListItem
 					actions={[
 						<IconButton
+							key="btn-add-call"
 							aria-label="add call"
 							data-testid="neo-button-add-call"
 							icon="call-add"
@@ -90,25 +92,25 @@ describe(prettyPrintReactElementToString.name, () => {
 			</List>
 		);
 		expect(prettyPrintReactElementToString(element)).toMatchInlineSnapshot(`
-      "<List itemType="ListItem">
-        <ListItem
-          actions={[
-            <IconButton aria-label="add call" data-testid="neo-button-add-call" icon="call-add" id="btn-add-call" shape="circle" variant="tertiary"/>
-          ]}
-          icon={<Icon aria-label="star-icon" icon="star"/>}
-        >
-          Aman Kharti
-        </ListItem>
-        <ListItem
-          actions={[
-            <IconButton aria-label="add call" data-testid="neo-button-add-call" icon="call-add" id="btn-add-call" shape="circle" variant="tertiary"/>
-          ]}
-          icon={<Icon aria-label="star-icon" icon="star"/>}
-        >
-          Aman Kharti
-        </ListItem>
-      </List>"
-    `);
+			"<List itemType="ListItem">
+			  <ListItem
+			    actions={[
+			      <IconButton key="btn-add-call" aria-label="add call" data-testid="neo-button-add-call" icon="call-add" id="btn-add-call" shape="circle" variant="tertiary"/>
+			    ]}
+			    icon={<Icon aria-label="star-icon" icon="star"/>}
+			  >
+			    Aman Kharti
+			  </ListItem>
+			  <ListItem
+			    actions={[
+			      <IconButton key="btn-add-call" aria-label="add call" data-testid="neo-button-add-call" icon="call-add" id="btn-add-call" shape="circle" variant="tertiary"/>
+			    ]}
+			    icon={<Icon aria-label="star-icon" icon="star"/>}
+			  >
+			    Aman Kharti
+			  </ListItem>
+			</List>"
+		`);
 	});
 });
 
@@ -171,6 +173,7 @@ describe(prettyPrintReactElementToHtml.name, () => {
 				<ListItem
 					actions={[
 						<IconButton
+							key="btn-add-call"
 							aria-label="add call"
 							data-testid="neo-button-add-call"
 							icon="call-add"
@@ -187,6 +190,7 @@ describe(prettyPrintReactElementToHtml.name, () => {
 				<ListItem
 					actions={[
 						<IconButton
+							key="btn-add-call"
 							aria-label="add call"
 							data-testid="neo-button-add-call"
 							icon="call-add"

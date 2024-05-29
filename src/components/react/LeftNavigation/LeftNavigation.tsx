@@ -123,6 +123,7 @@ export const LeftNavigation = ({
 				className="left-navigation-scrim"
 				id="left-navigation-scrim"
 				onClick={() => isLeftNavigationOpen.set(false)}
+				onKeyUp={() => isLeftNavigationOpen.set(false)}
 				role="presentation"
 			/>
 		</>
@@ -164,6 +165,7 @@ const LeftNavigationTopElement = ({
 		<div className="neo-nav--left" ref={topElementRef}>
 			<div className="neo-badge__navbutton">
 				<button
+					type="button"
 					className="neo-badge__navbutton--content neo-btn neo-icon-close"
 					id="left-navigation-close"
 					aria-label="close left navigation"

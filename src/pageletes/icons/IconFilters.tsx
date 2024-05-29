@@ -203,6 +203,7 @@ export const IconFilters = ({ categories }: { categories: string[] }) => {
 				className={styles["icon-filters__scrim"]}
 				id="icon-filter-scrim"
 				onClick={() => setIsIconFiltersOpen(false)}
+				onKeyUp={() => setIsIconFiltersOpen(false)}
 				role="presentation"
 			/>
 		</>

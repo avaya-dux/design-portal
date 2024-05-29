@@ -38,6 +38,7 @@ export const CodeHighlight = ({
 		};
 	}, [active]);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: reset value if displayed code changes
 	useEffect(() => {
 		setIsCopied(false);
 	}, [code]);
@@ -94,9 +95,12 @@ export const Highlighter = ({
 			{({ tokens, getLineProps, getTokenProps }) => (
 				<pre>
 					{tokens.map((line, i) => (
-						<div {...getLineProps({ line, key: i })}>
+						<div key={`highlight-${i}`} {...getLineProps({ line, key: i })}>
 							{line.map((token, key) => (
-								<span {...getTokenProps({ token, key })} />
+								<span
+									key={`highlight-${i}`}
+									{...getTokenProps({ token, key })}
+								/>
 							))}
 						</div>
 					))}

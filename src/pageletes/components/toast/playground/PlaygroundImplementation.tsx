@@ -39,6 +39,7 @@ export const PlaygroundImplementation = () => {
 		[icon],
 	);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		const toastTimer = setTimeout(() => {
 			setShowToast(false);

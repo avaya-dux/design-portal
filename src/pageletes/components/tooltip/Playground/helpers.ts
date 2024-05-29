@@ -4,7 +4,7 @@ import type { TooltipPosition } from "@avaya/neo-react";
 export const translatePositionToCSSName = (
 	position: TooltipPosition = "top",
 ): string => {
-	let cssPosition;
+	let cssPosition: string;
 
 	switch (position) {
 		case "left":

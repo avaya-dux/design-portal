@@ -37,6 +37,7 @@ export const PlaygroundImplementation = () => {
 			<Chip
 				variant={chipType}
 				closable={chipVariable === "removable"}
+				// biome-ignore lint/complexity/noUselessFragments: <explanation>
 				onClose={() => setElementToRender(<></>)}
 				disabled={disabled}
 				avatarInitials={clsx(chipVariant === "avatar" && "EX")}
@@ -55,6 +56,7 @@ export const PlaygroundImplementation = () => {
 
 	const [elementToRender, setElementToRender] = useState(component);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: must update component when props change
 	useEffect(() => {
 		setElementToRender(component);
 	}, [chipType, chipVariant, chipVariable, disabled, component]);

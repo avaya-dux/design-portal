@@ -58,6 +58,7 @@ export const SiteHeader = ({
 
 	const flattenedPages = useMemo(() => {
 		return Object.values(pages).reduce(
+			// biome-ignore lint/performance/noAccumulatingSpread: spread is necessary to merge and flatten arrays
 			(acc, page) => [...acc, ...page],
 			[] as SitePages[keyof SitePages],
 		);
