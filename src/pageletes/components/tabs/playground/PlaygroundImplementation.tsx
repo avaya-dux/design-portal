@@ -27,7 +27,7 @@ export const storybook =
 type Orientation = "horizontal" | "vertical";
 const icons = ["info", "settings", "check", "chat"];
 export const PlaygroundImplementation = () => {
-	const [withIcon, setWithIcon] = useState(false);
+	const [withIcon, setWithIcon] = useState<boolean>(false);
 	const [orientation, setOrientation] = useState<Orientation>("horizontal");
 	const createTab = useCallback(
 		(id: string) => {
