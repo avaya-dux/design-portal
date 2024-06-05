@@ -8,7 +8,6 @@ import {
 	TabPanel,
 	type TabPanelProps,
 	TabPanels,
-	type TabProps,
 	Tabs,
 } from "@avaya/neo-react";
 
@@ -28,22 +27,19 @@ type Orientation = "horizontal" | "vertical";
 const icons = ["info", "settings", "check", "chat"];
 
 export const PlaygroundImplementation = () => {
-	const [withIcon, setWithIcon] = useState<boolean>(false);
 	const [orientation, setOrientation] = useState<Orientation>("horizontal");
+	const [withIcon, setWithIcon] = useState<boolean>(false);
 
 	const [component, react, html] = useMemo(() => {
-		const createTab = (id: string) => {
-			const props: TabProps = {
-				id: `tab${id}`,
-				children: `Tab item ${id}`,
-				key: id,
-			};
-			if (withIcon) {
-				props.icon = icons[Number.parseInt(id)];
-			}
-
-			return <Tab {...props} />;
-		};
+		const createTab = (id: string) => (
+			<Tab
+				key={id}
+				id={id}
+				icon={withIcon ? icons[Number.parseInt(id)] : undefined}
+			>
+				Tab item ${id}
+			</Tab>
+		);
 
 		const createTabPanel = (id: string) => {
 			const props = {} as TabPanelProps;
