@@ -1,9 +1,4 @@
-import {
-	LeftNav,
-	type LeftNavProps,
-	Radio,
-	RadioGroup,
-} from "@avaya/neo-react";
+import { LeftNav, Radio, RadioGroup } from "@avaya/neo-react";
 import { Playground } from "components/react";
 import {
 	prettyPrintReactElementToHtml,
@@ -21,29 +16,25 @@ export const PlaygroundImplementation = () => {
 	const [iconType, setIconType] = useState<IconOption>("icon");
 
 	const [element, react, html] = useMemo(() => {
-		const props: LeftNavProps = {
-			currentUrl: "http://example.com/1",
-		};
-
 		const expandedStates = [true, false];
 
 		const accountLinkItems = [
-			<LeftNav.LinkItem key="account-link-item-1" href="http://example.com/1">
+			<LeftNav.LinkItem key="account-link-item-1" href="#/1">
 				Account
 			</LeftNav.LinkItem>,
-			<LeftNav.LinkItem key="account-link-item-2" href="http://example.com/2">
+			<LeftNav.LinkItem key="account-link-item-2" href="#/2">
 				Business Rules
 			</LeftNav.LinkItem>,
-			<LeftNav.LinkItem key="account-link-item-3" href="http://example.com/3">
+			<LeftNav.LinkItem key="account-link-item-3" href="#/3">
 				Contact Centers
 			</LeftNav.LinkItem>,
 		];
 
 		const analyticsLinkItems = [
-			<LeftNav.LinkItem key="analytics-link-item-1" href="http://example.com/4">
+			<LeftNav.LinkItem key="analytics-link-item-1" href="#/4">
 				Dashboard
 			</LeftNav.LinkItem>,
-			<LeftNav.LinkItem key="analytics-link-item-2" href="http://example.com/5">
+			<LeftNav.LinkItem key="analytics-link-item-2" href="#/5">
 				Usage Report
 			</LeftNav.LinkItem>,
 		];
@@ -100,7 +91,7 @@ export const PlaygroundImplementation = () => {
 			);
 
 		const element = (
-			<LeftNav aria-label="Main Navigation" {...props}>
+			<LeftNav aria-label="Main Navigation" currentUrl="#/1">
 				{listCategories}
 				{settingsTopLinkItem}
 			</LeftNav>
