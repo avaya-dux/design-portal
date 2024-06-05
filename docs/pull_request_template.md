@@ -13,12 +13,14 @@
 ADD PR SUMMARY (should be brief, one sentence if possible)
 
 `@avaya-dux/dux-design`: ADD DESIGN SPECIFIC BRIEF DESCRIPTION
+
 - first focus point
 - second focus point
 - "not in scope" point one
 - "not in scope" point two
 
 `@avaya-dux/dux-devs`: ADD DEV SPECIFIC BRIEF DESCRIPTION
+
 - first focus point
 - second focus point
 - "not in scope" point one
