@@ -126,14 +126,15 @@
   resolved "https://registry.yarnpkg.com/@atomic-layout/core/-/core-0.14.1.tgz#3d69be5f79775f11b8008f18bc603b04a2141ccd"
   integrity sha512-o5nhk/1djuKzB20C2LSOuetTDytsbGg4c0UfxXkq1pqoaN3hKJcHPYF9nV+p6+P5CWqNBaaJddZ32OsFSppULQ==
 
-"@avaya/neo-react@1.1.21":
-  version "1.1.21"
-  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-1.1.21.tgz#a5eb502aef6608406deafa5bb3f022a83ddbd398"
-  integrity sha512-CCVfbZuOa8Esjgm6wKHe64VZ4dRWd7J5+lO+8gPQigog2GxagfSzLc0hbMB9C6zvJZDr5+BAefiaflGwhUzy/g==
+"@avaya/neo-react@1.1.23":
+  version "1.1.23"
+  resolved "https://registry.yarnpkg.com/@avaya/neo-react/-/neo-react-1.1.23.tgz#b46b73299c3cf79c8772449df63145f34494207a"
+  integrity sha512-XPWb8kjdRQni0dS/lK0s3f7plG2E8LxIr2sgrnEBgO4XgMNdp89biGSe48CvLdvbRaTtEmdvBlwwOJqFLKca4Q==
   dependencies:
     atomic-layout "0.16.2"
     loglevel "1.9.1"
     react-click-away-listener "2.2.3"
+    react-fast-compare "3.2.2"
     react-focus-lock "2.12.1"
     styled-components "6.1.11"
 
@@ -5567,6 +5568,11 @@ react-element-to-jsx-string@15.0.0:
     "@base2/pretty-print-object" "1.0.1"
     is-plain-object "5.0.0"
     react-is "18.1.0"
+
+react-fast-compare@3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.2.tgz#929a97a532304ce9fee4bcae44234f1ce2c21d49"
+  integrity sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==
 
 react-focus-lock@2.12.1:
   version "2.12.1"

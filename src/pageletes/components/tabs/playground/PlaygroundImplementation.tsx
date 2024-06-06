@@ -8,11 +8,10 @@ import {
 	TabPanel,
 	type TabPanelProps,
 	TabPanels,
-	type TabProps,
 	Tabs,
 } from "@avaya/neo-react";
 
-import { useCallback, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 import { Playground } from "components/react";
 import {
@@ -26,27 +25,23 @@ export const storybook =
 
 type Orientation = "horizontal" | "vertical";
 const icons = ["info", "settings", "check", "chat"];
+
 export const PlaygroundImplementation = () => {
-	const [withIcon, setWithIcon] = useState(false);
 	const [orientation, setOrientation] = useState<Orientation>("horizontal");
-	const createTab = useCallback(
-		(id: string) => {
-			const props: TabProps = {
-				id: `tab${id}`,
-				children: `Tab item ${id}`,
-				key: id,
-			};
-			if (withIcon) {
-				props.icon = icons[Number.parseInt(id)];
-			}
+	const [withIcon, setWithIcon] = useState<boolean>(false);
 
-			return <Tab {...props} />;
-		},
-		[withIcon],
-	);
+	const [component, react, html] = useMemo(() => {
+		const createTab = (id: string) => (
+			<Tab
+				key={id}
+				id={id}
+				icon={withIcon ? icons[Number.parseInt(id)] : undefined}
+			>
+				Tab item ${id}
+			</Tab>
+		);
 
-	const createTabPanel = useCallback(
-		(id: string) => {
+		const createTabPanel = (id: string) => {
 			const props = {} as TabPanelProps;
 			if (orientation === "horizontal") {
 				props.children = <p style={{ marginTop: "1rem" }}>content {id}</p>;
@@ -54,15 +49,13 @@ export const PlaygroundImplementation = () => {
 				props.children = <p style={{ marginLeft: "1rem" }}>content {id}</p>;
 			}
 			return <TabPanel key={id} {...props} />;
-		},
-		[orientation],
-	);
+		};
 
-	const [component, react, html] = useMemo(() => {
 		const panels = [1, 2].map((i) => createTabPanel(i.toString()));
 		const element = (
 			<Tabs defaultIndex={0} orientation={orientation}>
 				<TabList>{[1, 2].map((i) => createTab(i.toString()))}</TabList>
+
 				<TabPanels>{panels}</TabPanels>
 			</Tabs>
 		);
@@ -72,7 +65,8 @@ export const PlaygroundImplementation = () => {
 			prettyPrintReactElementToString(element),
 			prettyPrintReactElementToHtml(element),
 		];
-	}, [orientation, createTab, createTabPanel]);
+	}, [orientation, withIcon]);
+
 	return (
 		<Playground
 			options={
@@ -87,6 +81,7 @@ export const PlaygroundImplementation = () => {
 							<SelectOption value="vertical">Vertical</SelectOption>
 						</Select>
 					</Playground.OptionsSection>
+
 					<Playground.OptionsSection title="Variable">
 						<CheckboxGroup
 							groupName="Variable"
