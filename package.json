@@ -36,7 +36,7 @@
     "@vitest/ui": "1.6.0",
     "astro": "4.9.2",
     "html-react-parser": "5.1.10",
-    "jest-axe": "8.0.0",
+    "jest-axe": "9.0.0",
     "jest-coverage-badges": "1.1.2",
     "jsdom": "24.1.0",
     "react": "18.3.1",
