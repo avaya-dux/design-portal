@@ -45,6 +45,7 @@ import { Image } from "@avaya/neo-react";
     >
       Newsletter
     </a>
+    <a id="contact" href="">Contact Us</a>
   </div>
 
   <div class="footer-copyright">
@@ -53,7 +54,11 @@ import { Image } from "@avaya/neo-react";
     </p>
   </div>
 </footer>
-
+<script type="module">
+  const encEmail = "bmVvLWRldnNAYXZheWEuY29tCg==";
+  const form = document.getElementById("contact");
+  form.href = `mailto:${atob(encEmail)}`;
+</script>
 <style is:global>
   /* desktop mode, all screens except homepage */
   :root {
