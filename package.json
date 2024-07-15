@@ -24,7 +24,7 @@
     "@astrojs/svelte": "5.6.0",
     "@astrojs/vue": "4.5.0",
     "@biomejs/biome": "1.8.3",
-    "@testing-library/dom": "10.3.1",
+    "@testing-library/dom": "10.3.2",
     "@testing-library/jest-dom": "6.4.6",
     "@testing-library/react": "16.0.0",
     "@testing-library/user-event": "14.5.2",
@@ -48,7 +48,7 @@
     "vue": "3.4.31"
   },
   "dependencies": {
-    "@astrojs/netlify": "5.3.5",
+    "@astrojs/netlify": "5.4.0",
     "@astrojs/prefetch": "0.4.1",
     "@avaya/neo-react": "1.1.31",
     "@nanostores/react": "0.7.2",
