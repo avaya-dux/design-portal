@@ -205,62 +205,60 @@ describe(prettyPrintReactElementToHtml.name, () => {
 				</ListItem>
 			</List>
 		);
-		expect(prettyPrintReactElementToHtml(element)).toMatchInlineSnapshot(
-			`
-      "<ul class="neo-group-list neo-group-list--hover">
-        <li class="neo-group-list__wrapper">
-          <div class="neo-group-list__item">
-            <span
-              role="img"
-              aria-label="star-icon"
-              class="neo-icon-star neo-icon--small"
-            >
-            </span>
-          </div>
-          <div class="neo-group-list__item neo-group-list__item--middle">
-            Aman Kharti
-          </div>
-          <div class="neo-group-list__item">
-            <button
-              aria-label="add call"
-              class="neo-btn neo-btn-circle neo-btn--default neo-btn-tertiary neo-btn-tertiary--default neo-btn-circle-tertiary--default"
-              data-badge
-              data-testid="neo-button-add-call"
-              id="btn-add-call"
-            >
-              <span class="neo-icon-call-add">
-              </span>
-            </button>
-          </div>
-        </li>
-        <li class="neo-group-list__wrapper">
-          <div class="neo-group-list__item">
-            <span
-              role="img"
-              aria-label="star-icon"
-              class="neo-icon-star neo-icon--small"
-            >
-            </span>
-          </div>
-          <div class="neo-group-list__item neo-group-list__item--middle">
-            Aman Kharti
-          </div>
-          <div class="neo-group-list__item">
-            <button
-              aria-label="add call"
-              class="neo-btn neo-btn-circle neo-btn--default neo-btn-tertiary neo-btn-tertiary--default neo-btn-circle-tertiary--default"
-              data-badge
-              data-testid="neo-button-add-call"
-              id="btn-add-call"
-            >
-              <span class="neo-icon-call-add">
-              </span>
-            </button>
-          </div>
-        </li>
-      </ul>"
-    `,
-		);
+		expect(prettyPrintReactElementToHtml(element)).toMatchInlineSnapshot(`
+			"<ul class="neo-group-list neo-group-list--hover">
+			  <li class="neo-group-list__wrapper">
+			    <div class="neo-group-list__item">
+			      <span
+			        role="img"
+			        aria-label="star-icon"
+			        class="neo-icon-star neo-icon--small"
+			      >
+			      </span>
+			    </div>
+			    <div class="neo-group-list__item neo-group-list__item--middle">
+			      Aman Kharti
+			    </div>
+			    <div class="neo-group-list__item">
+			      <button
+			        aria-label="add call"
+			        class="neo-btn neo-icon-btn neo-btn-circle neo-btn--default neo-btn-tertiary neo-btn-tertiary--default neo-btn-circle-tertiary--default"
+			        data-badge
+			        data-testid="neo-button-add-call"
+			        id="btn-add-call"
+			      >
+			        <span class="neo-icon-call-add">
+			        </span>
+			      </button>
+			    </div>
+			  </li>
+			  <li class="neo-group-list__wrapper">
+			    <div class="neo-group-list__item">
+			      <span
+			        role="img"
+			        aria-label="star-icon"
+			        class="neo-icon-star neo-icon--small"
+			      >
+			      </span>
+			    </div>
+			    <div class="neo-group-list__item neo-group-list__item--middle">
+			      Aman Kharti
+			    </div>
+			    <div class="neo-group-list__item">
+			      <button
+			        aria-label="add call"
+			        class="neo-btn neo-icon-btn neo-btn-circle neo-btn--default neo-btn-tertiary neo-btn-tertiary--default neo-btn-circle-tertiary--default"
+			        data-badge
+			        data-testid="neo-button-add-call"
+			        id="btn-add-call"
+			      >
+			        <span class="neo-icon-call-add">
+			        </span>
+			      </button>
+			    </div>
+			  </li>
+			</ul>"
+		`);
 	});
 });
 
