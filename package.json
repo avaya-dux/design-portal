@@ -25,7 +25,7 @@
     "@astrojs/vue": "4.5.0",
     "@biomejs/biome": "1.8.3",
     "@testing-library/dom": "10.4.0",
-    "@testing-library/jest-dom": "6.4.6",
+    "@testing-library/jest-dom": "6.4.8",
     "@testing-library/react": "16.0.0",
     "@testing-library/user-event": "14.5.2",
     "@types/estree": "1.0.5",
@@ -43,14 +43,14 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "svelte": "4.2.18",
-    "typescript": "5.5.3",
+    "typescript": "5.5.4",
     "vitest": "2.0.4",
-    "vue": "3.4.33"
+    "vue": "3.4.34"
   },
   "dependencies": {
     "@astrojs/netlify": "5.4.0",
     "@astrojs/prefetch": "0.4.1",
-    "@avaya/neo-react": "1.1.35",
+    "@avaya/neo-react": "1.1.38",
     "@nanostores/react": "0.7.2",
     "clsx": "2.1.1",
     "dayjs": "1.11.12",
