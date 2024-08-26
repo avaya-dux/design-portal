@@ -39,7 +39,7 @@
     "html-react-parser": "5.1.13",
     "jest-axe": "9.0.0",
     "jest-coverage-badges": "1.1.2",
-    "jsdom": "24.1.3",
+    "jsdom": "25.0.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "svelte": "4.2.19",
