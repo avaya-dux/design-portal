@@ -12,7 +12,7 @@ import { Playground } from "components";
 import { prettyPrintHtml, prettyPrintReactElementToString } from "helpers";
 
 export const sandbox =
-	"https://codesandbox.io/s/neo-react-modal-spsv6d?file=/src/App.js";
+	"https://codesandbox.io/p/sandbox/neo-react-modal-4y2p9p?file=%2Fsrc%2FApp.js";
 export const storybook =
 	"https://neo-react-library-storybook.netlify.app/?path=/story/components-modal--basic-modal-example";
 
