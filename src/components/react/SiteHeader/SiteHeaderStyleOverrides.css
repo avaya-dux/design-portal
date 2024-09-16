@@ -1,122 +1,122 @@
 /* TODO: fix these in css-lib */
 
 body nav.neo-navbar {
-  height: var(--header-height);
-  min-height: var(--header-height);
-  z-index: 100;
+	height: var(--header-height);
+	min-height: var(--header-height);
+	z-index: 100;
 }
 
 body nav.neo-navbar .neo-nav--left {
-  height: 100%;
-  align-items: unset;
+	height: 100%;
+	align-items: unset;
 }
 
 body nav.neo-navbar .neo-nav--left a {
-  height: 3rem;
+	height: 3rem;
 }
 
 body nav.neo-navbar .neo-nav--left .neo-badge__navbutton {
-  height: var(--header-height);
+	height: var(--header-height);
 }
 
 .neo-navbar {
-  overflow: hidden;
+	overflow: hidden;
 }
 
 nav.neo-navbar a.neo-nav-link-btn {
-  padding: 0 16px;
+	padding: 0 16px;
 }
 
 nav.neo-navbar .neo-nav--left .neo-badge__navbutton {
-  display: block;
-  margin-top: 0px;
+	display: block;
+	margin-top: 0px;
 }
 
 nav.neo-navbar
-  .neo-nav--left
-  .neo-badge__navbutton
-  .neo-badge__navbutton--content:before {
-  color: var(--global-font-color);
+	.neo-nav--left
+	.neo-badge__navbutton
+	.neo-badge__navbutton--content:before {
+	color: var(--global-font-color);
 }
 
 nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle {
-  background-color: var(--global-background);
-  border-radius: 0;
+	background-color: var(--global-background);
+	border-radius: 0;
 }
 
 nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:hover {
-  cursor: pointer;
-  background-color: var(--global-background);
+	cursor: pointer;
+	background-color: var(--global-background);
 }
 nav.neo-navbar .neo-nav--left .neo-badge__navbutton .topnav-menu-toggle:focus,
 nav.neo-navbar
-  .neo-nav--left
-  .neo-badge__navbutton
-  .topnav-menu-toggle:focus-visible {
-  outline-offset: -2px;
+	.neo-nav--left
+	.neo-badge__navbutton
+	.topnav-menu-toggle:focus-visible {
+	outline-offset: -2px;
 }
 
 @media (max-width: 1279px) {
-  body nav.neo-navbar .neo-nav--left a img {
-    height: 57px;
-  }
+	body nav.neo-navbar .neo-nav--left a img {
+		height: 57px;
+	}
 
-  ul.neo-leftnav__nav {
-    padding-top: 0px;
-  }
+	ul.neo-leftnav__nav {
+		padding-top: 0px;
+	}
 
-  /* HACK: This button uses !important in its height property, the below code is a way to override that -- the actual change should be done in the CSS library*/
+	/* HACK: This button uses !important in its height property, the below code is a way to override that -- the actual change should be done in the CSS library*/
 
-  .neo-nav--left .neo-badge__navbutton button.neo-badge__navbutton--content {
-    height: 57px !important;
-  }
+	.neo-nav--left .neo-badge__navbutton button.neo-badge__navbutton--content {
+		height: 57px !important;
+	}
 }
 
 @media (max-width: 832px) {
-  nav.neo-navbar .neo-nav {
-    display: none;
-  }
-  nav.neo-navbar .neo-nav a.neo-nav-link-btn {
-    width: auto;
-    justify-content: center;
-  }
+	nav.neo-navbar .neo-nav {
+		display: none;
+	}
+	nav.neo-navbar .neo-nav a.neo-nav-link-btn {
+		width: auto;
+		justify-content: center;
+	}
 
-  .neo-navbar .neo-nav--right .search__button {
-    justify-content: end;
-  }
-  nav.neo-navbar .neo-nav--right button.neo-btn {
-    border: none;
-  }
-  nav.neo-navbar {
-    overflow: visible;
-  }
-  nav.neo-navbar .neo-nav--right {
-    display: flex;
-    justify-content: flex-end;
-  }
-  body nav.neo-navbar .neo-nav--left a img {
-    height: 48px;
-  }
-  /* HACK: This button uses !important in its height property, the below code is a way to override that -- the actual change should be done in the CSS library*/
-  .neo-nav--left .neo-badge__navbutton button.neo-badge__navbutton--content {
-    height: 48px !important;
-  }
+	.neo-navbar .neo-nav--right .search__button {
+		justify-content: end;
+	}
+	nav.neo-navbar .neo-nav--right button.neo-btn {
+		border: none;
+	}
+	nav.neo-navbar {
+		overflow: visible;
+	}
+	nav.neo-navbar .neo-nav--right {
+		display: flex;
+		justify-content: flex-end;
+	}
+	body nav.neo-navbar .neo-nav--left a img {
+		height: 48px;
+	}
+	/* HACK: This button uses !important in its height property, the below code is a way to override that -- the actual change should be done in the CSS library*/
+	.neo-nav--left .neo-badge__navbutton button.neo-badge__navbutton--content {
+		height: 48px !important;
+	}
 }
 
 @media (min-width: 1280px) {
-  nav.neo-navbar .neo-nav--left .neo-badge__navbutton {
-    display: none;
-  }
+	nav.neo-navbar .neo-nav--left .neo-badge__navbutton {
+		display: none;
+	}
 }
 
 .neo-nav--left .neo-skipnav {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  padding-top: 8px;
-  padding-bottom: 8px;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	padding-top: 8px;
+	padding-bottom: 8px;
 }
 
 .neo-nav--left .neo-skipnav:focus {
-  top: 7px;
+	top: 7px;
 }

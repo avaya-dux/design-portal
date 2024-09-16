@@ -1,66 +1,66 @@
 .do-and-dont-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+	gap: 2rem;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
 }
 
 .do-and-dont-container.do-and-dont-container-wide {
-  grid-template-columns: 1fr;
-  gap: 3rem;
+	grid-template-columns: 1fr;
+	gap: 3rem;
 }
 .do-and-dont-container-wide
-  .do-and-dont-example-item
-  .do-and-dont-example-content,
+	.do-and-dont-example-item
+	.do-and-dont-example-content,
 .do-and-dont-container-no-ratio
-  .do-and-dont-example-item
-  .do-and-dont-example-content {
-  aspect-ratio: unset;
+	.do-and-dont-example-item
+	.do-and-dont-example-content {
+	aspect-ratio: unset;
 }
 
 .do-and-dont-example-content {
-  background-color: var(--neo-color-base-100);
-  display: flex;
-  aspect-ratio: 1 / 0.7;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1rem 1.5rem 2rem 1.5rem;
-  margin-bottom: 1rem;
+	background-color: var(--neo-color-base-100);
+	display: flex;
+	aspect-ratio: 1 / 0.7;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 1rem 1.5rem 2rem 1.5rem;
+	margin-bottom: 1rem;
 }
 
 .do-and-dont-example-content-do {
-  box-shadow: inset 0px -8px 0px var(--neo-color-green-500);
+	box-shadow: inset 0px -8px 0px var(--neo-color-green-500);
 }
 
 .do-and-dont-example-content-dont {
-  box-shadow: inset 0px -8px 0px var(--neo-color-red-500);
+	box-shadow: inset 0px -8px 0px var(--neo-color-red-500);
 }
 
 .do-and-dont-example-content .do-and-dont-check-mark {
-  color: var(--neo-color-green-500);
-  margin-bottom: 1rem;
+	color: var(--neo-color-green-500);
+	margin-bottom: 1rem;
 }
 
 .do-and-dont-example-content .do-and-dont-missed-filled {
-  color: var(--neo-color-red-500);
-  margin-bottom: 1rem;
+	color: var(--neo-color-red-500);
+	margin-bottom: 1rem;
 }
 
 .do-and-dont-example-item .do-and-dont-paragraph {
-  /* Web/Large Body - Regular */
-  font-size: 1rem;
-  line-height: 1.5rem;
+	/* Web/Large Body - Regular */
+	font-size: 1rem;
+	line-height: 1.5rem;
 }
 
 .do-and-dont-example-content-image img.neo-img {
-  background: var(--neo-color-base-0);
-  min-height: 10rem;
+	background: var(--neo-color-base-0);
+	min-height: 10rem;
 }
 
 .do-and-dont-example-content-image {
-  display: flex;
-  justify-content: center;
-  background: var(--neo-color-base-0);
-  height: 100%;
+	display: flex;
+	justify-content: center;
+	background: var(--neo-color-base-0);
+	height: 100%;
 }

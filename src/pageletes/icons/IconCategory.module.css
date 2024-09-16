@@ -1,59 +1,60 @@
 .icon-category {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  margin-bottom: 4rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	margin-bottom: 4rem;
 }
 
 .icon-category > p {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  width: 100%;
-  text-transform: capitalize;
-  border-bottom: 1px solid var(--navbar-border-bottom-color);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+	width: 100%;
+	text-transform: capitalize;
+	border-bottom: 1px solid var(--navbar-border-bottom-color);
+	padding-bottom: 0.5rem;
+	margin-bottom: 1rem;
 }
 
 .icon-category__icons--flex {
-  display: flex;
-  justify-content: flex-start;
+	display: flex;
+	justify-content: flex-start;
 }
 
 .icon-category__icons--grid {
-  --grid-layout-gap: 15px;
-  --grid-column-count: 10;
-  --grid-item--min-width: 160px;
-  --gap-count: calc(var(--grid-column-count) - 5);
-  --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
-  --grid-item--max-width: calc(
-    (100% - var(--total-gap-width)) / var(--grid-column-count)
-  );
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(Max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr)
-  );
-  grid-gap: var(--grid-layout-gap);
-  grid-row-gap: 16px;
+	--grid-layout-gap: 15px;
+	--grid-column-count: 10;
+	--grid-item--min-width: 160px;
+	--gap-count: calc(var(--grid-column-count) - 5);
+	--total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+	--grid-item--max-width: calc(
+		(100% - var(--total-gap-width)) /
+		var(--grid-column-count)
+	);
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(
+			auto-fill,
+			minmax(Max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr)
+		);
+	grid-gap: var(--grid-layout-gap);
+	grid-row-gap: 16px;
 }
 
 .icon-category__icons__card {
-  height: 10rem;
-  width: 11rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+	height: 10rem;
+	width: 11rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
 }
 
 .icon-category__icons__card p {
-  text-align: center;
+	text-align: center;
 }
 
 .icon-category__no-icons {
-  display: block;
-  color: var(--button-color-alert);
+	display: block;
+	color: var(--button-color-alert);
 }

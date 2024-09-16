@@ -2,13 +2,13 @@
   this css fixes those issues. */
 
 #the-avatar {
-  margin-top: 0.6rem;
+	margin-top: 0.6rem;
 }
 
 .playground-topnav > nav.neo-navbar .neo-nav--left {
-  align-items: center;
+	align-items: center;
 }
 
 .playground-topnav > nav.neo-navbar .neo-nav--left a {
-  height: 3.3rem;
+	height: 3.3rem;
 }

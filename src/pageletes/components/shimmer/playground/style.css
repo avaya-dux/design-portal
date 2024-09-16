@@ -1,18 +1,18 @@
 .shimmer-playground-rectangle-wrapper {
-  position: relative;
-  width: 100%;
+	position: relative;
+	width: 100%;
 }
 
 .neo-shimmer.neo-shimmer__rectangle.sm {
-  height: 1rem;
+	height: 1rem;
 }
 
 .neo-shimmer.neo-shimmer__rectangle.lg {
-  height: 3rem;
+	height: 3rem;
 }
 
 .neo-shimmer.neo-shimmer--3-count {
-  -webkit-animation-iteration-count: 3;
-  -moz-animation-iteration-count: 3;
-  animation-iteration-count: 3;
+	-webkit-animation-iteration-count: 3;
+	-moz-animation-iteration-count: 3;
+	animation-iteration-count: 3;
 }

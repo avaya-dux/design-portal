@@ -1,152 +1,153 @@
 :root {
-  --left-navigation-width: 15rem;
-  --left-navigation-border-width: 1px;
+	--left-navigation-width: 15rem;
+	--left-navigation-border-width: 1px;
 }
 
 .left-navigation {
-  min-width: var(--left-navigation-width);
+	min-width: var(--left-navigation-width);
 }
 
 .left-navigation .neo-leftnav--wrapper {
-  background-color: var(--global-background);
+	background-color: var(--global-background);
 }
 
 [dir="rtl"] .left-navigation {
-  border-right: none;
-  border-left: 1px solid var(--navbar-border-bottom-color);
+	border-right: none;
+	border-left: 1px solid var(--navbar-border-bottom-color);
 }
 
 .left-navigation
-  .neo-leftnav--wrapper
-  .neo-leftnav
-  .neo-leftnav__nav
-  .neo-leftnav__main
-  a {
-  padding: 1rem 2rem 1rem 1rem;
+	.neo-leftnav--wrapper
+	.neo-leftnav
+	.neo-leftnav__nav
+	.neo-leftnav__main
+	a {
+	padding: 1rem 2rem 1rem 1rem;
 }
 
 .left-navigation + .left-navigation-scrim {
-  display: none;
+	display: none;
 }
 
 @media (min-width: 1280px) {
-  .left-navigation .neo-nav--left {
-    display: none;
-  }
+	.left-navigation .neo-nav--left {
+		display: none;
+	}
 
-  .left-navigation.left-navigation-homepage {
-    display: none;
-  }
+	.left-navigation.left-navigation-homepage {
+		display: none;
+	}
 
-  .left-navigation .neo-leftnav--wrapper .neo-leftnav .neo-leftnav__nav {
-    height: calc(100vh - var(--header-height));
-    overflow: auto;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    position: fixed;
-    border-right: var(--left-navigation-border-width) solid
-      var(--navbar-border-bottom-color);
-    width: calc(
-      var(--left-navigation-width) - var(--left-navigation-border-width)
-    );
-  }
+	.left-navigation .neo-leftnav--wrapper .neo-leftnav .neo-leftnav__nav {
+		height: calc(100vh - var(--header-height));
+		overflow: auto;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		position: fixed;
+		border-right: var(--left-navigation-border-width) solid
+			var(--navbar-border-bottom-color);
+		width: calc(
+			var(--left-navigation-width) -
+			var(--left-navigation-border-width)
+		);
+	}
 }
 
 @media (max-width: 1279px) {
-  .left-navigation .neo-leftnav--wrapper {
-    height: calc(100vh - var(--header-height));
-    overflow-y: scroll;
-  }
+	.left-navigation .neo-leftnav--wrapper {
+		height: calc(100vh - var(--header-height));
+		overflow-y: scroll;
+	}
 
-  nav.neo-navbar {
-    overflow: visible;
-  }
+	nav.neo-navbar {
+		overflow: visible;
+	}
 
-  .left-navigation {
-    position: fixed;
-    transform: translate3d(-15rem, 0, 0);
-    padding-top: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 100;
-  }
+	.left-navigation {
+		position: fixed;
+		transform: translate3d(-15rem, 0, 0);
+		padding-top: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 100;
+	}
 
-  .left-navigation:not(.left-navigation--active) a {
-    display: none;
-  }
+	.left-navigation:not(.left-navigation--active) a {
+		display: none;
+	}
 
-  .left-navigation:not(.left-navigation--active) button {
-    display: none;
-  }
+	.left-navigation:not(.left-navigation--active) button {
+		display: none;
+	}
 
-  .left-navigation.left-navigation--active {
-    transition: transform 0.35s;
-    transform: translate3d(0rem, 0, 0);
-  }
-  .left-navigation.left-navigation--hidden {
-    transition: transform 0.35s;
-    transform: translate3d(-15rem, 0, 0);
-  }
-  .left-navigation.left-navigation--active + .left-navigation-scrim {
-    display: block;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 99;
-  }
+	.left-navigation.left-navigation--active {
+		transition: transform 0.35s;
+		transform: translate3d(0rem, 0, 0);
+	}
+	.left-navigation.left-navigation--hidden {
+		transition: transform 0.35s;
+		transform: translate3d(-15rem, 0, 0);
+	}
+	.left-navigation.left-navigation--active + .left-navigation-scrim {
+		display: block;
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: 99;
+	}
 
-  .left-navigation .neo-nav--left {
-    height: var(--header-height);
-    min-height: var(--header-height);
-    border-bottom: 1px solid var(--navbar-border-bottom-color);
-  }
-  .left-navigation .neo-nav--left .neo-badge__navbutton {
-    margin-top: 0px;
-    margin-right: 8px;
-  }
+	.left-navigation .neo-nav--left {
+		height: var(--header-height);
+		min-height: var(--header-height);
+		border-bottom: 1px solid var(--navbar-border-bottom-color);
+	}
+	.left-navigation .neo-nav--left .neo-badge__navbutton {
+		margin-top: 0px;
+		margin-right: 8px;
+	}
 
-  .left-navigation .neo-nav--left .neo-badge__navbutton .neo-btn {
-    /* No equivalent to Avaya red in Neo design system */
-    background-color: var(--global-background);
-    border-radius: 0;
-  }
+	.left-navigation .neo-nav--left .neo-badge__navbutton .neo-btn {
+		/* No equivalent to Avaya red in Neo design system */
+		background-color: var(--global-background);
+		border-radius: 0;
+	}
 
-  .left-navigation .neo-nav--left .neo-badge__navbutton .neo-btn:hover {
-    background-color: var(--global-background);
-    cursor: pointer;
-  }
+	.left-navigation .neo-nav--left .neo-badge__navbutton .neo-btn:hover {
+		background-color: var(--global-background);
+		cursor: pointer;
+	}
 
-  .left-navigation .neo-nav--left .neo-badge__navbutton + a {
-    height: 100%;
-  }
+	.left-navigation .neo-nav--left .neo-badge__navbutton + a {
+		height: 100%;
+	}
 
-  .left-navigation .neo-nav--left a picture img {
-    height: 57px;
-  }
+	.left-navigation .neo-nav--left a picture img {
+		height: 57px;
+	}
 }
 
 @media (max-width: 831px) {
-  .left-navigation {
-    transform: translate3d(-15rem, 0, 0);
-    padding-top: 0;
-    top: var(--header-height);
-    bottom: 0;
-    z-index: 100;
-  }
+	.left-navigation {
+		transform: translate3d(-15rem, 0, 0);
+		padding-top: 0;
+		top: var(--header-height);
+		bottom: 0;
+		z-index: 100;
+	}
 
-  .left-navigation .neo-nav--left {
-    display: none;
-  }
+	.left-navigation .neo-nav--left {
+		display: none;
+	}
 
-  .left-navigation .neo-leftnav--wrapper {
-    height: calc(100vh - var(--footer-height));
-    overflow-y: scroll;
-  }
+	.left-navigation .neo-leftnav--wrapper {
+		height: calc(100vh - var(--footer-height));
+		overflow-y: scroll;
+	}
 
-  li.neo-leftnav__main.neo-leftnav__main--expand > ul.neo-leftnav__nav {
-    max-height: none;
-  }
+	li.neo-leftnav__main.neo-leftnav__main--expand > ul.neo-leftnav__nav {
+		max-height: none;
+	}
 }

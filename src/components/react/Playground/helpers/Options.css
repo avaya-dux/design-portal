@@ -1,98 +1,98 @@
 /* `--playground-options-height` defined in `src/site_components/playground/Playground.css` */
 
 .playground-container .playground-examples {
-  position: relative;
+	position: relative;
 }
 
 .playground-container
-  .playground-examples
-  .options-container
-  .playground-options {
-  overflow: auto;
-  width: 16rem;
-  height: var(--playground-options-height);
-  border-left: 1px solid var(--neo-color-base-200);
+	.playground-examples
+	.options-container
+	.playground-options {
+	overflow: auto;
+	width: 16rem;
+	height: var(--playground-options-height);
+	border-left: 1px solid var(--neo-color-base-200);
 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 }
 
 .playground-container
-  .playground-examples
-  .options-container
-  .toggle-all-options {
-  position: absolute;
-  right: 0;
-  display: none;
+	.playground-examples
+	.options-container
+	.toggle-all-options {
+	position: absolute;
+	right: 0;
+	display: none;
 }
 
 @media screen and (max-width: 780px) {
-  .playground-container .playground-examples .options-container {
-    background-color: var(--global-background);
-    position: absolute;
-    right: 0;
-  }
+	.playground-container .playground-examples .options-container {
+		background-color: var(--global-background);
+		position: absolute;
+		right: 0;
+	}
 
-  .playground-container
-    .playground-examples
-    .options-container
-    .playground-options {
-    display: none;
-  }
+	.playground-container
+		.playground-examples
+		.options-container
+		.playground-options {
+		display: none;
+	}
 
-  .playground-container
-    .playground-examples
-    .options-container
-    .toggle-all-options {
-    display: flex;
-  }
+	.playground-container
+		.playground-examples
+		.options-container
+		.toggle-all-options {
+		display: flex;
+	}
 }
 
 .playground-container
-  .playground-examples
-  .playground-options
-  .playground-options-section {
-  margin: 0.75rem 1rem 0rem 1rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--neo-color-base-200);
+	.playground-examples
+	.playground-options
+	.playground-options-section {
+	margin: 0.75rem 1rem 0rem 1rem;
+	padding-bottom: 0.75rem;
+	border-bottom: 1px solid var(--neo-color-base-200);
 
-  display: grid;
+	display: grid;
 }
 .playground-container
-  .playground-examples
-  .playground-options
-  .playground-options-section:last-child {
-  border-bottom: none;
+	.playground-examples
+	.playground-options
+	.playground-options-section:last-child {
+	border-bottom: none;
 }
 
 .playground-container
-  .playground-examples
-  .playground-options
-  .playground-options-reset-btn {
-  margin: 1rem;
+	.playground-examples
+	.playground-options
+	.playground-options-reset-btn {
+	margin: 1rem;
 }
 
 label.playground-options-section-label {
-  font-size: 12px; /* $token-input-label-font-size: 12px */
+	font-size: 12px; /* $token-input-label-font-size: 12px */
 }
 label.playground-options-section-label:has(
-    + div.neo-form-control input.neo-check + label
-  ) {
-  padding-bottom: 8px;
+		+ div.neo-form-control input.neo-check + label
+	) {
+	padding-bottom: 8px;
 }
 
 .playground-options-section div.neo-multiselect {
-  padding: 12px 0 0 0;
+	padding: 12px 0 0 0;
 }
 
 .playground-options-section
-  div.neo-form-control
-  input.neo-check
-  + label:not(:last-child) {
-  padding: 4px 0 8px 0;
+	div.neo-form-control
+	input.neo-check
+	+ label:not(:last-child) {
+	padding: 4px 0 8px 0;
 }
 
 .playground-options-section div.neo-input-editable__wrapper {
-  margin-top: 0.75rem;
+	margin-top: 0.75rem;
 }

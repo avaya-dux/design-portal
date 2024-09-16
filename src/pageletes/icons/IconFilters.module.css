@@ -1,157 +1,157 @@
 :root {
-  --neo-icon-preferences: "\f220";
+	--neo-icon-preferences: "\f220";
 }
 
 .icon-filters {
-  display: flex;
-  flex-direction: column;
-  width: 15rem;
-  border-right: 1px solid var(--navbar-border-bottom-color);
-  height: calc(100vh - var(--header-height));
-  overflow: auto;
-  position: fixed;
-  top: var(--header-height);
-  background-color: var(--leftnav-background-color);
-  z-index: 100;
+	display: flex;
+	flex-direction: column;
+	width: 15rem;
+	border-right: 1px solid var(--navbar-border-bottom-color);
+	height: calc(100vh - var(--header-height));
+	overflow: auto;
+	position: fixed;
+	top: var(--header-height);
+	background-color: var(--leftnav-background-color);
+	z-index: 100;
 }
 
 .icon-filters .icon-filters__toggle p {
-  padding-left: 0.5rem;
+	padding-left: 0.5rem;
 }
 
 .licon-filters + .icon-filters__scrim {
-  display: none;
+	display: none;
 }
 
 @media (min-width: 1279px) {
-  .icon-filters__toggle button span::before {
-    content: var(--neo-icon-preferences);
-  }
+	.icon-filters__toggle button span::before {
+		content: var(--neo-icon-preferences);
+	}
 
-  .icon-filters .icon-filters__toggle {
-    display: none;
-  }
+	.icon-filters .icon-filters__toggle {
+		display: none;
+	}
 }
 
 @media (max-width: 1279px) {
-  .icon-filters {
-    transition: width 0.35s;
-    width: 4rem;
-  }
+	.icon-filters {
+		transition: width 0.35s;
+		width: 4rem;
+	}
 
-  .icon-filters__toggle {
-    pointer-events: initial;
-  }
+	.icon-filters__toggle {
+		pointer-events: initial;
+	}
 
-  .icon-filters .icon-filters__section {
-    visibility: hidden;
-  }
+	.icon-filters .icon-filters__section {
+		visibility: hidden;
+	}
 
-  .icon-filters .icon-filters__toggle p {
-    display: none;
-  }
+	.icon-filters .icon-filters__toggle p {
+		display: none;
+	}
 
-  .icon-filters.icon-filters--active {
-    transition: width 0.35s;
-    width: 15rem;
-  }
+	.icon-filters.icon-filters--active {
+		transition: width 0.35s;
+		width: 15rem;
+	}
 
-  .icon-filters.icon-filters--active .icon-filters__section {
-    transition-property: visibility;
-    transition-delay: 0.1s;
-    visibility: visible;
-  }
+	.icon-filters.icon-filters--active .icon-filters__section {
+		transition-property: visibility;
+		transition-delay: 0.1s;
+		visibility: visible;
+	}
 
-  .icon-filters.icon-filters--active .icon-filters__toggle p {
-    display: block;
-  }
+	.icon-filters.icon-filters--active .icon-filters__toggle p {
+		display: block;
+	}
 
-  .icon-filters.icon-filters--active .icon-filters__toggle {
-    justify-content: flex-start;
-  }
+	.icon-filters.icon-filters--active .icon-filters__toggle {
+		justify-content: flex-start;
+	}
 
-  .icon-filters.icon-filters--hidden {
-    transition: width 0.35s;
-  }
+	.icon-filters.icon-filters--hidden {
+		transition: width 0.35s;
+	}
 
-  .icon-filters.icon-filters--active + .icon-filters__scrim {
-    display: block;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 99;
-  }
+	.icon-filters.icon-filters--active + .icon-filters__scrim {
+		display: block;
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: 99;
+	}
 
-  /* NOTE: this handles the situation for when the user opens
+	/* NOTE: this handles the situation for when the user opens
   the filter menu, then scrolls, then closes the filter menu */
-  .icon-filters.icon-filters--hidden .icon-filters__section {
-    display: none;
-  }
+	.icon-filters.icon-filters--hidden .icon-filters__section {
+		display: none;
+	}
 }
 
 @media (max-width: 831px) {
-  .icon-filters {
-    height: calc(100vh - var(--header-height));
-  }
+	.icon-filters {
+		height: calc(100vh - var(--header-height));
+	}
 }
 
 .icon-filters__toggle {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 6px 0px 7px 12px;
-  border-bottom: 1px solid var(--navbar-border-bottom-color);
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 6px 0px 7px 12px;
+	border-bottom: 1px solid var(--navbar-border-bottom-color);
 }
 
 .icon-filters__section {
-  padding: 1rem 0px 0.75rem 1.25rem;
-  border-bottom: 1px solid var(--navbar-border-bottom-color);
+	padding: 1rem 0px 0.75rem 1.25rem;
+	border-bottom: 1px solid var(--navbar-border-bottom-color);
 }
 .icon-filters__section:last-of-type {
-  border-bottom: 0;
+	border-bottom: 0;
 }
 
 .icon-filters__section__label {
-  font-size: 0.75rem;
-  line-height: 1rem;
-  color: var(--neo-color-base-500);
+	font-size: 0.75rem;
+	line-height: 1rem;
+	color: var(--neo-color-base-500);
 }
 
 .icon-filters__section .neo-form-control {
-  margin-top: 1.3rem;
+	margin-top: 1.3rem;
 }
 
 .icon-filters__section
-  :global
-  div.neo-input-group
-  input
-  + label:not(.neo-switch) {
-  text-transform: capitalize;
-  padding-bottom: 0.75rem;
+	:global
+	div.neo-input-group
+	input
+	+ label:not(.neo-switch) {
+	text-transform: capitalize;
+	padding-bottom: 0.75rem;
 }
 
 .icon-filters__section
-  :global
-  div.neo-input-group
-  input:not(.neo-check)
-  + label:not(.neo-switch):first-of-type,
+	:global
+	div.neo-input-group
+	input:not(.neo-check)
+	+ label:not(.neo-switch):first-of-type,
 .icon-filters__section
-  :global
-  div.neo-form-control:not(:nth-of-type(2))
-  div.neo-input-group
-  input.neo-check
-  + label:not(.neo-switch):first-of-type {
-  margin-top: 0.75rem;
+	:global
+	div.neo-form-control:not(:nth-of-type(2))
+	div.neo-input-group
+	input.neo-check
+	+ label:not(.neo-switch):first-of-type {
+	margin-top: 0.75rem;
 }
 
 .icon-filters__section
-  :global
-  div.neo-radio-group
-  input.neo-radio
-  + label:not(.neo-switch):nth-of-type(2) {
-  margin-top: 0;
-  padding-top: 3px;
+	:global
+	div.neo-radio-group
+	input.neo-radio
+	+ label:not(.neo-switch):nth-of-type(2) {
+	margin-top: 0;
+	padding-top: 3px;
 }

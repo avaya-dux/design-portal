@@ -1,37 +1,37 @@
 .code-container {
-  position: relative;
-  display: flex;
-  background-color: var(--neo-color-blue-900);
-  min-height: 5rem;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 3px;
+	position: relative;
+	display: flex;
+	background-color: var(--neo-color-blue-900);
+	min-height: 5rem;
+	padding: 1rem;
+	margin-bottom: 1rem;
+	border-radius: 3px;
 }
 
 .code-container code {
-  white-space: pre;
+	white-space: pre;
 }
 
 .code-container .copy-button {
-  position: fixed;
-  right: 2rem;
-  top: 4.5rem;
+	position: fixed;
+	right: 2rem;
+	top: 4.5rem;
 }
 
 @media (max-width: 831px) {
-  .code-container {
-    flex-direction: column;
-    padding-top: 51px;
-  }
-  .code-container pre {
-    white-space: pre-wrap;
-  }
+	.code-container {
+		flex-direction: column;
+		padding-top: 51px;
+	}
+	.code-container pre {
+		white-space: pre-wrap;
+	}
 }
 
 @media (max-width: 668px) {
-  .code-container .copy-button {
-    position: fixed;
-    right: 2rem;
-    top: 6rem;
-  }
+	.code-container .copy-button {
+		position: fixed;
+		right: 2rem;
+		top: 6rem;
+	}
 }
