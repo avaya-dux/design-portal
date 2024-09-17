@@ -1,20 +1,20 @@
 .changes__wrapper h4 {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 600;
-  margin-top: 16px;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 600;
+	margin-top: 16px;
 }
 .changes__wrapper ul {
-  margin-left: 10px;
-  list-style-position: inside;
-  padding-top: 8px;
+	margin-left: 10px;
+	list-style-position: inside;
+	padding-top: 8px;
 }
 .changes__wrapper ul li {
-  list-style-position: outside;
-  font-size: 16px;
-  line-height: 24px;
-  margin: 0 0 0 1rem;
+	list-style-position: outside;
+	font-size: 16px;
+	line-height: 24px;
+	margin: 0 0 0 1rem;
 }
 .changes__wrapper em {
-  font-weight: 400;
+	font-weight: 400;
 }

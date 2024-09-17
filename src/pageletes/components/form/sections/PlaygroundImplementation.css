@@ -2,14 +2,14 @@
   NOTE: Fixing spacing around buttons inside the form.
 */
 #btn-submit {
-  margin-right: 8px;
-  margin-top: 16px;
+	margin-right: 8px;
+	margin-top: 16px;
 }
 
 #btn-submit-inline {
-  margin-right: 8px;
+	margin-right: 8px;
 }
 
 #form-playground-implementation .neo-form.neo-form--inline {
-  flex-wrap: wrap;
+	flex-wrap: wrap;
 }

@@ -60,6 +60,7 @@ export const OptionsSection = ({
 		className={clsx("playground-options-section", className)}
 		style={style}
 	>
+		{/* biome-ignore lint/a11y/noLabelWithoutControl: it does have a control, it's just in the `children` and accessed by `aria-labelledby` */}
 		<label className="playground-options-section-label" id={id}>
 			{title}
 		</label>
