@@ -27,7 +27,6 @@ export interface PlaygroundProps {
 	children: React.ReactNode;
 	examples: Examples;
 	options: JSX.Element;
-	title?: string;
 	description?: string;
 	isPadded?: boolean;
 }
@@ -88,14 +87,12 @@ export const Playground = ({
 	description,
 	examples: { html, react, sandbox, storybook },
 	options,
-	title,
 	isPadded = true,
 }: PlaygroundProps) => {
 	const [activePanel, setActivePanel] = useState(0);
 
 	return (
 		<div className="playground-container">
-			{title && <label className="playground-title">{title}</label>}
 			{description && <p className="playground-description">{description}</p>}
 
 			<div className="playground-examples">
