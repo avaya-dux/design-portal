@@ -1,6 +1,9 @@
 {
 	"linter": {
 		"rules": {
+			"a11y": {
+				"useSemanticElements": "off"
+			},
 			"complexity": {
 				"noForEach": "off"
 			},
