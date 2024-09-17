@@ -2,6 +2,7 @@
 	"linter": {
 		"rules": {
 			"a11y": {
+				// NOTE: this rule is experimental as of v1.9.1 and is throwing innacurate errors
 				"useSemanticElements": "off"
 			},
 			"complexity": {
