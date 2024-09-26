@@ -1,4 +1,4 @@
-import { LeftNav } from "@avaya/neo-react";
+import { SideNavigation } from "@avaya/neo-react";
 import { useStore } from "@nanostores/react";
 import clsx from "clsx";
 import { useCallback, useEffect, useRef } from "react";
@@ -99,13 +99,13 @@ export const LeftNavigation = ({
 					}
 				/>
 				{width > breakpoints.mobileMax ? (
-					<LeftNav
+					<SideNavigation
 						aria-label="left-navigation"
 						currentUrl={currentUrl}
 						isActiveOverride
 					>
 						{leftNavPages.map((page, index) => (
-							<LeftNav.TopLinkItem
+							<SideNavigation.TopLinkItem
 								key={`${index}${page.title}`}
 								label={page.title}
 								href={page.url as string}
@@ -114,7 +114,7 @@ export const LeftNavigation = ({
 								)}
 							/>
 						))}
-					</LeftNav>
+					</SideNavigation>
 				) : width > 0 ? (
 					<LeftNavMobile currentUrl={currentUrl} allPages={allPages} />
 				) : null}
