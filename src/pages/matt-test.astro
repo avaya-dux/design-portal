@@ -5,12 +5,13 @@ export const keywords = "For Matt's designer eyes only!";
 import { Image } from "@avaya/neo-react";
 import {
 	CaptionInfoList,
+	ColumnLayout,
 	Description,
 	ImageWrapper,
 	InfoListItem,
+	PageTitle,
 	PageleteSection,
 	PageleteSubSection,
-	PageTitle,
 	SectionHeader,
 	StackedLayout,
 	SubHeader,
@@ -19,6 +20,12 @@ import { Layout } from "layouts";
 
 import single from "./images/single-image.svg";
 const singleAltText = "Lorem Ipsum";
+
+import leftImage from "./images/image-left.svg";
+const leftImageAlt = "Left Image";
+
+import rightImage from "./images/image-right.svg";
+const rightImageAlt = "Right Image";
 ---
 
 <Layout title="Icons">
@@ -126,5 +133,21 @@ const singleAltText = "Lorem Ipsum";
 				</InfoListItem>
 			</CaptionInfoList>
 		</PageleteSubSection>
+	</PageleteSection>
+
+	<PageleteSection>
+		<SectionHeader id="large-image">Side by side images</SectionHeader>
+
+		<Description>Two images side by side</Description>
+
+		<ColumnLayout isShaded numOfColumns={2} marginBottom={"3rem"}>
+			<StackedLayout label="Table Filter">
+				<Image src={leftImage.src} alt={leftImageAlt} />
+			</StackedLayout>
+
+			<StackedLayout label="Table Filter Applied">
+				<Image src={rightImage.src} alt={rightImageAlt} />
+			</StackedLayout>
+		</ColumnLayout>
 	</PageleteSection>
 </Layout>
