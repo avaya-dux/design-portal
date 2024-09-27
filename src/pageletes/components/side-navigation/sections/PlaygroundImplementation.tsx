@@ -1,4 +1,4 @@
-import { LeftNav, Radio, RadioGroup } from "@avaya/neo-react";
+import { Radio, RadioGroup, SideNavigation } from "@avaya/neo-react";
 import { Playground } from "components/react";
 import {
 	prettyPrintReactElementToHtml,
@@ -19,24 +19,24 @@ export const PlaygroundImplementation = () => {
 		const expandedStates = [true, false];
 
 		const accountLinkItems = [
-			<LeftNav.LinkItem key="account-link-item-1" href="#/1">
+			<SideNavigation.LinkItem key="account-link-item-1" href="#/1">
 				Account
-			</LeftNav.LinkItem>,
-			<LeftNav.LinkItem key="account-link-item-2" href="#/2">
+			</SideNavigation.LinkItem>,
+			<SideNavigation.LinkItem key="account-link-item-2" href="#/2">
 				Business Rules
-			</LeftNav.LinkItem>,
-			<LeftNav.LinkItem key="account-link-item-3" href="#/3">
+			</SideNavigation.LinkItem>,
+			<SideNavigation.LinkItem key="account-link-item-3" href="#/3">
 				Contact Centers
-			</LeftNav.LinkItem>,
+			</SideNavigation.LinkItem>,
 		];
 
 		const analyticsLinkItems = [
-			<LeftNav.LinkItem key="analytics-link-item-1" href="#/4">
+			<SideNavigation.LinkItem key="analytics-link-item-1" href="#/4">
 				Dashboard
-			</LeftNav.LinkItem>,
-			<LeftNav.LinkItem key="analytics-link-item-2" href="#/5">
+			</SideNavigation.LinkItem>,
+			<SideNavigation.LinkItem key="analytics-link-item-2" href="#/5">
 				Usage Report
-			</LeftNav.LinkItem>,
+			</SideNavigation.LinkItem>,
 		];
 
 		const categoryNames = ["Accounts", "Analytics"];
@@ -55,35 +55,35 @@ export const PlaygroundImplementation = () => {
 
 		const listCategories = categoryNames.map((category, index) => {
 			return iconType === "icon" ? (
-				<LeftNav.NavCategory
+				<SideNavigation.NavCategory
 					expanded={expandedStates[index]}
 					icon={categoryIcons[index]}
 					label={category}
 					key={`icon-category-${index}`}
 				>
 					{getLinkItems(category)}
-				</LeftNav.NavCategory>
+				</SideNavigation.NavCategory>
 			) : (
-				<LeftNav.NavCategory
+				<SideNavigation.NavCategory
 					expanded={expandedStates[index]}
 					label={category}
 					key={`nonicon-category-${index}`}
 				>
 					{getLinkItems(category)}
-				</LeftNav.NavCategory>
+				</SideNavigation.NavCategory>
 			);
 		});
 
 		const settingsTopLinkItem =
 			iconType === "icon" ? (
-				<LeftNav.TopLinkItem
+				<SideNavigation.TopLinkItem
 					key="settings-top-link-item-1"
 					icon="settings"
 					label="Settings"
 					href="#settings"
 				/>
 			) : (
-				<LeftNav.TopLinkItem
+				<SideNavigation.TopLinkItem
 					key="settings-top-link-item-2"
 					label="Settings"
 					href="#settings"
@@ -91,10 +91,10 @@ export const PlaygroundImplementation = () => {
 			);
 
 		const element = (
-			<LeftNav aria-label="Main Navigation" currentUrl="#/1">
+			<SideNavigation aria-label="Main Navigation" currentUrl="#/1">
 				{listCategories}
 				{settingsTopLinkItem}
-			</LeftNav>
+			</SideNavigation>
 		);
 
 		return [
