@@ -5,6 +5,7 @@ export interface Props {
 	gap?: string;
 	isShaded?: boolean;
 	label?: string;
+	showBorders?: boolean;
 	labelPaddingLeft?: string;
 	labelPaddingTop?: string;
 	vMargin?: string;
@@ -16,6 +17,7 @@ export interface Props {
 const {
 	gap = "3rem",
 	isShaded = false,
+	showBorders = false,
 	label = "",
 	labelPaddingLeft = "40px",
 	labelPaddingTop = "0px",
@@ -29,7 +31,7 @@ const {
 <div
 	class={clsx(
 		"stack-container",
-		"show-borders",
+		showBorders && "show-borders",
 		isShaded && "stack-container--shaded"
 	)}
 >
