@@ -10,6 +10,7 @@
 	grid-template-columns: 1fr;
 	gap: 3rem;
 }
+
 .do-and-dont-container-wide
 	.do-and-dont-example-item
 	.do-and-dont-example-content,
@@ -21,6 +22,7 @@
 
 .do-and-dont-example-content {
 	background-color: var(--neo-color-base-100);
+	border: 1px solid var(--neo-color-base-200);
 	display: flex;
 	aspect-ratio: 1 / 0.7;
 	flex-direction: column;
