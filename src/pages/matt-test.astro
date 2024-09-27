@@ -26,6 +26,9 @@ const leftImageAlt = "Left Image";
 
 import rightImage from "./images/image-right.svg";
 const rightImageAlt = "Right Image";
+
+import bottomAligned from "./images/sheet-behavior.svg";
+const bottomAlignedAlt = "Sheet Behavior";
 ---
 
 <Layout title="Icons">
@@ -149,5 +152,30 @@ const rightImageAlt = "Right Image";
 				<Image src={rightImage.src} alt={rightImageAlt} />
 			</StackedLayout>
 		</ColumnLayout>
+	</PageleteSection>
+
+	<PageleteSection>
+		<SectionHeader id="bottom-aligned-image">
+			Bottom aligned single image
+		</SectionHeader>
+
+		<Description>Single image aligned to the bottom</Description>
+
+		<Description>
+			The Sheet component provides users with actions and information related to
+			the current page. It does not interrupt the flow in the same way that a
+			modal will. Use sheets to present additional or related content within the
+			same area to help users keep track of their current flow.
+		</Description>
+
+		<ColumnLayout numOfColumns={1}>
+			<StackedLayout vPadding="0">
+				<Image src={bottomAligned.src} alt={bottomAlignedAlt} />
+			</StackedLayout>
+		</ColumnLayout>
+
+		<ImageWrapper isShaded>
+			<Image src={bottomAligned.src} alt={bottomAlignedAlt} />
+		</ImageWrapper>
 	</PageleteSection>
 </Layout>
