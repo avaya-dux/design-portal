@@ -148,12 +148,18 @@ const wideDontImgAltText =
 			<Description>
 				<b>IMPORTANT</b>: The <code>StackedLayout</code> component <i
 					>does not</i
-				> include shading out vertical margin by defrault. You will need to utilze
-				the props <code>vMargin</code> and <code>isShaded</code> to give the image
-				the appropriate spacing and shading.
+				> include shading out vertical margin by default. You will need to utilze
+				the props <code>Margin="1.5rem"</code>, <code>isShaded</code>, and <code
+					>showBorders</code
+				> to give the image the appropriate spacing and shading.
 			</Description>
 
-			<StackedLayout vMargin="1.5rem" isShaded label="Title goes here">
+			<StackedLayout
+				vMargin="1.5rem"
+				isShaded
+				showBorders
+				label="Title goes here"
+			>
 				<Image src={single.src} alt={singleAltText} />
 			</StackedLayout>
 		</PageleteSubSection>
