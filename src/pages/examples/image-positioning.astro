@@ -1,0 +1,212 @@
+---
+export const title = "Image Positioning";
+export const keywords = "portal examples, image positioning";
+
+import { Image, Link } from "@avaya/neo-react";
+import {
+	CaptionInfoList,
+	ColumnLayout,
+	Description,
+	ImageWrapper,
+	InfoListItem,
+	PageTitle,
+	PageleteSection,
+	PageleteSubSection,
+	SectionHeader,
+	StackedLayout,
+	SubHeader,
+} from "components";
+import { Layout } from "layouts";
+
+import single from "./images/single-image.svg";
+const singleAltText = "Lorem Ipsum";
+
+import leftImage from "./images/image-left.svg";
+const leftImageAlt = "Left Image";
+
+import rightImage from "./images/image-right.svg";
+const rightImageAlt = "Right Image";
+
+import bottomAligned from "./images/sheet-behavior.svg";
+const bottomAlignedAlt = "Sheet Behavior";
+---
+
+<Layout title="Icons">
+	<PageleteSection>
+		<PageTitle>Image Position Examples</PageTitle>
+
+		<Description>
+			This page is for the developers of the Neo Portal. It provides examples
+			for the various image positioning components we have available and how
+			they should be used.
+		</Description>
+	</PageleteSection>
+
+	<PageleteSection>
+		<SectionHeader id="large-images">Large Images</SectionHeader>
+
+		<PageleteSubSection>
+			<SubHeader id="large-image-wo-title">Without title</SubHeader>
+
+			<Description>
+				Use the Astro component <code>ImageWrapper</code> to wrap the neo-react
+				<code>Image</code> component.
+			</Description>
+
+			<Description>
+				The neo-react <code>Image</code> component will enforce a11y, and the <code
+					>ImageWrapper</code
+				> Astro component will add the appropriate spacing and styling to the image.
+			</Description>
+
+			<Description>
+				Some images will need captions, use <code>CaptionInfoList</code> and it's
+				children <code>InfoListItem</code> to provide context. Note that <code
+					>CaptionInfoList</code
+				> takes a prop <code>type</code> which defines the list type (eg, disc, upper-alpha,
+				ect).
+			</Description>
+
+			<ImageWrapper isShaded>
+				<Image src={single.src} alt={singleAltText} />
+			</ImageWrapper>
+
+			<CaptionInfoList>
+				<InfoListItem label="Toolbar">
+					A collection of functions, such as edit, copy, and delete, that can be
+					used to modify the data in the table.
+				</InfoListItem>
+
+				<InfoListItem label="Column Header">
+					The title of each column contains a description of the data it
+					contains.
+				</InfoListItem>
+
+				<InfoListItem label="Row">
+					Each row is a single record within the database. All columns on the
+					row relate to the same record.
+				</InfoListItem>
+
+				<InfoListItem label="Pagination">
+					The table footer contains information regarding the total number of
+					records, the range of records being shown, and navigation tools to
+					move through multiple pages where necessary.
+				</InfoListItem>
+
+				<InfoListItem label="Search Field">
+					Use this field to search all rows and columns of the table to find a
+					specific record or data value.
+				</InfoListItem>
+
+				<InfoListItem label="Sort and Filter">
+					These standard tools can be applied to each column. Sort reorders the
+					records, such as toggling between ascending and descending order. A
+					Filter allows you to select only the records that meet specified
+					parameters (e.g. a date range).
+				</InfoListItem>
+			</CaptionInfoList>
+		</PageleteSubSection>
+
+		<PageleteSubSection>
+			<SubHeader id="large-image-with-title">With title</SubHeader>
+
+			<Description>
+				If an image should have a title, use the Astro component <code
+					>StackedLayout</code
+				> to wrap the neo-react <code>Image</code> component.
+			</Description>
+
+			<Description>
+				<b>IMPORTANT</b>: The <code>StackedLayout</code> component <i
+					>does not</i
+				> include shading out vertical margin by defrault. You will need to utilze
+				the props <code>vMargin</code> and <code>isShaded</code> to give the image
+				the appropriate spacing and shading.
+			</Description>
+
+			<StackedLayout vMargin="1.5rem" isShaded label="Title goes here">
+				<Image src={single.src} alt={singleAltText} />
+			</StackedLayout>
+		</PageleteSubSection>
+
+		<PageleteSubSection>
+			<SubHeader id="bottom-aligned-image"> Bottom aligned images </SubHeader>
+
+			<Description>
+				Most images are vertically and horizontally centered, but we have a few
+				circumstances where we need to align the image to the bottom of the
+				container.
+			</Description>
+
+			<ImageWrapper isShaded padding="2.5rem 0">
+				<Image src={bottomAligned.src} alt={bottomAlignedAlt} />
+			</ImageWrapper>
+		</PageleteSubSection>
+	</PageleteSection>
+
+	<PageleteSection>
+		<SectionHeader id="small-and-medium-image">
+			Small and medium images
+		</SectionHeader>
+
+		<Description>
+			Images that are smaller in size can be placed side by side to provide
+			context to the user. Use the Astro component <code>ColumnLayout</code> to place
+			images side by side, and its prop <code>numOfColumns</code> to define the number
+			of columns. See the <Link inline href="/components/buttons">Button</Link> component
+			for more details.
+		</Description>
+
+		<Description>
+			<b>IMPORTANT</b>: The <code>ColumnLayout</code> component <i>does not</i> automatically
+			include shading out vertical margin. You will need to utilze the props <code
+				>marginBottom</code
+			> and <code>isShaded</code> to give the image the appropriate spacing and shading.
+		</Description>
+
+		<PageleteSubSection>
+			<SubHeader id="two-images-side-by-side">
+				Two small images, side by side
+			</SubHeader>
+
+			<Description>
+				Use the Astro component <code>ColumnLayout</code> to wrap the Astro component
+				<code>StackedLayout</code> which wraps the neo-react <code>Image</code> component.
+			</Description>
+
+			<ColumnLayout isShaded numOfColumns={2} marginBottom="3rem">
+				<StackedLayout label="Table Filter">
+					<Image src={leftImage.src} alt={leftImageAlt} />
+				</StackedLayout>
+
+				<StackedLayout label="Table Filter Applied">
+					<Image src={rightImage.src} alt={rightImageAlt} />
+				</StackedLayout>
+			</ColumnLayout>
+		</PageleteSubSection>
+
+		<PageleteSubSection>
+			<SubHeader id="four-images-in-2-by-2">
+				Four medium images, in a 2x2 grid (<code>numOfColumns={2}</code>)
+			</SubHeader>
+
+			<ColumnLayout isShaded numOfColumns={2} marginBottom="3rem">
+				<StackedLayout label="Table Filter">
+					<Image src={leftImage.src} alt={leftImageAlt} />
+				</StackedLayout>
+
+				<StackedLayout label="Table Filter Applied">
+					<Image src={rightImage.src} alt={rightImageAlt} />
+				</StackedLayout>
+
+				<StackedLayout label="Table Filter">
+					<Image src={leftImage.src} alt={leftImageAlt} />
+				</StackedLayout>
+
+				<StackedLayout label="Table Filter Applied">
+					<Image src={rightImage.src} alt={rightImageAlt} />
+				</StackedLayout>
+			</ColumnLayout>
+		</PageleteSubSection>
+	</PageleteSection>
+</Layout>
