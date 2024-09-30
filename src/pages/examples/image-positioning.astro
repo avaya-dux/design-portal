@@ -5,8 +5,10 @@ export const keywords = "portal examples, image positioning";
 import { Image, Link } from "@avaya/neo-react";
 import {
 	CaptionInfoList,
+	CollapsibleColumns,
 	ColumnLayout,
 	Description,
+	ImageWithCaption,
 	ImageWrapper,
 	InfoListItem,
 	PageTitle,
@@ -29,6 +31,9 @@ const rightImageAlt = "Right Image";
 
 import bottomAligned from "./images/bottom-align-this-image.svg";
 const bottomAlignedAlt = "Bottom aligned image";
+
+import collapsibleImg1 from "./images/collapsible-image-1.svg";
+import collapsibleImg2 from "./images/collapsible-image-2.svg";
 ---
 
 <Layout title="Icons">
@@ -211,5 +216,35 @@ const bottomAlignedAlt = "Bottom aligned image";
 				</StackedLayout>
 			</ColumnLayout>
 		</PageleteSubSection>
+	</PageleteSection>
+
+	<PageleteSection>
+		<SectionHeader id="collapseable-columns">
+			Collapsable columns with images
+		</SectionHeader>
+
+		<Description>
+			Pages such as <Link inline href="/accessibility/principles">
+				Accessibility Principles</Link
+			>
+			use the <code>CollapsibleColumns</code> component to display multiple images
+			on a line, with captions, and auto-collapse functionality. <code
+				>CollapsibleColumns</code
+			> is, as of this writing, only used in the Guidelines and Accessibility pages.
+		</Description>
+
+		<CollapsibleColumns>
+			<ImageWithCaption
+				imgSrc={collapsibleImg1.src}
+				imgAlt="Image showing braille characters"
+				captionTitle="Blind"
+			/>
+
+			<ImageWithCaption
+				imgSrc={collapsibleImg2.src}
+				imgAlt="Image showing an eye icon with multiple lines through it"
+				captionTitle="Low Vision"
+			/>
+		</CollapsibleColumns>
 	</PageleteSection>
 </Layout>
