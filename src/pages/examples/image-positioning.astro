@@ -27,8 +27,8 @@ const leftImageAlt = "Left Image";
 import rightImage from "./images/image-right.svg";
 const rightImageAlt = "Right Image";
 
-import bottomAligned from "./images/sheet-behavior.svg";
-const bottomAlignedAlt = "Sheet Behavior";
+import bottomAligned from "./images/bottom-align-this-image.svg";
+const bottomAlignedAlt = "Bottom aligned image";
 ---
 
 <Layout title="Icons">
@@ -130,15 +130,18 @@ const bottomAlignedAlt = "Sheet Behavior";
 		</PageleteSubSection>
 
 		<PageleteSubSection>
-			<SubHeader id="bottom-aligned-image"> Bottom aligned images </SubHeader>
+			<SubHeader id="bottom-aligned-image">Bottom aligned images</SubHeader>
 
 			<Description>
 				Most images are vertically and horizontally centered, but we have a few
 				circumstances where we need to align the image to the bottom of the
-				container.
+				container. To do this, set the prop <code
+					>padding="2.5rem 1.5rem 0"</code
+				> on the <code>ImageWrapper</code> component. This keeps the default left,
+				top, and right padding, but removes the bottom padding.
 			</Description>
 
-			<ImageWrapper isShaded padding="2.5rem 0">
+			<ImageWrapper isShaded padding="2.5rem 1.5rem 0">
 				<Image src={bottomAligned.src} alt={bottomAlignedAlt} />
 			</ImageWrapper>
 		</PageleteSubSection>
