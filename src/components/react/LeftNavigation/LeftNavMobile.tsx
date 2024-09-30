@@ -1,4 +1,4 @@
-import { LeftNav } from "@avaya/neo-react";
+import { SideNavigation } from "@avaya/neo-react";
 
 import type { SitePages } from "helpers/types";
 
@@ -10,53 +10,56 @@ export const LeftNavMobile = ({
 	currentUrl: string;
 }) => {
 	return (
-		<LeftNav
+		<SideNavigation
 			aria-label="left-navigation"
 			currentUrl={currentUrl}
 			isActiveOverride
 		>
-			<LeftNav.NavCategory label="Docs">
+			<SideNavigation.NavCategory label="Docs">
 				{allPages.docs.map((page, index) => (
-					<LeftNav.LinkItem key={`doc-${index}`} href={page.url as string}>
+					<SideNavigation.LinkItem
+						key={`doc-${index}`}
+						href={page.url as string}
+					>
 						{page.title}
-					</LeftNav.LinkItem>
+					</SideNavigation.LinkItem>
 				))}
-			</LeftNav.NavCategory>
+			</SideNavigation.NavCategory>
 
-			<LeftNav.NavCategory label="Guidelines">
+			<SideNavigation.NavCategory label="Guidelines">
 				{allPages.guidelines.map((page, index) => (
-					<LeftNav.LinkItem
+					<SideNavigation.LinkItem
 						key={`guidelines-${index}`}
 						href={page.url as string}
 					>
 						{page.title}
-					</LeftNav.LinkItem>
+					</SideNavigation.LinkItem>
 				))}
-			</LeftNav.NavCategory>
+			</SideNavigation.NavCategory>
 
-			<LeftNav.NavCategory label="Accessibility">
+			<SideNavigation.NavCategory label="Accessibility">
 				{allPages.accessibility.map((page, index) => (
-					<LeftNav.LinkItem
+					<SideNavigation.LinkItem
 						key={`accessibility-${index}`}
 						href={page.url as string}
 					>
 						{page.title}
-					</LeftNav.LinkItem>
+					</SideNavigation.LinkItem>
 				))}
-			</LeftNav.NavCategory>
+			</SideNavigation.NavCategory>
 
-			<LeftNav.NavCategory label="Components">
+			<SideNavigation.NavCategory label="Components">
 				{allPages.components.map((page, index) => (
-					<LeftNav.LinkItem
+					<SideNavigation.LinkItem
 						key={`${index}${page.title}`}
 						href={page.url as string}
 					>
 						{page.title}
-					</LeftNav.LinkItem>
+					</SideNavigation.LinkItem>
 				))}
-			</LeftNav.NavCategory>
+			</SideNavigation.NavCategory>
 
-			<LeftNav.TopLinkItem key="theIcons" label="Icons" href="/icons" />
-		</LeftNav>
+			<SideNavigation.TopLinkItem key="theIcons" label="Icons" href="/icons" />
+		</SideNavigation>
 	);
 };

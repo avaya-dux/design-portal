@@ -1,10 +1,18 @@
 ---
+/**
+ * This component is a container that stacks its children vertically.
+ *
+ * It is primarily used to contain an image with a caption.
+ * If you only need a container for an image, use the `ImageWrapper` component instead.
+ */
+
 import clsx from "clsx";
 
 export interface Props {
 	gap?: string;
 	isShaded?: boolean;
 	label?: string;
+	showBorders?: boolean;
 	labelPaddingLeft?: string;
 	labelPaddingTop?: string;
 	vMargin?: string;
@@ -16,6 +24,7 @@ export interface Props {
 const {
 	gap = "3rem",
 	isShaded = false,
+	showBorders = false,
 	label = "",
 	labelPaddingLeft = "40px",
 	labelPaddingTop = "0px",
@@ -26,55 +35,64 @@ const {
 } = Astro.props as Props;
 ---
 
-<div class={clsx("stack-container", isShaded && "stack-container--shaded")}>
-  {label && <div class="label-text">{label}</div>}
-  <slot />
+<div
+	class={clsx(
+		"stack-container",
+		showBorders && "show-borders",
+		isShaded && "stack-container--shaded"
+	)}
+>
+	{label && <div class="label-text">{label}</div>}
+	<slot />
 </div>
 
 <style
-  define:vars={{
-    gap,
-    vMargin,
-    hMargin,
-    hPadding,
-    vPadding,
-    labelPaddingLeft,
-    labelPaddingTop,
-  }}
+	define:vars={{
+		gap,
+		vMargin,
+		hMargin,
+		hPadding,
+		vPadding,
+		labelPaddingLeft,
+		labelPaddingTop,
+	}}
 >
-  div.stack-container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap);
-    align-items: center;
-    padding-top: var(--vPadding);
-    padding-bottom: var(--vPadding);
-    padding-left: var(--hPadding);
-    padding-right: var(--hPadding);
-    margin-top: var(--vMargin);
-    margin-bottom: var(--vMargin);
-    margin-left: var(--hMargin);
-    margin-right: var(--hMargin);
-  }
-  div.stack-container.stack-container--shaded {
-    background-color: var(--neo-color-base-100);
-  }
+	div.stack-container {
+		display: flex;
+		flex-direction: column;
+		gap: var(--gap);
+		align-items: center;
+		padding-top: var(--vPadding);
+		padding-bottom: var(--vPadding);
+		padding-left: var(--hPadding);
+		padding-right: var(--hPadding);
+		margin-top: var(--vMargin);
+		margin-bottom: var(--vMargin);
+		margin-left: var(--hMargin);
+		margin-right: var(--hMargin);
+	}
+	div.stack-container.stack-container--shaded {
+		background-color: var(--neo-color-base-100);
+	}
+	div.stack-container.show-borders {
+		border: 1px solid var(--neo-color-base-200);
+	}
 
-  div.stack-container > * {
-    flex-grow: 0;
-    flex-shrink: 0;
-    width: max-content;
-  }
+	div.stack-container > * {
+		flex-grow: 0;
+		flex-shrink: 0;
+		width: max-content;
+	}
 
-  div.stack-container > :global(div.label-text) {
-    width: 100%;
-    padding-left: var(--labelPaddingLeft);
-    padding-top: var(--labelPaddingTop);
-    color: var(--neo-color-base-1000);
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
-    border: none;
-  }
+	div.stack-container > :global(div.label-text) {
+		width: 100%;
+		padding-left: var(--labelPaddingLeft);
+		padding-top: var(--labelPaddingTop);
+		color: var(--neo-color-base-1000);
+		font-style: normal;
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 20px;
+		border: none;
+	}
 </style>

@@ -1,4 +1,4 @@
-import { Accordion, LeftNav, Radio, RadioGroup } from "@avaya/neo-react";
+import { Accordion, Radio, RadioGroup, SideNavigation } from "@avaya/neo-react";
 import { useMemo, useState } from "react";
 
 import { Playground } from "components/react";
@@ -43,27 +43,30 @@ export const PlaygroundImplementation = () => {
 
 		const sidenav = (
 			<div className={`neo-global-colors neo-${theme}`}>
-				<LeftNav aria-label="Main Navigation" currentUrl="http://example.com/1">
-					<LeftNav.NavCategory expanded icon="contact" label="Accounts">
-						<LeftNav.LinkItem href="http://example.com/1">
+				<SideNavigation
+					aria-label="Main Navigation"
+					currentUrl="http://example.com/1"
+				>
+					<SideNavigation.NavCategory expanded icon="contact" label="Accounts">
+						<SideNavigation.LinkItem href="http://example.com/1">
 							Account
-						</LeftNav.LinkItem>
-						<LeftNav.LinkItem href="http://example.com/2">
+						</SideNavigation.LinkItem>
+						<SideNavigation.LinkItem href="http://example.com/2">
 							Business Rules
-						</LeftNav.LinkItem>
-						<LeftNav.LinkItem href="http://example.com/3">
+						</SideNavigation.LinkItem>
+						<SideNavigation.LinkItem href="http://example.com/3">
 							Contact Centers
-						</LeftNav.LinkItem>
-					</LeftNav.NavCategory>
-					<LeftNav.NavCategory icon="analytics" label="Analytics">
-						<LeftNav.LinkItem href="http://example.com/4">
+						</SideNavigation.LinkItem>
+					</SideNavigation.NavCategory>
+					<SideNavigation.NavCategory icon="analytics" label="Analytics">
+						<SideNavigation.LinkItem href="http://example.com/4">
 							Dashboard
-						</LeftNav.LinkItem>
-						<LeftNav.LinkItem href="http://example.com/5">
+						</SideNavigation.LinkItem>
+						<SideNavigation.LinkItem href="http://example.com/5">
 							Usage Report
-						</LeftNav.LinkItem>
-					</LeftNav.NavCategory>
-				</LeftNav>
+						</SideNavigation.LinkItem>
+					</SideNavigation.NavCategory>
+				</SideNavigation>
 			</div>
 		);
 

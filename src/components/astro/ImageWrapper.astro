@@ -1,4 +1,11 @@
 ---
+/**
+ * This component is a container that is meant to wrap an image with the standard padding and margin.
+ *
+ * This component does not allow for a visible label, if you need to wrap an image with a visible label,
+ * use the `StackedLayout` component instead.
+ */
+
 import clsx from "clsx";
 export interface Props {
 	showBorders?: boolean;
@@ -19,39 +26,39 @@ const {
 ---
 
 <div
-  class={clsx(
-    "image-centered",
-    showBorders && "show-borders",
-    isShaded && "image-wrapper--shaded",
-    !isRounded && "no-rounded-corners",
-  )}
+	class={clsx(
+		"image-centered",
+		showBorders && "show-borders",
+		isShaded && "image-wrapper--shaded",
+		!isRounded && "no-rounded-corners"
+	)}
 >
-  <slot />
+	<slot />
 </div>
 
 <style define:vars={{ marginTop, marginBottom, padding }}>
-  .image-centered {
-    background-color: var(--neo-color-base-0);
+	.image-centered {
+		background-color: var(--neo-color-base-0);
 
-    padding: var(--padding);
-    margin-top: var(--marginTop);
-    margin-bottom: var(--marginBottom);
+		padding: var(--padding);
+		margin-top: var(--marginTop);
+		margin-bottom: var(--marginBottom);
 
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-  }
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		flex-wrap: wrap;
+	}
 
-  .no-rounded-corners :global(img) {
-    border-radius: initial;
-  }
+	.no-rounded-corners :global(img) {
+		border-radius: initial;
+	}
 
-  .show-borders {
-    border: 1px solid var(--neo-color-base-200);
-  }
+	.show-borders {
+		border: 1px solid var(--neo-color-base-200);
+	}
 
-  div.image-wrapper--shaded {
-    background-color: var(--neo-color-base-100);
-  }
+	div.image-wrapper--shaded {
+		background-color: var(--neo-color-base-100);
+	}
 </style>
