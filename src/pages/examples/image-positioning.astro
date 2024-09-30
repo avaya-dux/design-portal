@@ -8,6 +8,7 @@ import {
 	CollapsibleColumns,
 	ColumnLayout,
 	Description,
+	DoAndDont,
 	ImageWithCaption,
 	ImageWrapper,
 	InfoListItem,
@@ -34,6 +35,29 @@ const bottomAlignedAlt = "Bottom aligned image";
 
 import collapsibleImg1 from "./images/collapsible-image-1.svg";
 import collapsibleImg2 from "./images/collapsible-image-2.svg";
+
+import normalDo from "./images/normal-do.svg";
+const normalDoInstructions =
+	"Truncate labels with ellipses (...) when titles are too long to display.";
+const normalDoImgAltText =
+	"Image showing the breadcrumb's current page title truncated with ellipses.";
+
+import normalDont from "./images/normal-dont.svg";
+const normalDontInstructions = "Do not wrap breadcrump titles.";
+const normalDontImgAltText =
+	"Image showing a long breadcrumb wrapping to a second line.";
+
+import wideDo from "./images/wide-do.svg";
+const wideDoInstructions =
+	"Always place the breadcrumb on top of the panel above any other elements.";
+const wideDoImgAltText =
+	"Image showing a breadcrumb at the top of the main content panel.";
+
+import wideDont from "./images/wide-dont.svg";
+const wideDontInstructions =
+	"Do not place the breadcrumb trail below other elements or at the bottom of a page.";
+const wideDontImgAltText =
+	"Image showing a breadcrumb with other elements on top of it.";
 ---
 
 <Layout title="Icons">
@@ -246,5 +270,60 @@ import collapsibleImg2 from "./images/collapsible-image-2.svg";
 				captionTitle="Low Vision"
 			/>
 		</CollapsibleColumns>
+	</PageleteSection>
+
+	<PageleteSection>
+		<SectionHeader id="do-and-dont">Do and Don't</SectionHeader>
+
+		<Description>
+			The <code>DoAndDont</code> react componet is how we show users a visual representation
+			of what they should and should not do.
+		</Description>
+
+		<PageleteSubSection>
+			<SubHeader id="do-and-dont-default">Default view (normal)</SubHeader>
+
+			<Description>
+				The <code>DoAndDont</code> components default view is to put the "do" and
+				"don't" examples side by side.
+			</Description>
+
+			<DoAndDont>
+				<DoAndDont.DoContainer instructions={normalDoInstructions}>
+					<DoAndDont.ImageExampleContainer>
+						<Image src={normalDo.src} alt={normalDoImgAltText} />
+					</DoAndDont.ImageExampleContainer>
+				</DoAndDont.DoContainer>
+
+				<DoAndDont.DontContainer instructions={normalDontInstructions}>
+					<DoAndDont.ImageExampleContainer>
+						<Image src={normalDont.src} alt={normalDontImgAltText} />
+					</DoAndDont.ImageExampleContainer>
+				</DoAndDont.DontContainer>
+			</DoAndDont>
+		</PageleteSubSection>
+
+		<PageleteSubSection>
+			<SubHeader id="do-and-dont-wide">Wide view</SubHeader>
+
+			<Description>
+				The <code>DoAndDont</code> component also offers a "wide" view via the prop
+				<code>size="wide"</code>.
+			</Description>
+
+			<DoAndDont size="wide">
+				<DoAndDont.DoContainer instructions={wideDoInstructions}>
+					<DoAndDont.ImageExampleContainer>
+						<Image src={wideDo.src} alt={wideDoImgAltText} />
+					</DoAndDont.ImageExampleContainer>
+				</DoAndDont.DoContainer>
+
+				<DoAndDont.DontContainer instructions={wideDontInstructions}>
+					<DoAndDont.ImageExampleContainer>
+						<Image src={wideDont.src} alt={wideDontImgAltText} />
+					</DoAndDont.ImageExampleContainer>
+				</DoAndDont.DontContainer>
+			</DoAndDont>
+		</PageleteSubSection>
 	</PageleteSection>
 </Layout>
