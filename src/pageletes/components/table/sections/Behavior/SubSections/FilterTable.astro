@@ -4,6 +4,7 @@ import { Image } from "@avaya/neo-react";
 import {
 	ColumnLayout,
 	Description,
+	ImageWrapper,
 	StackedLayout,
 	SubHeader,
 } from "components";
@@ -23,25 +24,25 @@ const img3Alt =
 <SubHeader id="table-behavior-filter-table">Filter Table</SubHeader>
 
 <Description>
-  Filters allow users to select the data shown in a table, based on selectable
-  parameters, to quickly and easily find the record without having to search
-  manually.
+	Filters allow users to select the data shown in a table, based on selectable
+	parameters, to quickly and easily find the record without having to search
+	manually.
 </Description>
 
 <ColumnLayout isShaded numOfColumns={2} marginBottom={"3rem"}>
-  <StackedLayout label="Table Filter">
-    <Image src={img1.src} alt={img1Alt} />
-  </StackedLayout>
+	<StackedLayout label="Table Filter">
+		<Image src={img1.src} alt={img1Alt} />
+	</StackedLayout>
 
-  <StackedLayout label="Table Filter Applied">
-    <Image src={img2.src} alt={img2Alt} />
-  </StackedLayout>
+	<StackedLayout label="Table Filter Applied">
+		<Image src={img2.src} alt={img2Alt} />
+	</StackedLayout>
 </ColumnLayout>
 
 <Description>
-  The parameters for a table filter can be entered in a sheet.
+	The parameters for a table filter can be entered in a sheet.
 </Description>
 
-<StackedLayout isShaded vMargin="3rem">
-  <Image src={img3.src} alt={img3Alt} />
-</StackedLayout>
+<ImageWrapper isShaded>
+	<Image src={img3.src} alt={img3Alt} />
+</ImageWrapper>
