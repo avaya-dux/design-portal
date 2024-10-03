@@ -1,0 +1,341 @@
+---
+export const title = "Image Positioning";
+export const keywords = "portal examples, image positioning";
+
+import { Image, Link } from "@avaya/neo-react";
+import {
+	CaptionInfoList,
+	CollapsibleColumns,
+	ColumnLayout,
+	Description,
+	DoAndDont,
+	ImageWithCaption,
+	ImageWrapper,
+	InfoListItem,
+	PageTitle,
+	PageleteSection,
+	PageleteSubSection,
+	SectionHeader,
+	StackedLayout,
+	SubHeader,
+} from "components";
+import { Layout } from "layouts";
+
+import single from "./images/single-image.svg";
+const singleAltText = "Lorem Ipsum";
+
+import leftImage from "./images/image-left.svg";
+const leftImageAlt = "Left Image";
+
+import rightImage from "./images/image-right.svg";
+const rightImageAlt = "Right Image";
+
+import bottomAligned from "./images/bottom-align-this-image.svg";
+const bottomAlignedAlt = "Bottom aligned image";
+
+import collapsibleImg1 from "./images/collapsible-image-1.svg";
+import collapsibleImg2 from "./images/collapsible-image-2.svg";
+
+import normalDo from "./images/normal-do.svg";
+const normalDoInstructions =
+	"Truncate labels with ellipses (...) when titles are too long to display.";
+const normalDoImgAltText =
+	"Image showing the breadcrumb's current page title truncated with ellipses.";
+
+import normalDont from "./images/normal-dont.svg";
+const normalDontInstructions = "Do not wrap breadcrump titles.";
+const normalDontImgAltText =
+	"Image showing a long breadcrumb wrapping to a second line.";
+
+import wideDo from "./images/wide-do.svg";
+const wideDoInstructions =
+	"Always place the breadcrumb on top of the panel above any other elements.";
+const wideDoImgAltText =
+	"Image showing a breadcrumb at the top of the main content panel.";
+
+import wideDont from "./images/wide-dont.svg";
+const wideDontInstructions =
+	"Do not place the breadcrumb trail below other elements or at the bottom of a page.";
+const wideDontImgAltText =
+	"Image showing a breadcrumb with other elements on top of it.";
+---
+
+<Layout title="Icons">
+	<PageleteSection>
+		<PageTitle>Image Position Examples</PageTitle>
+
+		<Description>
+			This page is for the developers of the Neo Portal. It provides examples
+			for the various image positioning components we have available and how
+			they should be used.
+		</Description>
+	</PageleteSection>
+
+	<PageleteSection>
+		<SectionHeader id="large-images">Large Images</SectionHeader>
+
+		<PageleteSubSection>
+			<SubHeader id="large-image-wo-title">Without title</SubHeader>
+
+			<Description>
+				Use the Astro component <code>ImageWrapper</code> to wrap the neo-react
+				<code>Image</code> component.
+			</Description>
+
+			<Description>
+				The neo-react <code>Image</code> component will enforce a11y, and the <code
+					>ImageWrapper</code
+				> Astro component will add the appropriate spacing and styling to the image.
+			</Description>
+
+			<Description>
+				Some images will need captions, use <code>CaptionInfoList</code> and it's
+				children <code>InfoListItem</code> to provide context. Note that <code
+					>CaptionInfoList</code
+				> takes a prop <code>type</code> which defines the list type (eg, disc, upper-alpha,
+				ect).
+			</Description>
+
+			<ImageWrapper isShaded>
+				<Image src={single.src} alt={singleAltText} />
+			</ImageWrapper>
+
+			<CaptionInfoList>
+				<InfoListItem label="Toolbar">
+					A collection of functions, such as edit, copy, and delete, that can be
+					used to modify the data in the table.
+				</InfoListItem>
+
+				<InfoListItem label="Column Header">
+					The title of each column contains a description of the data it
+					contains.
+				</InfoListItem>
+
+				<InfoListItem label="Row">
+					Each row is a single record within the database. All columns on the
+					row relate to the same record.
+				</InfoListItem>
+
+				<InfoListItem label="Pagination">
+					The table footer contains information regarding the total number of
+					records, the range of records being shown, and navigation tools to
+					move through multiple pages where necessary.
+				</InfoListItem>
+
+				<InfoListItem label="Search Field">
+					Use this field to search all rows and columns of the table to find a
+					specific record or data value.
+				</InfoListItem>
+
+				<InfoListItem label="Sort and Filter">
+					These standard tools can be applied to each column. Sort reorders the
+					records, such as toggling between ascending and descending order. A
+					Filter allows you to select only the records that meet specified
+					parameters (e.g. a date range).
+				</InfoListItem>
+			</CaptionInfoList>
+		</PageleteSubSection>
+
+		<PageleteSubSection>
+			<SubHeader id="large-image-with-title">With title</SubHeader>
+
+			<Description>
+				If an image should have a title, use the Astro component <code
+					>StackedLayout</code
+				> to wrap the neo-react <code>Image</code> component.
+			</Description>
+
+			<Description>
+				<b>IMPORTANT</b>: The <code>StackedLayout</code> component <i
+					>does not</i
+				> include shading out vertical margin by default. You will need to utilze
+				the props <code>Margin="1.5rem"</code>, <code>isShaded</code>, and <code
+					>showBorders</code
+				> to give the image the appropriate spacing and shading.
+			</Description>
+
+			<StackedLayout
+				vMargin="1.5rem"
+				isShaded
+				showBorders
+				label="Title goes here"
+			>
+				<Image src={single.src} alt={singleAltText} />
+			</StackedLayout>
+		</PageleteSubSection>
+
+		<PageleteSubSection>
+			<SubHeader id="bottom-aligned-image">Bottom aligned images</SubHeader>
+
+			<Description>
+				Most images are vertically and horizontally centered, but we have a few
+				circumstances where we need to align the image to the bottom of the
+				container. To do this, set the prop <code
+					>padding="2.5rem 1.5rem 0"</code
+				> on the <code>ImageWrapper</code> component. This keeps the default left,
+				top, and right padding, but removes the bottom padding.
+			</Description>
+
+			<ImageWrapper isShaded padding="2.5rem 1.5rem 0">
+				<Image src={bottomAligned.src} alt={bottomAlignedAlt} />
+			</ImageWrapper>
+		</PageleteSubSection>
+	</PageleteSection>
+
+	<PageleteSection>
+		<SectionHeader id="small-and-medium-image">
+			Small and medium images
+		</SectionHeader>
+
+		<Description>
+			Images that are smaller in size can be placed side by side to provide
+			context to the user. Use the Astro component <code>ColumnLayout</code> to place
+			images side by side, and its prop <code>numOfColumns</code> to define the number
+			of columns. See the <Link inline href="/components/buttons">Button</Link> component
+			for more details.
+		</Description>
+
+		<Description>
+			<b>IMPORTANT</b>: The <code>ColumnLayout</code> component <i>does not</i> automatically
+			include shading out vertical margin. You will need to utilze the props <code
+				>marginBottom</code
+			> and <code>isShaded</code> to give the image the appropriate spacing and shading.
+		</Description>
+
+		<Description>
+			<b>IMPORTANT</b>: The <code>ColumnLayout</code> component <i>does not</i> automatically
+			adjust based on window width. Matt would like it too, but that is a future
+			enhancement.
+		</Description>
+
+		<PageleteSubSection>
+			<SubHeader id="two-images-side-by-side">
+				Two small images, side by side
+			</SubHeader>
+
+			<Description>
+				Use the Astro component <code>ColumnLayout</code> to wrap the Astro component
+				<code>StackedLayout</code> which wraps the neo-react <code>Image</code> component.
+			</Description>
+
+			<ColumnLayout isShaded numOfColumns={2} marginBottom="3rem">
+				<StackedLayout label="Table Filter">
+					<Image src={leftImage.src} alt={leftImageAlt} />
+				</StackedLayout>
+
+				<StackedLayout label="Table Filter Applied">
+					<Image src={rightImage.src} alt={rightImageAlt} />
+				</StackedLayout>
+			</ColumnLayout>
+		</PageleteSubSection>
+
+		<PageleteSubSection>
+			<SubHeader id="four-images-in-2-by-2">
+				Four medium images, in a 2x2 grid (<code>numOfColumns={2}</code>)
+			</SubHeader>
+
+			<ColumnLayout isShaded numOfColumns={2} marginBottom="3rem">
+				<StackedLayout label="Table Filter">
+					<Image src={leftImage.src} alt={leftImageAlt} />
+				</StackedLayout>
+
+				<StackedLayout label="Table Filter Applied">
+					<Image src={rightImage.src} alt={rightImageAlt} />
+				</StackedLayout>
+
+				<StackedLayout label="Table Filter">
+					<Image src={leftImage.src} alt={leftImageAlt} />
+				</StackedLayout>
+
+				<StackedLayout label="Table Filter Applied">
+					<Image src={rightImage.src} alt={rightImageAlt} />
+				</StackedLayout>
+			</ColumnLayout>
+		</PageleteSubSection>
+	</PageleteSection>
+
+	<PageleteSection>
+		<SectionHeader id="collapseable-columns">
+			Collapsable columns with images
+		</SectionHeader>
+
+		<Description>
+			Pages such as <Link inline href="/accessibility/principles">
+				Accessibility Principles</Link
+			>
+			use the <code>CollapsibleColumns</code> component to display multiple images
+			on a line, with captions, and auto-collapse functionality. <code
+				>CollapsibleColumns</code
+			> is, as of this writing, only used in the Guidelines and Accessibility pages.
+		</Description>
+
+		<CollapsibleColumns>
+			<ImageWithCaption
+				imgSrc={collapsibleImg1.src}
+				imgAlt="Image showing braille characters"
+				captionTitle="Blind"
+			/>
+
+			<ImageWithCaption
+				imgSrc={collapsibleImg2.src}
+				imgAlt="Image showing an eye icon with multiple lines through it"
+				captionTitle="Low Vision"
+			/>
+		</CollapsibleColumns>
+	</PageleteSection>
+
+	<PageleteSection>
+		<SectionHeader id="do-and-dont">Do and Don't</SectionHeader>
+
+		<Description>
+			The <code>DoAndDont</code> react componet is how we show users a visual representation
+			of what they should and should not do.
+		</Description>
+
+		<PageleteSubSection>
+			<SubHeader id="do-and-dont-default">Default view (normal)</SubHeader>
+
+			<Description>
+				The <code>DoAndDont</code> components default view is to put the "do" and
+				"don't" examples side by side.
+			</Description>
+
+			<DoAndDont>
+				<DoAndDont.DoContainer instructions={normalDoInstructions}>
+					<DoAndDont.ImageExampleContainer>
+						<Image src={normalDo.src} alt={normalDoImgAltText} />
+					</DoAndDont.ImageExampleContainer>
+				</DoAndDont.DoContainer>
+
+				<DoAndDont.DontContainer instructions={normalDontInstructions}>
+					<DoAndDont.ImageExampleContainer>
+						<Image src={normalDont.src} alt={normalDontImgAltText} />
+					</DoAndDont.ImageExampleContainer>
+				</DoAndDont.DontContainer>
+			</DoAndDont>
+		</PageleteSubSection>
+
+		<PageleteSubSection>
+			<SubHeader id="do-and-dont-wide">Wide view</SubHeader>
+
+			<Description>
+				The <code>DoAndDont</code> component also offers a "wide" view via the prop
+				<code>size="wide"</code>.
+			</Description>
+
+			<DoAndDont size="wide">
+				<DoAndDont.DoContainer instructions={wideDoInstructions}>
+					<DoAndDont.ImageExampleContainer>
+						<Image src={wideDo.src} alt={wideDoImgAltText} />
+					</DoAndDont.ImageExampleContainer>
+				</DoAndDont.DoContainer>
+
+				<DoAndDont.DontContainer instructions={wideDontInstructions}>
+					<DoAndDont.ImageExampleContainer>
+						<Image src={wideDont.src} alt={wideDontImgAltText} />
+					</DoAndDont.ImageExampleContainer>
+				</DoAndDont.DontContainer>
+			</DoAndDont>
+		</PageleteSubSection>
+	</PageleteSection>
+</Layout>
