@@ -1,0 +1,33 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+	Description,
+	ImageWrapper,
+	PageleteSection,
+	SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+const { id, title } = topics.behavior;
+
+import img1 from "../imgs/drawer-behavior-1.svg";
+const img1AltText =
+	"a drawer with a title, multiple form fields, a cancel button, and a apply button";
+---
+
+<PageleteSection>
+	<SectionHeader id={id}>{title}</SectionHeader>
+
+	<Description>
+		The drawer component provides users with actions and information related to
+		the current page without interrupting the flow. The drawer is opened by
+		another function, such as a filter, and presents additional, related content
+		which helps users stay within their current process.
+	</Description>
+
+	<ImageWrapper isShaded>
+		<Image src={img1.src} alt={img1AltText} />
+	</ImageWrapper>
+</PageleteSection>
