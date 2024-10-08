@@ -2,12 +2,14 @@
 import { Image } from "@avaya/neo-react";
 
 import {
+	ColumnLayout,
 	Description,
 	ImageWrapper,
 	PageleteSection,
 	PageleteSubSection,
 	SectionHeader,
 	SubHeader,
+	StackedLayout,
 } from "components/astro";
 import { DoAndDont } from "components";
 
@@ -19,8 +21,13 @@ import img1 from "../imgs/drawer-behavior-1.svg";
 const img1AltText =
 	"a drawer with a title, multiple form fields, a cancel button, and a apply button";
 
-// import img2 from "../imgs/drawer-behavior-1.svg";
-// const img2AltText = "aaaaaaaa";
+import imgInteraction1 from "../imgs/drawer-behavior-interaction-1.svg";
+const imgInteraction1AltText =
+	"a drawer opening from the right side of the screen";
+import imgInteraction2 from "../imgs/drawer-behavior-interaction-2.svg";
+const imgInteraction2AltText = "a drawer half way open";
+import imgInteraction3 from "../imgs/drawer-behavior-interaction-3.svg";
+const imgInteraction3AltText = "a drawer fully open";
 
 const appearanceDoInstructions =
 	"Use the scrim component to tint the page without covering the navigation menu.";
@@ -75,9 +82,19 @@ const placementDontImgAltText = "Drawer placed on the left side of the screen";
 			dismissed. This behavior is embedded into the code.
 		</Description>
 
-		<ImageWrapper isShaded>
-			<Image src={img1.src} alt={img1AltText} />
-		</ImageWrapper>
+		<ColumnLayout isShaded numOfColumns={3} marginBottom="3rem">
+			<StackedLayout>
+				<Image src={imgInteraction1.src} alt={imgInteraction1AltText} />
+			</StackedLayout>
+
+			<StackedLayout>
+				<Image src={imgInteraction2.src} alt={imgInteraction2AltText} />
+			</StackedLayout>
+
+			<StackedLayout>
+				<Image src={imgInteraction3.src} alt={imgInteraction3AltText} />
+			</StackedLayout>
+		</ColumnLayout>
 	</PageleteSubSection>
 
 	<PageleteSubSection>
