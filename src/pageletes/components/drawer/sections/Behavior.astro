@@ -5,8 +5,11 @@ import {
 	Description,
 	ImageWrapper,
 	PageleteSection,
+	PageleteSubSection,
 	SectionHeader,
+	SubHeader,
 } from "components/astro";
+import { DoAndDont } from "components";
 
 import { topics } from "../static";
 
@@ -15,6 +18,38 @@ const { id, title } = topics.behavior;
 import img1 from "../imgs/drawer-behavior-1.svg";
 const img1AltText =
 	"a drawer with a title, multiple form fields, a cancel button, and a apply button";
+
+// import img2 from "../imgs/drawer-behavior-1.svg";
+// const img2AltText = "aaaaaaaa";
+
+const appearanceDoInstructions =
+	"Use the scrim component to tint the page without covering the navigation menu.";
+const appearanceDo = img1;
+const appearanceDoImgAltText =
+	"Drawer placed on the right side of the screen with scrim covering everything but the header";
+const appearanceDontInstructions =
+	"Do not leave the drawer on top of the page without also placing a scrim behind it.";
+const appearanceDont = img1;
+const appearanceDontImgAltText = "Drawer visible without a scrim";
+
+const buttonDoInstructions =
+	"The main actions are always visible and positioned at the bottom part of the drawer.";
+const buttonDo = img1;
+const buttonDoImgAltText =
+	"Drawer with primary and secondary buttons in its footer";
+const buttonDontInstructions =
+	"Do not hide the main actions so that the user is required to scroll down to them.";
+const buttonDont = img1;
+const buttonDontImgAltText = "Drawer with no visible buttons";
+
+const placementDoInstructions =
+	"Align the drawer to the right-hand side of the screen.";
+const placementDo = img1;
+const placementDoImgAltText = "Drawer placed on the right side of the screen";
+const placementDontInstructions =
+	"Do not align the drawer to the left unless designing for a right-to-left language (e.g. Hebrew, Arabic).";
+const placementDont = img1;
+const placementDontImgAltText = "Drawer placed on the left side of the screen";
 ---
 
 <PageleteSection>
@@ -30,4 +65,131 @@ const img1AltText =
 	<ImageWrapper isShaded>
 		<Image src={img1.src} alt={img1AltText} />
 	</ImageWrapper>
+
+	<PageleteSubSection>
+		<SubHeader id={`${id}-interaction`}>Interaction</SubHeader>
+
+		<Description>
+			The drawer component appears on the right side of the screen and slides in
+			from the right when activated. The drawer slides out to the right when
+			dismissed. This behavior is embedded into the code.
+		</Description>
+
+		<ImageWrapper isShaded>
+			<Image src={img1.src} alt={img1AltText} />
+		</ImageWrapper>
+	</PageleteSubSection>
+
+	<PageleteSubSection>
+		<SubHeader id={`${id}-appearance`}>Appearance</SubHeader>
+
+		<Description>
+			The drawer appears at the right side of the screen. A scrim covers the
+			page behind the drawer preventing the user from making changes until the
+			drawer is closed.
+		</Description>
+
+		<DoAndDont>
+			<DoAndDont.DoContainer instructions={appearanceDoInstructions}>
+				<DoAndDont.ImageExampleContainer>
+					<Image src={appearanceDo.src} alt={appearanceDoImgAltText} />
+				</DoAndDont.ImageExampleContainer>
+			</DoAndDont.DoContainer>
+
+			<DoAndDont.DontContainer instructions={appearanceDontInstructions}>
+				<DoAndDont.ImageExampleContainer>
+					<Image src={appearanceDont.src} alt={appearanceDontImgAltText} />
+				</DoAndDont.ImageExampleContainer>
+			</DoAndDont.DontContainer>
+		</DoAndDont>
+	</PageleteSubSection>
+
+	<PageleteSubSection>
+		<SubHeader id={`${id}-buttons`}>Buttons</SubHeader>
+
+		<Description>
+			The primary and secondary buttons for the drawer appear in the bottom
+			right corner of the container. A close icon, located in the top right
+			corner, is used to dismisses the drawer when there are no buttons.
+		</Description>
+
+		<DoAndDont>
+			<DoAndDont.DoContainer instructions={buttonDoInstructions}>
+				<DoAndDont.ImageExampleContainer>
+					<Image src={buttonDo.src} alt={buttonDoImgAltText} />
+				</DoAndDont.ImageExampleContainer>
+			</DoAndDont.DoContainer>
+
+			<DoAndDont.DontContainer instructions={buttonDontInstructions}>
+				<DoAndDont.ImageExampleContainer>
+					<Image src={buttonDont.src} alt={buttonDontImgAltText} />
+				</DoAndDont.ImageExampleContainer>
+			</DoAndDont.DontContainer>
+		</DoAndDont>
+	</PageleteSubSection>
+
+	<PageleteSubSection>
+		<SubHeader id={`${id}-placement`}>Placement</SubHeader>
+
+		<Description>
+			The drawer appears on the right side of the page unless superseded by the
+			requirements of the language used.
+		</Description>
+
+		<DoAndDont>
+			<DoAndDont.DoContainer instructions={placementDoInstructions}>
+				<DoAndDont.ImageExampleContainer>
+					<Image src={placementDo.src} alt={placementDoImgAltText} />
+				</DoAndDont.ImageExampleContainer>
+			</DoAndDont.DoContainer>
+
+			<DoAndDont.DontContainer instructions={placementDontInstructions}>
+				<DoAndDont.ImageExampleContainer>
+					<Image src={placementDont.src} alt={placementDontImgAltText} />
+				</DoAndDont.ImageExampleContainer>
+			</DoAndDont.DontContainer>
+		</DoAndDont>
+	</PageleteSubSection>
+
+	<PageleteSubSection>
+		<SubHeader id={`${id}-scrolling`}>Scrolling</SubHeader>
+
+		<Description>
+			The top area of the drawer, containing the main title, back, and close
+			actions, remains fixed and always visible. The middle section, where
+			content like form fields resides, is scrollable when it extends beyond the
+			available space. The bottom section, housing the main action buttons, also
+			remains fixed and always visible. While drawers can scroll, avoid making
+			them excessively long if possible.
+		</Description>
+
+		<ImageWrapper isShaded>
+			<Image src={img1.src} alt={img1AltText} />
+		</ImageWrapper>
+	</PageleteSubSection>
+
+	<PageleteSubSection>
+		<SubHeader id={`${id}-dismissal`}>Dismissal</SubHeader>
+
+		<Description>
+			Dismissal determines how the drawer is closed. Use the button to dismiss
+			actionable drawers. The drawer component slides in from the right side of
+			the screen when activated. The drawer slides out to the right when it is
+			dismissed. This behavior is embedded into the code.
+		</Description>
+
+		<ImageWrapper isShaded>
+			<Image src={img1.src} alt={img1AltText} />
+		</ImageWrapper>
+
+		<Description>
+			The informative drawer is dismissed by selecting the Close icon located on
+			the top right corner of the drawer. An alternative option to dismiss this
+			drawer is to click on the scrim.
+		</Description>
+
+		<ImageWrapper isShaded>
+			<Image src={img1.src} alt={img1AltText} />
+		</ImageWrapper>
+	</PageleteSubSection>
 </PageleteSection>
