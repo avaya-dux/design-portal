@@ -1,6 +1,7 @@
 ---
 import { Image } from "@avaya/neo-react";
 
+import { DoAndDont } from "components";
 import {
 	ColumnLayout,
 	Description,
@@ -8,10 +9,9 @@ import {
 	PageleteSection,
 	PageleteSubSection,
 	SectionHeader,
-	SubHeader,
 	StackedLayout,
+	SubHeader,
 } from "components/astro";
-import { DoAndDont } from "components";
 
 import { topics } from "../static";
 
@@ -31,32 +31,43 @@ const imgInteraction3AltText = "a drawer fully open";
 
 const appearanceDoInstructions =
 	"Use the scrim component to tint the page without covering the navigation menu.";
-const appearanceDo = img1;
+import appearanceDoImg from "../imgs/drawer-behavior-appearance-do-1.svg";
 const appearanceDoImgAltText =
 	"Drawer placed on the right side of the screen with scrim covering everything but the header";
 const appearanceDontInstructions =
 	"Do not leave the drawer on top of the page without also placing a scrim behind it.";
-const appearanceDont = img1;
+import appearanceDontImg from "../imgs/drawer-behavior-appearance-dont-1.svg";
 const appearanceDontImgAltText = "Drawer visible without a scrim";
 
 const buttonDoInstructions =
 	"The main actions are always visible and positioned at the bottom part of the drawer.";
-const buttonDo = img1;
+import buttonDoImg from "../imgs/drawer-behavior-buttons-do-1.svg";
 const buttonDoImgAltText =
 	"Drawer with primary and secondary buttons in its footer";
 const buttonDontInstructions =
 	"Do not hide the main actions so that the user is required to scroll down to them.";
-const buttonDont = img1;
+import buttonDontImg from "../imgs/drawer-behavior-buttons-dont-1.svg";
 const buttonDontImgAltText = "Drawer with no visible buttons";
 
 const placementDoInstructions =
 	"Align the drawer to the right-hand side of the screen.";
-const placementDo = img1;
+import placementDoImg from "../imgs/drawer-behavior-placement-do-1.svg";
 const placementDoImgAltText = "Drawer placed on the right side of the screen";
 const placementDontInstructions =
 	"Do not align the drawer to the left unless designing for a right-to-left language (e.g. Hebrew, Arabic).";
-const placementDont = img1;
+import placementDontImg from "../imgs/drawer-behavior-placement-dont-1.svg";
 const placementDontImgAltText = "Drawer placed on the left side of the screen";
+
+import scrollingImg from "../imgs/drawer-behavior-scrolling-1.svg";
+const scrollingImgAltText =
+	"a drawer with a content section that has a native scroll bar on its content section and not its header or footer";
+
+import dismissalImg1 from "../imgs/drawer-behavior-dismissal-1.svg";
+const dismissalImg1AltText =
+	"a drawer with a mouse pointed clicking on it's 'apply' button";
+import dismissalImg2 from "../imgs/drawer-behavior-dismissal-2.svg";
+const dismissalImg2AltText =
+	"a drawer with a mouse pointer clicking on its close icon";
 ---
 
 <PageleteSection>
@@ -109,13 +120,13 @@ const placementDontImgAltText = "Drawer placed on the left side of the screen";
 		<DoAndDont>
 			<DoAndDont.DoContainer instructions={appearanceDoInstructions}>
 				<DoAndDont.ImageExampleContainer>
-					<Image src={appearanceDo.src} alt={appearanceDoImgAltText} />
+					<Image src={appearanceDoImg.src} alt={appearanceDoImgAltText} />
 				</DoAndDont.ImageExampleContainer>
 			</DoAndDont.DoContainer>
 
 			<DoAndDont.DontContainer instructions={appearanceDontInstructions}>
 				<DoAndDont.ImageExampleContainer>
-					<Image src={appearanceDont.src} alt={appearanceDontImgAltText} />
+					<Image src={appearanceDontImg.src} alt={appearanceDontImgAltText} />
 				</DoAndDont.ImageExampleContainer>
 			</DoAndDont.DontContainer>
 		</DoAndDont>
@@ -133,13 +144,13 @@ const placementDontImgAltText = "Drawer placed on the left side of the screen";
 		<DoAndDont>
 			<DoAndDont.DoContainer instructions={buttonDoInstructions}>
 				<DoAndDont.ImageExampleContainer>
-					<Image src={buttonDo.src} alt={buttonDoImgAltText} />
+					<Image src={buttonDoImg.src} alt={buttonDoImgAltText} />
 				</DoAndDont.ImageExampleContainer>
 			</DoAndDont.DoContainer>
 
 			<DoAndDont.DontContainer instructions={buttonDontInstructions}>
 				<DoAndDont.ImageExampleContainer>
-					<Image src={buttonDont.src} alt={buttonDontImgAltText} />
+					<Image src={buttonDontImg.src} alt={buttonDontImgAltText} />
 				</DoAndDont.ImageExampleContainer>
 			</DoAndDont.DontContainer>
 		</DoAndDont>
@@ -156,13 +167,13 @@ const placementDontImgAltText = "Drawer placed on the left side of the screen";
 		<DoAndDont>
 			<DoAndDont.DoContainer instructions={placementDoInstructions}>
 				<DoAndDont.ImageExampleContainer>
-					<Image src={placementDo.src} alt={placementDoImgAltText} />
+					<Image src={placementDoImg.src} alt={placementDoImgAltText} />
 				</DoAndDont.ImageExampleContainer>
 			</DoAndDont.DoContainer>
 
 			<DoAndDont.DontContainer instructions={placementDontInstructions}>
 				<DoAndDont.ImageExampleContainer>
-					<Image src={placementDont.src} alt={placementDontImgAltText} />
+					<Image src={placementDontImg.src} alt={placementDontImgAltText} />
 				</DoAndDont.ImageExampleContainer>
 			</DoAndDont.DontContainer>
 		</DoAndDont>
@@ -181,7 +192,7 @@ const placementDontImgAltText = "Drawer placed on the left side of the screen";
 		</Description>
 
 		<ImageWrapper isShaded>
-			<Image src={img1.src} alt={img1AltText} />
+			<Image src={scrollingImg.src} alt={scrollingImgAltText} />
 		</ImageWrapper>
 	</PageleteSubSection>
 
@@ -196,7 +207,7 @@ const placementDontImgAltText = "Drawer placed on the left side of the screen";
 		</Description>
 
 		<ImageWrapper isShaded>
-			<Image src={img1.src} alt={img1AltText} />
+			<Image src={dismissalImg1.src} alt={dismissalImg1AltText} />
 		</ImageWrapper>
 
 		<Description>
@@ -206,7 +217,7 @@ const placementDontImgAltText = "Drawer placed on the left side of the screen";
 		</Description>
 
 		<ImageWrapper isShaded>
-			<Image src={img1.src} alt={img1AltText} />
+			<Image src={dismissalImg2.src} alt={dismissalImg2AltText} />
 		</ImageWrapper>
 	</PageleteSubSection>
 </PageleteSection>
