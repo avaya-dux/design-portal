@@ -1,0 +1,102 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+	CaptionInfoList,
+	Description,
+	ImageWrapper,
+	InfoListItem,
+	PageleteSection,
+	PageleteSubSection,
+	SectionHeader,
+	SubHeader,
+} from "components/astro";
+import { topics } from "../static";
+
+const { id, title } = topics.anatomy;
+
+import img1 from "../imgs/drawer-actionable-anatomy-1.svg";
+const img1AltText =
+	"a drawer with a title, content, and then two buttons in its footer, a cancel button, and save button";
+
+import img2 from "../imgs/drawer-informative-anatomy-1.svg";
+const img2AltText =
+	"a drawer with a title and a close button in it's header, and content";
+---
+
+<PageleteSection>
+	<SectionHeader id={id}>{title}</SectionHeader>
+
+	<Description>
+		The drawer component consists of different elements and action items. These
+		appear on the right side of the main page in a fixed position. These can
+		include buttons, back and close icons.
+	</Description>
+
+	<PageleteSubSection>
+		<SubHeader id={`${id}-actionable`}>Actionable</SubHeader>
+
+		<Description>
+			The actionable drawer component features two always-visible buttons
+			located at the bottom right. To dismiss the drawer, the user must select
+			one of these actions.
+		</Description>
+
+		<ImageWrapper isShaded>
+			<Image src={img1.src} alt={img1AltText} />
+		</ImageWrapper>
+
+		<CaptionInfoList>
+			<InfoListItem label="Title">
+				A short description of the information displayed in the drawer. The
+				title bar does not scroll with the content.
+			</InfoListItem>
+
+			<InfoListItem label="Content Placement">
+				Additional information, such as form fields or text, are placed here.
+			</InfoListItem>
+
+			<InfoListItem label="Secondary Button">
+				The secondary button provides an alternate action to the primary button.
+			</InfoListItem>
+
+			<InfoListItem label="Primary Button">
+				The primary button is the main action for the drawer. The button bar
+				does not scroll with the content.)
+			</InfoListItem>
+		</CaptionInfoList>
+	</PageleteSubSection>
+
+	<PageleteSubSection>
+		<SubHeader id={`${id}-informative`}>Informative</SubHeader>
+
+		<Description>
+			The informative drawer provides details pertinent to the current
+			operation. It does not include any buttons, but may include text links. To
+			dismiss the drawer, the user can either click the close icon at the top
+			right corner or select the scrim.
+		</Description>
+
+		<ImageWrapper isShaded>
+			<Image src={img2.src} alt={img2AltText} />
+		</ImageWrapper>
+
+		<CaptionInfoList>
+			<InfoListItem label="Title">
+				A short description of the information displayed in the drawer. The
+				title bar does not scroll with the content. Content Placement:
+				Additional information, such as form fields or text, are placed here.
+				Close Icon: Use this to close the drawer and return to the underlaying
+				page.
+			</InfoListItem>
+
+			<InfoListItem label="Content Placement">
+				Additional information, such as form fields or text, are placed here.
+			</InfoListItem>
+
+			<InfoListItem label="Close Icon">
+				Use this to close the drawer and return to the underlaying page.
+			</InfoListItem>
+		</CaptionInfoList>
+	</PageleteSubSection>
+</PageleteSection>
