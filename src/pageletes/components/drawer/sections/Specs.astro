@@ -1,0 +1,32 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+	Description,
+	ImageWrapper,
+	PageleteSection,
+	SectionHeader,
+} from "components/astro";
+
+import { topics } from "../static";
+
+const { id, title } = topics.specs;
+
+import img1 from "../imgs/drawer-specs-1.svg";
+const img1AltText = "drawer with pixel measurements";
+---
+
+<PageleteSection>
+	<SectionHeader id={id}>{title}</SectionHeader>
+
+	<Description>
+		Specs outline the size, style, spacing and padding properties of a
+		component. The width of the drawer is adjustable and the height depends upon
+		the browser size. The container is adjustable while maintaining the margins
+		on all sides of the content.
+	</Description>
+
+	<ImageWrapper isShaded>
+		<Image src={img1.src} alt={img1AltText} />
+	</ImageWrapper>
+</PageleteSection>

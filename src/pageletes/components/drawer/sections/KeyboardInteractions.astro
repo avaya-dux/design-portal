@@ -1,0 +1,67 @@
+---
+import {
+	Description,
+	PageleteSection,
+	SectionHeader,
+	InfoTable,
+	InfoTableBody,
+	InfoTableCell,
+	InfoTableCellHead,
+	InfoTableHead,
+	InfoTableRow,
+} from "components/astro";
+
+import { topics } from "../static";
+
+const { id, title } = topics.keyboard;
+---
+
+<PageleteSection>
+	<SectionHeader id={id}>{title}</SectionHeader>
+
+	<Description>
+		Accessibility requires that each item on the screen is reachable using the
+		keyboard alone. The mouse is not always an option for some users.
+	</Description>
+
+	<Description>
+		Keyboard navigation employs the following shortcuts.
+	</Description>
+
+	<InfoTable>
+		<InfoTableHead>
+			<InfoTableRow>
+				<InfoTableCellHead>Keystrokes</InfoTableCellHead>
+				<InfoTableCellHead>Interaction</InfoTableCellHead>
+			</InfoTableRow>
+		</InfoTableHead>
+
+		<InfoTableBody>
+			<InfoTableRow>
+				<InfoTableCell>Tab</InfoTableCell>
+				<InfoTableCell>Moves to the next interactive element.</InfoTableCell>
+			</InfoTableRow>
+
+			<InfoTableRow>
+				<InfoTableCell>Shift + Tab</InfoTableCell>
+				<InfoTableCell>
+					Moves to the previous interactive element.
+				</InfoTableCell>
+			</InfoTableRow>
+
+			<InfoTableRow>
+				<InfoTableCell>Enter or Spacebar</InfoTableCell>
+				<InfoTableCell>
+					Activates the selected interactive element on the sheet.
+				</InfoTableCell>
+			</InfoTableRow>
+
+			<InfoTableRow>
+				<InfoTableCell>Esc</InfoTableCell>
+				<InfoTableCell>
+					Closes the sheet. Same as a close button.
+				</InfoTableCell>
+			</InfoTableRow>
+		</InfoTableBody>
+	</InfoTable>
+</PageleteSection>
