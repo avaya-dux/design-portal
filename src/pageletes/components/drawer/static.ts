@@ -1,19 +1,16 @@
 import type { TopicsDict } from "components";
 
 type DrawerTopicNames =
-	| "playground"
-	| "anatomy"
-	| "behavior"
-	| "specs"
-	| "keyboard";
+	// | "playground"
+	"anatomy" | "behavior" | "specs" | "keyboard";
 
 const component = "drawer";
 export const topics: TopicsDict<DrawerTopicNames> = {
-	playground: {
-		order: 0,
-		id: `${component}-playground`,
-		title: "Interactive Playground",
-	},
+	// playground: {
+	// 	order: 0,
+	// 	id: `${component}-playground`,
+	// 	title: "Interactive Playground",
+	// },
 	anatomy: {
 		order: 1,
 		id: `${component}-anatomy`,
