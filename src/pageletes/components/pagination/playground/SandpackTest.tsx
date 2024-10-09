@@ -1,25 +1,23 @@
+import { Button } from "@avaya/neo-react";
 import {
-	Sandpack,
 	SandpackCodeEditor,
-	SandpackFileExplorer,
-	SandpackLayout,
 	SandpackPreview,
 	SandpackProvider,
 } from "@codesandbox/sandpack-react";
-import { sandpackDark } from "@codesandbox/sandpack-themes";
 
 const codeString = `
 import { useState } from "react";
-import { Pagination } from "@avaya/neo-react";
+import { Pagination, NeoThemeProvider } from "@avaya/neo-react";
 
 import "@avaya/neo-react/avaya-neo-react.css";
+import './styles.css'
 
 export default function App() {
   const [pageIndex, setPageIndex] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(20);
 
   return (
-    <main className="App">
+    <NeoThemeProvider initialMode="dynamic" className="app">
       <Pagination
         pagesText="pages"
         itemCount={5000}
@@ -36,33 +34,23 @@ export default function App() {
           }
         }}
       />
-    </main>
+    </NeoThemeProvider>
   );
+}`.trim();
+
+const stylesString = `
+body {
+  margin: 0;
 }
-`.trim();
+.app {
+  height: 100vh;
+}`.trim();
 
 export const SandpackTest = () => {
 	return (
 		<>
-			{/* <Sandpack
-				template="react-ts"
-				theme={sandpackDark}
-				customSetup={{
-					dependencies: {
-						"@avaya/neo-react": "latest",
-					},
-				}}
-				files={{
-					"App.tsx": {
-						code: codeString,
-						active: true,
-					},
-				}}
-			/> */}
-
 			<SandpackProvider
 				template="react-ts"
-				// theme={sandpackDark}
 				theme="auto"
 				customSetup={{
 					dependencies: {
@@ -70,26 +58,25 @@ export const SandpackTest = () => {
 					},
 				}}
 				files={{
-					"App.tsx": {
-						code: codeString,
-						active: true,
-					},
+					"App.tsx": codeString,
+					"styles.css": stylesString,
 				}}
 			>
-				<SandpackLayout>
-					<SandpackCodeEditor />
-					<SandpackFileExplorer />
+				<div>
 					<SandpackPreview
 						actionsChildren={
-							<button
-								type="button"
+							<Button
+								style={{ height: 28 }}
 								onClick={() => window.alert("Bug reported!")}
 							>
 								Report bug
-							</button>
+							</Button>
 						}
 					/>
-				</SandpackLayout>
+				</div>
+				<div>
+					<SandpackCodeEditor />
+				</div>
 			</SandpackProvider>
 		</>
 	);
