@@ -1,0 +1,8 @@
+.playground-container {
+	margin-top: 3rem;
+}
+
+.playground-container .playground-examples {
+	border: 1px solid var(--neo-color-base-200);
+	border-radius: 4px;
+}

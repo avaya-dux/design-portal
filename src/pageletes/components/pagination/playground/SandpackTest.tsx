@@ -5,6 +5,8 @@ import {
 	SandpackProvider,
 } from "@codesandbox/sandpack-react";
 
+import "./SandpackTest.css";
+
 const codeString = `
 import { useState } from "react";
 import { Pagination, NeoThemeProvider } from "@avaya/neo-react";
@@ -44,17 +46,18 @@ body {
 }
 .app {
   height: 100vh;
+	padding: 1rem;
 }`.trim();
 
 export const SandpackTest = () => {
 	return (
-		<>
+		<div className="playground-container">
 			<SandpackProvider
 				template="react-ts"
 				theme="auto"
 				customSetup={{
 					dependencies: {
-						"@avaya/neo-react": "latest",
+						"@avaya/neo-react": "1.3.5",
 					},
 				}}
 				files={{
@@ -62,7 +65,7 @@ export const SandpackTest = () => {
 					"styles.css": stylesString,
 				}}
 			>
-				<div>
+				<div className="playground-examples">
 					<SandpackPreview
 						actionsChildren={
 							<Button
@@ -73,11 +76,12 @@ export const SandpackTest = () => {
 							</Button>
 						}
 					/>
-				</div>
-				<div>
-					<SandpackCodeEditor />
+
+					<div className="playground-code">
+						<SandpackCodeEditor />
+					</div>
 				</div>
 			</SandpackProvider>
-		</>
+		</div>
 	);
 };
