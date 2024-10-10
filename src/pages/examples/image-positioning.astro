@@ -30,6 +30,13 @@ const leftImageAlt = "Left Image";
 import rightImage from "./images/image-right.svg";
 const rightImageAlt = "Right Image";
 
+import threeImages1 from "./images/three-images-1.svg";
+const threeImages1Alt = "an example image";
+import threeImages2 from "./images/three-images-2.svg";
+const threeImages2Alt = "another example image";
+import threeImages3 from "./images/three-images-3.svg";
+const threeImages3Alt = "yet another example image";
+
 import bottomAligned from "./images/bottom-align-this-image.svg";
 const bottomAlignedAlt = "Bottom aligned image";
 
@@ -60,7 +67,7 @@ const wideDontImgAltText =
 	"Image showing a breadcrumb with other elements on top of it.";
 ---
 
-<Layout title="Icons">
+<Layout title="Image Positioning">
 	<PageleteSection>
 		<PageTitle>Image Position Examples</PageTitle>
 
@@ -225,6 +232,31 @@ const wideDontImgAltText =
 
 				<StackedLayout label="Table Filter Applied">
 					<Image src={rightImage.src} alt={rightImageAlt} />
+				</StackedLayout>
+			</ColumnLayout>
+		</PageleteSubSection>
+
+		<PageleteSubSection>
+			<SubHeader id="three-images-side-by-side">
+				Three small images, side by side
+			</SubHeader>
+
+			<Description>
+				Note that the <code>StackedLayout</code> component does not require you to
+				pass a label prop.
+			</Description>
+
+			<ColumnLayout isShaded numOfColumns={3} marginBottom="3rem">
+				<StackedLayout>
+					<Image src={threeImages1.src} alt={threeImages1Alt} />
+				</StackedLayout>
+
+				<StackedLayout>
+					<Image src={threeImages2.src} alt={threeImages2Alt} />
+				</StackedLayout>
+
+				<StackedLayout>
+					<Image src={threeImages3.src} alt={threeImages3Alt} />
 				</StackedLayout>
 			</ColumnLayout>
 		</PageleteSubSection>

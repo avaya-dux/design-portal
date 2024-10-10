@@ -63,185 +63,191 @@ switch (pathname.split("/")[1]) {
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
 
-    <script async src="https://rum.cronitor.io/script.js"></script>
-    <script>
-      window.cronitor =
-        window.cronitor ||
-        function () {
-          (window.cronitor.q = window.cronitor.q || []).push(arguments);
-        };
-      cronitor("config", { clientKey: "7a4551f7269f527ea46053a3f21302fa" });
-    </script>
+		<script async src="https://rum.cronitor.io/script.js"></script>
+		<script>
+			window.cronitor =
+				window.cronitor ||
+				function () {
+					(window.cronitor.q = window.cronitor.q || []).push(arguments);
+				};
+			cronitor("config", { clientKey: "7a4551f7269f527ea46053a3f21302fa" });
+		</script>
 
-    <title>{title}</title>
-    <ViewTransitions />
-  </head>
+		<title>{title}</title>
+		<ViewTransitions />
+	</head>
 
-  <body id="body-content-wrapper">
-    <NeoThemeProvider initialMode="dynamic">
-      <SiteHeader
-        pathname={pathname}
-        pages={pages}
-        userAgent={userAgent}
-        showToggleBtn={leftNavPages.length > 0}
-        client:load
-      />
+	<body id="body-content-wrapper">
+		<NeoThemeProvider initialMode="dynamic">
+			<SiteHeader
+				pathname={pathname}
+				pages={pages}
+				userAgent={userAgent}
+				showToggleBtn={leftNavPages.length > 0}
+				client:load
+			/>
 
-      <div class="main__wrapper">
-        <LeftPanel
-          allPages={pages}
-          leftNavPages={leftNavPages}
-          isHomePage={pathname === "/"}
-        />
-        {
-          pathname.endsWith("icons") ? (
-            <DynamicTheme client:only="react">
-              <main id="main-content" class="isicons">
-                <slot />
-              </main>
-            </DynamicTheme>
-          ) : (
-            <main
-              id="main-content"
-              class:list={[pathname === "/" && "ishomepage"]}
-            >
-              <slot />
-            </main>
-          )
-        }
-      </div>
+			<div class="main__wrapper">
+				<LeftPanel
+					allPages={pages}
+					leftNavPages={leftNavPages}
+					isHomePage={pathname === "/"}
+				/>
+				{
+					pathname.endsWith("icons") ? (
+						<DynamicTheme client:only="react">
+							<main id="main-content" class="isicons">
+								<slot />
+							</main>
+						</DynamicTheme>
+					) : (
+						<main
+							id="main-content"
+							class:list={[pathname === "/" && "ishomepage"]}
+						>
+							<slot />
+						</main>
+					)
+				}
+			</div>
 
-      <SiteFooter />
-    </NeoThemeProvider>
+			<SiteFooter />
+		</NeoThemeProvider>
 
-    <style is:global>
-      :root {
-        --header-height: 58px;
-        --footer-height: 58px;
+		<style is:global>
+			:root {
+				--header-height: 58px;
+				--footer-height: 58px;
 
-        /*
+				/*
         --mobile-small-max-breakpoint: 671px;
         --mobile-max-breakpoint: 831px;
         --tablet-max-breakpoint: 1279px;
         */
-      }
+			}
 
-      body {
-        margin: 0;
-        font-size: 1rem;
-        color: var(--global-font-color);
-      }
+			body {
+				margin: 0;
+				font-size: 1rem;
+				color: var(--global-font-color);
+			}
 
-      .main__theme__styles {
-        width: 100%;
-        color: var(--global-font-color);
-        background-color: var(--global-background);
-      }
+			.main__theme__styles {
+				width: 100%;
+				color: var(--global-font-color);
+				background-color: var(--global-background);
+			}
 
-      .code {
-        background-color: var(--neo-color-base-100);
-        color: var(--neo-color-red-600);
-        font-family: monospace;
-      }
+			.code {
+				background-color: var(--neo-color-base-100);
+				color: var(--neo-color-red-600);
+				font-family: monospace;
+			}
 
-      .neo-dark .code {
-        background-color: var(--neo-color-base-800);
-        color: var(--neo-color-red-200);
-      }
+			.neo-dark .code {
+				background-color: var(--neo-color-base-800);
+				color: var(--neo-color-red-200);
+			}
 
-      /* mobile */
-      @media screen and (max-width: 831px) {
-        :root {
-          --header-height: 49px;
-          --footer-height: 48px;
-        }
-      }
+			/* mobile */
+			@media screen and (max-width: 831px) {
+				:root {
+					--header-height: 49px;
+					--footer-height: 48px;
+				}
+			}
 
-      p .neo-link__inline,
-      div .neo-link__inline {
-        display: inline-block;
-      }
+			p .neo-link__inline,
+			div .neo-link__inline {
+				display: inline-block;
+			}
 
-      /* HACK: force left align until fix is made in neo-css lib (`_tooltip.scss` line 37) */
-      .neo-tooltip__content {
-        text-align: left;
-      }
+			/* HACK: force left align until fix is made in neo-css lib (`_tooltip.scss` line 37) */
+			.neo-tooltip__content {
+				text-align: left;
+			}
 
-      /* helper class */
-      .hidden {
-        display: none;
-      }
+			/* helper class */
+			.hidden {
+				display: none;
+			}
 
-      .image-header {
-        margin-bottom: 0.5rem;
-      }
-    </style>
-    <style>
-      body main {
-        --body-main-margin-top: 3rem;
+			.image-header {
+				margin-bottom: 0.5rem;
+			}
 
-        /* plus `1px` for border */
-        --body-main-height: calc(
-          100vh - var(--header-height) - var(--footer-height) -
-            var(--body-main-margin-top) - 4px
-        );
+			/* per discussion with Matt, we do not want a "default" border-radius on our images */
+			.neo-thumbnail,
+			.neo-img {
+				border-radius: unset;
+			}
+		</style>
+		<style>
+			body main {
+				--body-main-margin-top: 3rem;
 
-        min-height: var(--body-main-height);
-        max-width: 60rem;
-        padding: 0 1rem 2rem 1rem;
-        margin: auto;
-        margin-top: var(--body-main-margin-top);
-      }
-      body main.ishomepage {
-        --body-main-margin-top: 0;
+				/* plus `1px` for border */
+				--body-main-height: calc(
+					100vh - var(--header-height) - var(--footer-height) -
+						var(--body-main-margin-top) - 4px
+				);
 
-        width: 100%;
-        max-width: 100%;
-        padding: 0;
-      }
+				min-height: var(--body-main-height);
+				max-width: 60rem;
+				padding: 0 1rem 2rem 1rem;
+				margin: auto;
+				margin-top: var(--body-main-margin-top);
+			}
+			body main.ishomepage {
+				--body-main-margin-top: 0;
 
-      .main__wrapper {
-        display: flex;
-      }
+				width: 100%;
+				max-width: 100%;
+				padding: 0;
+			}
 
-      @media screen and (max-width: 1279px) {
-        body main {
-          /*
+			.main__wrapper {
+				display: flex;
+			}
+
+			@media screen and (max-width: 1279px) {
+				body main {
+					/*
             NOTE: I (Joe) have no idea why we need to subtract 4px, but it works.
             Probably has something to do with the reshaping of the footer and how we made
             that dynamic as we have added and removed content from it.
           */
-          --body-main-height: calc(
-            100vh - var(--header-height) - var(--footer-height) -
-              var(--body-main-margin-top) - 4px
-          );
-        }
-      }
-      @media screen and (max-width: 831px) {
-        body main {
-          /*
+					--body-main-height: calc(
+						100vh - var(--header-height) - var(--footer-height) -
+							var(--body-main-margin-top) - 4px
+					);
+				}
+			}
+			@media screen and (max-width: 831px) {
+				body main {
+					/*
             NOTE: I (Joe) have no idea why we need to subtract 1rem and 1px, but it works.
             Probably has something to do with the reshaping of the footer and how we made
             that dynamic as we have added and removed content from it.
           */
-          --body-main-height: calc(
-            100vh - var(--header-height) - (var(--footer-height) * 3) -
-              var(--body-main-margin-top) - 1rem - 1px
-          );
-        }
+					--body-main-height: calc(
+						100vh - var(--header-height) - (var(--footer-height) * 3) -
+							var(--body-main-margin-top) - 1rem - 1px
+					);
+				}
 
-        .main__wrapper {
-          display: block;
-          position: relative;
-          overflow-x: hidden;
-        }
-      }
-    </style>
-  </body>
+				.main__wrapper {
+					display: block;
+					position: relative;
+					overflow-x: hidden;
+				}
+			}
+		</style>
+	</body>
 </html>
