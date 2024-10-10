@@ -131,10 +131,19 @@ export const SandpackTest = () => {
 									<Button
 										style={{ height: 28 }}
 										onClick={() =>
-											window.alert("TODO: implement: 'Bug reported!'")
+											window.alert("TODO: implement: 'how to use this example'")
 										}
 									>
-										COPY EXAMPLE CODE
+										INFO ICON
+									</Button>
+
+									<Button
+										style={{ height: 28 }}
+										onClick={() =>
+											window.alert("TODO: implement: 'Code copied!'")
+										}
+									>
+										Copy Example Code
 									</Button>
 
 									<Button
