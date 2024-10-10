@@ -11,13 +11,17 @@ const htmlCodeString = `
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Parcel Sandbox</title>
+    <title>Avaya Neo CSS</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="@avaya/neo/neo/dist/css/neo/neo.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@avaya/neo@3.81.16/neo/dist/css/neo/neo.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
 
   <body>
-    <main>
+    <main class="app neo-global-colors neo-dynamic">
       <div class="neo-pagination__row" id="pagination-:R0:">
         <nav class="neo-pagination neo-pagination__condensed">
           <button
@@ -59,8 +63,7 @@ const htmlCodeString = `
       </div>
     </main>
   </body>
-</html>
-`.trim();
+</html>`.trim();
 
 const reactCodeString = `
 import { useState } from "react";
@@ -164,6 +167,7 @@ export const SandpackTest = () => {
 					}}
 					files={{
 						"index.html": htmlCodeString,
+						"styles.css": cssString,
 					}}
 				>
 					<div className="playground-examples">
