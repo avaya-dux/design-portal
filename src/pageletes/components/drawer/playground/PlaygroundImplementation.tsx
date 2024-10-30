@@ -19,24 +19,24 @@ export const storybook =
 
 
 export const PlaygroundImplementation = () => {
-	const [basicOpen, setBasicOpen] = useState<boolean>(false);
-	const [actionsOpen, setActionsOpen] = useState<boolean>(false);
+	const [informativeOpen, setInformativeOpen] = useState<boolean>(false);
+	const [actionableOpen, setActionableOpen] = useState<boolean>(false);
 
-	const [buttons, basicDrawer, actionsDrawer, react, html] = useMemo(() => {
+	const [buttons, informativeDrawer, actionableDrawer, react, html] = useMemo(() => {
 		const element = (
 			<div className="button-container">
-				<Button onClick={() => setActionsOpen(true)}>Actionable Drawer</Button>
-				<Button onClick={() => setBasicOpen(true)}>Informative Drawer</Button>
+				<Button onClick={() => setActionableOpen(true)}>Actionable Drawer</Button>
+				<Button onClick={() => setInformativeOpen(true)}>Informative Drawer</Button>
 			</div>
 		);
 
 		const BasicDrawer = (
 			<Drawer
-				open={basicOpen}
-				onClose={() => setBasicOpen(false)}
+				open={informativeOpen}
+				onClose={() => setInformativeOpen(false)}
 				title="Title of Drawer"
 			>
-				<div style={{ height: "100%", width: "100%" }}>
+				<div>
 					<p>This Drawer should only have the x close button</p>
 					<br />
 					<p>
@@ -49,16 +49,17 @@ export const PlaygroundImplementation = () => {
 
 		const ActionsDrawer = (
 			<Drawer
-				open={actionsOpen}
-				onClose={() => setActionsOpen(false)}
-				title="Actions Drawer"
+				open={actionableOpen}
+				onCancel={() => setActionableOpen(false)}
+				onApply={() => {}}
+				title="Actionable Drawer"
 			>
-				<div style={{ height: "100%", width: "100%" }}>
-					<p>This Drawer should only have the x close button</p>
+				<div>
+					<p>You can place any content here.</p>
 					<br />
 					<p>
-						Dismiss the Drawer by selecting the ‘Clear’ icon at the top right
-						next to the title or by clicking anywhere on the background scrim.
+						Dismiss the Drawer by selecting the Cancel button.
+						Override onApply to provide your implementation.
 					</p>
 				</div>
 			</Drawer>
@@ -70,18 +71,17 @@ export const PlaygroundImplementation = () => {
 			BasicDrawer,
 			ActionsDrawer,
 			prettyPrintReactElementToString(BasicDrawer, {
-				filterProps: ["onClick"],
+				filterProps: ["onClose"],
 			}),
 			prettyPrintReactElementToHtml(BasicDrawer),
 		];
-	}, [actionsOpen, basicOpen]);
+	}, [actionableOpen, informativeOpen]);
 
 	const [elementToRender, setElementToRender] = useState(buttons);
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: must update component when props change
 	useEffect(() => {
 		setElementToRender(buttons);
-	}, [basicOpen, buttons]);
+	}, [buttons]);
 
 	return (
 		<>
@@ -95,8 +95,8 @@ export const PlaygroundImplementation = () => {
 			>
 				{elementToRender}
 			</Playground>
-			{basicDrawer}
-			{actionsDrawer}
+			{informativeDrawer}
+			{actionableDrawer}
 		</>
 	);
 };
