@@ -1,6 +1,11 @@
 import type { TopicsDict } from "components";
 
-type DrawerTopicNames = "playground" | "anatomy" | "behavior" | "specs" | "keyboard";
+type DrawerTopicNames =
+	| "playground"
+	| "anatomy"
+	| "behavior"
+	| "specs"
+	| "keyboard";
 
 const component = "drawer";
 export const topics: TopicsDict<DrawerTopicNames> = {
