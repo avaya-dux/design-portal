@@ -45,13 +45,6 @@ export const PlaygroundImplementation = () => {
 	return (
 		<>
 			<Playground
-				options={
-					<Playground.OptionsContainer>
-						<Playground.OptionsSection title="Variables">
-							<div>Nothing here</div>
-						</Playground.OptionsSection>
-					</Playground.OptionsContainer>
-				}
 				examples={{
 					react,
 					html,

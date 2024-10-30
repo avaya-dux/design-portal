@@ -26,7 +26,7 @@ interface Examples {
 export interface PlaygroundProps {
 	children: React.ReactNode;
 	examples: Examples;
-	options: JSX.Element;
+	options?: JSX.Element;
 	description?: string;
 	isPadded?: boolean;
 }
