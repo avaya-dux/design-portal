@@ -1,16 +1,57 @@
 ---
-import { Description, PageTitle, PageleteSection, Topics } from "components";
-
-import { topics } from "../static";
+import { Link } from "@avaya/neo-react";
+import {
+	Description,
+	InfoTable,
+	InfoTableBody,
+	InfoTableCell,
+	InfoTableCellHead,
+	InfoTableHead,
+	InfoTableRow,
+	PageTitle,
+	PageleteSection,
+} from "components";
 ---
 
 <PageleteSection>
-  <PageTitle>Sheet</PageTitle>
+	<PageTitle>Sheet</PageTitle>
 
-  <Description>
-    Sheets put additional content in a separate pane without changing the user’s
-    position in the UI.
-  </Description>
+	<Description>
+		The Sheet component has been discontinued and is no longer supported. It has
+		been replaced by the Drawer, which offers similar functionality.
+		Alternatively, you can use the Modal component to achieve similar results.
+		Please select the option that best suits your needs.
+	</Description>
 
-  <Topics topics={topics} />
+	<InfoTable>
+		<InfoTableHead>
+			<InfoTableRow>
+				<InfoTableCellHead>Component</InfoTableCellHead>
+				<InfoTableCellHead>Behavior</InfoTableCellHead>
+			</InfoTableRow>
+		</InfoTableHead>
+
+		<InfoTableBody>
+			<InfoTableRow>
+				<InfoTableCell><Link>Drawer</Link></InfoTableCell>
+				<InfoTableCell
+					>A drawer component slides in from the right edge of the screen. It
+					overlays the main content with a scrim and provides a space for
+					secondary content or actions. Drawers are often used for menus,
+					settings, or any extra content without taking up the entire screen.
+				</InfoTableCell>
+			</InfoTableRow>
+
+			<InfoTableRow>
+				<InfoTableCell>Modal</InfoTableCell>
+				<InfoTableCell
+					>A modal overlays the main content, temporarily disabling interaction
+					with the rest of the page with a scrim until the user engages with it.
+					Typically used to display important information or require a decision,
+					modals block further use of the app until the user acknowledges the
+					message or resolves the issue.</InfoTableCell
+				>
+			</InfoTableRow>
+		</InfoTableBody>
+	</InfoTable>
 </PageleteSection>
