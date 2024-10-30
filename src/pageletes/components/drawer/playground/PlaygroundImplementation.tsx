@@ -3,6 +3,8 @@ import {
 	Drawer,
 } from "@avaya/neo-react";
 
+import "./playground.css";
+
 import { useEffect, useMemo, useState } from "react";
 
 import { Playground } from "components";
@@ -17,30 +19,69 @@ export const storybook =
 
 
 export const PlaygroundImplementation = () => {
-	const [isOpen, setIsOpen] = useState<boolean>(false);
+	const [basicOpen, setBasicOpen] = useState<boolean>(false);
+	const [actionsOpen, setActionsOpen] = useState<boolean>(false);
 
-	const [component, react, html] = useMemo(() => {
+	const [buttons, basicDrawer, actionsDrawer, react, html] = useMemo(() => {
 		const element = (
-			<Button
-				onClick={() => setIsOpen(true)}
-			>
-				Open Drawer
-			</Button>
+			<div className="button-container">
+				<Button onClick={() => setActionsOpen(true)}>Actionable Drawer</Button>
+				<Button onClick={() => setBasicOpen(true)}>Informative Drawer</Button>
+			</div>
 		);
+
+		const BasicDrawer = (
+			<Drawer
+				open={basicOpen}
+				onClose={() => setBasicOpen(false)}
+				title="Title of Drawer"
+			>
+				<div style={{ height: "100%", width: "100%" }}>
+					<p>This Drawer should only have the x close button</p>
+					<br />
+					<p>
+						Dismiss the Drawer by selecting the ‘Clear’ icon at the top right
+						next to the title or by clicking anywhere on the background scrim.
+					</p>
+				</div>
+			</Drawer>
+		);
+
+		const ActionsDrawer = (
+			<Drawer
+				open={actionsOpen}
+				onClose={() => setActionsOpen(false)}
+				title="Actions Drawer"
+			>
+				<div style={{ height: "100%", width: "100%" }}>
+					<p>This Drawer should only have the x close button</p>
+					<br />
+					<p>
+						Dismiss the Drawer by selecting the ‘Clear’ icon at the top right
+						next to the title or by clicking anywhere on the background scrim.
+					</p>
+				</div>
+			</Drawer>
+		);
+
 
 		return [
 			element,
-			prettyPrintReactElementToString(element, { filterProps: ["onClick"] }),
-			prettyPrintReactElementToHtml(element),
+			BasicDrawer,
+			ActionsDrawer,
+			prettyPrintReactElementToString(BasicDrawer, {
+				filterProps: ["onClick"],
+			}),
+			prettyPrintReactElementToHtml(BasicDrawer),
 		];
-	}, []);
+	}, [actionsOpen, basicOpen]);
 
-	const [elementToRender, setElementToRender] = useState(component);
+	const [elementToRender, setElementToRender] = useState(buttons);
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: must update component when props change
 	useEffect(() => {
-		setElementToRender(component);
-	}, [isOpen, component]);
+		setElementToRender(buttons);
+	}, [basicOpen, buttons]);
 
 	return (
 		<>
@@ -54,20 +95,8 @@ export const PlaygroundImplementation = () => {
 			>
 				{elementToRender}
 			</Playground>
-			<Drawer
-				open={isOpen}
-				onClose={() => setIsOpen(false)}
-				title="Title of Drawer"
-			>
-				<div style={{ height: "100%", width: "100%" }}>
-					<p>This Drawer should only have the x close button</p>
-					<br />
-					<p>
-						Dismiss the Drawer by selecting the ‘Clear’ icon at the top right
-						next to the title or by clicking anywhere on the background scrim.
-					</p>
-				</div>
-			</Drawer>
+			{basicDrawer}
+			{actionsDrawer}
 		</>
 	);
 };
