@@ -1,3 +1,6 @@
+import DrawerPlayground from "./DrawerPlayground.astro";
+export { DrawerPlayground };
+
 import Intro from "./Intro.astro";
 export { Intro };
 
