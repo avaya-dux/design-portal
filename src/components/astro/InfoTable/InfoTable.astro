@@ -1,50 +1,51 @@
 <table class="neo-table neo-table--info">
-  <slot />
+	<slot />
 </table>
 
 <style is:global>
-  table.neo-table.neo-table--info tbody tr td {
-    font-size: 14px;
-    min-width: 12rem;
-    padding-left: 0;
-    max-width: 80ch;
-    border-bottom: 1px solid var(--neo-color-base-100);
-  }
+	table.neo-table.neo-table--info tbody tr td {
+		font-size: 14px;
+		min-width: 12rem;
+		padding-left: 0;
+		max-width: 80ch;
+		border-bottom: 1px solid var(--neo-color-base-100);
+	}
 
-  table.neo-table.neo-table--info thead tr th {
-    padding-left: 0;
-    border-color: var(--neo-color-base-200);
-  }
+	table.neo-table.neo-table--info thead tr th {
+		padding-left: 0;
+		border-color: var(--neo-color-base-200);
+	}
 
-  @media (prefers-color-scheme: dark) {
-    table.neo-table.neo-table--info thead tr th {
-      border-color: var(--neo-color-base-600);
-    }
-    table.neo-table.neo-table--info tbody tr td {
-      border-bottom: 1px solid var(--neo-color-base-800);
-    }
-  }
+	@media (prefers-color-scheme: dark) {
+		table.neo-table.neo-table--info thead tr th {
+			border-color: var(--neo-color-base-600);
+		}
+		table.neo-table.neo-table--info tbody tr td {
+			border-bottom: 1px solid var(--neo-color-base-800);
+		}
+	}
 
-  table.neo-table.neo-table--info tbody tr {
-    pointer-events: none;
-    display: table-row;
-  }
-  table.neo-table.neo-table--info tbody tr td a {
-    pointer-events: auto;
-  }
-  table.neo-table.neo-table--info tbody tr td {
-    vertical-align: top;
-  }
+	table.neo-table.neo-table--info tbody tr {
+		display: table-row;
+	}
 
-  @media (max-width: 671px) {
-    table.neo-table.neo-table--info tbody tr td {
-      min-width: unset;
-    }
-  }
+	table.neo-table.neo-table--info tbody tr:hover {
+		background-color: var(--table-background-color);
+	}
 
-  table.neo-table.neo-table--info {
-    margin-top: 1.5rem;
-    margin-bottom: 3rem;
-    table-layout: auto;
-  }
+	table.neo-table.neo-table--info tbody tr td {
+		vertical-align: top;
+	}
+
+	@media (max-width: 671px) {
+		table.neo-table.neo-table--info tbody tr td {
+			min-width: unset;
+		}
+	}
+
+	table.neo-table.neo-table--info {
+		margin-top: 1.5rem;
+		margin-bottom: 3rem;
+		table-layout: auto;
+	}
 </style>
