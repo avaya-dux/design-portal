@@ -20,7 +20,7 @@ export const PlaygroundImplementation = () => {
 
 	const [buttons, informativeDrawer, actionableDrawer, react, html] =
 		useMemo(() => {
-			const element = (
+			const buttonGroup = (
 				<div className="button-container">
 					<Button onClick={() => setActionableOpen(true)}>
 						Actionable Drawer
@@ -67,7 +67,7 @@ export const PlaygroundImplementation = () => {
 			);
 
 			return [
-				element,
+				buttonGroup,
 				BasicDrawer,
 				ActionsDrawer,
 				prettyPrintReactElementToString(BasicDrawer, {
@@ -76,12 +76,6 @@ export const PlaygroundImplementation = () => {
 				prettyPrintReactElementToHtml(BasicDrawer),
 			];
 		}, [actionableOpen, informativeOpen]);
-
-	const [elementToRender, setElementToRender] = useState(buttons);
-
-	useEffect(() => {
-		setElementToRender(buttons);
-	}, [buttons]);
 
 	return (
 		<>
@@ -93,7 +87,7 @@ export const PlaygroundImplementation = () => {
 					storybook,
 				}}
 			>
-				{elementToRender}
+				{buttons}
 			</Playground>
 			{informativeDrawer}
 			{actionableDrawer}
