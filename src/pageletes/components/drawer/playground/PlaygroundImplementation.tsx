@@ -52,7 +52,10 @@ export const PlaygroundImplementation = () => {
 				<Drawer
 					open={actionableOpen}
 					onCancel={() => setActionableOpen(false)}
-					onApply={() => {}}
+					onApply={() => {
+						alert("Apply button clicked");
+						setActionableOpen(false);
+					}}
 					title="Actionable Drawer"
 				>
 					<div>
