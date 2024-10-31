@@ -2,7 +2,7 @@ import { Button, Drawer } from "@avaya/neo-react";
 
 import "./playground.css";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 import { Playground } from "components";
 import {
@@ -10,9 +10,10 @@ import {
 	prettyPrintReactElementToString,
 } from "helpers";
 
-export const sandbox = "https://codesandbox.io/s/";
+export const sandbox =
+	"https://codesandbox.io/p/sandbox/neo-react-drawer-8sjp45";
 export const storybook =
-	"https://neo-react-library-storybook.netlify.app/?path=/story/";
+	"https://neo-react-library-storybook.netlify.app/?path=/docs/components-drawer--docs";
 
 export const PlaygroundImplementation = () => {
 	const [informativeOpen, setInformativeOpen] = useState<boolean>(false);
