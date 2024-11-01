@@ -46,9 +46,6 @@ export { RadioKeyboardSection };
 import SelectKeyboardSection from "./SelectKeyboardSection.astro";
 export { SelectKeyboardSection };
 
-import SheetKeyboardSection from "./SheetKeyboardSection.astro";
-export { SheetKeyboardSection };
-
 import SideNavKeyboardSection from "./SideNavKeyboardSection.astro";
 export { SideNavKeyboardSection };
 
