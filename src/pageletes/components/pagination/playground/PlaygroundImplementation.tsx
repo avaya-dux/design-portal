@@ -45,11 +45,6 @@ export const PlaygroundImplementation = () => {
 
 	return (
 		<Playground
-			options={
-				<Playground.OptionsContainer>
-					<Playground.OptionsSection title="Pagination Options" />
-				</Playground.OptionsContainer>
-			}
 			examples={{
 				html: prettyPrintReactElementToHtml(element),
 				react: prettyPrintReactElementToString(element),
