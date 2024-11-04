@@ -4,12 +4,13 @@ import { Image } from "@avaya/neo-react";
 import {
 	ColumnLayout,
 	Description,
+	DoAndDont,
 	PageleteSection,
 	PageleteSubSection,
 	SectionHeader,
 	StackedLayout,
 	SubHeader,
-} from "components/astro";
+} from "components";
 
 import { topics } from "../static";
 
@@ -28,7 +29,20 @@ const placementImgAltText3 =
 	"Shows how items per a page can effect the pagination bars position on a device.";
 
 import variationImage1 from "../imgs/pagination-behavior-variations-1.svg";
-const variationImgAltText1 = "Shows variations to the pagination bar.";
+const variationImgAltText1 = "Shows image of the full version of the pagination bar.";
+
+import variationImage2 from "../imgs/pagination-behavior-variations-2.svg";
+const variationImgAltText2 = "Shows image of the condensed version of the pagination bar.";
+
+import doImg1 from "../imgs/pagination-behavior-placement-do-1.svg";
+import dontImg1 from "../imgs/pagination-behavior-placement-dont-1.svg";
+const doInstructions1 =
+	"The pagination remains fixed at the bottom of the page, ensuring it is always visible.";
+const doImgAltText1 =
+	"image showing the pagination component fixed at bottom of the page.";
+const dontInstructions1 = "Do not place the pagination above the table.";
+const dontImgAltText1 =
+	"image showing the pagination component above the table.";
 ---
 
 <PageleteSection>
@@ -36,14 +50,14 @@ const variationImgAltText1 = "Shows variations to the pagination bar.";
 
   <Description>
     The implementation of pagination varies depending upon the size of the
-    table, and the size of the page showing the data.
+    table and the size of the page showing the data.
   </Description>
 
   <PageleteSubSection>
     <SubHeader id="pagination-placement">Placement</SubHeader>
 
     <Description>
-      The pagination bar is always positioned at the bottom of the table.
+      The pagination bar is always visible and positioned at the bottom of the viewable page.
     </Description>
 
     <ColumnLayout marginBottom={"3rem"} showGridlines={true} numOfColumns={1}>
@@ -53,8 +67,8 @@ const variationImgAltText1 = "Shows variations to the pagination bar.";
     </ColumnLayout>
 
     <Description>
-      On pages with fewer rows, keep the pagination bar at the bottom of the
-      visible page.
+      On pages with fewer rows, the pagination stays visible at the bottom of the page,
+			not directly beneath the last row.
     </Description>
 
     <ColumnLayout marginBottom={"3rem"} showGridlines={true} numOfColumns={1}>
@@ -62,10 +76,20 @@ const variationImgAltText1 = "Shows variations to the pagination bar.";
         <Image src={placementImage2.src} alt={placementImgAltText2} />
       </StackedLayout>
     </ColumnLayout>
-    <Description>
-      On longer pages, use pagination rather than infinite scrolling. Infinite
-      scrolling makes it difficult to keep track of where the content is.
-    </Description>
+
+		<DoAndDont size="wide">
+			<DoAndDont.DoContainer instructions={doInstructions1}>
+				<DoAndDont.ImageExampleContainer>
+					<Image src={doImg1.src} alt={doImgAltText1} />
+				</DoAndDont.ImageExampleContainer>
+			</DoAndDont.DoContainer>
+
+			<DoAndDont.DontContainer instructions={dontInstructions1}>
+				<DoAndDont.ImageExampleContainer>
+					<Image src={dontImg1.src} alt={dontImgAltText1} />
+				</DoAndDont.ImageExampleContainer>
+			</DoAndDont.DontContainer>
+		</DoAndDont>
   </PageleteSubSection>
 
   <PageleteSubSection>
@@ -89,17 +113,17 @@ const variationImgAltText1 = "Shows variations to the pagination bar.";
     <SubHeader id="pagination-variations">Variations</SubHeader>
 
     <Description>
-      The width of the window where the table appears impacts the amount of
-      detail that can appear in the pagination bar, such as the use of
-      descriptive labels for page links or buttons, the ability to jump to
-      specific pages, or searches within the data set. The optimal page size
-      depends upon the needs of the interface and its users. A pagination bar is
-      not needed when there are no additional pages.
+      Pagination comes in two forms: full and condensed. Use the full version when there is
+			ample space to display all details. Select the condensed version when space is limited.
+			If there are no additional pages, a pagination bar is unnecessary.
     </Description>
 
     <ColumnLayout marginBottom={"3rem"} showGridlines={true} numOfColumns={1}>
-      <StackedLayout isShaded vPadding="0px">
+      <StackedLayout labelPaddingTop="2rem" labelPaddingLeft="1rem" label="Full version" isShaded vPadding="0px">
         <Image src={variationImage1.src} alt={variationImgAltText1} />
+      </StackedLayout>
+      <StackedLayout labelPaddingTop="2rem" labelPaddingLeft="1rem" label="Condensed version" isShaded vPadding="0px">
+        <Image src={variationImage2.src} alt={variationImgAltText2} />
       </StackedLayout>
     </ColumnLayout>
   </PageleteSubSection>
