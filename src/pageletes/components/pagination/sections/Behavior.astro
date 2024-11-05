@@ -5,6 +5,7 @@ import {
 	ColumnLayout,
 	Description,
 	DoAndDont,
+	ImageWrapper,
 	PageleteSection,
 	PageleteSubSection,
 	SectionHeader,
@@ -118,9 +119,11 @@ const dontImgAltText1 =
 			If there are no additional pages, a pagination bar is unnecessary.
     </Description>
 
-    <ColumnLayout marginBottom={"3rem"} showGridlines={true} numOfColumns={1}>
-      <StackedLayout labelPaddingTop="2rem" labelPaddingLeft="1rem" label="Full version" isShaded vPadding="0px">
-        <Image src={variationImage1.src} alt={variationImgAltText1} />
+    <ColumnLayout marginBottom={"3rem"} showGridlines={false} numOfColumns={1}>
+      <StackedLayout showBorders labelPaddingTop="2rem" labelPaddingLeft="1rem" label="Full version" isShaded vPadding="0px" gap="2rem">
+				<ImageWrapper isShaded showBorders={false} marginTop="0" padding="0rem 2.5rem 1.5rem">
+        	<Image src={variationImage1.src} alt={variationImgAltText1} />
+				</ImageWrapper>
       </StackedLayout>
       <StackedLayout labelPaddingTop="2rem" labelPaddingLeft="1rem" label="Condensed version" isShaded vPadding="0px">
         <Image src={variationImage2.src} alt={variationImgAltText2} />
