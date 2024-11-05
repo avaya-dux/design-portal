@@ -125,8 +125,10 @@ const dontImgAltText1 =
         	<Image src={variationImage1.src} alt={variationImgAltText1} />
 				</ImageWrapper>
       </StackedLayout>
-      <StackedLayout labelPaddingTop="2rem" labelPaddingLeft="1rem" label="Condensed version" isShaded vPadding="0px">
-        <Image src={variationImage2.src} alt={variationImgAltText2} />
+      <StackedLayout showBorders labelPaddingTop="2rem" labelPaddingLeft="1rem" label="Condensed version" isShaded vPadding="0px">
+				<ImageWrapper isShaded showBorders={false} marginTop="0" padding="0rem 2.5rem 1.5rem">
+        	<Image src={variationImage2.src} alt={variationImgAltText2} />
+				</ImageWrapper>
       </StackedLayout>
     </ColumnLayout>
   </PageleteSubSection>
