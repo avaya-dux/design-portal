@@ -1,0 +1,59 @@
+---
+import { Image } from "@avaya/neo-react";
+
+import {
+	CaptionInfoList,
+	ColumnLayout,
+	Description,
+	InfoListItem,
+	PageleteSection,
+	SectionHeader,
+	StackedLayout,
+} from "components/astro";
+import { topics } from "../static";
+
+const { id, title } = topics.states;
+
+import StateDefaultImage from "../imgs/pagination-states-1.svg";
+import StateHoverImage from "../imgs/pagination-states-2.svg";
+import StatePressedImage from "../imgs/pagination-states-3.svg";
+---
+
+<PageleteSection>
+  <SectionHeader id={id}>{title}</SectionHeader>
+
+  <Description>The page numbers can have one of 3 states.</Description>
+
+<ColumnLayout bkgColor="white" numOfColumns={3}>
+    <StackedLayout label="Default">
+      <Image src={StateDefaultImage.src} alt="Page numbers with default state look like this." />
+    </StackedLayout>
+
+    <StackedLayout label="Hover">
+      <Image
+        src={StateHoverImage.src}
+        alt="Page numbers with hover state look like this"
+      />
+    </StackedLayout>
+
+    <StackedLayout label="Active">
+      <Image
+        src={StatePressedImage.src}
+        alt="Page numbers with active state look like this"
+      />
+    </StackedLayout>
+  </ColumnLayout>
+  <CaptionInfoList type="disc">
+    <InfoListItem label="Default">
+    	The page is unselected, allowing users to select and navigate to that specific page.
+    </InfoListItem>
+
+    <InfoListItem label="Hover">
+      The page is highlighted and can be selected.
+    </InfoListItem>
+
+    <InfoListItem label="Active">
+      The current page shown on the screen.
+    </InfoListItem>
+  </CaptionInfoList>
+</PageleteSection>

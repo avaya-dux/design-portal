@@ -4,6 +4,7 @@ type PaginationTopicNames =
 	| "playground"
 	| "anatomy"
 	| "behavior"
+	| "states"
 	| "specs"
 	| "keyboard"
 	| "related";
@@ -25,18 +26,23 @@ export const topics: TopicsDict<PaginationTopicNames> = {
 		id: `${component}-checkbox`,
 		title: "Behavior",
 	},
-	specs: {
+	states: {
 		order: 3,
+		id: `${component}-states`,
+		title: "States",
+	},
+	specs: {
+		order: 4,
 		id: `${component}-specs`,
 		title: "Specs",
 	},
 	keyboard: {
-		order: 4,
+		order: 5,
 		id: `${component}-keyboard-interactions`,
 		title: "Keyboard Interactions",
 	},
 	related: {
-		order: 5,
+		order: 6,
 		id: `${component}-related-content`,
 		title: "Related Content",
 	},
