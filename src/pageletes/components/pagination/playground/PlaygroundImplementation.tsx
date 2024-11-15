@@ -27,12 +27,10 @@ export const PlaygroundImplementation = () => {
 			itemsPerPage={itemsPerPage}
 			itemsPerPageOptions={[20, 50, 100]}
 			itemDisplayType={"count"}
-			onPageChange={(e, newIndex) => {
-				e?.preventDefault();
+			onPageChange={(_, newIndex) => {
 				setPageIndex(newIndex);
 			}}
-			onItemsPerPageChange={(e, newItemsPerPage) => {
-				e?.preventDefault();
+			onItemsPerPageChange={(newItemsPerPage) => {
 				setItemsPerPage(newItemsPerPage);
 
 				const maxPageIndex = Math.ceil(itemCount / newItemsPerPage);
@@ -45,11 +43,6 @@ export const PlaygroundImplementation = () => {
 
 	return (
 		<Playground
-			options={
-				<Playground.OptionsContainer>
-					<Playground.OptionsSection title="Pagination Options" />
-				</Playground.OptionsContainer>
-			}
 			examples={{
 				html: prettyPrintReactElementToHtml(element),
 				react: prettyPrintReactElementToString(element),

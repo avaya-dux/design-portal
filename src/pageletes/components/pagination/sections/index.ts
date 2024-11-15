@@ -13,6 +13,9 @@ export { Related };
 import Specs from "./Specs.astro";
 export { Specs };
 
+import States from "./States.astro";
+export { States };
+
 import Behavior from "./Behavior.astro";
 export { Behavior };
 
