@@ -35,7 +35,7 @@
 		"@vitejs/plugin-react": "4.3.4",
 		"@vitest/coverage-v8": "2.1.8",
 		"@vitest/ui": "2.1.8",
-		"astro": "4.16.18",
+		"astro": "5.1.2",
 		"html-react-parser": "5.2.2",
 		"jest-axe": "9.0.0",
 		"jest-coverage-badges": "1.1.2",
